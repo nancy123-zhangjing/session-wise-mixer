@@ -1,0 +1,160 @@
+{
+  "run_id": "diff_smoke_rqkmeans_4x256",
+  "reproduction_protocol": "controlled_tokenizer_swap_rq_kmeans_v6",
+  "protocol_note": "v6 DiffGRM with only PSE replaced by residual KMeans; shared sentence-T5-base PCA256 inputs",
+  "paper_repo_discrepancy": {
+    "paper_max_epochs": 100,
+    "repository_effective_epochs": 200,
+    "paper_label_smoothing": 0.1,
+    "repository_beauty_label_smoothing": 0.2,
+    "repository_default_eval_interval": 1,
+    "single_gpu_eval_interval": 5
+  },
+  "seed": 2024,
+  "model": "DIFF_GRM",
+  "sid_quantizer": "rq_kmeans",
+  "rq_kmeans_seed": 2024,
+  "rq_kmeans_niters": 20,
+  "rq_kmeans_use_pca": true,
+  "semantic_ids_path": "/home/jingzhang/experiment1/data/cache/AmazonReviews2014/Beauty/processed/sentence-t5-base_pca256_RQKMEANS4x8_seed2024_it20_PCA.sem_ids",
+  "semantic_ids_sha256": "34f75a5504711b568c000227665fb1ee613d3eb882489549fb1284ee59e8221b",
+  "n_digit": 4,
+  "codebook_size": 256,
+  "masking_strategy": "guided",
+  "guided_select": "least",
+  "guided_refresh_each_step": false,
+  "diffusion_loss_reduction": "per_view",
+  "train_batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "effective_base_batch": 4,
+  "updates_per_epoch": 2,
+  "total_optimizer_steps": 2,
+  "warmup_steps": 0,
+  "lr": 0.01,
+  "mixed_precision": "bf16",
+  "max_grad_norm": 1.0,
+  "numerical_guard": true,
+  "numerical_guard_parameter_interval": 100,
+  "eval_start_epoch": 1,
+  "eval_interval": 1,
+  "patience": 1,
+  "early_stop_after_warmup": true,
+  "best_epoch": 1,
+  "best_val_score": 0.0,
+  "fit_elapsed_seconds": 0.3977222125977278,
+  "peak_vram_mb": 108.34228515625,
+  "evaluation_level": "sid",
+  "test_results": {
+    "legal_ratio": 0.0,
+    "duplicate_ratio": 0.949999988079071,
+    "dup@10": 0.8999999761581421,
+    "duplicate@10": 0.8999999761581421,
+    "legal@10": 0.0,
+    "ndcg@5": 0.0,
+    "ndcg@10": 0.0,
+    "recall@5": 0.0,
+    "hit_rate@5": 0.0,
+    "recall@10": 0.0,
+    "hit_rate@10": 0.0,
+    "weighted_score": 0.0
+  },
+  "position_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-12-2026_06-35-30_position_metrics.csv",
+  "order_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-12-2026_06-35-30_order_metrics.csv",
+  "training_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-12-2026_06-35-30_training_metrics.csv",
+  "evaluation_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-12-2026_06-35-30_evaluation_metrics.csv",
+  "checkpoint": "saved/AmazonReviews2014_Aug-12-2026_06-35-30/pytorch_model.bin",
+  "sid_collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 11989,
+    "collided_items": 216,
+    "collision_rate": 0.017849764482274193,
+    "colliding_groups": 104,
+    "largest_collision_group": 5,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 197,
+        "collided_items": 12083,
+        "collision_rate": 0.9985125196264771,
+        "colliding_groups": 179,
+        "largest_collision_group": 399
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6002,
+        "collided_items": 8619,
+        "collision_rate": 0.7122551855218577,
+        "colliding_groups": 2520,
+        "largest_collision_group": 24
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 11591,
+        "collided_items": 973,
+        "collision_rate": 0.08040657796876291,
+        "colliding_groups": 463,
+        "largest_collision_group": 7
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 11989,
+        "collided_items": 216,
+        "collision_rate": 0.017849764482274193,
+        "colliding_groups": 104,
+        "largest_collision_group": 5
+      }
+    ],
+    "per_position": [
+      {
+        "position": 0,
+        "unique_codes": 197,
+        "entropy_nats": 4.598216210711685,
+        "effective_codes_perplexity": 99.30701476605088,
+        "largest_code_share": 0.03297248161308983,
+        "unused_codes": 59,
+        "utilization_rate": 0.76953125,
+        "normalized_entropy": 0.8292279655161237
+      },
+      {
+        "position": 1,
+        "unique_codes": 219,
+        "entropy_nats": 4.731491180345194,
+        "effective_codes_perplexity": 113.4646324901389,
+        "largest_code_share": 0.032724568217502685,
+        "unused_codes": 37,
+        "utilization_rate": 0.85546875,
+        "normalized_entropy": 0.853262357736735
+      },
+      {
+        "position": 2,
+        "unique_codes": 232,
+        "entropy_nats": 4.836111603022307,
+        "effective_codes_perplexity": 125.97854353203667,
+        "largest_code_share": 0.03024543426163127,
+        "unused_codes": 24,
+        "utilization_rate": 0.90625,
+        "normalized_entropy": 0.8721292783582322
+      },
+      {
+        "position": 3,
+        "unique_codes": 236,
+        "entropy_nats": 4.913592338423503,
+        "effective_codes_perplexity": 136.12755334376445,
+        "largest_code_share": 0.03280720601603173,
+        "unused_codes": 20,
+        "utilization_rate": 0.921875,
+        "normalized_entropy": 0.8861019124491991
+      }
+    ]
+  },
+  "diagnostic_definitions": {
+    "train_position_context": "OCN masked views; a position contributes only when masked",
+    "eval_position_context": "all SID positions masked in the same context",
+    "train_order": "OCN noising order, hard/least-confident to easy",
+    "eval_order": "beam-width-one CPD model-generated path, confident to hard"
+  }
+}

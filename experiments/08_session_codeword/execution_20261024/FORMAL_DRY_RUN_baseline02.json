@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "s08-session-baseline-20261024-r2",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda13.2版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 5.0,
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_session_codeword/goal_20261024_session_codeword_v1/code && /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -u -B scripts/train/session_codeword_gpu_job.py --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_session_codeword/goal_20261024_session_codeword_v1 --mode train_arm --arm baseline --attempt baseline02 --ledger /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_session_codeword/goal_20261024_session_codeword_v1/allocations/ledger_formal_baseline02.json --readiness /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_session_codeword/goal_20261024_session_codeword_v1/delivery/FORMAL_READINESS_BASELINE02.json --process-seconds 17850 --platform-cap-seconds 18000 --expected-code-commit 152bea77d43284bb41f1887a8f43124be7e6db98 --expected-engine-commit a28faf6a24c667aa4f49f208fb93d294ad5aab4f'",
+    "shared_memory_gib": 8,
+    "env": [
+      "PYTHONDONTWRITEBYTECODE",
+      "PYTHONNOUSERSITE",
+      "WANDB_MODE"
+    ],
+    "public_path_readonly": true
+  },
+  "queried_unix": 1792777355.3989222
+}

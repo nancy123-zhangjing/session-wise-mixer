@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-s09-h0freeze-s2025-1110-v1",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda12.8版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 12.0,
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h0_multiseed_r20_freeze_20261110_v1 && export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 && /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u experiment.py --seed 2025 > 2025_H0.log 2>&1'",
+    "shared_memory_gib": 32
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "recorded_at_utc": "2026-10-27T07:36:16.9195192Z",
+  "run_id": "goal_20261027_r1",
+  "remote_write_root": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/stage09/goal_20261027_r1",
+  "initial_gpu_budget_seconds": 7200,
+  "allocated_gpu_seconds": 0,
+  "gpu_jobs_submitted": [],
+  "cpu_notebook": {
+    "name": "nancy-stage09-prep-20261027-r1",
+    "workspace": "CPU资源空间",
+    "project": "公共科研项目",
+    "quota": "0,4,16",
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "created_for_this_goal": true,
+    "stop_acknowledged": true,
+    "points_per_hour": 0
+  },
+  "current_block": "Remote write returned Disk quota exceeded; original-directory expansion or user-reviewed cleanup decision required.",
+  "failing_operation": "Supported SSH exec --stdin binary upload of 136305-byte diffgrm.bundle",
+  "explicit_error": "dd: error writing task-owned delivery/diffgrm.bundle.stdin: Disk quota exceeded",
+  "ssh_transfer_receipt": "outputs/stage09_delivery/goal_20261027_r1/diffgrm.bundle.stdin_upload.json",
+  "project_usage_du_h": {
+    "total": "8.2G",
+    "data": "2.9G",
+    "outputs": "3.9G",
+    "external": "1.3G",
+    "stage09_partial": "130K"
+  },
+  "physical_filesystem_df_h": {
+    "size": "80T",
+    "used": "56T",
+    "available": "25T",
+    "definition": "Physical/fileset report, not evidence of writable per-user quota"
+  },
+  "exact_quota_verified": false,
+  "existing_history_deleted": false,
+  "files_written_outside_requested_project": false,
+  "full_input_transfer_verified": false,
+  "independent_local_encoding_started": false
+}

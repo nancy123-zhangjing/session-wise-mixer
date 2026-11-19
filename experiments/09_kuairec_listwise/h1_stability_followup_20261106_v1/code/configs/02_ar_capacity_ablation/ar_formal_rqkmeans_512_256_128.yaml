@@ -1,0 +1,11 @@
+# Reverse RQ-KMeans allocation: 9 + 8 + 7 = 24 nominal bits.
+run_id: ar_formal_rqkmeans_512x256x128
+sid_quantizer: rq_kmeans
+semantic_codebook_sizes: [512, 256, 128]
+rq_kmeans_use_pca: true
+rq_kmeans_niters: 20
+rq_kmeans_seed: 2024
+tokenizer_artifact_dir: ../../outputs/tokenizers/rqkmeans_512x256x128/Beauty/seed2024
+force_regenerate_pca: false
+force_regenerate_codes: false
+force_regenerate_opq: false

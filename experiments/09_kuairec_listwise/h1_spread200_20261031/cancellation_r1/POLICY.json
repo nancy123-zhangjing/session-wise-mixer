@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "workspace": "分布式训练空间",
+      "workload": "notebook",
+      "configured": true,
+      "auto_reclaim": true,
+      "reclaim_rule": "gpu < 15% for 3h OR runtime > 18h",
+      "auto_save": true
+    },
+    {
+      "workspace": "分布式训练空间",
+      "workload": "job",
+      "configured": true,
+      "auto_reclaim": true,
+      "reclaim_rule": "gpu < 40% for 3h"
+    },
+    {
+      "workspace": "分布式训练空间",
+      "workload": "hpc",
+      "configured": false
+    },
+    {
+      "workspace": "分布式训练空间",
+      "workload": "ray",
+      "configured": true,
+      "auto_reclaim": false
+    },
+    {
+      "workspace": "分布式训练空间",
+      "workload": "serving",
+      "configured": true,
+      "auto_reclaim": true,
+      "reclaim_rule": "gpu < 20% for 5h (8-16 GPU)",
+      "applies_to": "8-16 GPU"
+    }
+  ]
+}

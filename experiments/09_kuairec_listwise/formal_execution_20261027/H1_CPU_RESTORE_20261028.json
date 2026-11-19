@@ -1,0 +1,132 @@
+{
+  "schema": "stage09_local_cpu_model_restore_v1",
+  "status": "PASS",
+  "checked_at_utc": "2026-10-28T09:38:23.350197+00:00",
+  "arm": "H1",
+  "architecture": "H",
+  "checkpoint": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H1\\best.pt",
+    "bytes": 79900596,
+    "sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1"
+  },
+  "source_root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code",
+  "engine_root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM",
+  "expected_source_commit": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "expected_engine_commit": "98b834cc5ce4428d1a95b3e4f9651833b5fbd5cd",
+  "source_verified_by": "exact checkpoint-bound source bytes; not inferred from cwd HEAD",
+  "frozen_formal_binding_sha256": "871e480d2a77d7e22bfed091d02065f0cdc42eb1db42cf20d43519634959e80a",
+  "physical_path_mapping": {
+    "dataset": {
+      "original": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+      "local": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\kuairec_listwise_v1\\run1"
+    },
+    "assets": {
+      "original": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+      "local": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\assets\\pse_v1"
+    }
+  },
+  "unchanged_original_binding_sha256": "ed54871cf09fc330ea40a1fb6b0926f8a6db0d0aff87487f03275cd80d949e66",
+  "config_changes_limited_to_physical_paths": true,
+  "imported_module_paths": {
+    "scripts.listwise_diffgrm": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\__init__.py",
+    "scripts.listwise_diffgrm.assets": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\assets.py",
+    "scripts.listwise_diffgrm.runtime": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\runtime.py",
+    "scripts.listwise_diffgrm.alignment": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\alignment.py",
+    "scripts.listwise_diffgrm.training": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\training.py",
+    "scripts.listwise_diffgrm.subset": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\subset.py",
+    "scripts.listwise_diffgrm.run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\run.py",
+    "scripts.listwise_diffgrm.model": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\scripts\\listwise_diffgrm\\model.py",
+    "genrec.dataset": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\dataset.py",
+    "genrec.tokenizer": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\tokenizer.py",
+    "genrec.model": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\model.py",
+    "_kuairec_listwise_engine.comb_topk": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\comb_topk.py",
+    "_kuairec_listwise_engine.ablate_decode": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\ablate_decode.py",
+    "_kuairec_listwise_engine.cross_pse": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\cross_pse.py",
+    "_kuairec_listwise_engine.joint_cross_pse": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\joint_cross_pse.py",
+    "_kuairec_listwise_engine.item_local_attention": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\item_local_attention.py",
+    "_kuairec_listwise_engine.model": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code\\external\\DiffGRM\\genrec\\models\\DIFF_GRM\\model.py"
+  },
+  "state_fingerprints": {
+    "model": "7a84ec202c65ab82fdd097c4edc50a56d86f7aa5529ab8121e69a55174bbe0d6",
+    "alignment": "5fbbcca2099795a06a8d0053690333a24b323e450197b0738e9846cd623c06f9",
+    "r_optimizer": "a398b478ca050c71ffade29451e34eac86a82af5eb6e0fb0eae475412905b293",
+    "t_optimizer": "0f12ddebe7a0296f20c5ba9b5abbd9321ba70a088bdf2d2869addf43ef5434c0",
+    "scheduler": "eef287740ed55879cf4a73afd9cddbd3036934dea56f48c269693b8b5e78cf91"
+  },
+  "strict_model_alignment_load": true,
+  "optimizer_scheduler_load_exact": true,
+  "r_updates": 13860,
+  "t_updates": 200,
+  "progress": {
+    "phase": 25,
+    "update": 0,
+    "best_score": 0.00937205572248708,
+    "best_epoch": 20,
+    "validations": [
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R08",
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R11",
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R14",
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R17",
+      "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R20"
+    ]
+  },
+  "checkpoint_precision": "bf16",
+  "stored_model_floating_dtype": "torch.float32",
+  "inference_precision": "fp32",
+  "sid": {
+    "shape": [
+      10729,
+      4
+    ],
+    "real_code_range": [
+      0,
+      255
+    ],
+    "pad_row": -1,
+    "fingerprint": "48ca995cdd1471835832a0b27978da80ffa37ea2f96fcdf1c63d0b6be301befa"
+  },
+  "rng": {
+    "saved_snapshot_fingerprint": "a21f7a4e89d171a8dbd3003a887b21ed2cac8779c40856f79974c66ebe30231b",
+    "cuda_streams_preserved": 1,
+    "cuda_rng_restored": false,
+    "exact_gpu_training_resume_verified": false
+  },
+  "forward": {
+    "method": "decode_logits",
+    "true_target_argument": false,
+    "target_columns_read": false,
+    "sample_id": "u1417:e2492881:b1",
+    "dataset_index": 21363,
+    "history_length": 50,
+    "subset_manifest_sha256": "c74343799024ea0ca0bdb806ab482f362ff227880a2676cf1541a3511a7942af",
+    "subset_selected_rows_sha256": "18a470ada52d4ab659c1b31fe202dd3fdfa0d2b967a46990a10f52f2cc963835",
+    "logits_shape": [
+      1,
+      4,
+      256
+    ],
+    "logits_dtype": "torch.float32",
+    "finite": true,
+    "logits_fingerprint": "0a819bdf739ddbed95916adf0f8a5f06470f7a13664b02811d28cae62e0f7b48",
+    "minimum": -1.9498947858810425,
+    "maximum": 1.8463945388793945
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+    "versions": {
+      "torch": "2.6.0+cpu",
+      "numpy": "2.2.6",
+      "pyarrow": "25.0.0"
+    }
+  },
+  "gpu_used": false,
+  "network_used": false,
+  "checkpoint_modified": false,
+  "script_sha256": "52339717ac6971e4b8f4041119a3c4c81197d78374fc7897e06cfef659444850",
+  "limitations": [
+    "CPU forward restoration only; no CUDA RNG replay or cross-device bitwise equality claim.",
+    "No optimizer update, model training, full-list beam evaluation, or recommendation-quality result is produced."
+  ]
+}

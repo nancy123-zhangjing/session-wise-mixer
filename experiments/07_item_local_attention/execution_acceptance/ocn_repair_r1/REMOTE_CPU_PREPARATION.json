@@ -1,0 +1,85 @@
+{
+  "root_commit": "2fc97b62693628f6507ad2ca60472f6063a84250",
+  "engine_commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+  "checks": [
+    {
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/tests/test_item_local_attention.py"
+      ],
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/delivery/cpu_gate_0.log",
+      "sha256": "6ba70d7b54d6f7a4e4bc3a93ded7994a433050fbd148f9c317e93835b2b96047"
+    },
+    {
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/tests/test_item_local_training_state.py"
+      ],
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/delivery/cpu_gate_1.log",
+      "sha256": "0e8cbd33a90b16afc683edc629b2a3611d46446ff26475d899fc524c010e7800"
+    },
+    {
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/tests/test_ocn_autocast_gradient.py"
+      ],
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/delivery/cpu_gate_2.log",
+      "sha256": "a45221239107fb07d7654e3274eb87e3e6a8e292ed6afefe5b7818fb871cd6ce"
+    },
+    {
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/scripts/train/run_item_local_attention.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/configs/07_item_local_attention/ocn_repair_control_seed2024.json",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/runs/stage07_ocn_repair_control_seed2024_20261020_r1",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/engine",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized"
+      ],
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/delivery/cpu_gate_3.log",
+      "sha256": "99b562b83280d0e5ed71f97f2c3fb3d4066559cd75d1832ccb56d92062236658"
+    },
+    {
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/scripts/train/run_item_local_attention.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code/configs/07_item_local_attention/ocn_repair_item_local_seed2024.json",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/runs/stage07_ocn_repair_item_local_seed2024_20261020_r1",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/engine",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized"
+      ],
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/delivery/cpu_gate_4.log",
+      "sha256": "232d712e18ba0b2f59bdd9f7f23d2e7627da110074471d829a6e532b977fa2f9"
+    }
+  ],
+  "code": {
+    "commit": "2fc97b62693628f6507ad2ca60472f6063a84250",
+    "bundle_sha256": "bf4fd4198754501a37e059aaf660adaaa378cf27d850d2a7529daf2e6fabe9b7"
+  },
+  "engine": {
+    "commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+    "bundle_sha256": "d0bcda8f335f12fefd73c8edce8fd50fa3f9c0316eb3262db116888f92517c97"
+  },
+  "status": "CPU_PREPARATION_PASS"
+}

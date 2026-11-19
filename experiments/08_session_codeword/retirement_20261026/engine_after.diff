@@ -1,0 +1,88 @@
+diff --git a/genrec/models/DIFF_GRM/joint_cross_pse.py b/genrec/models/DIFF_GRM/joint_cross_pse.py
+index 95962a0..8f81ea5 100644
+--- a/genrec/models/DIFF_GRM/joint_cross_pse.py
++++ b/genrec/models/DIFF_GRM/joint_cross_pse.py
+@@ -111,7 +111,8 @@ class JointCrossPSEAlignment(nn.Module):
+                     f"summary={summary_path}"
+                 )
+ 
+-        items = json.load(open(items_path, "r", encoding="utf-8"))
++        with open(items_path, "r", encoding="utf-8") as handle:
++            items = json.load(handle)
+         expected_items = list(tokenizer.id2item[1:])
+         if set(items) != set(expected_items) or len(items) != len(expected_items):
+             raise ValueError(
+@@ -243,13 +244,20 @@ class JointCrossPSEAlignment(nn.Module):
+     @torch.no_grad()
+     def set_recommender_cache(self, enabled: bool) -> None:
+         if enabled:
+-            codebooks, _ = self.mixer.crossed_codebooks(return_attention=False)
++            with torch.autocast(device_type=self.item_slots.device.type, enabled=False):
++                codebooks, _ = self.mixer.crossed_codebooks(return_attention=False)
+             self._recommender_codebook_cache = codebooks.detach().clone()
+         else:
+             self._recommender_codebook_cache = torch.empty(
+                 0, device=self.item_slots.device
+             )
+ 
++    def _load_from_state_dict(self, *args, **kwargs):
++        super()._load_from_state_dict(*args, **kwargs)
++        # Nonpersistent caches are absent from the checkpoint. Never retain
++        # effective codewords from the model that happened to be loaded before.
++        self.set_recommender_cache(False)
++
+     def assignment_logits(
+         self, slots: torch.Tensor, codebooks: torch.Tensor | None = None
+     ) -> torch.Tensor:
+diff --git a/genrec/models/DIFF_GRM/model.py b/genrec/models/DIFF_GRM/model.py
+index 949e4ff..9e121dc 100644
+--- a/genrec/models/DIFF_GRM/model.py
++++ b/genrec/models/DIFF_GRM/model.py
+@@ -604,11 +604,14 @@ class DIFF_GRM(AbstractModel):
+         batch: dict,
+         training: bool,
+         differentiable: bool = False,
++        require_target: bool = True,
+     ) -> dict:
+         """Replace stale SIDs and optionally attach DIGER-ST assignments."""
+         if not self.joint_crosspse_enabled:
+             return batch
+-        if 'history_item_ids' not in batch or 'target_item_id' not in batch:
++        if 'history_item_ids' not in batch:
++            raise KeyError('Joint Cross-PSE requires history_item_ids')
++        if 'target_item_id' not in batch and (require_target or training or differentiable):
+             raise KeyError(
+                 'Joint Cross-PSE requires history_item_ids and target_item_id '
+                 'in every batch'
+@@ -617,6 +620,21 @@ class DIFF_GRM(AbstractModel):
+         prepared = dict(batch)
+         prepared['_joint_prepared'] = True
+         history_ids = batch['history_item_ids'].to(device).long()
++        if history_ids.ndim != 2:
++            raise ValueError('history_item_ids must have shape [batch, history_length]')
++        history_mask = batch.get('history_mask')
++        if history_mask is None:
++            history_mask = history_ids.ne(0)
++        else:
++            if tuple(history_mask.shape) != tuple(history_ids.shape):
++                raise ValueError('history_mask must have the same shape as history_item_ids')
++            history_mask = history_mask.to(device=device, dtype=torch.bool) & history_ids.ne(0)
++        prepared['history_mask'] = history_mask
++        if 'target_item_id' not in batch:
++            # Serving is history-only. Labels remain an evaluation concern;
++            # training and the ST target branch still require real targets.
++            prepared['history_sid'] = self.joint_alignment.hard_codes[history_ids]
++            return prepared
+         target_ids = batch['target_item_id'].to(device).long()
+         use_diger = (
+             differentiable
+@@ -909,7 +927,8 @@ class DIFF_GRM(AbstractModel):
+             and not bool(batch.get('_joint_prepared', False))
+         ):
+             batch = self.prepare_joint_batch(
+-                batch, training=bool(return_loss), differentiable=False
++                batch, training=bool(return_loss), differentiable=False,
++                require_target=bool(return_loss),
+             )
+         
+         # 添加调试信息

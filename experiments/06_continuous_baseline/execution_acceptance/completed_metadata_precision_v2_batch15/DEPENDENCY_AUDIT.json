@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "families": {
+    "sasrec_fullce": {
+      "completed_searches": 31,
+      "dependencies_correctly_locked": true
+    },
+    "esasrec": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "esasrec_16",
+        "esasrec_19",
+        "esasrec_08"
+      ],
+      "completed_confirmations": 6,
+      "independent_selected_trial": "esasrec_19",
+      "three_seed_validation_candidates": [
+        {
+          "trial_id": "esasrec_16",
+          "metrics": {
+            "NDCG@10": 0.048664382157769345,
+            "HR@10": 0.08503629507072695
+          }
+        },
+        {
+          "trial_id": "esasrec_19",
+          "metrics": {
+            "NDCG@10": 0.05204478027884104,
+            "HR@10": 0.0853493121077971
+          }
+        },
+        {
+          "trial_id": "esasrec_08",
+          "metrics": {
+            "NDCG@10": 0.050685007392038926,
+            "HR@10": 0.08539402882737855
+          }
+        }
+      ],
+      "formal_config_and_seed_bindings": "PASS",
+      "formal_trials": 5
+    }
+  },
+  "queue_sha256": "e8e86b494c78f917eed0343e7475b4407fb331de5aca39ec0fc4c44e747aaebc",
+  "test_metrics_read": false,
+  "scope": "First real three-seed configuration lock; validation only; no final family selection or test results",
+  "audit_script_sha256": "b363d6b59e0b59d86145c3644ee1fadbe830184375a968482a8ac9f34d0f6b18"
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "Read-only seed-only claim audit; no training or inference",
+  "config_differences": {
+    "2025": {
+      "seed": [
+        2024,
+        2025
+      ]
+    },
+    "2026": {
+      "seed": [
+        2024,
+        2026
+      ]
+    }
+  },
+  "historical_core_source_counts": {
+    "listwise": 20,
+    "engine": 20
+  },
+  "historical_core_all_equal_to_new_manifest": true,
+  "engineering_differences": [
+    "Original warmup then fork through run.train; new monolithic experiment.py with same phase_indices, phase seeding, trainer.update, T catalog refresh and evaluate functions",
+    "Original two GPUs host four independent single-GPU processes; new one GPU per job",
+    "Original compute group H100 cuda13.2; new H100 cuda12.8",
+    "Original container pytorch:25.06-py3:25.06; new ngc-pytorch:25.02-cuda12.8.0-py3"
+  ],
+  "same_conda_executable": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+  "limits": [
+    "Same Conda path does not prove immutable runtime package or driver versions",
+    "No same-seed replay through the new wrapper has been performed",
+    "R5 same-seed H0/H1 pair checks do not establish equivalence to original seed2024 execution",
+    "Final full prediction audit remote CLI returned exit14 without JSON; acceptance not yet confirmed"
+  ],
+  "live_2025_H0_binding_check": {
+    "success": true,
+    "data": {
+      "status": "success",
+      "returncode": 0,
+      "output": "{\"data_equal\": true, \"asset_manifest_equal\": true, \"engine_equal\": true}"
+    }
+  },
+  "prior_cross_environment_replay": {
+    "source": "experiments/09_kuairec_listwise/h1_replay_r5_r20_20261105_r1/FIRST_UPDATES_COMPARISON.json",
+    "group": "H100 cuda12.8",
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "matched_updates": 91,
+    "scope": "40 T and first 51 R updates, all logged fields except attempt identical; original trainer entrypoint, not current multi-seed wrapper; not proof of entire-run identity"
+  },
+  "interpretation": "No detected scientific config or core code change beyond seed for H0. Execution wrapper, process placement and platform image/group differ. Seed-only causal attribution is not established by static audit. Prior replay reduces but does not eliminate environment concern."
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "workload": {"notebook": "env-zzl", "workspace": "CPU资源空间", "project": "公共科研项目", "device": "cpu"},
+  "project_root": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+  "staging_directory": "/tmp/experiment1_sid_diagnostic_20261011_v1",
+  "source_delivery": "explicit temporary diagnostic package; no full repository synchronization",
+  "local_base_commit": "fea2f06",
+  "remote_base_commit": "594b6add85c0a72731890fa45fa67d414fa358a2",
+  "remote_engine_commit": "39e94e6153c97e59877ba02d4ef1d9a202ed5384",
+  "remote_existing_change_preserved": "INSPIRE.md",
+  "source_archive_sha256": "b6b6996041a706d45db67ceed3a4e86c89b7a85a118722552b789dbd4c67a844",
+  "script_sha256": "32abb409099e57f713342321882ce22fe043e52afa6492e5f9212c17f20c4d5e",
+  "tests_sha256": "68cd5285e7fcce6791726031e2f4e8f165d9a1d7474f543b66128ad08e72e72e",
+  "input_config_sha256": "8be65fea9b66048577458fa1759615a90daa4a68a18da9c4eced0d141c88ff68",
+  "historical_asset_lock_sha256": "b4329bdfb61cafbb51e59d6261313b7e8c31eecaf3271e7025ac1dbd09f2cb71",
+  "test_result": {"passed": 25, "failed": 0, "seconds": 0.477, "reference_checks": ["runtime squared_distances bitwise equality", "runtime DIGER hard assignments equality"]},
+  "local_integration_checks": {"stdlib_reproduction_suites": 6, "stdlib_reproduction_tests_passed": 78, "runtime_path_tests_passed": 17, "runtime_path_tests_skipped": 3, "git_diff_check": "passed", "report_links": "passed", "execution_context": "normal Windows temporary directory; sandbox temporary-directory failure resolved by unsandboxed test retry"},
+  "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /tmp/experiment1_sid_diagnostic_20261011_v1/scripts/analysis/analyze_diger_sid_consistency.py --project-root /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized --config /tmp/experiment1_sid_diagnostic_20261011_v1/configs/diagnostics/diger_sid_consistency_seed2024.json --output-dir /tmp/experiment1_sid_diagnostic_20261011_v1/results",
+  "result": {"elapsed_seconds": 13.97924558352679, "summary_sha256": "ba01ac32eea45d67bcb2c0f56aad9177a1e208d86b75910b05a5743485bf2a5d", "output_config_sha256": "153c760f79bd380de7fed97d7c0b0081b936029916b3e66aff8dc3da9059eb5d", "download_checksum_verified": true, "input_files": 22, "historical_asset_matches": 17, "all_best_sid_recomputations_exact": true},
+  "not_performed": ["GPU allocation", "model training", "historical result mutation", "Git commit", "last-state reconstruction"]
+}

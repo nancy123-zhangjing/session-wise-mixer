@@ -1,0 +1,253 @@
+{
+  "status": "PRE_BACKUP_EVIDENCE_REVIEW_PASS_NOT_FINAL_DELIVERY",
+  "verified_utc": "2026-10-20T12:46:04.991939+00:00",
+  "sources": {
+    "pair_audit": {
+      "path": "experiments/07_item_local_attention/joint_alternating/JOINT_PAIR_AUDIT_20261020_r3.json",
+      "sha256": "89ef854c9aef7abc7ed8c9dc0ba357e13e92680cffa7de2c3a3114d5954e4822",
+      "size_bytes": 20988
+    },
+    "remote_cpu_tests": {
+      "path": "experiments/07_item_local_attention/joint_alternating/postprocess_tools_r3/REMOTE_CPU_TESTS.json",
+      "sha256": "9463ead5bf829293cc7b31c48f3d9cbd24aad50a3fc3153e34285efec3908c01",
+      "size_bytes": 1900
+    },
+    "resource_ledger": {
+      "path": "experiments/07_item_local_attention/joint_alternating/ALLOCATION_FINAL_R2.json",
+      "sha256": "a99f0a00ca3bf8123d51303ddc406bb8217d281e203a19c937a9d6f98023177f",
+      "size_bytes": 13061
+    },
+    "final_job_inventory": {
+      "path": "experiments/07_item_local_attention/joint_alternating/FINAL_GOAL_JOB_INVENTORY_R2.json",
+      "sha256": "7dd14eea1a86df2ae7884f3850861ca4dd7aa636e52e43e5b5766f847482ed0a",
+      "size_bytes": 2556
+    },
+    "completion": {
+      "path": "experiments/07_item_local_attention/joint_alternating/progress_snapshots/item_local_formal_completed_20261020.json",
+      "sha256": "1e9b1285257f42e7e39a7f7434e1fcdb2ee22b2d53e60279af03d3e75f779538",
+      "size_bytes": 38924
+    },
+    "arithmetic": {
+      "path": "experiments/07_item_local_attention/joint_alternating/RESULTS_COMPARISON_R2.json",
+      "sha256": "3b32700dc4feabe5dd771d5fbc9399748d54999f03b0ecf85efa7a797c03e07d",
+      "size_bytes": 9065
+    },
+    "old_precision_diagnosis": {
+      "path": "experiments/07_item_local_attention/joint_alternating/SID_PRECISION_DIAGNOSIS_20261020_2030.json",
+      "sha256": "16f7c0d7a98a19be991df01c99317b008867dcdc07030f04c796738ef786ec10",
+      "size_bytes": 11026
+    },
+    "auditor_r3": {
+      "path": "experiments/07_item_local_attention/joint_alternating/postprocess_tools_r3/scripts/analysis/audit_item_local_joint_pair.py",
+      "sha256": "60fc621973140f6af71b1914505142ef566d611ee972fbbe10fc1050a06c6615",
+      "size_bytes": 45010
+    }
+  },
+  "scope": "Read-only receipt/hash/arithmetic review only; no tests rerun, remote access, model loading or backup verification.",
+  "precision": {
+    "total_code_positions": 193616,
+    "common_exact_matching_modes": [
+      "tf32_nearest_even_cpu",
+      "tf32_nearest_ties_away_cpu"
+    ],
+    "states": {
+      "control/best": {
+        "positions": 48404,
+        "matching_modes": [
+          "tf32_nearest_even_cpu",
+          "tf32_nearest_ties_away_cpu"
+        ],
+        "strict_fp32_mismatches": 1,
+        "strict_fp64_old_tolerance_failures": 1,
+        "strict_fp64_maximum_gap": 1.8232579739041466e-05,
+        "TF32_minimum_margin": 1.6063451766967773e-05
+      },
+      "control/last": {
+        "positions": 48404,
+        "matching_modes": [
+          "tf32_nearest_even_cpu",
+          "tf32_nearest_ties_away_cpu"
+        ],
+        "strict_fp32_mismatches": 4,
+        "strict_fp64_old_tolerance_failures": 4,
+        "strict_fp64_maximum_gap": 6.0145965772084864e-05,
+        "TF32_minimum_margin": 8.702278137207031e-06
+      },
+      "item_local/best": {
+        "positions": 48404,
+        "matching_modes": [
+          "tf32_nearest_even_cpu",
+          "tf32_nearest_ties_away_cpu"
+        ],
+        "strict_fp32_mismatches": 3,
+        "strict_fp64_old_tolerance_failures": 3,
+        "strict_fp64_maximum_gap": 1.8938571795357184e-05,
+        "TF32_minimum_margin": 2.980232238769531e-07
+      },
+      "item_local/last": {
+        "positions": 48404,
+        "matching_modes": [
+          "tf32_nearest_even_cpu",
+          "tf32_nearest_ties_away_cpu"
+        ],
+        "strict_fp32_mismatches": 4,
+        "strict_fp64_old_tolerance_failures": 4,
+        "strict_fp64_maximum_gap": 0.00010460294321379404,
+        "TF32_minimum_margin": 9.119510650634766e-06
+      }
+    },
+    "limitation": "CPU TF32 operand-rounding consistency is not proof of historical CUDA flags; strict FP32/FP64 discrepancies remain retained."
+  },
+  "training_selection_and_test": {
+    "control": {
+      "selection": {
+        "completed_epochs": 45,
+        "best_epoch": 25,
+        "best_val_score": 0.05247399556222619,
+        "stop_reason": "max_epochs",
+        "eval_count": 8,
+        "no_improve_count": 3,
+        "decoder_epochs_completed": 35,
+        "tokenizer_epochs_completed": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      },
+      "actual_Adam_state_count": 85,
+      "phase_count": 45,
+      "test_calls": 1,
+      "checkpoint_hashes": {
+        "complete_sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417",
+        "result_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+        "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f"
+      },
+      "terminal_last_sha256_referenced_by_fit": "4b20f1e9399043583b140f71496ee09c644e88dba52a3b673464e8ea637ec156",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1"
+    },
+    "item_local": {
+      "selection": {
+        "completed_epochs": 45,
+        "best_epoch": 25,
+        "best_val_score": 0.05423174543616992,
+        "stop_reason": "max_epochs",
+        "eval_count": 8,
+        "no_improve_count": 3,
+        "decoder_epochs_completed": 35,
+        "tokenizer_epochs_completed": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      },
+      "actual_Adam_state_count": 91,
+      "phase_count": 45,
+      "test_calls": 1,
+      "checkpoint_hashes": {
+        "complete_sha256": "5376fcdbc61f46f4f74617c4fcf91fe0a10786bc0a79728558a230cd7276dae3",
+        "result_sha256": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+        "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b"
+      },
+      "terminal_last_sha256_referenced_by_fit": "5c85628b69b2939bd4b7c8690c5316259f2dc1eccf84cca0cbeaf534789595c5",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2"
+    }
+  },
+  "formal_audit_boundary": "SHA-bound r3 auditor retains actual best/last/embedded-best, slots/phase/Adam/config/input/selection/once-test gates. This review cross-checks its receipt against preserved completion evidence; it does not rerun that auditor.",
+  "test_screening": {
+    "required_ndcg10_relative_increase": 0.03,
+    "observed_ndcg10_relative_increase": 0.004249723882453038,
+    "ndcg10_requirement_met": false,
+    "hr10_not_decreased": true,
+    "screening_met": false,
+    "scope": "Arithmetic screening of observed final-test values; full paired artifact acceptance remains pending."
+  },
+  "resources": {
+    "jobs": [
+      {
+        "job_name": "nancy-stage07-item-local-smoke-20261020-0045",
+        "seconds": 204.0,
+        "status": "FAILED",
+        "pod_deleted_local": "2026-10-20T00:55:10+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-smoke-20261020-0045-r2",
+        "seconds": 184.0,
+        "status": "SUCCEEDED",
+        "pod_deleted_local": "2026-10-20T01:02:47+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-formal-20261020-0045",
+        "seconds": 10885.0,
+        "status": "CANCELLED",
+        "pod_deleted_local": "2026-10-20T04:07:54+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-ocn-repair-profile-20261020-r1",
+        "seconds": 364.0,
+        "status": "CANCELLED",
+        "pod_deleted_local": "2026-10-20T10:58:04+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-joint-smoke-20261020-r1",
+        "seconds": 102.0,
+        "status": "FAILED",
+        "pod_deleted_local": "2026-10-20T11:25:14+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-joint-smoke-20261020-r1-r2",
+        "seconds": 207.0,
+        "status": "SUCCEEDED",
+        "pod_deleted_local": "2026-10-20T11:41:10+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-joint-formal-control-20261020-r1-r2",
+        "seconds": 7892.0,
+        "status": "SUCCEEDED",
+        "pod_deleted_local": "2026-10-20T18:17:50+08:00"
+      },
+      {
+        "job_name": "nancy-stage07-item-local-joint-formal-item-local-20261020-r1-r2",
+        "seconds": 6903.0,
+        "status": "SUCCEEDED",
+        "pod_deleted_local": "2026-10-20T20:23:56+08:00"
+      }
+    ],
+    "unique_jobs": 8,
+    "total_seconds": 26741,
+    "total_GPU_hours": 7.428055555555556,
+    "budget_GPU_hours": 28,
+    "all_eight_terminal_and_released_in_preserved_inventory": true,
+    "resource_source_file_SHAs_rechecked": {
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/SMOKE_TERMINAL_20261020.json": "aac9ec256af70ec41743f4aa0e8eed4d31b1b489fde1cac11ef4a5863ef01323",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/SMOKE_R1_EVENTS_FINAL_20261020.json": "2070feaec73b10d6cc3314d05bff81a8952408f57c4ab53ea5eba5b180debeb9",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/SMOKE_R2_TERMINAL_20261020.json": "8d656b6ae3d58ba57100e5b474e84ab65645cf99233992c10214e4fa01a51985",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/SMOKE_R2_EVENTS_FINAL_20261020.json": "55b95fd4f631f7afd9f2fd85d3e5587e02e917ed6bda695ecfc1887df3f9f3c4",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/FORMAL_CANCELLED_STATUS_20261020.json": "d15aef886f80884933254cfdfea722a3462c546fa4981e5238f0e7331eb3a24f",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/FORMAL_CANCELLED_EVENTS_20261020.json": "b76996b5e865b62fa8b6e8b0b349ff636e61b809f703e54217b29795d342c2f3",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/FORMAL_EVENTS_START_20261020.json": "b1e99205e87ad712201635b741314404abf705997f5aacaf9ce72a816850fba2",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/ocn_repair_r1/PROFILE_TERMINAL_FOR_JOINT_SCOPE.json": "de991bad10c54efd79a8d44f6725fbfd5a14a21aedb3c1e3c1ae57a5dbe09bdf",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/ocn_repair_r1/PROFILE_EVENTS_STOP_FOR_JOINT_SCOPE.json": "d99e6bccd1cc1f13cfb2c102d35f5ceef0e397cd6d0d366a64d4e3df005363f8",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/execution_acceptance/ocn_repair_r1/PROFILE_EVENTS_SCHEDULED.json": "3c6e700634ab0a3b85338bb4cdc7ecc3d1de4c021c65fdad15200c56b1bce3c2",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/SMOKE_STATUS_AFTER_WAIT.json": "506d2b133899e08a0d77225562b021f2042e007c433ff5dc8a001a584797dc91",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/SMOKE_EVENTS_AFTER_WAIT.json": "a9b559198b713cd2a050e3d69e0780c9d2d14c5cdfa0023886f7ef7804f8b37d",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/SMOKE_R2_STATUS_AFTER_EXIT.json": "4fad2b7f7fbb2168eafd2c27b444adce918a0bdebeb927f6a4cac8d9b3e8139e",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/SMOKE_R2_EVENTS_AFTER_EXIT.json": "1f4a0fa3bc60a62519ddeef96a72748eca46d5fc6117e9416006e59b7f32ef67",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_CONTROL_TERMINAL_STATUS_R2.json": "b867369b565e851eb4575511967e2c027e3162c28aede447aa9d95a4160c805b",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_CONTROL_TERMINAL_EVENTS_R2.json": "93f62329d35a1183bd77bcdbd337efb1e92969c2f3d3d9f589fd625b3309fefd",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_CONTROL_EVENTS_SCHEDULED_R2.json": "00269e6f9f11547765bfd214424da283e125bccc9c3e26d62db4b689e8b37bfb",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_ITEM_LOCAL_TERMINAL_STATUS_R2.json": "ba4f29a8febb23bba2ecdde361b9988fb4003cdfc10adc0d4fe9ce3305cc70ac",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_ITEM_LOCAL_RELEASED_EVENTS_R2.json": "e40c97e2d45964e2cfc8008c68cff3741a12bf7b9cee7c89e08d2ae157a8cb21",
+      "C:/Users/nancy/Documents/experiment1/experiments/07_item_local_attention/joint_alternating/FORMAL_ITEM_LOCAL_EVENTS_SCHEDULED_R2.json": "9be34d55976fa23f7e2180e75edb9d9e0a03283bd49700db6413496b9178f5d9"
+    },
+    "billing_verified": false
+  },
+  "substantive_issue_found": false,
+  "unfinished": [
+    "Remote package completion and PACKAGE/all-part receipts; packing was in progress at delegation.",
+    "Download and local byte restoration with archive/manifest/per-file SHA and size verification.",
+    "CPU readback of all local archived checkpoints, including fourteen mandatory formal/smoke weights/states.",
+    "Actual formal curves and curve-input/selection receipt.",
+    "Final report and combined acceptance after the concrete delivery checks."
+  ],
+  "local_byte_restoration_verified": false,
+  "local_fourteen_checkpoint_readback_verified": false,
+  "actual_curves_verified": false,
+  "full_relocated_resume_verified": false,
+  "goal_complete": false
+}

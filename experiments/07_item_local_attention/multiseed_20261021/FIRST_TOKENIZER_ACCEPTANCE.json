@@ -1,0 +1,81 @@
+{
+  "status": "four_first_tokenizer_phases_passed_observed",
+  "utc": "2026-10-21T15:40:56.548241+00:00",
+  "full_campaign_complete": false,
+  "snapshot": "experiments\\07_item_local_attention\\multiseed_20261021\\PROGRESS_20261021_234021.json",
+  "snapshot_sha256": "a3561821c4dcb94f99af23da1386e83fb4dffd77231872886c3dad1ee3f04801",
+  "runs": [
+    {
+      "seed": 2025,
+      "arm": "control",
+      "completed_phases": 10,
+      "first_tokenizer": {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3565230667591095,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "31032cc3f5718a2dec7d74ddecdfedbad215004be84cf33e2225b57e759640ec",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    },
+    {
+      "seed": 2025,
+      "arm": "item_local",
+      "completed_phases": 6,
+      "first_tokenizer": {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.32965925335884094,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "6f5652d360b6fd2d030bd2981a76c89c5241d24a27be485f6dddb766360f064f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "arm": "control",
+      "completed_phases": 6,
+      "first_tokenizer": {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3588983118534088,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a5723f91121a2d23aa174887f20af37cb92ddd1327b190e5273cf59bf987a965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "arm": "item_local",
+      "completed_phases": 7,
+      "first_tokenizer": {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.36437803506851196,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a74ff8d5843ee0afcf38cd5268ce08f875dc35fc33c6a9fa7ca9c5527baaf226",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    }
+  ]
+}

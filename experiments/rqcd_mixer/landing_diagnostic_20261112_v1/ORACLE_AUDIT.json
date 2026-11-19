@@ -1,0 +1,53 @@
+{
+  "content_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1/content_features.npy",
+  "catalog_count": 10728,
+  "distinct_content_vectors": 9832,
+  "arms": {
+    "B0": {
+      "distinct_latent_vectors": 9832,
+      "oracle_errors": 896,
+      "errors_with_identical_input_content": 896,
+      "errors_with_identical_latent_vector": 896,
+      "nonidentical_errors": []
+    },
+    "B1": {
+      "distinct_latent_vectors": 9832,
+      "oracle_errors": 898,
+      "errors_with_identical_input_content": 896,
+      "errors_with_identical_latent_vector": 896,
+      "nonidentical_errors": [
+        {
+          "target": 10706,
+          "rq": 209,
+          "nn": 209,
+          "rq_true_squared_distance_fp64": 0.0,
+          "rq_selected_squared_distance_fp64": 4.012616618664076e-07,
+          "max_abs_z_difference": 0.00028970837593078613,
+          "squared_content_distance_fp64": 1.155607034365481e-06,
+          "target_z_norm": 1.0824353694915771,
+          "fp32_mm_distance_target": 0.0,
+          "fp32_mm_distance_selected": 4.76837158203125e-07
+        },
+        {
+          "target": 10726,
+          "rq": 10625,
+          "nn": 10625,
+          "rq_true_squared_distance_fp64": 0.0,
+          "rq_selected_squared_distance_fp64": 3.544986445088664e-07,
+          "max_abs_z_difference": 0.00022245943546295166,
+          "squared_content_distance_fp64": 7.310652966424491e-07,
+          "target_z_norm": 1.1817725896835327,
+          "fp32_mm_distance_target": 2.384185791015625e-07,
+          "fp32_mm_distance_selected": 4.76837158203125e-07
+        }
+      ]
+    },
+    "B2": {
+      "distinct_latent_vectors": 9832,
+      "oracle_errors": 896,
+      "errors_with_identical_input_content": 896,
+      "errors_with_identical_latent_vector": 896,
+      "nonidentical_errors": []
+    }
+  }
+}

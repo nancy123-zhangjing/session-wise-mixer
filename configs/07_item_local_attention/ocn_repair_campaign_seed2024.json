@@ -1,0 +1,38 @@
+{
+  "campaign_id": "stage07_ocn_repair_seed2024_20261020_r1",
+  "seed": 2024,
+  "engine_commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+  "legacy_engine_commit": "1dc2a0c5ad01e2a2878b9de400b91f3a7e809f25",
+  "variants": {
+    "control": "ocn_repair_control_seed2024.json",
+    "item_local": "ocn_repair_item_local_seed2024.json"
+  },
+  "budget": {
+    "cumulative_allocated_gpu_hours_limit": 28.0,
+    "legacy_allocated_gpu_seconds": 11273,
+    "legacy_receipt": "experiments/07_item_local_attention/execution_acceptance/RECOVERY_PRIOR_ALLOCATION_AUDIT_20261020.json",
+    "profile_platform_max_seconds": 1800,
+    "profile_process_max_seconds": 1650,
+    "gpu_count": 1,
+    "gpu_type": "H100"
+  },
+  "protocol": {
+    "baseline": "new repaired control",
+    "historical_03_results": "background only",
+    "evaluation_level": "sid",
+    "maximum_epochs": 200,
+    "seed_count_per_variant": 1,
+    "from_scratch": true,
+    "allow_legacy_epoch84_resume": false,
+    "test_calls_per_variant": 1
+  },
+  "formal_launch_gate": {
+    "require_successful_H100_profile_for_both_variants": true,
+    "require_all_parameter_gradients_and_optimizer_states": true,
+    "require_actual_checkpoint_recovery": true,
+    "require_common_initial_state_and_rng": true,
+    "require_measured_budget_estimate": true,
+    "require_policy_compatible_resource_use": true,
+    "allow_dummy_load_or_policy_evasion": false
+  }
+}

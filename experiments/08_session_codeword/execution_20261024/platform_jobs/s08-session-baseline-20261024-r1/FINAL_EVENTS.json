@@ -1,0 +1,204 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-24 01:35:43",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-24 01:35:43",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:35:43",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:35:46",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod embodied-world-model/<redacted>-worker-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-24 01:35:47",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu182, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-24 01:35:52",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 13 node(s) didn't match Pod's node affinity/selector, 17 Insufficient rdma/hca_shared_devices, 280 Insufficient nvidia.com/gpu, 315 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-24 01:35:57",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 19 Insufficient rdma/hca_shared_devices, 281 Insufficient nvidia.com/gpu, 317 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu, 8 node(s) didn't match Pod's node affinity/selector."
+      },
+      {
+        "time": "2026-10-24 01:36:00",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: 0/697 nodes are unavailable: 19 Insufficient rdma/hca_shared_devices, 281 Insufficient nvidia.com/gpu, 317 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu, 8 node(s) didn't match Pod's node affinity/selector."
+      },
+      {
+        "time": "2026-10-24 01:36:02",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 13 node(s) didn't match Pod's node affinity/selector, 141 Insufficient nvidia.com/gpu, 156 Insufficient rdma/hca_shared_devices, 315 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-24 01:36:08",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 26 Insufficient rdma/hca_shared_devices, 274 Insufficient nvidia.com/gpu, 317 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu, 8 node(s) didn't match Pod's node affinity/selector."
+      },
+      {
+        "time": "2026-10-24 01:36:14",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 14 node(s) didn't match Pod's node affinity/selector, 25 Insufficient rdma/hca_shared_devices, 271 Insufficient nvidia.com/gpu, 315 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-24 01:36:17",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: 0/697 nodes are unavailable: 14 node(s) didn't match Pod's node affinity/selector, 25 Insufficient rdma/hca_shared_devices, 271 Insufficient nvidia.com/gpu, 315 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-24 01:36:18",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 11 node(s) didn't match Pod's node affinity/selector, 24 Insufficient rdma/hca_shared_devices, 275 Insufficient nvidia.com/gpu, 315 Insufficient memory, 5 node(s) were unschedulable, 67 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-24 01:36:21",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu182"
+      },
+      {
+        "time": "2026-10-24 01:36:22",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-24 01:36:22",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-24 01:36:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-24 01:36:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-24 01:36:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-24 01:36:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      },
+      {
+        "time": "2026-10-24 01:38:24",
+        "type": "Warning",
+        "reason": "JobReservingStart",
+        "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:1"
+      },
+      {
+        "time": "2026-10-24 01:38:24",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 1, reason:Error"
+      },
+      {
+        "time": "2026-10-24 01:38:24",
+        "type": "Normal",
+        "reason": "PyTorchJobFailed",
+        "message": "PyTorchJob <redacted> is failed because 1 Worker replica(s) [<redacted>-worker-0] failed."
+      },
+      {
+        "time": "2026-10-24 01:38:24",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "PodReservingStart",
+        "message": "Pod start reserving, exitCode:1"
+      },
+      {
+        "time": "2026-10-24 01:38:36",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-24 01:38:36",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:38:36",
+        "type": "Normal",
+        "reason": "SuccessfulDeleteService",
+        "message": "Deleted service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:38:37",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-24 01:38:49",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-24 01:38:50",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      }
+    ]
+  },
+  "queried_unix": 1792777240.5613983
+}

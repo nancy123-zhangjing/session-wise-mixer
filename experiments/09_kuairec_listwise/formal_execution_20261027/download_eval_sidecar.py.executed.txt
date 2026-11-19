@@ -1,0 +1,25 @@
+"""Download a completed evaluation archive, verify SHA, then restore separately."""
+import hashlib,json,os,shutil,subprocess,sys
+from pathlib import Path
+D=Path(__file__).resolve().parent
+ROOT=D.parents[2]
+F=ROOT/'experiments/09_kuairec_listwise/formal_execution_20261027'
+G='/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1'
+def sha(p):
+    h=hashlib.sha256()
+    with p.open('rb') as f:
+        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
+    return h.hexdigest()
+os.environ['NO_PROXY']='.sii.edu.cn,<institution-host>'
+receipt=json.loads((D/'SIDECAR_EVALUATIONS_REMOTE_PASS_20261028.json').read_text(encoding='utf-8'))
+for remote,digest in [(receipt['manifest'],receipt['manifest_sha256']),(receipt['archive']['path'],receipt['archive']['sha256'])]:
+    dest=D/Path(remote).name
+    if dest.exists():
+        if sha(dest)!=digest:raise RuntimeError('Partial destination exists; explicit resume required')
+    else:
+        r=subprocess.run([shutil.which('inspire'),'--account','sii-shared','notebook','scp','nancy-stage09-prep-20261027-r1','--workspace','CPU资源空间',G+'/'+remote,str(dest),'--download','--timeout','300'],capture_output=True,encoding='utf-8',errors='replace',timeout=330)
+        if r.returncode:raise RuntimeError('SCP failed; private output withheld, partial file retained')
+        if sha(dest)!=digest:raise RuntimeError('Downloaded SHA mismatch')
+    print(json.dumps(dict(file=dest.name,bytes=dest.stat().st_size,sha256=digest,status='PASS')),flush=True)
+r=subprocess.run([sys.executable,'-B',str(F/'backup_final_sidecars_r2.py'),'restore','--scope','evaluations','--archive',str(D/Path(receipt['archive']['path']).name),'--manifest',str(D/Path(receipt['manifest']).name),'--manifest-sha256',receipt['manifest_sha256'],'--restore-name','goal_20261027_r1'])
+raise SystemExit(r.returncode)

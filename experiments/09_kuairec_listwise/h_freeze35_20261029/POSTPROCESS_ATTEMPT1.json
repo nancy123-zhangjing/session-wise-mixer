@@ -1,0 +1,19 @@
+{
+  "status": "postprocess_git_restore_attempt_failed_preserved",
+  "checked_utc": "2026-10-30T04:00:28.616245+00:00",
+  "content_commit": "e1e7e7832b4a829e71cf60140c24db6ef55a2a18",
+  "attempt_dir": "outputs/stage09_restore/h_freeze35_20261029_postprocess_e1e7e7832b4a",
+  "initial_exit": 1,
+  "failed_step": "fresh git checkout --detach (exit128); bundle and raw tar extraction had completed but no final success receipt was emitted",
+  "diagnostic_repeat": "checkout aborted because files created by initial failed checkout were untracked; no force/reset/deletion performed",
+  "diagnostic_path": "outputs\\stage09_restore\\h_freeze35_20261029_postprocess_e1e7e7832b4a\\CHECKOUT_DIAGNOSTIC.txt",
+  "diagnostic_sha256": "9da8b66742408988820e27967fc5d032dbf5f5b65e869c304b1b90b65854561c",
+  "windows_path_observation": {
+    "max_checkout_path_chars": 327,
+    "paths_over_259": 155,
+    "core_longpaths_config_not_set": true
+  },
+  "cause_boundary": "Initial Git stderr was not retained by the first helper. Long-path handling is a supported corrective measure based on observed path lengths, not proof of the original exception text.",
+  "correction": "Enable core.longpaths=true per Git invocation only, retain failed tree, create a separate fresh backup/clone bound to the next content commit. No global config or scientific inputs changed.",
+  "goal_complete": false
+}

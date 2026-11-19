@@ -1,0 +1,91 @@
+{
+  "status": "CONTINUE_SAME_BOUNDED_JOB",
+  "created_utc": "2026-10-20T09:22:59.271477+00:00",
+  "phase_observation_scope": "First 25 completed logical phases only; later live progress is saved separately",
+  "counts": {
+    "completed_recommender_epochs": 20,
+    "completed_tokenizer_phases": 5,
+    "recommender_updates": 2080,
+    "tokenizer_updates": 30,
+    "full_validations": 5
+  },
+  "all_recorded_active_tensors_changed": true,
+  "all_recorded_frozen_tensors_unchanged": true,
+  "all_recorded_active_gradients_finite": true,
+  "all_recorded_catalogue_mappings_match": true,
+  "all_tokenizer_direct_recommendation_gradients_positive": true,
+  "all_tokenizer_nearest_assignments_verified": true,
+  "observed_mean_seconds": {
+    "recommender": 150.55531434630046,
+    "tokenizer": 8.680236567599058,
+    "validation": 239.5552793517996
+  },
+  "forecast": {
+    "full_train_val_point_plus_500s": 7772.680602610904,
+    "full_max_observed_phase_forecast_plus_500s": 8514.693568009989,
+    "old_1_25_formula_plus_500s": 9590.85075326363,
+    "training_window_seconds": 9150,
+    "test_reserve_seconds": 1200,
+    "train_protocol_changed": false,
+    "deadline_changed": false
+  },
+  "validation": {
+    "0": {
+      "hit_rate@10": 0.0651075437105934,
+      "ndcg@10": 0.04458539024990232,
+      "weighted_score": 0.04868982132797947
+    },
+    "5": {
+      "hit_rate@10": 0.06582301122389661,
+      "ndcg@10": 0.044908010064875915,
+      "weighted_score": 0.049091010690081906
+    },
+    "12": {
+      "hit_rate@10": 0.06627017841971113,
+      "ndcg@10": 0.04711479903712062,
+      "weighted_score": 0.05094587528625104
+    },
+    "19": {
+      "hit_rate@10": 0.06734337968966597,
+      "ndcg@10": 0.047153401842847824,
+      "weighted_score": 0.051191397801881845
+    },
+    "25": {
+      "hit_rate@10": 0.06904261503376112,
+      "ndcg@10": 0.048331840190596186,
+      "weighted_score": 0.05247399556222619
+    }
+  },
+  "first_max_score_epoch_in_csv": 25,
+  "test_rows": 0,
+  "final_checkpoint_verified": false,
+  "second_formal_authorized_to_launch_by_this_record": false,
+  "goal_complete": false,
+  "limitations": [
+    "This is an intermediate timing and recorded-phase review, not final training/checkpoint acceptance.",
+    "Point and observed-maximum forecasts fit, but original 25 percent extra time formula still exceeds the training window.",
+    "Second-arm launch still requires completed-control full runtime and test timing, release, actual cumulative allocation and live policy gates."
+  ],
+  "sources": {
+    "epoch_timings.json": {
+      "sha256": "ba65a16455c606e2f77f1916d843f3e2358fd081a9691a9feb7f629c0be3c139",
+      "size_bytes": 1993
+    },
+    "phase_integrity.json": {
+      "sha256": "397c44a5556f7ab7b2fddcc1b1516a5d54c1e89b270614c76f8d2da8bed2a17c",
+      "size_bytes": 168733
+    },
+    "evaluation_timings.json": {
+      "sha256": "f198fd34858da6a8d46d72c4ccc19b2e292404442774e27abb4f69a42fc241ef",
+      "size_bytes": 611
+    },
+    "evaluation_metrics.csv": {
+      "sha256": "9281122e86a6bf32685cd7598e1864be23178e01c1edf4d71a71f331d2aea574",
+      "size_bytes": 2289
+    },
+    "LIVE_OBSERVATION_AFTER_VAL25.json": {
+      "sha256": "15a1b48507c80bf8bd8f664589fcd43a54cb85e8395f2e154db3538ed0403390",
+      "size_bytes": 7153
+    }
+  }
+}

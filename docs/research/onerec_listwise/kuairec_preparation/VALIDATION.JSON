@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "test_samples_checked": 53194,
+    "train_samples_checked": 709443,
+    "validation_samples_checked": 71657
+  },
+  "checks_description": [
+    "mapped IDs and PAD",
+    "history and target length/order/masks/feedback",
+    "strict history cutoff",
+    "distinct five-item targets",
+    "whole-session temporal split",
+    "target span and playback sums",
+    "training-only optional flag",
+    "block/sample identities",
+    "unique nonoverlapping target events across all samples and splits"
+  ],
+  "passed": true,
+  "quantile_rank_checks": [
+    {
+      "cut_us": 1598609167593000,
+      "events_below_cut": 9250223,
+      "events_equal_cut": 1,
+      "passed": true,
+      "quantile": 0.8,
+      "rank_one_based": 9250224
+    },
+    {
+      "cut_us": 1598881785624000,
+      "events_below_cut": 10406501,
+      "events_equal_cut": 1,
+      "passed": true,
+      "quantile": 0.9,
+      "rank_one_based": 10406502
+    }
+  ],
+  "samples_checked": 834294,
+  "scope": "all emitted samples; source reconstruction is audited separately",
+  "target_events_checked": 4171470,
+  "unique_sample_ids": 834294
+}

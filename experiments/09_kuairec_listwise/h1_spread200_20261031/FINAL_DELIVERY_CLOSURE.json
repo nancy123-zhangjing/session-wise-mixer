@@ -1,0 +1,139 @@
+{
+  "status": "complete_all_requested_science_delivery_restore_and_resource_checks",
+  "goal_complete": true,
+  "at_unix": 1793506980.0071657,
+  "criteria": [
+    {
+      "requirement": 1,
+      "scope": "Frozen protocol/code/config/data/full R5 parent; old evidence preserved",
+      "evidence": [
+        "PROTOCOL.md",
+        "PARENT_BINDING.json",
+        "PREFLIGHT_ACCEPTED.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 2,
+      "scope": "Only D; reused R5, 10*(20T+3R), strict R35/T200 and original scientific configuration",
+      "evidence": [
+        "final_analysis/ANALYSIS.json",
+        "COLD_RESTORE.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 3,
+      "scope": "All ordered paired batches, saved T RNG across R, original 400T noise and 35R LR clocks",
+      "evidence": [
+        "ALL_T200_ACCEPTED.json",
+        "COLD_RESTORE.json",
+        "final_analysis/ANALYSIS.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 4,
+      "scope": "Targeted CPU and real single-H100 CUDA next-T/R, isolation and safe continuation",
+      "evidence": [
+        "CPU_TESTS.json",
+        "PREFLIGHT_ACCEPTED.json",
+        "ASYNC_DELIVERY_AUDIT.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 5,
+      "scope": "All five GPU attempts including failure/start/release; <=24h, short tests <=0.5h, max one H100; listed cost vs settlement separated",
+      "evidence": [
+        "FINAL_GPU_RESOURCE_AUDIT.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 6,
+      "scope": "Ten full validations, locked common-grid best, only two new tests, all new metrics and 2000 paired-user bootstrap; historical A/C reused",
+      "evidence": [
+        "final_analysis/ANALYSIS.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 7,
+      "scope": "31 diagnostic states/11 catalog snapshots/4-slot usage and unchanged fixed time/frequency groups; H0 separately historical; no causal claim",
+      "evidence": [
+        "final_process/PROCESS.json",
+        "final_temporal/TEMPORAL.json"
+      ],
+      "status": "passed"
+    },
+    {
+      "requirement": 8,
+      "scope": "Chinese report/4 reviewed curves; full SHA archive/fresh extraction/7 real cold restores/all41 states/science backup; every GPU released and both CPUs stopped",
+      "evidence": [
+        "COLD_RESTORE.json",
+        "final_report_r2/VISUAL_REVIEW_ACCEPTED.json",
+        "FINAL_GPU_RESOURCE_AUDIT.json",
+        "delivery/SCIENCE_DELIVERY_REMOTE_VERIFIED.json",
+        "closure_cpu_r1/"
+      ],
+      "status": "passed"
+    }
+  ],
+  "report": "final_report_r2/REPORT.md",
+  "selected_epoch": 23,
+  "fixed_test": {
+    "baseline": 0.008956341761612958,
+    "treatment": 0.005528385500732038,
+    "delta": -0.00342795626088093,
+    "relative_delta": -0.3827406715957638,
+    "confidence_interval": [
+      -0.0038839484876958276,
+      -0.002975842599966817
+    ]
+  },
+  "best_test": {
+    "baseline": 0.009430792222931613,
+    "treatment": 0.008074436410928235,
+    "delta": -0.0013563558120033908,
+    "relative_delta": -0.14382204378390603,
+    "confidence_interval": [
+      -0.001854786115176182,
+      -0.0008936153203737087
+    ]
+  },
+  "gpu_hours_upper": 14.375277777777777,
+  "preflight_seconds_upper": 834.0,
+  "actual_settlement_verified": false,
+  "evidence_sha256": {
+    "PROTOCOL.md": "bc37cd09a99b6275871179730fe676b3e4b8361f51f67c08615068a8cf267982",
+    "PARENT_BINDING.json": "bcb90d40222300c39a84563af90c80efeda771cdc2e8bdadf31666bc0d9d9613",
+    "CPU_INPUT_ACCEPTANCE.json": "d5437f825813b6c66f71de81f33e2373d46b0348b4d529aa9d6677b36cd5d746",
+    "CPU_TESTS.json": "cbe606d50ca7e1acd1560e6800c8fa575b0d0e6e8dfaceeec5b140828afad1a5",
+    "PREFLIGHT_ACCEPTED.json": "aaaa85a65d3b35411a5df2f7f87e2e676501887a1f93927737c399c924e1e85d",
+    "ALL_T200_ACCEPTED.json": "9f2485a26df947329b137cbbaa53212d84f05d3d1db14f6d38605d464e1d843d",
+    "COLD_RESTORE.json": "d08ef57e4ccab92d05787baa7293f687416153a5ccb7042842d3ed34bf0d0b53",
+    "ASYNC_DELIVERY_AUDIT.json": "a094eb96a3c697491a690c21bb86b0ae32272405eefa2edab016190cc21a1990",
+    "FINAL_GPU_RESOURCE_AUDIT.json": "55bf8569441d41b228be3dba529262cc85e7a7e2324e95e4cc628b1eba405ff2",
+    "final_analysis/ANALYSIS.json": "5cc04a637140d94d198c1a2e0132cf09b83d03cac152e82ac9e5da675add44e8",
+    "final_temporal/TEMPORAL.json": "21815f2303417cc3f3f7105ef186152e78113f27e64f4bb2c6c890a933395316",
+    "final_process/PROCESS.json": "8e1a092bf36781df870036519cf8efff7976c5b117d6271787e2ae603e2cae87",
+    "final_report_r2/REPORT.md": "65510226fb3e362dc9c8b048e7369b86d991e23cff55738848fc1d22f6fc0353",
+    "final_report_r2/VISUAL_REVIEW_ACCEPTED.json": "6ae0237a324aa81a4c3cc2d2e5eacf3794698e951b655e240b27c203aaadb92d",
+    "TOOLS_MANIFEST_R3.json": "d73bf4c5507ea2aeb9ee13ea4cbcc8d7bd9208c314f3a8786ae4f015ebb5f181",
+    "delivery/ARCHIVE_RECEIPT.json": "696e55b0a766cd8f68a5e17043d195648f55192e501406af43f5188b0154a9ee",
+    "delivery/SCIENCE_DELIVERY_RECEIPT_R1.json": "e5736c3460dbdd3a8fc5a5dbd3b72f56cc1a887774aee77daaafa1388e6b9248",
+    "delivery/SCIENCE_DELIVERY_REMOTE_VERIFIED.json": "5fa58747320de8c7ee3b62e3b09032fd621dadf674d74c1de13a364706bd308e",
+    "LOCAL_WORK_PROCESSES_CLOSED.json": "607812038a53daba0d8f71502c752e86f6afb50ce4ce9024a22872d75d16afbe",
+    "closure_cpu_r1/nancy-s09-d-prep-1031-r1_status.json": "a94975493bc642685e219aa6c9cacd35330abc78098c583a7fbd19f2614d1034",
+    "closure_cpu_r1/nancy-s09-d-prep-1031-r2_status.json": "8a65ad63c356716e601a6f7de36d0641f943b76371ce79d2bd1b306f46aedeac",
+    "closure_cpu_r1/r2_stop_lifecycle_verified.json": "0031086caa021317764f56f56ff9aa386cc976a6419b0124f5c76e27f1d8494b"
+  },
+  "verified_scientific_input_files": 268,
+  "auditor_sha256": "591906c1b69f7d9a2bca080a31d13be01f49f190198a4dd1b72e5adf3711709b",
+  "limits": [
+    "One seed and post-hoc schedule; user bootstrap is conditional on fixed models.",
+    "No MEDA reset, new H0/seed/T-budget branch, old-model inference, Feishu write or external message added.",
+    "CPU cold restoration omits applying CUDA RNG; authenticated CUDA states remain intact and CUDA next-step restoration was tested separately."
+  ]
+}

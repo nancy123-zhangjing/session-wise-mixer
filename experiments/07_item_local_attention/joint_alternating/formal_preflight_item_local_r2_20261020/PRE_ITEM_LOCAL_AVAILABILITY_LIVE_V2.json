@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "workspace": "分布式训练空间",
+        "compute_group": "开发区-H100-cuda13.2版本-183核",
+        "kind": "gpu",
+        "gpu_type": "NVIDIA H100 (80GB)",
+        "total_gpus": 1285,
+        "used_gpus": 1301,
+        "available_gpus": -16,
+        "high_priority_available_gpus": 310,
+        "low_priority_gpus": 326,
+        "total_nodes": 165,
+        "ready_nodes": 161,
+        "free_nodes": 0,
+        "gpus_per_node": 8,
+        "full_free_nodes": 0,
+        "reclaimable_nodes": 10,
+        "high_priority_free_nodes": 10,
+        "full_free_gpus": 0,
+        "high_priority_free_gpus": 80,
+        "node_specs": [
+          {
+            "node_type": "gpu",
+            "gpu_type": "H100",
+            "gpu_count": 8,
+            "cpu_count": 183.0,
+            "memory_gib": 1888.0,
+            "job_types": [
+              "distributed_training",
+              "inference_serving_customize",
+              "inference_serving_exclusive",
+              "interactive_modeling",
+              "tensorboard"
+            ]
+          },
+          {
+            "node_type": "gpu",
+            "gpu_type": "H100",
+            "gpu_count": 8,
+            "cpu_count": 183.0,
+            "memory_gib": 1887.0,
+            "job_types": [
+              "distributed_training",
+              "inference_serving_customize",
+              "inference_serving_exclusive",
+              "interactive_modeling",
+              "tensorboard"
+            ]
+          },
+          {
+            "node_type": "gpu",
+            "gpu_type": "H100",
+            "gpu_count": 6,
+            "cpu_count": 119.0,
+            "memory_gib": 1888.0,
+            "job_types": [
+              "distributed_training",
+              "inference_serving_customize",
+              "inference_serving_exclusive",
+              "interactive_modeling",
+              "tensorboard"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

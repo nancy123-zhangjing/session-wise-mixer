@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "verified_training_runs": 89,
+  "raw_curves": 89,
+  "validation_only_selected_model": "sasrec_fullce",
+  "selection": {
+    "sasrec_fullce": {
+      "trial_id": "sasrec_fullce_13",
+      "confirmation_means": [
+        {
+          "trial_id": "sasrec_fullce_13",
+          "NDCG@10": 0.05618383995578209,
+          "HR@10": 0.09739301524840138,
+          "parameters": 3900672
+        },
+        {
+          "trial_id": "sasrec_fullce_16",
+          "NDCG@10": 0.05451778421530497,
+          "HR@10": 0.09241455380166644,
+          "parameters": 18831360
+        },
+        {
+          "trial_id": "sasrec_fullce_01",
+          "NDCG@10": 0.05496330256271139,
+          "HR@10": 0.09256360953360461,
+          "parameters": 4690432
+        }
+      ],
+      "formal_validation_mean": {
+        "NDCG@10": 0.05552036368337769,
+        "HR@10": 0.09566694987255735
+      },
+      "parameters": 3900672
+    },
+    "esasrec": {
+      "trial_id": "esasrec_19",
+      "confirmation_means": [
+        {
+          "trial_id": "esasrec_16",
+          "NDCG@10": 0.048664382157769345,
+          "HR@10": 0.08503629507072695,
+          "parameters": 15669248
+        },
+        {
+          "trial_id": "esasrec_19",
+          "NDCG@10": 0.05204478027884104,
+          "HR@10": 0.0853493121077971,
+          "parameters": 10945536
+        },
+        {
+          "trial_id": "esasrec_08",
+          "NDCG@10": 0.050685007392038926,
+          "HR@10": 0.08539402882737855,
+          "parameters": 5475328
+        }
+      ],
+      "formal_validation_mean": {
+        "NDCG@10": 0.051511270979504635,
+        "HR@10": 0.08674149264409962
+      },
+      "parameters": 10945536
+    }
+  },
+  "last_training_finished_unix": 1792134815.9601676,
+  "frozen_selection_original_mtime_unix": 1792134815.963076,
+  "pipeline_phase_times": {
+    "gpu_smoke": 1792127900.2302053,
+    "training_queue": 1792128104.6302578,
+    "final_test": 1792134815.976669,
+    "final_exclusive_benchmark": 1792134828.284114,
+    "gpu_work_complete": 1792134837.1306539
+  },
+  "latest_test_result_original_mtime_unix": 1792134826.6451037,
+  "benchmark_result_original_mtimes_unix": {
+    "sasrec_fullce": 1792134832.06749,
+    "esasrec": 1792134836.670787
+  },
+  "configured_benchmark_gpu_uuid": "GPU-5b538adf-8822-b42b-21d4-3f69ca3ddb57",
+  "workers_at_queue_completion": 0,
+  "evidence_archive_sha256": "2d3ec8ddcec7d1fbf5893b0012cebf6ad8a06d3aca1bab3029813c2f1b3e96ea",
+  "backup_manifest_sha256": "199e4fd05e2bce8da67f34b9460926968d6118262b2b6ac56860f4c34cbf8977",
+  "frozen_selection_sha256": "df8cbfd0fbffd7c4389393738b96e698e5775d597f1a2d6cccaa1008321fb4ad",
+  "audit_script_sha256": "206f3bc9b15331e8f7ced8428f562ed856b953c93faecffd29983c17b06adb1a",
+  "formal_training_details_sha256": "5a77b300f5772130239563f0e38c7e1af548484ca014a245407f4da04add5ec7",
+  "scope": "Recomputed from validation results without training helper imports. Original server mtimes establish ordering; frozen source binds sequential GPU0 benchmark calls after queue drain and synchronous evaluations. No continuous process trace or kernel profile was collected, so per-kernel dtype and absence of external loads are not independently proven."
+}

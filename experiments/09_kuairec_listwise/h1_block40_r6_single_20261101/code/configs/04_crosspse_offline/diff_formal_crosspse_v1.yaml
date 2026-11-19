@@ -1,0 +1,34 @@
+# Cross-PSE tokenizer swap on the frozen DiffGRM v6 protocol.
+run_id: diff_formal_crosspse_4x256_v1_bf16
+reproduction_protocol: controlled_cross_codebook_pse_v1
+protocol_note: frozen original OPQ/PQ centroids plus one learned residual full-codebook self-attention mixer
+
+sid_quantizer: cross_pse
+semantic_n_digit: 4
+crosspse_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_crosspse/Beauty/seed2024/semantic_ids.json
+crosspse_summary_path: ../../outputs/tokenizers/diff_crosspse/Beauty/seed2024/summary.json
+
+# Tokenizer-only parameters. DiffGRM never updates these weights.
+crosspse_attention_scope: full
+crosspse_heads: 4
+crosspse_dropout: 0.0
+crosspse_residual_scale_init: 0.0
+crosspse_train_base_codebooks: false
+crosspse_batch_size: 1024
+crosspse_eval_batch_size: 1024
+crosspse_lr: 0.001
+crosspse_weight_decay: 0.0001
+crosspse_warmup_ratio: 0.05
+crosspse_max_steps: 5000
+crosspse_eval_interval: 100
+crosspse_patience: 10
+crosspse_min_delta: 0.000001
+crosspse_profile_steps: 50
+crosspse_mixed_precision: bf16
+crosspse_balance_weight: 0.01
+crosspse_balance_temperature: 0.1
+crosspse_anchor_weight: 0.1
+
+faiss_omp_num_threads: 16
+force_regenerate_opq: false

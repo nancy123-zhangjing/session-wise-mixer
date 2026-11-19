@@ -1,0 +1,72 @@
+{
+  "schema": "stage07_recovery_attempt2_preflight_v1",
+  "status": "FAIL",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "goal_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045",
+  "next_epoch": 84,
+  "optimizer_updates": 8736,
+  "best_complete_validation": null,
+  "eval_count": 13,
+  "fit_elapsed_seconds": 10717.157906546956,
+  "training_complete": false,
+  "test_started": false,
+  "attempt2_process_receipt_exists": false,
+  "recorded_best_epoch": 75,
+  "recorded_best_val_score": 0.05117739781877923,
+  "created_utc": "2026-10-19T20:19:46.672773+00:00",
+  "failed_checks": [
+    "frozen_configuration_and_source_binding"
+  ],
+  "checks": [
+    {
+      "check": "preserve_original_bytes_before_inspection",
+      "status": "passed",
+      "details": {
+        "backed_up_files": 49,
+        "source_and_copy_sha256_match": true
+      }
+    },
+    {
+      "check": "CPU_last_pt_and_recovery_phase",
+      "status": "passed",
+      "details": {
+        "format": "diffgrm_epoch_boundary_v1",
+        "actual_progress": {
+          "run_id": "stage07_item_local_seed2024_20261020_0045",
+          "goal_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045",
+          "next_epoch": 84,
+          "optimizer_updates": 8736,
+          "best_complete_validation": null,
+          "eval_count": 13,
+          "fit_elapsed_seconds": 10717.157906546956,
+          "training_complete": false,
+          "test_started": false,
+          "attempt2_process_receipt_exists": false,
+          "recorded_best_epoch": 75,
+          "recorded_best_val_score": 0.05117739781877923
+        },
+        "root_INCOMPLETE_marker_preserved": false
+      }
+    },
+    {
+      "check": "frozen_configuration_and_source_binding",
+      "status": "failed",
+      "error_type": "ValueError",
+      "error": "project source commit changed"
+    },
+    {
+      "check": "original_and_backup_bytes_unchanged",
+      "status": "passed",
+      "details": {
+        "original_files_rehashed_unchanged": 49,
+        "backup_files_rehashed_unchanged": 49
+      }
+    }
+  ],
+  "pre_resume_manifest": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/delivery/recovery_attempt2/pre_resume_manifest.json",
+  "original_artifacts_modified": false,
+  "trainer_instantiated": false,
+  "restore_or_truncate_executed": false,
+  "scope": "CPU recovery-input readiness only; prior job termination, GPU release, remaining cumulative budget, and actual resume execution are verified separately",
+  "fit_time_boundary": "Saved fit_elapsed_seconds omits the canceled uncommitted epoch's training and partial validation; use platform lifecycle for GPU time"
+}

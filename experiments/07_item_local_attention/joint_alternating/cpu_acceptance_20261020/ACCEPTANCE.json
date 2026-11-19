@@ -1,0 +1,86 @@
+{
+  "status": "CPU_GATES_PASS",
+  "verified_utc": "2026-10-20T03:10:55.298700+00:00",
+  "source_files": {
+    "external/DiffGRM/genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+    "external/DiffGRM/genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+    "external/DiffGRM/genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+    "tests/test_item_local_alternating_joint.py": "1f10d032e9178ef5aaa2b401d2970f42a0a4f1d8edec6200ae22ca8b5c74f320",
+    "tests/test_item_local_joint_training_state.py": "3974f4ce2cb481db502ec0c579b1275010b4d00a5620b9746fa227a85697e81a"
+  },
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_item_local_training_state.py"
+      ],
+      "returncode": 0,
+      "expected_tests": 8,
+      "reported_test_counts": [
+        "8"
+      ],
+      "passed": true,
+      "log": "experiments\\07_item_local_attention\\joint_alternating\\cpu_acceptance_20261020\\test_item_local_training_state.log",
+      "log_sha256": "4fb2ff8b73db02b615ab9b7d6622adc399bdf060924d1d5be9c318ccadae3d82"
+    },
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_ocn_autocast_gradient.py"
+      ],
+      "returncode": 0,
+      "expected_tests": 4,
+      "reported_test_counts": [
+        "4"
+      ],
+      "passed": true,
+      "log": "experiments\\07_item_local_attention\\joint_alternating\\cpu_acceptance_20261020\\test_ocn_autocast_gradient.log",
+      "log_sha256": "f1c49aba0fccab2034dc8e509d9fe85aabacda99a4424a3fd7846cbfbc3bdf33"
+    },
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_item_local_alternating_joint.py"
+      ],
+      "returncode": 0,
+      "expected_tests": 5,
+      "reported_test_counts": [
+        "5"
+      ],
+      "passed": true,
+      "log": "experiments\\07_item_local_attention\\joint_alternating\\cpu_acceptance_20261020\\test_item_local_alternating_joint.log",
+      "log_sha256": "cb4595cd0a557ebd4ad1704bf7748c44ed1a64aad9d9de96de9d95fde8ed4820"
+    },
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_item_local_joint_training_state.py"
+      ],
+      "returncode": 0,
+      "expected_tests": 3,
+      "reported_test_counts": [
+        "3"
+      ],
+      "passed": true,
+      "log": "experiments\\07_item_local_attention\\joint_alternating\\cpu_acceptance_20261020\\test_item_local_joint_training_state.log",
+      "log_sha256": "dda1d1ee8cb8e989c4289dfb61e40c67b599d64a954f6f9e202dace5f7a0c067"
+    }
+  ],
+  "total_tests": 20,
+  "limitations": "CPU-only. Joint Trainer recovery uses a CPU orchestration substitute and accumulation=1; H100/accumulation=16 still require a live gate.",
+  "test_data_evaluated": false,
+  "gpu_started": false,
+  "goal_complete": false
+}

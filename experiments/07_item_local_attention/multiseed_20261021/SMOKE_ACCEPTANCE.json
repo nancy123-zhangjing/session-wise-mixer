@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "utc": "2026-10-21T15:16:17.893125+00:00",
+  "seeds": [
+    {
+      "seed": 2025,
+      "status": "smoke_completed",
+      "same_pair_initial_state": true,
+      "same_pair_rng": true,
+      "same_pair_sid": true,
+      "process_wall_seconds": 192.25323181319982,
+      "pod_released": [
+        {
+          "time": "2026-10-21 23:15:29",
+          "job": "nancy-stage07-multiseed-2025-smoke-20261021-r1",
+          "type": "Normal",
+          "reason": "SuccessfulDeletePod",
+          "message": "Deleted pod: <redacted>-worker-0"
+        }
+      ],
+      "receipt_sha256": "8c41913dd232e3609370f27f9faf7192be241307ec4936781a49a74817b5a1d3"
+    },
+    {
+      "seed": 2026,
+      "status": "smoke_completed",
+      "same_pair_initial_state": true,
+      "same_pair_rng": true,
+      "same_pair_sid": true,
+      "process_wall_seconds": 223.67025846708566,
+      "pod_released": [
+        {
+          "time": "2026-10-21 23:15:54",
+          "job": "nancy-stage07-multiseed-2026-smoke-20261021-r1",
+          "type": "Normal",
+          "reason": "SuccessfulDeletePod",
+          "message": "Deleted pod: <redacted>-worker-0"
+        }
+      ],
+      "receipt_sha256": "7a4f41b455d4285628cc3a53cd51aeb32bc359a73a89ff098fa3863e6cfa0b7c"
+    }
+  ],
+  "formal_submission_allowed": true,
+  "scope": "wrapper verified GPU training and recovery; local readback verified paired receipts and platform release"
+}

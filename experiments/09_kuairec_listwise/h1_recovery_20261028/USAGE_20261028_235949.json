@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-10-28 15:59:49 UTC",
+  "statuses": [
+    {
+      "name": "nancy-h1-recovery-formal-decay-20261028-r1",
+      "status": "RUNNING",
+      "project": "公共科研项目",
+      "compute_group": "开发区-H100-cuda12.8版本-119核",
+      "resource": {
+        "cpu": 10,
+        "memory_gib": 200,
+        "gpu": 1,
+        "nodes": 1,
+        "shared_memory_gib": 16,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "nodes": [
+        "qb-prod-gpu181"
+      ],
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1793201471000"
+    },
+    {
+      "name": "nancy-h1-recovery-formal-freeze-20261028-r1",
+      "status": "RUNNING",
+      "project": "公共科研项目",
+      "compute_group": "开发区-H100-cuda12.8版本-119核",
+      "resource": {
+        "cpu": 10,
+        "memory_gib": 200,
+        "gpu": 1,
+        "nodes": 1,
+        "shared_memory_gib": 16,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "nodes": [
+        "qb-prod-gpu181"
+      ],
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1793201582000"
+    }
+  ],
+  "allocated_gpu_hours_estimated": 1.0102777777777778,
+  "approved_total_gpu_hours": 8.5,
+  "basis": "Scheduled to current observation for the two live one-GPU Jobs plus 410 preflight GPU seconds; estimate, no settlement."
+}

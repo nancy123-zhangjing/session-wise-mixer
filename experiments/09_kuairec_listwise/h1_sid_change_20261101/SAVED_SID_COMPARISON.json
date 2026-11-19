@@ -1,0 +1,87 @@
+{
+  "status": "passed_saved_tensor_comparison_only",
+  "sources": {
+    "initial": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H1\\initial.pt",
+      "sha256": "991352d4b48998427d44397411eb4178678487de21f1e08e5cd9d39240a06fc1",
+      "t_updates": 0,
+      "r_updates": 3465,
+      "real_items": 10728,
+      "slots": 4
+    },
+    "best": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H1\\best.pt",
+      "sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+      "t_updates": 200,
+      "r_updates": 13860,
+      "real_items": 10728,
+      "slots": 4
+    },
+    "last": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H1\\last.pt",
+      "sha256": "58982eeac04250e6d8126b9bc46ea6ec414ee9dbdc90e65a52c56ef685300c01",
+      "t_updates": 400,
+      "r_updates": 24255,
+      "real_items": 10728,
+      "slots": 4
+    }
+  },
+  "definition": "Fraction of 10728 real items whose four-code SID differs in at least one slot between saved endpoints; PAD excluded.",
+  "comparisons": [
+    {
+      "start": "initial",
+      "end": "best",
+      "t_start": 0,
+      "t_end": 200,
+      "changed_items": 7582,
+      "total_items": 10728,
+      "changed_item_fraction": 0.7067486950037286,
+      "changed_items_per_slot": [
+        2836,
+        3920,
+        2758,
+        2352
+      ]
+    },
+    {
+      "start": "best",
+      "end": "last",
+      "t_start": 200,
+      "t_end": 400,
+      "changed_items": 10728,
+      "total_items": 10728,
+      "changed_item_fraction": 1.0,
+      "changed_items_per_slot": [
+        10249,
+        9473,
+        9626,
+        9886
+      ]
+    },
+    {
+      "start": "initial",
+      "end": "last",
+      "t_start": 0,
+      "t_end": 400,
+      "changed_items": 10728,
+      "total_items": 10728,
+      "changed_item_fraction": 1.0,
+      "changed_items_per_slot": [
+        10397,
+        9934,
+        9964,
+        10098
+      ]
+    }
+  ],
+  "limitations": [
+    "Original H1 refreshes hard SID only after a 40T block.",
+    "Original local run preserves initial/best/last checkpoints, not per-20T or every-40T snapshots.",
+    "Endpoint difference is not cumulative switching frequency, and cannot be divided by 10 to estimate a 20T rate."
+  ],
+  "model_constructed": false,
+  "model_forward": false,
+  "training": false,
+  "gpu_used": false,
+  "source_files_changed": false
+}

@@ -1,0 +1,182 @@
+{
+  "protocol_id": "stage05_shared_start_full_mixer_long_gumbel_v1",
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "protocol": {
+    "protocol_id": "stage05_shared_start_full_mixer_long_gumbel_v1",
+    "campaign_id": "goal_20261020_long_mixer_v1",
+    "seed": 2024,
+    "arms": [
+      "no_mixer_frozen",
+      "no_mixer_joint",
+      "mixer_frozen",
+      "mixer_joint"
+    ],
+    "recipe_id": "cross_joint_v2",
+    "initial_decoder": "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_19-01-02/pytorch_model.bin",
+    "canonical_E0": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/outputs/pilots/stage05_mixer_factorial/factorial_20261013_1816_formal/common/snapshots/initial/crossed_codebooks.npy",
+    "canonical_E0_file_sha256": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+    "canonical_E0_array_sha256": "ed40b23bbacd78824ee6f9da5c7fcba4b5e4b2920b9890d8bf7e498635eed5b1",
+    "canonical_SID_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+    "remote_parent": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training",
+    "historical_project": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+    "gpu_count": 1,
+    "max_concurrent_gpu_jobs": 4,
+    "gpu_type": "H100",
+    "max_allocated_gpu_seconds": 43200,
+    "max_acceptance_gpu_seconds": 1800,
+    "decoder_warmup_epochs": 5,
+    "cycles": 10,
+    "decoder_epochs_per_cycle": 3,
+    "decoder_epochs": 35,
+    "decoder_batches_per_epoch": 1652,
+    "tokenizer_batches_per_phase": 96,
+    "gradient_accumulation_steps": 16,
+    "tokenizer_total_updates": 60,
+    "decoder_total_updates": 3640,
+    "train_batch_size": 64,
+    "eval_batch_size": 8,
+    "decoder_lr": 0.001,
+    "decoder_warmup_updates": 500,
+    "decoder_weight_decay": 0,
+    "codebook_lr": 1e-05,
+    "mixer_lr": 0.0001,
+    "tokenizer_weight_decay": 0.0001,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "recommendation_weight": 1,
+    "reconstruction_weight": 1,
+    "balance_weight": 0.01,
+    "anchor_weight": 0.01,
+    "assignment_temperature": 0.1,
+    "balance_temperature": 0.1,
+    "softmax_temperature": 1,
+    "noise_start": 1,
+    "noise_end": 0.2,
+    "noise_decay": "cosine",
+    "sia_weight": 0,
+    "label_smoothing": 0.2,
+    "max_grad_norm": 1,
+    "mixer_heads": 4,
+    "mixer_dropout": 0,
+    "mixer_scope": "full",
+    "mixer_residual_scale": 1,
+    "mixer_learn_residual_scale": false,
+    "mixer_zero_output": true,
+    "tokenizer_phase_seed": 2024101201,
+    "decoder_seed_base": 2024101300,
+    "data_seed_base": 2024101400,
+    "gumbel_seed": 2024101200,
+    "evaluation": {
+      "level": "sid",
+      "val_beam": 32,
+      "test_beam": 256,
+      "epochs": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35
+      ],
+      "primary_epoch": 35,
+      "selection": "0.8*ndcg@10+0.2*hit_rate@10",
+      "early_stopping": false
+    },
+    "smoke": {
+      "decoder_warmup_epochs": 1,
+      "cycles": 1,
+      "decoder_epochs_per_cycle": 1,
+      "train_batches": 16,
+      "tokenizer_batches": 16,
+      "eval_batches": 2,
+      "train_batch_size": 2,
+      "eval_batch_size": 2
+    }
+  },
+  "records": [
+    {
+      "path": "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_19-01-02/pytorch_model.bin",
+      "sha256": "2d276faf2f8e116b88e3365d73a27a9ba5fa82451ed45c10c99aee7ef88f4afe",
+      "size_bytes": 22440554
+    },
+    {
+      "path": "data/diff_formal_embeddings/beauty_item_keys.json",
+      "sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+      "size_bytes": 169415
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/best.pt",
+      "sha256": "20830421ecc634344bfd1e17daf9f4e84427ee224d3ff8caa79113a7549da7d7",
+      "size_bytes": 403022
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/base_pse_codebooks.npy",
+      "sha256": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+      "size_bytes": 262272
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/opq_residual_embeddings.npy",
+      "sha256": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+      "size_bytes": 12391552
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.npy",
+      "sha256": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+      "size_bytes": 387360
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json",
+      "sha256": "c74e87dbbe949b28f1b38fb53e10189acec421979a40cb81fca6ca441ade4e17",
+      "size_bytes": 412851
+    },
+    {
+      "path": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/summary.json",
+      "sha256": "35986305598e651cc3dd2208e9f5ee420605335683e2edb5d5595b12e61f91c9",
+      "size_bytes": 8404
+    },
+    {
+      "path": "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+      "sha256": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+      "size_bytes": 3220678
+    },
+    {
+      "path": "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+      "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+      "size_bytes": 1351806
+    },
+    {
+      "path": "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+      "sha256": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+      "size_bytes": 7594411
+    },
+    {
+      "path": "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+      "sha256": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+      "size_bytes": 99156148
+    },
+    {
+      "path": "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+      "sha256": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe",
+      "size_bytes": 44819276
+    },
+    {
+      "path": "canonical/E0.npy",
+      "sha256": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+      "size_bytes": 262272
+    }
+  ],
+  "recipe_sha256": "74efe879a24bf941d1ab67b8525f748baa14125d769fff390c57e375484d7f16",
+  "assets_lock_sha256": "b4329bdfb61cafbb51e59d6261313b7e8c31eecaf3271e7025ac1dbd09f2cb71",
+  "counts": {
+    "users": 22363,
+    "items": 12101,
+    "interactions": 198502,
+    "train": 105668,
+    "val": 22363,
+    "test": 22363
+  }
+}

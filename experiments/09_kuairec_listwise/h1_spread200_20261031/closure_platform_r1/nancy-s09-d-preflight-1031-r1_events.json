@@ -1,0 +1,147 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-31 01:39:34",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-31 01:39:34",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 01:39:34",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 01:39:38",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu008"
+      },
+      {
+        "time": "2026-10-31 01:39:39",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/inspire-studio/pytorch:25.06-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 01:39:39",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-31 01:39:40",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 01:39:40",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-31 01:39:40",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.12\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 01:39:40",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 01:41:43",
+        "type": "Warning",
+        "reason": "JobReservingStart",
+        "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:0"
+      },
+      {
+        "time": "2026-10-31 01:41:43",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      {
+        "time": "2026-10-31 01:41:43",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      {
+        "time": "2026-10-31 01:41:43",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "PodReservingStart",
+        "message": "Pod start reserving, exitCode:0"
+      },
+      {
+        "time": "2026-10-31 01:41:50",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 01:41:50",
+        "type": "Normal",
+        "reason": "SuccessfulDeleteService",
+        "message": "Deleted service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 01:41:50",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-31 01:41:50",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-31 01:41:57",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-31 01:41:57",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-31 09:56:13",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-31 09:56:14",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      }
+    ]
+  }
+}

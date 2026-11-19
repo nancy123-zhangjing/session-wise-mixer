@@ -1,0 +1,2242 @@
+{
+  "next_stage": 11,
+  "decoder_epochs": 9,
+  "decoder_updates": 936,
+  "tokenizer_updates": 12,
+  "noisy_calls": 384,
+  "training": [
+    {
+      "phase": "recommender",
+      "logical_index": 1,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 403226966,
+      "data_seed": 1049626200,
+      "data_order_sha256": "cc58355c1ce3ef424f165b235d2d17cf56415fba31b5aff8b1a50cd1e371c488",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.459857994216984,
+        "recommendation_loss": 3.459857994216984
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 4.09365218934171,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 136.30139204400007,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 2e-06,
+      "lr_end": 0.000208,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "formal_SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "formal_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 2,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 2302009359,
+      "data_seed": 1499670597,
+      "data_order_sha256": "da8693d9ee4623e31471cd3227c902d9c4a55e3338906e203f7f39f21b733966",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.4285218141269453,
+        "recommendation_loss": 3.4285218141269453
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 3.6938067833311843,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 135.51118354599998,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.000208,
+      "lr_end": 0.000416,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "formal_SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "formal_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 3,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 951663977,
+      "data_seed": 3980956629,
+      "data_order_sha256": "6de4ffe9c9f71b4c4049b289b9a2a53cde978f5f51128e5e0489d9da5e172659",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.397395808240692,
+        "recommendation_loss": 3.397395808240692
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.990598422447733,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 135.43379938099997,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.000416,
+      "lr_end": 0.000624,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "formal_SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "formal_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 4,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 466727668,
+      "data_seed": 1357838280,
+      "data_order_sha256": "13ebf006f681891c3fbc51d885265e248358d6389f8a7102c9c42451b38f43c6",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.367101303457348,
+        "recommendation_loss": 3.367101303457348
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.3154264871349577,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 135.2983784510002,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.000624,
+      "lr_end": 0.000832,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "formal_SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "formal_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 5,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 716918629,
+      "data_seed": 905066284,
+      "data_order_sha256": "5bf01610b96fb1925c79ea576a6da9cc1ca708c55b3f5461093e3c693c630018",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.347568117821765,
+        "recommendation_loss": 3.347568117821765
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.616824644594851,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 143.73830477599995,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.000832,
+      "lr_end": 0.0009998999018714263,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "formal_SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "formal_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "tokenizer",
+      "logical_index": 0,
+      "batches": 96,
+      "optimizer_updates": 6,
+      "phase_seed": 1574161832,
+      "data_seed": 2050167525,
+      "data_order_sha256": "b9194535d2673f4e36b53144166c2037da46f4cc4bbe66618443a4dc8ec7c944",
+      "gumbel_calls": 192,
+      "assignment_training_enabled_calls": 192,
+      "noise_applied_calls": 192,
+      "loss_means": {
+        "auxiliary_loss": 0.6008825097233057,
+        "weighted_recommendation_loss": 6.724769314130147,
+        "total_loss": 7.32565180460612,
+        "recommendation_loss": 6.724769314130147,
+        "reconstruction_loss": 0.5994733416785797,
+        "balance_loss": 0.14091701867679754,
+        "anchor_loss": 3.629785731244321e-10,
+        "direct_gradient_norm": 0.4711613357067108,
+        "assignment_entropy": 3.4155293876926103,
+        "max_probability": 0.29106187261641026,
+        "softmax_temperature": 1.0,
+        "noise_scale": 0.9949942131827237
+      },
+      "feedback_gradient_audit": {
+        "recommendation_weight": 1.0,
+        "raw_direct_gradient_norm": 0.4711613357067108,
+        "weighted_direct_gradient_norm": 0.4711613357067108,
+        "measured_at_microbatch": 1
+      },
+      "last_gradient_sides": {
+        "recommender": 0.0,
+        "tokenizer": 0.14183824424370217
+      },
+      "elapsed_seconds": 9.019475709999824,
+      "accumulation": 16,
+      "final_window_batches": 16,
+      "parameter_audit": {
+        "expected_parameter_count": 1,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "joint_alignment.mixer.base_codebooks"
+        ],
+        "phase": "tokenizer",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 1e-05,
+      "lr_end": 1e-05,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "formal_SID_sha256": "10b869752ab779b4a6d376345431b1b7e6b661ded2a95b1ebde4a2c283f512b3",
+      "formal_SID_change_since_initial": {
+        "changed_items": 2,
+        "item_change_rate": 0.00016527559705809436,
+        "changed_digits": 2,
+        "digit_change_rate": 4.131889926452359e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": 2402678785
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 6,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 3600032269,
+      "data_seed": 770078326,
+      "data_order_sha256": "010c1a9ce148f07976ac50e62a2f9bcc5623fdf3a375f22478fd13c6da535773",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.3208030186611572,
+        "recommendation_loss": 3.3208030186611572
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.3499670075086434,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 144.52909944299972,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.0009998999018714263,
+      "lr_end": 0.0009961570324603618,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "formal_SID_sha256": "10b869752ab779b4a6d376345431b1b7e6b661ded2a95b1ebde4a2c283f512b3",
+      "formal_SID_change_since_initial": {
+        "changed_items": 2,
+        "item_change_rate": 0.00016527559705809436,
+        "changed_digits": 2,
+        "digit_change_rate": 4.131889926452359e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 7,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 1192492630,
+      "data_seed": 514011892,
+      "data_order_sha256": "911de97d9c64ab7edd394371146f980fe03cf9efb10c05ccaa7ccfd3176fb97b",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.2908224029056097,
+        "recommendation_loss": 3.2908224029056097
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 1.9342745543905142,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 143.2417873190002,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.0009961570324603618,
+      "lr_end": 0.0009870471283570045,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "formal_SID_sha256": "10b869752ab779b4a6d376345431b1b7e6b661ded2a95b1ebde4a2c283f512b3",
+      "formal_SID_change_since_initial": {
+        "changed_items": 2,
+        "item_change_rate": 0.00016527559705809436,
+        "changed_digits": 2,
+        "digit_change_rate": 4.131889926452359e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 8,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 2676292098,
+      "data_seed": 1082133373,
+      "data_order_sha256": "c9fb87b0f7f5cb0b3f405ad77c79427aec8d578cdfdf0a076617f7cd8cdbff6f",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.2641687674614763,
+        "recommendation_loss": 3.2641687674614763
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.366110259570206,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 140.6827480779998,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.0009870471283570045,
+      "lr_end": 0.0009726687333049023,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "formal_SID_sha256": "10b869752ab779b4a6d376345431b1b7e6b661ded2a95b1ebde4a2c283f512b3",
+      "formal_SID_change_since_initial": {
+        "changed_items": 2,
+        "item_change_rate": 0.00016527559705809436,
+        "changed_digits": 2,
+        "digit_change_rate": 4.131889926452359e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    },
+    {
+      "phase": "tokenizer",
+      "logical_index": 1,
+      "batches": 96,
+      "optimizer_updates": 6,
+      "phase_seed": 801362580,
+      "data_seed": 1049626200,
+      "data_order_sha256": "07bf1582d6c202c60a30ced2afff161d02163d12829e2fc13e74d55e800dd995",
+      "gumbel_calls": 192,
+      "assignment_training_enabled_calls": 192,
+      "noise_applied_calls": 192,
+      "loss_means": {
+        "auxiliary_loss": 0.6054935101419687,
+        "weighted_recommendation_loss": 6.791522900263469,
+        "total_loss": 7.397016406059265,
+        "recommendation_loss": 6.791522900263469,
+        "reconstruction_loss": 0.6040855714430412,
+        "balance_loss": 0.14079391226793328,
+        "anchor_loss": 1.6583761956271796e-09,
+        "direct_gradient_norm": 0.5265299081802368,
+        "assignment_entropy": 3.536914529899756,
+        "max_probability": 0.27347520894060534,
+        "softmax_temperature": 1.0,
+        "noise_scale": 0.9595923264235448
+      },
+      "feedback_gradient_audit": {
+        "recommendation_weight": 1.0,
+        "raw_direct_gradient_norm": 0.5265299081802368,
+        "weighted_direct_gradient_norm": 0.526529848575592,
+        "measured_at_microbatch": 1
+      },
+      "last_gradient_sides": {
+        "recommender": 0.0,
+        "tokenizer": 0.13757998459277848
+      },
+      "elapsed_seconds": 8.271306286999788,
+      "accumulation": 16,
+      "final_window_batches": 16,
+      "parameter_audit": {
+        "expected_parameter_count": 1,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "joint_alignment.mixer.base_codebooks"
+        ],
+        "phase": "tokenizer",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 1e-05,
+      "lr_end": 1e-05,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 6,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.9804226065180615
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 12,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.923606797749979
+      },
+      "formal_SID_sha256": "9256a1baebea19374958cb2cfc3b2150cbe936c2246b796e07d590eb083e7e48",
+      "formal_SID_change_since_initial": {
+        "changed_items": 4,
+        "item_change_rate": 0.0003305511941161887,
+        "changed_digits": 4,
+        "digit_change_rate": 8.263779852904718e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.00016527559705809436,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10651,
+          "collided_items": 2176,
+          "collision_rate": 0.1798198495992067,
+          "collision_groups": 726,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7281,
+            "collision_rate": 0.6016858110899925,
+            "collision_groups": 2130,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9856,
+            "collided_items": 3308,
+            "collision_rate": 0.2733658375340881,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10651,
+            "collided_items": 2176,
+            "collision_rate": 0.1798198495992067,
+            "collision_groups": 726,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": 3185906190
+    },
+    {
+      "phase": "recommender",
+      "logical_index": 9,
+      "batches": 1652,
+      "optimizer_updates": 104,
+      "phase_seed": 3013191414,
+      "data_seed": 3095803761,
+      "data_order_sha256": "8ea6707b198389aab43e20f8d3fa617535021c0f56284f0b03836ea49e9df77c",
+      "gumbel_calls": 0,
+      "assignment_training_enabled_calls": 0,
+      "noise_applied_calls": 0,
+      "loss_means": {
+        "total_loss": 3.238910688326376,
+        "recommendation_loss": 3.238910688326376
+      },
+      "feedback_gradient_audit": null,
+      "last_gradient_sides": {
+        "recommender": 2.129914183734487,
+        "tokenizer": 0.0
+      },
+      "elapsed_seconds": 144.2546878469998,
+      "accumulation": 16,
+      "final_window_batches": 4,
+      "parameter_audit": {
+        "expected_parameter_count": 84,
+        "all_expected_gradients_finite": true,
+        "all_expected_Adam_states_present": true,
+        "actual_changed_parameters": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias"
+        ],
+        "phase": "recommender",
+        "audited_optimizer_update": 1
+      },
+      "frozen_side_unchanged": true,
+      "lr_start": 0.0009726687333049023,
+      "lr_end": 0.0009531773814192954,
+      "tokenizer_schedule_start": {
+        "optimizer_step": 12,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.923606797749979
+      },
+      "tokenizer_schedule_end": {
+        "optimizer_step": 12,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.923606797749979
+      },
+      "formal_SID_sha256": "9256a1baebea19374958cb2cfc3b2150cbe936c2246b796e07d590eb083e7e48",
+      "formal_SID_change_since_initial": {
+        "changed_items": 4,
+        "item_change_rate": 0.0003305511941161887,
+        "changed_digits": 4,
+        "digit_change_rate": 8.263779852904718e-05,
+        "per_position_change_rate": [
+          0.0,
+          0.00016527559705809436,
+          8.263779852904718e-05,
+          8.263779852904718e-05
+        ]
+      },
+      "formal_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10651,
+          "collided_items": 2176,
+          "collision_rate": 0.1798198495992067,
+          "collision_groups": 726,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7281,
+            "collision_rate": 0.6016858110899925,
+            "collision_groups": 2130,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9856,
+            "collided_items": 3308,
+            "collision_rate": 0.2733658375340881,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10651,
+            "collided_items": 2176,
+            "collision_rate": 0.1798198495992067,
+            "collision_groups": 726,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "gumbel_stream_seed": null
+    }
+  ],
+  "validation": [
+    {
+      "arm": "no_mixer_joint",
+      "decoder_epoch": 0,
+      "split": "val",
+      "metrics": {
+        "legal_ratio": 0.9998211731044349,
+        "duplicate_ratio": 0.45011027617771737,
+        "dup@10": 0.34057148444831403,
+        "duplicate@10": 0.34057148444831403,
+        "legal@10": 0.9998211331216742,
+        "ndcg@5": 0.04342854727424919,
+        "ndcg@10": 0.04545068760834658,
+        "recall@5": 0.060680588472029694,
+        "hit_rate@5": 0.060680588472029694,
+        "recall@10": 0.06662791217636274,
+        "hit_rate@10": 0.06662791217636274,
+        "weighted_score": 0.04968613294733555
+      },
+      "seconds": 294.7230266669999,
+      "actual_dataset_split": "val",
+      "beam_profile_not_test": false
+    },
+    {
+      "arm": "no_mixer_joint",
+      "decoder_epoch": 5,
+      "split": "val",
+      "metrics": {
+        "legal_ratio": 0.9988823319027181,
+        "duplicate_ratio": 0.4773664755562856,
+        "dup@10": 0.39507222235734524,
+        "duplicate@10": 0.39507222235734524,
+        "legal@10": 0.9988820820104637,
+        "ndcg@5": 0.04321258343306092,
+        "ndcg@10": 0.04485328630301243,
+        "recall@5": 0.0578187184188168,
+        "hit_rate@5": 0.0578187184188168,
+        "recall@10": 0.06264812413361356,
+        "hit_rate@10": 0.06264812413361356,
+        "weighted_score": 0.04841225415272315
+      },
+      "seconds": 302.5893565450001,
+      "actual_dataset_split": "val",
+      "beam_profile_not_test": false
+    }
+  ],
+  "best_score": 0.04968613294733555,
+  "best_decoder_epoch": 0
+}

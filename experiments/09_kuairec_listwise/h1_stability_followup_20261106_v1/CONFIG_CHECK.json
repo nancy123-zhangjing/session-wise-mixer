@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "syntax_files": 8,
+  "arms": [
+    {
+      "parent": "increment_r26",
+      "start_r": 26,
+      "start_t": 280,
+      "mode": "constant",
+      "alpha_start": 0.0642713567839196,
+      "alpha_end": 0.0642713567839196,
+      "version": "h1_stability_followup_v1",
+      "arm": "r26_hold",
+      "stop_r": 35,
+      "updates": 120,
+      "stop_t": 400,
+      "validation_epochs": [
+        26,
+        29,
+        32,
+        35
+      ]
+    },
+    {
+      "parent": "increment_r26",
+      "start_r": 26,
+      "start_t": 280,
+      "mode": "constant",
+      "alpha_start": 0.01,
+      "alpha_end": 0.01,
+      "version": "h1_stability_followup_v1",
+      "arm": "r26_low",
+      "stop_r": 35,
+      "updates": 120,
+      "stop_t": 400,
+      "validation_epochs": [
+        26,
+        29,
+        32,
+        35
+      ]
+    },
+    {
+      "parent": "release_r20",
+      "start_r": 20,
+      "start_t": 200,
+      "mode": "freeze",
+      "alpha_start": 0.0,
+      "alpha_end": 0.0,
+      "version": "h1_stability_followup_v1",
+      "arm": "release20_freeze",
+      "stop_r": 35,
+      "updates": 0,
+      "stop_t": 200,
+      "validation_epochs": [
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ]
+    },
+    {
+      "parent": "release_r20",
+      "start_r": 20,
+      "start_t": 200,
+      "mode": "linear",
+      "alpha_start": 0.1,
+      "alpha_end": 0.01,
+      "version": "h1_stability_followup_v1",
+      "arm": "release20_linear",
+      "stop_r": 35,
+      "updates": 200,
+      "stop_t": 400,
+      "validation_epochs": [
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ]
+    }
+  ],
+  "training_started": false
+}

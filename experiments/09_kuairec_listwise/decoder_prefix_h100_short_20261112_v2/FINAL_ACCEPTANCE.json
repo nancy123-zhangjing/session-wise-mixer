@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-11-12T11:59:50.360301+00:00",
+  "formal_training_started": false,
+  "one_gpu_sequential": true,
+  "variants": {
+    "H0-A": {
+      "exact": true,
+      "oom": false,
+      "checks": {
+        "initial": true,
+        "prediction": true,
+        "restore": true,
+        "R_state": true,
+        "R_values_rng": true,
+        "T_state": true,
+        "T_values_rng": true
+      }
+    },
+    "H1-A": {
+      "exact": true,
+      "oom": false,
+      "checks": {
+        "initial": true,
+        "prediction": true,
+        "restore": true,
+        "R_state": true,
+        "R_values_rng": true,
+        "T_state": true,
+        "T_values_rng": true
+      }
+    },
+    "H0-B": {
+      "exact": true,
+      "oom": false,
+      "checks": {
+        "initial": true,
+        "prediction": true,
+        "restore": true,
+        "R_state": true,
+        "R_values_rng": true,
+        "T_state": true,
+        "T_values_rng": true
+      }
+    },
+    "H1-B": {
+      "exact": true,
+      "oom": false,
+      "checks": {
+        "initial": true,
+        "prediction": true,
+        "restore": true,
+        "R_state": true,
+        "R_values_rng": true,
+        "T_state": true,
+        "T_values_rng": true
+      }
+    }
+  },
+  "successful_job": "nancy-s09-prefix-short-1112-v2",
+  "gpu_status": "SUCCEEDED",
+  "instance_receipt": "FINAL_INSTANCES.json",
+  "cpu_restored_stopped": true,
+  "cpu_receipt": "CPU_FINAL_STATUS.json",
+  "first_attempt_receipt": "experiments\\09_kuairec_listwise\\decoder_prefix_h100_short_20261112_v1\\ATTEMPT1_FINAL_INSTANCES.json",
+  "remote_report_verified": true,
+  "remote_report_receipt": "REPORT_REMOTE_SHA.json",
+  "artifacts": {
+    "COMPLETE.json": "8e7e2b36e6359d44f9f34022394f8d5659290bbe74b447adcf25849a8e0cb12a",
+    "REPORT.md": "9f90ae81de4afe4f9a25b509dd3f58347879b41b5bf694553c129079a31971ad",
+    "SUMMARY.csv": "d79fd0822179695127b65404c71e7a3e5a822cab2e30b094a599b069174563b1",
+    "SOURCE_MANIFEST.json": "28a4d85a88622a780993d15c122f5b04503000b3f6e4e8f20cc778f67388e168",
+    "benchmark.py": "0a2443b86fb58fc5677f29f958ff477eb04ae7e51673e07e54cac551d69ec453"
+  },
+  "boundary": "Fixed real diagnostic batches; three timed updates per phase; 32-example validation; no full training speed or quality claim."
+}

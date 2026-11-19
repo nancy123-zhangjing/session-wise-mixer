@@ -1,0 +1,21 @@
+{
+  "job": "nancy-s09-r14-g01-1105-r1",
+  "workspace": "分布式训练空间",
+  "account": "sii-shared",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_r14_g01_20261105_r1",
+  "parent_sha256": "3cd65569e89cc5f8f1d3215cdc403e3ae0d5e6954d7e8818a891c12ed737f51f",
+  "original_source": "h1_mixer_g01_20261104_r1/code",
+  "new_modules": ["recovery_r14_g01.py", "recovery_r14_g01_run.py"],
+  "start": {"R": 14, "T": 120, "phase": 17},
+  "stop": {"R": 20, "T": 200, "phase": 25},
+  "gamma": 0.1,
+  "gpu_count": 1,
+  "max_hours": 4,
+  "scientific_schedule_horizon": {"R": 35, "T": 400},
+  "R14_evidence": {"passed": true, "prediction_rows": 71657, "differing_rows": 0, "summary_differences": []},
+  "GPU_restore_gate": "required before training; receipt GPU_GATE.json",
+  "full_validation_epochs": [17, 20],
+  "test_epochs": [20],
+  "large_artifacts": "remote only",
+  "completion": "pending"
+}

@@ -1,0 +1,249 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 12:43:12",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 12:43:14",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod reasoning-agent/shy-v1107-reasoning-agent-1-core--fa4ebed8a63e-ibjlvusouq to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-31 12:43:14",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod reasoning-agent/shy-v1107-reasoning-agent-1-core--fa4ebed8a63e-ibjlvusouq to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-31 12:43:15",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu461, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-31 12:43:15",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu461, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-31 12:43:17",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu461"
+      },
+      {
+        "time": "2026-10-31 12:43:17",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu461"
+      },
+      {
+        "time": "2026-10-31 12:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 12:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-31 12:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-31 12:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.12\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.12\" already present on machine"
+      },
+      {
+        "time": "2026-10-31 12:43:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-31 17:04:11",
+        "type": "Warning",
+        "reason": "JobReservingStart",
+        "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:0"
+      },
+      {
+        "time": "2026-10-31 17:04:11",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      {
+        "time": "2026-10-31 17:04:11",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "PodReservingStart",
+        "message": "Pod start reserving, exitCode:0"
+      },
+      {
+        "time": "2026-10-31 17:04:17",
+        "type": "Warning",
+        "reason": "JobReservingStart",
+        "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:0"
+      },
+      {
+        "time": "2026-10-31 17:04:17",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      {
+        "time": "2026-10-31 17:04:17",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "PodReservingStart",
+        "message": "Pod start reserving, exitCode:0"
+      },
+      {
+        "time": "2026-10-31 17:04:17",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      {
+        "time": "2026-10-31 17:04:22",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 17:04:23",
+        "type": "Normal",
+        "reason": "SuccessfulDeleteService",
+        "message": "Deleted service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-31 17:04:23",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-31 17:04:23",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-31 17:04:28",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-31 17:04:28",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      }
+    ]
+  }
+}

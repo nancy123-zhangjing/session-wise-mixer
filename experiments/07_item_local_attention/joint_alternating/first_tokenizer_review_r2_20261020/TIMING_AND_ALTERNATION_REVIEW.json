@@ -1,0 +1,77 @@
+{
+  "status": "FIRST_REAL_ALTERNATION_VERIFIED_TIMING_POINT_FITS",
+  "created_utc": "2026-10-20T08:35:29.674266+00:00",
+  "formal_training_complete": false,
+  "goal_complete": false,
+  "phase_checks": {
+    "tokenizer_epoch": 6,
+    "tokenizer_updates": 6,
+    "direct_recommendation_gradient_norm": 0.3288477063179016,
+    "codebook_parameter_tensors_updated": 1,
+    "frozen_recommender_tensors_unchanged": true,
+    "nearest_SID_assignments_verified": true,
+    "catalogue_mapping_verified": true,
+    "following_recommender_epoch": 7,
+    "following_recommender_active_tensors_changed": 84,
+    "following_recommender_tokenizer_unchanged": true
+  },
+  "timing_observations": {
+    "recommender_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "recommender_mean_seconds": 150.20646062016658,
+    "recommender_max_seconds": 166.56700743699912,
+    "tokenizer_epochs": [
+      6
+    ],
+    "tokenizer_mean_seconds": 9.476241348998883,
+    "validation_epochs": [
+      0,
+      5
+    ],
+    "validation_mean_seconds": 243.9707270959998
+  },
+  "forecast": {
+    "max_recommender_epochs": 35,
+    "max_tokenizer_phases": 10,
+    "max_full_validations": 8,
+    "full_train_val_point_seconds": 7303.7543519638175,
+    "other_margin_seconds": 500,
+    "point_with_other_margin_seconds": 7803.7543519638175,
+    "max_observed_phase_forecast_with_margin_seconds": 8401.040564448958,
+    "original_25pct_formula_seconds": 9629.692939954772,
+    "training_window_seconds": 9150,
+    "test_reserve_seconds": 1200,
+    "maximum_uniform_slowdown_fraction_after_500s_margin": 0.18432241600160149
+  },
+  "decision": "Continue the same bounded control Job; leave training protocol and cutoffs unchanged. Reassess actual speed at the next validation boundary; prepare no replacement or second formal submission before release.",
+  "limitations": [
+    "Timings cover completed phases only and are not a guarantee for later phases.",
+    "The original 25 percent slowdown formula still exceeds the training window; this is not a renewed conservative PASS.",
+    "A positive recommendation gradient proves this training link is active, not recommendation-quality improvement.",
+    "The second arm remains unsubmitted."
+  ],
+  "sources": {
+    "epoch_timings.json": {
+      "sha256": "dfdd46c58614da935ad3b4399ed183e33962ab0bba03bf9e5602cea191d3f7f7",
+      "size_bytes": 557
+    },
+    "evaluation_timings.json": {
+      "sha256": "a97937ba2dbc8039ee7b1d4762656ec2ba757e56e9ab50705305c27b303a5504",
+      "size_bytes": 245
+    },
+    "phase_integrity.json": {
+      "sha256": "32a2cac34606ddc9a084524331d725a2c14cc5aa56423bbc2ffd6ea57f1d59cb",
+      "size_bytes": 50099
+    },
+    "LIVE_OBSERVATION_1633.json": {
+      "sha256": "a05444846889df376cfa6008c9305cb01f5412b2679c4d4005b0842db7d4d027",
+      "size_bytes": 6528
+    }
+  }
+}

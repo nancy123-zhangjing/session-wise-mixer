@@ -1,0 +1,65 @@
+{
+  "observed_unix": 1793424309.7726922,
+  "heartbeat_age_seconds": 1.5906107425689697,
+  "stage": "train",
+  "stop_reason": null,
+  "process_result": null,
+  "training": {
+    "epoch": 28,
+    "phase": "R",
+    "phase_index": 35,
+    "update": 37,
+    "r_updates": 18748,
+    "t_updates": 160
+  },
+  "tasks": [
+    {
+      "phase": 30,
+      "kind": "diagnostic",
+      "epoch": 24,
+      "label": "phase30_R_R24_T140",
+      "completed_receipt_exists": true,
+      "processed": 8192,
+      "total": 8192,
+      "receipt_status": "completed_readonly_task",
+      "readonly_state_unchanged": true
+    },
+    {
+      "phase": 32,
+      "kind": "validation",
+      "epoch": 26,
+      "label": "phase32_R_R26_T140",
+      "completed_receipt_exists": false,
+      "processed": 10016,
+      "total": 71657
+    },
+    {
+      "phase": 33,
+      "kind": "diagnostic",
+      "epoch": 26,
+      "label": "phase33_T_R26_T160",
+      "completed_receipt_exists": true,
+      "processed": 8192,
+      "total": 8192,
+      "receipt_status": "completed_readonly_task",
+      "readonly_state_unchanged": true
+    },
+    {
+      "phase": 34,
+      "kind": "diagnostic",
+      "epoch": 27,
+      "label": "phase34_R_R27_T160",
+      "completed_receipt_exists": false
+    }
+  ],
+  "last_gpu_sample": {
+    "unix": 1793424303.18018,
+    "elapsed_seconds": 2497.6581191210134,
+    "stage": "train",
+    "gpu_percent": 99,
+    "low_since_elapsed": null,
+    "guard_action": null
+  },
+  "cumulative_created_to_now_gpu_hours_upper_bound": 10.652436858945423,
+  "limitation": "Read-only process/artifact snapshot. Platform status must be queried separately; an absent completion receipt alone does not prove a task is live or dead."
+}

@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-s09-r26freeze-1106-v1",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda12.8版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 12.0,
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_r26_freeze_20261106_v1/job.py --arm r26_freeze --execute'",
+    "shared_memory_gib": 32,
+    "description": "R26/T280 whole tokenizer frozen to R35; paired with r26_hold/r26_low; one H100"
+  }
+}

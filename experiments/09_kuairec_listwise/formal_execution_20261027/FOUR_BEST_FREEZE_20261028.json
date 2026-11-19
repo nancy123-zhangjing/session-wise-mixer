@@ -1,0 +1,913 @@
+{
+  "schema": "stage09_four_arm_final_selection_v1",
+  "status": "passed",
+  "checked_at_utc": "2026-10-28T09:07:05.754590+00:00",
+  "execution_source": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "branch_binding_sha256": "871e480d2a77d7e22bfed091d02065f0cdc42eb1db42cf20d43519634959e80a",
+  "branch_helper_sha256": "2c255470cdd58b2c13dd50fb130aa750f1609306720081ab0e3cd33050cb2831",
+  "script_sha256": "d5b981a6077dead491289965d559a235082d63e6bf73fbca4cd4a42896f09935",
+  "root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1",
+  "arms": {
+    "J0": {
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/best.pt",
+        "bytes": 79626916,
+        "sha256": "01fddc99e1d1a9a207ae2b21043474ed991a607a23c8cdb8aa8472deae20354a"
+      },
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/last.pt",
+        "bytes": 79627492,
+        "sha256": "532a2a338b3c1c2e211d8331d60100297652ff17232810117fc5c7baa6613d7e"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/initial.pt",
+        "bytes": 79101226,
+        "sha256": "d937808c68403dfb84fb21a4f1daf2c7de5e3c81716d6f12e813f7da44f4fb7e"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/complete.json",
+        "sha256": "a1fdd73a5aeaa46a072897e622f1e56aefaf63551067f722d978d56f5dc8702f"
+      },
+      "best_state": {
+        "epoch": 20,
+        "r_updates": 13860,
+        "t_updates": 200,
+        "phase": 25,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "1948d3d0738e87cd6b1e3c30686efcaeb80d392fbfb7817a0da2bf284c95f428",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "2eb700c1cd3465396eb7ca37e43e4a24aa1d3096c47bec9a407449653522c518"
+        },
+        "alignment_fingerprint": "090d72749aba2f0550adbd24e05b7eceff295a67fb870b5ad0baeafa9a0cfbb4"
+      },
+      "final_state": {
+        "epoch": 35,
+        "r_updates": 24255,
+        "t_updates": 400,
+        "phase": 45,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "96eb9ae17d8efbe055334eb8291b35af13c91f62225517c7ca0c42c77fed3ed0",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "717297e355f4611d346f0d013c61b61ed577692c77ccd8f1f56df0458472cd34"
+        },
+        "alignment_fingerprint": "ee8ba626d9aeee586db7adb52cf410ef5e6377ec9214c028058a3eb48a221408"
+      },
+      "accepted_validations": [
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/validation_R05",
+          "examples": 71657,
+          "beam": 32,
+          "summary_sha256": "5970d77fe255f7107c6c9968e07cf8d11e919df2a248edfa37ac3ba2b01800cc",
+          "predictions_sha256": "4ebf4710ffaf8d8766f1c979efec1f45eb489388d1e567d26404f3238141fa7e",
+          "ndcg_at_5": 0.005607467268926579,
+          "row_indices_and_unique_ids_complete": true,
+          "epoch": 5
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R08",
+          "epoch": 8,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0037280532630490026,
+          "summary_sha256": "10ad750a82ea7fb5f660d2a45f4d85379e6ed4d33429e8997c53a74f44c37e20",
+          "predictions_sha256": "a1bb9defd595b9cfd94382459eeab562501c2a6a5be9e68f82eff3187988cc14",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R11",
+          "epoch": 11,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.004323006381640099,
+          "summary_sha256": "bf81d7226e74e5ab813f0f2c9d70db1e55e9314ff822810190e112bb49eb998d",
+          "predictions_sha256": "cdaa7ff07c9e279661c2a0cfd83b79441b32d96babe380a9fdb1721ff3891a2a",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R14",
+          "epoch": 14,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005791733677606468,
+          "summary_sha256": "db8cb30aa060a1105b479dd03848afcd516234bb2358e998f10fa9a715c8e59b",
+          "predictions_sha256": "d2ec77c71fbb858fc3f95111f50355757ce752cf34bcf6fbf03415df5353fec6",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R17",
+          "epoch": 17,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005035554198216126,
+          "summary_sha256": "e501df930ca69aca19ae68faa84cda6ce3da00b0f00fe362d210359f3830b54e",
+          "predictions_sha256": "b8630fafa989414239fa38dccebd523e454482ae67eeb370bfee5040dc203113",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R20",
+          "epoch": 20,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.006955003221270205,
+          "summary_sha256": "1f4a044bf31f00a8520c802ad95f457afbd6ee32e27db9ff3261484694f178f1",
+          "predictions_sha256": "1beb25340ab12dce37bec06730a035bba189ae88ea24035f3e143b05b9f23baa",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R23",
+          "epoch": 23,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.006183010151000403,
+          "summary_sha256": "6271fe96d30e3d91e7b819791fb830d1920a98cfb218bf05a65e4bc517a1913f",
+          "predictions_sha256": "8bd9bfade542ba8f9095accd0deaa138da4f598a4b33835704b1f57a18a78aea",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R26",
+          "epoch": 26,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005079023780931487,
+          "summary_sha256": "b66059f69c1db20466bbc8c95ab7149faf5a402bd078f6b59e9a3ae4639bf7f6",
+          "predictions_sha256": "d948de41b7ba3e525f1ba49612b242752e652b52da3b83397ed9a3871112aa15",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R29",
+          "epoch": 29,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0057731196094018755,
+          "summary_sha256": "455d62ba37806439ec276481116807b2b934435366342543e40c1999b263c83f",
+          "predictions_sha256": "672435a31daae8ed10979966d650db397bddf83c820a19b7fa2b1e94c3c33d7f",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R32",
+          "epoch": 32,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005461108160585879,
+          "summary_sha256": "b873a6b705b406afd6c364597b50af08fb864582b5960f52a23611b2985a6521",
+          "predictions_sha256": "7d7b128e9e3e056bc73708573c8205d30526449aaf4c8a10e3a6a2dcf237dfbd",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R35",
+          "epoch": 35,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005507991880543198,
+          "summary_sha256": "5574c8cd3a290a3d639eb27ec81204589222557c3c6dbb4f1d88047477bb988e",
+          "predictions_sha256": "49d422a71910e523ab800ac8381443e8adc7914191f64f5368ec7b5534c1a68c",
+          "emitted_indices_and_unique_ids_complete": true
+        }
+      ],
+      "selection": {
+        "metric": "list/ndcg@5",
+        "split": "validation",
+        "beam": 32,
+        "tie_break": "earlier",
+        "best_epoch": 20,
+        "best_t_updates": 200,
+        "score": 0.006955003221270205,
+        "chosen_validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R20"
+      },
+      "shared_initial_exact": true
+    },
+    "J1": {
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/best.pt",
+        "bytes": 79101226,
+        "sha256": "9baf4bbfa15551329c753f09f4c681a5a95a424f31249d7d2067d890c4fd456c"
+      },
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/last.pt",
+        "bytes": 79901172,
+        "sha256": "91f3c350476e133133506e4a7c9315b273890d0e409bc44eea91b137da45cc4b"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/initial.pt",
+        "bytes": 79101226,
+        "sha256": "9baf4bbfa15551329c753f09f4c681a5a95a424f31249d7d2067d890c4fd456c"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/complete.json",
+        "sha256": "5c84f9a3c815d6171263f450d97947413730478d47ffe253cdf96a373a0ef947"
+      },
+      "best_state": {
+        "epoch": 5,
+        "r_updates": 3465,
+        "t_updates": 0,
+        "phase": 5,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "2ca89e976b042cb166d5e821c8767fa10418ea9c3c21ee7998a6cfcaa7c15b50",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "ef21ab284887ae2550d77a97d0f1227444613e88b3f28ecfdb85d8b3bd272bee"
+        },
+        "alignment_fingerprint": "b1c392576e79e96ced509960471da84b7d6ac51ec5f82c796a769611f80330dc"
+      },
+      "final_state": {
+        "epoch": 35,
+        "r_updates": 24255,
+        "t_updates": 400,
+        "phase": 45,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "ba31a03a0ebbbbb665bad7584f4786357f32f9fdaaff513a2a3385a091ce238f",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "ae4f735cb648de68218acf01d51ba47c0f6bc4d572f6eea811d4b4781818463c"
+        },
+        "alignment_fingerprint": "0c8d10cb23ddd4435c8b7391d28248543ce289d3a5c14f8f128184d50b07474f"
+      },
+      "accepted_validations": [
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/validation_R05",
+          "examples": 71657,
+          "beam": 32,
+          "summary_sha256": "5970d77fe255f7107c6c9968e07cf8d11e919df2a248edfa37ac3ba2b01800cc",
+          "predictions_sha256": "4ebf4710ffaf8d8766f1c979efec1f45eb489388d1e567d26404f3238141fa7e",
+          "ndcg_at_5": 0.005607467268926579,
+          "row_indices_and_unique_ids_complete": true,
+          "epoch": 5
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R08",
+          "epoch": 8,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0037181827650252922,
+          "summary_sha256": "f0a4b6a38cf68d1e8c39eded85105a22acaae11ba11aa6a3b93cddedde94ac3d",
+          "predictions_sha256": "619d4fd5abc8cf48a19c69d958b3d8f912c4fbc791a57d02671dc63326188880",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R11",
+          "epoch": 11,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.004542777477893887,
+          "summary_sha256": "266cab738a2f9e7f08899011896eaa8db6a2e53312ac9fe0b4eab21cca3fc598",
+          "predictions_sha256": "4bc47e01675c12257f8bf98a2d9a108b09bd205e19ef5e5c943f6c203b5f1ff4",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R14",
+          "epoch": 14,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005000561464108515,
+          "summary_sha256": "10ff62d05d04ff070278a32dddde40849b6c45ba32d3b60872845d184d76508f",
+          "predictions_sha256": "35dd97e5f94573a9a4ec1fe744f94501e3f71d82b1094d04b8f29aa7b3bac61d",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R17",
+          "epoch": 17,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.004181696608202409,
+          "summary_sha256": "cb29c69a607393405144805204f28b74e88b46e6d310e2b965d4307c61309383",
+          "predictions_sha256": "ad2a02ba1102d0941d0e8920bbdfbdc448910516c941cd29d9a85eab82895965",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R20",
+          "epoch": 20,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005563653642964529,
+          "summary_sha256": "dff12d3d43c0e6dd8f95a7f7ccd8c5b768bf76a13b801d953a2d17bbf6c7b1b2",
+          "predictions_sha256": "052348a14d7bedf63c547bcd042a3430b8f8258f5be39af1e56e3428cb6e150d",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R23",
+          "epoch": 23,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00502017779672156,
+          "summary_sha256": "a674ee441d307ea52d6df3fd2b9b55f5f59680e6dcf3db348ebe0e642c42725d",
+          "predictions_sha256": "2629dea97c49c2444c7b1bd3c2c8d9a206f83a4e42c9b3ca71ebf31312ba7af9",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R26",
+          "epoch": 26,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00290270006491783,
+          "summary_sha256": "8e810a08ec0e690a50d1950119e71a1fbf508b3a4695dfc5b5bf283135eb0143",
+          "predictions_sha256": "62f952f19f3243e593fd39d0907605d94d4f5ed2e632209ade60e1aa91e78ed7",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R29",
+          "epoch": 29,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0016088904055339694,
+          "summary_sha256": "d3a046769753e4480eee5316d510dbb8d625987e54ed9aaa1caca2a569bf00c2",
+          "predictions_sha256": "38315de2fb29ef93d7349f34b9e795205676073aad201b0914750f229e54c032",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R32",
+          "epoch": 32,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0006496631229665934,
+          "summary_sha256": "6a1526ea574c6385bcf1a140a467a76e94ac0efa07a194e59612feecffc6993b",
+          "predictions_sha256": "544634beb76df3bb6ebd7e3c338038f0338b3846ca61dea1489691d336696eef",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R35",
+          "epoch": 35,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0008177563286277477,
+          "summary_sha256": "24dcb95ccccae3153149599884d73e0a51592c249ba7245b866b6fb48a87bf4e",
+          "predictions_sha256": "192d7e798cb795442c6d4634b41332df0c6b779aa5e567db0a6c973cc36540ad",
+          "emitted_indices_and_unique_ids_complete": true
+        }
+      ],
+      "selection": {
+        "metric": "list/ndcg@5",
+        "split": "validation",
+        "beam": 32,
+        "tie_break": "earlier",
+        "best_epoch": 5,
+        "best_t_updates": 0,
+        "score": 0.005607467268926579,
+        "chosen_validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/validation_R05"
+      },
+      "shared_initial_exact": true
+    },
+    "H0": {
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/best.pt",
+        "bytes": 79627364,
+        "sha256": "8914c253a679e4ad18c213d4092733a8a6ce995a9b290d8bfedd6507a403b84e"
+      },
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/last.pt",
+        "bytes": 79627492,
+        "sha256": "dc435af86322771e064bc84db6ca9bac4b395bef919b3dbe16e3a8eb888d21f2"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/initial.pt",
+        "bytes": 79101226,
+        "sha256": "b1adf68c7c5b3f1818773c1ef34adaeac4df49be57a867c6b11bcaf38cdf9166"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/complete.json",
+        "sha256": "f5e59da727d2cb9104ebcf42e75dc249076148c5daa1500cc2696df231db6fee"
+      },
+      "best_state": {
+        "epoch": 32,
+        "r_updates": 22176,
+        "t_updates": 360,
+        "phase": 41,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "c01c5e4c8f2ce7bea883c5512206130b32cf74a7c0b23eb055d056c37e048b5a",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "45197eb8ed9bf9bdce1bf6af4942ca7b266cec676497a1f8c9e301c64a72423c"
+        },
+        "alignment_fingerprint": "dea8db422ea4c66d347445fa1d0c43643a3db7a106ed7fce94af93e03cae74f9"
+      },
+      "final_state": {
+        "epoch": 35,
+        "r_updates": 24255,
+        "t_updates": 400,
+        "phase": 45,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "7cc38a7bb6e78c55c997acd48f76a71ea47530b3ad599b25e6b20131849895e3",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "e969d5306eddeaa01575a2bdb0675767313ff1d48d6676f08bab53aead704cd2"
+        },
+        "alignment_fingerprint": "07c802c13c8283512ac1d96a17ad74864de63ccf9f6d9dd07352257b41bcbac1"
+      },
+      "accepted_validations": [
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+          "examples": 71657,
+          "beam": 32,
+          "summary_sha256": "7619dc0a6040a1845b6ec4c3d4f2a186341d1f7f958347ff0c7075d6db045e53",
+          "predictions_sha256": "11011cbbdfbbe72bf52eaf6f2f6a34187d81bcd2ce4d5d75d3e056c3bfe31cf5",
+          "ndcg_at_5": 0.00375275301065217,
+          "row_indices_and_unique_ids_complete": true,
+          "epoch": 5
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R08",
+          "epoch": 8,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.006381023411677129,
+          "summary_sha256": "f5be7868e6226a6211dd29d46134f88adb454f8115caa42d43565d9908e9451f",
+          "predictions_sha256": "dd7c7582a396aa6ec2afc49687169ad0e00b9fcf5e4088decddb4904c09eb159",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R11",
+          "epoch": 11,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.005828745063954581,
+          "summary_sha256": "e9794ad30d289df0aaa83c988c52ea8a46b0e14ed2f86ae6ccd2f57903cc6571",
+          "predictions_sha256": "863224b5a0670092fe20f7873e713878146ce34b942c89dac587c4d065c7b96d",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R14",
+          "epoch": 14,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.008306701109088821,
+          "summary_sha256": "02a740c99723a20f97fc6eeb405d5197f7cbf2330a15eb03ea0c6741778365a8",
+          "predictions_sha256": "eea421816b70835244dd629b3ba6504560b91fe12b3e8d2c2d680b1d565c1c26",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R17",
+          "epoch": 17,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.007686899881546112,
+          "summary_sha256": "20f68ff62c36fd191ca62b0a10f98c3429096170c872fde2fb103d0f073d6495",
+          "predictions_sha256": "98526df64d6cc27a9521eb7ac0944c41cd51144123a1804f89fc064aa1ba1c6b",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R20",
+          "epoch": 20,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0077281393832238894,
+          "summary_sha256": "f202ed77fe18e6ceacdac49d4c6744f61b1cbcf9f3c92c43efc52fc2e7995890",
+          "predictions_sha256": "795a50ebe753376647aac8b53e87a2c254d860d8b76d2bed0ae95d79949b91ec",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R23",
+          "epoch": 23,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.008834216416756338,
+          "summary_sha256": "a8bdb93ade911e71dc1c0c12d687ea12f259c163dc1be663a4af3e394fb1593a",
+          "predictions_sha256": "6a3b01a5e5e055f52a4e2ed594d7eb9fc94878d2c6cd81a2dbaec38dca49b658",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R26",
+          "epoch": 26,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.008763027141129044,
+          "summary_sha256": "9768dba5e66cbd6893b7b246ccaaeacbea02a03c33ec39e93b13305d5d8e8a04",
+          "predictions_sha256": "f6385134e42d8c12dd83710eea45e974b57d3e94363cefd4e3accf4746ba9e2e",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R29",
+          "epoch": 29,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.008360760373140054,
+          "summary_sha256": "f5adf9a714120409a141d0f1aae17bc37028b8a19db58f79dd3ea48d2170111f",
+          "predictions_sha256": "7f1b14c696be911519ca7818b6103a67cc7659d477c73c205e85fcbc740c9393",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R32",
+          "epoch": 32,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00891980794717923,
+          "summary_sha256": "7e6cd3ac6d3cb8ffbd130c2c698e0c2b4cd7d3f1bbe913f3fd75878134460bc5",
+          "predictions_sha256": "13bd6c040a5da7bfe8305f5a6da3a58f2fe9445549f56162f3c314c4a246d37d",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R35",
+          "epoch": 35,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.008644661240416195,
+          "summary_sha256": "97735719bcfcc5f522a2390886cb19cebc3b13bc13739a97d428f72d7e7c15ad",
+          "predictions_sha256": "a464f122bf00b18a08fa1ad3d704b7ee064f566c13265d786a764f5a2c5fd19d",
+          "emitted_indices_and_unique_ids_complete": true
+        }
+      ],
+      "selection": {
+        "metric": "list/ndcg@5",
+        "split": "validation",
+        "beam": 32,
+        "tie_break": "earlier",
+        "best_epoch": 32,
+        "best_t_updates": 360,
+        "score": 0.00891980794717923,
+        "chosen_validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R32"
+      },
+      "shared_initial_exact": true
+    },
+    "H1": {
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/best.pt",
+        "bytes": 79900596,
+        "sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1"
+      },
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/last.pt",
+        "bytes": 79901172,
+        "sha256": "58982eeac04250e6d8126b9bc46ea6ec414ee9dbdc90e65a52c56ef685300c01"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/initial.pt",
+        "bytes": 79101226,
+        "sha256": "991352d4b48998427d44397411eb4178678487de21f1e08e5cd9d39240a06fc1"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/complete.json",
+        "sha256": "56ab51751fa6cb882471fd5f8d3b2a92b6c3f4b116996ead610815314e391721"
+      },
+      "best_state": {
+        "epoch": 20,
+        "r_updates": 13860,
+        "t_updates": 200,
+        "phase": 25,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "c05356f043c8e2b15f123a035f0daeb5771ddb2776492a647b9e11d3167a69c8",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "48ca995cdd1471835832a0b27978da80ffa37ea2f96fcdf1c63d0b6be301befa"
+        },
+        "alignment_fingerprint": "5fbbcca2099795a06a8d0053690333a24b323e450197b0738e9846cd623c06f9"
+      },
+      "final_state": {
+        "epoch": 35,
+        "r_updates": 24255,
+        "t_updates": 400,
+        "phase": 45,
+        "update": 0,
+        "stored_model_floating_dtype": "torch.float32",
+        "checkpoint_precision": "bf16",
+        "evaluation_restore_precision": "bf16",
+        "inference_precision": "fp32",
+        "state_fingerprint": "748470e2b743662f3be40c4ae11fb6d899e1202a69eb8778b7e6edce114ef748",
+        "sid_snapshot": {
+          "field": "alignment.hard_codes",
+          "shape": [
+            10729,
+            4
+          ],
+          "pad_row": -1,
+          "real_code_range": [
+            0,
+            255
+          ],
+          "fingerprint": "d899f6ccf556a726d292d775d2f3586a5933ee59364c8912d459fcc60b4f80b2"
+        },
+        "alignment_fingerprint": "7d0654d0fe2c5675b3d57fb60ad097023244a46786095e61968544e5ece482ba"
+      },
+      "accepted_validations": [
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+          "examples": 71657,
+          "beam": 32,
+          "summary_sha256": "7619dc0a6040a1845b6ec4c3d4f2a186341d1f7f958347ff0c7075d6db045e53",
+          "predictions_sha256": "11011cbbdfbbe72bf52eaf6f2f6a34187d81bcd2ce4d5d75d3e056c3bfe31cf5",
+          "ndcg_at_5": 0.00375275301065217,
+          "row_indices_and_unique_ids_complete": true,
+          "epoch": 5
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R08",
+          "epoch": 8,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00651335913156577,
+          "summary_sha256": "4bd06c8e5fe0cec4aff6ff69deb6ad0e248d0e2b92c58016e1f49220525ac22f",
+          "predictions_sha256": "a17edef80c783256a613bb7f1c282927987a29772c877611efa99576463b4afe",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R11",
+          "epoch": 11,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00601618115655267,
+          "summary_sha256": "e09e04b927cc1a0551123161878445f50c7d08e0ee1632e65c13bcd084f970de",
+          "predictions_sha256": "ecb250254855342beefb15bffaead3db9edb76a4f154b88c4899a8e45eddeb47",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R14",
+          "epoch": 14,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00857120409319043,
+          "summary_sha256": "ed49e0808d01fb631ebcc721cb4f59c9440326cf52d01ac208c010201c201b5b",
+          "predictions_sha256": "a68769342854468469c723b0a360795c3874c638ecd8f2e291115d4917a49c63",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R17",
+          "epoch": 17,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.007947732992896044,
+          "summary_sha256": "7eec261f21f2acd447e0df4014c78fe161a798932d15980cc4248db69042bae9",
+          "predictions_sha256": "c15c3ccdd594d4ebf4b627472482c2aa39a04be9ed963b50a18e779de72e5eba",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R20",
+          "epoch": 20,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.00937205572248708,
+          "summary_sha256": "d457c373647fa0d80369e986858deb7a62c27bcd0d5b94224874e3929769be50",
+          "predictions_sha256": "d43da08bbd4288d0fe75209b1b5c59a0369894477de1538e528d9031ea337ea6",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R23",
+          "epoch": 23,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.006016042228703761,
+          "summary_sha256": "2f65d85b95046aaab43e97c10c40d0bc164f579992028f2b6ad23840c2dd3ac2",
+          "predictions_sha256": "97e5bd17d680b673408f0b7b0d6be7b567632de70e782deb0c97043b5a90098e",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R26",
+          "epoch": 26,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.006438442413344798,
+          "summary_sha256": "b1b22c86b9b653fc74c7df198e9d87e4334065e81135a4cc8d7b5cfe90b1c99e",
+          "predictions_sha256": "3614c1df9e8573c330d8b253593f3b805f117c60ea7908d5357656482938f45a",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R29",
+          "epoch": 29,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.004952873965655353,
+          "summary_sha256": "7768f90cb8e4567ac0b77ea4e0fa44f8013ac6d5ee57bd661353faf3fff60900",
+          "predictions_sha256": "6a79d9e3a2564a39a0d196727cd4b0c0b450609736ab809d750f17444090b054",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R32",
+          "epoch": 32,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0035583144128809208,
+          "summary_sha256": "b6cea972e1fa88d192878e2bb51353980444b87fb2d0d3a918c48857ee6e5758",
+          "predictions_sha256": "661899c63ee4a04737efa0a622d198e29a1f61ec4b2b472a7ee07add0d0a167b",
+          "emitted_indices_and_unique_ids_complete": true
+        },
+        {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R35",
+          "epoch": 35,
+          "examples": 71657,
+          "beam": 32,
+          "ndcg_at_5": 0.0016854027042115152,
+          "summary_sha256": "e574b609979a1cfc3d4b7ec50e867982af920425254f3dd4efe959aa0d90f396",
+          "predictions_sha256": "670fc80c1b328a2e1221be858c026c1a31db7e857169e7345615409e4d36d4f6",
+          "emitted_indices_and_unique_ids_complete": true
+        }
+      ],
+      "selection": {
+        "metric": "list/ndcg@5",
+        "split": "validation",
+        "beam": 32,
+        "tie_break": "earlier",
+        "best_epoch": 20,
+        "best_t_updates": 200,
+        "score": 0.00937205572248708,
+        "chosen_validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R20"
+      },
+      "shared_initial_exact": true
+    }
+  },
+  "shared_warmups": {
+    "J": {
+      "architecture": "J",
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/last.pt",
+        "bytes": 79101226,
+        "sha256": "a809564b0b1095ad6e3efe4e6dabcd97d89629232bacc8d634e0aee8464ca8dc"
+      },
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/best.pt",
+        "bytes": 79101226,
+        "sha256": "a809564b0b1095ad6e3efe4e6dabcd97d89629232bacc8d634e0aee8464ca8dc"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/initial.pt",
+        "bytes": 34197544,
+        "sha256": "8df1e0f045248224fcb2ad1faa00bf3b4a7a5ad0fbb609ab36fd43c6f00a3d14"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/complete.json",
+        "sha256": "9863d85b55ce0dc237189050b11f89fa63e1c20c57b179d472a3c0af3d5274d3"
+      },
+      "accepted_validation": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_J/validation_R05",
+        "examples": 71657,
+        "beam": 32,
+        "summary_sha256": "5970d77fe255f7107c6c9968e07cf8d11e919df2a248edfa37ac3ba2b01800cc",
+        "predictions_sha256": "4ebf4710ffaf8d8766f1c979efec1f45eb489388d1e567d26404f3238141fa7e",
+        "ndcg_at_5": 0.005607467268926579,
+        "row_indices_and_unique_ids_complete": true
+      },
+      "state_fingerprints": {
+        "model": "497770596dd97d983ecb14c2ab0d34d78c46509e7232660d093cdfb4bd3e4d38",
+        "alignment": "b1c392576e79e96ced509960471da84b7d6ac51ec5f82c796a769611f80330dc",
+        "r_optimizer": "0564474bf573bc4e7006faf8c02b28876ea38243b5bd99506ea23858fa8d6908",
+        "t_optimizer": "ff931d79cae22ceced3bc46f90d68315e3452835783ad7472d2049847df6b997",
+        "scheduler": "826d1e4c06b6588c65863c05223ee008bef8b348c3ad63b6179b478dd688b46f",
+        "rng": "6844ded5382bb2598a1d15a4486c691ea04e36a6b3410b541442cdb76a762320",
+        "progress": "9dfdbf171bdd6780fbb7f47274ba95944bf3311a875b8a8611c21b35f54c88fd"
+      },
+      "source_binding_complete": true,
+      "tokenizer_unchanged_from_initial": true,
+      "scope": "Checkpoint and complete emitted R5 output audit, not independent label/metric recomputation; platform terminal/release must be confirmed separately"
+    },
+    "H": {
+      "architecture": "H",
+      "last": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/last.pt",
+        "bytes": 79101226,
+        "sha256": "8baca622e3b8cbc3b0cde2078f545c712f1a6c9c668ff1641b10ce3b24430073"
+      },
+      "best": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/best.pt",
+        "bytes": 79101226,
+        "sha256": "8baca622e3b8cbc3b0cde2078f545c712f1a6c9c668ff1641b10ce3b24430073"
+      },
+      "initial": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/initial.pt",
+        "bytes": 34197544,
+        "sha256": "b804643632f65371b6e35760e5f836f458530c41195ecc004ce93d09cc85a9c0"
+      },
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/complete.json",
+        "sha256": "6385ba3a55a9fa454669937ee224c1ae6168509110a5dbb5b102ecdf51de12ca"
+      },
+      "accepted_validation": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+        "examples": 71657,
+        "beam": 32,
+        "summary_sha256": "7619dc0a6040a1845b6ec4c3d4f2a186341d1f7f958347ff0c7075d6db045e53",
+        "predictions_sha256": "11011cbbdfbbe72bf52eaf6f2f6a34187d81bcd2ce4d5d75d3e056c3bfe31cf5",
+        "ndcg_at_5": 0.00375275301065217,
+        "row_indices_and_unique_ids_complete": true
+      },
+      "state_fingerprints": {
+        "model": "d7172b019baaa5764e1225f8466ac9ccaa906c83fd60dc4e9c9d72bedd26b740",
+        "alignment": "b1c392576e79e96ced509960471da84b7d6ac51ec5f82c796a769611f80330dc",
+        "r_optimizer": "aaf880441e209855b7684b8e8a2db90996b3675f6a6168e6b1fd10440a067399",
+        "t_optimizer": "ff931d79cae22ceced3bc46f90d68315e3452835783ad7472d2049847df6b997",
+        "scheduler": "826d1e4c06b6588c65863c05223ee008bef8b348c3ad63b6179b478dd688b46f",
+        "rng": "bd22c811a7c36069cad5f9c4aa537df9a50acfd270b76731a3402c0d2dbacc7d",
+        "progress": "5ed1ca430f69e9e4f1016ddc32832614dbeef7ee1110cc5bf7ab9f9ab1bc5144"
+      },
+      "source_binding_complete": true,
+      "tokenizer_unchanged_from_initial": true,
+      "scope": "Checkpoint and complete emitted R5 output audit, not independent label/metric recomputation; platform terminal/release must be confirmed separately"
+    }
+  },
+  "distinct_full_validations": 42,
+  "four_best_sha256": {
+    "J0": "01fddc99e1d1a9a207ae2b21043474ed991a607a23c8cdb8aa8472deae20354a",
+    "J1": "9baf4bbfa15551329c753f09f4c681a5a95a424f31249d7d2067d890c4fd456c",
+    "H0": "8914c253a679e4ad18c213d4092733a8a6ce995a9b290d8bfedd6507a403b84e",
+    "H1": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1"
+  },
+  "four_best_bytes": {
+    "J0": 79626916,
+    "J1": 79101226,
+    "H0": 79627364,
+    "H1": 79900596
+  },
+  "test_used_for_selection": false,
+  "gpu_used": false,
+  "checkpoint_writes": false,
+  "freeze_scope": "Identity snapshot only; this script does not set filesystem locks or change permissions.",
+  "next_evaluation": {
+    "checkpoint_restore_precision": "bf16",
+    "actual_inference_precision": "fp32",
+    "rule": "Recheck each frozen best SHA before test and both fixed-subset beam runs."
+  },
+  "limitations": [
+    "Platform job terminal/release status and GPU budget require separate platform evidence.",
+    "Saved NDCG values/counts were checked for internal consistency; independent item-level metric and source-label replay is separate.",
+    "Old validation summaries contain no SID/model hash. Intermediate best provenance is linked by clocks, binding and accepted-validation prefix, not an independent historical SID receipt.",
+    "Each checkpoint carries its own SID fingerprint. No CPU nearest-centroid equality gate is imposed; representative CPU model restoration is a separate delivery check.",
+    "This receipt does not evaluate test data or establish recommendation quality/cross-seed stability."
+  ]
+}

@@ -1,0 +1,785 @@
+{
+  "status": "PASS",
+  "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+  "cache_manifest_sha256": "9d229a275d0c476e9c8d64a7797a0d2d1eada535cfe5ad81dc8118a518ab5519",
+  "cpu_gate_sha256": "fff1be1be03c7351a0bda858ad7807a474046a5e294ff48e95e9e94076f36603",
+  "inventory": [
+    {
+      "index": "0",
+      "uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-dfb73f32-ce6f-389c-06c5-b4cacb481e55",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-a8efa00d-5503-b685-a96c-5f9ae589ebdb",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-8881b1c2-52bc-7df0-613e-ecba20196a4e",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-93f7c11e-4d0e-1d10-4329-836b4d169437",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-e7ba0d6c-90e1-afd3-2104-62647570805f",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-f8ad4998-9d93-81de-fdde-737759b36d92",
+      "name": "NVIDIA H100 80GB HBM3",
+      "memory_mib": "81559",
+      "driver_version": "595.58.03"
+    }
+  ],
+  "base": [
+    {
+      "name": "base_sasrec_fullce",
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/base_sasrec_fullce",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 20,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.004874122434378214,
+          "NDCG@5": 0.003225624850390651,
+          "HR@10": 0.00800429280507982,
+          "NDCG@10": 0.004259958271669192,
+          "HR@20": 0.016768769843044314,
+          "NDCG@20": 0.006443767756940774,
+          "NLL": 9.317003877603351
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 2.2104812366887927,
+        "best_sha256": "d76d32ebd592f8e526ef9f569d31bbeaba8a6e1e4785670534e1d755325ef390",
+        "last_sha256": "d76d32ebd592f8e526ef9f569d31bbeaba8a6e1e4785670534e1d755325ef390",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "base_esasrec",
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/base_esasrec",
+      "result": {
+        "binding": {
+          "config_sha256": "bf84a98c220791fd01f917fbb8fe77d0cb95afe1a6ee106ee355692ef09c0fe5",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 20,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0035773375665161204,
+          "NDCG@5": 0.0018517160059617897,
+          "HR@10": 0.006796941376380629,
+          "NDCG@10": 0.002885568055433105,
+          "HR@20": 0.011715780530340295,
+          "NDCG@20": 0.00411071087158191,
+          "NLL": 9.336863712521799
+        },
+        "parameter_count": 852096,
+        "elapsed_seconds": 2.216634592972696,
+        "best_sha256": "581ab8503709afa61e0b63add83a5efc60bd120782fa9ef665506cefbbb4b5b6",
+        "last_sha256": "581ab8503709afa61e0b63add83a5efc60bd120782fa9ef665506cefbbb4b5b6",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 251056128,
+        "peak_reserved_bytes": 369098752,
+        "status": "SMOKE_COMPLETE"
+      }
+    }
+  ],
+  "resumed": [
+    {
+      "name": "base_sasrec_fullce",
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/base_sasrec_fullce",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 2,
+        "updates": 21,
+        "best_epoch": 2,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.004918839153959666,
+          "NDCG@5": 0.003205997108705714,
+          "HR@10": 0.008406743281312882,
+          "NDCG@10": 0.0043435964715541515,
+          "HR@20": 0.017037070160533022,
+          "NDCG@20": 0.006478604567921432,
+          "NLL": 9.342765991991515
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 2.7051649633795023,
+        "best_sha256": "727464f1698e1372db08f5e323474e8b4b27d7ac245f932036c7ba28d174ab10",
+        "last_sha256": "727464f1698e1372db08f5e323474e8b4b27d7ac245f932036c7ba28d174ab10",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "base_esasrec",
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/base_esasrec",
+      "result": {
+        "binding": {
+          "config_sha256": "bf84a98c220791fd01f917fbb8fe77d0cb95afe1a6ee106ee355692ef09c0fe5",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 2,
+        "updates": 21,
+        "best_epoch": 2,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.004113938201493538,
+          "NDCG@5": 0.002113896085459652,
+          "HR@10": 0.007065241693869338,
+          "NDCG@10": 0.003062132015574749,
+          "HR@20": 0.012386531324062066,
+          "NDCG@20": 0.004402042677380788,
+          "NLL": 9.326445109877364
+        },
+        "parameter_count": 852096,
+        "elapsed_seconds": 2.7039451533928514,
+        "best_sha256": "bef5a8a460b2faa1634b5fefced01956bff40d968be014b74caa38df08fc111e",
+        "last_sha256": "bef5a8a460b2faa1634b5fefced01956bff40d968be014b74caa38df08fc111e",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 251265536,
+        "peak_reserved_bytes": 354418688,
+        "status": "SMOKE_COMPLETE"
+      }
+    }
+  ],
+  "resume_checks": [
+    {
+      "name": "base_sasrec_fullce",
+      "updates_before": 20,
+      "updates_after": 21,
+      "optimizer_steps_restored": true
+    },
+    {
+      "name": "base_esasrec",
+      "updates_before": 20,
+      "updates_after": 21,
+      "optimizer_steps_restored": true
+    }
+  ],
+  "parallel": [
+    {
+      "name": "parallel_01",
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_01",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0006260340741403211,
+          "NDCG@5": 0.0003583684839944844,
+          "HR@10": 0.001430935026606448,
+          "NDCG@10": 0.0006186963247380729,
+          "HR@20": 0.0029065867727943477,
+          "NDCG@20": 0.000977437673805561,
+          "NLL": 9.400397459147085
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 0.530401217751205,
+        "best_sha256": "c104c8f52e6d545d70060c6468c4355b7482b770812f1b41c58a67221e1861a2",
+        "last_sha256": "c104c8f52e6d545d70060c6468c4355b7482b770812f1b41c58a67221e1861a2",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_02",
+      "gpu_slot": 2,
+      "gpu_uuid": "GPU-dfb73f32-ce6f-389c-06c5-b4cacb481e55",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_02",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0006260340741403211,
+          "NDCG@5": 0.0003583684839944844,
+          "HR@10": 0.001430935026606448,
+          "NDCG@10": 0.0006186963247380729,
+          "HR@20": 0.0029065867727943477,
+          "NDCG@20": 0.000977437673805561,
+          "NLL": 9.400397459147085
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 0.5510181598365307,
+        "best_sha256": "99d44004c7fb93eca9a03a90fb0f695cd22795acf80b7dcc5ef69b797ec9af3d",
+        "last_sha256": "99d44004c7fb93eca9a03a90fb0f695cd22795acf80b7dcc5ef69b797ec9af3d",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_03",
+      "gpu_slot": 3,
+      "gpu_uuid": "GPU-a8efa00d-5503-b685-a96c-5f9ae589ebdb",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_03",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0006260340741403211,
+          "NDCG@5": 0.0003583684839944844,
+          "HR@10": 0.001430935026606448,
+          "NDCG@10": 0.0006186963247380729,
+          "HR@20": 0.0029065867727943477,
+          "NDCG@20": 0.000977437673805561,
+          "NLL": 9.400397459147085
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 0.5649834834039211,
+        "best_sha256": "a003a8a886a6d7c28b59ec04172f7f80c74bee5b81337aede50b0de832c6ec31",
+        "last_sha256": "a003a8a886a6d7c28b59ec04172f7f80c74bee5b81337aede50b0de832c6ec31",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_05",
+      "gpu_slot": 5,
+      "gpu_uuid": "GPU-93f7c11e-4d0e-1d10-4329-836b4d169437",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_05",
+      "result": {
+        "binding": {
+          "config_sha256": "bf84a98c220791fd01f917fbb8fe77d0cb95afe1a6ee106ee355692ef09c0fe5",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.000536600634977418,
+          "NDCG@5": 0.00031595650354108404,
+          "HR@10": 0.001073201269954836,
+          "NDCG@10": 0.000490626315700772,
+          "HR@20": 0.0016992353440951572,
+          "NDCG@20": 0.0006463772864079241,
+          "NLL": 9.400498835967893
+        },
+        "parameter_count": 852096,
+        "elapsed_seconds": 0.5927364574745297,
+        "best_sha256": "77755e1daffc719aeb3610766b0f98573aeebb103ddb314df8b466addd5ea20b",
+        "last_sha256": "77755e1daffc719aeb3610766b0f98573aeebb103ddb314df8b466addd5ea20b",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 251056128,
+        "peak_reserved_bytes": 369098752,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_06",
+      "gpu_slot": 6,
+      "gpu_uuid": "GPU-e7ba0d6c-90e1-afd3-2104-62647570805f",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_06",
+      "result": {
+        "binding": {
+          "config_sha256": "bf84a98c220791fd01f917fbb8fe77d0cb95afe1a6ee106ee355692ef09c0fe5",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.000536600634977418,
+          "NDCG@5": 0.00031595650354108404,
+          "HR@10": 0.001073201269954836,
+          "NDCG@10": 0.000490626315700772,
+          "HR@20": 0.0016992353440951572,
+          "NDCG@20": 0.0006463772864079241,
+          "NLL": 9.400498835967893
+        },
+        "parameter_count": 852096,
+        "elapsed_seconds": 0.5739877605810761,
+        "best_sha256": "5c66a1c9d8c6ef110d13454a83cdf7b6832506daf2d165bce981a330a32ea88e",
+        "last_sha256": "5c66a1c9d8c6ef110d13454a83cdf7b6832506daf2d165bce981a330a32ea88e",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 251056128,
+        "peak_reserved_bytes": 369098752,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_07",
+      "gpu_slot": 7,
+      "gpu_uuid": "GPU-f8ad4998-9d93-81de-fdde-737759b36d92",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_07",
+      "result": {
+        "binding": {
+          "config_sha256": "bf84a98c220791fd01f917fbb8fe77d0cb95afe1a6ee106ee355692ef09c0fe5",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.000536600634977418,
+          "NDCG@5": 0.0003159565035410818,
+          "HR@10": 0.001073201269954836,
+          "NDCG@10": 0.000490626315700772,
+          "HR@20": 0.0016992353440951572,
+          "NDCG@20": 0.0006463772864079241,
+          "NLL": 9.400498835967893
+        },
+        "parameter_count": 852096,
+        "elapsed_seconds": 0.5673562111333013,
+        "best_sha256": "34df7c4b954469e45705a074c0d46bc46c280ab5ea94ea6a079d728a919637c8",
+        "last_sha256": "34df7c4b954469e45705a074c0d46bc46c280ab5ea94ea6a079d728a919637c8",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 251056128,
+        "peak_reserved_bytes": 369098752,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_00",
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_00",
+      "result": {
+        "binding": {
+          "config_sha256": "69ec8fe5116af695522f441928cadb2b314e5f5b8bb0e8ac641983f79bdf129a",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.00040245047623306356,
+          "NDCG@5": 0.0002279287856395318,
+          "HR@10": 0.0008496176720475786,
+          "NDCG@10": 0.00037385044581077676,
+          "HR@20": 0.00236998613781693,
+          "NDCG@20": 0.0007540626396711422,
+          "NLL": 9.466321890860462
+        },
+        "parameter_count": 18831360,
+        "elapsed_seconds": 1.293310726992786,
+        "best_sha256": "f63a29455c1b0afd972004d60d87d28b6de6f12de7fdc37eb8a2c180d75246d1",
+        "last_sha256": "f63a29455c1b0afd972004d60d87d28b6de6f12de7fdc37eb8a2c180d75246d1",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 1768170496,
+        "peak_reserved_bytes": 2199912448,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_04",
+      "gpu_slot": 4,
+      "gpu_uuid": "GPU-8881b1c2-52bc-7df0-613e-ecba20196a4e",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_04",
+      "result": {
+        "binding": {
+          "config_sha256": "f7c5dad6e30a5bf8e3fa8e77a1a1d441b2bbe624693b10e90f65c9c47a3d535b",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.000536600634977418,
+          "NDCG@5": 0.0002896234230270863,
+          "HR@10": 0.0010284845503733845,
+          "NDCG@10": 0.00044713705209446287,
+          "HR@20": 0.002056969100746769,
+          "NDCG@20": 0.0007072921473826772,
+          "NLL": 9.409462747828444
+        },
+        "parameter_count": 25116672,
+        "elapsed_seconds": 1.4100991198793054,
+        "best_sha256": "0d608ef4cbe05eb8e61594ef1fb50b76086dcbf52a551d1c3c68a3ecb374570b",
+        "last_sha256": "0d608ef4cbe05eb8e61594ef1fb50b76086dcbf52a551d1c3c68a3ecb374570b",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 3658531328,
+        "peak_reserved_bytes": 4315938816,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_08",
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_08",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0006260340741403211,
+          "NDCG@5": 0.0003583684839944844,
+          "HR@10": 0.001430935026606448,
+          "NDCG@10": 0.0006186963247380729,
+          "HR@20": 0.0029065867727943477,
+          "NDCG@20": 0.000977437673805561,
+          "NLL": 9.400397459147085
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 0.6217415239661932,
+        "best_sha256": "1e98f3281fed2037072e0b7374d1cb921edfbbbce6391547879dfcca8ee2c961",
+        "last_sha256": "1e98f3281fed2037072e0b7374d1cb921edfbbbce6391547879dfcca8ee2c961",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    },
+    {
+      "name": "parallel_09",
+      "gpu_slot": 2,
+      "gpu_uuid": "GPU-dfb73f32-ce6f-389c-06c5-b4cacb481e55",
+      "output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016/smoke/parallel_09",
+      "result": {
+        "binding": {
+          "config_sha256": "80b98184c78cd215a5e58cf5dfee68f1505914a671f92ad59ca6a9b4d7a36714",
+          "seed": 2024,
+          "protocol": "full_train_prefix_v1",
+          "train_sha256": "894bed89c76a08907ef428c86e252a57076917c893b877b899cfd4f42ec3f78f",
+          "validation_sha256": "4400827739f741e61f7dfc48f7e7221a1d0b2a278d6138adbf360e1c7729027f",
+          "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+          "precision": "bf16",
+          "smoke": true
+        },
+        "epochs": 1,
+        "updates": 2,
+        "best_epoch": 1,
+        "best_validation": {
+          "samples": 22363,
+          "HR@5": 0.0006260340741403211,
+          "NDCG@5": 0.0003583684839944844,
+          "HR@10": 0.001430935026606448,
+          "NDCG@10": 0.0006186963247380729,
+          "HR@20": 0.0029065867727943477,
+          "NDCG@20": 0.000977437673805561,
+          "NLL": 9.400397459147085
+        },
+        "parameter_count": 827712,
+        "elapsed_seconds": 0.539089941419661,
+        "best_sha256": "e38fd74dde75652b151f44334225eee8458c2f45a9a0597c8c0ff20aaf26dfc6",
+        "last_sha256": "e38fd74dde75652b151f44334225eee8458c2f45a9a0597c8c0ff20aaf26dfc6",
+        "train_samples_per_full_epoch": 131413,
+        "validation_samples": 22363,
+        "smoke": true,
+        "peak_allocated_bytes": 234240000,
+        "peak_reserved_bytes": 333447168,
+        "status": "SMOKE_COMPLETE"
+      }
+    }
+  ],
+  "precision_checks": [
+    {
+      "model": "sasrec_fullce",
+      "minimum_query_cosine_fp32_bf16": 0.9999959468841553,
+      "gpu_topk_matches_full_stable_sort": true
+    },
+    {
+      "model": "esasrec",
+      "minimum_query_cosine_fp32_bf16": 0.9999904036521912,
+      "gpu_topk_matches_full_stable_sort": true
+    }
+  ],
+  "dispatches": [
+    {
+      "name": "base_sasrec_fullce",
+      "pid": 145,
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "monotonic": 4814482.157038199,
+      "concurrent_worker_count": 1
+    },
+    {
+      "name": "base_esasrec",
+      "pid": 146,
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "monotonic": 4814482.171405634,
+      "concurrent_worker_count": 2
+    },
+    {
+      "name": "base_sasrec_fullce",
+      "pid": 305,
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "monotonic": 4814503.256465634,
+      "concurrent_worker_count": 1
+    },
+    {
+      "name": "base_esasrec",
+      "pid": 306,
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "monotonic": 4814503.259793896,
+      "concurrent_worker_count": 2
+    },
+    {
+      "name": "parallel_00",
+      "pid": 465,
+      "gpu_slot": 0,
+      "gpu_uuid": "GPU-cbf8e353-1167-1b1f-45ed-9b5e160fe553",
+      "monotonic": 4814510.310175095,
+      "concurrent_worker_count": 1
+    },
+    {
+      "name": "parallel_01",
+      "pid": 466,
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "monotonic": 4814510.313557373,
+      "concurrent_worker_count": 2
+    },
+    {
+      "name": "parallel_02",
+      "pid": 467,
+      "gpu_slot": 2,
+      "gpu_uuid": "GPU-dfb73f32-ce6f-389c-06c5-b4cacb481e55",
+      "monotonic": 4814510.317781097,
+      "concurrent_worker_count": 3
+    },
+    {
+      "name": "parallel_03",
+      "pid": 468,
+      "gpu_slot": 3,
+      "gpu_uuid": "GPU-a8efa00d-5503-b685-a96c-5f9ae589ebdb",
+      "monotonic": 4814510.321651089,
+      "concurrent_worker_count": 4
+    },
+    {
+      "name": "parallel_04",
+      "pid": 469,
+      "gpu_slot": 4,
+      "gpu_uuid": "GPU-8881b1c2-52bc-7df0-613e-ecba20196a4e",
+      "monotonic": 4814510.325346103,
+      "concurrent_worker_count": 5
+    },
+    {
+      "name": "parallel_05",
+      "pid": 470,
+      "gpu_slot": 5,
+      "gpu_uuid": "GPU-93f7c11e-4d0e-1d10-4329-836b4d169437",
+      "monotonic": 4814510.328654775,
+      "concurrent_worker_count": 6
+    },
+    {
+      "name": "parallel_06",
+      "pid": 471,
+      "gpu_slot": 6,
+      "gpu_uuid": "GPU-e7ba0d6c-90e1-afd3-2104-62647570805f",
+      "monotonic": 4814510.332086232,
+      "concurrent_worker_count": 7
+    },
+    {
+      "name": "parallel_07",
+      "pid": 472,
+      "gpu_slot": 7,
+      "gpu_uuid": "GPU-f8ad4998-9d93-81de-fdde-737759b36d92",
+      "monotonic": 4814510.335997525,
+      "concurrent_worker_count": 8
+    },
+    {
+      "name": "parallel_08",
+      "pid": 547,
+      "gpu_slot": 1,
+      "gpu_uuid": "GPU-e5e6598f-bee2-4a5e-d047-706d030094a9",
+      "monotonic": 4814520.357530183,
+      "concurrent_worker_count": 3
+    },
+    {
+      "name": "parallel_09",
+      "pid": 548,
+      "gpu_slot": 2,
+      "gpu_uuid": "GPU-dfb73f32-ce6f-389c-06c5-b4cacb481e55",
+      "monotonic": 4814520.361664936,
+      "concurrent_worker_count": 4
+    }
+  ],
+  "smoke_not_formal_training": true
+}

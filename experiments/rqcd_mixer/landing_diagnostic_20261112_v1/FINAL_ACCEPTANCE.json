@@ -1,0 +1,42 @@
+{
+  "status": "DIAGNOSTICS_VERIFIED",
+  "created_at": "2026-11-12T03:58:05.739631+00:00",
+  "training_started": false,
+  "subset_count": 8192,
+  "arms": [
+    "B0",
+    "B1",
+    "B2"
+  ],
+  "gpu_job": {
+    "name": "nancy-rqcd-landing-1112-v1",
+    "status": "SUCCEEDED",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda12.8版本-183核",
+    "resource": {
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu": 1,
+      "nodes": 1,
+      "shared_memory_gib": 32,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 20,
+    "priority_level": "NORMAL",
+    "created_at": "1794455443000",
+    "finished_at": "1794455624000"
+  },
+  "cpu_status": "STOPPED",
+  "original_predictions_exact_match_all_arms": true,
+  "script_seconds": 90.4653387570288,
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_landing_diagnostic_20261112_v1",
+  "verified_hashes": {
+    "diagnose.py": "833177114b92a8bcce29a02d5cfffe5a452c8bb2c2c57bb672a1e8ba07b3ea6c",
+    "COMPLETE.json": "38d18014f1f66a5f0f0da1878cae043ca5d99e15d35b5a32b7c51fd70a6d098b",
+    "ORACLE_AUDIT.json": "a38956d2361446efec8e321e6b5c510714b0378860b6e5ca81194e2fdb698024",
+    "PROTOCOL.json": "bce00b763b60b9728a6b9cd70667cd1f19f27e380092420af5c377e1326bdcc9",
+    "SUBSET.json": "7afa32f28d6adfd45ce0313b8af906076bf5e8d988f6e7497f7e03746edcce1c",
+    "REPORT.md": "23b323c505878abf2d5d1820c4cba978bf6d4c409234c6cd3c73e26163ea7ebd",
+    "small_results.tar.gz": "f27091868586762f0779efab5c18802898c92cc4f4a5d7b35095cda5d83841b6"
+  }
+}

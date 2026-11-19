@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-02T02:09:00.800218+08:00",
+  "status": "new_observation_outage_after_user_recovery",
+  "consecutive_resumed_goal_turns_blocked": 3,
+  "job": "nancy-s09-e-single-1101-r1",
+  "last_training": {
+    "at": "2026-11-02T01:53:06+08:00",
+    "epoch": 21,
+    "update": 188,
+    "r_updates": 14048,
+    "t_updates": 120
+  },
+  "independently_accepted_validations": [
+    8,
+    11
+  ],
+  "cpu": "nancy-s09-e-prep-1101-r1",
+  "cpu_observed_stopped": true,
+  "cpu_start_request": "success started",
+  "cpu_post_start_status": "unverified due API ECONNRESET",
+  "gpu_restart_or_resubmission": false,
+  "errors": [
+    "CPU post-start status API ECONNRESET",
+    "same GPU job status API ECONNRESET",
+    "curl through existing proxy connection reset"
+  ],
+  "network_request_sent": true,
+  "goal": "blocked",
+  "heartbeat": "e PAUSED",
+  "last_retry_at": "2026-11-02T02:11:08.926224+08:00",
+  "last_retry": "original GPU job status ECONNRESET again"
+}

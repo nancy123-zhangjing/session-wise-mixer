@@ -1,0 +1,1839 @@
+{
+  "actual_spent": {
+    "evidence": "PREFLIGHT_EVENTS.json: Scheduled 2026-10-29 13:55:37 to last JobTerminated 13:59:16 Asia/Shanghai, 219 seconds, one H100, no failed GPU attempts.",
+    "gpu_hours": 0.0608333333333333,
+    "supervised_script_gpu_hours_lower_bound": 0.03979766258245541,
+    "worker_seconds_used_as_platform_accounting": false
+  },
+  "arms": {
+    "A": {
+      "buffered_gpu_hours": {
+        "high": 7.265052863263473,
+        "low": 6.698039007474824
+      },
+      "buffered_wall_seconds": {
+        "high": 26154.190307748504,
+        "low": 24112.940426909365
+      },
+      "checkpoint_bytes_basis": "maximum observed bundle bytes; write traffic is not extra retained capacity",
+      "checkpoint_retained_capacity_bytes": 1198756620.0,
+      "checkpoint_write_traffic_bytes": 8391296340.0,
+      "components_seconds": {
+        "R_compute_and_data": {
+          "evidence": null,
+          "high": 7543.432184059173,
+          "low": 7536.550596039742,
+          "unit_seconds": {
+            "first_extra_high": 2.6375458911061287,
+            "first_extra_low": 2.6386494170874357,
+            "high": 1.2090419493615627,
+            "low": 1.2079384233802557,
+            "retained_samples": 2,
+            "samples": [
+              3.8465878404676914,
+              1.2090419493615627,
+              1.2068348973989487
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 6237
+        },
+        "checkpoint_coverage_validation_cpu": {
+          "evidence": null,
+          "high": 26.0,
+          "low": 2.6,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Clock and optimizer-field validation beyond the separately measured checkpoint file read/hash/fingerprint.",
+            "high": 2.0,
+            "low": 0.2
+          },
+          "units": 13
+        },
+        "checkpoint_file_sha256": {
+          "evidence": null,
+          "high": 2.2586550191044807,
+          "low": 2.2428863123059273,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07528850063681602,
+            "low": 0.07476287707686424,
+            "retained_samples": 2,
+            "samples": [
+              0.07528850063681602,
+              0.07423725351691246
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 30
+        },
+        "checkpoint_payload_fingerprint": {
+          "evidence": null,
+          "high": 1.9433877691626549,
+          "low": 1.9099413603544235,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07197732478380203,
+            "low": 0.07073856890201569,
+            "retained_samples": 2,
+            "samples": [
+              0.06949981302022934,
+              0.07197732478380203
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 27
+        },
+        "checkpoint_readback": {
+          "evidence": null,
+          "high": 1.3873062282800674,
+          "low": 1.3873062282800674,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.09248708188533783,
+            "low": 0.09248708188533783,
+            "retained_samples": 1,
+            "samples": [
+              0.09248708188533783
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 15
+        },
+        "checkpoint_state_materialization": {
+          "evidence": null,
+          "high": 5.596912745386362,
+          "low": 4.963773423805833,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.053303930908441544,
+            "low": 0.0472740326076746,
+            "retained_samples": 2,
+            "samples": [
+              0.041244134306907654,
+              0.053303930908441544
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 105
+        },
+        "checkpoint_write_and_fsync": {
+          "evidence": "fsync-profiled disposable bundle used conservatively also for rolling writes",
+          "high": 29.480627831071615,
+          "low": 29.0865811239928,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.28076788410544395,
+            "low": 0.27701505832374096,
+            "retained_samples": 2,
+            "samples": [
+              0.28076788410544395,
+              0.27326223254203796
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 105
+        },
+        "evaluation_catalog_build": {
+          "evidence": null,
+          "high": 0.7815005630254745,
+          "low": 0.7815005630254745,
+          "unit_seconds": {
+            "high": 0.1563001126050949,
+            "low": 0.1563001126050949,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 5
+        },
+        "evaluation_output_and_other_cpu": {
+          "evidence": null,
+          "high": 900.0,
+          "low": 300.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Full split load, item metrics/gzip publication and preservation checks absent from the 128-request decode profile; allow 1-3 minutes per full evaluation.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 5
+        },
+        "extra_gpu_allocated_cpu_audit": {
+          "evidence": null,
+          "high": 0.0,
+          "low": 0.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere.",
+            "high": 0.0,
+            "low": 0.0
+          },
+          "units": 1
+        },
+        "full_validation_decode_and_data": {
+          "evidence": null,
+          "high": 8077.29015063867,
+          "low": 7519.6193263717,
+          "unit_seconds": {
+            "first_extra_high": 0.09221060946583748,
+            "first_extra_low": 0.17523440346121788,
+            "high": 1.201936535537243,
+            "low": 1.1189127415418625,
+            "retained_samples": 3,
+            "samples": [
+              1.2941471450030804,
+              1.029713336378336,
+              1.201936535537243,
+              1.1189127415418625
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 6720
+        },
+        "maximum_test_decode_and_data": {
+          "evidence": null,
+          "high": 3997.8253384158015,
+          "low": 3721.854247175157,
+          "unit_seconds": {
+            "first_extra_high": 0.09221060946583748,
+            "first_extra_low": 0.17523440346121788,
+            "high": 1.201936535537243,
+            "low": 1.1189127415418625,
+            "retained_samples": 3,
+            "samples": [
+              1.2941471450030804,
+              1.029713336378336,
+              1.201936535537243,
+              1.1189127415418625
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 3326
+        },
+        "model_fork_data_hash_load_startup": {
+          "evidence": null,
+          "high": 97.21544414386153,
+          "low": 97.21544414386153,
+          "unit_seconds": {
+            "high": 32.405148047953844,
+            "low": 32.405148047953844,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 3
+        },
+        "package_verification_platform_startup_release": {
+          "evidence": null,
+          "high": 180.0,
+          "low": 60.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Explicit allowance for startup/import/package authentication/release; preflight platform log shows about 31 seconds through package verification, model build is counted separately.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 1
+        },
+        "phase_indices_logging_cpu": {
+          "evidence": null,
+          "high": 60.0,
+          "low": 12.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Index generation and up to 693 JSONL updates per phase; checkpoint and replay auditing separately counted.",
+            "high": 5.0,
+            "low": 1.0
+          },
+          "units": 12
+        },
+        "selected_test_checkpoint_restore": {
+          "evidence": null,
+          "high": 0.14073878526687622,
+          "low": 0.14073878526687622,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07036939263343811,
+            "low": 0.07036939263343811,
+            "retained_samples": 1,
+            "samples": [
+              0.07036939263343811
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 2
+        }
+      },
+      "measured_profile": {
+        "R": {
+          "first_extra_high": 2.6375458911061287,
+          "first_extra_low": 2.6386494170874357,
+          "high": 1.2090419493615627,
+          "low": 1.2079384233802557,
+          "retained_samples": 2,
+          "samples": [
+            3.8465878404676914,
+            1.2090419493615627,
+            1.2068348973989487
+          ],
+          "statistic": "median/max after first"
+        },
+        "T": null,
+        "checkpoint": {
+          "file_sha256_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07528850063681602,
+            "low": 0.07476287707686424,
+            "retained_samples": 2,
+            "samples": [
+              0.07528850063681602,
+              0.07423725351691246
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "payload_fingerprint_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07197732478380203,
+            "low": 0.07073856890201569,
+            "retained_samples": 2,
+            "samples": [
+              0.06949981302022934,
+              0.07197732478380203
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "read_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.09248708188533783,
+            "low": 0.09248708188533783,
+            "retained_samples": 1,
+            "samples": [
+              0.09248708188533783
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "restore_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07036939263343811,
+            "low": 0.07036939263343811,
+            "retained_samples": 1,
+            "samples": [
+              0.07036939263343811
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.28076788410544395,
+            "low": 0.27701505832374096,
+            "retained_samples": 2,
+            "samples": [
+              0.28076788410544395,
+              0.27326223254203796
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "state_materialization_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.053303930908441544,
+            "low": 0.0472740326076746,
+            "retained_samples": 2,
+            "samples": [
+              0.041244134306907654,
+              0.053303930908441544
+            ],
+            "statistic": "median/max all measured samples"
+          }
+        },
+        "decode": {
+          "first_extra_high": 0.09221060946583748,
+          "first_extra_low": 0.17523440346121788,
+          "high": 1.201936535537243,
+          "low": 1.1189127415418625,
+          "retained_samples": 3,
+          "samples": [
+            1.2941471450030804,
+            1.029713336378336,
+            1.201936535537243,
+            1.1189127415418625
+          ],
+          "statistic": "median/max after first"
+        }
+      },
+      "suggested_job_authorized_seconds": 26155,
+      "unbuffered_wall_seconds": {
+        "high": 20923.352246198803,
+        "low": 19290.35234152749
+      },
+      "workload": {
+        "active_t_catalog_refreshes": 0,
+        "covered_checkpoint_reads": 13,
+        "full_validations": 3,
+        "immutable_writes": 14,
+        "initial_and_phase_slots": 13,
+        "maximum_new_tests": 2,
+        "model_builds": 3,
+        "phase_rows": [
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 33
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 34
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 35
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 36
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 37
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 38
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 39
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 40
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 41
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 42
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 43
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 44
+          }
+        ],
+        "phases": 12,
+        "r20_pre_freeze_writes": 0,
+        "r35_boundary_writes": 1,
+        "r_epochs": 9,
+        "r_updates": 6237,
+        "rolling_writes": 91,
+        "selected_test_checkpoint_loads": 2,
+        "t_updates": 0,
+        "test_batches": 1663,
+        "validation_batches": 2240
+      }
+    },
+    "B": {
+      "buffered_gpu_hours": {
+        "high": 2.726785512074518,
+        "low": 2.4577008807656564
+      },
+      "buffered_wall_seconds": {
+        "high": 9816.427843468264,
+        "low": 8847.723170756362
+      },
+      "checkpoint_bytes_basis": "maximum observed bundle bytes; write traffic is not extra retained capacity",
+      "checkpoint_retained_capacity_bytes": 557496828.0,
+      "checkpoint_write_traffic_bytes": 2946768948.0,
+      "components_seconds": {
+        "R_compute_and_data": {
+          "evidence": null,
+          "high": 2502.3188081011176,
+          "low": 2496.0337309502065,
+          "unit_seconds": {
+            "first_extra_high": 0.062203243374824524,
+            "first_extra_low": 0.0652278233319521,
+            "high": 1.2035866305232048,
+            "low": 1.2005620505660772,
+            "retained_samples": 2,
+            "samples": [
+              1.2657898738980293,
+              1.2035866305232048,
+              1.1975374706089497
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 2079
+        },
+        "checkpoint_coverage_validation_cpu": {
+          "evidence": null,
+          "high": 10.0,
+          "low": 1.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Clock and optimizer-field validation beyond the separately measured checkpoint file read/hash/fingerprint.",
+            "high": 2.0,
+            "low": 0.2
+          },
+          "units": 5
+        },
+        "checkpoint_file_sha256": {
+          "evidence": null,
+          "high": 0.9991874508559704,
+          "low": 0.9826515670865774,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07686057314276695,
+            "low": 0.07558858208358288,
+            "retained_samples": 2,
+            "samples": [
+              0.07686057314276695,
+              0.0743165910243988
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 13
+        },
+        "checkpoint_payload_fingerprint": {
+          "evidence": null,
+          "high": 0.8004488497972488,
+          "low": 0.799030676484108,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07276807725429535,
+            "low": 0.07263915240764618,
+            "retained_samples": 2,
+            "samples": [
+              0.07251022756099701,
+              0.07276807725429535
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 11
+        },
+        "checkpoint_readback": {
+          "evidence": null,
+          "high": 0.5193495377898216,
+          "low": 0.5193495377898216,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.0865582562983036,
+            "low": 0.0865582562983036,
+            "retained_samples": 1,
+            "samples": [
+              0.0865582562983036
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 6
+        },
+        "checkpoint_state_materialization": {
+          "evidence": null,
+          "high": 1.530977688729763,
+          "low": 1.5308519825339317,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.041377775371074677,
+            "low": 0.04137437790632248,
+            "retained_samples": 2,
+            "samples": [
+              0.04137098044157028,
+              0.041377775371074677
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 37
+        },
+        "checkpoint_write_and_fsync": {
+          "evidence": "fsync-profiled disposable bundle used conservatively also for rolling writes",
+          "high": 11.774092059582472,
+          "low": 8.653088884428144,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.3182187043130398,
+            "low": 0.23386726714670658,
+            "retained_samples": 2,
+            "samples": [
+              0.3182187043130398,
+              0.14951582998037338
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 37
+        },
+        "evaluation_catalog_build": {
+          "evidence": null,
+          "high": 0.10634728521108627,
+          "low": 0.10634728521108627,
+          "unit_seconds": {
+            "high": 0.05317364260554314,
+            "low": 0.05317364260554314,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 2
+        },
+        "evaluation_output_and_other_cpu": {
+          "evidence": null,
+          "high": 360.0,
+          "low": 120.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Full split load, item metrics/gzip publication and preservation checks absent from the 128-request decode profile; allow 1-3 minutes per full evaluation.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 2
+        },
+        "extra_gpu_allocated_cpu_audit": {
+          "evidence": null,
+          "high": 0.0,
+          "low": 0.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere.",
+            "high": 0.0,
+            "low": 0.0
+          },
+          "units": 1
+        },
+        "full_validation_decode_and_data": {
+          "evidence": null,
+          "high": 2731.796853542328,
+          "low": 2513.398530483246,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 1.2195521667599678,
+            "low": 1.1220529153943062,
+            "retained_samples": 3,
+            "samples": [
+              1.092943862080574,
+              1.2195521667599678,
+              1.120363026857376,
+              1.1220529153943062
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 2240
+        },
+        "maximum_test_decode_and_data": {
+          "evidence": null,
+          "high": 2028.1152533218265,
+          "low": 1865.9739983007312,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 1.2195521667599678,
+            "low": 1.1220529153943062,
+            "retained_samples": 3,
+            "samples": [
+              1.092943862080574,
+              1.2195521667599678,
+              1.120363026857376,
+              1.1220529153943062
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 1663
+        },
+        "model_fork_data_hash_load_startup": {
+          "evidence": null,
+          "high": 5.109548479318619,
+          "low": 5.109548479318619,
+          "unit_seconds": {
+            "high": 2.5547742396593094,
+            "low": 2.5547742396593094,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 2
+        },
+        "package_verification_platform_startup_release": {
+          "evidence": null,
+          "high": 180.0,
+          "low": 60.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Explicit allowance for startup/import/package authentication/release; preflight platform log shows about 31 seconds through package verification, model build is counted separately.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 1
+        },
+        "phase_indices_logging_cpu": {
+          "evidence": null,
+          "high": 20.0,
+          "low": 4.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Index generation and up to 693 JSONL updates per phase; checkpoint and replay auditing separately counted.",
+            "high": 5.0,
+            "low": 1.0
+          },
+          "units": 4
+        },
+        "selected_test_checkpoint_restore": {
+          "evidence": null,
+          "high": 0.0714084580540657,
+          "low": 0.0714084580540657,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.0714084580540657,
+            "low": 0.0714084580540657,
+            "retained_samples": 1,
+            "samples": [
+              0.0714084580540657
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 1
+        }
+      },
+      "measured_profile": {
+        "R": {
+          "first_extra_high": 0.062203243374824524,
+          "first_extra_low": 0.0652278233319521,
+          "high": 1.2035866305232048,
+          "low": 1.2005620505660772,
+          "retained_samples": 2,
+          "samples": [
+            1.2657898738980293,
+            1.2035866305232048,
+            1.1975374706089497
+          ],
+          "statistic": "median/max after first"
+        },
+        "T": null,
+        "checkpoint": {
+          "file_sha256_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07686057314276695,
+            "low": 0.07558858208358288,
+            "retained_samples": 2,
+            "samples": [
+              0.07686057314276695,
+              0.0743165910243988
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "payload_fingerprint_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07276807725429535,
+            "low": 0.07263915240764618,
+            "retained_samples": 2,
+            "samples": [
+              0.07251022756099701,
+              0.07276807725429535
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "read_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.0865582562983036,
+            "low": 0.0865582562983036,
+            "retained_samples": 1,
+            "samples": [
+              0.0865582562983036
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "restore_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.0714084580540657,
+            "low": 0.0714084580540657,
+            "retained_samples": 1,
+            "samples": [
+              0.0714084580540657
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.3182187043130398,
+            "low": 0.23386726714670658,
+            "retained_samples": 2,
+            "samples": [
+              0.3182187043130398,
+              0.14951582998037338
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "state_materialization_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.041377775371074677,
+            "low": 0.04137437790632248,
+            "retained_samples": 2,
+            "samples": [
+              0.04137098044157028,
+              0.041377775371074677
+            ],
+            "statistic": "median/max all measured samples"
+          }
+        },
+        "decode": {
+          "first_extra_high": 0,
+          "first_extra_low": 0,
+          "high": 1.2195521667599678,
+          "low": 1.1220529153943062,
+          "retained_samples": 3,
+          "samples": [
+            1.092943862080574,
+            1.2195521667599678,
+            1.120363026857376,
+            1.1220529153943062
+          ],
+          "statistic": "median/max after first"
+        }
+      },
+      "suggested_job_authorized_seconds": 9817,
+      "unbuffered_wall_seconds": {
+        "high": 7853.142274774611,
+        "low": 7078.17853660509
+      },
+      "workload": {
+        "active_t_catalog_refreshes": 0,
+        "covered_checkpoint_reads": 5,
+        "full_validations": 1,
+        "immutable_writes": 6,
+        "initial_and_phase_slots": 5,
+        "maximum_new_tests": 1,
+        "model_builds": 2,
+        "phase_rows": [
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 41
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 42
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 43
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 44
+          }
+        ],
+        "phases": 4,
+        "r20_pre_freeze_writes": 0,
+        "r35_boundary_writes": 1,
+        "r_epochs": 3,
+        "r_updates": 2079,
+        "rolling_writes": 31,
+        "selected_test_checkpoint_loads": 1,
+        "t_updates": 0,
+        "test_batches": 1663,
+        "validation_batches": 2240
+      }
+    },
+    "C": {
+      "buffered_gpu_hours": {
+        "high": 19.511296834346528,
+        "low": 18.709080218944646
+      },
+      "buffered_wall_seconds": {
+        "high": 70240.6686036475,
+        "low": 67352.68878820073
+      },
+      "checkpoint_bytes_basis": "maximum observed bundle bytes; write traffic is not extra retained capacity",
+      "checkpoint_retained_capacity_bytes": 3504262960.0,
+      "checkpoint_write_traffic_bytes": 27476607300.0,
+      "components_seconds": {
+        "C_replay_trajectory_prediction_cpu": {
+          "evidence": null,
+          "high": 600.0,
+          "low": 180.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "20 trajectory scans and six paired 71657-row prediction comparisons including R20 recheck; 3-10 minutes GPU-allocated CPU overhead, not an observed time.",
+            "high": 600.0,
+            "low": 180.0
+          },
+          "units": 1
+        },
+        "R_compute_and_data": {
+          "evidence": null,
+          "high": 24668.312376223505,
+          "low": 24642.99101684615,
+          "unit_seconds": {
+            "first_extra_high": 0.006133139133453369,
+            "first_extra_low": 0.007351156324148178,
+            "high": 1.186546716839075,
+            "low": 1.1853286996483803,
+            "retained_samples": 2,
+            "samples": [
+              1.1926798559725285,
+              1.186546716839075,
+              1.1841106824576855
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 20790
+        },
+        "T_catalog_refresh": {
+          "evidence": null,
+          "high": 0.01820480450987816,
+          "low": 0.01820480450987816,
+          "unit_seconds": {
+            "high": 0.0036409609019756317,
+            "low": 0.0036409609019756317,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 5
+        },
+        "T_compute_and_data": {
+          "evidence": null,
+          "high": 231.29238850995898,
+          "low": 222.22768054157495,
+          "unit_seconds": {
+            "first_extra_high": 0.16476131603121758,
+            "first_extra_low": 0.2103126123547554,
+            "high": 1.1556381359696388,
+            "low": 1.110086839646101,
+            "retained_samples": 39,
+            "samples": [
+              1.3203994520008564,
+              1.1468256376683712,
+              1.1457168273627758,
+              1.140424519777298,
+              1.125653237104416,
+              1.1123718433082104,
+              1.110086839646101,
+              1.1129410937428474,
+              1.115704383701086,
+              1.1056938208639622,
+              1.1109255105257034,
+              1.1118784323334694,
+              1.1155534833669662,
+              1.1134083047509193,
+              1.105578400194645,
+              1.1092544682323933,
+              1.1556381359696388,
+              1.111919790506363,
+              1.1092267632484436,
+              1.1171152032911777,
+              1.1070628799498081,
+              1.1134393811225891,
+              1.1131438240408897,
+              1.1240773759782314,
+              1.1266180127859116,
+              1.118567980825901,
+              1.1015669517219067,
+              1.093679066747427,
+              1.0950071923434734,
+              1.0975899770855904,
+              1.0955812148749828,
+              1.091918084770441,
+              1.084819845855236,
+              1.0888410434126854,
+              1.0948031358420849,
+              1.0855389945209026,
+              1.099669136106968,
+              1.0972652398049831,
+              1.087435107678175,
+              1.0946565456688404
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 200
+        },
+        "checkpoint_coverage_validation_cpu": {
+          "evidence": null,
+          "high": 84.0,
+          "low": 8.4,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Clock and optimizer-field validation beyond the separately measured checkpoint file read/hash/fingerprint.",
+            "high": 2.0,
+            "low": 0.2
+          },
+          "units": 42
+        },
+        "checkpoint_file_sha256": {
+          "evidence": null,
+          "high": 6.693968176841736,
+          "low": 6.638405188918114,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07606782019138336,
+            "low": 0.0754364226013422,
+            "retained_samples": 4,
+            "samples": [
+              0.07396295666694641,
+              0.0758189857006073,
+              0.0750538595020771,
+              0.07606782019138336
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 88
+        },
+        "checkpoint_payload_fingerprint": {
+          "evidence": null,
+          "high": 6.217428091913462,
+          "low": 6.101118074730039,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07314621284604073,
+            "low": 0.07177785970270634,
+            "retained_samples": 4,
+            "samples": [
+              0.07096206769347191,
+              0.0717165432870388,
+              0.07314621284604073,
+              0.07183917611837387
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 85
+        },
+        "checkpoint_readback": {
+          "evidence": null,
+          "high": 3.7767774760723114,
+          "low": 3.725043900310993,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.08583585172891617,
+            "low": 0.08466008864343166,
+            "retained_samples": 2,
+            "samples": [
+              0.08348432555794716,
+              0.08583585172891617
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 44
+        },
+        "checkpoint_state_materialization": {
+          "evidence": null,
+          "high": 15.823668949306011,
+          "low": 13.08863720856607,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.045865707099437714,
+            "low": 0.0379380788654089,
+            "retained_samples": 4,
+            "samples": [
+              0.02745649218559265,
+              0.04446269944310188,
+              0.03141345828771591,
+              0.045865707099437714
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 345
+        },
+        "checkpoint_write_and_fsync": {
+          "evidence": "fsync-profiled disposable bundle used conservatively also for rolling writes",
+          "high": 73.53356720879674,
+          "low": 59.30689975619316,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.21314077451825142,
+            "low": 0.171904057264328,
+            "retained_samples": 4,
+            "samples": [
+              0.21314077451825142,
+              0.1541849859058857,
+              0.1896231286227703,
+              0.14939763769507408
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 345
+        },
+        "evaluation_catalog_build": {
+          "evidence": null,
+          "high": 0.639030709862709,
+          "low": 0.639030709862709,
+          "unit_seconds": {
+            "high": 0.053252559155225754,
+            "low": 0.053252559155225754,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 12
+        },
+        "evaluation_output_and_other_cpu": {
+          "evidence": null,
+          "high": 2160.0,
+          "low": 720.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Full split load, item metrics/gzip publication and preservation checks absent from the 128-request decode profile; allow 1-3 minutes per full evaluation.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 12
+        },
+        "extra_gpu_allocated_cpu_audit": {
+          "evidence": null,
+          "high": 0.0,
+          "low": 0.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere.",
+            "high": 0.0,
+            "low": 0.0
+          },
+          "units": 1
+        },
+        "full_validation_decode_and_data": {
+          "evidence": null,
+          "high": 24340.44454842806,
+          "low": 24302.822973132133,
+          "unit_seconds": {
+            "first_extra_high": 0.09779289364814758,
+            "first_extra_low": 0.09947317838668823,
+            "high": 1.0865833312273026,
+            "low": 1.084903046488762,
+            "retained_samples": 3,
+            "samples": [
+              1.1843762248754501,
+              1.0865833312273026,
+              1.0153059139847755,
+              1.084903046488762
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 22400
+        },
+        "maximum_test_decode_and_data": {
+          "evidence": null,
+          "high": 3614.1717454493046,
+          "low": 3608.5864789783955,
+          "unit_seconds": {
+            "first_extra_high": 0.09779289364814758,
+            "first_extra_low": 0.09947317838668823,
+            "high": 1.0865833312273026,
+            "low": 1.084903046488762,
+            "retained_samples": 3,
+            "samples": [
+              1.1843762248754501,
+              1.0865833312273026,
+              1.0153059139847755,
+              1.084903046488762
+            ],
+            "statistic": "median/max after first"
+          },
+          "units": 3326
+        },
+        "model_fork_data_hash_load_startup": {
+          "evidence": null,
+          "high": 7.4983702674508095,
+          "low": 7.4983702674508095,
+          "unit_seconds": {
+            "high": 2.4994567558169365,
+            "low": 2.4994567558169365,
+            "statistic": "single measured timing; no repeated-startup distribution"
+          },
+          "units": 3
+        },
+        "package_verification_platform_startup_release": {
+          "evidence": null,
+          "high": 180.0,
+          "low": 60.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Explicit allowance for startup/import/package authentication/release; preflight platform log shows about 31 seconds through package verification, model build is counted separately.",
+            "high": 180.0,
+            "low": 60.0
+          },
+          "units": 1
+        },
+        "phase_indices_logging_cpu": {
+          "evidence": null,
+          "high": 200.0,
+          "low": 40.0,
+          "unit_seconds": {
+            "basis": "operator_allowance",
+            "evidence": "Index generation and up to 693 JSONL updates per phase; checkpoint and replay auditing separately counted.",
+            "high": 5.0,
+            "low": 1.0
+          },
+          "units": 40
+        },
+        "selected_test_checkpoint_restore": {
+          "evidence": null,
+          "high": 0.11280862241983414,
+          "low": 0.10717115178704262,
+          "unit_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.05640431120991707,
+            "low": 0.05358557589352131,
+            "retained_samples": 2,
+            "samples": [
+              0.05076684057712555,
+              0.05640431120991707
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "units": 2
+        }
+      },
+      "measured_profile": {
+        "R": {
+          "first_extra_high": 0.006133139133453369,
+          "first_extra_low": 0.007351156324148178,
+          "high": 1.186546716839075,
+          "low": 1.1853286996483803,
+          "retained_samples": 2,
+          "samples": [
+            1.1926798559725285,
+            1.186546716839075,
+            1.1841106824576855
+          ],
+          "statistic": "median/max after first"
+        },
+        "T": {
+          "first_extra_high": 0.16476131603121758,
+          "first_extra_low": 0.2103126123547554,
+          "high": 1.1556381359696388,
+          "low": 1.110086839646101,
+          "retained_samples": 39,
+          "samples": [
+            1.3203994520008564,
+            1.1468256376683712,
+            1.1457168273627758,
+            1.140424519777298,
+            1.125653237104416,
+            1.1123718433082104,
+            1.110086839646101,
+            1.1129410937428474,
+            1.115704383701086,
+            1.1056938208639622,
+            1.1109255105257034,
+            1.1118784323334694,
+            1.1155534833669662,
+            1.1134083047509193,
+            1.105578400194645,
+            1.1092544682323933,
+            1.1556381359696388,
+            1.111919790506363,
+            1.1092267632484436,
+            1.1171152032911777,
+            1.1070628799498081,
+            1.1134393811225891,
+            1.1131438240408897,
+            1.1240773759782314,
+            1.1266180127859116,
+            1.118567980825901,
+            1.1015669517219067,
+            1.093679066747427,
+            1.0950071923434734,
+            1.0975899770855904,
+            1.0955812148749828,
+            1.091918084770441,
+            1.084819845855236,
+            1.0888410434126854,
+            1.0948031358420849,
+            1.0855389945209026,
+            1.099669136106968,
+            1.0972652398049831,
+            1.087435107678175,
+            1.0946565456688404
+          ],
+          "statistic": "median/max after first"
+        },
+        "checkpoint": {
+          "file_sha256_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07606782019138336,
+            "low": 0.0754364226013422,
+            "retained_samples": 4,
+            "samples": [
+              0.07396295666694641,
+              0.0758189857006073,
+              0.0750538595020771,
+              0.07606782019138336
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "payload_fingerprint_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.07314621284604073,
+            "low": 0.07177785970270634,
+            "retained_samples": 4,
+            "samples": [
+              0.07096206769347191,
+              0.0717165432870388,
+              0.07314621284604073,
+              0.07183917611837387
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "read_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.08583585172891617,
+            "low": 0.08466008864343166,
+            "retained_samples": 2,
+            "samples": [
+              0.08348432555794716,
+              0.08583585172891617
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "restore_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.05640431120991707,
+            "low": 0.05358557589352131,
+            "retained_samples": 2,
+            "samples": [
+              0.05076684057712555,
+              0.05640431120991707
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.21314077451825142,
+            "low": 0.171904057264328,
+            "retained_samples": 4,
+            "samples": [
+              0.21314077451825142,
+              0.1541849859058857,
+              0.1896231286227703,
+              0.14939763769507408
+            ],
+            "statistic": "median/max all measured samples"
+          },
+          "state_materialization_seconds": {
+            "first_extra_high": 0,
+            "first_extra_low": 0,
+            "high": 0.045865707099437714,
+            "low": 0.0379380788654089,
+            "retained_samples": 4,
+            "samples": [
+              0.02745649218559265,
+              0.04446269944310188,
+              0.03141345828771591,
+              0.045865707099437714
+            ],
+            "statistic": "median/max all measured samples"
+          }
+        },
+        "decode": {
+          "first_extra_high": 0.09779289364814758,
+          "first_extra_low": 0.09947317838668823,
+          "high": 1.0865833312273026,
+          "low": 1.084903046488762,
+          "retained_samples": 3,
+          "samples": [
+            1.1843762248754501,
+            1.0865833312273026,
+            1.0153059139847755,
+            1.084903046488762
+          ],
+          "statistic": "median/max after first"
+        }
+      },
+      "suggested_job_authorized_seconds": 70241,
+      "unbuffered_wall_seconds": {
+        "high": 56192.534882918,
+        "low": 53882.151030560584
+      },
+      "workload": {
+        "active_t_catalog_refreshes": 5,
+        "covered_checkpoint_reads": 42,
+        "full_validations": 10,
+        "immutable_writes": 43,
+        "initial_and_phase_slots": 41,
+        "maximum_new_tests": 2,
+        "model_builds": 3,
+        "phase_rows": [
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 40,
+            "periodic_last_writes": 0,
+            "phase": 5
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 6
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 7
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 8
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 40,
+            "periodic_last_writes": 0,
+            "phase": 9
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 10
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 11
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 12
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 40,
+            "periodic_last_writes": 0,
+            "phase": 13
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 14
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 15
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 16
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 40,
+            "periodic_last_writes": 0,
+            "phase": 17
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 18
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 19
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 20
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 40,
+            "periodic_last_writes": 0,
+            "phase": 21
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 22
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 23
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 24
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 25
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 26
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 27
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 28
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 29
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 30
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 31
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 32
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 33
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 34
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 35
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 36
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 37
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 38
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 39
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 40
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "T",
+            "optimizer_updates": 0,
+            "periodic_last_writes": 0,
+            "phase": 41
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 42
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 43
+          },
+          {
+            "boundary_last_writes": 3,
+            "immutable_phase_writes": 1,
+            "kind": "R",
+            "optimizer_updates": 693,
+            "periodic_last_writes": 6,
+            "phase": 44
+          }
+        ],
+        "phases": 40,
+        "r20_pre_freeze_writes": 1,
+        "r35_boundary_writes": 1,
+        "r_epochs": 30,
+        "r_updates": 20790,
+        "rolling_writes": 302,
+        "selected_test_checkpoint_loads": 2,
+        "t_updates": 200,
+        "test_batches": 1663,
+        "validation_batches": 2240
+      }
+    }
+  },
+  "authorization_granted": false,
+  "automatic_submission": false,
+  "cumulative_gpu_hours": {
+    "high": 29.563968543017854,
+    "low": 27.92565344051846
+  },
+  "excluded_work": "Post-release CPU analysis/archive audit is outside GPU time. Any such work executed while a GPU remains allocated must instead be included in extra_gpu_allocated_cpu_audit. No retries or failed formal attempts forecast.",
+  "format": "stage09_freeze35_budget_v1",
+  "inputs": {
+    "overheads": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\BUDGET_OVERHEADS.json",
+      "sha256": "3d4e6be147b0f4f7c295788c26d8fd441a42dfeeadc0bdb751d7bbda23fb35a9"
+    },
+    "report": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\preflight_r1\\report.json",
+      "sha256": "452255c00fa12d2cf53dc7311889e3b691487bd518842726b47be41218fc6802"
+    },
+    "supervisor": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\preflight_r1\\supervisor.json",
+      "sha256": "01f73382ca8d8b3e1a7c7c427811a1aacc56f35d73d8160fc28c46718ccf5167"
+    }
+  },
+  "offline_cpu_audit_seconds_excluded_from_gpu": {
+    "basis": "operator_allowance",
+    "evidence": "Estimated local download, complete SHA/extraction, real CPU restore, metric recomputation/bootstrap and report generation; excluded from GPU budget, network throughput remains uncertain.",
+    "high": 7200.0,
+    "low": 1800.0
+  },
+  "price": {
+    "basis": "User-specified 1 point/GPU hour; not an invoice",
+    "cumulative_estimated_points": {
+      "high": 29.563968543017854,
+      "low": 27.92565344051846
+    },
+    "individual_settlement_verified": false,
+    "points_per_gpu_hour": 1
+  },
+  "remaining_gpu_hours": {
+    "high": 29.50313520968452,
+    "low": 27.864820107185125
+  },
+  "safety_factor": 1.25,
+  "statistic_policy": "Warm median is the central scenario; warm maximum is the conservative scenario. First-step excess is added once per training process and once per complete evaluation. All observed checkpoint I/O samples are retained. Conservative total receives an additional 25% margin.",
+  "status": "estimate_for_review_no_authorization",
+  "suggested_additional_budget_integer_gpu_hours": 30,
+  "suggested_cumulative_budget_integer_gpu_hours": 30,
+  "synthetic_fixture": false,
+  "three_card_parallel_wall_hours": {
+    "high": 19.511296834346528,
+    "low": 18.709080218944646
+  },
+  "totals": {
+    "checkpoint_covered_reads": 60,
+    "full_validation_batches": 31360,
+    "full_validations": 14,
+    "immutable_writes": 63,
+    "initial_and_phase_slots": 59,
+    "maximum_test_batches": 8315,
+    "maximum_tests": 5,
+    "r_updates": 29106,
+    "rolling_writes": 424,
+    "t_updates": 200
+  }
+}

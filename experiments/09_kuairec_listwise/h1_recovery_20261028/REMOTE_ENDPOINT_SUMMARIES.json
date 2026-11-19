@@ -1,0 +1,299 @@
+{
+  "verification_scope": "Remote completion receipts and summary hashes checked; independent prediction replay is a separate acceptance gate.",
+  "decay": {
+    "completion": {
+      "policy": "decay",
+      "r_updates": 18018,
+      "t_updates": 280,
+      "phase": 33,
+      "endpoint_epoch": 26,
+      "endpoint_checkpoint_sha256": "2ccf71e14ade6dbc58848a249f9396cd36d061f64abb65f56152e8afb84585c6",
+      "events": [
+        "catalog/initial_R20",
+        "validation/initial_R20",
+        "catalog/T210",
+        "catalog/T220",
+        "catalog/T230",
+        "catalog/T240",
+        "validation/after_T240",
+        "validation/R21",
+        "validation/R22",
+        "validation/R23",
+        "catalog/T250",
+        "catalog/T260",
+        "catalog/T270",
+        "catalog/T280",
+        "validation/after_T280",
+        "validation/R24",
+        "validation/R25",
+        "validation/R26"
+      ],
+      "evaluation_audit": {
+        "R21": {
+          "examples": 8192,
+          "predictions_sha256": "e4a1856ee474391e04b597d997bb5c3dd8375963e26f3618b9b505e497f58281"
+        },
+        "R22": {
+          "examples": 8192,
+          "predictions_sha256": "c6972a4f920e594d26e71eac10f162344f382766cb13ca8fc59d554a40cf8e77"
+        },
+        "R23": {
+          "examples": 71657,
+          "predictions_sha256": "37ac9c2950318bb1ed3874ec0e294a3a6a2886e41c95677f6edaebece48187ac"
+        },
+        "R24": {
+          "examples": 8192,
+          "predictions_sha256": "19452d7ada91e606357dbd43034e8a79fb8b67f1016fcc97f273688359ffe119"
+        },
+        "R25": {
+          "examples": 8192,
+          "predictions_sha256": "4c9b76b4596f556c82fe635a778de77602abaca30dfe0ea2a2f4381120398b93"
+        },
+        "R26": {
+          "examples": 71657,
+          "predictions_sha256": "02d9b969f36b928f27c32c5da92d09837917de08d71b6f6e55b12cfeab3b1920"
+        },
+        "after_T240": {
+          "examples": 8192,
+          "predictions_sha256": "9e4dfba36577aa70d9e2350653a53163f05fa9709c071ce572a91ba657ac0063"
+        },
+        "after_T280": {
+          "examples": 8192,
+          "predictions_sha256": "9a6b3ed0b2dcf65ab9108ce5cba1e248de3a56ec6da0efb8988126286a274238"
+        },
+        "initial_R20": {
+          "examples": 8192,
+          "predictions_sha256": "8975e02c010a775a9d9be2f28e86f739ec076773367f7b108869ed506aab3886"
+        }
+      },
+      "attempt_seconds": 11623.584006228
+    },
+    "evaluations": {
+      "R23": {
+        "examples": 71657,
+        "metrics": {
+          "list/recall@5": 0.0063664402195572085,
+          "list/hr@5": 0.030911146154597596,
+          "list/hit_rate@5": 0.030911146154597596,
+          "list/ndcg@5": 0.006749105347727216,
+          "list/precision@5": 0.0063664402195572085,
+          "list/completion_rate": 1,
+          "list/duplicate_rate": 0,
+          "list/missing_rate": 0,
+          "list/invalid_rate": 0,
+          "list/distinct_valid_items": 5,
+          "list/position_accuracy": 0.0012615655322866569,
+          "list/exact_match": 0,
+          "aggregate/recall@10": 0.012015574373398319,
+          "aggregate/hr@10": 0.057845011652734556,
+          "aggregate/hit_rate@10": 0.057845011652734556,
+          "aggregate/ndcg@10": 0.009862666409710412,
+          "aggregate/precision@10": 0.006007787186699159,
+          "aggregate/recall@20": 0.015928660384083842,
+          "aggregate/hr@20": 0.07598699359448484,
+          "aggregate/hit_rate@20": 0.07598699359448484,
+          "aggregate/ndcg@20": 0.011562865732522408,
+          "aggregate/precision@20": 0.0039821650960209605,
+          "aggregate/recall@50": 0.01731303318119925,
+          "aggregate/hr@50": 0.08242041949844398,
+          "aggregate/hit_rate@50": 0.08242041949844398,
+          "aggregate/ndcg@50": 0.012057583094053269,
+          "aggregate/precision@50": 0.0017313032533743098,
+          "aggregate/completion_rate": 0,
+          "aggregate/duplicate_rate": 0,
+          "aggregate/missing_rate": 0.5608325642492985,
+          "aggregate/invalid_rate": 0,
+          "aggregate/distinct_valid_items": 21.958371129129045,
+          "aggregate/candidate_count": 21.958371129129045,
+          "aggregate/lists_used": 29.39623484097855,
+          "aggregate/coverage@10": 0.9931423316606515,
+          "aggregate/coverage@20": 0.8848019085886563,
+          "aggregate/coverage@50": 0.43916741038387486
+        },
+        "summary_sha256": "2e072e366b6b1bdf109b08ea15e55dcceb71219460790f44d7b1dc247a05b9af"
+      },
+      "R26": {
+        "examples": 71657,
+        "metrics": {
+          "list/recall@5": 0.005543073334755063,
+          "list/hr@5": 0.02710132994683004,
+          "list/hit_rate@5": 0.02710132994683004,
+          "list/ndcg@5": 0.006159300303025631,
+          "list/precision@5": 0.005543073334755063,
+          "list/completion_rate": 1,
+          "list/duplicate_rate": 0,
+          "list/missing_rate": 0,
+          "list/invalid_rate": 0,
+          "list/distinct_valid_items": 5,
+          "list/position_accuracy": 0.0010689814134198885,
+          "list/exact_match": 0,
+          "aggregate/recall@10": 0.01057538009380112,
+          "aggregate/hr@10": 0.05078359406617637,
+          "aggregate/hit_rate@10": 0.05078359406617637,
+          "aggregate/ndcg@10": 0.008915563532320333,
+          "aggregate/precision@10": 0.00528769004690056,
+          "aggregate/recall@20": 0.015465342069129008,
+          "aggregate/hr@20": 0.07351689297626192,
+          "aggregate/hit_rate@20": 0.07351689297626192,
+          "aggregate/ndcg@20": 0.011031602762747346,
+          "aggregate/precision@20": 0.003866335517282252,
+          "aggregate/recall@50": 0.01698368642698726,
+          "aggregate/hr@50": 0.08028524777760722,
+          "aggregate/hit_rate@50": 0.08028524777760722,
+          "aggregate/ndcg@50": 0.011579985797583249,
+          "aggregate/precision@50": 0.0016983685792008182,
+          "aggregate/completion_rate": 0,
+          "aggregate/duplicate_rate": 0,
+          "aggregate/missing_rate": 0.6244774261386029,
+          "aggregate/invalid_rate": 0,
+          "aggregate/distinct_valid_items": 18.7761279428388,
+          "aggregate/candidate_count": 18.7761279428388,
+          "aggregate/lists_used": 25.35890422429072,
+          "aggregate/coverage@10": 0.9942671349331528,
+          "aggregate/coverage@20": 0.8123749316795902,
+          "aggregate/coverage@50": 0.3755225487453596
+        },
+        "summary_sha256": "825960c39cb507dec758098f6cd231c8df489762d96d661837c6d1102f658e73"
+      }
+    }
+  },
+  "freeze": {
+    "completion": {
+      "policy": "freeze",
+      "r_updates": 18018,
+      "t_updates": 200,
+      "phase": 33,
+      "endpoint_epoch": 26,
+      "endpoint_checkpoint_sha256": "1e39813b34709e4c5741fe5ac64f2e7f2778fbc321669985aad908726c58a3a9",
+      "events": [
+        "catalog/initial_R20",
+        "validation/initial_R20",
+        "validation/R21",
+        "validation/R22",
+        "validation/R23",
+        "validation/R24",
+        "validation/R25",
+        "validation/R26"
+      ],
+      "evaluation_audit": {
+        "R21": {
+          "examples": 8192,
+          "predictions_sha256": "b41fcbd9ba349ea6523d01bf4e217cbf5c1130e32805a6f4217958dc993ae954"
+        },
+        "R22": {
+          "examples": 8192,
+          "predictions_sha256": "cef1dd95748eb6cb3f95761733e0fce0764baf6f412cff822ec7b9f8f55be6ef"
+        },
+        "R23": {
+          "examples": 71657,
+          "predictions_sha256": "92ed6add54a876ade99baa25d885cdc63238050558b601f410e84aacc4439948"
+        },
+        "R24": {
+          "examples": 8192,
+          "predictions_sha256": "3932ccab3b7ca83d3d52bd7dcd1a1f43cd06046c5b3e451792cd4ba8c91ec335"
+        },
+        "R25": {
+          "examples": 8192,
+          "predictions_sha256": "0f552a03876a723ce96fc199099691e16a1a0b108de2703920efa0fcd0badde8"
+        },
+        "R26": {
+          "examples": 71657,
+          "predictions_sha256": "1236e808836bc29b2fc493cc2c4da210d3ab24f49dd2adf769f002224ea63393"
+        },
+        "initial_R20": {
+          "examples": 8192,
+          "predictions_sha256": "e53d3269357bc026837cbffc9b726458b6ca25dddefcced9ab5d6b7fb7e87db1"
+        }
+      },
+      "attempt_seconds": 10945.692521599998
+    },
+    "evaluations": {
+      "R23": {
+        "examples": 71657,
+        "metrics": {
+          "list/recall@5": 0.009333352079987983,
+          "list/hr@5": 0.04520144577640705,
+          "list/hit_rate@5": 0.04520144577640705,
+          "list/ndcg@5": 0.009629051943392409,
+          "list/precision@5": 0.009333352079987983,
+          "list/completion_rate": 1,
+          "list/duplicate_rate": 0,
+          "list/missing_rate": 0,
+          "list/invalid_rate": 0,
+          "list/distinct_valid_items": 5,
+          "list/position_accuracy": 0.001816989295395163,
+          "list/exact_match": 0,
+          "aggregate/recall@10": 0.015024352347665972,
+          "aggregate/hr@10": 0.07156314107484266,
+          "aggregate/hit_rate@10": 0.07156314107484266,
+          "aggregate/ndcg@10": 0.012775940185933605,
+          "aggregate/precision@10": 0.007512176173832986,
+          "aggregate/recall@20": 0.01825362518204129,
+          "aggregate/hr@20": 0.08623023570621154,
+          "aggregate/hit_rate@20": 0.08623023570621154,
+          "aggregate/ndcg@20": 0.014191839467648683,
+          "aggregate/precision@20": 0.004563406295510323,
+          "aggregate/recall@50": 0.01890673654188437,
+          "aggregate/hr@50": 0.08911899744616716,
+          "aggregate/hit_rate@50": 0.08911899744616716,
+          "aggregate/ndcg@50": 0.014424043619963113,
+          "aggregate/precision@50": 0.0018906735834850192,
+          "aggregate/completion_rate": 0,
+          "aggregate/duplicate_rate": 0,
+          "aggregate/missing_rate": 0.611295462661355,
+          "aggregate/invalid_rate": 0,
+          "aggregate/distinct_valid_items": 19.43522614678259,
+          "aggregate/candidate_count": 19.43522614678259,
+          "aggregate/lists_used": 26.416260797968096,
+          "aggregate/coverage@10": 0.9894888159150943,
+          "aggregate/coverage@20": 0.8491040720731119,
+          "aggregate/coverage@50": 0.3887045122517207
+        },
+        "summary_sha256": "9910012060faae7c4e22c604b326fc3832bc4fbdd6564b95f13e166daef90f91"
+      },
+      "R26": {
+        "examples": 71657,
+        "metrics": {
+          "list/recall@5": 0.009961343771528934,
+          "list/hr@5": 0.048425136413748834,
+          "list/hit_rate@5": 0.048425136413748834,
+          "list/ndcg@5": 0.010364534488661849,
+          "list/precision@5": 0.009961343771528934,
+          "list/completion_rate": 1,
+          "list/duplicate_rate": 0,
+          "list/missing_rate": 0,
+          "list/invalid_rate": 0,
+          "list/distinct_valid_items": 5,
+          "list/position_accuracy": 0.0020012001917025066,
+          "list/exact_match": 0,
+          "aggregate/recall@10": 0.015398356289277463,
+          "aggregate/hr@10": 0.0730284550009071,
+          "aggregate/hit_rate@10": 0.0730284550009071,
+          "aggregate/ndcg@10": 0.013370344649122208,
+          "aggregate/precision@10": 0.007699178144638732,
+          "aggregate/recall@20": 0.019043499177437542,
+          "aggregate/hr@20": 0.0893841494899312,
+          "aggregate/hit_rate@20": 0.0893841494899312,
+          "aggregate/ndcg@20": 0.01496004924222417,
+          "aggregate/precision@20": 0.004760874794359386,
+          "aggregate/recall@50": 0.020053868033565313,
+          "aggregate/hr@50": 0.0938219573802978,
+          "aggregate/hit_rate@50": 0.0938219573802978,
+          "aggregate/ndcg@50": 0.015323636845965119,
+          "aggregate/precision@50": 0.00200538672827574,
+          "aggregate/completion_rate": 0,
+          "aggregate/duplicate_rate": 0,
+          "aggregate/missing_rate": 0.607986085672197,
+          "aggregate/invalid_rate": 0,
+          "aggregate/distinct_valid_items": 19.600694977462076,
+          "aggregate/candidate_count": 19.600694977462076,
+          "aggregate/lists_used": 26.988375176186555,
+          "aggregate/coverage@10": 0.9883012140083518,
+          "aggregate/coverage@20": 0.8398230521259396,
+          "aggregate/coverage@50": 0.3920138886604868
+        },
+        "summary_sha256": "b375e20ca859f2982019a8d37b882bd9035355bbe88250964fd9706f0036f784"
+      }
+    }
+  }
+}

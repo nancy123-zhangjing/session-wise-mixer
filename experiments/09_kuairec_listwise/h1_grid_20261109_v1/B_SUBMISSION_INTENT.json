@@ -1,0 +1,32 @@
+{
+  "job": "nancy-s09-grid-b-1109-v1",
+  "request": [
+    "job",
+    "create",
+    "--name",
+    "nancy-s09-grid-b-1109-v1",
+    "--workspace",
+    "分布式训练空间",
+    "--project",
+    "公共科研项目",
+    "--group",
+    "开发区-H100-cuda12.8版本-183核",
+    "--quota",
+    "1,20,200",
+    "--image",
+    "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "--nodes",
+    "1",
+    "--shm-size",
+    "32",
+    "--max-time",
+    "24",
+    "--priority",
+    "4",
+    "--no-auto-fault-tolerance",
+    "--no-enable-notification",
+    "--command",
+    "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_grid_20261109_v1 && export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 && /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u experiment.py --arm B --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_grid_20261109_v1/runs/B > /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_grid_20261109_v1/B.log 2>&1'"
+  ],
+  "remote": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_grid_20261109_v1"
+}

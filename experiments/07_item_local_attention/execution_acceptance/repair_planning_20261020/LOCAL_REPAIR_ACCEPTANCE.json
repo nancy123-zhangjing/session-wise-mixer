@@ -1,0 +1,20 @@
+{
+  "status": "LOCAL_CPU_REPAIR_PASS_H100_NOT_TESTED",
+  "engine_commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+  "previous_engine_commit": "1dc2a0c5ad01e2a2878b9de400b91f3a7e809f25",
+  "tests": "tests/test_ocn_autocast_gradient.py",
+  "tests_sha256": "26b4efd895f16ea0072821e25df110f38596add68274dfaf8d9c03661523fe6a",
+  "regression_log_sha256": "5105bfa5974a9ee2133b58ec7d4b145828991ab7404ebecd4910e9d2c193a6a5",
+  "new_regression_tests_passed": 4,
+  "existing_model_tests_passed": 8,
+  "checks": [
+    "four_layer_old_BF16_missing_gradients_reproduced",
+    "fixed_control_and_item_local_full_finite_gradients_and_actual_parameter_updates",
+    "teacher_logits_and_loss_unchanged_and_FP32_gradient_compatibility",
+    "actual_save_boundary_and_restore_boundary_bitwise_CPU_continuation"
+  ],
+  "patch_gzip_sha256": "8056f307739da9a2898c8b4cadfbdf7a156300498f1c2933165482f48128f2f2",
+  "old_remote_execution_and_last84_modified": false,
+  "new_gpu_allocation": false,
+  "goal_complete": false
+}

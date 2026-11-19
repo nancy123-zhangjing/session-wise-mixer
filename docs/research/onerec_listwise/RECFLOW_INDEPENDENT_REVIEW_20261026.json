@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-26T11:42:18.012457+00:00",
+  "review_method": "Independent CPU calculations; did not import or call audit_recflow_sample.py. Only this review JSON was written.",
+  "scope": "Complete local files Jan13, Jan14, Jan15 and Feb17; not the full RecFlow dataset. Short-window unseen items do not imply full-dataset cold start.",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "pandas": "3.0.1",
+    "pyarrow": "26.0.0"
+  },
+  "reviewed_artifacts": [
+    {
+      "path": "docs\\research\\onerec_listwise\\audit_recflow_sample.py",
+      "sha256": "23ea22712427e271d54ad0a4829e12c4eec2993fa42f60821a1376bd0c44f600"
+    },
+    {
+      "path": "docs\\research\\onerec_listwise\\RECFLOW_SAMPLE_AUDIT_20261026.json",
+      "sha256": "5a388aa96fa3d013c31ed076d6d9bd65bcd34782dc04d6aed23e7ddcc607f8ab"
+    }
+  ],
+  "unit_evidence": {
+    "request_timestamp": "Milliseconds confirmed by official code request_ts//1000 and valid date ranges.",
+    "duration": "Milliseconds explicitly stated in official README.",
+    "playing_time": "Official source scan of all .py/.md/.sh found no explicit unit statement or conversion for playing_time. Milliseconds is a magnitude-based inference, not confirmed.",
+    "threshold_used_in_this_review": 60000,
+    "threshold_unit": "raw playing_time units; do not label it 60 seconds as an established fact.",
+    "sources": [
+      "https://github.com/RecFlow-ICLR/RecFlow/blob/main/README.md",
+      "https://github.com/RecFlow-ICLR/RecFlow/blob/main/coarse/dataset.py",
+      "https://github.com/RecFlow-ICLR/RecFlow/blob/main/rank/dataset.py",
+      "https://arxiv.org/html/2410.20868v1"
+    ]
+  },
+  "quality_definition": {
+    "played": "realshow==1 and playing_time>0; count distinct rows, verified one row per request/video.",
+    "social": "Any of like, follow, forward, comment > 0 anywhere in the observed request; chosen proxy, not exact OneRec interaction definition.",
+    "Q": "At least 5 played items AND sum(playing_time)>=60000 raw units AND social.",
+    "strict_all_exposures": "Q AND rerank_index unique across every exposed item in request AND duration>0 for every exposed item. A single zero rerank_index is allowed here, so uniqueness does not prove a valid order.",
+    "strict_all_exposures_positive_rerank": "strict_all_exposures AND every rerank_index>0; still not proof of final display order.",
+    "strict_played_subset": "Q AND rerank_index unique among playing_time>0 rows AND duration>0 among those rows; diagnostic alternative, not the primary definition.",
+    "no_training_contract": "These filters diagnose data, not a finalized experimental protocol."
+  },
+  "files": [
+    {
+      "file": "outputs\\dataset_audit_20261026\\recflow\\archive_complete_days\\2024-01-13.feather",
+      "bytes": 56546962,
+      "sha256": "ccb0b7c56cc42b9520efff7cc0df40a4c593420d96555b543355f7cfa7bdc497",
+      "rows": 1071225,
+      "requests": 207241,
+      "requests_gt6": 58537,
+      "fraction_requests_gt6": 0.2824585868626382,
+      "max_items_per_request": 13,
+      "duplicate_request_video_rows": 0,
+      "requests_multiple_users": 0,
+      "requests_multiple_timestamps": 0,
+      "null_counts": {
+        "request_id": 0,
+        "user_id": 0,
+        "request_timestamp": 0,
+        "video_id": 0,
+        "playing_time": 0,
+        "duration": 0,
+        "effective_view": 0,
+        "long_view": 0,
+        "like": 0,
+        "follow": 0,
+        "forward": 0,
+        "comment": 0,
+        "realshow": 0,
+        "index": 0,
+        "rank_index": 0,
+        "rerank_index": 0
+      },
+      "binary_values": {
+        "realshow": [
+          1
+        ],
+        "effective_view": [
+          0,
+          1
+        ],
+        "long_view": [
+          0,
+          1
+        ],
+        "like": [
+          0,
+          1
+        ],
+        "follow": [
+          0,
+          1
+        ],
+        "forward": [
+          0,
+          1
+        ],
+        "comment": [
+          0,
+          1
+        ]
+      },
+      "negative_duration_rows": 0,
+      "zero_duration_rows": 105533,
+      "zero_duration_fraction": 0.0985161847417676,
+      "zero_duration_effective_rows": 36807,
+      "zero_duration_long_rows": 17414,
+      "positive_duration_rows": 965692,
+      "effective_label_matches_raw_ratio_0_3_fraction": 0.8436478711638907,
+      "long_label_matches_raw_ratio_1_0_fraction": 0.8306178367429781,
+      "ratio_comparison_note": "Comparison assumes playing_time and duration share units. Mismatches do not establish corrupted labels; official label semantics need confirmation. Do not rebuild official labels from this simplified formula.",
+      "duration_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 10766.0,
+        "0.5": 24750.0,
+        "0.75": 68533.0,
+        "0.9": 221000.0,
+        "0.99": 611133.0,
+        "1.0": 13165533.0
+      },
+      "playing_time_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 1751.0,
+        "0.5": 6985.0,
+        "0.75": 22475.0,
+        "0.9": 56684.59999999998,
+        "0.99": 276268.40000000014,
+        "1.0": 2270871.0
+      },
+      "Q_requests": 19356,
+      "Q_requests_gt6": 9761,
+      "Q_requests_with_nonpositive_duration": 11728,
+      "Q_strict_all_exposures": 4636,
+      "Q_strict_all_exposures_positive_rerank": 2321,
+      "Q_strict_played_subset": 4744,
+      "position_ties": {
+        "index": {
+          "requests": 43147,
+          "Q_requests": 7619,
+          "tied_value_row_counts": {
+            "0": 106524
+          }
+        },
+        "rank_index": {
+          "requests": 68690,
+          "Q_requests": 10812,
+          "tied_value_row_counts": {
+            "0": 180953
+          }
+        },
+        "rerank_index": {
+          "requests": 43273,
+          "Q_requests": 7636,
+          "tied_value_row_counts": {
+            "0": 106891
+          }
+        }
+      }
+    },
+    {
+      "file": "outputs\\dataset_audit_20261026\\recflow\\archive_complete_days\\2024-01-14.feather",
+      "bytes": 56309850,
+      "sha256": "a9011b47d46c8308e3cbdd658a6abbc6e13caeb2d7c844199fe8784094bf49e2",
+      "rows": 1062909,
+      "requests": 207965,
+      "requests_gt6": 55872,
+      "fraction_requests_gt6": 0.2686605919265261,
+      "max_items_per_request": 13,
+      "duplicate_request_video_rows": 0,
+      "requests_multiple_users": 0,
+      "requests_multiple_timestamps": 0,
+      "null_counts": {
+        "request_id": 0,
+        "user_id": 0,
+        "request_timestamp": 0,
+        "video_id": 0,
+        "playing_time": 0,
+        "duration": 0,
+        "effective_view": 0,
+        "long_view": 0,
+        "like": 0,
+        "follow": 0,
+        "forward": 0,
+        "comment": 0,
+        "realshow": 0,
+        "index": 0,
+        "rank_index": 0,
+        "rerank_index": 0
+      },
+      "binary_values": {
+        "realshow": [
+          1
+        ],
+        "effective_view": [
+          0,
+          1
+        ],
+        "long_view": [
+          0,
+          1
+        ],
+        "like": [
+          0,
+          1
+        ],
+        "follow": [
+          0,
+          1
+        ],
+        "forward": [
+          0,
+          1
+        ],
+        "comment": [
+          0,
+          1
+        ]
+      },
+      "negative_duration_rows": 0,
+      "zero_duration_rows": 102235,
+      "zero_duration_fraction": 0.09618415123025584,
+      "zero_duration_effective_rows": 35113,
+      "zero_duration_long_rows": 16720,
+      "positive_duration_rows": 960674,
+      "effective_label_matches_raw_ratio_0_3_fraction": 0.8445716236725466,
+      "long_label_matches_raw_ratio_1_0_fraction": 0.8309520191032546,
+      "ratio_comparison_note": "Comparison assumes playing_time and duration share units. Mismatches do not establish corrupted labels; official label semantics need confirmation. Do not rebuild official labels from this simplified formula.",
+      "duration_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 10750.0,
+        "0.5": 24766.0,
+        "0.75": 68966.0,
+        "0.9": 219399.0,
+        "0.99": 619613.5999999978,
+        "1.0": 7779760.0
+      },
+      "playing_time_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 1762.0,
+        "0.5": 7018.0,
+        "0.75": 22701.0,
+        "0.9": 57399.20000000007,
+        "0.99": 276556.51999999955,
+        "1.0": 1837949.0
+      },
+      "Q_requests": 18871,
+      "Q_requests_gt6": 9282,
+      "Q_requests_with_nonpositive_duration": 11340,
+      "Q_strict_all_exposures": 4474,
+      "Q_strict_all_exposures_positive_rerank": 2220,
+      "Q_strict_played_subset": 4546,
+      "position_ties": {
+        "index": {
+          "requests": 43117,
+          "Q_requests": 7662,
+          "tied_value_row_counts": {
+            "0": 106122
+          }
+        },
+        "rank_index": {
+          "requests": 68887,
+          "Q_requests": 10651,
+          "tied_value_row_counts": {
+            "0": 180121
+          }
+        },
+        "rerank_index": {
+          "requests": 43240,
+          "Q_requests": 7680,
+          "tied_value_row_counts": {
+            "0": 106460
+          }
+        }
+      }
+    },
+    {
+      "file": "outputs\\dataset_audit_20261026\\recflow\\archive_complete_days\\2024-01-15.feather",
+      "bytes": 50547002,
+      "sha256": "1972d3522bd273efa1dcecce006298d9c58bee88015cf6d887546c0163d41627",
+      "rows": 949853,
+      "requests": 191008,
+      "requests_gt6": 48039,
+      "fraction_requests_gt6": 0.25150255486681183,
+      "max_items_per_request": 12,
+      "duplicate_request_video_rows": 0,
+      "requests_multiple_users": 0,
+      "requests_multiple_timestamps": 0,
+      "null_counts": {
+        "request_id": 0,
+        "user_id": 0,
+        "request_timestamp": 0,
+        "video_id": 0,
+        "playing_time": 0,
+        "duration": 0,
+        "effective_view": 0,
+        "long_view": 0,
+        "like": 0,
+        "follow": 0,
+        "forward": 0,
+        "comment": 0,
+        "realshow": 0,
+        "index": 0,
+        "rank_index": 0,
+        "rerank_index": 0
+      },
+      "binary_values": {
+        "realshow": [
+          1
+        ],
+        "effective_view": [
+          0,
+          1
+        ],
+        "long_view": [
+          0,
+          1
+        ],
+        "like": [
+          0,
+          1
+        ],
+        "follow": [
+          0,
+          1
+        ],
+        "forward": [
+          0,
+          1
+        ],
+        "comment": [
+          0,
+          1
+        ]
+      },
+      "negative_duration_rows": 0,
+      "zero_duration_rows": 79665,
+      "zero_duration_fraction": 0.0838708726508207,
+      "zero_duration_effective_rows": 25969,
+      "zero_duration_long_rows": 12116,
+      "positive_duration_rows": 870188,
+      "effective_label_matches_raw_ratio_0_3_fraction": 0.8403724252690223,
+      "long_label_matches_raw_ratio_1_0_fraction": 0.8345874684550925,
+      "ratio_comparison_note": "Comparison assumes playing_time and duration share units. Mismatches do not establish corrupted labels; official label semantics need confirmation. Do not rebuild official labels from this simplified formula.",
+      "duration_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 10750.0,
+        "0.5": 24033.0,
+        "0.75": 73200.0,
+        "0.9": 249400.0,
+        "0.99": 652800.0,
+        "1.0": 8332600.0
+      },
+      "playing_time_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 1737.0,
+        "0.5": 6533.0,
+        "0.75": 21383.0,
+        "0.9": 56752.0,
+        "0.99": 291947.1599999997,
+        "1.0": 1306054.0
+      },
+      "Q_requests": 14321,
+      "Q_requests_gt6": 7103,
+      "Q_requests_with_nonpositive_duration": 7700,
+      "Q_strict_all_exposures": 3905,
+      "Q_strict_all_exposures_positive_rerank": 1829,
+      "Q_strict_played_subset": 3968,
+      "position_ties": {
+        "index": {
+          "requests": 38693,
+          "Q_requests": 6082,
+          "tied_value_row_counts": {
+            "0": 95787
+          }
+        },
+        "rank_index": {
+          "requests": 61201,
+          "Q_requests": 8377,
+          "tied_value_row_counts": {
+            "0": 161358
+          }
+        },
+        "rerank_index": {
+          "requests": 38786,
+          "Q_requests": 6094,
+          "tied_value_row_counts": {
+            "0": 96065
+          }
+        }
+      }
+    },
+    {
+      "file": "outputs\\dataset_audit_20261026\\recflow\\learning_2024-02-17.feather",
+      "bytes": 52936474,
+      "sha256": "552378a3c4af1e239eed8d03e12736fb7d3a53848ece7b8e85a439d797a7a43f",
+      "rows": 1004815,
+      "requests": 195875,
+      "requests_gt6": 50813,
+      "fraction_requests_gt6": 0.2594154435226548,
+      "max_items_per_request": 11,
+      "duplicate_request_video_rows": 0,
+      "requests_multiple_users": 0,
+      "requests_multiple_timestamps": 0,
+      "null_counts": {
+        "request_id": 0,
+        "user_id": 0,
+        "request_timestamp": 0,
+        "video_id": 0,
+        "playing_time": 0,
+        "duration": 0,
+        "effective_view": 0,
+        "long_view": 0,
+        "like": 0,
+        "follow": 0,
+        "forward": 0,
+        "comment": 0,
+        "realshow": 0,
+        "index": 0,
+        "rank_index": 0,
+        "rerank_index": 0
+      },
+      "binary_values": {
+        "realshow": [
+          1
+        ],
+        "effective_view": [
+          0,
+          1
+        ],
+        "long_view": [
+          0,
+          1
+        ],
+        "like": [
+          0,
+          1
+        ],
+        "follow": [
+          0,
+          1
+        ],
+        "forward": [
+          0,
+          1
+        ],
+        "comment": [
+          0,
+          1
+        ]
+      },
+      "negative_duration_rows": 0,
+      "zero_duration_rows": 104252,
+      "zero_duration_fraction": 0.10375243203972871,
+      "zero_duration_effective_rows": 30346,
+      "zero_duration_long_rows": 13668,
+      "positive_duration_rows": 900563,
+      "effective_label_matches_raw_ratio_0_3_fraction": 0.8347633646951962,
+      "long_label_matches_raw_ratio_1_0_fraction": 0.8379369350062128,
+      "ratio_comparison_note": "Comparison assumes playing_time and duration share units. Mismatches do not establish corrupted labels; official label semantics need confirmation. Do not rebuild official labels from this simplified formula.",
+      "duration_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 10000.0,
+        "0.5": 22422.0,
+        "0.75": 67366.0,
+        "0.9": 234532.0,
+        "0.99": 656194.3799999995,
+        "1.0": 4819680.0
+      },
+      "playing_time_raw_quantiles": {
+        "0.0": 0.0,
+        "0.25": 1644.0,
+        "0.5": 5836.0,
+        "0.75": 19410.0,
+        "0.9": 51847.0,
+        "0.99": 269668.0199999992,
+        "1.0": 1530927.0
+      },
+      "Q_requests": 17310,
+      "Q_requests_gt6": 8528,
+      "Q_requests_with_nonpositive_duration": 10983,
+      "Q_strict_all_exposures": 3718,
+      "Q_strict_all_exposures_positive_rerank": 1817,
+      "Q_strict_played_subset": 3799,
+      "position_ties": {
+        "index": {
+          "requests": 42413,
+          "Q_requests": 7596,
+          "tied_value_row_counts": {
+            "0": 105555,
+            "3000": 2
+          }
+        },
+        "rank_index": {
+          "requests": 65940,
+          "Q_requests": 10380,
+          "tied_value_row_counts": {
+            "0": 173494,
+            "3000": 2
+          }
+        },
+        "rerank_index": {
+          "requests": 42657,
+          "Q_requests": 7640,
+          "tied_value_row_counts": {
+            "0": 106279
+          }
+        }
+      }
+    }
+  ],
+  "short_window_unseen_items": [
+    {
+      "current_file": "2024-01-14.feather",
+      "prior_files": [
+        "2024-01-13.feather"
+      ],
+      "history_definition": "Union of all exposed video IDs in preceding downloaded January days only. Jan13 is start of available window.",
+      "rows": 1062909,
+      "unseen_video_rows": 606600,
+      "unseen_video_row_fraction": 0.570697961913955,
+      "unique_items": 474846,
+      "unseen_unique_items": 333995,
+      "Q_played_rows": 122355,
+      "Q_played_unseen_rows": 67396,
+      "Q_played_unseen_row_fraction": 0.5508234236443137
+    },
+    {
+      "current_file": "2024-01-15.feather",
+      "prior_files": [
+        "2024-01-13.feather",
+        "2024-01-14.feather"
+      ],
+      "history_definition": "Union of all exposed video IDs in preceding downloaded January days only. Jan13 is start of available window.",
+      "rows": 949853,
+      "unseen_video_rows": 504685,
+      "unseen_video_row_fraction": 0.5313295846831037,
+      "unique_items": 441647,
+      "unseen_unique_items": 280729,
+      "Q_played_rows": 93173,
+      "Q_played_unseen_rows": 47403,
+      "Q_played_unseen_row_fraction": 0.5087632683288077
+    }
+  ],
+  "findings": [
+    {
+      "file": "2024-01-13.feather",
+      "histogram_count_and_weighted_item_rows_match": true
+    },
+    {
+      "file": "2024-01-14.feather",
+      "histogram_count_and_weighted_item_rows_match": true
+    },
+    {
+      "file": "2024-01-15.feather",
+      "histogram_count_and_weighted_item_rows_match": true
+    },
+    {
+      "file": "learning_2024-02-17.feather",
+      "histogram_count_and_weighted_item_rows_match": true
+    }
+  ],
+  "limitations": [
+    "Official paper describes a final output of 6, but 25-28% of audited request groups contain more than 6 unique exposed videos. Same user/time and zero request/video duplicates do not explain this discrepancy. Do not invent causes or silently truncate to claim original OneRec batching.",
+    "Most repeated ordering values are zero. A tie-break by video_id or file order defines a surrogate order, not recovered final display order.",
+    "Zero duration occurs in 8-10% of rows and over half of Q request groups. It does not invalidate positive playing_time automatically; silently removing these requests substantially changes the population.",
+    "No final display order was verified; rank_index and rerank_index refer to intermediate system stages.",
+    "Potential future duplicate request/video rows would inflate played/effective/summed time because the reviewed script only drops exact full-row duplicates. This does not affect these four audited files, where pair duplicates are zero.",
+    "The reviewed extraction main enumerates all existing .feather files in output directories, not only current complete_members. Fresh or manifest-selected inputs are required to avoid stale files in reruns. No stale input was found in this review.",
+    "The first 3 downloaded days are a short chronological window; their cold-item fractions cannot be generalized to the full 37-day train/test split.",
+    "The complete archive has not been verified; the local complete members have hashes and readable Feather structures.",
+    "A manual logged-request list task can be explicitly defined, but strict replication of OneRec returned/watch list semantics remains unverified."
+  ],
+  "cross_file_checks": {
+    "duplicate_request_video_rows": 0,
+    "request_ids_in_multiple_files": 0
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-27",
+  "status": "CPU_IMPLEMENTATION_ACCEPTED_GPU_NOT_RUN",
+  "test_count": 55,
+  "seconds": 21.259,
+  "command": ".runtime/stage08_restore_env/Scripts/python.exe -X utf8 -B -m unittest discover -s tests -p test_listwise_*.py",
+  "python": "3.12.14",
+  "versions": {
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "datasets": "4.0.0",
+    "scikit-learn": "1.7.0",
+    "sentence-transformers": "3.3.1"
+  },
+  "cuda_work_started": false,
+  "real_kuairec_training_started": false,
+  "real_bge_encoding_run": false,
+  "real_faiss_fit_run": false,
+  "faiss_available": false,
+  "dataset_smoke": {
+    "items": 10728,
+    "validation_examples": 71657,
+    "history_shape": [
+      2,
+      50
+    ],
+    "target_shape": [
+      2,
+      5
+    ],
+    "strict_history_before_target": true,
+    "binding": {
+      "manifest_sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649",
+      "files": {
+        "config.json": {
+          "bytes": 1746,
+          "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 799712,
+          "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 159883,
+          "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+        },
+        "train.parquet": {
+          "bytes": 531624261,
+          "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+        },
+        "validation.parquet": {
+          "bytes": 61527190,
+          "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+        },
+        "test.parquet": {
+          "bytes": 45918501,
+          "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+        }
+      },
+      "history_max": 50,
+      "list_length": 5,
+      "pad_id": 0
+    }
+  },
+  "checks": [
+    "K1 original loss/gradient/inference equivalence",
+    "J/H four-layer CPU BF16 gradients",
+    "history prefix and soft target gradient",
+    "R/T active/frozen parameter changes",
+    "effective-batch auxiliary normalization",
+    "exact next noisy update after checkpoint restore",
+    "shared warmup identical starts",
+    "global beam and SID collisions",
+    "multi-positive item metrics and separate candidate aggregation",
+    "actual tiny Parquet -> warmup -> four arms -> resume -> test"
+  ],
+  "unverified": [
+    "real BGE-M3 model execution",
+    "real CPU FAISS OPQ fitting",
+    "H100 BF16 and memory/throughput",
+    "formal convergence and recommendation quality"
+  ],
+  "source_sha256": {
+    "scripts/listwise_diffgrm/__init__.py": "23b895b1c072e3c8a22aa3e8b4d906ad315a35a668cb46fa1e77a21efbdbfb60",
+    "scripts/listwise_diffgrm/alignment.py": "e84aa754627ca0d29862d31b51509340c0ef673110ed1d5dfefd34efce3aa894",
+    "scripts/listwise_diffgrm/assets.py": "f99cce25499d350060947c70cc9a898f49c643d9d7565a03e604cb2b5ef9b40b",
+    "scripts/listwise_diffgrm/data.py": "f5d10972973c0126f1b4da8e8df23f53e5180b96799f985b97fe33fdcff0c862",
+    "scripts/listwise_diffgrm/decoding.py": "0eb50c5c3da3d17718d3de40019441e6573cdebdf67453586b16988916523afe",
+    "scripts/listwise_diffgrm/encode_text.py": "731c4ea20fd42aae8cbacd46509988ea2f009e21808344ba80bb368dc17d36c0",
+    "scripts/listwise_diffgrm/metrics.py": "2f2223d8966d3bb0ebe153e71f421bf2fa97862c50161fd74821af04142f16bb",
+    "scripts/listwise_diffgrm/model.py": "55badb671bec5f71cc355f3bb6cc1076f2f88ed0819c61546f042896b3676855",
+    "scripts/listwise_diffgrm/prepare_assets.py": "caf8dd5db0126ae3792069c579da05dd2ee23d9686be9a33571d7e88eb49a79b",
+    "scripts/listwise_diffgrm/run.py": "364e09eac2cbcc164c0c326a2b9f6cf567bc4968bba2d9957915839708d1405b",
+    "scripts/listwise_diffgrm/runtime.py": "c6fbcd59529141c5a1151adba4d3fd398858f3d9ca022e17efa0938aad5fcd09",
+    "scripts/listwise_diffgrm/training.py": "4c37d5c6303a67eb9f35dec3f6c722338c1c0c4e21b86affbb6f7dc73b701e24",
+    "tests/test_listwise_assets.py": "f1750b66c9e53b89cc8e84125104c31cc5dac1986d8d988398b4416440582fcc",
+    "tests/test_listwise_data.py": "584b054744d97e1d217187b1f02e81f1666f825d6a2fb92c9a39bd933b65d485",
+    "tests/test_listwise_decoding.py": "2ca494adfa73358911d1148fd897c5fbdfc8ae395ef3fa2978e376d9c0d5775a",
+    "tests/test_listwise_metrics.py": "940a4fca5a8f670e10bdd015a07cf79f1db4b2e802fdb0900b92e41b395a7f39",
+    "tests/test_listwise_model.py": "bda2cdc101ae91667a590b3a53705d225b49d26becb14e8b64a1f53adfe91ec6",
+    "tests/test_listwise_runner.py": "01f4bebf28b1fa2486f4dc565065fe6448de9d02da166871693e8cd4ca03b365",
+    "tests/test_listwise_training.py": "b414710e4c3ab17ad709bfd5e17761205707f2f4a9f1639999b9b91015d5452f",
+    "configs/09_kuairec_listwise/base.json": "5e53a369818c867ece31f2e1d2a7081fbcd66058b126ac4b0a0555cbc307baba"
+  },
+  "test_log_sha256": "c6209f1c21cd27285206015c7ecc82bee03ba2afaf773e98822f02e237472843",
+  "engine_head": "98b834cc5ce4428d1a95b3e4f9651833b5fbd5cd",
+  "engine_worktree_clean": true
+}

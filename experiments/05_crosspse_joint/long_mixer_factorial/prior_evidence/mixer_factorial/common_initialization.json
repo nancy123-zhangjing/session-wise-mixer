@@ -1,0 +1,70 @@
+{
+  "bootstrap_snapshot": {
+    "run_dir": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150",
+    "snapshot_dir": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/initial",
+    "files": {
+      "model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+      "training_state.pt": "bd362479c4e23842d814e0acc5dcdef7a19292f65742267c2642216aaf8a2d93",
+      "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+      "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+    },
+    "model_tensor_state_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+    "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+    "summary_sha256": "00be7ac8e402b3d164996c33a799802b033c5076f71f6e1c24d3e566916423b6"
+  },
+  "initial_controls": {
+    "no_mixer_frozen": {
+      "mixer_enabled": false,
+      "tokenizer_variant": "refined_pse",
+      "complete_tensor_state_sha256": "3a13c2b0958f5eccfebb13c6582c1b89e51298ae7011a20d93ed981eb2b6e73d",
+      "recommender_tensor_state_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+      "effective_codebooks_equal": true,
+      "official_sid_and_fresh_nearest_equal": true,
+      "anchor_equal_E0": true
+    },
+    "no_mixer_joint": {
+      "mixer_enabled": false,
+      "tokenizer_variant": "refined_pse",
+      "complete_tensor_state_sha256": "3a13c2b0958f5eccfebb13c6582c1b89e51298ae7011a20d93ed981eb2b6e73d",
+      "recommender_tensor_state_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+      "effective_codebooks_equal": true,
+      "official_sid_and_fresh_nearest_equal": true,
+      "anchor_equal_E0": true
+    },
+    "mixer_frozen": {
+      "mixer_enabled": true,
+      "tokenizer_variant": "cross_pse",
+      "complete_tensor_state_sha256": "3a13c2b0958f5eccfebb13c6582c1b89e51298ae7011a20d93ed981eb2b6e73d",
+      "recommender_tensor_state_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+      "effective_codebooks_equal": true,
+      "official_sid_and_fresh_nearest_equal": true,
+      "anchor_equal_E0": true
+    },
+    "mixer_joint": {
+      "mixer_enabled": true,
+      "tokenizer_variant": "cross_pse",
+      "complete_tensor_state_sha256": "3a13c2b0958f5eccfebb13c6582c1b89e51298ae7011a20d93ed981eb2b6e73d",
+      "recommender_tensor_state_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+      "effective_codebooks_equal": true,
+      "official_sid_and_fresh_nearest_equal": true,
+      "anchor_equal_E0": true
+    }
+  },
+  "initial_model_tensor_sha256": "3a13c2b0958f5eccfebb13c6582c1b89e51298ae7011a20d93ed981eb2b6e73d",
+  "initial_recommender_tensor_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+  "E0_array_sha256": "ed40b23bbacd78824ee6f9da5c7fcba4b5e4b2920b9890d8bf7e498635eed5b1",
+  "module_constructor": {
+    "n_heads": 4,
+    "dropout": 0.0,
+    "attention_scope": "full",
+    "residual_scale_init": 1.0,
+    "learn_residual_scale": false,
+    "zero_init_attention_output": true,
+    "train_base_codebooks": true
+  },
+  "mixer_init_seed": 2024,
+  "anchor_nonpersistent": true,
+  "resume_recipe": "Reconstruct the Mixer from common/snapshots/initial/crossed_codebooks.npy (E0) with these constructor controls; configure the arm; strict-load complete model.pt plus optimizer/RNG state.",
+  "not_historical_exact_resume": true,
+  "interpretation": "Common learned effective encoding rebased into no-Mixer/Mixer variants; not Original PSE nor the historical Refined/Cross comparison."
+}

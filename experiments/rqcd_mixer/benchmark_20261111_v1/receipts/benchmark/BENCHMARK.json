@@ -1,0 +1,275 @@
+{
+  "benchmark_only": true,
+  "formal_training_started": false,
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "cuda": "11.8",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "runtime": {
+      "micro_r": null,
+      "micro_t": null,
+      "evaluation_batch": null,
+      "precision": "bf16",
+      "attention_backend": "auto",
+      "fused_adamw": true,
+      "data_device": "cuda",
+      "deterministic": true,
+      "checkpoint_every_updates": 200,
+      "evaluation_write_batches": 8
+    },
+    "tf32": false
+  },
+  "prepared_sha256": "87516c3ca59ac237c390bb6408e456c0a5bac998661308d55537eec61f36e677",
+  "data_gather_seconds": 0.015203256160020828,
+  "measurements": [
+    {
+      "arm": "B0",
+      "phase": "R",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.677641734170417,
+      "sessions_per_second": 1511.1229848521682,
+      "peak_allocated_bytes": 1717834240,
+      "peak_reserved_bytes": 1904214016
+    },
+    {
+      "arm": "B1",
+      "phase": "R",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.6702220517521104,
+      "sessions_per_second": 1527.8518474929838,
+      "peak_allocated_bytes": 1719885824,
+      "peak_reserved_bytes": 1908408320
+    },
+    {
+      "arm": "B2",
+      "phase": "R",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.667373231301705,
+      "sessions_per_second": 1534.373798605464,
+      "peak_allocated_bytes": 1719885824,
+      "peak_reserved_bytes": 1908408320
+    },
+    {
+      "arm": "B0",
+      "phase": "R",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.4145239774758617,
+      "sessions_per_second": 2470.3034218560465,
+      "peak_allocated_bytes": 2889006592,
+      "peak_reserved_bytes": 3286237184
+    },
+    {
+      "arm": "B1",
+      "phase": "R",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.42258155066519976,
+      "sessions_per_second": 2423.2009144461877,
+      "peak_allocated_bytes": 2890075136,
+      "peak_reserved_bytes": 3288334336
+    },
+    {
+      "arm": "B2",
+      "phase": "R",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.412478228410085,
+      "sessions_per_second": 2482.5552707279894,
+      "peak_allocated_bytes": 2890075136,
+      "peak_reserved_bytes": 3288334336
+    },
+    {
+      "arm": "B0",
+      "phase": "R",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.22388328767071167,
+      "sessions_per_second": 4573.811697397006,
+      "peak_allocated_bytes": 5175423488,
+      "peak_reserved_bytes": 5827985408
+    },
+    {
+      "arm": "B1",
+      "phase": "R",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.2245714816575249,
+      "sessions_per_second": 4559.795359775986,
+      "peak_allocated_bytes": 5176492032,
+      "peak_reserved_bytes": 5830082560
+    },
+    {
+      "arm": "B2",
+      "phase": "R",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.22155438953389725,
+      "sessions_per_second": 4621.889921270689,
+      "peak_allocated_bytes": 5176492032,
+      "peak_reserved_bytes": 5830082560
+    },
+    {
+      "arm": "B0",
+      "phase": "T",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.748456354563435,
+      "sessions_per_second": 1368.1492497946472,
+      "peak_allocated_bytes": 1339462656,
+      "peak_reserved_bytes": 1407188992,
+      "catalog_refresh_seconds": 0.157971216365695
+    },
+    {
+      "arm": "B1",
+      "phase": "T",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.7921063691998521,
+      "sessions_per_second": 1292.7556699668955,
+      "peak_allocated_bytes": 1341388288,
+      "peak_reserved_bytes": 1409286144,
+      "catalog_refresh_seconds": 0.16064516082406044
+    },
+    {
+      "arm": "B2",
+      "phase": "T",
+      "microbatch": 64,
+      "ok": true,
+      "effective_update_seconds": 0.808059404293696,
+      "sessions_per_second": 1267.233565451852,
+      "peak_allocated_bytes": 1342626304,
+      "peak_reserved_bytes": 1409286144,
+      "catalog_refresh_seconds": 0.16774504072964191
+    },
+    {
+      "arm": "B0",
+      "phase": "T",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.39266195986419916,
+      "sessions_per_second": 2607.841106773233,
+      "peak_allocated_bytes": 1950620672,
+      "peak_reserved_bytes": 2088763392,
+      "catalog_refresh_seconds": 0.135199218057096
+    },
+    {
+      "arm": "B1",
+      "phase": "T",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.40099345458050567,
+      "sessions_per_second": 2553.657642794307,
+      "peak_allocated_bytes": 1952566272,
+      "peak_reserved_bytes": 2088763392,
+      "catalog_refresh_seconds": 0.13948065601289272
+    },
+    {
+      "arm": "B2",
+      "phase": "T",
+      "microbatch": 128,
+      "ok": true,
+      "effective_update_seconds": 0.40351723817487556,
+      "sessions_per_second": 2537.685885816409,
+      "peak_allocated_bytes": 1955111424,
+      "peak_reserved_bytes": 2172649472,
+      "catalog_refresh_seconds": 0.13585016503930092
+    },
+    {
+      "arm": "B0",
+      "phase": "T",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.19405819506694874,
+      "sessions_per_second": 5276.767619356281,
+      "peak_allocated_bytes": 3158845440,
+      "peak_reserved_bytes": 3653238784,
+      "catalog_refresh_seconds": 0.1387080531567335
+    },
+    {
+      "arm": "B1",
+      "phase": "T",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.2053200158601006,
+      "sessions_per_second": 4987.336454803926,
+      "peak_allocated_bytes": 3160791040,
+      "peak_reserved_bytes": 3655335936,
+      "catalog_refresh_seconds": 0.14033180475234985
+    },
+    {
+      "arm": "B2",
+      "phase": "T",
+      "microbatch": 256,
+      "ok": true,
+      "effective_update_seconds": 0.2056754551207026,
+      "sessions_per_second": 4978.717559657548,
+      "peak_allocated_bytes": 3164861440,
+      "peak_reserved_bytes": 3823108096,
+      "catalog_refresh_seconds": 0.13750029541552067
+    }
+  ],
+  "generation": [
+    {
+      "batch": 64,
+      "ok": true,
+      "seconds": 0.9777257386595011,
+      "lists_per_second": 65.45802925035646,
+      "peak_allocated_bytes": 749820928
+    },
+    {
+      "batch": 128,
+      "ok": true,
+      "seconds": 0.9756058277562261,
+      "lists_per_second": 131.2005282854699,
+      "peak_allocated_bytes": 1020374016
+    },
+    {
+      "batch": 256,
+      "ok": true,
+      "seconds": 0.9846476409584284,
+      "lists_per_second": 259.9914825884484,
+      "peak_allocated_bytes": 1546037248
+    }
+  ],
+  "numerical": {
+    "relative_l2_errors": {
+      "prediction": 0.00634512584656477,
+      "loss": 0.001612381893210113,
+      "gradient": 0.027004409581422806,
+      "cache": 0.007227036636322737
+    },
+    "limits": {
+      "prediction": 0.05,
+      "loss": 0.03,
+      "gradient": 0.1,
+      "cache": 0.05
+    },
+    "passed": true,
+    "scope": "small fixed batch; eval/dropout off; not training bitwise equivalence"
+  },
+  "profiled_phases": [
+    "R",
+    "T"
+  ],
+  "selected_common_execution": {
+    "micro_r": 256,
+    "micro_t": 256,
+    "evaluation_batch": 256
+  },
+  "recovery": {
+    "passed": true,
+    "scope": "one next R update; weights, optimizer, stream and CUDA RNG",
+    "checkpoint_sha256": "2339caa8435ff014b5fa697c2d663691894e8265900bf0d995f603d2c62c59e8"
+  },
+  "ready": true,
+  "limitations": "initial shared latent assets; formal trained-state throughput may differ; no accuracy claim"
+}

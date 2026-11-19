@@ -1,0 +1,123 @@
+"""Resume exact final part bytes through bounded hash-framed Inspire exec reads.
+
+Every append is guarded by its current offset and a checked block SHA. A restart
+first rehashes every local prefix against the immutable remote part. No training,
+environment changes, GPU allocation, source mutation or archive changes occur.
+"""
+from pathlib import Path
+from datetime import datetime,timezone
+from concurrent.futures import ThreadPoolExecutor,as_completed
+import base64,hashlib,json,os,re,subprocess,threading,time,uuid
+
+ROOT=Path(__file__).resolve().parents[2]
+R=ROOT/'.runtime/stage05_long';D=ROOT/'outputs/stage05_long';PACKAGE=D/'package_r1'
+G='/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1'
+P='/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python'
+CHUNK=8*1024*1024;LOCK=threading.Lock();START=time.monotonic()
+def utc():return datetime.now(timezone.utc).isoformat()
+def sha(path):
+    value=hashlib.sha256()
+    with path.open('rb') as handle:
+        for data in iter(lambda:handle.read(1024*1024),b''):value.update(data)
+    return value.hexdigest()
+def write(path,value):
+    temporary=path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp')
+    temporary.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+    os.replace(temporary,path)
+def safe(text):
+    return re.sub(r'wss?://\S+','[private tunnel omitted]',re.sub(r'^.*remote_url=.*$','[private tunnel omitted]',text,flags=re.M))
+def request(source,timeout=150):
+    remote=P+' -B -c "exec(bytes.fromhex(\''+source.encode().hex()+'\').decode())" # stage05'
+    result=subprocess.run(['inspire','notebook','exec','env-zzl','--workspace','CPU资源空间','--account','sii-shared',
+        '--timeout',str(timeout-20),remote],text=True,encoding='utf-8',capture_output=True,timeout=timeout)
+    if result.returncode:
+        raise RuntimeError('Read-only transport failed: '+safe(result.stderr[-1200:]))
+    lines=[line[len('STAGE05_PACKET '):] for line in result.stdout.splitlines() if line.startswith('STAGE05_PACKET ')]
+    if len(lines)!=1:raise RuntimeError('Missing one complete framed transport packet')
+    return json.loads(lines[0])
+
+package=json.loads((PACKAGE/'PACKAGE.json').read_text(encoding='utf-8-sig'))
+assert sha(PACKAGE/'PACKAGE.json')=='23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300'
+assert package['archive_sha256']=='c2ad35b0c87b219e6435a970dfd62bf5677cf7e7c2924b34c53e48c6fec47af7'
+rows=package['parts'];assert len(rows)==3
+prefixes=[]
+for row in rows:
+    assert re.fullmatch(r'mixer_long_backup\.tar\.gz\.part000[123]',row['member'])
+    path=PACKAGE/row['member'];assert path.is_file() and not path.is_symlink()
+    count=path.stat().st_size;assert 0<=count<=row['size_bytes']
+    prefixes.append(dict(member=row['member'],bytes=count,sha256=sha(path)))
+source="""import hashlib,json
+from pathlib import Path
+g=Path(%r)
+rows=%r
+results=[]
+for row in rows:
+ h=hashlib.sha256();remaining=row['bytes']
+ with (g/'delivery/final_package_r1'/row['member']).open('rb') as handle:
+  while remaining:
+   block=handle.read(min(1024*1024,remaining));assert block
+   h.update(block);remaining-=len(block)
+ assert h.hexdigest()==row['sha256'],row['member']
+ results.append(row)
+print('STAGE05_PACKET '+json.dumps(dict(status='ALL_EXISTING_PREFIXES_MATCH',prefixes=results)))
+"""%(G,prefixes)
+prefix_check=request(source)
+assert prefix_check['status']=='ALL_EXISTING_PREFIXES_MATCH' and prefix_check['prefixes']==prefixes
+state=dict(status='RESUMING_VERIFIED_PART_PREFIXES',utc=utc(),package_sha256=sha(PACKAGE/'PACKAGE.json'),
+    chunk_bytes=CHUNK,workers=1,initial_prefixes=prefixes,parts={},chunks_completed=0,goal_complete=False)
+for row in rows:
+    state['parts'][row['member']]=dict(downloaded_bytes=(PACKAGE/row['member']).stat().st_size,expected_bytes=row['size_bytes'],verified_full=False)
+write(D/'TRANSFER_STATE_R3.json',state)
+def part(row):
+    name=row['member'];path=PACKAGE/name
+    while path.stat().st_size<row['size_bytes']:
+        offset=path.stat().st_size;size=min(CHUNK,row['size_bytes']-offset)
+        source=("import base64,hashlib,json;from pathlib import Path;"
+            f"f=(Path('{G}')/'delivery/final_package_r1'/'{name}').open('rb');f.seek({offset});d=f.read({size});"
+            f"assert len(d)=={size};print('STAGE05_PACKET '+json.dumps(dict(member='{name}',offset={offset},size=len(d),sha256=hashlib.sha256(d).hexdigest(),data=base64.b64encode(d).decode())))")
+        for attempt in range(3):
+            try:
+                packet=request(source)
+                data=base64.b64decode(packet.pop('data'),validate=True)
+                assert packet['member']==name and packet['offset']==offset and packet['size']==len(data)==size
+                assert hashlib.sha256(data).hexdigest()==packet['sha256']
+                break
+            except Exception as error:
+                if attempt==2:raise
+                print(json.dumps(dict(utc=utc(),read_retry=name,offset=offset,reason=type(error).__name__)),flush=True)
+                time.sleep(2)
+        assert path.stat().st_size==offset,'Another writer touched this part'
+        with path.open('ab') as handle:
+            handle.write(data);handle.flush();os.fsync(handle.fileno())
+        assert path.stat().st_size==offset+size
+        with LOCK:
+            state['utc']=utc();state['parts'][name]['downloaded_bytes']=offset+size;state['chunks_completed']+=1
+            state['seconds']=time.monotonic()-START;write(D/'TRANSFER_STATE_R3.json',state)
+            print(json.dumps(dict(utc=utc(),part=name,downloaded_bytes=offset+size,total_bytes=row['size_bytes'],
+                chunks_completed=state['chunks_completed'])),flush=True)
+    assert sha(path)==row['sha256'],'Final complete part SHA differs'
+    with LOCK:
+        state['parts'][name]['verified_full']=True;write(D/'TRANSFER_STATE_R3.json',state)
+    return dict(member=name,size_bytes=path.stat().st_size,sha256=row['sha256'])
+
+try:
+    with ThreadPoolExecutor(max_workers=1) as pool:
+        completed=[future.result() for future in as_completed([pool.submit(part,row) for row in rows])]
+    full=hashlib.sha256()
+    for row in rows:
+        with (PACKAGE/row['member']).open('rb') as handle:
+            for data in iter(lambda:handle.read(1024*1024),b''):full.update(data)
+    assert full.hexdigest()==package['archive_sha256']
+    state.update(status='FULL_TRANSPORT_BYTES_VERIFIED_NOT_EXTRACTED',utc=utc(),archive_sha256=full.hexdigest(),
+        manifest_sha256=package['manifest_sha256'],seconds=time.monotonic()-START)
+    write(D/'TRANSFER_STATE_R3.json',state)
+    write(D/'TRANSFER_COMPLETE_R3.json',dict(status=state['status'],utc=utc(),package_sha256=state['package_sha256'],
+        archive_sha256=full.hexdigest(),manifest_sha256=package['manifest_sha256'],parts=sorted(completed,key=lambda x:x['member']),
+        local_initial_prefixes_matched_remote=True,every_appended_block_SHA_verified=True,chunk_bytes=CHUNK,
+        helper_sha256=sha(Path(__file__)),goal_complete=False))
+    print(json.dumps(dict(status=state['status'],seconds=state['seconds'])),flush=True)
+except Exception as error:
+    with LOCK:
+        state.update(status='TRANSFER_INCOMPLETE_RETRY_SAME_PREFIXES',utc=utc(),error_type=type(error).__name__,error=safe(str(error)))
+        write(D/'TRANSFER_STATE_R3.json',state)
+    raise SystemExit(1)

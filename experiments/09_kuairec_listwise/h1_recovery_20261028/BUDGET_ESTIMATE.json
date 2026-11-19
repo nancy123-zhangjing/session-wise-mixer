@@ -1,0 +1,238 @@
+{
+  "format": "stage09_h1_recovery_budget_v1",
+  "status": "estimate_only_no_submission",
+  "synthetic_fixture": false,
+  "source_identity": {
+    "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+    "source_binding_sha256": "99594ff398d9893a1023dc85fab0be4a25be13a4c968765ff7d758f99a71cf9a",
+    "protocol_validation": "identical_full_source_binding_and_locked_H_R20_configuration",
+    "workload": {
+      "decay": {
+        "r_updates": 4158,
+        "t_updates": 80,
+        "full_validations": 2,
+        "extra_subset_evaluations": 7,
+        "catalog_diagnostics": 9
+      },
+      "freeze": {
+        "r_updates": 4158,
+        "t_updates": 0,
+        "full_validations": 2,
+        "extra_subset_evaluations": 5,
+        "catalog_diagnostics": 1
+      }
+    }
+  },
+  "arms": {
+    "decay": {
+      "workload": {
+        "r_updates": 4158,
+        "t_updates": 80,
+        "full_validations": 2,
+        "extra_subset_evaluations": 7,
+        "catalog_diagnostics": 9,
+        "full_validation_rows": 71657,
+        "subset_rows": 8192,
+        "full_validation_batches_each": 2240,
+        "subset_batches_each": 256,
+        "evaluation_calls": 9
+      },
+      "measured_rates": {
+        "R": {
+          "seconds": 1.1753171700001985,
+          "statistic": "max_after_first",
+          "measured_seconds": [
+            1.2073606489975646,
+            1.1715777429999434,
+            1.1753171700001985
+          ],
+          "excluded_first_seconds": 1.2073606489975646,
+          "retained_count": 2,
+          "first_step_extra_seconds": 0.03204347899736604,
+          "field": "end_to_end_seconds"
+        },
+        "T": {
+          "seconds": 1.172733479001181,
+          "statistic": "max_after_first",
+          "measured_seconds": [
+            1.5744405289988208,
+            1.172733479001181,
+            1.1264721670013387
+          ],
+          "excluded_first_seconds": 1.5744405289988208,
+          "retained_count": 2,
+          "first_step_extra_seconds": 0.40170704999763984,
+          "field": "end_to_end_seconds"
+        },
+        "decode_batch": {
+          "seconds": 1.1298325980023947,
+          "statistic": "max_after_first",
+          "measured_seconds": [
+            1.1678221580004902,
+            1.0373401710021426,
+            1.1298325980023947,
+            1.1228036769971368
+          ],
+          "excluded_first_seconds": 1.1678221580004902,
+          "retained_count": 3,
+          "first_step_extra_seconds": 0.0379895599980955,
+          "field": "end_to_end_seconds"
+        },
+        "catalog_build_seconds": 0.052058241999475285,
+        "catalog_diagnostic_seconds": 0.043718478998926
+      },
+      "startup": {
+        "seconds": 5.471883812995657,
+        "basis": "measured_startup_stage_pass_sum",
+        "evidence": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_recovery_20261028\\preflight_r2\\preflight_r1\\decay\\events.jsonl",
+        "evidence_sha256": "19e21e9c9dd6f673189934cdc397cdc1971d7b9df797dd4ac69e48c8c430edf1",
+        "components": {
+          "authenticated_R20_fork": 4.603975990998151,
+          "load_fixed_validation_subset": 0.8679078219975054
+        }
+      },
+      "seconds_by_component": {
+        "startup": 5.471883812995657,
+        "recommender_updates": 4886.9687928608255,
+        "tokenizer_updates": 93.81867832009448,
+        "training_first_step_excess": 0.4337505289950059,
+        "full_validation": 5061.830134654723,
+        "extra_subset_evaluation": 2025.2903502342742,
+        "catalog_diagnostics": 0.393466310990334
+      },
+      "remaining_gpu_seconds_raw": 12074.207056722898,
+      "remaining_gpu_hours_raw": 3.3539464046452494,
+      "remaining_gpu_seconds_with_margin": 15092.758820903622,
+      "remaining_gpu_hours_with_margin": 4.192433005806562,
+      "single_gpu_wall_seconds_with_margin": 15092.758820903622
+    },
+    "freeze": {
+      "workload": {
+        "r_updates": 4158,
+        "t_updates": 0,
+        "full_validations": 2,
+        "extra_subset_evaluations": 5,
+        "catalog_diagnostics": 1,
+        "full_validation_rows": 71657,
+        "subset_rows": 8192,
+        "full_validation_batches_each": 2240,
+        "subset_batches_each": 256,
+        "evaluation_calls": 7
+      },
+      "measured_rates": {
+        "R": {
+          "seconds": 1.1650947280031687,
+          "statistic": "max_after_first",
+          "measured_seconds": [
+            1.5532677819974197,
+            1.1650947280031687,
+            1.1517282770000747
+          ],
+          "excluded_first_seconds": 1.5532677819974197,
+          "retained_count": 2,
+          "first_step_extra_seconds": 0.38817305399425095,
+          "field": "end_to_end_seconds"
+        },
+        "T": null,
+        "decode_batch": {
+          "seconds": 1.1061058320010488,
+          "statistic": "max_after_first",
+          "measured_seconds": [
+            1.1469229319991427,
+            1.012503091002145,
+            1.1061058320010488,
+            1.0690784129983513
+          ],
+          "excluded_first_seconds": 1.1469229319991427,
+          "retained_count": 3,
+          "first_step_extra_seconds": 0.04081709999809391,
+          "field": "end_to_end_seconds"
+        },
+        "catalog_build_seconds": 0.05082369600131642,
+        "catalog_diagnostic_seconds": 0.07009036599993124
+      },
+      "startup": {
+        "seconds": 5.242922782999813,
+        "basis": "measured_startup_stage_pass_sum",
+        "evidence": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_recovery_20261028\\preflight_r2\\preflight_r1\\freeze\\events.jsonl",
+        "evidence_sha256": "6367692cfbe45902774a8d540d9562c079c04eed254fd3886c8161a9554032c4",
+        "components": {
+          "authenticated_R20_fork": 4.404179600998759,
+          "load_fixed_validation_subset": 0.8387431820010534
+        }
+      },
+      "seconds_by_component": {
+        "startup": 5.242922782999813,
+        "recommender_updates": 4844.4638790371755,
+        "tokenizer_updates": 0.0,
+        "training_first_step_excess": 0.38817305399425095,
+        "full_validation": 4955.537408956698,
+        "extra_subset_evaluation": 1416.2736689413396,
+        "catalog_diagnostics": 0.07009036599993124
+      },
+      "remaining_gpu_seconds_raw": 11221.976143138207,
+      "remaining_gpu_hours_raw": 3.1172155953161687,
+      "remaining_gpu_seconds_with_margin": 14027.470178922758,
+      "remaining_gpu_hours_with_margin": 3.8965194941452106,
+      "single_gpu_wall_seconds_with_margin": 14027.470178922758
+    }
+  },
+  "assumptions": {
+    "statistic": "max_after_first",
+    "safety_factor": 1.25,
+    "evaluation_batch_size": 32,
+    "beam": 32,
+    "precision": "fp32",
+    "full_validation_tail": "charge a full batch for the final 9 samples",
+    "subset_reuse": "R23/R26 subset metrics extracted from full predictions; no duplicate inference",
+    "first_step_excess": "positive observed first-step excess charged once per R/T phase type and once per evaluation call",
+    "parallel_execution": "two independent GPUs, one arm per GPU, both start together",
+    "primary_gpu_hours": "sum of arm times assumes each GPU is released when its arm completes",
+    "shared_two_gpu_job": "if both GPUs stay allocated until the slower arm completes, use the separately reported two-times-max allocation estimate",
+    "unmeasured_overhead": "metric computation, gzip/checkpoint I/O, SID refresh, interpreter/context startup and release delay are not separately timed; covered only by the 25% contingency"
+  },
+  "platform_usage": {
+    "already_spent_gpu_seconds": 410.0,
+    "evidence": "PREFLIGHT_R1_EVENTS.json: Scheduled 23:01:22 through last JobTerminated 23:03:29 = 127s x2; PREFLIGHT_R2_EVENTS.json: 23:13:52 through 23:15:10 =78s x2. Conservatively use later controller termination.",
+    "source": "caller_supplied_platform_allocation_evidence",
+    "preflight_worker_seconds_used": false
+  },
+  "totals": {
+    "remaining_gpu_seconds_raw": 23296.183199861105,
+    "remaining_gpu_hours_raw": 6.471161999961418,
+    "remaining_gpu_seconds_with_margin": 29120.22899982638,
+    "remaining_gpu_hours_with_margin": 8.088952499951773,
+    "already_spent_gpu_hours": 0.11388888888888889,
+    "total_gpu_hours_including_spent": 8.20284138884066,
+    "two_gpu_parallel_remaining_wall_seconds": 15092.758820903622,
+    "two_gpu_parallel_remaining_wall_hours": 4.192433005806562,
+    "shared_two_gpu_job_remaining_allocated_gpu_seconds": 30185.517641807244,
+    "shared_two_gpu_job_remaining_allocated_gpu_hours": 8.384866011613124,
+    "shared_two_gpu_job_idle_tail_gpu_seconds": 1065.2886419808638,
+    "shared_two_gpu_job_total_gpu_hours_including_spent": 8.498754900502012
+  },
+  "price": {
+    "per_gpu_hour": 1.0,
+    "unit": "points",
+    "evidence": "H100_QUOTA_20261028.json",
+    "already_spent_points_estimate": 0.11388888888888889,
+    "remaining_points_estimate": 8.088952499951773,
+    "total_points_estimate": 8.20284138884066,
+    "settlement_verified": false,
+    "shared_two_gpu_job_total_points_estimate": 8.498754900502012,
+    "note": "Current supplied rate applied as an estimate; actual platform settlement is unverified."
+  },
+  "submission_performed": false,
+  "budget_limit_changed": false,
+  "input_reports": {
+    "decay": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_recovery_20261028\\preflight_r2\\preflight_r1\\decay\\report.json",
+      "sha256": "5c37880dc08fa4e10d8eaef724d7ec5e9e4b8117700795525d848a3981cf3fbc"
+    },
+    "freeze": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_recovery_20261028\\preflight_r2\\preflight_r1\\freeze\\report.json",
+      "sha256": "666dba643f7d9d964a663ae4136c942ae8fa2b83e751326d8b8540b9a4fca896"
+    }
+  },
+  "created_utc": "2026-10-28T15:18:49.116811+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "observed_at_utc": "2026-10-31T10:31:02.451Z",
+  "consecutive_goal_turns_with_same_network_condition": 2,
+  "checks": [
+    {
+      "kind": "platform",
+      "exit_code": 1,
+      "response": {
+        "success": false,
+        "error": {
+          "type": "APIError",
+          "code": 13,
+          "message": "APIRequestContext.post: read ECONNRESET\nCall log:\n  - → POST <redacted>\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/<ip> Safari/537.36\n    - accept: *<redacted>\n    - accept-encoding: gzip,deflate,br\n    - Referer: <redacted>\n    - Content-Type: application/json\n    - content-length: 55\n    - cookie: <redacted>\n"
+        }
+      }
+    },
+    {
+      "kind": "cached_connection",
+      "exit_code": 1,
+      "response": {
+        "success": false,
+        "error": {
+          "type": "TunnelError",
+          "code": 1,
+          "message": "Could not connect notebook."
+        }
+      }
+    }
+  ],
+  "independent_work_this_turn": "Updated the acceptance evidence matrix to the actual passed science/local-delivery scopes; no statistics or model work repeated",
+  "goal_complete": false,
+  "goal_status": "active; blocked threshold not yet reached"
+}

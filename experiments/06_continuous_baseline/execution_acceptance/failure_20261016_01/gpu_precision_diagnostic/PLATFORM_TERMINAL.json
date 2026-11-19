@@ -1,0 +1,108 @@
+{
+  "status": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-precision-diag-20261016-02",
+      "status": "SUCCEEDED",
+      "project": "\u516c\u5171\u79d1\u7814\u9879\u76ee",
+      "compute_group": "\u5f00\u53d1\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+      "resource": {
+        "cpu": 20,
+        "memory_gib": 200,
+        "gpu": 1,
+        "nodes": 1,
+        "shared_memory_gib": 8,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1792121359000",
+      "finished_at": "1792121678000"
+    }
+  },
+  "events": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "time": "2026-10-16 11:30:56",
+          "instance": "rank=0",
+          "type": "Normal",
+          "reason": "Pulled",
+          "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+        },
+        {
+          "time": "2026-10-16 11:30:56",
+          "instance": "rank=0",
+          "type": "Normal",
+          "reason": "Started",
+          "message": "Started container exit-code-server"
+        },
+        {
+          "time": "2026-10-16 11:34:38",
+          "type": "Warning",
+          "reason": "JobReservingStart",
+          "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:0"
+        },
+        {
+          "time": "2026-10-16 11:34:38",
+          "type": "Normal",
+          "reason": "PyTorchJobSucceeded",
+          "message": "PyTorchJob project-public/<redacted> successfully completed."
+        },
+        {
+          "time": "2026-10-16 11:34:38",
+          "type": "Normal",
+          "reason": "ExitedWithCode",
+          "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+        },
+        {
+          "time": "2026-10-16 11:34:38",
+          "instance": "rank=0",
+          "type": "Warning",
+          "reason": "PodReservingStart",
+          "message": "Pod start reserving, exitCode:0"
+        },
+        {
+          "time": "2026-10-16 11:34:59",
+          "type": "Normal",
+          "reason": "SuccessfulDeletePod",
+          "message": "Deleted pod: <redacted>-worker-0"
+        },
+        {
+          "time": "2026-10-16 11:34:59",
+          "type": "Normal",
+          "reason": "SuccessfulDeletePodGroup",
+          "message": "Deleted PodGroup: <redacted>"
+        },
+        {
+          "time": "2026-10-16 11:34:59",
+          "type": "Normal",
+          "reason": "SuccessfulDeleteService",
+          "message": "Deleted service: <redacted>-worker-0"
+        },
+        {
+          "time": "2026-10-16 11:34:59",
+          "type": "Normal",
+          "reason": "JobTerminated",
+          "message": "Job has been terminated. Deleting PodGroup"
+        },
+        {
+          "time": "2026-10-16 11:35:20",
+          "type": "Normal",
+          "reason": "JobTerminated",
+          "message": "Job has been terminated. Deleting PodGroup"
+        },
+        {
+          "time": "2026-10-16 11:35:20",
+          "type": "Normal",
+          "reason": "SuccessfulDeletePodGroup",
+          "message": "Deleted PodGroup: <redacted>"
+        }
+      ],
+      "shown": 12,
+      "total": 29,
+      "truncated": true
+    }
+  }
+}

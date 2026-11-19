@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "scope": "new D_R23/E_R29 best validation slices versus cached H0_R32 best; historical H1_R20 reused",
+  "cutoff_us": 1598745441188500,
+  "population": {
+    "early": 38644,
+    "late": 33013
+  },
+  "models": {
+    "H0_best": {
+      "early": 0.009962520095299543,
+      "late": 0.007699241271665117,
+      "full": 0.008919807955457751
+    },
+    "H1_original_best": {
+      "early": 0.011128252299607875,
+      "late": 0.007316306163048845,
+      "full": 0.009372055726960078
+    },
+    "D_best": {
+      "early": 0.010264427678474151,
+      "late": 0.007067049032607886,
+      "full": 0.008791367667086807
+    },
+    "E_best": {
+      "early": 0.010807755675318859,
+      "late": 0.007312697492911117,
+      "full": 0.009197552125409894
+    }
+  },
+  "comparisons": {
+    "D_best_minus_H0_best": {
+      "early": {
+        "delta": 0.0003019075831746081,
+        "relative_delta": 0.03030433869007232,
+        "ci95": [
+          -0.00017220382537751206,
+          0.0008178617318758678
+        ]
+      },
+      "late": {
+        "delta": -0.0006321922390572316,
+        "relative_delta": -0.0821109790887885,
+        "ci95": [
+          -0.0011165074461086512,
+          -0.0001859533799677023
+        ]
+      },
+      "late_minus_early": {
+        "delta": -0.0009340998222318398,
+        "ci95": [
+          -0.0016174386080290654,
+          -0.0002848549717614786
+        ]
+      }
+    },
+    "E_best_minus_H0_best": {
+      "early": {
+        "delta": 0.0008452355800193153,
+        "relative_delta": 0.08484154329767524,
+        "ci95": [
+          0.0003319335955524673,
+          0.001367629192723402
+        ]
+      },
+      "late": {
+        "delta": -0.00038654377875400013,
+        "relative_delta": -0.050205437797691266,
+        "ci95": [
+          -0.0008386575136886216,
+          9.582689165541393e-05
+        ]
+      },
+      "late_minus_early": {
+        "delta": -0.0012317793587733154,
+        "ci95": [
+          -0.0019282421033242317,
+          -0.0005370291768613792
+        ]
+      }
+    }
+  },
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 2024,
+    "unit": "user",
+    "estimand": "sample mean",
+    "draws": "same global validation users jointly across periods"
+  },
+  "inputs_sha256": {
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_block40_r6_single_20261101\\best_temporal_20261102\\analyze_best.py": "84e5383e2f8edd83409e604590ab44dda4c1b1ae95cc12551adcb53e0b1075e6",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\COMPLETE.json": "b2fdc9321554a986eec0b7342dcd60d877a708635849f43ca304d458d2aa0134",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\shared_arrays.npz": "cc14b074a0a0e9bbd7c1049cb1294a55c243958ecd1fce8f9eb36d6656c0cc9b",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\arrays_H0_best_R32.npz": "a2cf837643b70d76e3435f5c577494c3cf25789c6f7d4541a3136800fe72cd8c",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\MODEL_H0_best_R32.json": "81fa77b849834472e2b62078e35e41e60627feca935df751fc6a83bd6af9c477",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\arrays_H1_R20.npz": "2cd24af25c95d41d8f37d2e0cc9111c5b476b4b3862a56173a54084d3e0d517a",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\initial_r1\\MODEL_H1_R20.json": "33c4382ac9d8b72cb92d5d04f848cc3ba2ab5dd89dfef83bdfbb4811d7d490e3",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_spread200_20261031\\final_analysis\\ANALYSIS.json": "5cc04a637140d94d198c1a2e0132cf09b83d03cac152e82ac9e5da675add44e8",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_spread200_20261031_fresh_r1\\runs\\H1-Spread200-R35\\evaluations\\validation_R23\\attempt1\\per_sample.jsonl.gz": "7daa2d8917aadd5c6a209cb888ad5ea92bab52b7c8777a0abc7b0047b716d258",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_block40_r6_single_20261101\\best_temporal_20261102\\analyze_best_initial.py": "eb563fb9a8fc1889ba90d28705ae40a57364f49937b1f68b0e850c7a450d2e9e",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_block40_r6_single_20261101\\best_temporal_20261102\\D_best_ndcg5.npy": "abcbe075d0a9ef89b204ce96a08b600dfa7ce78808eb23f40243fe37c8341838",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h1_block40_r6_single_20261101\\final_analysis\\ANALYSIS.json": "05be3bb52e0910907837d1823b7a92ba71a4e322adb6831191bf9d88bb026086",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_block40_single_20261101_fresh_r1\\runs\\H1-Block40-R6-R35\\evaluations\\validation_R29\\attempt1\\per_sample.jsonl.gz": "c176e3d4f8ed742f8384cf937053da82d97094c3c95ed96df6ac1dd9a43ddc03"
+  },
+  "limitations": [
+    "Validation used for checkpoint selection; not independent confirmatory evidence.",
+    "One training seed; unadjusted exploratory intervals.",
+    "Different R/T and selection grids; not isolated causal schedule effect.",
+    "Static validation slices do not demonstrate adaptation to online new data."
+  ],
+  "no_training_or_inference": true
+}

@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "families": {
+    "sasrec_fullce": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "sasrec_fullce_13",
+        "sasrec_fullce_16",
+        "sasrec_fullce_01"
+      ],
+      "completed_confirmations": 6,
+      "independent_selected_trial": "sasrec_fullce_13",
+      "three_seed_validation_candidates": [
+        {
+          "trial_id": "sasrec_fullce_13",
+          "metrics": {
+            "NDCG@10": 0.05618383995578209,
+            "HR@10": 0.09739301524840138
+          }
+        },
+        {
+          "trial_id": "sasrec_fullce_16",
+          "metrics": {
+            "NDCG@10": 0.05451778421530497,
+            "HR@10": 0.09241455380166644
+          }
+        },
+        {
+          "trial_id": "sasrec_fullce_01",
+          "metrics": {
+            "NDCG@10": 0.05496330256271139,
+            "HR@10": 0.09256360953360461
+          }
+        }
+      ],
+      "formal_config_and_seed_bindings": "PASS",
+      "formal_trials": 5
+    },
+    "esasrec": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "esasrec_16",
+        "esasrec_19",
+        "esasrec_08"
+      ],
+      "completed_confirmations": 6,
+      "independent_selected_trial": "esasrec_19",
+      "three_seed_validation_candidates": [
+        {
+          "trial_id": "esasrec_16",
+          "metrics": {
+            "NDCG@10": 0.048664382157769345,
+            "HR@10": 0.08503629507072695
+          }
+        },
+        {
+          "trial_id": "esasrec_19",
+          "metrics": {
+            "NDCG@10": 0.05204478027884104,
+            "HR@10": 0.0853493121077971
+          }
+        },
+        {
+          "trial_id": "esasrec_08",
+          "metrics": {
+            "NDCG@10": 0.050685007392038926,
+            "HR@10": 0.08539402882737855
+          }
+        }
+      ],
+      "formal_config_and_seed_bindings": "PASS",
+      "formal_trials": 5
+    }
+  },
+  "queue_sha256": "d997fce054186297bbe35f396a97608710d14c76394b7ac973ec4aac798fb729",
+  "test_metrics_read": false,
+  "scope": "All 64 searches, both three-seed locks and all 13 formal/legacy bindings; no final family selection or test results",
+  "audit_script_sha256": "6bbf619d2345a37203a9ad24db518b9c860af5effb0d3445e071c0a1d3af46f7"
+}

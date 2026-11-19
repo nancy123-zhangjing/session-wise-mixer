@@ -1,0 +1,3612 @@
+{
+  "format": "stage09_recovery35_branch_preflight_v1",
+  "status": "passed",
+  "branch": "C",
+  "name": "H0-Freeze20-R35",
+  "preflight_only": true,
+  "formal_training_started": false,
+  "parent_sha256": "b1adf68c7c5b3f1818773c1ef34adaeac4df49be57a867c6b11bcaf38cdf9166",
+  "build_timing": {
+    "seconds": 2.4994567558169365,
+    "peak_allocated_bytes": 146351616,
+    "peak_reserved_bytes": 184549376
+  },
+  "initial_checkpoint": {
+    "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/initial.preflight.bundle.pt",
+    "bytes": 79117226,
+    "sha256": "12d4a5e76c0abaeeaab265c29157609f8086b37b2f68670cbfdfd6e146962e9f",
+    "seconds": 0.21314077451825142,
+    "state_materialization_seconds": 0.02745649218559265,
+    "payload_fingerprint_seconds": 0.07096206769347191,
+    "file_sha256_seconds": 0.07396295666694641,
+    "preflight_only": true,
+    "formal_restore_rejected": true,
+    "fsync_completed": true
+  },
+  "source_binding": {
+    "config": {
+      "protocol_id": "kuairec_five_item_diffgrm_full_mixer_v1",
+      "architecture": "H",
+      "seed": 2024,
+      "list_length": 5,
+      "history_max": 50,
+      "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+      "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+      "model": {
+        "n_digit": 4,
+        "codebook_size": 256,
+        "encoder_n_layer": 1,
+        "decoder_n_layer": 4,
+        "n_embd": 256,
+        "n_head": 4,
+        "n_inner": 1024,
+        "dropout": 0.1,
+        "attn_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "norm_type": "layernorm",
+        "norm_eps": 1e-05,
+        "share_decoder_output_embedding": true,
+        "masking_strategy": "guided",
+        "guided_steps": 4,
+        "guided_conf_metric": "msp",
+        "guided_select": "least",
+        "guided_refresh_each_step": false,
+        "diffusion_loss_reduction": "per_view",
+        "label_smoothing": 0.2,
+        "item_local_attention": {
+          "enabled": false
+        },
+        "dedup_strategy": "simple",
+        "current_split": "val"
+      },
+      "alignment": {
+        "crosspse_heads": 4,
+        "crosspse_dropout": 0.0,
+        "crosspse_attention_scope": "full",
+        "crosspse_residual_scale_init": 1.0,
+        "crosspse_learn_residual_scale": false,
+        "crosspse_zero_init_attention_output": true,
+        "crosspse_train_base_codebooks": true,
+        "joint_gradient_mode": "diger_st",
+        "joint_diger_assignment_temperature": 0.1,
+        "joint_diger_softmax_temperature_start": 1.0,
+        "joint_diger_softmax_temperature_end": 1.0,
+        "joint_diger_gumbel_noise_start": 1.0,
+        "joint_diger_gumbel_noise_end": 0.2,
+        "joint_diger_uncertainty_decay": "cosine"
+      },
+      "training": {
+        "deterministic_algorithms": true,
+        "effective_batch_size": 1024,
+        "microbatch_size": 256,
+        "warmup_epochs": 5,
+        "cycles": 10,
+        "r_epochs_per_cycle": 3,
+        "t_updates_per_cycle": 40,
+        "checkpoint_every_updates": 100,
+        "decoder_lr": 0.001,
+        "decoder_warmup_updates": 500,
+        "decoder_weight_decay": 0.0,
+        "codebook_lr": 1e-05,
+        "mixer_lr": 0.0001,
+        "tokenizer_weight_decay": 0.0001,
+        "adam_betas": [
+          0.9,
+          0.999
+        ],
+        "adam_eps": 1e-08,
+        "recommendation_weight": 1.0,
+        "reconstruction_weight": 1.0,
+        "balance_weight": 0.01,
+        "anchor_weight": 0.01,
+        "balance_temperature": 0.1,
+        "sia_weight": 0.0,
+        "max_grad_norm": 1.0
+      },
+      "evaluation": {
+        "val_beam": 32,
+        "test_beam": 32,
+        "candidate_lists": 32,
+        "batch_size": 32,
+        "selection": "ndcg@5",
+        "tie_break": "earlier",
+        "aggregate_ks": [
+          10,
+          20,
+          50
+        ],
+        "sensitivity_beam": 256,
+        "filter_history": false,
+        "collision_rule": "reconstruction_error_then_original_id",
+        "aggregation": "list_score_order_then_item_position_first_occurrence"
+      },
+      "provenance": "docs/research/onerec_listwise/IMPLEMENTATION_REFERENCES.md"
+    },
+    "asset_manifest": "7cc6dcdfcdeb4087e38fd2080f322a01375b189b284a59d5c9bfd279862525d4",
+    "data": {
+      "manifest_sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649",
+      "files": {
+        "config.json": {
+          "bytes": 1746,
+          "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 799712,
+          "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 159883,
+          "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+        },
+        "train.parquet": {
+          "bytes": 531624261,
+          "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+        },
+        "validation.parquet": {
+          "bytes": 61527190,
+          "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+        },
+        "test.parquet": {
+          "bytes": 45918501,
+          "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+        }
+      },
+      "history_max": 50,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "code": {
+      "scripts/listwise_diffgrm/__init__.py": "23b895b1c072e3c8a22aa3e8b4d906ad315a35a668cb46fa1e77a21efbdbfb60",
+      "scripts/listwise_diffgrm/alignment.py": "e84aa754627ca0d29862d31b51509340c0ef673110ed1d5dfefd34efce3aa894",
+      "scripts/listwise_diffgrm/analysis.py": "487415686596235afe7204168708892d195b203418d1def054bd1355f4f2f29b",
+      "scripts/listwise_diffgrm/asset_diagnostics.py": "9e4be481b3652c834b6a057690b3283ea9c47496ae6c5ef467ba918485011afa",
+      "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+      "scripts/listwise_diffgrm/data.py": "f5d10972973c0126f1b4da8e8df23f53e5180b96799f985b97fe33fdcff0c862",
+      "scripts/listwise_diffgrm/decoding.py": "0eb50c5c3da3d17718d3de40019441e6573cdebdf67453586b16988916523afe",
+      "scripts/listwise_diffgrm/encode_text.py": "3602360c2b67c24eef167c612ee9fba144d79003efddff95a8792aab06d1ac52",
+      "scripts/listwise_diffgrm/encoder_cpu_probe.py": "c4f4fb5428e21e4a7f84bb9ef095ba771354f3462fedc15c3bbdf415f8ef2bc9",
+      "scripts/listwise_diffgrm/faiss_cpu_smoke.py": "b9a06a5093983750a206a373edd0dcb4216b5f2ef24bb10ab62dbb7253690675",
+      "scripts/listwise_diffgrm/metrics.py": "2f2223d8966d3bb0ebe153e71f421bf2fa97862c50161fd74821af04142f16bb",
+      "scripts/listwise_diffgrm/model.py": "55badb671bec5f71cc355f3bb6cc1076f2f88ed0819c61546f042896b3676855",
+      "scripts/listwise_diffgrm/model_manifest.py": "eef37ca9d23521c1d3c854e066f512d090e1970e0461704fd621bf0c9fcf3a39",
+      "scripts/listwise_diffgrm/preflight.py": "ecc3aa03527e0ce3ca4cf0efcbfcc1476d57e66b1e50e059f4040b99c0cbc94f",
+      "scripts/listwise_diffgrm/prepare_assets.py": "caf8dd5db0126ae3792069c579da05dd2ee23d9686be9a33571d7e88eb49a79b",
+      "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+      "scripts/listwise_diffgrm/recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+      "scripts/listwise_diffgrm/recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+      "scripts/listwise_diffgrm/recovery35_preflight.py": "fbaf56bad6860f394d82a92258957032d845bfa89267bc8567337c083bede230",
+      "scripts/listwise_diffgrm/recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+      "scripts/listwise_diffgrm/recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+      "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+      "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+      "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+      "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0",
+      "scripts/listwise_diffgrm/run.py": "cf4edf00afd748be741d3ae4080a904f4310d97d1e273a96fc289ecabd5d373b",
+      "scripts/listwise_diffgrm/runtime.py": "c6fbcd59529141c5a1151adba4d3fd398858f3d9ca022e17efa0938aad5fcd09",
+      "scripts/listwise_diffgrm/subset.py": "33f6fb79033ba31d2ec454c19e7b4c2cad38abaf3c926f263c6f6ff2e23aee2a",
+      "scripts/listwise_diffgrm/tokenizer_cpu_smoke.py": "481041f47f5b438a83f0616330b0f9fc1fae71bb6fa6a8a8003756f1cbb51738",
+      "scripts/listwise_diffgrm/training.py": "2da7cc318fc35c576a5144489c5ea2db43e4e534a3664c041ebcd5bf141cddd8"
+    },
+    "engine": {
+      "genrec/dataset.py": "89e5b7298c7dd32203a00d2be0ac5496afd681af31a334900a8ced5b865f4f48",
+      "genrec/evaluator.py": "d166bd7b141c770fb5ecae02191adcde949976f4e17931d9f004823198bb1bdf",
+      "genrec/model.py": "8f715ab3f21935500ed063767191f378389b95e9cde0aa90bad1dbeea171a278",
+      "genrec/models/DIFF_GRM/__init__.py": "5147ee78f25faab67a1c4dbd977c35ca81d3c3195d71c272de9849c6ec937d5a",
+      "genrec/models/DIFF_GRM/ablate_decode.py": "ade897a8d4fbe379c4e25c39322f6f391f0f9beb84722bcc059a615468e2fd05",
+      "genrec/models/DIFF_GRM/beam.py": "ff0699d1dacd6a9c6f8b859d49ee6ba817119b10f8617d6f82bdd062e3cdf0b6",
+      "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "genrec/models/DIFF_GRM/comb_topk.py": "207b5575afa5a884eebb98366908e05d2c2c5bcb62e08601e9e6342ab4a3bf3a",
+      "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "genrec/models/DIFF_GRM/evaluator.py": "77683fc060f079e29396980529c7522bed3abb2cd04dac50cce05484061adbfa",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/joint_cross_pse.py": "206b8cd20dee778f3d6a2689e9b6ab3d91123670fbad0b9acc052745adce9473",
+      "genrec/models/DIFF_GRM/model.py": "a9345b67fc09476753191e2459572ffbc877624051cf04ce7bf0f589371d027c",
+      "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56",
+      "genrec/tokenizer.py": "ae59cf3b98a4d9a68929f2165cb9a9097c52c626186fd73c14bd94b735e2e060",
+      "genrec/trainer.py": "e2bae211439a2d7f5cb013896be39a09b1b5ac3c149c7bf1bdffee488e733235",
+      "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802"
+    }
+  },
+  "initial_state_sha256": "05c5953b7abe5a46a8a25d769c81cbe2fefdb1fd71db8b0b63625f0fdf9e3e40",
+  "initial_counts": {
+    "R": 3465,
+    "T": 0,
+    "phase": 5
+  },
+  "original_scheduler": {
+    "base_lrs": [
+      0.001
+    ],
+    "last_epoch": 3465,
+    "verbose": false,
+    "_step_count": 3466,
+    "_get_lr_called_within_step": false,
+    "_last_lr": [
+      0.0009620503978340745
+    ],
+    "lr_lambdas": [
+      null
+    ]
+  },
+  "training_profile": {
+    "T_disk_replay": {
+      "kind": "T",
+      "save": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/before_replay_T.preflight.bundle.pt",
+        "bytes": 79642340,
+        "sha256": "bc630144129605d7f502b81b9d5a978237d230413d8649d5591c817943adf70c",
+        "seconds": 0.1896231286227703,
+        "state_materialization_seconds": 0.03141345828771591,
+        "payload_fingerprint_seconds": 0.07314621284604073,
+        "file_sha256_seconds": 0.0750538595020771,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "load": {
+        "seconds": 0.08583585172891617,
+        "peak_allocated_bytes": 147138048,
+        "peak_reserved_bytes": 4643094528,
+        "payload_fingerprint_seconds": 0.06956382468342781
+      },
+      "restore": {
+        "seconds": 0.05640431120991707,
+        "peak_allocated_bytes": 191972864,
+        "peak_reserved_bytes": 4643094528
+      },
+      "exact_loaded_state": true,
+      "exact_next_update": true,
+      "reusable_snapshot_unchanged": true,
+      "extra_discarded_update_seconds": 0.8211609683930874,
+      "extra_discarded_updates": 1,
+      "formal_restore_rejected": true
+    },
+    "T": {
+      "records": [
+        {
+          "seconds": 0.9735105484724045,
+          "peak_allocated_bytes": 3015689728,
+          "peak_reserved_bytes": 3974103040,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 1,
+          "values": {
+            "recommendation": 6.265874266624451,
+            "loss": 6.98865020275116,
+            "reconstruction": 0.7214345932006836,
+            "balance": 0.13413235545158386,
+            "anchor": 0.0,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.047352228313684464,
+            "r_updates": 3465,
+            "t_updates": 1,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.979445878633328
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3468889035284519,
+          "selected_indices_sha256": "51f0f7a617501fc60a7362447568c9ad62dce47e720172a4b7d5f81e25d08705",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u7040:e12318682:b5",
+            "u4765:e8388009:b15",
+            "u690:e1233669:b6",
+            "u1057:e1870413:b3"
+          ]
+        },
+        {
+          "seconds": 0.8135315254330635,
+          "peak_allocated_bytes": 3013480448,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 2,
+          "values": {
+            "recommendation": 6.272226929664612,
+            "loss": 6.995281338691711,
+            "reconstruction": 0.7217108011245728,
+            "balance": 0.1343606412410736,
+            "anchor": 9.987741189654287e-11,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04673977196216583,
+            "r_updates": 3465,
+            "t_updates": 2,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.869695372532902
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3332941122353077,
+          "selected_indices_sha256": "36a4499896adcea3a7a942071affd82599225db008e175ab89467adba68b7be7",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4100:e7195440:b1",
+            "u5976:e10483342:b0",
+            "u2055:e3589592:b13",
+            "u4956:e8716668:b35"
+          ]
+        },
+        {
+          "seconds": 0.8045670427381992,
+          "peak_allocated_bytes": 3016226304,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 3,
+          "values": {
+            "recommendation": 6.259883165359497,
+            "loss": 6.979862093925476,
+            "reconstruction": 0.7186399102210999,
+            "balance": 0.13390082120895386,
+            "anchor": 2.920579333931528e-10,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046757444739341736,
+            "r_updates": 3465,
+            "t_updates": 3,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.896012100542066
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.34114978462457657,
+          "selected_indices_sha256": "d3ebf528e7b332cbc191616636de5ad07c79502e4fd54122ad4baee757486c42",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2302:e4011270:b1",
+            "u5883:e10310501:b10",
+            "u1078:e1907904:b44",
+            "u3941:e6902679:b19"
+          ]
+        },
+        {
+          "seconds": 0.8072553277015686,
+          "peak_allocated_bytes": 3017506816,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 4,
+          "values": {
+            "recommendation": 6.261575698852539,
+            "loss": 6.984990239143372,
+            "reconstruction": 0.7220606803894043,
+            "balance": 0.13538584113121033,
+            "anchor": 5.650963030845446e-10,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046099141240119934,
+            "r_updates": 3465,
+            "t_updates": 4,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.759888007205127
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33316919207572937,
+          "selected_indices_sha256": "334ab4c875ed462c4cb3bdf828f7416101aa0ca2f6f98a459afcf0f9ae912d25",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u5240:e9222408:b5",
+            "u6215:e10875093:b30",
+            "u3389:e5923020:b18",
+            "u6917:e12088218:b5"
+          ]
+        },
+        {
+          "seconds": 0.7837110422551632,
+          "peak_allocated_bytes": 3017451008,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 5,
+          "values": {
+            "recommendation": 6.258500099182129,
+            "loss": 6.978151798248291,
+            "reconstruction": 0.7183091640472412,
+            "balance": 0.13425540924072266,
+            "anchor": 9.178174886770307e-10,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046568162739276886,
+            "r_updates": 3465,
+            "t_updates": 5,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.854170117499763
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3419421948492527,
+          "selected_indices_sha256": "477e9c4a0ddaf2df50e11e295b1295c58ae2b679d5751e73ea81f884ed81a98f",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2873:e4982628:b68",
+            "u6522:e11395597:b47",
+            "u1205:e2115636:b4",
+            "u4804:e8456041:b18"
+          ]
+        },
+        {
+          "seconds": 0.7769937142729759,
+          "peak_allocated_bytes": 3017357312,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 6,
+          "values": {
+            "recommendation": 6.277412056922913,
+            "loss": 7.002735614776611,
+            "reconstruction": 0.7239673733711243,
+            "balance": 0.13561949133872986,
+            "anchor": 1.3487498895514705e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046568363904953,
+            "r_updates": 3465,
+            "t_updates": 6,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.885770123351136
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33537812903523445,
+          "selected_indices_sha256": "42402a5a7375a65011cc069fdd3393a355fee0f9193fbe735f95aca3c0a8a09a",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2842:e4926094:b2",
+            "u1390:e2442888:b0",
+            "u4547:e7994063:b11",
+            "u605:e1092923:b2"
+          ]
+        },
+        {
+          "seconds": 0.7796152047812939,
+          "peak_allocated_bytes": 3019774976,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 7,
+          "values": {
+            "recommendation": 6.268055558204651,
+            "loss": 6.989248216152191,
+            "reconstruction": 0.7198538780212402,
+            "balance": 0.13387912511825562,
+            "anchor": 1.8578018012860298e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046124570071697235,
+            "r_updates": 3465,
+            "t_updates": 7,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.746483660563541
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33047163486480713,
+          "selected_indices_sha256": "9675753f19106fc99780de1ec02470de2208262bf7d2eb07460ea41042306443",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4644:e8187815:b12",
+            "u3884:e6810844:b0",
+            "u738:e1318827:b21",
+            "u4661:e8214420:b15"
+          ]
+        },
+        {
+          "seconds": 0.7795215174555779,
+          "peak_allocated_bytes": 3017297408,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 8,
+          "values": {
+            "recommendation": 6.28244161605835,
+            "loss": 7.00434935092926,
+            "reconstruction": 0.7205636501312256,
+            "balance": 0.13440552353858948,
+            "anchor": 2.4445603319378506e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04704330861568451,
+            "r_updates": 3465,
+            "t_updates": 8,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.912274211897483
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3334195762872696,
+          "selected_indices_sha256": "0b1d22276a8b35eee17a2f687ab58ee431552edf6005230c9697f803bbb200e2",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u514:e936310:b1",
+            "u4543:e7985733:b21",
+            "u4972:e8748166:b3",
+            "u3025:e5252151:b3"
+          ]
+        },
+        {
+          "seconds": 0.7823148258030415,
+          "peak_allocated_bytes": 3017564160,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 9,
+          "values": {
+            "recommendation": 6.269957900047302,
+            "loss": 6.991329073905945,
+            "reconstruction": 0.7200258374214172,
+            "balance": 0.13453426957130432,
+            "anchor": 3.109146717861222e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04601488634943962,
+            "r_updates": 3465,
+            "t_updates": 9,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.735347468234153
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3333895578980446,
+          "selected_indices_sha256": "fd3477e7bc96f70b55a0cbbfb9fcf04fb8565db94925a338b286c2ca2b74f59e",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u6936:e12125869:b6",
+            "u2997:e5198736:b3",
+            "u6284:e10985945:b0",
+            "u3115:e5416040:b3"
+          ]
+        },
+        {
+          "seconds": 0.7714626044034958,
+          "peak_allocated_bytes": 3019652096,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 10,
+          "values": {
+            "recommendation": 6.266001224517822,
+            "loss": 6.98740941286087,
+            "reconstruction": 0.7200653553009033,
+            "balance": 0.13428470492362976,
+            "anchor": 3.8520315825962825e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04569724202156067,
+            "r_updates": 3465,
+            "t_updates": 10,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.723838459614257
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3342312164604664,
+          "selected_indices_sha256": "689360351513fcab10520b992b0f6d5a2cac0a124823c997fb75bb46134ec0d5",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u6400:e11192923:b0",
+            "u2194:e3830167:b9",
+            "u5251:e9242130:b0",
+            "u1511:e2649794:b13"
+          ]
+        },
+        {
+          "seconds": 0.7802158258855343,
+          "peak_allocated_bytes": 3017451008,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 11,
+          "values": {
+            "recommendation": 6.27455747127533,
+            "loss": 6.997783660888672,
+            "reconstruction": 0.7218705415725708,
+            "balance": 0.1355626881122589,
+            "anchor": 4.671234954400916e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04606521129608154,
+            "r_updates": 3465,
+            "t_updates": 11,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.756136702929695
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33070968464016914,
+          "selected_indices_sha256": "02fbc5ce1e1d0ec4cb01d082231ecba4dc664a82e72fb47c5c24c098358cd35a",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3863:e6774104:b62",
+            "u6480:e11324865:b10",
+            "u6803:e11893165:b1",
+            "u1111:e1964464:b27"
+          ]
+        },
+        {
+          "seconds": 0.7768574580550194,
+          "peak_allocated_bytes": 3017528320,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 12,
+          "values": {
+            "recommendation": 6.269260883331299,
+            "loss": 6.99010956287384,
+            "reconstruction": 0.719505786895752,
+            "balance": 0.1342867910861969,
+            "anchor": 5.567221794677835e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046300746500492096,
+            "r_updates": 3465,
+            "t_updates": 12,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.84177256096919
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33502097427845,
+          "selected_indices_sha256": "9e5da2ef3e47aefd34a1842c908908318008042e02b0552829b023ff2b363c47",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3334:e5821826:b32",
+            "u38:e67235:b4",
+            "u3403:e5949657:b3",
+            "u3733:e6554190:b22"
+          ]
+        },
+        {
+          "seconds": 0.7726101465523243,
+          "peak_allocated_bytes": 3019820544,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 13,
+          "values": {
+            "recommendation": 6.267836689949036,
+            "loss": 6.989320993423462,
+            "reconstruction": 0.7201361656188965,
+            "balance": 0.13481098413467407,
+            "anchor": 6.5409446747821676e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.045878153294324875,
+            "r_updates": 3465,
+            "t_updates": 13,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.707509310987035
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.34294333681464195,
+          "selected_indices_sha256": "0043197c49084cc46dfdcb171deb170502b0674c84e8dd57ce28cc35eeb598f7",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3342:e5831777:b0",
+            "u3682:e6461225:b12",
+            "u6511:e11375363:b2",
+            "u347:e632089:b9"
+          ]
+        },
+        {
+          "seconds": 0.775946594774723,
+          "peak_allocated_bytes": 3016259072,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 14,
+          "values": {
+            "recommendation": 6.282201766967773,
+            "loss": 7.002313315868378,
+            "reconstruction": 0.7187636494636536,
+            "balance": 0.134791761636734,
+            "anchor": 7.591403061724122e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04550999775528908,
+            "r_updates": 3465,
+            "t_updates": 14,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.66363973045435
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3374617099761963,
+          "selected_indices_sha256": "d94cc9b22a8edabc7a7ffd5f7dd5a720117f2f09d7a20f4bf83675fb6ddb166d",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2315:e4036410:b0",
+            "u1351:e2375516:b4",
+            "u3549:e6207678:b6",
+            "u149:e277072:b7"
+          ]
+        },
+        {
+          "seconds": 0.7709326632320881,
+          "peak_allocated_bytes": 3019435520,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 15,
+          "values": {
+            "recommendation": 6.271926403045654,
+            "loss": 6.992740213871002,
+            "reconstruction": 0.7194654941558838,
+            "balance": 0.13483108580112457,
+            "anchor": 8.716176225220806e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04575498029589653,
+            "r_updates": 3465,
+            "t_updates": 15,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.717216190055709
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33464573696255684,
+          "selected_indices_sha256": "29c29cb37f532da38e2a66ffc63f3e869e8db44e09d56ebfe826ef3f88dbb6bc",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u207:e381601:b3",
+            "u1393:e2449907:b11",
+            "u1271:e2228382:b24",
+            "u4534:e7970408:b7"
+          ]
+        },
+        {
+          "seconds": 0.7752145119011402,
+          "peak_allocated_bytes": 3017177600,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 16,
+          "values": {
+            "recommendation": 6.268715023994446,
+            "loss": 6.988336265087128,
+            "reconstruction": 0.7182773947715759,
+            "balance": 0.1343822479248047,
+            "anchor": 9.917735965814245e-09,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046919841319322586,
+            "r_updates": 3465,
+            "t_updates": 16,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.947706421772864
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33403995633125305,
+          "selected_indices_sha256": "799cf18af7bbde5f619d0390b7decf8097dda8d76fe0f5c606d413b4009f15fe",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u1188:e2087279:b4",
+            "u4520:e7948497:b1",
+            "u1916:e3354580:b10",
+            "u3378:e5899904:b0"
+          ]
+        },
+        {
+          "seconds": 0.7866028100252151,
+          "peak_allocated_bytes": 3019389440,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 17,
+          "values": {
+            "recommendation": 6.275874137878418,
+            "loss": 6.997840940952301,
+            "reconstruction": 0.7206149697303772,
+            "balance": 0.13518410921096802,
+            "anchor": 1.1196938487501029e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04635882005095482,
+            "r_updates": 3465,
+            "t_updates": 17,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.831006769890408
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3690353259444237,
+          "selected_indices_sha256": "3afc2affb5505f3b973f47ead1d5ce3f975309fd8a9a74fe134788008413ec87",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u730:e1301271:b56",
+            "u6771:e11829756:b14",
+            "u4146:e7290660:b0",
+            "u2976:e5166486:b0"
+          ]
+        },
+        {
+          "seconds": 0.777707539498806,
+          "peak_allocated_bytes": 3016275968,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 18,
+          "values": {
+            "recommendation": 6.268261671066284,
+            "loss": 6.989407122135162,
+            "reconstruction": 0.719792366027832,
+            "balance": 0.1353107988834381,
+            "anchor": 1.2551593542298178e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.045664213597774506,
+            "r_updates": 3465,
+            "t_updates": 18,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.720424953043022
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3342122510075569,
+          "selected_indices_sha256": "dfd17019e7be3e0b4416a10ca2de0285a521ae1a17b3cf7ea7706fe4c3abb87d",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u5980:e10492100:b7",
+            "u4759:e8375744:b8",
+            "u3939:e6898070:b4",
+            "u5699:e9983964:b1"
+          ]
+        },
+        {
+          "seconds": 0.7774263806641102,
+          "peak_allocated_bytes": 3016529920,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 19,
+          "values": {
+            "recommendation": 6.28045129776001,
+            "loss": 6.9996970891952515,
+            "reconstruction": 0.7179014682769775,
+            "balance": 0.1344335377216339,
+            "anchor": 1.3983822100271937e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04621923342347145,
+            "r_updates": 3465,
+            "t_updates": 19,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.798593147276563
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3318003825843334,
+          "selected_indices_sha256": "4dc113706fdeb6223c134723ef80e0304e104daa4b61b0bef305ba845127923a",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2566:e4466154:b0",
+            "u3640:e6376372:b8",
+            "u1014:e1803001:b1",
+            "u1904:e3331186:b8"
+          ]
+        },
+        {
+          "seconds": 0.786690603941679,
+          "peak_allocated_bytes": 3017178112,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 20,
+          "values": {
+            "recommendation": 6.265523791313171,
+            "loss": 6.984793186187744,
+            "reconstruction": 0.7179248929023743,
+            "balance": 0.13445180654525757,
+            "anchor": 1.5493002436528513e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.0461970791220665,
+            "r_updates": 3465,
+            "t_updates": 20,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.773126244441926
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33042459934949875,
+          "selected_indices_sha256": "4a12942b6d2dd97c94f445371444b3ed1feefb9b05d77a0b8c768f10a944f4ef",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2097:e3658949:b2",
+            "u4763:e8384280:b40",
+            "u4198:e7377905:b34",
+            "u2051:e3584686:b2"
+          ]
+        },
+        {
+          "seconds": 0.777285173535347,
+          "peak_allocated_bytes": 3019656704,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 21,
+          "values": {
+            "recommendation": 6.266528487205505,
+            "loss": 6.9882267117500305,
+            "reconstruction": 0.7203496694564819,
+            "balance": 0.13485759496688843,
+            "anchor": 1.7080477476838496e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04668286442756653,
+            "r_updates": 3465,
+            "t_updates": 21,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.861440186539483
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.32977770641446114,
+          "selected_indices_sha256": "51aaa8fbc62466382c2f7b93b03e2e0c3c96a7b62a848126ce72303aecefdd19",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4596:e8103073:b8",
+            "u4742:e8345989:b24",
+            "u2465:e4287861:b0",
+            "u1243:e2178258:b12"
+          ]
+        },
+        {
+          "seconds": 0.7813445962965488,
+          "peak_allocated_bytes": 3019430400,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 22,
+          "values": {
+            "recommendation": 6.271379232406616,
+            "loss": 6.992113292217255,
+            "reconstruction": 0.7193909883499146,
+            "balance": 0.1343090981245041,
+            "anchor": 1.8746501240229918e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04673673212528229,
+            "r_updates": 3465,
+            "t_updates": 22,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.873186639652573
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33209478482604027,
+          "selected_indices_sha256": "94a65206a340679b3dce977cbb26369899a56135563d70d9f50531b95cad3381",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u1513:e2654636:b3",
+            "u5122:e9000148:b12",
+            "u376:e678285:b5",
+            "u6811:e11905989:b2"
+          ]
+        },
+        {
+          "seconds": 0.7827123664319515,
+          "peak_allocated_bytes": 3017501184,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 23,
+          "values": {
+            "recommendation": 6.269377112388611,
+            "loss": 6.987644970417023,
+            "reconstruction": 0.7169232964515686,
+            "balance": 0.13445410132408142,
+            "anchor": 2.049059766306982e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046042848378419876,
+            "r_updates": 3465,
+            "t_updates": 23,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.764607166895559
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3304314576089382,
+          "selected_indices_sha256": "2e77164fc55159992f8546271d56a24b5aa7fda0f7b645f2b7f58ed053843795",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3836:e6727133:b3",
+            "u1610:e2830236:b15",
+            "u4495:e7912268:b1",
+            "u4807:e8460759:b3"
+          ]
+        },
+        {
+          "seconds": 0.787251316010952,
+          "peak_allocated_bytes": 3017510400,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 24,
+          "values": {
+            "recommendation": 6.272475242614746,
+            "loss": 6.992579340934753,
+            "reconstruction": 0.7187567949295044,
+            "balance": 0.13473013043403625,
+            "anchor": 2.2310562286520508e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04642893746495247,
+            "r_updates": 3465,
+            "t_updates": 24,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.815793455055385
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33682605996727943,
+          "selected_indices_sha256": "5f9b98c64aa1c16762a4e054d193a9212746907ee1ea3a26bcf650519edf4be6",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u5049:e8874088:b6",
+            "u535:e975594:b31",
+            "u6854:e11981993:b14",
+            "u5715:e10018622:b0"
+          ]
+        },
+        {
+          "seconds": 0.7888454906642437,
+          "peak_allocated_bytes": 3019795456,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 25,
+          "values": {
+            "recommendation": 6.271947145462036,
+            "loss": 6.992601811885834,
+            "reconstruction": 0.7193065881729126,
+            "balance": 0.13481009006500244,
+            "anchor": 2.4206133986126588e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04615049064159393,
+            "r_updates": 3465,
+            "t_updates": 25,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.759882529826513
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33777252212166786,
+          "selected_indices_sha256": "0ae81f43748712e3d26cc128e763fd8a12336ee1e388e213947f7a6bd600d9a9",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u1870:e3268361:b9",
+            "u1784:e3123530:b0",
+            "u3943:e6907556:b47",
+            "u5659:e9914357:b15"
+          ]
+        },
+        {
+          "seconds": 0.7698017470538616,
+          "peak_allocated_bytes": 3016250880,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 26,
+          "values": {
+            "recommendation": 6.265127539634705,
+            "loss": 6.9896716475486755,
+            "reconstruction": 0.7231853008270264,
+            "balance": 0.13587866723537445,
+            "anchor": 2.617450611808181e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046546537429094315,
+            "r_updates": 3465,
+            "t_updates": 26,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.845629945109806
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3487662337720394,
+          "selected_indices_sha256": "b542248f6bdcb3061d4e558174f315a6a2c4074370834fb696908a00afdacc19",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u1586:e2784938:b4",
+            "u995:e1775489:b1",
+            "u6182:e10832540:b28",
+            "u2104:e3675104:b2"
+          ]
+        },
+        {
+          "seconds": 0.7627857215702534,
+          "peak_allocated_bytes": 3017188864,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 27,
+          "values": {
+            "recommendation": 6.274806380271912,
+            "loss": 6.997428297996521,
+            "reconstruction": 0.721266508102417,
+            "balance": 0.13553977012634277,
+            "anchor": 2.822148559289417e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04619675129652023,
+            "r_updates": 3465,
+            "t_updates": 27,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.81606767305874
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3387812301516533,
+          "selected_indices_sha256": "60efd6b436aef8606314c72762786dff4d7886b3babaa2d902d99e98183de466",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4049:e7092114:b14",
+            "u304:e555994:b1",
+            "u1630:e2866297:b44",
+            "u2153:e3757618:b40"
+          ]
+        },
+        {
+          "seconds": 0.7559917196631432,
+          "peak_allocated_bytes": 3015628288,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 28,
+          "values": {
+            "recommendation": 6.2521812915802,
+            "loss": 6.975885808467865,
+            "reconstruction": 0.7223432064056396,
+            "balance": 0.13613075017929077,
+            "anchor": 3.0348509483246744e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04605531692504883,
+            "r_updates": 3465,
+            "t_updates": 28,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.765244497906991
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33768734708428383,
+          "selected_indices_sha256": "5b84056e627496e1658de298b434bf04a89849f98860d8c531dde16f9c76c1c2",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u187:e344717:b3",
+            "u4731:e8330952:b6",
+            "u290:e526897:b17",
+            "u4534:e7970095:b0"
+          ]
+        },
+        {
+          "seconds": 0.7617589235305786,
+          "peak_allocated_bytes": 3019261440,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 29,
+          "values": {
+            "recommendation": 6.263449192047119,
+            "loss": 6.984268367290497,
+            "reconstruction": 0.7194660305976868,
+            "balance": 0.13531199097633362,
+            "anchor": 3.255313174577168e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04609411582350731,
+            "r_updates": 3465,
+            "t_updates": 29,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.78907701375769
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3332482688128948,
+          "selected_indices_sha256": "7260b181d32ad4321e18f72d2fdeb0526d9d046f465bc5baaff5f47036761c29",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u6828:e11932017:b1",
+            "u72:e134456:b4",
+            "u3433:e6014333:b1",
+            "u2364:e4124115:b0"
+          ]
+        },
+        {
+          "seconds": 0.7627376094460487,
+          "peak_allocated_bytes": 3019713536,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 30,
+          "values": {
+            "recommendation": 6.278350234031677,
+            "loss": 6.9958900809288025,
+            "reconstruction": 0.7161988615989685,
+            "balance": 0.1340995579957962,
+            "anchor": 3.4833544049206466e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04593954235315323,
+            "r_updates": 3465,
+            "t_updates": 30,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.752425445617227
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3348523676395416,
+          "selected_indices_sha256": "74696bbe7ce6e76c0046f3fc32a2e6245033e52477a750370e986b6f8ef2d10c",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3387:e5916863:b5",
+            "u4061:e7116163:b28",
+            "u3998:e7001417:b10",
+            "u4085:e7166862:b18"
+          ]
+        },
+        {
+          "seconds": 0.7643256448209286,
+          "peak_allocated_bytes": 3017495040,
+          "peak_reserved_bytes": 4643094528,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 31,
+          "values": {
+            "recommendation": 6.268619775772095,
+            "loss": 6.990176856517792,
+            "reconstruction": 0.7202008962631226,
+            "balance": 0.1356164813041687,
+            "anchor": 3.718847807476777e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04585139453411102,
+            "r_updates": 3465,
+            "t_updates": 31,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.736488360306751
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33125557005405426,
+          "selected_indices_sha256": "8b8fa5521524d52bd53f8560ceaa30ef9b26d24bd9837c85f3c7bf5909bb10a8",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4771:e8400473:b30",
+            "u2498:e4344955:b7",
+            "u7011:e12260952:b30",
+            "u125:e240428:b0"
+          ]
+        },
+        {
+          "seconds": 0.7601897828280926,
+          "peak_allocated_bytes": 3017545728,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 32,
+          "values": {
+            "recommendation": 6.2694785594940186,
+            "loss": 6.990817844867706,
+            "reconstruction": 0.7199842929840088,
+            "balance": 0.1354975402355194,
+            "anchor": 3.9617027880467504e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04585485905408859,
+            "r_updates": 3465,
+            "t_updates": 32,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.739242317214462
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3317283019423485,
+          "selected_indices_sha256": "33845ca2009238e48d1cebe051b9cdc304a0be74a01900f921657a8bba91a57e",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4350:e7654488:b0",
+            "u3956:e6930182:b49",
+            "u3026:e5254633:b1",
+            "u4606:e8127150:b42"
+          ]
+        },
+        {
+          "seconds": 0.7494640722870827,
+          "peak_allocated_bytes": 3017451008,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 33,
+          "values": {
+            "recommendation": 6.263999938964844,
+            "loss": 6.9838787317276,
+            "reconstruction": 0.7185252904891968,
+            "balance": 0.1353498101234436,
+            "anchor": 4.2126700350308965e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04620785266160965,
+            "r_updates": 3465,
+            "t_updates": 33,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.730792082652464
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3353557735681534,
+          "selected_indices_sha256": "8646dc9662a24f8c6ae8903eb07bfc5fb9362593b28702da4d8c500ff93aa255",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4271:e7525149:b5",
+            "u4911:e8635148:b51",
+            "u1020:e1813805:b10",
+            "u688:e1229505:b32"
+          ]
+        },
+        {
+          "seconds": 0.756404634565115,
+          "peak_allocated_bytes": 3019395072,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 34,
+          "values": {
+            "recommendation": 6.264401793479919,
+            "loss": 6.988122463226318,
+            "reconstruction": 0.7223561406135559,
+            "balance": 0.13645042479038239,
+            "anchor": 4.471252168514184e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.045701369643211365,
+            "r_updates": 3465,
+            "t_updates": 34,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.7171892896231
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3324364088475704,
+          "selected_indices_sha256": "46eddb118ea2f9500da9e6bb9cbcfd79a8a20f46e2b9e4c5fd944078c1c2d524",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u5952:e10433211:b2",
+            "u38:e68151:b91",
+            "u254:e461064:b2",
+            "u3157:e5504718:b36"
+          ]
+        },
+        {
+          "seconds": 0.7608521431684494,
+          "peak_allocated_bytes": 3016528896,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 35,
+          "values": {
+            "recommendation": 6.263402819633484,
+            "loss": 6.980444073677063,
+            "reconstruction": 0.7156981229782104,
+            "balance": 0.13431571424007416,
+            "anchor": 4.7374179246162385e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04581166058778763,
+            "r_updates": 3465,
+            "t_updates": 35,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.706210823288444
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3339509926736355,
+          "selected_indices_sha256": "b40e20262ebadcafc12be81336d5eaa1f4d8f2caaa4ac6322f15b2c283491410",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u7017:e12275257:b2",
+            "u3697:e6485993:b14",
+            "u6353:e11116788:b4",
+            "u5725:e10037152:b2"
+          ]
+        },
+        {
+          "seconds": 0.7519821301102638,
+          "peak_allocated_bytes": 3017497600,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 36,
+          "values": {
+            "recommendation": 6.264539361000061,
+            "loss": 6.988184630870819,
+            "reconstruction": 0.7222791910171509,
+            "balance": 0.136607825756073,
+            "anchor": 5.011022352618966e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.0464882031083107,
+            "r_updates": 3465,
+            "t_updates": 36,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.8007645722073
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3335568644106388,
+          "selected_indices_sha256": "5af7e94abd25f107cfa93e4bced60e93f51d1266f2b29f631a686f9234d588df",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u450:e817614:b8",
+            "u1189:e2088558:b9",
+            "u3697:e6487274:b27",
+            "u6547:e11439807:b3"
+          ]
+        },
+        {
+          "seconds": 0.750437967479229,
+          "peak_allocated_bytes": 3016312320,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 37,
+          "values": {
+            "recommendation": 6.258264422416687,
+            "loss": 6.981648027896881,
+            "reconstruction": 0.7220255732536316,
+            "balance": 0.1358022391796112,
+            "anchor": 5.2921777182746155e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.046550020575523376,
+            "r_updates": 3465,
+            "t_updates": 37,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.863499281838529
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.34923116862773895,
+          "selected_indices_sha256": "35fba20de0268374f901d2774d7870e649d2fedce185f835e9f78498f65bc164",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u5160:e9080530:b7",
+            "u2997:e5199776:b13",
+            "u2331:e4067508:b3",
+            "u2586:e4496667:b71"
+          ]
+        },
+        {
+          "seconds": 0.7522802948951721,
+          "peak_allocated_bytes": 3017318400,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 38,
+          "values": {
+            "recommendation": 6.26893150806427,
+            "loss": 6.989807069301605,
+            "reconstruction": 0.7195158004760742,
+            "balance": 0.1359734833240509,
+            "anchor": 5.5818063060542045e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04753810912370682,
+            "r_updates": 3465,
+            "t_updates": 38,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.968977942338498
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.344984944909811,
+          "selected_indices_sha256": "41abba467215001a024f871d8c80a6ff960ae9157cc63013dcdd534536a24e71",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u6558:e11457735:b61",
+            "u3829:e6714138:b22",
+            "u2551:e4434528:b65",
+            "u5502:e9670575:b36"
+          ]
+        },
+        {
+          "seconds": 0.7513296641409397,
+          "peak_allocated_bytes": 3019420160,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 39,
+          "values": {
+            "recommendation": 6.265152812004089,
+            "loss": 6.983881831169128,
+            "reconstruction": 0.717372715473175,
+            "balance": 0.1356286257505417,
+            "anchor": 5.879243758499797e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.0461387038230896,
+            "r_updates": 3465,
+            "t_updates": 39,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.76778489569179
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.33610544353723526,
+          "selected_indices_sha256": "51638b323474728258c44c39070c755400bc2976d44f120a869b33259f19429a",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3007:e5218213:b4",
+            "u6912:e12072522:b3",
+            "u6616:e11564955:b0",
+            "u6643:e11609863:b3"
+          ]
+        },
+        {
+          "seconds": 0.7534768953919411,
+          "peak_allocated_bytes": 3018294272,
+          "peak_reserved_bytes": 5318377472,
+          "kind": "T",
+          "original_phase_index": 5,
+          "update": 40,
+          "values": {
+            "recommendation": 6.26410448551178,
+            "loss": 6.983628034591675,
+            "reconstruction": 0.7181653380393982,
+            "balance": 0.13581988215446472,
+            "anchor": 6.183969247786081e-08,
+            "lists": 1024,
+            "phase": "T",
+            "gradient_norm": 0.04625210538506508,
+            "r_updates": 3465,
+            "t_updates": 40,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 5
+          },
+          "gradients": {
+            "base_codebooks": {
+              "gradient_l1": 8.78581947294245
+            },
+            "disabled_mixer_has_no_gradient": true
+          },
+          "changed_parameters": [
+            "mixer.base_codebooks"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.34117965027689934,
+          "selected_indices_sha256": "342b67b42f1423c1087051920715ee2839b307631c54927760ca998b0a757d16",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2658:e4613858:b3",
+            "u3813:e6692863:b14",
+            "u3509:e6146130:b39",
+            "u26:e45686:b23"
+          ]
+        }
+      ],
+      "updates": 40,
+      "median_update_seconds": 0.7764020264148712,
+      "median_end_to_end_seconds": 1.1105061750859022,
+      "warm_median_update_seconds": 0.775946594774723,
+      "warm_records": 39,
+      "timing_scope": "Update includes H2D, forward, backward and optimizer; data preparation is separate. State/gradient auditing is excluded from throughput, included in overall wall time."
+    },
+    "T40_boundary_checkpoint": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/C_T40.preflight.bundle.pt",
+      "bytes": 79642340,
+      "sha256": "5a474cf28f1f3247d41bba14a9a54ca4fd63c274f8ba529379a4771c1fd2ea8c",
+      "seconds": 0.14939763769507408,
+      "state_materialization_seconds": 0.045865707099437714,
+      "payload_fingerprint_seconds": 0.07183917611837387,
+      "file_sha256_seconds": 0.07606782019138336,
+      "preflight_only": true,
+      "formal_restore_rejected": true,
+      "fsync_completed": true
+    },
+    "T40_refresh": {
+      "seconds": 0.0036409609019756317,
+      "peak_allocated_bytes": 189723648,
+      "peak_reserved_bytes": 5318377472
+    },
+    "R_disk_replay": {
+      "kind": "R",
+      "save": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/before_replay_R.preflight.bundle.pt",
+        "bytes": 79642340,
+        "sha256": "f1c9aae616156854cffac0a9d98fdf264af2779f47365d3e9a65c77ef5785429",
+        "seconds": 0.1541849859058857,
+        "state_materialization_seconds": 0.04446269944310188,
+        "payload_fingerprint_seconds": 0.0717165432870388,
+        "file_sha256_seconds": 0.0758189857006073,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "load": {
+        "seconds": 0.08348432555794716,
+        "peak_allocated_bytes": 169314816,
+        "peak_reserved_bytes": 5381292032,
+        "payload_fingerprint_seconds": 0.07023356482386589
+      },
+      "restore": {
+        "seconds": 0.05076684057712555,
+        "peak_allocated_bytes": 214149632,
+        "peak_reserved_bytes": 5381292032
+      },
+      "exact_loaded_state": true,
+      "exact_next_update": true,
+      "reusable_snapshot_unchanged": true,
+      "extra_discarded_update_seconds": 0.8390751481056213,
+      "extra_discarded_updates": 1,
+      "formal_restore_rejected": true,
+      "actual_update": {
+        "seconds": 0.8395863324403763,
+        "peak_allocated_bytes": 4261061632,
+        "peak_reserved_bytes": 5381292032,
+        "kind": "R",
+        "original_phase_index": 6,
+        "update": 4,
+        "values": {
+          "recommendation": 2.985723316669464,
+          "loss": 2.985723316669464,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.137891486287117,
+          "r_updates": 3469,
+          "t_updates": 40,
+          "learning_rates_used": {
+            "R": 0.0009619745528456478,
+            "codebook": 1e-05,
+            "mixer": 0.0001
+          },
+          "phase_index": 6
+        },
+        "gradients": {
+          "sid_embedding": {
+            "gradient_l1": 15.788041580733228,
+            "parameters_with_gradient": [
+              "backbone.embedding.weight"
+            ]
+          },
+          "history_projection": {
+            "gradient_l1": 11.8291338380659,
+            "parameters_with_gradient": [
+              "backbone.item_mlp.0.weight",
+              "backbone.item_mlp.0.bias",
+              "backbone.item_mlp.2.weight",
+              "backbone.item_mlp.2.bias"
+            ]
+          },
+          "history_position": {
+            "gradient_l1": 1.0889889321492774,
+            "parameters_with_gradient": [
+              "backbone.pos_emb_enc.weight"
+            ]
+          },
+          "mask_embedding": {
+            "gradient_l1": 0.17526117203942704,
+            "parameters_with_gradient": [
+              "backbone.mask_emb_table.weight"
+            ]
+          },
+          "list_position": {
+            "gradient_l1": 0.9017967883410165,
+            "parameters_with_gradient": [
+              "item_position_embedding.weight"
+            ]
+          },
+          "encoder_0": {
+            "gradient_l1": 14.547596628123017,
+            "parameters_with_gradient": [
+              "backbone.encoder_blocks.0.ln_1.weight",
+              "backbone.encoder_blocks.0.ln_1.bias",
+              "backbone.encoder_blocks.0.attn.qkv.weight",
+              "backbone.encoder_blocks.0.attn.proj.weight",
+              "backbone.encoder_blocks.0.attn.proj.bias",
+              "backbone.encoder_blocks.0.ln_2.weight",
+              "backbone.encoder_blocks.0.ln_2.bias",
+              "backbone.encoder_blocks.0.mlp.c_fc.weight",
+              "backbone.encoder_blocks.0.mlp.c_fc.bias",
+              "backbone.encoder_blocks.0.mlp.c_proj.weight",
+              "backbone.encoder_blocks.0.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_0_self_attn": {
+            "gradient_l1": 14.747312152438099,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.self_attn.qkv.weight",
+              "backbone.decoder_blocks.0.self_attn.proj.weight",
+              "backbone.decoder_blocks.0.self_attn.proj.bias"
+            ]
+          },
+          "decoder_0_cross_attn": {
+            "gradient_l1": 5.961160025297431,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.0.cross_attn.proj.weight",
+              "backbone.decoder_blocks.0.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_0_mlp": {
+            "gradient_l1": 19.36113045811726,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.mlp.c_fc.weight",
+              "backbone.decoder_blocks.0.mlp.c_fc.bias",
+              "backbone.decoder_blocks.0.mlp.c_proj.weight",
+              "backbone.decoder_blocks.0.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_1_self_attn": {
+            "gradient_l1": 6.568041106824239,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.self_attn.qkv.weight",
+              "backbone.decoder_blocks.1.self_attn.proj.weight",
+              "backbone.decoder_blocks.1.self_attn.proj.bias"
+            ]
+          },
+          "decoder_1_cross_attn": {
+            "gradient_l1": 5.056972341386427,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.1.cross_attn.proj.weight",
+              "backbone.decoder_blocks.1.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_1_mlp": {
+            "gradient_l1": 17.3401293996576,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.mlp.c_fc.weight",
+              "backbone.decoder_blocks.1.mlp.c_fc.bias",
+              "backbone.decoder_blocks.1.mlp.c_proj.weight",
+              "backbone.decoder_blocks.1.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_2_self_attn": {
+            "gradient_l1": 4.773923114189529,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.self_attn.qkv.weight",
+              "backbone.decoder_blocks.2.self_attn.proj.weight",
+              "backbone.decoder_blocks.2.self_attn.proj.bias"
+            ]
+          },
+          "decoder_2_cross_attn": {
+            "gradient_l1": 3.5123136274887656,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.2.cross_attn.proj.weight",
+              "backbone.decoder_blocks.2.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_2_mlp": {
+            "gradient_l1": 15.75431215178105,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.mlp.c_fc.weight",
+              "backbone.decoder_blocks.2.mlp.c_fc.bias",
+              "backbone.decoder_blocks.2.mlp.c_proj.weight",
+              "backbone.decoder_blocks.2.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_3_self_attn": {
+            "gradient_l1": 4.8860406008170685,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.self_attn.qkv.weight",
+              "backbone.decoder_blocks.3.self_attn.proj.weight",
+              "backbone.decoder_blocks.3.self_attn.proj.bias"
+            ]
+          },
+          "decoder_3_cross_attn": {
+            "gradient_l1": 2.5069358584150905,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.3.cross_attn.proj.weight",
+              "backbone.decoder_blocks.3.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_3_mlp": {
+            "gradient_l1": 13.914672090904787,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.mlp.c_fc.weight",
+              "backbone.decoder_blocks.3.mlp.c_fc.bias",
+              "backbone.decoder_blocks.3.mlp.c_proj.weight",
+              "backbone.decoder_blocks.3.mlp.c_proj.bias"
+            ]
+          }
+        },
+        "changed_parameters": [
+          "backbone.embedding.weight",
+          "backbone.item_mlp.0.weight",
+          "backbone.item_mlp.0.bias",
+          "backbone.item_mlp.2.weight",
+          "backbone.item_mlp.2.bias",
+          "backbone.mask_emb_table.weight",
+          "backbone.pos_emb_enc.weight",
+          "backbone.encoder_blocks.0.ln_1.weight",
+          "backbone.encoder_blocks.0.ln_1.bias",
+          "backbone.encoder_blocks.0.attn.qkv.weight",
+          "backbone.encoder_blocks.0.attn.proj.weight",
+          "backbone.encoder_blocks.0.attn.proj.bias",
+          "backbone.encoder_blocks.0.ln_2.weight",
+          "backbone.encoder_blocks.0.ln_2.bias",
+          "backbone.encoder_blocks.0.mlp.c_fc.weight",
+          "backbone.encoder_blocks.0.mlp.c_fc.bias",
+          "backbone.encoder_blocks.0.mlp.c_proj.weight",
+          "backbone.encoder_blocks.0.mlp.c_proj.bias",
+          "backbone.decoder_blocks.0.ln_1.weight",
+          "backbone.decoder_blocks.0.ln_1.bias",
+          "backbone.decoder_blocks.0.self_attn.qkv.weight",
+          "backbone.decoder_blocks.0.self_attn.proj.weight",
+          "backbone.decoder_blocks.0.self_attn.proj.bias",
+          "backbone.decoder_blocks.0.ln_2.weight",
+          "backbone.decoder_blocks.0.ln_2.bias",
+          "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.0.cross_attn.proj.weight",
+          "backbone.decoder_blocks.0.cross_attn.proj.bias",
+          "backbone.decoder_blocks.0.ln_3.weight",
+          "backbone.decoder_blocks.0.ln_3.bias",
+          "backbone.decoder_blocks.0.mlp.c_fc.weight",
+          "backbone.decoder_blocks.0.mlp.c_fc.bias",
+          "backbone.decoder_blocks.0.mlp.c_proj.weight",
+          "backbone.decoder_blocks.0.mlp.c_proj.bias",
+          "backbone.decoder_blocks.1.ln_1.weight",
+          "backbone.decoder_blocks.1.ln_1.bias",
+          "backbone.decoder_blocks.1.self_attn.qkv.weight",
+          "backbone.decoder_blocks.1.self_attn.proj.weight",
+          "backbone.decoder_blocks.1.self_attn.proj.bias",
+          "backbone.decoder_blocks.1.ln_2.weight",
+          "backbone.decoder_blocks.1.ln_2.bias",
+          "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.1.cross_attn.proj.weight",
+          "backbone.decoder_blocks.1.cross_attn.proj.bias",
+          "backbone.decoder_blocks.1.ln_3.weight",
+          "backbone.decoder_blocks.1.ln_3.bias",
+          "backbone.decoder_blocks.1.mlp.c_fc.weight",
+          "backbone.decoder_blocks.1.mlp.c_fc.bias",
+          "backbone.decoder_blocks.1.mlp.c_proj.weight",
+          "backbone.decoder_blocks.1.mlp.c_proj.bias",
+          "backbone.decoder_blocks.2.ln_1.weight",
+          "backbone.decoder_blocks.2.ln_1.bias",
+          "backbone.decoder_blocks.2.self_attn.qkv.weight",
+          "backbone.decoder_blocks.2.self_attn.proj.weight",
+          "backbone.decoder_blocks.2.self_attn.proj.bias",
+          "backbone.decoder_blocks.2.ln_2.weight",
+          "backbone.decoder_blocks.2.ln_2.bias",
+          "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.2.cross_attn.proj.weight",
+          "backbone.decoder_blocks.2.cross_attn.proj.bias",
+          "backbone.decoder_blocks.2.ln_3.weight",
+          "backbone.decoder_blocks.2.ln_3.bias",
+          "backbone.decoder_blocks.2.mlp.c_fc.weight",
+          "backbone.decoder_blocks.2.mlp.c_fc.bias",
+          "backbone.decoder_blocks.2.mlp.c_proj.weight",
+          "backbone.decoder_blocks.2.mlp.c_proj.bias",
+          "backbone.decoder_blocks.3.ln_1.weight",
+          "backbone.decoder_blocks.3.ln_1.bias",
+          "backbone.decoder_blocks.3.self_attn.qkv.weight",
+          "backbone.decoder_blocks.3.self_attn.proj.weight",
+          "backbone.decoder_blocks.3.self_attn.proj.bias",
+          "backbone.decoder_blocks.3.ln_2.weight",
+          "backbone.decoder_blocks.3.ln_2.bias",
+          "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.3.cross_attn.proj.weight",
+          "backbone.decoder_blocks.3.cross_attn.proj.bias",
+          "backbone.decoder_blocks.3.ln_3.weight",
+          "backbone.decoder_blocks.3.ln_3.bias",
+          "backbone.decoder_blocks.3.mlp.c_fc.weight",
+          "backbone.decoder_blocks.3.mlp.c_fc.bias",
+          "backbone.decoder_blocks.3.mlp.c_proj.weight",
+          "backbone.decoder_blocks.3.mlp.c_proj.bias",
+          "backbone.ln_f.weight",
+          "backbone.ln_f.bias",
+          "item_position_embedding.weight"
+        ],
+        "frozen_module_and_optimizer_unchanged": true,
+        "hard_sids_unchanged": true,
+        "data_prepare_seconds": 0.33532823249697685,
+        "selected_indices_sha256": "cfeb4e0af4a591106e0315a94822adee4d818833e256afdcf3958de4979bd8c6",
+        "effective_lists": 1024,
+        "microbatch": 256,
+        "accumulation": 4,
+        "first_sample_ids": [
+          "u4724:e8311452:b21",
+          "u3946:e6912087:b2",
+          "u4338:e7636802:b0",
+          "u3997:e6998505:b27"
+        ]
+      }
+    },
+    "R": {
+      "records": [
+        {
+          "seconds": 0.8510432094335556,
+          "peak_allocated_bytes": 4256883712,
+          "peak_reserved_bytes": 5381292032,
+          "kind": "R",
+          "original_phase_index": 6,
+          "update": 1,
+          "values": {
+            "recommendation": 2.9836650490760803,
+            "loss": 2.9836650490760803,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.1286197006702423,
+            "r_updates": 3466,
+            "t_updates": 40,
+            "learning_rates_used": {
+              "R": 0.0009620503978340745,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 6
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 15.629540013249567,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 10.430765164783224,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.983904851235252,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.19151860458850933,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.9247243507998064,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 14.262342282994098,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 14.918539723410504,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 5.875023401604267,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 19.210235202568583,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 6.450009036700976,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.691157664259663,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 17.56413577881176,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 4.779005597759351,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.392934663774213,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 15.94671686401125,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 4.808094070467632,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.5445271263088216,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 13.834991911542602,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.34163664653897285,
+          "selected_indices_sha256": "0041b860e00e22c6371d2ee81c5ac8713baf1e6aba9f27a0a4bae3ec4b28a09b",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3603:e6317329:b13",
+            "u3897:e6832681:b12",
+            "u6078:e10654517:b5",
+            "u494:e899237:b0"
+          ]
+        },
+        {
+          "seconds": 0.8473513796925545,
+          "peak_allocated_bytes": 4256883712,
+          "peak_reserved_bytes": 5381292032,
+          "kind": "R",
+          "original_phase_index": 6,
+          "update": 2,
+          "values": {
+            "recommendation": 2.979520797729492,
+            "loss": 2.979520797729492,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.13048341870307922,
+            "r_updates": 3467,
+            "t_updates": 40,
+            "learning_rates_used": {
+              "R": 0.0009620251242519352,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 6
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 15.363334904349855,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 9.296074737249,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.8986723100506424,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.18263484911494743,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.8702543018007418,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 14.669546905150582,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 15.19822058477439,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 6.153230954339961,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 19.507868089502153,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 6.667846374759392,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.993265967903426,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 17.85539396164677,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 4.874216821943264,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.518494301366445,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 16.166945160468458,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 4.870370656884916,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.4849403349289787,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 13.93480481644292,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3391953371465206,
+          "selected_indices_sha256": "87532d3bb5f881cc6e64d3d8b4972531f0bb0901cbbdca50392ccc3f3ef2a47e",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u3080:e5351269:b16",
+            "u2499:e4346649:b34",
+            "u6029:e10574998:b4",
+            "u219:e408698:b15"
+          ]
+        },
+        {
+          "seconds": 0.8369804732501507,
+          "peak_allocated_bytes": 4256883712,
+          "peak_reserved_bytes": 5381292032,
+          "kind": "R",
+          "original_phase_index": 6,
+          "update": 3,
+          "values": {
+            "recommendation": 2.9904245734214783,
+            "loss": 2.9904245734214783,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.13234949111938477,
+            "r_updates": 3468,
+            "t_updates": 40,
+            "learning_rates_used": {
+              "R": 0.0009619998425889789,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 6
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 15.507416529196917,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 10.205828601960093,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.9897004450579061,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.1527155522699104,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.8961770201785839,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 14.54553648160686,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 15.004081871797098,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 6.032336096148356,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 19.434574096274446,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 6.5865510053845355,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.946446522037149,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 17.731580494459195,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 4.871712139757619,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.5010776581257232,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 16.09650677884929,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 4.889197896286078,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.5055036910780473,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 14.008864051953424,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3471302092075348,
+          "selected_indices_sha256": "8ea3ea53ed2d92b9d40d83e1bd4f0fe1ed7f5c2ab0aed985ce54e713b1a27685",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4571:e8046358:b2",
+            "u3573:e6253414:b16",
+            "u2290:e3993018:b4",
+            "u996:e1777213:b10"
+          ]
+        }
+      ],
+      "updates": 3,
+      "median_update_seconds": 0.8473513796925545,
+      "median_end_to_end_seconds": 1.186546716839075,
+      "warm_median_update_seconds": 0.8421659264713526,
+      "warm_records": 2,
+      "timing_scope": "Update includes H2D, forward, backward and optimizer; data preparation is separate. State/gradient auditing is excluded from throughput, included in overall wall time."
+    },
+    "short_endpoint": {
+      "phase": 6,
+      "update": 4,
+      "r_updates": 3469,
+      "t_updates": 40
+    }
+  },
+  "decode_profile": {
+    "examples": 128,
+    "batch_size": 32,
+    "beam": 32,
+    "inference_precision": "fp32",
+    "records": [
+      {
+        "seconds": 1.178581777960062,
+        "peak_allocated_bytes": 1087700480,
+        "peak_reserved_bytes": 5381292032,
+        "data_prepare_seconds": 0.005794446915388107,
+        "end_to_end_seconds": 1.1843762248754501,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u2122:e3708198:b31",
+          "u5110:e8972540:b11",
+          "u236:e434209:b18",
+          "u1145:e2011341:b7",
+          "u2596:e4518320:b14",
+          "u3500:e6132093:b21",
+          "u6754:e11800140:b26",
+          "u5766:e10113995:b24",
+          "u2353:e4104544:b5",
+          "u3928:e6879361:b40",
+          "u4990:e8774125:b28",
+          "u4059:e7110240:b3",
+          "u2457:e4278618:b2",
+          "u292:e531601:b4",
+          "u3105:e5395207:b36",
+          "u6490:e11343185:b4",
+          "u1241:e2175184:b1",
+          "u2379:e4146835:b0",
+          "u6271:e10965972:b11",
+          "u4179:e7352329:b4",
+          "u6179:e10826942:b11",
+          "u3309:e5781667:b5",
+          "u3851:e6751070:b10",
+          "u1346:e2366283:b1",
+          "u6148:e10773873:b1",
+          "u6642:e11608350:b10",
+          "u5610:e9840654:b18",
+          "u3033:e5267974:b2",
+          "u5733:e10056269:b0",
+          "u880:e1574787:b10",
+          "u4111:e7221989:b3",
+          "u1866:e3262573:b4"
+        ],
+        "output_sha256": "b1c1f55c9765c0232ca4318415bd619cb55bb431f9b26644b1027823f429854c",
+        "complete_lists": 737,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18783,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3423,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.0807143934071064,
+        "peak_allocated_bytes": 1105796608,
+        "peak_reserved_bytes": 5381292032,
+        "data_prepare_seconds": 0.005868937820196152,
+        "end_to_end_seconds": 1.0865833312273026,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u3259:e5681447:b2",
+          "u2849:e4940662:b1",
+          "u3225:e5621845:b0",
+          "u206:e379949:b25",
+          "u6189:e10844021:b1",
+          "u3656:e6422653:b3",
+          "u5883:e10312667:b18",
+          "u6533:e11423659:b9",
+          "u4522:e7955541:b11",
+          "u697:e1246870:b4",
+          "u3728:e6544068:b0",
+          "u4007:e7019607:b22",
+          "u501:e912069:b11",
+          "u3540:e6192476:b10",
+          "u3034:e5268726:b37",
+          "u1734:e3041469:b1",
+          "u4363:e7683261:b7",
+          "u2590:e4507342:b30",
+          "u912:e1634354:b2",
+          "u1750:e3070842:b3",
+          "u1661:e2927730:b10",
+          "u3159:e5510103:b3",
+          "u4160:e7318737:b14",
+          "u5946:e10422102:b1",
+          "u3744:e6573561:b12",
+          "u6956:e12158479:b0",
+          "u5320:e9362800:b0",
+          "u912:e1634229:b3",
+          "u4469:e7866995:b2",
+          "u6788:e11857747:b3",
+          "u733:e1310868:b2",
+          "u707:e1266595:b13"
+        ],
+        "output_sha256": "ae808d1a451e674915ed951c6c1a4a2c9e3bc6c3869350a3d760228e14e050ff",
+        "complete_lists": 728,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18804,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3444,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.0094353556632996,
+        "peak_allocated_bytes": 1090735616,
+        "peak_reserved_bytes": 5381292032,
+        "data_prepare_seconds": 0.005870558321475983,
+        "end_to_end_seconds": 1.0153059139847755,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u1430:e2517574:b0",
+          "u933:e1674845:b37",
+          "u4989:e8771419:b15",
+          "u2280:e3980895:b49",
+          "u440:e800174:b6",
+          "u6998:e12240422:b5",
+          "u4047:e7088503:b4",
+          "u1376:e2422649:b10",
+          "u1932:e3382521:b11",
+          "u868:e1546762:b2",
+          "u2213:e3860520:b17",
+          "u6051:e10612282:b33",
+          "u7032:e12302542:b11",
+          "u4291:e7558375:b1",
+          "u6027:e10573066:b3",
+          "u5642:e9889918:b9",
+          "u5884:e10315042:b0",
+          "u4717:e8306727:b1",
+          "u6061:e10628390:b1",
+          "u4004:e7014927:b11",
+          "u219:e409293:b6",
+          "u2038:e3560537:b9",
+          "u1586:e2785028:b10",
+          "u3950:e6919037:b29",
+          "u5248:e9236496:b13",
+          "u5980:e10493102:b2",
+          "u5531:e9718377:b17",
+          "u2066:e3602980:b5",
+          "u5495:e9656809:b5",
+          "u6148:e10773873:b7",
+          "u5884:e10315075:b7",
+          "u604:e1091540:b5"
+        ],
+        "output_sha256": "6ba1a42818b9b8f3e6feb2a073bec9a98c7e507fc76a3ffc10adbdc50629efbe",
+        "complete_lists": 751,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18644,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3284,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.0788762271404266,
+        "peak_allocated_bytes": 1093559296,
+        "peak_reserved_bytes": 5381292032,
+        "data_prepare_seconds": 0.006026819348335266,
+        "end_to_end_seconds": 1.084903046488762,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u4854:e8545990:b25",
+          "u6577:e11497225:b12",
+          "u6922:e12101092:b11",
+          "u5314:e9352822:b6",
+          "u2154:e3761826:b11",
+          "u4383:e7725206:b7",
+          "u6725:e11749438:b22",
+          "u3843:e6737301:b25",
+          "u5248:e9236496:b37",
+          "u1372:e2414318:b7",
+          "u6562:e11465259:b36",
+          "u6720:e11737313:b1",
+          "u1429:e2515147:b0",
+          "u5973:e10477907:b2",
+          "u6986:e12217862:b52",
+          "u6219:e10884136:b0",
+          "u5210:e9164354:b2",
+          "u703:e1257657:b18",
+          "u4618:e8147403:b10",
+          "u4702:e8279727:b18",
+          "u6725:e11749438:b28",
+          "u953:e1709587:b8",
+          "u6984:e12214415:b15",
+          "u1858:e3244028:b0",
+          "u1512:e2652090:b2",
+          "u1090:e1932677:b1",
+          "u4245:e7470133:b3",
+          "u6604:e11543593:b6",
+          "u6725:e11749438:b16",
+          "u430:e783646:b12",
+          "u820:e1470545:b5",
+          "u4244:e7468704:b12"
+        ],
+        "output_sha256": "092f33308d6d6533d781cdf475f5103c84104be449757b8148c8ed0086ea90ff",
+        "complete_lists": 819,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18784,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3424,
+          "context_cache_enabled": 1
+        }
+      }
+    ],
+    "catalog_timing": {
+      "seconds": 0.053252559155225754,
+      "peak_allocated_bytes": 183538176,
+      "peak_reserved_bytes": 5381292032
+    },
+    "median_batch_seconds": 1.0797953102737665,
+    "median_end_to_end_seconds": 1.0857431888580322,
+    "exact_output_repeat": true,
+    "full_training_state_rng_modes_gradients_unchanged": true,
+    "quality_metric": false,
+    "scope": "Fixed small validation requests for throughput only; not full validation or model selection."
+  },
+  "finished_at_exact_parent_state": true,
+  "formal_resume_from_preflight_forbidden": true
+}

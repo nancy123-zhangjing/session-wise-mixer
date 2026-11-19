@@ -1,0 +1,28 @@
+{
+  "code_commit": "32c9ea54142725282b55b4f25d8460b786fba464",
+  "data_samples": {
+    "train": 2288120,
+    "validation": 7176,
+    "test": 7176
+  },
+  "same_two_local_builds": true,
+  "exact_source_event_audit": true,
+  "tests": [
+    {
+      "log": ".runtime/l5o_final_cpu.txt",
+      "tests_run": 23,
+      "passed": 23,
+      "skipped": 0,
+      "log_sha256": "93d41b610c42b78f50f3f0b4f38e5a9070806068383a0114d415dc18cd3e6c34"
+    },
+    {
+      "log": ".runtime/l5o_regression.txt",
+      "tests_run": 31,
+      "passed": 30,
+      "skipped": 1,
+      "skip_reason": "CUDA unavailable locally",
+      "log_sha256": "dbe08df4dc43f861e379d8941a72a9771f6e40904a57023a7a1d677a6cffcd83"
+    }
+  ],
+  "boundary": "CPU checks only; H100 numerical/resume/throughput acceptance pending; no SASRec or formal runs started"
+}

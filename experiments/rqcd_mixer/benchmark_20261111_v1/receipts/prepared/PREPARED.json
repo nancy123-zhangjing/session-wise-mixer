@@ -1,0 +1,227 @@
+{
+  "config": {
+    "protocol_id": "kuairec_rqcd_mixer_v1_20261111",
+    "design_sha256": "fdb73fe54c9dba4a27fc7d0d56cf049a5f23e9b6888408e12ea261a8be51f61d",
+    "seed": 2024,
+    "catalog_size": 10728,
+    "history_max": 50,
+    "list_length": 5,
+    "split_counts": {
+      "train": 709443,
+      "validation": 71657,
+      "test": 53194
+    },
+    "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7",
+    "rq": {
+      "input_dim": 256,
+      "hidden_dims": [
+        512,
+        256,
+        128
+      ],
+      "latent_dim": 32,
+      "levels": 4,
+      "codes": 256,
+      "beta": 0.25,
+      "epochs": 10000,
+      "batch_size": 1024,
+      "warmup_epochs": 50,
+      "eval_interval": 50,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "kmeans_iterations": 100
+    },
+    "mixer": {
+      "heads": 4,
+      "norm_eps": 1e-05,
+      "reference_level": 0
+    },
+    "model": {
+      "width": 256,
+      "heads": 4,
+      "d_kv": 64,
+      "ffn": 1024,
+      "encoder_layers": 2,
+      "decoder_layers": 4,
+      "dropout": 0.1,
+      "norm_eps": 1e-06,
+      "relative_buckets": 32,
+      "relative_max_distance": 128,
+      "time_hidden": 128
+    },
+    "diffusion": {
+      "steps": 1000,
+      "sample_steps": 20,
+      "cosine_offset": 0.008,
+      "beta_max": 0.999
+    },
+    "quantization": {
+      "temperature": 0.1,
+      "softmax_temperature": 1.0,
+      "gumbel_start": 1.0,
+      "gumbel_end": 0.2
+    },
+    "loss": {
+      "align": 0.0003,
+      "latent": 1.0,
+      "vq": 1.0
+    },
+    "training": {
+      "epochs": 35,
+      "preheat_epochs": 5,
+      "t_steps_per_cycle": 10,
+      "effective_batch": 1024,
+      "r_lr": 0.0003,
+      "base_lr": 1e-05,
+      "mixer_lr": 1e-05,
+      "r_weight_decay": 0.0,
+      "t_weight_decay": 0.0001,
+      "warmup_updates": 500,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "max_grad_norm": 1.0
+    },
+    "evaluation": {
+      "epochs": [
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ],
+      "seed": 20241111,
+      "noise_version": "rqcd_mixer_noise_v1"
+    }
+  },
+  "source": {
+    "configs/rqcd_mixer/requirements-test.txt": "620baac92f2f314e5dd9df3fe18ffe8260bcc298c89e69d17f64051a5efa7295",
+    "configs/rqcd_mixer/requirements.txt": "aa6918e22f5f9119cdbb5b07abe16b608b2ed22a9018120476cd658ab0d48aad",
+    "configs/rqcd_mixer/runtime.example.json": "15c70e67b8730d17a131adaa3a9cddff20efb083250d55d597dce92005d77e85",
+    "configs/rqcd_mixer/v1.json": "e5afa234b27755e65ea01edb0b079fa56e6c7c6f4a9b6369e82db5fb1692b620",
+    "docs/research/rqcd_mixer/RQCD_MIXER_FULL_DESIGN_20261111.md": "fdb73fe54c9dba4a27fc7d0d56cf049a5f23e9b6888408e12ea261a8be51f61d",
+    "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+    "scripts/rqcd/data.py": "0980105e92b45dd5e60e2a4cfeb4ccdeb1960d212351626407dd99213f4f99cc",
+    "scripts/rqcd_mixer/__init__.py": "77dd2ba48f33f87fd0f2e828c2747dece39c3a56b70e672dfb23fc84cdc41512",
+    "scripts/rqcd_mixer/benchmark.py": "4a3ac0bba22e2d3a75013afe5ea85f7fccdf0f8a83b86f04986b1e76be4cb9d0",
+    "scripts/rqcd_mixer/catalog.py": "1bb1074b471f92997c331d2edc6535da5b8eb2747b323a228bb0c6a13afda5d9",
+    "scripts/rqcd_mixer/common.py": "b2b9e2caf78a9d3e12460f387b49a4d63b7aea082d301b4ca65409c9cc98ee61",
+    "scripts/rqcd_mixer/config.py": "ef80264dc8cadcc874af4257bae7d53a49c13574bc8607caa801f69648e2a5e0",
+    "scripts/rqcd_mixer/data.py": "3dab997fa44e2917a1b9d3beb9f429a5a9d2801482669bbedfe263f4d004751c",
+    "scripts/rqcd_mixer/evaluation.py": "15a9e9bd2f571d57d83309fc28672408e86b10899f3109c590653298754965d9",
+    "scripts/rqcd_mixer/losses.py": "649b90bc65e80e68ba0a9d681afe05f42559742e950a91684d6c6f96a3e20f5b",
+    "scripts/rqcd_mixer/model.py": "1b00276d22c5a69db8bd38b7b1836b7e0f1f6abf22455058a920d4539a7c331e",
+    "scripts/rqcd_mixer/report.py": "7d832f5286ba64c36b75adc156dfbcf21f2b73a0b49960a753ceab4444e0ee41",
+    "scripts/rqcd_mixer/run.py": "11dc8661c818f6923a69804d7a886a75a22fee75eb9b4ac9acbe2d84f34a8b4a",
+    "scripts/rqcd_mixer/tokenizer.py": "3275a8402fd2dfe8aa1a35324dea05ce3b0c2ef87c21a1f632a7198760c72a94",
+    "scripts/rqcd_mixer/training.py": "ba9a71cdca1e4620c18ee27a3971d3898d7e83fc227159809e448950bea5d53b"
+  },
+  "data_binding": {
+    "dataset": {
+      "manifest_sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649",
+      "files": {
+        "config.json": {
+          "bytes": 1746,
+          "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 799712,
+          "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 159883,
+          "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+        },
+        "train.parquet": {
+          "bytes": 531624261,
+          "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+        },
+        "validation.parquet": {
+          "bytes": 61527190,
+          "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+        },
+        "test.parquet": {
+          "bytes": 45918501,
+          "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+        }
+      },
+      "history_max": 50,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7"
+  },
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "cuda": "11.8",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "runtime": {
+      "micro_r": null,
+      "micro_t": null,
+      "evaluation_batch": null,
+      "precision": "bf16",
+      "attention_backend": "auto",
+      "fused_adamw": true,
+      "data_device": "cuda",
+      "deterministic": true,
+      "checkpoint_every_updates": 200,
+      "evaluation_write_batches": 8
+    },
+    "tf32": false
+  },
+  "content_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1/content_features.npy",
+  "dataset_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+  "initial_sha256": "359b3815bbaa8e79929ddf5349392096e6826b28263369e6f2b2f48f239cd4dd",
+  "noise": {
+    "validation": {
+      "noise_version": "rqcd_mixer_noise_v1",
+      "seed": 20241111,
+      "split": "validation",
+      "sample_ids_sha256": "c4b05850f979dc2c179fd096470137960c8851c77db1325abcd10de582ca7892",
+      "numpy": "2.2.6",
+      "shape": [
+        71657,
+        5,
+        32
+      ],
+      "sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e"
+    },
+    "test": {
+      "noise_version": "rqcd_mixer_noise_v1",
+      "seed": 20241111,
+      "split": "test",
+      "sample_ids_sha256": "51b7fdfd0869e06b837138c3391d92bc6a41f9a7aed61ed7a97e7decca4cad75",
+      "numpy": "2.2.6",
+      "shape": [
+        53194,
+        5,
+        32
+      ],
+      "sha256": "73420f20ed2a9b50f5e3911cc838a4208ec7c02d80dcd54c53782d66281f89dc"
+    }
+  },
+  "common_RQ_hash": "299d801621606e04979621d02dc51bb198e7588a2b6d479e79fb22ef922f0c18",
+  "common_recommender_hash": "7cc362ce6b55c73c310fbe0d44330fd1612c7ae41a654c872f8575d8fdcd7ed6",
+  "common_Mixer_hash": "469a4b183a655fdaed694543463f91bfda6bb4b0dedc0c4a76f47c31e02718fb"
+}

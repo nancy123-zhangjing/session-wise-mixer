@@ -1,0 +1,1298 @@
+{
+  "inputs": {
+    "train.parquet": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31",
+    "validation.parquet": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4",
+    "test.parquet": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee",
+    "train_seen.json": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+  },
+  "class_counts": {
+    "never_seen": 1914,
+    "history_only": 799,
+    "head": 802,
+    "mid": 3206,
+    "tail": 4007
+  },
+  "target_composition": {
+    "validation": {
+      "never_seen": 0.025893,
+      "history_only": 0.072844,
+      "head": 0.13851,
+      "mid": 0.65593,
+      "tail": 0.106823
+    },
+    "validation_early": {
+      "never_seen": 0.022022,
+      "history_only": 0.055062,
+      "head": 0.150098,
+      "mid": 0.654006,
+      "tail": 0.118813
+    },
+    "validation_late": {
+      "never_seen": 0.030424,
+      "history_only": 0.09366,
+      "head": 0.124945,
+      "mid": 0.658183,
+      "tail": 0.092788
+    },
+    "test": {
+      "never_seen": 0.034643,
+      "history_only": 0.052747,
+      "head": 0.062642,
+      "mid": 0.735549,
+      "tail": 0.114419
+    }
+  },
+  "nodes": {
+    "M0_best_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/test/best/predictions.jsonl.gz",
+      "sha256": "bc4e2aba72f34de6f440f0ddb965ab89e013a031c1e3ac34c15198631ec4f6da",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.008245519145868695,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 7.9e-05,
+          "head": 0.124593,
+          "mid": 0.827744,
+          "tail": 0.047584
+        },
+        "distinct_items": 3591,
+        "top10_share": 0.15763431966011204,
+        "mean_log_train_count": 5.9770225107004515,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005272178524253489,
+          "mid": 0.007499522947168968,
+          "tail": 0.0002187783462743736
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.008402856971370266,
+          "mid": 0.010120940122882525,
+          "tail": 0.001905888538380652
+        }
+      }
+    },
+    "M1_best_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/test/best/predictions.jsonl.gz",
+      "sha256": "6f7b74c2f341e2afdbfcf55886dcbe4f5527f558177a11bcd0112e628cabd14f",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.008854949315028096,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 5.6e-05,
+          "head": 0.110561,
+          "mid": 0.81704,
+          "tail": 0.072343
+        },
+        "distinct_items": 3868,
+        "top10_share": 0.18370868894988157,
+        "mean_log_train_count": 5.740405938110041,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.00044268774791975536,
+          "mid": 0.008102036802156312,
+          "tail": 0.0003102247649520304
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.007142428425664726,
+          "mid": 0.011076806690043652,
+          "tail": 0.0026616719242902208
+        }
+      }
+    },
+    "M0_R35_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/test/final/predictions.jsonl.gz",
+      "sha256": "9f26db44947faafb53dd2588cf66734189aacbbb59faafa7d5069e0ff68e0540",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.006534228547665718,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000989,
+          "head": 0.158759,
+          "mid": 0.758398,
+          "tail": 0.081855
+        },
+        "distinct_items": 4876,
+        "top10_share": 0.0881903974132421,
+        "mean_log_train_count": 6.015343802911128,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005710751518280454,
+          "mid": 0.005451403371201647,
+          "tail": 0.0005117500246360229
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.009243142668507292,
+          "mid": 0.0072942331087643255,
+          "tail": 0.004534700315457414
+        }
+      }
+    },
+    "M1_R35_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/test/final/predictions.jsonl.gz",
+      "sha256": "e9981d7d6ba87c32801bcaeb94b32f8f6f2ea47dc9efdf09a61017bac54a1b45",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.0066755923875312815,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000342,
+          "head": 0.143704,
+          "mid": 0.782156,
+          "tail": 0.073798
+        },
+        "distinct_items": 4325,
+        "top10_share": 0.10566605256231906,
+        "mean_log_train_count": 5.9428329474921755,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005302697209865442,
+          "mid": 0.005899940274025505,
+          "tail": 0.00024538239251923303
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.008642938599123701,
+          "mid": 0.008112086856067964,
+          "tail": 0.002267350157728707
+        }
+      }
+    },
+    "M0F_R35_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/cf_freeze_r9_20261114_v1/runs/M0/train/test/final/predictions.jsonl.gz",
+      "sha256": "05dde7953f4ae3c14d0bffbb4318ce41f6c2da2100d2f2249febaf02a886329c",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.006887204804138651,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000902,
+          "head": 0.171628,
+          "mid": 0.758883,
+          "tail": 0.068587
+        },
+        "distinct_items": 4568,
+        "top10_share": 0.09228860397789225,
+        "mean_log_train_count": 6.076967688163572,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007019807595722306,
+          "mid": 0.005771250769210108,
+          "tail": 0.0004139732753563111
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.011223816097473142,
+          "mid": 0.007866730731876872,
+          "tail": 0.003680336487907466
+        }
+      }
+    },
+    "M1F_R35_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/cf_freeze_r9_20261114_v1/runs/M1/train/test/final/predictions.jsonl.gz",
+      "sha256": "2cecbd4aa4c0c0f7b4c753f82e7aa2113ce612dacbc11869512fea8a5798ea11",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.007738626309843729,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000365,
+          "head": 0.145945,
+          "mid": 0.771568,
+          "tail": 0.082122
+        },
+        "distinct_items": 4606,
+        "top10_share": 0.1081024175658909,
+        "mean_log_train_count": 5.867830906674582,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005059100729418192,
+          "mid": 0.006967481242663712,
+          "tail": 0.00026523499423819925
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.007802652901986676,
+          "mid": 0.009527996156087388,
+          "tail": 0.002234490010515247
+        }
+      }
+    },
+    "T0_best_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_r2/runs/AR-T0/test/step_0193998/predictions.jsonl.gz",
+      "sha256": "7e40595ddc2181373b35453e7d629cf989caf2b19c1724196d7a867a4d55a2a4",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.008107861910521,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.099319,
+          "mid": 0.900681,
+          "tail": 0.0
+        },
+        "distinct_items": 364,
+        "top10_share": 0.5774523442493514,
+        "mean_log_train_count": 6.325092814277806,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.001197252467415199,
+          "mid": 0.006910609443105799,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.015245183362343196,
+          "mid": 0.0090475070795465,
+          "tail": 0.0
+        }
+      }
+    },
+    "T0_final_test": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_r2/runs/AR-T0/test/step_0200000/predictions.jsonl.gz",
+      "sha256": "3ba86584f47f1d64091092c2b4f6fbc55769a6f1f53cb31a207f99272f1d626f",
+      "all": {
+        "samples": 53194,
+        "ndcg5": 0.004778055619936015,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.109321,
+          "mid": 0.890679,
+          "tail": 0.0
+        },
+        "distinct_items": 365,
+        "top10_share": 0.816607136143174,
+        "mean_log_train_count": 6.616572350974179,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007573924125948761,
+          "mid": 0.004020663207341141,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.01188404057379509,
+          "mid": 0.004927568827504421,
+          "tail": 0.0
+        }
+      }
+    },
+    "M0_best_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/validation/R09/predictions.jsonl.gz",
+      "sha256": "638c86dcf44d52863a19358e9f4838d362149b8264bf32088c8df5863730d389",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.006129979838735944,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 9.5e-05,
+          "head": 0.163027,
+          "mid": 0.793022,
+          "tail": 0.043856
+        },
+        "distinct_items": 4051,
+        "top10_share": 0.13573830888817562,
+        "mean_log_train_count": 6.108512713579359,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0006633130921127979,
+          "mid": 0.005359692263362643,
+          "tail": 0.0001069744832605005
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.004654818038931205,
+          "mid": 0.00824220245946981,
+          "tail": 0.0009928670342016566
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.006211965120057648,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 7.8e-05,
+          "head": 0.160625,
+          "mid": 0.793515,
+          "tail": 0.045782
+        },
+        "distinct_items": 3377,
+        "top10_share": 0.13897112100196668,
+        "mean_log_train_count": 6.09880482539921,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007653210095703788,
+          "mid": 0.005369553084954292,
+          "tail": 7.709102553297749e-05
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0049306944348665605,
+          "mid": 0.008364525548600505,
+          "tail": 0.0006098357799364029
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.00603401039604985,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000115,
+          "head": 0.165838,
+          "mid": 0.792445,
+          "tail": 0.041602
+        },
+        "distinct_items": 3285,
+        "top10_share": 0.13666131523945113,
+        "mean_log_train_count": 6.119876468186142,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005439057688695068,
+          "mid": 0.0053481494896193416,
+          "tail": 0.00014195513756100028
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.004266873545384018,
+          "mid": 0.00809992360299329,
+          "tail": 0.0015669887699138157
+        }
+      }
+    },
+    "M1_best_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/validation/R09/predictions.jsonl.gz",
+      "sha256": "1719e4990c84ce9587a23d18b0fc587eeaf56eb9b2c94043f98173e47429fa0c",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.006534307436046488,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 8.1e-05,
+          "head": 0.159116,
+          "mid": 0.777613,
+          "tail": 0.06319
+        },
+        "distinct_items": 4381,
+        "top10_share": 0.13673751343204432,
+        "mean_log_train_count": 5.9546102135746,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005478424452441245,
+          "mid": 0.005872781024061697,
+          "tail": 0.00011368396674066846
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.004110748398017169,
+          "mid": 0.008948555380622102,
+          "tail": 0.0010973793535913046
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.006475538298215407,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 9.3e-05,
+          "head": 0.154363,
+          "mid": 0.779381,
+          "tail": 0.066163
+        },
+        "distinct_items": 3661,
+        "top10_share": 0.13676638029189525,
+        "mean_log_train_count": 5.955740359772407,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005318271791538042,
+          "mid": 0.005810581319735943,
+          "tail": 0.00013312979932565867
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.00368940073098407,
+          "mid": 0.009060909889448986,
+          "tail": 0.001088992464172148
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.006603100776922639,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 6.7e-05,
+          "head": 0.164681,
+          "mid": 0.775543,
+          "tail": 0.05971
+        },
+        "distinct_items": 3682,
+        "top10_share": 0.1424469148517251,
+        "mean_log_train_count": 5.95328729927817,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0005665894219743318,
+          "mid": 0.005945590080311185,
+          "tail": 9.092127463712257e-05
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.004703258339798293,
+          "mid": 0.008817871376894968,
+          "tail": 0.0011099503786889528
+        }
+      }
+    },
+    "M0_R35_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/validation/R35/predictions.jsonl.gz",
+      "sha256": "56fc220e934f3b4b619d183e6cd2bc722cf7b4c4532e1afa0f5d2f5d277415d9",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.005713081584774748,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.001052,
+          "head": 0.215323,
+          "mid": 0.721255,
+          "tail": 0.062369
+        },
+        "distinct_items": 5089,
+        "top10_share": 0.07691921235887632,
+        "mean_log_train_count": 6.185515068236588,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.00082350111317806,
+          "mid": 0.004714094078516949,
+          "tail": 0.00017548639307973825
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006206424051908274,
+          "mid": 0.007182673077741373,
+          "tail": 0.0016460690303869568
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.006017245162970633,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000844,
+          "head": 0.217581,
+          "mid": 0.724692,
+          "tail": 0.056883
+        },
+        "distinct_items": 4000,
+        "top10_share": 0.08109926508642998,
+        "mean_log_train_count": 6.204913829163044,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0008658399624694151,
+          "mid": 0.005004133430650873,
+          "tail": 0.00014727176985034627
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006171988138749052,
+          "mid": 0.007596920081983429,
+          "tail": 0.0012196715598728057
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.005357037077586617,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.001296,
+          "head": 0.21268,
+          "mid": 0.717233,
+          "tail": 0.068791
+        },
+        "distinct_items": 4412,
+        "top10_share": 0.07506133947232908,
+        "mean_log_train_count": 6.16280747676529,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007739405615161353,
+          "mid": 0.004374582954903122,
+          "tail": 0.00020851356116735901
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006254848719937936,
+          "mid": 0.0067008458897489945,
+          "tail": 0.0022851919561243145
+        }
+      }
+    },
+    "M1_R35_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/validation/R35/predictions.jsonl.gz",
+      "sha256": "badf1acd562a361043aceb6a41e220433df8ac818c4d79d817941ab0ca095c82",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.005517515339701939,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000522,
+          "head": 0.176173,
+          "mid": 0.757157,
+          "tail": 0.066148
+        },
+        "distinct_items": 4765,
+        "top10_share": 0.0900400519139791,
+        "mean_log_train_count": 6.057253345177276,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007039059496094387,
+          "mid": 0.004691092469084238,
+          "tail": 0.00012251692100826407
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.005400394954257848,
+          "mid": 0.007186928215820603,
+          "tail": 0.0011235074334387165
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.0054389505720780044,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000321,
+          "head": 0.178951,
+          "mid": 0.758203,
+          "tail": 0.062525
+        },
+        "distinct_items": 3839,
+        "top10_share": 0.09592692267881171,
+        "mean_log_train_count": 6.087392256016803,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0006911667299174504,
+          "mid": 0.004660803422318254,
+          "tail": 8.698041984229926e-05
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.004723812150886146,
+          "mid": 0.007177506785790594,
+          "tail": 0.0007840745742039465
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.005609480834508816,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000757,
+          "head": 0.17292,
+          "mid": 0.755933,
+          "tail": 0.07039
+        },
+        "distinct_items": 4058,
+        "top10_share": 0.08596007633356556,
+        "mean_log_train_count": 6.021973665339552,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007188180874271825,
+          "mid": 0.004726547893408736,
+          "tail": 0.00016411485367289752
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006351823118696664,
+          "mid": 0.0071978866562963095,
+          "tail": 0.0016322799686602247
+        }
+      }
+    },
+    "M0F_R35_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/cf_freeze_r9_20261114_v1/runs/M0/train/validation/R35/predictions.jsonl.gz",
+      "sha256": "c6b586c71eb8e4845f4db4a85f68d51a1b694be3f934a0203a1fbd30e1e3db3f",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.005770639781788226,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.001186,
+          "head": 0.223576,
+          "mid": 0.717306,
+          "tail": 0.057932
+        },
+        "distinct_items": 5020,
+        "top10_share": 0.08173939740709212,
+        "mean_log_train_count": 6.217655673456806,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.00089938216596475,
+          "mid": 0.004727383084158656,
+          "tail": 0.00014387453166482357
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006669890783057269,
+          "mid": 0.007344368324752138,
+          "tail": 0.0013064039923706007
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.00608035639257152,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000983,
+          "head": 0.220241,
+          "mid": 0.722104,
+          "tail": 0.056671
+        },
+        "distinct_items": 3983,
+        "top10_share": 0.08568988717524066,
+        "mean_log_train_count": 6.217083776555322,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0009746418808598124,
+          "mid": 0.0049930444082647565,
+          "tail": 0.00011267010344695116
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.00668919384870009,
+          "mid": 0.0077947565424517475,
+          "tail": 0.0009583133684714902
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.005408095065854823,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.001424,
+          "head": 0.22748,
+          "mid": 0.711689,
+          "tail": 0.059407
+        },
+        "distinct_items": 4236,
+        "top10_share": 0.07965346984521249,
+        "mean_log_train_count": 6.218325118337941,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0008112854639865962,
+          "mid": 0.004416408128572789,
+          "tail": 0.0001804014732954376
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006642746314972847,
+          "mid": 0.006820503852065941,
+          "tail": 0.0018281535648994515
+        }
+      }
+    },
+    "M1F_R35_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/cf_freeze_r9_20261114_v1/runs/M1/train/validation/R35/predictions.jsonl.gz",
+      "sha256": "cb3435cec7b943d88e9d702389e163c86dcab0f9084a6a03302c1f8bfc9f1c2f",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.00575751292421986,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000698,
+          "head": 0.202612,
+          "mid": 0.723374,
+          "tail": 0.073316
+        },
+        "distinct_items": 5259,
+        "top10_share": 0.06983546617915905,
+        "mean_log_train_count": 6.068452606898191,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0008192704507114819,
+          "mid": 0.004830309179461843,
+          "tail": 0.00010793329404653485
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006004916777495668,
+          "mid": 0.007361388877069061,
+          "tail": 0.0010451231938964805
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.006027873488593951,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000554,
+          "head": 0.197003,
+          "mid": 0.728258,
+          "tail": 0.074185
+        },
+        "distinct_items": 4167,
+        "top10_share": 0.07234758306593521,
+        "mean_log_train_count": 6.068219453456352,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0008986684844870946,
+          "mid": 0.005027453578656382,
+          "tail": 0.0001017514254504756
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.005758223570788221,
+          "mid": 0.007691881583008222,
+          "tail": 0.0009147536699046043
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.005441037182855171,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.000866,
+          "head": 0.209178,
+          "mid": 0.717657,
+          "tail": 0.072299
+        },
+        "distinct_items": 4603,
+        "top10_share": 0.07050555841638143,
+        "mean_log_train_count": 6.068725529129023,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0007263295602372822,
+          "mid": 0.00459953802378154,
+          "tail": 0.00011516959883634834
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.006351823118696664,
+          "mid": 0.006976979648941947,
+          "tail": 0.0012405327761817707
+        }
+      }
+    },
+    "T0_best_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_r2/runs/AR-T0/train/validation/step_0193998/predictions.jsonl.gz",
+      "sha256": "e7b05f862370f3c7e8894285ced87ba10b77d47e92804ece21e51d5a4873dd57",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.008074430933918547,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.132565,
+          "mid": 0.867435,
+          "tail": 0.0
+        },
+        "distinct_items": 364,
+        "top10_share": 0.5647961818105698,
+        "mean_log_train_count": 6.298856544904632,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.001307905488980841,
+          "mid": 0.006766525444937704,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.008785717164389634,
+          "mid": 0.009995319348112847,
+          "tail": 0.0
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.008762846528913014,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.132807,
+          "mid": 0.867193,
+          "tail": 0.0
+        },
+        "distinct_items": 307,
+        "top10_share": 0.5561846599730876,
+        "mean_log_train_count": 6.309925894138054,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0014499684489714855,
+          "mid": 0.007312878079941527,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.009344183159782084,
+          "mid": 0.010714822698964128,
+          "tail": 0.0
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.00726859286246287,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.132281,
+          "mid": 0.867719,
+          "tail": 0.0
+        },
+        "distinct_items": 315,
+        "top10_share": 0.5791839578347924,
+        "mean_log_train_count": 6.285899105963109,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0011416109678564804,
+          "mid": 0.006126981894606387,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.008000387897595034,
+          "mid": 0.009158436346566276,
+          "tail": 0.0
+        }
+      }
+    },
+    "T0_final_val": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_r2/runs/AR-T0/train/validation/step_0200000/predictions.jsonl.gz",
+      "sha256": "0258a86a15f4de8a5e85a3119b9f64e37938be3dca216b3ae38d07b6025ec00e",
+      "all": {
+        "samples": 71657,
+        "ndcg5": 0.005795711095948936,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.17881,
+          "mid": 0.82119,
+          "tail": 0.0
+        },
+        "distinct_items": 394,
+        "top10_share": 0.7427746068074298,
+        "mean_log_train_count": 6.630659643162865,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.000979667597553499,
+          "mid": 0.004816043498395436,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.007052754604441221,
+          "mid": 0.00728905152972214,
+          "tail": 0.0
+        }
+      },
+      "early": {
+        "samples": 38644,
+        "ndcg5": 0.006785564771901463,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.180665,
+          "mid": 0.819335,
+          "tail": 0.0
+        },
+        "distinct_items": 322,
+        "top10_share": 0.7443742883759445,
+        "mean_log_train_count": 6.627748642140063,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.001066685584711039,
+          "mid": 0.005718879187190424,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0068271153713536994,
+          "mid": 0.0088709868873994,
+          "tail": 0.0
+        }
+      },
+      "late": {
+        "samples": 33013,
+        "ndcg5": 0.004637018900343885,
+        "rec_share": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.17664,
+          "mid": 0.82336,
+          "tail": 0.0
+        },
+        "distinct_items": 334,
+        "top10_share": 0.7409020688819556,
+        "mean_log_train_count": 6.634067171213178,
+        "ndcg_contribution": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.0008778070245757031,
+          "mid": 0.003759211875768182,
+          "tail": 0.0
+        },
+        "target_hit_rate": {
+          "never_seen": 0.0,
+          "history_only": 0.0,
+          "head": 0.007370054305663305,
+          "mid": 0.00544903951474094,
+          "tail": 0.0
+        }
+      }
+    }
+  },
+  "catalogs": {
+    "M0_R09": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/checkpoints/R09_T040.pt",
+      "collision_items": 1928,
+      "collision_fraction": 0.17971662938105892,
+      "max_bucket": 1708,
+      "collision_items_by_class": {
+        "never_seen": 1914,
+        "history_only": 4,
+        "head": 3,
+        "mid": 7,
+        "tail": 0
+      },
+      "collision_rate_within_class": {
+        "never_seen": 1.0,
+        "history_only": 0.0050062578222778474,
+        "head": 0.003740648379052369,
+        "mid": 0.002183406113537118,
+        "tail": 0.0
+      },
+      "largest_buckets": [
+        {
+          "size": 1708,
+          "by_class": {
+            "never_seen": 1708,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 206,
+          "by_class": {
+            "never_seen": 206,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 2,
+          "by_class": {
+            "never_seen": 0,
+            "history_only": 0,
+            "head": 0,
+            "mid": 2,
+            "tail": 0
+          }
+        },
+        {
+          "size": 2,
+          "by_class": {
+            "never_seen": 0,
+            "history_only": 0,
+            "head": 0,
+            "mid": 2,
+            "tail": 0
+          }
+        },
+        {
+          "size": 2,
+          "by_class": {
+            "never_seen": 0,
+            "history_only": 0,
+            "head": 2,
+            "mid": 0,
+            "tail": 0
+          }
+        }
+      ]
+    },
+    "M1_R09": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/checkpoints/R09_T040.pt",
+      "collision_items": 1930,
+      "collision_fraction": 0.17990305741983595,
+      "max_bucket": 885,
+      "collision_items_by_class": {
+        "never_seen": 1914,
+        "history_only": 0,
+        "head": 5,
+        "mid": 11,
+        "tail": 0
+      },
+      "collision_rate_within_class": {
+        "never_seen": 1.0,
+        "history_only": 0.0,
+        "head": 0.006234413965087282,
+        "mid": 0.0034310667498440423,
+        "tail": 0.0
+      },
+      "largest_buckets": [
+        {
+          "size": 885,
+          "by_class": {
+            "never_seen": 885,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 395,
+          "by_class": {
+            "never_seen": 395,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 393,
+          "by_class": {
+            "never_seen": 393,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 201,
+          "by_class": {
+            "never_seen": 201,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 29,
+          "by_class": {
+            "never_seen": 29,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        }
+      ]
+    },
+    "M0_R35": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_v1/runs/CF-M0/train/checkpoints/R35_T300.pt",
+      "collision_items": 1924,
+      "collision_fraction": 0.17934377330350484,
+      "max_bucket": 1029,
+      "collision_items_by_class": {
+        "never_seen": 1914,
+        "history_only": 4,
+        "head": 0,
+        "mid": 6,
+        "tail": 0
+      },
+      "collision_rate_within_class": {
+        "never_seen": 1.0,
+        "history_only": 0.0050062578222778474,
+        "head": 0.0,
+        "mid": 0.0018714909544603868,
+        "tail": 0.0
+      },
+      "largest_buckets": [
+        {
+          "size": 1029,
+          "by_class": {
+            "never_seen": 1029,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 879,
+          "by_class": {
+            "never_seen": 879,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 6,
+          "by_class": {
+            "never_seen": 6,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 2,
+          "by_class": {
+            "never_seen": 0,
+            "history_only": 0,
+            "head": 0,
+            "mid": 2,
+            "tail": 0
+          }
+        },
+        {
+          "size": 2,
+          "by_class": {
+            "never_seen": 0,
+            "history_only": 0,
+            "head": 0,
+            "mid": 2,
+            "tail": 0
+          }
+        }
+      ]
+    },
+    "M1_R35": {
+      "file": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_targets_formal_20261113_v1/cf/checkpoints/R35_T300.pt",
+      "collision_items": 1944,
+      "collision_fraction": 0.18120805369127516,
+      "max_bucket": 782,
+      "collision_items_by_class": {
+        "never_seen": 1914,
+        "history_only": 6,
+        "head": 2,
+        "mid": 21,
+        "tail": 1
+      },
+      "collision_rate_within_class": {
+        "never_seen": 1.0,
+        "history_only": 0.007509386733416771,
+        "head": 0.0024937655860349127,
+        "mid": 0.006550218340611353,
+        "tail": 0.0002495632642874969
+      },
+      "largest_buckets": [
+        {
+          "size": 782,
+          "by_class": {
+            "never_seen": 782,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 600,
+          "by_class": {
+            "never_seen": 600,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 268,
+          "by_class": {
+            "never_seen": 268,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 138,
+          "by_class": {
+            "never_seen": 138,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        },
+        {
+          "size": 100,
+          "by_class": {
+            "never_seen": 100,
+            "history_only": 0,
+            "head": 0,
+            "mid": 0,
+            "tail": 0
+          }
+        }
+      ]
+    }
+  },
+  "protocol": "Steps 2-4 of the CF follow-up: read-only statistics on existing artifacts.\n\nStep 2 (prediction profile): what kinds of items each CF node recommends (popularity\nclass shares, distinct items, top-10 concentration) at best R9 vs R35.\nStep 3 (catalog collisions): which items sit in multi-item SID buckets.\nStep 4 (validation vs test): per-item-class target composition, hit rate and NDCG\ncontribution for CF and TIGER on validation (early/late) and test.\n\nNo training, inference, or remote writes. Item classes follow the earlier Stage09\naudit exactly: never_seen (absent from all training rows), history_only (only in\ntraining histories), and training-target items split by target count into\nhead (top 10%), mid (next 40%) and tail (rest); ties by internal item ID.\n"
+}

@@ -1,0 +1,68 @@
+{
+  "jobs": [
+    {
+      "name": "nancy-s09-stab-r26hold-1106-v1",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda12.8版本-183核",
+      "quota": "1,20,200",
+      "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+      "nodes": 1,
+      "shm_size": 32,
+      "max_time": 12,
+      "priority": 4,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_stability_followup_20261106_v1/job.py --arm r26_hold --execute",
+      "description": "Single H100 stability continuation; r26_hold; keep artifacts remote"
+    },
+    {
+      "name": "nancy-s09-stab-r26low-1106-v1",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda12.8版本-183核",
+      "quota": "1,20,200",
+      "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+      "nodes": 1,
+      "shm_size": 32,
+      "max_time": 12,
+      "priority": 4,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_stability_followup_20261106_v1/job.py --arm r26_low --execute",
+      "description": "Single H100 stability continuation; r26_low; keep artifacts remote"
+    },
+    {
+      "name": "nancy-s09-stab-rel20freeze-1106-v1",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda12.8版本-183核",
+      "quota": "1,20,200",
+      "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+      "nodes": 1,
+      "shm_size": 32,
+      "max_time": 12,
+      "priority": 4,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_stability_followup_20261106_v1/job.py --arm release20_freeze --execute",
+      "description": "Single H100 stability continuation; release20_freeze; keep artifacts remote"
+    },
+    {
+      "name": "nancy-s09-stab-rel20linear-1106-v1",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda12.8版本-183核",
+      "quota": "1,20,200",
+      "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+      "nodes": 1,
+      "shm_size": 32,
+      "max_time": 12,
+      "priority": 4,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_stability_followup_20261106_v1/job.py --arm release20_linear --execute",
+      "description": "Single H100 stability continuation; release20_linear; keep artifacts remote"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "protocol": "session_wise_ar_mixer_20261113_v1",
+  "design_sha256": "57fee9c6e1ee4f3035e38394ebf0984abd2a236553ebd446ca5aa8a34a8c2513",
+  "seed": 2024,
+  "catalog_size": 10728,
+  "history_max": 50,
+  "list_length": 5,
+  "split_counts": {
+    "train": 709443,
+    "validation": 71657,
+    "test": 53194
+  },
+  "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7",
+  "mixer": {
+    "heads": 4,
+    "norm_eps": 1e-05,
+    "reference_level": 0
+  },
+  "evaluation": {
+    "beam": 20,
+    "batch_size": 32,
+    "metric": "ndcg@5"
+  },
+  "execution": {
+    "precision": "fp32",
+    "checkpoint_every_updates": 200,
+    "data_device": "cpu"
+  },
+  "family": "diger",
+  "rq": {
+    "input_dim": 256,
+    "hidden_dims": [
+      2048,
+      1024,
+      512
+    ],
+    "latent_dim": 256,
+    "levels": 3,
+    "codes": 256,
+    "beta": 0.25,
+    "epochs": 10000,
+    "batch_size": 1024,
+    "warmup_epochs": 50,
+    "eval_interval": 50,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "kmeans_iterations": 100,
+    "sinkhorn_epsilon": 0.003,
+    "sinkhorn_iterations": 50,
+    "selection": "best_collision"
+  },
+  "model": {
+    "width": 128,
+    "ffn": 512,
+    "heads": 4,
+    "d_kv": 64,
+    "encoder_layers": 6,
+    "decoder_layers": 6,
+    "dropout": 0.1,
+    "input_max": 224,
+    "user_buckets": 0
+  },
+  "training": {
+    "batch_size": 256,
+    "max_steps": null,
+    "max_epochs": 120,
+    "patience": 15,
+    "r_lr": 0.001,
+    "id_lr": 1e-05,
+    "weight_decay": 0.05,
+    "warmup_updates": 500,
+    "optimizer": "AdamW",
+    "clip_norm": 1.0
+  }
+}

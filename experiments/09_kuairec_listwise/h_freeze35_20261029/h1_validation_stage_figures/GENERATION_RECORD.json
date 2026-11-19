@@ -1,0 +1,61 @@
+{
+  "status": "stage_summary_plot_generated",
+  "scope": "Validation summaries only; not test or per-sample audit",
+  "generated_utc": "2026-10-29T10:12:23.847388+00:00",
+  "source": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\H1_R35_STAGE_EVIDENCE.json",
+  "source_sha256": "0c8ccbb09c3b0ef69c70f3aca2d37ea59d3e76f24d032b7cae32b4c3107b75f9",
+  "source_checked_utc": "2026-10-29T10:06:06.318645+00:00",
+  "source_field": "selection_verification.verified_validation_grid",
+  "style_helper": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\plot_results.py",
+  "style_helper_sha256": "b6c0642d17c3f82cb54ff91d9507471a081b9f14e5065387122f3f9738c69cc4",
+  "style": "Bound helper.save_figure and matching rcParams",
+  "script_sha256": "b49ce2912f2795cab7dfcc49859b1c4e0acfc68645bd4588e38855c0eb5d11fe",
+  "examples": 71657,
+  "beam": 32,
+  "inference_precision": "fp32",
+  "seed": 2024,
+  "epochs": [
+    20,
+    23,
+    26,
+    29,
+    32,
+    35
+  ],
+  "selected_epoch": 32,
+  "continuation_start_epoch": 26,
+  "y_axis_starts_at_zero": true,
+  "all_six_values_annotated": true,
+  "independent_per_sample_audit": false,
+  "metrics_recomputed": false,
+  "training_or_gpu_or_platform_used": false,
+  "visual_inspection": {
+    "status": "passed",
+    "checked_utc": "2026-10-29T10:12:47.949491+00:00",
+    "method": "Opened and visually inspected actual generated PNG",
+    "checks": [
+      "Six values readable with no overlaps",
+      "R26 continuation start and R32 best marked",
+      "Y axis starts at zero",
+      "Full validation and pending independent per-sample audit/NOT TEST footers visible"
+    ]
+  },
+  "outputs": {
+    "H1_full_validation_R20_to_R35_stage.png": {
+      "bytes": 157738,
+      "sha256": "e295ba638ef49ae10f3dfa87e32f131c7c4bb78b07f5f35de1364da315272a56"
+    },
+    "H1_full_validation_R20_to_R35_stage.pdf": {
+      "bytes": 16993,
+      "sha256": "255e0ea448a3c357104a3f9256ee465888d2ac60e771024f53300f93d424ce37"
+    },
+    "H1_full_validation_R20_to_R35_stage.csv": {
+      "bytes": 1798,
+      "sha256": "f07863e415df5ce01d64178317525379ca3d3592f5d1ce0da11452c52892cebb"
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "matplotlib": "3.10.7"
+  }
+}

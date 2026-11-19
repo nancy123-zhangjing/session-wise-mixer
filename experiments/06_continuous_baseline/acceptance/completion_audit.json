@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "checks": {
+    "locked_original_inputs_match_existing_lock_and_latest_receipt": true,
+    "full_train_targets_131413_and_legacy_targets_105668": true,
+    "validation_and_test_each_22363_per_protocol": true,
+    "each_run_326533_rows_independently_verified": true,
+    "two_independent_outputs_eleven_content_hashes_still_equal": true,
+    "cpu_tests_37_pass_zero_skips": true,
+    "all_execution_source_hashes_still_match": true,
+    "existing_908_files_unchanged_only_handoff_updated": true,
+    "root_and_engines_heads_unchanged_no_staging": true,
+    "new_document_links_exist_and_no_trailing_whitespace": true,
+    "local_cpu_scope_no_model_training_gpu_or_server_verification": true
+  },
+  "local_links_checked": 59,
+  "protected_files_checked": 909,
+  "unchanged_files": 908,
+  "input_sha256": {
+    "all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+    "id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be"
+  },
+  "data_manifest_sha256": "6ecbe2768c31a6c212146ac8d3f01a45bc72cfacd0794166fa4730d121a0fdfa",
+  "requirement_evidence": {
+    "protocol": "resolved_protocol.json",
+    "input_and_output_hashes": "data_manifest.json",
+    "all_row_checks_and_determinism": "data_verification.json",
+    "cpu_tests": "unit_tests.json",
+    "commands": [
+      "verification_command.json",
+      "provenance_a.json",
+      "provenance_b.json",
+      "unit_tests.json"
+    ],
+    "preservation": [
+      "preservation.json",
+      "initial_state.json"
+    ],
+    "code": "source_hashes.json"
+  },
+  "remaining_work_outside_goal": [
+    "model implementation and CPU tensor checks",
+    "remote preflight",
+    "GPU smoke",
+    "hyperparameter search",
+    "formal training",
+    "Decoder-adapted item encoder"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "stage09_final_sidecar_deployment_v1",
+  "date": "2026-10-28",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1",
+  "notebook": "nancy-stage09-prep-20261027-r1",
+  "method": "Official Inspire notebook SSH absence check, SCP upload, SSH sha256sum readback",
+  "target_absence_checked_before_upload": true,
+  "helper": "delivery/backup_final_sidecars.py",
+  "local_and_remote_helper_sha256": "beeb91532752d247563214473cc03b225ef2e49408e3a89df5a37cb4ac62a8c6",
+  "dependency": "delivery/backup_completed_run.py",
+  "remote_dependency_sha256": "0800f6dd99b573b8780ebe8b1eea3ca64fe4713d527475e620a6b943fb65f403",
+  "file_download_probe": {
+    "remote": "delivery/SOURCE_LOCK.json",
+    "local": "outputs/stage09_delivery/goal_20261027_r1/CPU_RECOVERY_SOURCE_LOCK_20261028.json",
+    "remote_and_local_sha256": "cab24153327c0e7747cb1d006a21acc2869bd68f4018fbf4e9a20ba2d4b32f38"
+  },
+  "deployed_and_sha_verified": true,
+  "helper_executed_against_final_artifacts": false,
+  "operations_archive_created": false,
+  "evaluations_archive_created": false,
+  "scientific_source_modified": false,
+  "new_gpu_requested": false
+}

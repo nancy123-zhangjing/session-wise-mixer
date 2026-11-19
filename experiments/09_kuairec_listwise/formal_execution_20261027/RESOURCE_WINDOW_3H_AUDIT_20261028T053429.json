@@ -1,0 +1,101 @@
+{
+  "schema": "stage09_resource_three_hour_observation_v1",
+  "job": "nancy-stage09-four-arm-20261027-r1",
+  "queried_at_utc": "2026-10-27T21:34:29+00:00",
+  "metrics_source": "FORMAL_METRICS_3H_20261027T213429Z.json",
+  "metrics_sha256": "ee85c824ed6317b4085fc27f0cf32a7c4d809dfc3a735ce422b2acb22963be4b",
+  "policy_source": "FORMAL_POLICY_20261027T213429Z.json",
+  "policy_sha256": "6ab56d3ac1668ea22f233ed928234e2fd96a7a24d6eab59fd11881d1b044bd87",
+  "policy_observed_at_utc": "2026-10-27T21:34:35+00:00",
+  "policy_requeried_this_observation": true,
+  "window": {
+    "start": 1793126069,
+    "end": 1793136869,
+    "interval": "1m"
+  },
+  "series": [
+    {
+      "unit": "worker-0",
+      "metric": "gpu_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.6053611111111111,
+      "min_recomputed": 0.25,
+      "max_recomputed": 0.82625,
+      "last": 0.5725,
+      "first_sample": 1793126040,
+      "last_sample": 1793136780,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "gpu_memory_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.1406811859342522,
+      "min_recomputed": 0.128132708436,
+      "max_recomputed": 0.14416625555,
+      "last": 0.14416625555,
+      "first_sample": 1793126040,
+      "last_sample": 1793136780,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "cpu_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.10199400555298632,
+      "min_recomputed": 0.10046289195935,
+      "max_recomputed": 0.103352031901,
+      "last": 0.10238180693445,
+      "first_sample": 1793126040,
+      "last_sample": 1793136780,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "memory_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.026778767678468724,
+      "min_recomputed": 0.02662900447845,
+      "max_recomputed": 0.02688107967376,
+      "last": 0.02678310871124,
+      "first_sample": 1793126040,
+      "last_sample": 1793136780,
+      "all_intervals_seconds": 60
+    }
+  ],
+  "gpu_below_40_percent_sample_count": 8,
+  "gpu_longest_consecutive_below_40_percent_samples": 2,
+  "raw_recompute_passed": true,
+  "sample_boundary_notes": {
+    "requested_window_seconds": 10800,
+    "returned_first_to_last_seconds": 10740,
+    "first_sample_offset_from_requested_start_seconds": -29,
+    "last_sample_lag_from_requested_end_seconds": 89,
+    "continuous_instantaneous_utilization_verified": false,
+    "low_run_note": "Consecutive one-minute samples are observations, not proof of exact continuous low-utilization duration."
+  },
+  "last_observed_job_policy": "gpu < 40% for 3h",
+  "platform_reclaim_decision_verified": false,
+  "per_gpu_metrics_available": false,
+  "allocation_snapshot": {
+    "scheduled_at": "2026-10-27T23:46:38+08:00",
+    "as_of_unix": 1793136869,
+    "active_gpus": 2,
+    "active_allocated_gpu_seconds_to_query_end": 41742,
+    "previously_released_gpu_seconds": 13535,
+    "combined_allocated_gpu_hours_to_query_end": 15.354722222222222,
+    "remaining_to_75_gpu_hours_at_query_end": 59.64527777777778,
+    "final_allocated_gpu_seconds": null,
+    "settlement_verified": false
+  },
+  "budget_commitment": {
+    "completed_gpu_hours": 3.7597222222222224,
+    "formal_job_total_cap_gpu_hours": 48,
+    "final_eval_reserved_gpu_hours": 8,
+    "combined_commitment_gpu_hours": 59.75972222222222,
+    "unreserved_gpu_hours_within_75": 15.240277777777777,
+    "note": "The formal cap includes its elapsed allocation; do not add elapsed formal time twice. Evaluation job caps remain unset until best models are frozen."
+  },
+  "interpretation": "Worker-aggregate sampling only. No sampled pattern spans three hours below the last observed 40 percent threshold; this is not a per-GPU or scheduler decision guarantee. Live training continues unchanged. Allocation is an as-of estimate until terminal release events.",
+  "independent_raw_audit_passed": true
+}

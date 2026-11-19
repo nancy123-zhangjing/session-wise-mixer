@@ -1,0 +1,274 @@
+{
+  "status": "LOCAL_CPU_CHECKPOINT_READBACK_PASS",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "verified_utc": "2026-10-20T12:57:43.184069+00:00",
+  "backup_root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified",
+  "package_receipt_sha256": "92afa1a37a1f4047c56a2435f401a72f9d546ebe3e255d78666d19f5db9c773b",
+  "archive_sha256": "cc60b6f1e317e10c0f0cc9fee7614be37ff092d66c8c827a02802d7eeae5b98a",
+  "manifest_sha256": "393fd9b5db7549df3495f14c119ec42007ec9c26ab42ec75f1643a9259d47ebe",
+  "byte_verification_receipt_sha256": "84ff5354cc5da70ae1e1260725d81b3072489799e074f66762afa48e67d6cdf3",
+  "source_identity": {
+    "code": {
+      "commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+      "archive_sha256": "42d740a769f126e49e4d701ae2e49fb5e1e97bd0232787cfa7e4b0fc05e8a4ec"
+    },
+    "engine": {
+      "commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "archive_sha256": "7b16b41d82549eca83ea3f6c564a58ea84c1eaa807ec30d46978aa589bf9e0fc"
+    }
+  },
+  "checkpoints": [
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/recovery_probe/best_model.bin",
+      "sha256": "efab6c8a288a190ad36257abac32e9499791afdf5e46fc43abdf84d08f0571c0",
+      "size_bytes": 36147558,
+      "tensor_count": 102,
+      "tensor_elements": 8979099,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/recovery_probe/source_last.pt",
+      "sha256": "c49ff43c563f4f1b61f048c401c539b7c13b8c98210cd4e34d2b86fbf2f93c05",
+      "size_bytes": 135936416,
+      "tensor_count": 361,
+      "tensor_elements": 20384960,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 2,
+        "best_epoch": 0,
+        "training_complete": false,
+        "recommender_optimizer_updates": 2,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 85,
+        "sid_refresh_count": 1,
+        "phase": "tokenizer",
+        "embedded_best_sha256": "efab6c8a288a190ad36257abac32e9499791afdf5e46fc43abdf84d08f0571c0",
+        "scheduler_last_epoch": 2
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/smoke_tokenizer_boundary.pt",
+      "sha256": "c49ff43c563f4f1b61f048c401c539b7c13b8c98210cd4e34d2b86fbf2f93c05",
+      "size_bytes": 135936416,
+      "tensor_count": 361,
+      "tensor_elements": 20384960,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 2,
+        "best_epoch": 0,
+        "training_complete": false,
+        "recommender_optimizer_updates": 2,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 85,
+        "sid_refresh_count": 1,
+        "phase": "tokenizer",
+        "embedded_best_sha256": "efab6c8a288a190ad36257abac32e9499791afdf5e46fc43abdf84d08f0571c0",
+        "scheduler_last_epoch": 2
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/training_state/best_model.bin",
+      "sha256": "efab6c8a288a190ad36257abac32e9499791afdf5e46fc43abdf84d08f0571c0",
+      "size_bytes": 36147558,
+      "tensor_count": 102,
+      "tensor_elements": 8979099,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/training_state/last.pt",
+      "sha256": "d08edbf82593e239c9fa09e13b5de717fc1ae3e9ff91812b3751e9d168f03253",
+      "size_bytes": 136198688,
+      "tensor_count": 361,
+      "tensor_elements": 20450496,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 3,
+        "best_epoch": 0,
+        "training_complete": true,
+        "recommender_optimizer_updates": 4,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 85,
+        "sid_refresh_count": 1,
+        "phase": "recommender",
+        "embedded_best_sha256": "efab6c8a288a190ad36257abac32e9499791afdf5e46fc43abdf84d08f0571c0",
+        "scheduler_last_epoch": 4
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/training_state/best_model.bin",
+      "sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "size_bytes": 36147558,
+      "tensor_count": 102,
+      "tensor_elements": 8979099,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_control_seed2024_20261020_r1/training_state/last.pt",
+      "sha256": "4b20f1e9399043583b140f71496ee09c644e88dba52a3b673464e8ea637ec156",
+      "size_bytes": 136121120,
+      "tensor_count": 361,
+      "tensor_elements": 20450496,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 45,
+        "best_epoch": 25,
+        "training_complete": true,
+        "recommender_optimizer_updates": 3640,
+        "tokenizer_optimizer_updates": 60,
+        "optimizer_state_count": 85,
+        "sid_refresh_count": 10,
+        "phase": "recommender",
+        "embedded_best_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+        "scheduler_last_epoch": 3640
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/recovery_probe/best_model.bin",
+      "sha256": "5162ba03a8c9825e6499aa590b2df3accabdd23d40dde664015c6f6538e8917d",
+      "size_bytes": 37204442,
+      "tensor_count": 108,
+      "tensor_elements": 9242779,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/recovery_probe/source_last.pt",
+      "sha256": "000c219e6557a9132e2f6f1267e150326b923aed2e5d067f960a3fa294375f40",
+      "size_bytes": 140550320,
+      "tensor_count": 385,
+      "tensor_elements": 21176006,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 2,
+        "best_epoch": 0,
+        "training_complete": false,
+        "recommender_optimizer_updates": 2,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 91,
+        "sid_refresh_count": 1,
+        "phase": "tokenizer",
+        "embedded_best_sha256": "5162ba03a8c9825e6499aa590b2df3accabdd23d40dde664015c6f6538e8917d",
+        "scheduler_last_epoch": 2
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/smoke_tokenizer_boundary.pt",
+      "sha256": "000c219e6557a9132e2f6f1267e150326b923aed2e5d067f960a3fa294375f40",
+      "size_bytes": 140550320,
+      "tensor_count": 385,
+      "tensor_elements": 21176006,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 2,
+        "best_epoch": 0,
+        "training_complete": false,
+        "recommender_optimizer_updates": 2,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 91,
+        "sid_refresh_count": 1,
+        "phase": "tokenizer",
+        "embedded_best_sha256": "5162ba03a8c9825e6499aa590b2df3accabdd23d40dde664015c6f6538e8917d",
+        "scheduler_last_epoch": 2
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/training_state/best_model.bin",
+      "sha256": "5162ba03a8c9825e6499aa590b2df3accabdd23d40dde664015c6f6538e8917d",
+      "size_bytes": 37204442,
+      "tensor_count": 108,
+      "tensor_elements": 9242779,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/training_state/last.pt",
+      "sha256": "bd15cba6772c37153510c944a87967ff084c3e65d38c9df114db28835f0c5327",
+      "size_bytes": 140812592,
+      "tensor_count": 385,
+      "tensor_elements": 21241542,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 3,
+        "best_epoch": 0,
+        "training_complete": true,
+        "recommender_optimizer_updates": 4,
+        "tokenizer_optimizer_updates": 2,
+        "optimizer_state_count": 91,
+        "sid_refresh_count": 1,
+        "phase": "recommender",
+        "embedded_best_sha256": "5162ba03a8c9825e6499aa590b2df3accabdd23d40dde664015c6f6538e8917d",
+        "scheduler_last_epoch": 4
+      }
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/training_state/best_model.bin",
+      "sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "size_bytes": 37204442,
+      "tensor_count": 108,
+      "tensor_elements": 9242779,
+      "all_tensors_finite": true
+    },
+    {
+      "member": "runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/training_state/last.pt",
+      "sha256": "5c85628b69b2939bd4b7c8690c5316259f2dc1eccf84cca0cbeaf534789595c5",
+      "size_bytes": 140877488,
+      "tensor_count": 385,
+      "tensor_elements": 21241542,
+      "all_tensors_finite": true,
+      "joint_boundary": {
+        "next_epoch": 45,
+        "best_epoch": 25,
+        "training_complete": true,
+        "recommender_optimizer_updates": 3640,
+        "tokenizer_optimizer_updates": 60,
+        "optimizer_state_count": 91,
+        "sid_refresh_count": 10,
+        "phase": "recommender",
+        "embedded_best_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+        "scheduler_last_epoch": 3640
+      }
+    }
+  ],
+  "checkpoint_count": 14,
+  "formal_arms": {
+    "control": {
+      "next_epoch": 45,
+      "best_epoch": 25,
+      "training_complete": true,
+      "recommender_optimizer_updates": 3640,
+      "tokenizer_optimizer_updates": 60,
+      "optimizer_state_count": 85,
+      "sid_refresh_count": 10,
+      "phase": "recommender",
+      "embedded_best_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "scheduler_last_epoch": 3640,
+      "best_checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "results_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+      "checkpoint_reload_sha256": "ce962649ddc054dfcc9a4a81a9646439398f5bacf080a0894a07b5bd104a079b"
+    },
+    "item_local": {
+      "next_epoch": 45,
+      "best_epoch": 25,
+      "training_complete": true,
+      "recommender_optimizer_updates": 3640,
+      "tokenizer_optimizer_updates": 60,
+      "optimizer_state_count": 91,
+      "sid_refresh_count": 10,
+      "phase": "recommender",
+      "embedded_best_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "scheduler_last_epoch": 3640,
+      "best_checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "results_sha256": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+      "checkpoint_reload_sha256": "de2759a92aa35399752bc0665a0a69a365f7bab69de8b1d932bfd0a6f9bdb919"
+    }
+  },
+  "load_method": "torch.load(map_location='cpu', weights_only=False)",
+  "all_actual_tensors_finite": true,
+  "strict_model_reload_performed": false,
+  "remote_pair_audit_performed": false,
+  "full_relocated_resume_exercised": false,
+  "GPU_or_platform_used": false,
+  "goal_complete": false,
+  "scope": "Local archived checkpoint bytes and serialized-state consistency only; no model construction, restore, update, comparison audit or GPU-release proof.",
+  "tool_sha256": "e653c2c89c5dc0288f68cb0292677490e57bbe22ac1302ff323f072fa0efde5c"
+}

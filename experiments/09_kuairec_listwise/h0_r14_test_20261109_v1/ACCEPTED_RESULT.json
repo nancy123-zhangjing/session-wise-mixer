@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "kind": "new",
+  "epoch": 14,
+  "summary": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h0_r14_test_20261109_v1/evaluations/test_R14/attempt1/summary.json",
+  "predictions": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h0_r14_test_20261109_v1/evaluations/test_R14/attempt1/per_sample.jsonl.gz",
+  "summary_sha256": "6f6569ffd7e0302320b00678bba7a489f365430be1b5386576bcc463abc073c0",
+  "predictions_sha256": "7678f387f439a3f824e39a9635ceb3368f234dbeb6d34de969c0d7e9a15ddff1",
+  "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/runs/H0-Freeze20-R35/phase16_R_R14_T120.pt",
+  "checkpoint_sha256": "2b919b71c24579fb01070a7f25b63bbcf5c1cae087cdcd2bcae14a4868d434a3",
+  "ndcg5": 0.00892254574671228,
+  "examples": 53194,
+  "beam": 32,
+  "inference_precision": "fp32",
+  "comparator_sha256": "110182cceccb3a376701c49ca505e03eb620cbca44e80e962509d6065fdd0195",
+  "metrics": {
+    "list/ndcg@5": {
+      "h0": 0.00892254574671228,
+      "no_code_tag": 0.008103994257717594,
+      "absolute_delta": -0.0008185514889946857,
+      "relative_pct": -9.17396797092691
+    },
+    "list/hr@5": {
+      "h0": 0.04209121329473249,
+      "no_code_tag": 0.039064556152949584,
+      "absolute_delta": -0.003026657141782907,
+      "relative_pct": -7.19071013845467
+    },
+    "list/recall@5": {
+      "h0": 0.00861375355947312,
+      "no_code_tag": 0.007959544428115044,
+      "absolute_delta": -0.0006542091313580765,
+      "relative_pct": -7.594936711865863
+    }
+  },
+  "audit_passed": true,
+  "max_absolute_error": 5.651718959498453e-08,
+  "gpu_released": true
+}

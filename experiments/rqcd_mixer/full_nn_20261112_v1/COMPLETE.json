@@ -1,0 +1,369 @@
+{
+  "status": "FULL_NN_EVALUATION_COMPLETE",
+  "training_started": false,
+  "results": {
+    "B0": {
+      "validation": {
+        "arm": "B0",
+        "split": "validation",
+        "R": 25,
+        "T": 200,
+        "count": 71657,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B0/checkpoints/R25_T200.pt",
+        "checkpoint_sha256": "d8acff4d047cef9f6ea5547d46f5ac5cd07d570304cb37de308cf9a2082fad5d",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "c4b05850f979dc2c179fd096470137960c8851c77db1325abcd10de582ca7892",
+        "noise_sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e",
+        "rq": {
+          "ndcg@5": 0.0010305442795518643,
+          "recall@5": 0.0010299063748092398,
+          "hr@5": 0.005135576426587772,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.001155071538314187,
+          "recall@5": 0.0011499225648276606,
+          "hr@5": 0.005735657367737974,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": 0.12083639804053226,
+        "paired_user_bootstrap_95pct": [
+          -1.2895630378928093e-05,
+          0.000275827771539073
+        ],
+        "unique_users": 4733,
+        "ndcg_difference": 0.0001245272587623225,
+        "rq_hit_sessions": 368,
+        "nn_hit_sessions": 411,
+        "both_hit_sessions": 95,
+        "prediction_agreement_by_position": [
+          0.1804987649496909,
+          0.21090751775820923,
+          0.21025161533416134,
+          0.20864674770085267,
+          0.20666508505798456
+        ],
+        "raw_valid_by_position": [
+          0.005372817728902969,
+          0.008373222434653977,
+          0.008889571151457639,
+          0.00834531169320513,
+          0.00847091002972494
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.0010047866921584772,
+          "nn": 0.0011582957701271334
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 237.71986466296948,
+        "artifacts": {
+          "vectors_and_predictions.npz": "6de9e4ce462c52e75143284b404a4aea20c10214bc70331b1812457cb0fe4bb0",
+          "predictions.jsonl.gz": "81acfd5b9c17a28ead77e3d590960998de7f655983dc8eca6e46405a86c34d85"
+        }
+      },
+      "test": {
+        "arm": "B0",
+        "split": "test",
+        "R": 25,
+        "T": 200,
+        "count": 53194,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B0/checkpoints/R25_T200.pt",
+        "checkpoint_sha256": "d8acff4d047cef9f6ea5547d46f5ac5cd07d570304cb37de308cf9a2082fad5d",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "51b7fdfd0869e06b837138c3391d92bc6a41f9a7aed61ed7a97e7decca4cad75",
+        "noise_sha256": "73420f20ed2a9b50f5e3911cc838a4208ec7c02d80dcd54c53782d66281f89dc",
+        "rq": {
+          "ndcg@5": 0.0008688587885147316,
+          "recall@5": 0.0008835583092144711,
+          "hr@5": 0.004417791480242132,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.0008399700372318677,
+          "recall@5": 0.0008572395510676571,
+          "hr@5": 0.004286197691468963,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": -0.03324907529824006,
+        "paired_user_bootstrap_95pct": [
+          -0.00017503560212005087,
+          0.00011954864122178508
+        ],
+        "unique_users": 4153,
+        "ndcg_difference": -2.8888751282863888e-05,
+        "rq_hit_sessions": 235,
+        "nn_hit_sessions": 228,
+        "both_hit_sessions": 32,
+        "prediction_agreement_by_position": [
+          0.18052787908410722,
+          0.21476106327781327,
+          0.2135203218408091,
+          0.20750460578260707,
+          0.21021167800879798
+        ],
+        "raw_valid_by_position": [
+          0.004981764860698575,
+          0.009324359890213182,
+          0.009192766101440012,
+          0.008384404256119112,
+          0.008515998044892281
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.0007143662819114937,
+          "nn": 0.0007519645072752566
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 172.16458870912902,
+        "artifacts": {
+          "vectors_and_predictions.npz": "8e90a0ec85b3e69929472028ed4a5b8f02ecb45ecda1e9578e0f38106e23c854",
+          "predictions.jsonl.gz": "573aa8fe55c7d864c80551cbfc9ccb3331bded839091ceff6287a606f8465dbd"
+        }
+      }
+    },
+    "B1": {
+      "validation": {
+        "arm": "B1",
+        "split": "validation",
+        "R": 28,
+        "T": 230,
+        "count": 71657,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B1/checkpoints/R28_T230.pt",
+        "checkpoint_sha256": "274a7601da98f903a41349e192e05ec3f97b687b3680051187773badd55a7450",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "c4b05850f979dc2c179fd096470137960c8851c77db1325abcd10de582ca7892",
+        "noise_sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e",
+        "rq": {
+          "ndcg@5": 0.001135970651916268,
+          "recall@5": 0.0011303850455223364,
+          "hr@5": 0.005637969772667011,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.0012639696346065997,
+          "recall@5": 0.001255983383913707,
+          "hr@5": 0.006265961455266059,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": 0.11267807180969891,
+        "paired_user_bootstrap_95pct": [
+          -1.8387439891699007e-05,
+          0.00027336655013355003
+        ],
+        "unique_users": 4733,
+        "ndcg_difference": 0.0001279989826903318,
+        "rq_hit_sessions": 404,
+        "nn_hit_sessions": 449,
+        "both_hit_sessions": 136,
+        "prediction_agreement_by_position": [
+          0.21036325829995675,
+          0.24894985835298714,
+          0.2508338334007843,
+          0.24762409813416694,
+          0.24393988026291918
+        ],
+        "raw_valid_by_position": [
+          0.010703769345632667,
+          0.018239669536821247,
+          0.018281535648994516,
+          0.017513990259151235,
+          0.018183848053923552
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.00118620651157598,
+          "nn": 0.0012559833651980964
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 232.58738722186536,
+        "artifacts": {
+          "vectors_and_predictions.npz": "e9ce822fc4611c936a982eee5c06675f3c7dde9d0e15a7ec769f47e342b3fe21",
+          "predictions.jsonl.gz": "657475b033ef6daa6a279e17b97e557f0f879154c60b183cebb9618c0228f2c6"
+        }
+      },
+      "test": {
+        "arm": "B1",
+        "split": "test",
+        "R": 28,
+        "T": 230,
+        "count": 53194,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B1/checkpoints/R28_T230.pt",
+        "checkpoint_sha256": "274a7601da98f903a41349e192e05ec3f97b687b3680051187773badd55a7450",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "51b7fdfd0869e06b837138c3391d92bc6a41f9a7aed61ed7a97e7decca4cad75",
+        "noise_sha256": "73420f20ed2a9b50f5e3911cc838a4208ec7c02d80dcd54c53782d66281f89dc",
+        "rq": {
+          "ndcg@5": 0.0009234718154546762,
+          "recall@5": 0.0009173967125460892,
+          "hr@5": 0.004568184381697184,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.0009364125528886685,
+          "recall@5": 0.0009173967125460892,
+          "hr@5": 0.004586983494379066,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": 0.014013137398915632,
+        "paired_user_bootstrap_95pct": [
+          -0.00013291595630175143,
+          0.00015520096117007257
+        ],
+        "unique_users": 4153,
+        "ndcg_difference": 1.2940737433992356e-05,
+        "rq_hit_sessions": 243,
+        "nn_hit_sessions": 244,
+        "both_hit_sessions": 73,
+        "prediction_agreement_by_position": [
+          0.2066398465992405,
+          0.24918223859833816,
+          0.24709553709064933,
+          0.24510283114636988,
+          0.2426777456104072
+        ],
+        "raw_valid_by_position": [
+          0.010076324397488439,
+          0.019118697597473398,
+          0.01768996503365041,
+          0.017614768582922886,
+          0.016806406737601986
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.0009775538594578336,
+          "nn": 0.0010339511975034777
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 172.50313919200562,
+        "artifacts": {
+          "vectors_and_predictions.npz": "c55e6c9b7581a280e0254aa67fec82a4ac04607d7d006a8e6ce650b324b51af5",
+          "predictions.jsonl.gz": "bb85f6fc5d2097f9ed0d2cfb4794ee034bd274245bcb4b83c4b2ea5cc78e3b87"
+        }
+      }
+    },
+    "B2": {
+      "validation": {
+        "arm": "B2",
+        "split": "validation",
+        "R": 24,
+        "T": 190,
+        "count": 71657,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B2/checkpoints/R24_T190.pt",
+        "checkpoint_sha256": "cc44be6b47d76e295276c7ebfc64416d1ad7394b42c504838da4b5400f562fca",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "c4b05850f979dc2c179fd096470137960c8851c77db1325abcd10de582ca7892",
+        "noise_sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e",
+        "rq": {
+          "ndcg@5": 0.0009734408790174819,
+          "recall@5": 0.0009461741492149926,
+          "hr@5": 0.004730870675579497,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.0010453496251375833,
+          "recall@5": 0.0010382795973686645,
+          "hr@5": 0.005177442538761042,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": 0.07387068662318841,
+        "paired_user_bootstrap_95pct": [
+          -7.700432742496321e-05,
+          0.00021082549977198501
+        ],
+        "unique_users": 4733,
+        "ndcg_difference": 7.190874612010147e-05,
+        "rq_hit_sessions": 339,
+        "nn_hit_sessions": 371,
+        "both_hit_sessions": 73,
+        "prediction_agreement_by_position": [
+          0.13782324127440446,
+          0.16177065743751481,
+          0.15583962487963493,
+          0.15547678524079991,
+          0.15069009308232273
+        ],
+        "raw_valid_by_position": [
+          0.0035307087932790935,
+          0.004409897148917761,
+          0.004326164924571221,
+          0.0034888426811058235,
+          0.004047057510082755
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.0010606081750561703,
+          "nn": 0.0010466528043317472
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 234.96097786701284,
+        "artifacts": {
+          "vectors_and_predictions.npz": "e6965650216d2b657b400479374829ed602bfd7425546fdbe954a1e2368bd91a",
+          "predictions.jsonl.gz": "65ef71d2251e3317a12b6b1b264885ef5b26c0f66cccab20223fb5880a8cb75c"
+        }
+      },
+      "test": {
+        "arm": "B2",
+        "split": "test",
+        "R": 24,
+        "T": 190,
+        "count": 53194,
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1/B2/checkpoints/R24_T190.pt",
+        "checkpoint_sha256": "cc44be6b47d76e295276c7ebfc64416d1ad7394b42c504838da4b5400f562fca",
+        "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+        "sample_ids_sha256": "51b7fdfd0869e06b837138c3391d92bc6a41f9a7aed61ed7a97e7decca4cad75",
+        "noise_sha256": "73420f20ed2a9b50f5e3911cc838a4208ec7c02d80dcd54c53782d66281f89dc",
+        "rq": {
+          "ndcg@5": 0.0009165864475495825,
+          "recall@5": 0.0009061172447688831,
+          "hr@5": 0.00451178704365154,
+          "completion_rate": 1.0
+        },
+        "nn": {
+          "ndcg@5": 0.0008655146406405662,
+          "recall@5": 0.0008910779543992751,
+          "hr@5": 0.004417791480242132,
+          "completion_rate": 1.0
+        },
+        "relative_ndcg_change": -0.05571957456446419,
+        "paired_user_bootstrap_95pct": [
+          -0.0002040958026204818,
+          0.00010142326822340678
+        ],
+        "unique_users": 4153,
+        "ndcg_difference": -5.1071806909016356e-05,
+        "rq_hit_sessions": 240,
+        "nn_hit_sessions": 235,
+        "both_hit_sessions": 47,
+        "prediction_agreement_by_position": [
+          0.13541000864759184,
+          0.15400233108997255,
+          0.14644508779185622,
+          0.14559912772117156,
+          0.1449411587773057
+        ],
+        "raw_valid_by_position": [
+          0.002951460691055382,
+          0.0039478136631950975,
+          0.0036846260856487575,
+          0.0033650411700567734,
+          0.003346242057374892
+        ],
+        "first_position_hit_any_target": {
+          "rq": 0.0009399556340940708,
+          "nn": 0.0008271609580027823
+        },
+        "original_exact_list_agreement": 1.0,
+        "model_unchanged": true,
+        "seconds": 172.69611530797556,
+        "artifacts": {
+          "vectors_and_predictions.npz": "aacd0efcfdcdba9ef6a7c84ac8a98c93f380691943b45b978325335c6b70ec0b",
+          "predictions.jsonl.gz": "1a9548429da5cf7578c3283f5ad9df2cf2ca761410038d818c2291d204ade900"
+        }
+      }
+    }
+  },
+  "seconds": 1225.9087150660343,
+  "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+  "protocol_sha256": "7cc4a6e5824e019adf253783952228f06cb19760a6a9afea0aeff154218d417f"
+}

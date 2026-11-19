@@ -1,0 +1,99 @@
+{
+  "optimizer_updates": 1,
+  "microbatches": 16,
+  "diagnostic_only_not_resume_checkpoint": true,
+  "no_mapping_refresh_no_rng_or_model_state_change": true,
+  "tokenizer_tensor_state_sha256": "00a3204a627a13fbec7184cd3bed261ad709d37785571d7c3b93e4f93f82bd87",
+  "semantic_ids_array_sha256": "ed2c54d7eb765891b859d4a078220daf65ed4fc0409cddd9e71d94322de2ef88",
+  "catalog_reconstruction_squared_l2_mean": 0.6253506759997882,
+  "deterministic_sid_change": {
+    "changed_items": 4,
+    "item_change_rate": 0.0003305511941161887,
+    "changed_digits": 4,
+    "digit_change_rate": 8.263779852904718e-05,
+    "per_position_change_rate": [
+      0.0,
+      0.0,
+      8.263779852904718e-05,
+      0.00024791339558714154
+    ]
+  },
+  "validation_coverage": {
+    "examples": 22363,
+    "target_changed_examples": 17,
+    "history_changed_examples": 117,
+    "either_changed_examples": 134,
+    "target_changed_rate": 0.0007601842328846755,
+    "history_changed_rate": 0.005231856191029826,
+    "either_changed_rate": 0.005992040423914501
+  },
+  "fresh_catalog_stats": {
+    "full_sid": {
+      "unique_semantic_ids": 10652,
+      "collided_items": 2174,
+      "collision_rate": 0.17965457400214857,
+      "collision_groups": 725,
+      "largest_group": 40
+    },
+    "prefixes": {
+      "1": {
+        "unique_semantic_ids": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "collision_groups": 254,
+        "largest_group": 129
+      },
+      "2": {
+        "unique_semantic_ids": 6950,
+        "collided_items": 7282,
+        "collision_rate": 0.6017684488885217,
+        "collision_groups": 2131,
+        "largest_group": 57
+      },
+      "3": {
+        "unique_semantic_ids": 9857,
+        "collided_items": 3307,
+        "collision_rate": 0.27328319973555903,
+        "collision_groups": 1063,
+        "largest_group": 43
+      },
+      "4": {
+        "unique_semantic_ids": 10652,
+        "collided_items": 2174,
+        "collision_rate": 0.17965457400214857,
+        "collision_groups": 725,
+        "largest_group": 40
+      }
+    },
+    "positions": [
+      {
+        "position": 0,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 1,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 2,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 3,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      }
+    ]
+  },
+  "files": {
+    "fresh_probe_codes.npy": "703fb7c58d75a13fb7bd56a231e98fe333b1231d2be2437b7c132e250309c015",
+    "crossed_codebooks.npy": "460a01c439c12270bae7f602747ae4a4eab64289afd06277873351cca164ad78"
+  }
+}

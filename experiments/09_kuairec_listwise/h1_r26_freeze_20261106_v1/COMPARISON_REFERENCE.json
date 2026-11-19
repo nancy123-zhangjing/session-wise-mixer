@@ -1,0 +1,101 @@
+{
+  "purpose": "Same-parent reference metrics for the running R26 tokenizer-freeze experiment; contains no new-arm outcome.",
+  "metric": "list/ndcg@5",
+  "source_metric_kind": "Independent accepted recomputation; differs from original summary only at floating-point tails.",
+  "arms": {
+    "r26_hold": {
+      "source": "experiments/09_kuairec_listwise/h1_stability_followup_20261106_v1/R26_HOLD_ACCEPTED_RESULT.json",
+      "source_sha256": "d1ed783421a27b2f7d450702b1cbc1d976bbe52df66dcfc2ab175c28cc5a46d8",
+      "parent": {
+        "status": "verified_metadata",
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/phase32_R_R26_T280.pt",
+        "sha256": "395349223641cc9b74c3af3d73a16933083e92c6c8c126107e959aa5d8ed6a0e",
+        "bytes": 82360354,
+        "summary": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/evaluations/R26/attempt1/summary.json",
+        "summary_sha256": "4761c1d3f5fe3e09e354730dbb95de883232aeddc2ba03a5c458665b980934b5",
+        "ndcg5": 0.009973123477893297,
+        "r_updates": 18018,
+        "t_updates": 280,
+        "record": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/validation_records/R26.json",
+        "record_sha256": "603b4499993ed4b697e363e8a8473ca8aae38a16317a238c10e3daea00aea9bd",
+        "parent_gate": "f7e64d1b36c7a7dabd7934c5c080aeca780b151a0d23a400cfa5b97b91d05d68"
+      },
+      "spec": {
+        "parent": "increment_r26",
+        "start_r": 26,
+        "start_t": 280,
+        "mode": "constant",
+        "alpha_start": 0.0642713567839196,
+        "alpha_end": 0.0642713567839196,
+        "version": "h1_stability_followup_v1",
+        "arm": "r26_hold",
+        "stop_r": 35,
+        "updates": 120,
+        "stop_t": 400,
+        "validation_epochs": [
+          26,
+          29,
+          32,
+          35
+        ]
+      },
+      "best_epoch": 26,
+      "validation": {
+        "R29": 0.008998192641999914,
+        "R32": 0.008343258281391151,
+        "R35": 0.008194274183280602
+      },
+      "tests": {
+        "26": 0.008901687593429927,
+        "35": 0.006971410284564756
+      }
+    },
+    "r26_low": {
+      "source": "experiments/09_kuairec_listwise/h1_stability_followup_20261106_v1/R26_LOW_ACCEPTED_RESULT.json",
+      "source_sha256": "4221ecdc5e7f5fb99deee8c3634b10654b111703acd796cdce8ddada5bf07443",
+      "parent": {
+        "status": "verified_metadata",
+        "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/phase32_R_R26_T280.pt",
+        "sha256": "395349223641cc9b74c3af3d73a16933083e92c6c8c126107e959aa5d8ed6a0e",
+        "bytes": 82360354,
+        "summary": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/evaluations/R26/attempt1/summary.json",
+        "summary_sha256": "4761c1d3f5fe3e09e354730dbb95de883232aeddc2ba03a5c458665b980934b5",
+        "ndcg5": 0.009973123477893297,
+        "r_updates": 18018,
+        "t_updates": 280,
+        "record": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_increment_linear_20261105_v1/runs/IncrementLinear/validation_records/R26.json",
+        "record_sha256": "603b4499993ed4b697e363e8a8473ca8aae38a16317a238c10e3daea00aea9bd",
+        "parent_gate": "f7e64d1b36c7a7dabd7934c5c080aeca780b151a0d23a400cfa5b97b91d05d68"
+      },
+      "spec": {
+        "parent": "increment_r26",
+        "start_r": 26,
+        "start_t": 280,
+        "mode": "constant",
+        "alpha_start": 0.01,
+        "alpha_end": 0.01,
+        "version": "h1_stability_followup_v1",
+        "arm": "r26_low",
+        "stop_r": 35,
+        "updates": 120,
+        "stop_t": 400,
+        "validation_epochs": [
+          26,
+          29,
+          32,
+          35
+        ]
+      },
+      "best_epoch": 32,
+      "validation": {
+        "R29": 0.009567240094517551,
+        "R32": 0.010166548791291469,
+        "R35": 0.009846633157418912
+      },
+      "tests": {
+        "32": 0.009136393000886039,
+        "35": 0.008471508563460985
+      }
+    }
+  }
+}

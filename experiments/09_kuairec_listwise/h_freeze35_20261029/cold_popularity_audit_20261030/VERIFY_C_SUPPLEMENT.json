@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-30T03:36:56.565027+00:00",
+  "result_dir": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\cold_popularity_audit_20261030\\c_supplement_r1",
+  "analysis_complete_sha256": "aa42df2626125700fcaa908094982196c429723a0e6cf2190b5b6fb9edca8717",
+  "verifier_sha256": "b51c6d3acf597aa481a2b1b90bd371af011d77465bdd302782f57319413cd33b",
+  "analysis_script_sha256": "3270debadddbd528a5b9b423a5b6ccae89246ab1351ac02d27279eca34ea7267",
+  "full_source_validation_rows_checked": 71657,
+  "train_rows_independently_counted": 709443,
+  "catalog_class_counts": [
+    1914,
+    799,
+    802,
+    3206,
+    4007
+  ],
+  "models": {
+    "H0_best_R32": {
+      "array_rows_checked": 71657,
+      "raw_rows_checked": 1027,
+      "raw_rows_counted": 71657,
+      "class_contribution_closure_passed": true,
+      "prediction_bias_metrics_passed": true
+    },
+    "H1_R20": {
+      "array_rows_checked": 71657,
+      "raw_rows_checked": 1027,
+      "raw_rows_counted": 71657,
+      "class_contribution_closure_passed": true,
+      "prediction_bias_metrics_passed": true
+    },
+    "H1_freeze_R32": {
+      "array_rows_checked": 71657,
+      "raw_rows_checked": 1027,
+      "raw_rows_counted": 71657,
+      "class_contribution_closure_passed": true,
+      "prediction_bias_metrics_passed": true
+    },
+    "C_freeze_R32": {
+      "array_rows_checked": 71657,
+      "raw_rows_checked": 1027,
+      "raw_rows_counted": 71657,
+      "class_contribution_closure_passed": true,
+      "prediction_bias_metrics_passed": true
+    },
+    "C_best_R23": {
+      "array_rows_checked": 71657,
+      "raw_rows_checked": 1027,
+      "raw_rows_counted": 71657,
+      "class_contribution_closure_passed": true,
+      "prediction_bias_metrics_passed": true
+    }
+  },
+  "max_array_metric_abs_error": 0.0,
+  "max_bootstrap_draw_abs_error": 1.8388068845354155e-16,
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 2024,
+    "all_model_feature_draws_independently_recomputed": true,
+    "temporal_contrast_same_global_user_draw": true
+  },
+  "target_contribution_and_symmetric_decomposition_closure": true,
+  "read_only_source_hashes_and_output_hashes_verified": true,
+  "scope": "All validation source rows, train frequencies, saved-array metrics and classes, output concentration, user sums, bootstrap draws and symmetric decomposition; sampled raw prediction aggregation.",
+  "limitations": [
+    "Only a fixed subset of original raw prediction rows was re-parsed for aggregation; all saved prediction arrays were recomputed.",
+    "No model loading, forward inference, optimization, checkpoint restore, remote access, or GPU use.",
+    "Post-hoc selected-model validation diagnosis; confidence intervals exclude training seed and model selection uncertainty."
+  ],
+  "numpy_version": "2.2.6",
+  "pyarrow_version": "25.0.0"
+}

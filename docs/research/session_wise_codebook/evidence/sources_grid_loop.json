@@ -1,0 +1,127 @@
+{
+  "review_date": "2026-10-23",
+  "scope": "Primary-method and author-code review only; no author environment installed, no model executed, no GPU used, no recommendation benefit established.",
+  "sources": [
+    {
+      "id": "axial_2019",
+      "title": "Axial Attention in Multidimensional Transformers",
+      "paper_url": "https://arxiv.org/html/1912.12180v1",
+      "sections_read": ["3.1 Axial attention", "3.2 Axial Transformers", "3.2.1 inner/outer decoder and semi-parallel sampling"],
+      "author_repository": "https://github.com/google-research/google-research/tree/master/axial",
+      "author_provenance_url": "https://github.com/google-research/google-research/blob/master/axial/README.md",
+      "commit": "7951440944924ac61b6e2f9a2a3c715834005c40",
+      "commit_basis": "Latest commit returned for path=axial on review date; source fetched at this immutable repository commit.",
+      "files_read": [
+        {
+          "path": "axial/transformers.py",
+          "url": "https://github.com/google-research/google-research/blob/7951440944924ac61b6e2f9a2a3c715834005c40/axial/transformers.py",
+          "sha256": "290b929380f1523a787ad30014adac75a14b07dcf94676e663fe812d3a79d3cd",
+          "line_count": 731,
+          "inspected_ranges": [[53, 116], [152, 177], [615, 649]],
+          "symbols": ["AttnBlock", "TransformerBlock", "make_col_block", "make_row_block", "_upper_context", "_row_autoregressive"]
+        },
+        {
+          "path": "axial/models.py",
+          "url": "https://github.com/google-research/google-research/blob/7951440944924ac61b6e2f9a2a3c715834005c40/axial/models.py",
+          "sha256": "a5e8e9cd0ddc1cd6b44f9317a66adccb31875bbeb861eb7a92f58997a51b0982",
+          "line_count": 121,
+          "inspection": "Entry points and model wrapper located; architecture conclusions rely on transformers.py, not this wrapper."
+        }
+      ],
+      "verified": ["Attention operates on one tensor axis at a time.", "Author code uses pre-normalized residual attention and MLP blocks.", "Full image generative model additionally uses causal masks and shifts."],
+      "transfer_limits": ["Full receptive field is not equivalence to one dense attention layer.", "History-time and SID-position axes require task-specific masking.", "Independent centroid numbering does not supply natural cross-book grid alignment."]
+    },
+    {
+      "id": "maxvit_2022",
+      "title": "MaxViT: Multi-Axis Vision Transformer",
+      "paper_url": "https://arxiv.org/html/2204.01697",
+      "sections_read": ["3 Multi-axis attention and architecture", "4 architecture ablations", "Appendix A.1 MaxViT Block and Algorithm 1"],
+      "author_repository": "https://github.com/google-research/maxvit",
+      "author_provenance_url": "https://github.com/google-research/maxvit/blob/main/README.md",
+      "commit": "70a470723b810f9eb05b2aa935cf75db8290c69e",
+      "commit_basis": "main commit resolved with GitHub API; immutable source fetched separately from the web tool's cached main view.",
+      "files_read": [
+        {
+          "path": "maxvit/models/maxvit.py",
+          "url": "https://github.com/google-research/maxvit/blob/70a470723b810f9eb05b2aa935cf75db8290c69e/maxvit/models/maxvit.py",
+          "sha256": "5fb2d83abbeff1149caf1b5a0beec24799f6aa4188170985003e7994e8634063",
+          "line_count": 1249,
+          "inspected_ranges": [[805, 875], [888, 953]],
+          "symbols": ["window_partition", "window_stitch_back", "grid_partition", "grid_stitch_back", "block_attn_branch", "grid_attn_branch", "call"]
+        }
+      ],
+      "verified": ["Local window attention is followed by sparse global grid attention in the main block.", "Grid groups have fixed G squared tokens; the number of groups grows with spatial resolution.", "MaxViT includes MBConv and FFNs; it is not identical to axial row/column attention."],
+      "transfer_limits": ["Four code positions do not justify copying square 7-by-7 image windows.", "Image ablation rankings are not recommendation performance evidence.", "Linear attention-pair complexity assumes fixed group size; projection and FFN costs remain."]
+    },
+    {
+      "id": "gridattn_eccv2024",
+      "title": "Grid-Attention: Enhancing Computational Efficiency of Large Vision Models without Fine-Tuning",
+      "paper_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/06640.pdf",
+      "doi": "10.1007/978-3-031-72973-7_4",
+      "sections_read": ["3.1 Observation and Inspiration", "3.2 Details of Grid-Attention", "3.3 Grid Distributing Strategies", "Algorithm 1", "4.1 implementation settings"],
+      "author_repository": "https://github.com/pengyuLPY/GridAttn",
+      "author_provenance": "Repository is explicitly linked in the official ECVA paper, page 2.",
+      "commit": "dd63f6f53f30600e844571c4f5b1968ac67fd35b",
+      "commit_basis": "main commit verified with commits/main API, then source read at immutable commit.",
+      "files_read": [
+        {
+          "path": "GridAttn_on_SAM_and_ExpeditSAM/Expedit-SAM/segment_anything/modeling/image_encoder.py",
+          "url": "https://github.com/pengyuLPY/GridAttn/blob/dd63f6f53f30600e844571c4f5b1968ac67fd35b/GridAttn_on_SAM_and_ExpeditSAM/Expedit-SAM/segment_anything/modeling/image_encoder.py",
+          "sha256": "453dbc3f765db2dc5c53f664cd92afffaf14f751601810807ec5aff82fae094d",
+          "line_count": 427,
+          "inspected_ranges": [[174, 213]],
+          "symbols": ["Block.forward", "grid_stride", "shuffle_and_recovery", "nlc_to_grid", "grid_to_nlc"]
+        },
+        {
+          "path": "GridAttn_on_SAM_and_ExpeditSAM/Expedit-SAM/segment_anything/modeling/utils_py.py",
+          "url": "https://github.com/pengyuLPY/GridAttn/blob/dd63f6f53f30600e844571c4f5b1968ac67fd35b/GridAttn_on_SAM_and_ExpeditSAM/Expedit-SAM/segment_anything/modeling/utils_py.py",
+          "sha256": "56823d65855a2bd7575772aa7175cfc00a313556c854a000b22b516b2780d720",
+          "line_count": 88,
+          "inspected_ranges": [[1, 88]],
+          "symbols": ["shuffle_and_recovery", "nlc_to_grid", "grid_to_nlc"]
+        }
+      ],
+      "verified": ["Grid Clustering uses reshape and permutation rather than averaging or k-means.", "S squared lower-resolution subimages retain the total number of tokens.", "The inspected SAM block shuffles grouping during training and uses fixed grouping at inference.", "Paper describes shuffle/deformable variants to reduce fixed-grid isolation."],
+      "transfer_limits": ["Vision spatial redundancy does not establish redundant or exchangeable codebook centroids.", "Fixed S retains quadratic attention cost in token count, improving a factor S squared.", "The note derives QK-transpose and attention-times-V costs from standard matrix shapes instead of propagating the paper's printed cubic HW matmul expression.", "No performance-preserving training-free claim is transferred to recommendation."]
+    },
+    {
+      "id": "universal_transformer_2018",
+      "title": "Universal Transformers",
+      "paper_url": "https://arxiv.org/html/1807.03819",
+      "sections_read": ["2.1 The Universal Transformer", "2.2 Dynamic halting", "Appendix C dynamic halting pseudocode"],
+      "author_repository": "https://github.com/tensorflow/tensor2tensor",
+      "author_provenance_url": "https://research.google/blog/moving-beyond-translation-with-the-universal-transformer/",
+      "commit": "bafdc1b67730430d38d6ab802cbd51f9d053ba2e",
+      "commit_basis": "master commit resolved with GitHub API, immutable utility implementation fetched.",
+      "files_read": [
+        {
+          "path": "tensor2tensor/models/research/universal_transformer_util.py",
+          "url": "https://github.com/tensorflow/tensor2tensor/blob/bafdc1b67730430d38d6ab802cbd51f9d053ba2e/tensor2tensor/models/research/universal_transformer_util.py",
+          "sha256": "f1a17f8662c3a520ab496b8fcd3fe475ecba3be844310b066962b69ed9ada136",
+          "line_count": 1482,
+          "inspected_ranges": [[195, 290], [560, 591], [1365, 1424]],
+          "symbols": ["universal_transformer_layer", "tf.foldl", "universal_transformer_basic", "universal_transformer_act", "step_preprocess"]
+        }
+      ],
+      "verified": ["Recurrence is over depth, not an RNN over sequence positions.", "Core weights are reused across refinement steps; position and step signals are available.", "Fixed-step and adaptive-halting variants are distinct implementations."],
+      "transfer_limits": ["Parameter sharing does not remove repeated forward computation.", "Changing per-request activations is different from changing global quantizer centroids.", "ACT theoretical conditional computation does not guarantee practical GPU latency reduction."]
+    }
+  ],
+  "local_code_checked": [
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/cross_pse.py",
+      "ranges": [[15, 17], [58, 72], [112, 134]],
+      "finding": "Existing CrossPSECodebookMixer flattens global M-by-K centroids into one MHA sequence. This is not the proposed L-by-M history activation grid."
+    }
+  ],
+  "derived_not_paper_claims": [
+    "Applying axial attention to the L-by-M history codeword grid.",
+    "Combining shared-depth loop with axial codeword attention.",
+    "Complexity examples at L=50, M=4 and M=4, K=256.",
+    "Code-index permutation sanity checks and task-specific stability controls."
+  ],
+  "rejected_locator": {
+    "url": "https://arxiv.org/html/2407.09057",
+    "reason": "This URL resolves to PersonificationNet, not Grid-Attention. It is not cited as a GridAttn source."
+  }
+}

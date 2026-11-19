@@ -1,0 +1,80 @@
+{
+  "status": "passed_all_200_actual_T_updates",
+  "T_updates": 200,
+  "T_blocks": 10,
+  "sample_occurrences": 204800,
+  "all_batch_hashes_exact": true,
+  "ordered_stream_matches_original_first200T": true,
+  "ordered_stream_sha256": "52471ad1b359f8c7463f2c8bd2d9892038ef0e53f6cf8ec4e3151892b932c9d0",
+  "R_updates_constant_within_each_T_block": true,
+  "original_noise_total_steps": 400,
+  "codebook_lr": 1e-05,
+  "mixer_lr": 0.0001,
+  "original_35R_cosine_lr_preserved_at_every_T": true,
+  "blocks": [
+    {
+      "phase": 5,
+      "original_phase": 5,
+      "half": 0,
+      "sha256": "b33a255410e568c53b4fe0e53562fe39c396b135ed525955993598c77eb596d6"
+    },
+    {
+      "phase": 9,
+      "original_phase": 5,
+      "half": 1,
+      "sha256": "e3a8d58ab7456e5bebfe6b5410c6d74a6e7ffa3269c429f97c13b03da5595078"
+    },
+    {
+      "phase": 13,
+      "original_phase": 9,
+      "half": 0,
+      "sha256": "62540ed0fee272db5335763b951923fb4f135e4f97a5fb7a9c75230e75e5491a"
+    },
+    {
+      "phase": 17,
+      "original_phase": 9,
+      "half": 1,
+      "sha256": "7da354c5ac7450b1d941e379170d24867132e4aa2de442833ac400fe65c38779"
+    },
+    {
+      "phase": 21,
+      "original_phase": 13,
+      "half": 0,
+      "sha256": "54e855633d023d4fb53953a3e8b772bcfb600f792bd7ff088721a20f9ba3e5b4"
+    },
+    {
+      "phase": 25,
+      "original_phase": 13,
+      "half": 1,
+      "sha256": "1c408268a4e50b844d67b50daa972d69246aa6817aeac7fb62f9498ac871abcd"
+    },
+    {
+      "phase": 29,
+      "original_phase": 17,
+      "half": 0,
+      "sha256": "d5a50ea41930f4589f8eb96585c4f730121c52a68c77ff9e06d286da3be01c38"
+    },
+    {
+      "phase": 33,
+      "original_phase": 17,
+      "half": 1,
+      "sha256": "668686a9ea6623b6bbd8158caf2c3a9a20f282909b05e98bd24d74c661164ebe"
+    },
+    {
+      "phase": 37,
+      "original_phase": 21,
+      "half": 0,
+      "sha256": "cac1a3b59180eeaef0e95438bd13c71b6dac2542f39ca3a902796246ca9d24ab"
+    },
+    {
+      "phase": 41,
+      "original_phase": 21,
+      "half": 1,
+      "sha256": "1e1f365cbeeced63b878a734001b7814546c8cbcef7f2dbf60da30e84d84e027"
+    }
+  ],
+  "snapshot_sha256": "9c301e7459c4c9409dba5f860117b49cadeb73990de1e6726a8932b43b5eb857",
+  "cpu_input_acceptance_sha256": "d5437f825813b6c66f71de81f33e2373d46b0348b4d529aa9d6677b36cd5d746",
+  "source_script_sha256": "e3e84661a5c61f9680f502af8b87cf7256155d331e386f09b11079cfc24902e3",
+  "limitation": "Completed T budget/order/noise/LR/counters only. All R updates, complete scientific endpoints, predictions, RNG persistence across R, final cold restore and resource closure remain separate requirements."
+}

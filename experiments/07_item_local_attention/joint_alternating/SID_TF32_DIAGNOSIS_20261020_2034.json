@@ -1,0 +1,766 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "utc": "2026-10-20T12:33:24.169121+00:00",
+  "tool_sha256": "c8e8d2b03db30b95542064064a6f3e6c8bca3a114c8311eddab20c73b61d7f69",
+  "goal_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2",
+  "torch": "2.6.0+cu118",
+  "numpy": "2.2.6",
+  "CPU_threads": 4,
+  "states": [
+    {
+      "variant": "control",
+      "kind": "best",
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/training_state/best_model.bin",
+      "sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "size_bytes": 36147558,
+      "code_positions": 48404,
+      "diger_optimizer_step": 30,
+      "strict_fp32_vs_fp64_argmin_mismatches": 0,
+      "methods": {
+        "strict_fp32_cpu": {
+          "argmin_mismatches": 1,
+          "saved_not_minimum_even_allowing_exact_ties": 1,
+          "max_saved_distance_gap": 1.8149614334106445e-05,
+          "minimum_top2_margin": 5.364418029785156e-06
+        },
+        "fp64_reference": {
+          "argmin_mismatches": 1,
+          "saved_not_minimum_even_allowing_exact_ties": 1,
+          "max_saved_distance_gap": 1.8232579739041466e-05,
+          "minimum_top2_margin": 5.396471372987044e-06
+        },
+        "tf32_nearest_even_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 1.6063451766967773e-05
+        },
+        "tf32_nearest_ties_away_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 1.6063451766967773e-05
+        }
+      },
+      "all_union_mismatch_examples": [
+        {
+          "item_id": 6381,
+          "digit_zero_based": 2,
+          "saved_code": 217,
+          "fp64_direct_saved_distance": 0.1810284854043432,
+          "fp64_direct_optimal_distance": 0.18101025282460417,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 193,
+              "saved_distance": 0.18102848529815674,
+              "minimum_distance": 0.18101033568382263,
+              "saved_minus_minimum": 1.8149614334106445e-05,
+              "top2_margin": 1.8149614334106445e-05,
+              "strict_fp64_optimal_code_distance": 0.18101033568382263
+            },
+            "fp64_reference": {
+              "argmin": 193,
+              "saved_distance": 0.18102848540434324,
+              "minimum_distance": 0.1810102528246042,
+              "saved_minus_minimum": 1.8232579739041466e-05,
+              "top2_margin": 1.8232579739041466e-05,
+              "strict_fp64_optimal_code_distance": 0.1810102528246042
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 217,
+              "saved_distance": 0.18098163604736328,
+              "minimum_distance": 0.18098163604736328,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 1.6063451766967773e-05,
+              "strict_fp64_optimal_code_distance": 0.18099769949913025
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 217,
+              "saved_distance": 0.18098163604736328,
+              "minimum_distance": 0.18098163604736328,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 1.6063451766967773e-05,
+              "strict_fp64_optimal_code_distance": 0.18099769949913025
+            }
+          }
+        }
+      ],
+      "union_mismatch_examples_count": 1,
+      "source_sha256_unchanged": true
+    },
+    {
+      "variant": "control",
+      "kind": "last",
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/training_state/last.pt",
+      "sha256": "4b20f1e9399043583b140f71496ee09c644e88dba52a3b673464e8ea637ec156",
+      "size_bytes": 136121120,
+      "code_positions": 48404,
+      "diger_optimizer_step": 60,
+      "strict_fp32_vs_fp64_argmin_mismatches": 0,
+      "methods": {
+        "strict_fp32_cpu": {
+          "argmin_mismatches": 4,
+          "saved_not_minimum_even_allowing_exact_ties": 4,
+          "max_saved_distance_gap": 6.008148193359375e-05,
+          "minimum_top2_margin": 3.993511199951172e-06
+        },
+        "fp64_reference": {
+          "argmin_mismatches": 4,
+          "saved_not_minimum_even_allowing_exact_ties": 4,
+          "max_saved_distance_gap": 6.0145965772084864e-05,
+          "minimum_top2_margin": 4.0400162455433986e-06
+        },
+        "tf32_nearest_even_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 8.702278137207031e-06
+        },
+        "tf32_nearest_ties_away_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 8.702278137207031e-06
+        }
+      },
+      "all_union_mismatch_examples": [
+        {
+          "item_id": 5087,
+          "digit_zero_based": 1,
+          "saved_code": 47,
+          "fp64_direct_saved_distance": 0.23512574580754278,
+          "fp64_direct_optimal_distance": 0.2350827154029124,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 103,
+              "saved_distance": 0.23512566089630127,
+              "minimum_distance": 0.23508280515670776,
+              "saved_minus_minimum": 4.285573959350586e-05,
+              "top2_margin": 4.285573959350586e-05,
+              "strict_fp64_optimal_code_distance": 0.23508280515670776
+            },
+            "fp64_reference": {
+              "argmin": 103,
+              "saved_distance": 0.23512574580754286,
+              "minimum_distance": 0.23508271540291237,
+              "saved_minus_minimum": 4.3030404630495234e-05,
+              "top2_margin": 4.3030404630495234e-05,
+              "strict_fp64_optimal_code_distance": 0.23508271540291237
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 47,
+              "saved_distance": 0.23511183261871338,
+              "minimum_distance": 0.23511183261871338,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.5033950805664062e-05,
+              "strict_fp64_optimal_code_distance": 0.23513686656951904
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 47,
+              "saved_distance": 0.23511183261871338,
+              "minimum_distance": 0.23511183261871338,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.5033950805664062e-05,
+              "strict_fp64_optimal_code_distance": 0.23513686656951904
+            }
+          }
+        },
+        {
+          "item_id": 6468,
+          "digit_zero_based": 2,
+          "saved_code": 206,
+          "fp64_direct_saved_distance": 0.21109583706772095,
+          "fp64_direct_optimal_distance": 0.21107364071342266,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 200,
+              "saved_distance": 0.21109583973884583,
+              "minimum_distance": 0.211073637008667,
+              "saved_minus_minimum": 2.2202730178833008e-05,
+              "top2_margin": 2.2202730178833008e-05,
+              "strict_fp64_optimal_code_distance": 0.211073637008667
+            },
+            "fp64_reference": {
+              "argmin": 200,
+              "saved_distance": 0.21109583706772095,
+              "minimum_distance": 0.2110736407134225,
+              "saved_minus_minimum": 2.219635429845379e-05,
+              "top2_margin": 2.219635429845379e-05,
+              "strict_fp64_optimal_code_distance": 0.2110736407134225
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 206,
+              "saved_distance": 0.21105992794036865,
+              "minimum_distance": 0.21105992794036865,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.1696090698242188e-05,
+              "strict_fp64_optimal_code_distance": 0.2110816240310669
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 206,
+              "saved_distance": 0.21105992794036865,
+              "minimum_distance": 0.21105992794036865,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.1696090698242188e-05,
+              "strict_fp64_optimal_code_distance": 0.2110816240310669
+            }
+          }
+        },
+        {
+          "item_id": 6511,
+          "digit_zero_based": 3,
+          "saved_code": 112,
+          "fp64_direct_saved_distance": 0.16059739670156425,
+          "fp64_direct_optimal_distance": 0.16059335668531877,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 0,
+              "saved_distance": 0.1605973243713379,
+              "minimum_distance": 0.16059333086013794,
+              "saved_minus_minimum": 3.993511199951172e-06,
+              "top2_margin": 3.993511199951172e-06,
+              "strict_fp64_optimal_code_distance": 0.16059333086013794
+            },
+            "fp64_reference": {
+              "argmin": 0,
+              "saved_distance": 0.16059739670156437,
+              "minimum_distance": 0.16059335668531882,
+              "saved_minus_minimum": 4.0400162455433986e-06,
+              "top2_margin": 4.0400162455433986e-06,
+              "strict_fp64_optimal_code_distance": 0.16059335668531882
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 112,
+              "saved_distance": 0.1606190800666809,
+              "minimum_distance": 0.1606190800666809,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.0444393157958984e-05,
+              "strict_fp64_optimal_code_distance": 0.16063952445983887
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 112,
+              "saved_distance": 0.1606190800666809,
+              "minimum_distance": 0.1606190800666809,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.0444393157958984e-05,
+              "strict_fp64_optimal_code_distance": 0.16063952445983887
+            }
+          }
+        },
+        {
+          "item_id": 10310,
+          "digit_zero_based": 0,
+          "saved_code": 125,
+          "fp64_direct_saved_distance": 0.1706559670111793,
+          "fp64_direct_optimal_distance": 0.17059582104540744,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 77,
+              "saved_distance": 0.17065590620040894,
+              "minimum_distance": 0.17059582471847534,
+              "saved_minus_minimum": 6.008148193359375e-05,
+              "top2_margin": 6.008148193359375e-05,
+              "strict_fp64_optimal_code_distance": 0.17059582471847534
+            },
+            "fp64_reference": {
+              "argmin": 77,
+              "saved_distance": 0.17065596701117935,
+              "minimum_distance": 0.17059582104540727,
+              "saved_minus_minimum": 6.0145965772084864e-05,
+              "top2_margin": 6.0145965772084864e-05,
+              "strict_fp64_optimal_code_distance": 0.17059582104540727
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 125,
+              "saved_distance": 0.17065531015396118,
+              "minimum_distance": 0.17065531015396118,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 8.702278137207031e-06,
+              "strict_fp64_optimal_code_distance": 0.1706640124320984
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 125,
+              "saved_distance": 0.17065531015396118,
+              "minimum_distance": 0.17065531015396118,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 8.702278137207031e-06,
+              "strict_fp64_optimal_code_distance": 0.1706640124320984
+            }
+          }
+        }
+      ],
+      "union_mismatch_examples_count": 4,
+      "source_sha256_unchanged": true
+    },
+    {
+      "variant": "item_local",
+      "kind": "best",
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/training_state/best_model.bin",
+      "sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "size_bytes": 37204442,
+      "code_positions": 48404,
+      "diger_optimizer_step": 30,
+      "strict_fp32_vs_fp64_argmin_mismatches": 0,
+      "methods": {
+        "strict_fp32_cpu": {
+          "argmin_mismatches": 3,
+          "saved_not_minimum_even_allowing_exact_ties": 3,
+          "max_saved_distance_gap": 1.8894672393798828e-05,
+          "minimum_top2_margin": 5.364418029785156e-06
+        },
+        "fp64_reference": {
+          "argmin_mismatches": 3,
+          "saved_not_minimum_even_allowing_exact_ties": 3,
+          "max_saved_distance_gap": 1.8938571795357184e-05,
+          "minimum_top2_margin": 5.35150633151904e-06
+        },
+        "tf32_nearest_even_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 2.980232238769531e-07
+        },
+        "tf32_nearest_ties_away_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 2.980232238769531e-07
+        }
+      },
+      "all_union_mismatch_examples": [
+        {
+          "item_id": 4161,
+          "digit_zero_based": 1,
+          "saved_code": 40,
+          "fp64_direct_saved_distance": 0.09313332397636222,
+          "fp64_direct_optimal_distance": 0.09311438540456675,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 105,
+              "saved_distance": 0.09313333034515381,
+              "minimum_distance": 0.09311443567276001,
+              "saved_minus_minimum": 1.8894672393798828e-05,
+              "top2_margin": 1.8894672393798828e-05,
+              "strict_fp64_optimal_code_distance": 0.09311443567276001
+            },
+            "fp64_reference": {
+              "argmin": 105,
+              "saved_distance": 0.0931333239763622,
+              "minimum_distance": 0.09311438540456685,
+              "saved_minus_minimum": 1.8938571795357184e-05,
+              "top2_margin": 1.8938571795357184e-05,
+              "strict_fp64_optimal_code_distance": 0.09311438540456685
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 40,
+              "saved_distance": 0.09307229518890381,
+              "minimum_distance": 0.09307229518890381,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.658367156982422e-05,
+              "strict_fp64_optimal_code_distance": 0.09309887886047363
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 40,
+              "saved_distance": 0.09307229518890381,
+              "minimum_distance": 0.09307229518890381,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.658367156982422e-05,
+              "strict_fp64_optimal_code_distance": 0.09309887886047363
+            }
+          }
+        },
+        {
+          "item_id": 6381,
+          "digit_zero_based": 2,
+          "saved_code": 217,
+          "fp64_direct_saved_distance": 0.18102872775863035,
+          "fp64_direct_optimal_distance": 0.18101931441270785,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 193,
+              "saved_distance": 0.18102866411209106,
+              "minimum_distance": 0.18101927638053894,
+              "saved_minus_minimum": 9.387731552124023e-06,
+              "top2_margin": 9.387731552124023e-06,
+              "strict_fp64_optimal_code_distance": 0.18101927638053894
+            },
+            "fp64_reference": {
+              "argmin": 193,
+              "saved_distance": 0.18102872775863044,
+              "minimum_distance": 0.1810193144127078,
+              "saved_minus_minimum": 9.41334592263754e-06,
+              "top2_margin": 9.41334592263754e-06,
+              "strict_fp64_optimal_code_distance": 0.1810193144127078
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 217,
+              "saved_distance": 0.1810150146484375,
+              "minimum_distance": 0.1810150146484375,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.980232238769531e-07,
+              "strict_fp64_optimal_code_distance": 0.18101531267166138
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 217,
+              "saved_distance": 0.1810150146484375,
+              "minimum_distance": 0.1810150146484375,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 2.980232238769531e-07,
+              "strict_fp64_optimal_code_distance": 0.18101531267166138
+            }
+          }
+        },
+        {
+          "item_id": 8862,
+          "digit_zero_based": 3,
+          "saved_code": 137,
+          "fp64_direct_saved_distance": 0.12685598582756757,
+          "fp64_direct_optimal_distance": 0.12684651476346467,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 64,
+              "saved_distance": 0.12685590982437134,
+              "minimum_distance": 0.1268465518951416,
+              "saved_minus_minimum": 9.357929229736328e-06,
+              "top2_margin": 9.357929229736328e-06,
+              "strict_fp64_optimal_code_distance": 0.1268465518951416
+            },
+            "fp64_reference": {
+              "argmin": 64,
+              "saved_distance": 0.12685598582756763,
+              "minimum_distance": 0.12684651476346454,
+              "saved_minus_minimum": 9.47106410309484e-06,
+              "top2_margin": 9.47106410309484e-06,
+              "strict_fp64_optimal_code_distance": 0.12684651476346454
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 137,
+              "saved_distance": 0.1268414855003357,
+              "minimum_distance": 0.1268414855003357,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 9.834766387939453e-06,
+              "strict_fp64_optimal_code_distance": 0.12685132026672363
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 137,
+              "saved_distance": 0.1268414855003357,
+              "minimum_distance": 0.1268414855003357,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 9.834766387939453e-06,
+              "strict_fp64_optimal_code_distance": 0.12685132026672363
+            }
+          }
+        }
+      ],
+      "union_mismatch_examples_count": 3,
+      "source_sha256_unchanged": true
+    },
+    {
+      "variant": "item_local",
+      "kind": "last",
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/training_state/last.pt",
+      "sha256": "5c85628b69b2939bd4b7c8690c5316259f2dc1eccf84cca0cbeaf534789595c5",
+      "size_bytes": 140877488,
+      "code_positions": 48404,
+      "diger_optimizer_step": 60,
+      "strict_fp32_vs_fp64_argmin_mismatches": 0,
+      "methods": {
+        "strict_fp32_cpu": {
+          "argmin_mismatches": 4,
+          "saved_not_minimum_even_allowing_exact_ties": 4,
+          "max_saved_distance_gap": 0.00010454654693603516,
+          "minimum_top2_margin": 1.5497207641601562e-06
+        },
+        "fp64_reference": {
+          "argmin_mismatches": 4,
+          "saved_not_minimum_even_allowing_exact_ties": 4,
+          "max_saved_distance_gap": 0.00010460294321379404,
+          "minimum_top2_margin": 1.5726915899572091e-06
+        },
+        "tf32_nearest_even_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 9.119510650634766e-06
+        },
+        "tf32_nearest_ties_away_cpu": {
+          "argmin_mismatches": 0,
+          "saved_not_minimum_even_allowing_exact_ties": 0,
+          "max_saved_distance_gap": 0.0,
+          "minimum_top2_margin": 9.119510650634766e-06
+        }
+      },
+      "all_union_mismatch_examples": [
+        {
+          "item_id": 4611,
+          "digit_zero_based": 1,
+          "saved_code": 67,
+          "fp64_direct_saved_distance": 0.19685491364409508,
+          "fp64_direct_optimal_distance": 0.19675031070088148,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 43,
+              "saved_distance": 0.196854829788208,
+              "minimum_distance": 0.19675028324127197,
+              "saved_minus_minimum": 0.00010454654693603516,
+              "top2_margin": 0.00010454654693603516,
+              "strict_fp64_optimal_code_distance": 0.19675028324127197
+            },
+            "fp64_reference": {
+              "argmin": 43,
+              "saved_distance": 0.19685491364409524,
+              "minimum_distance": 0.19675031070088145,
+              "saved_minus_minimum": 0.00010460294321379404,
+              "top2_margin": 0.00010460294321379404,
+              "strict_fp64_optimal_code_distance": 0.19675031070088145
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 67,
+              "saved_distance": 0.19688022136688232,
+              "minimum_distance": 0.19688022136688232,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 1.0251998901367188e-05,
+              "strict_fp64_optimal_code_distance": 0.1968904733657837
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 67,
+              "saved_distance": 0.19688022136688232,
+              "minimum_distance": 0.19688022136688232,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 1.0251998901367188e-05,
+              "strict_fp64_optimal_code_distance": 0.1968904733657837
+            }
+          }
+        },
+        {
+          "item_id": 4680,
+          "digit_zero_based": 1,
+          "saved_code": 42,
+          "fp64_direct_saved_distance": 0.11436022006821614,
+          "fp64_direct_optimal_distance": 0.11431829598034858,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 99,
+              "saved_distance": 0.11436033248901367,
+              "minimum_distance": 0.11431825160980225,
+              "saved_minus_minimum": 4.208087921142578e-05,
+              "top2_margin": 4.208087921142578e-05,
+              "strict_fp64_optimal_code_distance": 0.11431825160980225
+            },
+            "fp64_reference": {
+              "argmin": 99,
+              "saved_distance": 0.114360220068216,
+              "minimum_distance": 0.1143182959803487,
+              "saved_minus_minimum": 4.192408786729551e-05,
+              "top2_margin": 4.192408786729551e-05,
+              "strict_fp64_optimal_code_distance": 0.1143182959803487
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 42,
+              "saved_distance": 0.11432594060897827,
+              "minimum_distance": 0.11432594060897827,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 5.805492401123047e-05,
+              "strict_fp64_optimal_code_distance": 0.1143839955329895
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 42,
+              "saved_distance": 0.11432594060897827,
+              "minimum_distance": 0.11432594060897827,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 5.805492401123047e-05,
+              "strict_fp64_optimal_code_distance": 0.1143839955329895
+            }
+          }
+        },
+        {
+          "item_id": 4894,
+          "digit_zero_based": 3,
+          "saved_code": 38,
+          "fp64_direct_saved_distance": 0.20273489459315663,
+          "fp64_direct_optimal_distance": 0.20273332190156668,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 166,
+              "saved_distance": 0.2027348279953003,
+              "minimum_distance": 0.20273327827453613,
+              "saved_minus_minimum": 1.5497207641601562e-06,
+              "top2_margin": 1.5497207641601562e-06,
+              "strict_fp64_optimal_code_distance": 0.20273327827453613
+            },
+            "fp64_reference": {
+              "argmin": 166,
+              "saved_distance": 0.20273489459315663,
+              "minimum_distance": 0.20273332190156668,
+              "saved_minus_minimum": 1.5726915899572091e-06,
+              "top2_margin": 1.5726915899572091e-06,
+              "strict_fp64_optimal_code_distance": 0.20273332190156668
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 38,
+              "saved_distance": 0.20266342163085938,
+              "minimum_distance": 0.20266342163085938,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 0.0001043081283569336,
+              "strict_fp64_optimal_code_distance": 0.2027677297592163
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 38,
+              "saved_distance": 0.20266342163085938,
+              "minimum_distance": 0.20266342163085938,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 0.0001043081283569336,
+              "strict_fp64_optimal_code_distance": 0.2027677297592163
+            }
+          }
+        },
+        {
+          "item_id": 5087,
+          "digit_zero_based": 1,
+          "saved_code": 47,
+          "fp64_direct_saved_distance": 0.23518029144957708,
+          "fp64_direct_optimal_distance": 0.23514271945756682,
+          "arithmetic": {
+            "strict_fp32_cpu": {
+              "argmin": 103,
+              "saved_distance": 0.23518025875091553,
+              "minimum_distance": 0.23514282703399658,
+              "saved_minus_minimum": 3.743171691894531e-05,
+              "top2_margin": 3.743171691894531e-05,
+              "strict_fp64_optimal_code_distance": 0.23514282703399658
+            },
+            "fp64_reference": {
+              "argmin": 103,
+              "saved_distance": 0.23518029144957697,
+              "minimum_distance": 0.23514271945756693,
+              "saved_minus_minimum": 3.7571992010043687e-05,
+              "top2_margin": 3.7571992010043687e-05,
+              "strict_fp64_optimal_code_distance": 0.23514271945756693
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin": 47,
+              "saved_distance": 0.23519814014434814,
+              "minimum_distance": 0.23519814014434814,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 9.119510650634766e-06,
+              "strict_fp64_optimal_code_distance": 0.23520725965499878
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin": 47,
+              "saved_distance": 0.23519814014434814,
+              "minimum_distance": 0.23519814014434814,
+              "saved_minus_minimum": 0.0,
+              "top2_margin": 9.119510650634766e-06,
+              "strict_fp64_optimal_code_distance": 0.23520725965499878
+            }
+          }
+        }
+      ],
+      "union_mismatch_examples_count": 4,
+      "source_sha256_unchanged": true
+    }
+  ],
+  "model_or_SID_modified": false,
+  "scope": "CPU operand-rounding emulation only; not exact CUDA/TF32 replay or proof of historical CUDA flags. No tolerance-based acceptance.",
+  "arithmetic": "Original FP32 squared norms; only dot operands rounded from 23 to 10 fraction bits; CPU FP32 dot/combination then clamp_min(0). Strict FP64 reference retains the prior auditor's unclamped formula.",
+  "rounding_selfcheck": {
+    "status": "CPU_BIT_ROUNDING_SELFCHECK_PASS",
+    "cases": [
+      {
+        "name": "positive_zero",
+        "input_bits": "00000000",
+        "nearest_even_bits": "00000000",
+        "nearest_ties_away_bits": "00000000"
+      },
+      {
+        "name": "negative_zero",
+        "input_bits": "80000000",
+        "nearest_even_bits": "80000000",
+        "nearest_ties_away_bits": "80000000"
+      },
+      {
+        "name": "positive_exact",
+        "input_bits": "3f800000",
+        "nearest_even_bits": "3f800000",
+        "nearest_ties_away_bits": "3f800000"
+      },
+      {
+        "name": "negative_exact",
+        "input_bits": "bf800000",
+        "nearest_even_bits": "bf800000",
+        "nearest_ties_away_bits": "bf800000"
+      },
+      {
+        "name": "positive_below_half",
+        "input_bits": "3f800fff",
+        "nearest_even_bits": "3f800000",
+        "nearest_ties_away_bits": "3f800000"
+      },
+      {
+        "name": "positive_above_half",
+        "input_bits": "3f801001",
+        "nearest_even_bits": "3f802000",
+        "nearest_ties_away_bits": "3f802000"
+      },
+      {
+        "name": "negative_below_half",
+        "input_bits": "bf800fff",
+        "nearest_even_bits": "bf800000",
+        "nearest_ties_away_bits": "bf800000"
+      },
+      {
+        "name": "negative_above_half",
+        "input_bits": "bf801001",
+        "nearest_even_bits": "bf802000",
+        "nearest_ties_away_bits": "bf802000"
+      },
+      {
+        "name": "positive_even_tie",
+        "input_bits": "3f801000",
+        "nearest_even_bits": "3f800000",
+        "nearest_ties_away_bits": "3f802000"
+      },
+      {
+        "name": "negative_even_tie",
+        "input_bits": "bf801000",
+        "nearest_even_bits": "bf800000",
+        "nearest_ties_away_bits": "bf802000"
+      },
+      {
+        "name": "positive_odd_tie",
+        "input_bits": "3f803000",
+        "nearest_even_bits": "3f804000",
+        "nearest_ties_away_bits": "3f804000"
+      },
+      {
+        "name": "negative_odd_tie",
+        "input_bits": "bf803000",
+        "nearest_even_bits": "bf804000",
+        "nearest_ties_away_bits": "bf804000"
+      },
+      {
+        "name": "fractional_intermediate",
+        "input_bits": "3fa66666",
+        "nearest_even_bits": "3fa66000",
+        "nearest_ties_away_bits": "3fa66000"
+      },
+      {
+        "name": "positive_subnormal_tie",
+        "input_bits": "00001000",
+        "nearest_even_bits": "00000000",
+        "nearest_ties_away_bits": "00002000"
+      },
+      {
+        "name": "negative_subnormal_tie",
+        "input_bits": "80001000",
+        "nearest_even_bits": "80000000",
+        "nearest_ties_away_bits": "80002000"
+      }
+    ],
+    "input_unchanged": true,
+    "both_modes_idempotent": true,
+    "GPU_or_platform_used": false,
+    "scope": "Mantissa rounding unit cases only; no real checkpoint or CUDA acceptance."
+  },
+  "GPU_used": false
+}

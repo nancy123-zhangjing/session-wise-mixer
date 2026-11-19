@@ -1,0 +1,49 @@
+{
+  "schema": "stage07_item_local_joint_wrapper_CPU_acceptance_v1",
+  "status": "passed_CPU_guards_only",
+  "recorded_utc": "2026-10-20T03:16:04.225706+00:00",
+  "source": {
+    "path": "scripts/train/item_local_joint_gpu_job.py",
+    "sha256": "4c0d5e3f7ff1122e76e5d153e40f4b23aa6d1b2bc980c97a4c83055bf6ea2502"
+  },
+  "log": {
+    "path": "experiments/07_item_local_attention/joint_alternating/cpu_acceptance_20261020/wrapper/CPU_ITEM_LOCAL_JOINT_WRAPPER_GUARDS_20261020.json",
+    "sha256": "6e5be8bc4dd48990925974726064191163b173dbf7e8de367122f49a9f387d7f",
+    "original_path": ".runtime/stage07/CPU_ITEM_LOCAL_JOINT_WRAPPER_GUARDS_20261020.json",
+    "byte_identical_copy": true
+  },
+  "actual_guard_count": 21,
+  "checks": [
+    "AST_passed",
+    "default_smoke_budget_passed",
+    "prior_omits_used_time",
+    "smoke_process_over_900",
+    "smoke_platform_over_1100",
+    "total_over_28h",
+    "nonfinite_budget",
+    "insufficient_cleanup_margin",
+    "single_rank_environment_normalized",
+    "multi_process_environment_rejected",
+    "distributed_plugin_rejected",
+    "real_campaign_config_and_run_ids_passed",
+    "short_execution_commit_rejected",
+    "missing_smoke_not_accepted",
+    "smoke_invalid_resume_rejected",
+    "formal_invalid_resume_rejected",
+    "test_started_without_result_rejected",
+    "incompatible_resource_policy_rejected",
+    "failed_source_preflight_exit1_before_GPU_child",
+    "existing_attempt_directory_never_overwritten",
+    "no_torch_or_CUDA_imported"
+  ],
+  "scope": "Existing real CPU static/config/budget/negative guard checks; no additional tests were run for archival.",
+  "not_evaluated": [
+    "Actual H100 smoke or formal training",
+    "Full-Job runtime, convergence or GPU-utilisation/resource-policy compliance",
+    "Actual platform allocation duration, Job terminal state or GPU release",
+    "A successful model result artifact or full 13-input byte delivery"
+  ],
+  "source_unchanged": true,
+  "GPU_or_platform_operations": false,
+  "goal_complete": false
+}

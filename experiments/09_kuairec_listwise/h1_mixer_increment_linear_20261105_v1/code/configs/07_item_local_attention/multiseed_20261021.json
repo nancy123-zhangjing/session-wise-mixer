@@ -1,0 +1,25 @@
+{
+  "schema_version": "stage07_joint_multiseed_v1",
+  "campaign_id": "stage07_item_local_joint_multiseed_20261021_r1",
+  "seeds": [2025, 2026],
+  "recipe_id": "refined_joint",
+  "variants": {
+    "control": {"item_local_attention": {"enabled": false, "num_heads": 4, "dropout": 0.0}},
+    "item_local": {"item_local_attention": {"enabled": true, "num_heads": 4, "dropout": 0.0}}
+  },
+  "max_gpu_hours": 14.0,
+  "gpu_cap_scope": "execution_safety_cap_not_user_total_budget",
+  "prior_allocated_gpu_seconds": 0,
+  "gpu_type": "H100",
+  "gpu_count_per_run": 1,
+  "training_budget_policy": "fixed_45",
+  "final_evaluation": "separate_validation_beam32_256",
+  "initialization": "All arms reuse the same 13 locked Stage05 refined_joint warm-start artifacts, including the seed2024 catalog tokenizer and matching pretrained DiffGRM checkpoint. Only subsequent training rand_seed is 2025 or 2026. Pairwise base parameters, SID and RNG must match; cross-seed base hashes are reported rather than assumed equal. This is not independent end-to-end tokenizer pretraining.",
+  "training": "45 logical epochs: 5 recommender warmup epochs, then 10 cycles of 1 tokenizer phase and 3 recommender epochs; 35 recommender epochs and 60 accumulated tokenizer optimizer updates. Set patience from the frozen recipe's 5 to 0 so all four arms receive the same training quantity.",
+  "selection": "Preserve initial validation and evaluation every 5 recommender epochs, validation beam32 and weighted_score checkpoint selection. Evaluate each selected checkpoint separately on validation beam32 and beam256. No test-set evaluation in this campaign.",
+  "global_codebook_mixer_enabled": false,
+  "tokenizer_codebooks_trainable": true,
+  "recommendation_gradient_bridge": "diger_st",
+  "evaluation_level": "sid",
+  "historical_results_role": "seed2024 supplementary only"
+}

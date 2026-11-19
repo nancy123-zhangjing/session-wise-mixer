@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL_CPU_GATES_PASS",
+  "gates": [
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_item_local_attention.py"
+      ],
+      "returncode": 0,
+      "tests_passed": 8,
+      "skipped": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\nancy\\Documents\\experiment1\\tests\\test_item_local_training_state.py"
+      ],
+      "returncode": 0,
+      "tests_passed": 8,
+      "skipped": 0
+    }
+  ],
+  "source_sha256": {
+    "external/DiffGRM/genrec/models/DIFF_GRM/model.py": "3e79cf677351459b97de8a5654eaaf34992a794e91c4138ef1069369049e21f9",
+    "external/DiffGRM/genrec/models/DIFF_GRM/trainer.py": "a223213992d5a1e8d5fb6dd695119c7b48128660c1f77c8b308112772ae36ee1",
+    "external/DiffGRM/genrec/models/DIFF_GRM/training_state.py": "8fc67fb43dc83644b65a21128a35eaf30c0833e63eb94a701a729115e4957203",
+    "external/DiffGRM/genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+    "scripts/train/run_item_local_attention.py": "f6364279692ffb5b4ed24c7edc4028206d68519bb08b357eeb4fa7d3235628c8",
+    "scripts/train/item_local_gpu_job.py": "c36f07e50b795057c4e98394577af15e70f6fe7898609bf531d9446830cd5295",
+    "tests/test_item_local_attention.py": "b2841f33ea932a4306832395ec46962c0497073f1ab0ea5f89d7f16f549650a7",
+    "tests/test_item_local_training_state.py": "663b5494f3bdc3e6e308f13687b8d51d0cfa42f4b04a5ec91fc2e8b077255e43",
+    "configs/07_item_local_attention/item_local_seed2024.json": "40425a82cbd11e71626bb45ad35f4bc59a968a3ee7437cbb1ea574e05bb0d91e"
+  },
+  "scope": "Real CPU tensors and trainer loop with a substitute single-process Accelerator; not GPU acceptance"
+}

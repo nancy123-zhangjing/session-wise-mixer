@@ -1,0 +1,34 @@
+{
+  "main_shorttest_passed": true,
+  "common_eval_batch": 128,
+  "common_execution": {
+    "microbatch": 1024,
+    "effective_batch": 1024,
+    "gpu_static_ids": true,
+    "fused_adamw": true,
+    "compile": false,
+    "deterministic_algorithms": true,
+    "tf32": false
+  },
+  "restore": {
+    "H0": true,
+    "H1": true
+  },
+  "compile_probe": {
+    "adopted": false,
+    "timeout_seconds": 240
+  },
+  "estimates": {
+    "H0": {
+      "training_hours": 2.6637197136886837,
+      "validation_hours": 2.596620399713811,
+      "note": "Linear extrapolation only; excludes startup, checkpoint I/O and final test; short run is in LR warmup"
+    },
+    "H1": {
+      "training_hours": 2.6602825119158333,
+      "validation_hours": 2.597833380673516,
+      "note": "Linear extrapolation only; excludes startup, checkpoint I/O and final test; short run is in LR warmup"
+    }
+  },
+  "boundary": "Execution acceptance only; no recommendation-quality or paper-reproduction claim"
+}

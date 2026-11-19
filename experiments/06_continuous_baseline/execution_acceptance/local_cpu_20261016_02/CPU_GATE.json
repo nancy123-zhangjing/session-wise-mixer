@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "source": {
+    "files": {
+      "scripts/continuous/__init__.py": "b97bf2963ce5ebae2d5e93aec74bcfb6ac1a522e35ec16d3a4dd680c5d72346f",
+      "scripts/continuous/benchmark.py": "0dc1ffa8b3520df5eb88989225e015cc6f10a71a6acd8abc20c0fb759abda1f5",
+      "scripts/continuous/campaign.py": "483c50464fafd178d60aca46e7615d3a744c84f5fed126638a209970d79de19c",
+      "scripts/continuous/checkpoints.py": "3b7b008fb64d212309dc2446dcd05cab556cd597610f4f9d801769c926b5d38c",
+      "scripts/continuous/data.py": "1ba962a5a482465ecb80d35156a8546ad5f366889ce2f60eb74edbba6c95911d",
+      "scripts/continuous/delivery.py": "200ba13663f0bc99154b699dcfb0fea5bb72c56e1c1bb4b3c44b512fd7cf9a00",
+      "scripts/continuous/gpu_smoke.py": "cc60ed3a21fa6fab0e1ad9a015de21f4f9434fed158d78b733c18e0edc9c792e",
+      "scripts/continuous/metrics.py": "9d82871ba9d0eb36c45744ae05ef45de2dd93fff6bb7d02c9ec6bd7a10f4fc9f",
+      "scripts/continuous/model.py": "a07397df53e9c49866f3670956648720c2dc965af43b6ed6c0a9c08f8334c408",
+      "scripts/continuous/protocol.py": "38850b4e73e3247c2ed89698df85e6dda0cc6d1b939157f2679934411b6fedcf",
+      "scripts/continuous/resources.py": "6d3c206916c7c4099c667733a803d624bc529637587dce79a81aa59d0d939612",
+      "scripts/continuous/trainer.py": "0cccfa352b727c588b032eb235fe192a36481f40d3073d7ae4d146dc959ff5c6",
+      "scripts/continuous/workflow.py": "2e7cefadf9842ebc1210ff65f14aee58c5d24f41a43fbbcd7b49d99ba6220a35",
+      "scripts/train/run_continuous.py": "8a7733f238120cc0e2bf04722abb5812b6f9d7a515448a983d693e4e6b3d19e7",
+      "scripts/train/run_continuous_campaign.py": "fc6d821d00658274cead5e4318dd39e4d8fc976fefaa299d111121ca1fd61bed",
+      "scripts/checks/check_continuous_cpu.py": "056251a5e1e591b138f5c738a84d41d098a7e6ecbca9450152bf2322f0eac6c8",
+      "scripts/checks/preflight_continuous_remote.py": "a48ed6ba25b77003054f5771d704f68cdadbabc27d66837bd3b50b5ba50288c9",
+      "scripts/checks/verify_continuous_cache.py": "4e9af3054644f5886ae29ea626149a6961853dac83b63272a68b8316206e41bc",
+      "scripts/checks/verify_continuous_campaign.py": "102440a14a89e192fdbed3a6beb725dfafa33037d33236eb382cc35c421f4c16",
+      "scripts/checks/verify_continuous_data.py": "82fa60c2fd0edc49c1c16ffc74ad0e3415bb9cac7890fbde9be9c0c76480a70f",
+      "scripts/checks/verify_continuous_predictions.py": "28d14e2e6c8259f7209f0764db821b7e0a182cf8e855f6059deb78b5f6c25019",
+      "tests/test_continuous_campaign.py": "26cce0441bccc58f79d44e47f47a9ff887f8dc880447d0616b83dbe01ecea940",
+      "tests/test_continuous_data.py": "a95ed10fad1c06f7c4e86a6bd23235c2b81c99bae452accff44734c1247fa432",
+      "tests/test_continuous_delivery.py": "256feedec71b43ad870460938a8e2f82ef1722ca9c9a784bf959e0f6d4a5b3d7",
+      "tests/test_continuous_models.py": "4555f8889f9037d70bd72bd5bc725e8aeff17bb8c23e7960cc60be37a928d7ea",
+      "configs/06_continuous_baseline/search_manifest.json": "1bd95aa73002c341c0f57b37bf7e7654a6041e2071c5394317953c829210d895",
+      "experiments/06_continuous_baseline/upstream_sources.json": "410938b266fee7ba43406bf5ada8882a9632d1e57e891ca53ec83148fe258249"
+    },
+    "git_head": "fa6dd4f35b7bff42c78a2524d37b4896d7b19b34",
+    "git_status": "M README.md\n M docs/guides/README.md\n M scripts/continuous/benchmark.py\n M scripts/continuous/gpu_smoke.py\n M scripts/continuous/model.py\n M scripts/continuous/trainer.py\n M tests/test_continuous_models.py\n?? draft_bbd47eb9_folder/\n?? draft_e98ce1f0_folder/",
+    "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907"
+  },
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "source_unchanged": true,
+  "suites": [
+    {
+      "suite": "tests/test_continuous_models.py",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "tests/test_continuous_campaign.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "tests/test_continuous_delivery.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "tests/test_continuous_data.py",
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    }
+  ],
+  "tests": 73,
+  "skipped": 0,
+  "cache_verifier_command": [
+    "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\nancy\\Documents\\experiment1\\scripts\\checks\\verify_continuous_cache.py",
+    "--data",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage06_continuous\\data_20261015_a",
+    "--cache",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage06_continuous\\goal_20261015_cache",
+    "--report",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\06_continuous_baseline\\execution_acceptance\\local_cpu_20261016_02\\cache_verification.json"
+  ],
+  "cache_verifier_exit_code": 0,
+  "cache_manifest_sha256": "9d229a275d0c476e9c8d64a7797a0d2d1eada535cfe5ad81dc8118a518ab5519",
+  "data_manifest_sha256": "6ecbe2768c31a6c212146ac8d3f01a45bc72cfacd0794166fa4730d121a0fdfa",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.6.0+cpu",
+  "numpy": "2.2.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu_only": true,
+  "elapsed_seconds": 12.439359900003183
+}

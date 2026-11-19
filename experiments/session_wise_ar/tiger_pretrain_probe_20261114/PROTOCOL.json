@@ -1,0 +1,59 @@
+{
+ "doc": "TIGER RQ pretraining probe (user-approved, CPU only, isolated output).\n\nStep 1: from the shared T0/T1 parent, take 5 updates with (a) the formal Adagrad lr0.4\nand (b) AdamW lr1e-3, recording per-tensor relative weight change, encoder-output\nscale, codebook scale and reconstruction loss.\nStep 2: 500-epoch pretraining probes, changing ONLY the optimizer:\n  A  Adagrad lr0.4 (formal), B1 Adagrad lr0.05, B2 Adagrad lr0.01,\n  C  AdamW lr1e-3 wd1e-4, 50-epoch warmup then linear decay over the formal 20000-epoch\n     budget, grad-norm clip 1 (ETEGRec/DIGER/RQCD recipe).\nEach for no-Mixer (T0) and intra-layer Mixer (T1). Same parent, model, loss, batch size,\ndata order (same seeded permutation stream) and evaluation code as the formal run.\nHealth criteria are fixed before running (see HEALTH below); no recommender training,\nno formal artifact is read for writing.\n",
+ "health": {
+  "reconstruction_below": 0.5,
+  "min_layer_utilization": 0.9,
+  "max_bucket_at_most": 64,
+  "max_mixer_correction_ratio": 3.0,
+  "collision_note": "redundancy compared with the duplicate-feature floor of the content asset"
+ },
+ "configs": {
+  "A_adagrad_0.4": {
+   "kind": "adagrad",
+   "lr": 0.4
+  },
+  "B1_adagrad_0.05": {
+   "kind": "adagrad",
+   "lr": 0.05
+  },
+  "B2_adagrad_0.01": {
+   "kind": "adagrad",
+   "lr": 0.01
+  },
+  "C_adamw_1e-3": {
+   "kind": "adamw",
+   "lr": 0.001,
+   "wd": 0.0001,
+   "warmup_epochs": 50,
+   "clip": 1.0
+  }
+ },
+ "epochs": 500,
+ "eval_every": 50,
+ "parent_sha256": "3404b75ed4d88d365be029da7b6498dd135be13283ed40360a78ac466693a8b3",
+ "script_sha256": "0dcc1065e967e40477c75dcb78fd0bb9f2da9d9fa0098887a5afa1404fc48b91",
+ "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7",
+ "duplicate_feature_redundancy_floor": 0.08351976137211037,
+ "formal_rq": {
+  "input_dim": 256,
+  "hidden_dims": [
+   512,
+   256,
+   128
+  ],
+  "latent_dim": 32,
+  "levels": 3,
+  "codes": 256,
+  "beta": 0.25,
+  "epochs": 20000,
+  "batch_size": 1024,
+  "warmup_epochs": 0,
+  "eval_interval": 50,
+  "lr": 0.4,
+  "weight_decay": 0,
+  "kmeans_iterations": 100,
+  "sinkhorn_epsilon": 0,
+  "sinkhorn_iterations": 50,
+  "selection": "final"
+ }
+}

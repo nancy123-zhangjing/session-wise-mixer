@@ -1,0 +1,188 @@
+{
+  "dataset": "AmazonReviews2014",
+  "model": "DIFF_GRM",
+  "num_proc": 1,
+  "cache_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/workspace/data/cache",
+  "log_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/logs",
+  "tensorboard_log_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/tensorboard",
+  "ckpt_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/checkpoints",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "rand_seed": 2024,
+  "reproducibility": true,
+  "train_batch_size": 64,
+  "eval_batch_size": 8,
+  "lr": 0.01,
+  "weight_decay": 0.0,
+  "warmup_steps": 10000,
+  "steps": null,
+  "epochs": 200,
+  "max_grad_norm": 1.0,
+  "eval_interval": 5,
+  "patience": 5,
+  "topk": [
+    5,
+    10
+  ],
+  "metrics": [
+    "ndcg",
+    "recall"
+  ],
+  "val_metric": "weighted_score",
+  "category": "Beauty",
+  "metadata": "sentence",
+  "split": "leave_one_out",
+  "n_digit": 4,
+  "codebook_size": 256,
+  "share_embeddings": true,
+  "encoder_n_layer": 1,
+  "decoder_n_layer": 4,
+  "n_head": 4,
+  "n_embd": 256,
+  "n_inner": 1024,
+  "dropout": 0.1,
+  "embd_pdrop": 0.1,
+  "attn_pdrop": 0.1,
+  "resid_pdrop": 0.1,
+  "norm_type": "layernorm",
+  "norm_eps": 1e-05,
+  "share_decoder_output_embedding": true,
+  "beam_search_modes": [
+    "confidence"
+  ],
+  "random_beam": {
+    "beam_act": 64,
+    "beam_max": 64,
+    "seed": 42
+  },
+  "vectorized_beam_search": {
+    "top_k_final": 10,
+    "neg_inf_fp32": -1000000000.0,
+    "neg_inf_fp16": -65504.0,
+    "dedup_strategy": "simple",
+    "val": {
+      "beam_act": 32,
+      "beam_max": 32
+    },
+    "test": {
+      "beam_act": 256,
+      "beam_max": 256
+    },
+    "beam_act": 32,
+    "beam_max": 32
+  },
+  "beam_size": 10,
+  "max_generation_len": 4,
+  "masking_strategy": "guided",
+  "sequential_steps": "auto",
+  "sequential_paths": 1,
+  "guided_steps": "auto",
+  "guided_conf_metric": "msp",
+  "guided_refresh_each_step": false,
+  "guided_select": "least",
+  "mask_prob_random": false,
+  "mask_prob_random_min": 0.0,
+  "mask_prob_random_max": 1.0,
+  "mask_probs": null,
+  "mask_prob": 0.5,
+  "augment_factor": 4,
+  "max_history_len": 50,
+  "train_sliding": true,
+  "min_hist_len": 2,
+  "max_hist_len": 50,
+  "sent_emb_model": "sentence-transformers/sentence-t5-base",
+  "sent_emb_dim": 768,
+  "sent_emb_pca": 256,
+  "normalize_after_pca": true,
+  "sent_emb_batch_size": 128,
+  "sid_quantizer": "opq_pq",
+  "rq_kmeans_niters": 20,
+  "rq_kmeans_seed": 2026,
+  "sid_random_seed": 2026,
+  "opq_use_gpu": false,
+  "opq_gpu_id": 0,
+  "faiss_omp_num_threads": 16,
+  "force_regenerate_opq": false,
+  "disable_opq": false,
+  "temperature": 0.07,
+  "label_smoothing": 0.2,
+  "eval_start_epoch": 20,
+  "min_delta": 0.0,
+  "mask_schedule": {
+    "enabled": false
+  },
+  "ablate_decode": {
+    "enabled": false,
+    "per_digit_topk": null,
+    "beam": {
+      "val": {
+        "beam_act": 32
+      },
+      "test": {
+        "beam_act": 128
+      }
+    }
+  },
+  "eval_expand_sid_to_items": false,
+  "eval_expand_dedup": "first",
+  "diffusion_diagnostics_log_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/diagnostics",
+  "run_metadata_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/run_metadata",
+  "mixed_precision": "bf16",
+  "gradient_accumulation_steps": 16,
+  "warmup_ratio": 0.0,
+  "diffusion_loss_reduction": "per_view",
+  "dedup_strategy": "simple",
+  "evaluation_level": "sid",
+  "max_train_batches_per_epoch": null,
+  "max_eval_batches": null,
+  "reproduction_protocol": "author_repository_beauty_warmup_safe_early_stop",
+  "protocol_note": "README Beauty overrides plus official DIFF_GRM defaults; early stopping activates after warmup",
+  "early_stop_after_warmup": true,
+  "paper_repo_discrepancy": {
+    "paper_max_epochs": 100,
+    "repository_effective_epochs": 200,
+    "paper_label_smoothing": 0.1,
+    "repository_beauty_label_smoothing": 0.2,
+    "repository_default_eval_interval": 1,
+    "single_gpu_eval_interval": 5
+  },
+  "numerical_guard": true,
+  "numerical_guard_parameter_interval": 100,
+  "force_regenerate_codes": false,
+  "force_regenerate_pca": false,
+  "joint_crosspse_enabled": false,
+  "position_loss_log_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/positions",
+  "item_local_attention": {
+    "enabled": true,
+    "num_heads": 4,
+    "dropout": 0.0
+  },
+  "run_local_time": "stage07_item_local_seed2024_20261020_0045",
+  "training_state_dir": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/runs/stage07_item_local_seed2024_20261020_0045/training_state",
+  "resume_training_state": false,
+  "training_deadline_unix_seconds": 1792456502.7640653,
+  "training_deadline_reserve_seconds": 1200.0,
+  "training_state_identity": {
+    "engine_files": {
+      "genrec/models/DIFF_GRM/model.py": "e2688ba246f57d0d72a3bf8b4e5e939e42c93b1eb6fe522a890f375105d079c7",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/trainer.py": "1f7f7c03edadc4681694a513ef4751bba64f75094e4961876f7ddc910a781f1b",
+      "genrec/models/DIFF_GRM/training_state.py": "8fc67fb43dc83644b65a21128a35eaf30c0833e63eb94a701a729115e4957203"
+    },
+    "inputs": {
+      "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+      "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+      "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+      "data/cache/AmazonReviews2014/Beauty/processed/sentence-t5-base_pca256.sent_emb": "3c9fd15f30e6eb24989c4aac795c0ae15d1c45d2c6b2a4af06fd649054aa0328",
+      "data/cache/AmazonReviews2014/Beauty/processed/sentence-t5-base_pca256_OPQ4,IVF1,PQ4x8.sem_ids": "8fc56fb02c1a595ecdfc1c41adac69b5c271b9a51c08db29429e46a8a437c994",
+      "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+      "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe",
+      "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+      "data/diff_formal_embeddings/beauty_pse_fit_mask.npy": "4a8b77c1d638ea3c1888ac9aca27185c743d0b42f10410de4ae8d1a5c5641a74",
+      "data/diff_formal_embeddings/beauty_pse_fit_mask_summary.json": "386c64bfd6aaff9e24ea5b26a5e61701e985ef13e4df6a91865c529d86f9b01b",
+      "data/diff_formal_embeddings/beauty_sentence_t5_base_pca256.npy": "a98f2b1b42ae6ddec1ad7781c4817f1c2554eafc9de426b3f4bae4014df5e3f0",
+      "data/diff_formal_embeddings/beauty_sentence_t5_base_pca256_manifest.json": "1fd8883c21339275d1be6162969801a775de5868b30b40d279ea768933f6422e"
+    }
+  },
+  "device": "cuda",
+  "use_ddp": false
+}

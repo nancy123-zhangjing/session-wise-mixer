@@ -1,0 +1,181 @@
+{
+  "status": "APPROVED_WARMUPS_RUNNING",
+  "requested_cumulative_gpu_hours": 75,
+  "already_used_gpu_seconds": 656,
+  "formal_training_started": true,
+  "execution_source": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "runtime_config": "../preparation_20261027/runtime_efficiency_r2.json",
+  "runtime_config_sha256": "d8e3a40f9c7ac446dbca6f4e8b01811ee4598c0d4d07e18310f524afda9bd2bb",
+  "budget_sha256": "5d4295c50f518a2e5891146fd9d266fcaacaaedc9537a44cad46aef455e1525b",
+  "max_parallel_warmups": 2,
+  "max_parallel_branch_jobs": 4,
+  "ddp": false,
+  "jobs": [
+    {
+      "id": "H_shared_warmup",
+      "gpus": 1,
+      "depends_on": [],
+      "estimate_with_25pct_hours": 2.21503324614136,
+      "proposed_platform_max_hours": 2.4
+    },
+    {
+      "id": "J_shared_warmup",
+      "gpus": 1,
+      "depends_on": [],
+      "estimate_with_25pct_hours": 1.9666017206720425,
+      "proposed_platform_max_hours": 2.15
+    },
+    {
+      "id": "J0_train",
+      "gpus": 1,
+      "depends_on": [
+        "J_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.366677284132393,
+      "proposed_platform_max_hours": 16.55
+    },
+    {
+      "id": "J1_train",
+      "gpus": 1,
+      "depends_on": [
+        "J_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 15.645057976611294,
+      "proposed_platform_max_hours": 15.8
+    },
+    {
+      "id": "H0_train",
+      "gpus": 1,
+      "depends_on": [
+        "H_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.67066986141112,
+      "proposed_platform_max_hours": 16.85
+    },
+    {
+      "id": "H1_train",
+      "gpus": 1,
+      "depends_on": [
+        "H_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.63089042968285,
+      "proposed_platform_max_hours": 16.8
+    },
+    {
+      "id": "H0_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.6709651401714332,
+      "proposed_platform_max_hours": 0.85
+    },
+    {
+      "id": "H1_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.6703596486666357,
+      "proposed_platform_max_hours": 0.85
+    },
+    {
+      "id": "J0_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.9460517865265299,
+      "proposed_platform_max_hours": 1.1
+    },
+    {
+      "id": "J1_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.9495628221823103,
+      "proposed_platform_max_hours": 1.1
+    }
+  ],
+  "sum_proposed_job_caps_gpu_hours": 74.45,
+  "cumulative_including_prior_gpu_hours": 74.63222222222223,
+  "unassigned_shutdown_and_recovery_reserve_gpu_hours": 0.3677777777777749,
+  "rules": [
+    "Formal budget approved by the direct human reply recorded in BUDGET_APPROVAL.json.",
+    "Re-read live quotas and prevent duplicate job-name submission.",
+    "Each active job uses one H100; independent branches and final evaluations may run concurrently.",
+    "All four best checkpoints must be frozen before any final test.",
+    "Charge actual allocation through pod deletion, including startup/failures/idle.",
+    "Before any retry, recompute all used and currently reserved job-hours; never exceed cumulative 75 GPU hours.",
+    "Platform max-time is a hard fallback, not evidence that all work will finish; resume only from accepted checkpoints if needed.",
+    "Shared filesystem contention and trained-beam behavior can change timings."
+  ],
+  "settlement_verified": false,
+  "approval_sha256": "872967518ffab973e773f929099b803717fab86a96441ad9734ccde4078935e9",
+  "proposal_sha256": "bcbb6e947292660ac23c2b2d04a352a81d0e5c06783d4ba76178fc93a51e94db",
+  "authorization_receipt": "../preparation_20261027/BUDGET_APPROVAL.json",
+  "branch_training_started": false,
+  "already_used_gpu_seconds_scope": "Completed preparation jobs before the two active warmup allocations; not a live cumulative total.",
+  "actual_warmup_jobs": [
+    {
+      "name": "nancy-stage09-warmup-j-20261027-r1",
+      "architecture": "J",
+      "gpus": 1,
+      "node": "qb-prod-gpu002",
+      "status": "RUNNING",
+      "scheduled_at": "2026-10-27T20:35:08+08:00",
+      "pod_deleted_at": null,
+      "allocated_gpu_seconds": null,
+      "platform_max_hours": 2.15,
+      "training_progress_snapshot": {
+        "source": "../formal_execution_20261027/TRAINING_START.log",
+        "epoch": 1,
+        "phase": "R",
+        "r_updates": 113,
+        "t_updates": 0,
+        "complete": false
+      }
+    },
+    {
+      "name": "nancy-stage09-warmup-h-20261027-r1",
+      "architecture": "H",
+      "gpus": 1,
+      "node": "qb-prod-gpu146",
+      "status": "RUNNING",
+      "scheduled_at": "2026-10-27T20:35:13+08:00",
+      "pod_deleted_at": null,
+      "allocated_gpu_seconds": null,
+      "platform_max_hours": 2.4,
+      "training_progress_snapshot": {
+        "source": "../formal_execution_20261027/TRAINING_START.log",
+        "epoch": 1,
+        "phase": "R",
+        "r_updates": 59,
+        "t_updates": 0,
+        "complete": false
+      }
+    }
+  ],
+  "actual_submission_receipts": {
+    "../formal_execution_20261027/J_CREATE.json": "0d05f139b0b0b3f220bfdb22e4a2f92dd184d076542ea11b695575050ab0b2df",
+    "../formal_execution_20261027/H_CREATE.json": "20e335e292c68375a74a606382676bc74aeb7339f52d6bf5ec95951988cc266e",
+    "../formal_execution_20261027/STATUS_START.json": "45c2d9b1f3f0ecb5cf286c605966e396dcf36e69decfea7948a260f7a8d42b17",
+    "../formal_execution_20261027/j_EVENTS_START.json": "b6064b4dc9752fa0926d025e18e4a62e85de545b7c28405e30c4bdce5b2dea4a",
+    "../formal_execution_20261027/h_EVENTS_START.json": "bbe346d8f9102d37641fdd476a4e34a66d1ba7963843b140d8e6eee80e2ba204",
+    "../formal_execution_20261027/TRAINING_START.log": "c458c11b37d88e4bd901cb5079195a5aac07dd25b3db5e0ace1ccb2bdcce4cbe"
+  },
+  "continuation_note": "Goal automation is active. Inspect the existing J/H jobs and accepted complete warmup checkpoints before forking four branches. Do not duplicate warmup jobs. Verify the platform 3h GPU-utilization-below-40-percent recycling rule before branch submission; startup-only utilization is not sufficient evidence."
+}

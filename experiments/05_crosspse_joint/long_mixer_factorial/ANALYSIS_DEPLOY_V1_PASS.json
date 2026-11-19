@@ -1,0 +1,135 @@
+{
+  "status": "ANALYSIS_DEPLOY_AND_PARTIAL_PREFIX_CHECK_PASS_NOT_COMPLETION",
+  "utc": "2026-10-20T05:24:52.709029+00:00",
+  "archive_sha256": "8c57e4fb6de3a83fc2239571593e1d105a6753158fc7d3ccd6393d2c0724a94f",
+  "unit_tests": 13,
+  "summaries": {
+    "no_mixer_frozen": {
+      "arm": "no_mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 9,
+      "recommender_updates": 936,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 0,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.060680588472029694,
+        "hit_rate@10": 0.06662791217636274,
+        "ndcg@5": 0.04342854727424919,
+        "ndcg@10": 0.04545068760834658,
+        "weighted_score": 0.04968613294733555
+      },
+      "final_validation": {
+        "hit_rate@5": 0.0578187184188168,
+        "hit_rate@10": 0.06264812413361356,
+        "ndcg@5": 0.04321258343306092,
+        "ndcg@10": 0.04485328630301243,
+        "weighted_score": 0.04841225415272315
+      }
+    },
+    "no_mixer_joint": {
+      "arm": "no_mixer_joint",
+      "complete": false,
+      "recommender_epochs": 15,
+      "recommender_updates": 1560,
+      "tokenizer_updates": 24,
+      "noisy_calls": 768,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 12,
+      "best_validation": {
+        "hit_rate@5": 0.06273755757277646,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.04663113859436174,
+        "ndcg@10": 0.04814530879143168,
+        "weighted_score": 0.051967036679846194
+      },
+      "final_validation": {
+        "hit_rate@5": 0.061709073022403076,
+        "hit_rate@10": 0.06644904529803694,
+        "ndcg@5": 0.04611373192636164,
+        "ndcg@10": 0.04770369791032504,
+        "weighted_score": 0.051452767746086994
+      }
+    },
+    "mixer_frozen": {
+      "arm": "mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 15,
+      "recommender_updates": 1560,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 15,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      }
+    },
+    "mixer_joint": {
+      "arm": "mixer_joint",
+      "complete": false,
+      "recommender_epochs": 12,
+      "recommender_updates": 1248,
+      "tokenizer_updates": 18,
+      "noisy_calls": 576,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 12,
+      "best_validation": {
+        "hit_rate@5": 0.061619639583240175,
+        "hit_rate@10": 0.06631489513929258,
+        "ndcg@5": 0.04595067031917752,
+        "ndcg@10": 0.04751153671613017,
+        "weighted_score": 0.05127220878137095
+      },
+      "final_validation": {
+        "hit_rate@5": 0.061619639583240175,
+        "hit_rate@10": 0.06631489513929258,
+        "ndcg@5": 0.04595067031917752,
+        "ndcg@10": 0.04751153671613017,
+        "weighted_score": 0.05127220878137095
+      }
+    }
+  },
+  "controls": {
+    "common_recommender_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "frozen_loss_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "common_tokenizer_cycles": [
+      0,
+      1,
+      2
+    ]
+  },
+  "matplotlib_available": true,
+  "goal_complete": false
+}

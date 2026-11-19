@@ -1,0 +1,51 @@
+"""Wait for the verified transfer, then verify/extract and rebuild Git in fresh directories."""
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib, json, os, subprocess, sys, time
+
+ROOT = Path(__file__).resolve().parents[2]
+D = ROOT/'outputs/stage05_long'
+E = ROOT/'experiments/05_crosspse_joint/long_mixer_factorial'
+PY = ROOT/'.runtime/continuous_env/Scripts/python.exe'
+STATE = D/'LOCAL_BACKUP_PIPELINE_STATE_R1.json'
+def sha(p):
+    h=hashlib.sha256()
+    with p.open('rb') as f:
+        for d in iter(lambda:f.read(1024*1024),b''):h.update(d)
+    return h.hexdigest()
+def write(status, **extra):
+    v=dict(status=status, utc=datetime.now(timezone.utc).isoformat(), goal_complete=False, **extra)
+    t=STATE.with_suffix('.tmp');t.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8');os.replace(t,STATE)
+    print(json.dumps(v),flush=True)
+try:
+    write('WAITING_FOR_FULL_TRANSFER_SHA_SENTINEL')
+    deadline=time.monotonic()+2700
+    while not (D/'TRANSFER_COMPLETE_R3.json').is_file():
+        if time.monotonic()>deadline:raise TimeoutError('Verified transfer sentinel was not produced within 45 minutes')
+        time.sleep(5)
+    transport=json.loads((D/'TRANSFER_COMPLETE_R3.json').read_text(encoding='utf-8-sig'))
+    assert transport['status']=='FULL_TRANSPORT_BYTES_VERIFIED_NOT_EXTRACTED'
+    assert transport['archive_sha256']=='c2ad35b0c87b219e6435a970dfd62bf5677cf7e7c2924b34c53e48c6fec47af7'
+    byte_tool=ROOT/'scripts/analysis/pack_mixer_long_delivery.py'
+    git_tool=E/'delivery_tools/restore_git_from_final_backup.py'
+    assert sha(byte_tool)=='0f14add826b616073fd13d97b48b57981c4acb6cec40c38099a5125f8b112e31'
+    assert sha(git_tool)=='8ad022a9889d812b511588ad4d35f29691b210354b8079db0649406f131ff1c9'
+    extracted=D/'extract_r1/goal_20261020_long_mixer_v1';git_output=D/'git_restore_r1'
+    assert not extracted.exists() and not git_output.exists()
+    env=os.environ.copy()
+    env.update(OMP_NUM_THREADS='4',MKL_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',PYTHONIOENCODING='utf-8')
+    for label,argv,log in [
+        ('VERIFYING_EVERY_ARCHIVE_AND_MEMBER_BYTE', [str(PY),'-B',str(byte_tool),'--mode','verify','--package-dir',str(D/'package_r1'),'--output',str(extracted)], D/'local_byte_verify_r1.log'),
+        ('REBUILDING_BOTH_GIT_REPOSITORIES_FROM_FINAL_DOWNLOADED_BUNDLES',[str(PY),'-B',str(git_tool),'--package-dir',str(D/'package_r1'),'--backup-root',str(extracted),'--output-dir',str(git_output)], D/'local_git_restore_r1.log')]:
+        write(label)
+        with log.open('xb') as f: result=subprocess.run(argv,cwd=ROOT,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=900)
+        if result.returncode:raise RuntimeError(label+' exited '+str(result.returncode)+'; inspect '+str(log))
+    byte=extracted/'BYTE_VERIFICATION.json';git=git_output/'FINAL_GIT_RESTORE_PASS.json'
+    assert json.loads(byte.read_text(encoding='utf-8'))['status']=='FULL_BACKUP_BYTE_VERIFICATION_PASS_NOT_RESTORE'
+    assert json.loads(git.read_text(encoding='utf-8'))['status']=='FINAL_DOWNLOADED_BACKUP_GIT_RESTORE_PASS_NOT_MODEL_RESTORE'
+    write('LOCAL_FULL_BYTE_AND_GIT_RESTORE_PASS_PENDING_REMOTE_MODEL_BINDING',
+        byte_verification_sha256=sha(byte),git_restore_sha256=sha(git),
+        byte_receipt=str(byte.relative_to(ROOT)),git_receipt=str(git.relative_to(ROOT)))
+except Exception as error:
+    write('LOCAL_BACKUP_PIPELINE_FAILED_REVIEW_REQUIRED',error_type=type(error).__name__,error=str(error))
+    sys.exit(1)

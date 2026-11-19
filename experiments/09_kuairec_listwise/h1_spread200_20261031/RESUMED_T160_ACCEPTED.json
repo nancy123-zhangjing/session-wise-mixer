@@ -1,0 +1,33 @@
+{
+  "status": "passed_resumed_20T_samples_and_400T_clock",
+  "updates": 20,
+  "new_T_start": 141,
+  "new_T_end": 160,
+  "R_updates_unchanged": 18018,
+  "original_T_phase": 17,
+  "original_T_half": 1,
+  "ordered_block_sha256": "668686a9ea6623b6bbd8158caf2c3a9a20f282909b05e98bd24d74c661164ebe",
+  "exact_all_batch_hashes": true,
+  "noise_total_steps": 400,
+  "T_learning_rates": {
+    "codebook": 1e-05,
+    "mixer": 0.0001
+  },
+  "R_learning_rate_constant_during_T": 0.00016066336338464165,
+  "stage_metadata_bindings": [
+    {
+      "phase": 32,
+      "t_updates": 140,
+      "checkpoint_sha256": "4ae7fa773a72aca4b2e9e61d8defb2403579cd424c8233a83993df5ee2196e0f",
+      "state_sha256": "cad715e3a253f8726ceb0bcb56a3c9088c2b0ca3ec897f8423cbeeb1bfe9f8a6"
+    },
+    {
+      "phase": 33,
+      "t_updates": 160,
+      "checkpoint_sha256": "db8ae2f74831545444e033c86446452ef9e6f7765ca8751308a785e597725710",
+      "state_sha256": "04e887be80ce7d5a572636ee6a7974a37ce266997303abc197ea41c1f113cd37"
+    }
+  ],
+  "archive_sha256": "f25fa1708b56f2041327cf0b1fa67f66b58279fc008efa458bc484d640b9854e",
+  "limitation": "Sample/order/noise/LR/counter and receipt checks for this block only. No model-state cold restore or metric replay; complete trajectory and final restoration remain required."
+}

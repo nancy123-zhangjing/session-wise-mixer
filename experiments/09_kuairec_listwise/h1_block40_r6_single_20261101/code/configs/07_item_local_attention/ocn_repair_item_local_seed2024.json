@@ -1,0 +1,20 @@
+{
+  "experiment": "stage07_ocn_repair_pair",
+  "repair_campaign": "stage07_ocn_repair_seed2024_20261020_r1",
+  "variant": "item_local",
+  "run_id": "stage07_ocn_repair_item_local_seed2024_20261020_r1",
+  "baseline_id": "pse_seed2024",
+  "baseline_stage": "03",
+  "baseline_recipe": "pse_seed2024",
+  "baseline_run_id": "diff_formal_pse_4x256_repo_repro_v6_bf16",
+  "seed": 2024,
+  "max_gpu_hours": 28.0,
+  "item_local_attention": {"enabled": true, "num_heads": 4, "dropout": 0.0},
+  "resources": {"gpu_type": "H100", "gpu_count": 1},
+  "signal_rule": {
+    "ndcg_at_10_relative_gain_min": 0.03,
+    "hit_rate_at_10_must_not_decrease": true,
+    "comparator": "same-campaign repaired control",
+    "interpretation": "single-seed exploratory signal; not statistical significance"
+  }
+}

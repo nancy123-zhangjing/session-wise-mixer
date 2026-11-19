@@ -1,0 +1,30 @@
+{
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_mixer_g01_20261104_r1",
+  "bundle": "g01_bundle_r1.tar.gz",
+  "bundle_sha256": "9e76907b8c0e592cebe3925c39301763020191696431bc8aa191de5a3489d15d",
+  "bundle_bytes": 28831835,
+  "python_env": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+  "check_command": "python -B -u -m scripts.listwise_diffgrm.recovery_g01_check --parent <inputs.parent> --dataset <inputs.dataset> --assets <inputs.assets> --output <remote>/check_r1/RESULT.json --device cpu",
+  "forecast": {
+    "basis": "E formal job measured 35943 GPU-seconds for 200T+30R+evals; G01 is 200T+15R (~50.5% of updates) plus 5 full validations, subset diagnostics and 2 tests",
+    "estimate_hours": 5.5,
+    "with_margin_hours": 7.0,
+    "max_time_hours": 12
+  },
+  "budget": {
+    "prior_stage09_gpu_hours": 10.897222222222222,
+    "authorized_total_gpu_hours": 24,
+    "remaining_gpu_hours": 13.1,
+    "within_budget": true
+  },
+  "job": {
+    "name": "nancy-s09-g01-1104-r1",
+    "gpus": 1,
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "group": "开发区-H100-cuda12.8版本-183核",
+    "quota": "1,20,200",
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "shm_size": 32
+  }
+}

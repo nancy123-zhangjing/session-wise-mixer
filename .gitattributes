@@ -1,0 +1,102 @@
+# Stage 05 evidence and locks are byte-hashed. Never rewrite their line endings.
+experiments/05_crosspse_joint/evidence/** -text
+experiments/05_crosspse_joint/reproducibility/** -text
+experiments/05_crosspse_joint/results.csv -text
+experiments/05_crosspse_joint/runs.csv -text
+# The portable replay helper is hashed too; keep LF on Windows and Linux.
+tests/test_stage05_repro.py text eol=lf
+# Stages 01-04: preserve checksums across Windows/Linux clones.
+experiments/0[1-4]_*/evidence/** -text
+experiments/0[1-4]_*/reproducibility/** -text
+experiments/0[1-4]_*/derived/** -text
+experiments/0[1-4]_*/results.csv -text
+experiments/0[1-4]_*/summary.csv -text
+experiments/0[1-4]_*/runs.csv -text
+reproducibility/** -text
+tests/test_project_repro.py text eol=lf
+tests/test_project_layout.py text eol=lf
+tests/test_asset_locations.py text eol=lf
+tests/test_daily_repro.py text eol=lf
+tests/test_legacy_import.py text eol=lf
+scripts/legacy/*.py text eol=lf
+tests/test_entrypoint_layout.py text eol=lf
+tests/run_repro_checks.py text eol=lf
+# B2b moves YAML without changing bytes or runtime-relative paths.
+configs/**/*.yaml -text
+tests/test_config_layout.py text eol=lf
+
+# Categorized helpers and Linux launchers retain portable line endings.
+scripts/**/*.py text eol=lf
+scripts/**/*.sh text eol=lf
+scripts/**/*.ps1 text eol=lf
+tests/test_script_layout.py text eol=lf
+
+# Preserve the raw bytes checked by the B2c layout audit on Linux as well.
+experiments/04_crosspse_offline/report_assets/01_recommendation_metrics.svg -text
+experiments/04_crosspse_offline/report_assets/02_position_nll.svg -text
+experiments/04_crosspse_offline/report_assets/03_decode_order.svg -text
+experiments/04_crosspse_offline/report_assets/04_revealed_attention_bias.svg -text
+experiments/05_crosspse_joint/figures/validation_decoder_epochs.svg -text
+experiments/experiment_registry.json -text
+
+# Current runtime relocation code and Bash activation must survive Git sync.
+runtime_env.sh text eol=lf
+runtime_paths.py text eol=lf
+INSPIRE.md text eol=lf
+tests/test_runtime_paths.py text eol=lf
+
+# New stage-05 diagnostic/smoke receipts contain original file hashes.
+# Keep downloaded evidence and the SHA-bound JSON protocol byte-identical.
+experiments/05_crosspse_joint/diagnostics/**/raw/** -text
+experiments/05_crosspse_joint/pilots/**/preparation/** -text
+configs/diagnostics/*.json -text
+configs/05_crosspse_joint/pilots/*.json -text
+tests/test_diger_sid_consistency.py text eol=lf
+tests/test_diger_noise_pilot.py text eol=lf
+tests/test_diger_mixer_factorial.py text eol=lf
+
+# Fixed-recommender diagnostic receipts are byte-hashed too.
+experiments/05_crosspse_joint/pilots/feedback_update/hard_sid_compatibility/evidence/** -text
+
+# Stage 06 accepted receipts and unmodified upstream reference bytes are hashed.
+experiments/06_continuous_baseline/acceptance/** -text
+experiments/06_continuous_baseline/execution_acceptance/** -text
+experiments/06_continuous_baseline/reference_upstream/** -text
+experiments/06_continuous_baseline/upstream_sources.json -text
+configs/06_continuous_baseline/*.json -text
+tests/test_continuous*.py text eol=lf
+tests/test_queue_supervisor.py text eol=lf
+
+# Stage 07 snapshots and receipts are SHA-bound evidence across systems.
+experiments/07_item_local_attention/execution_acceptance/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+configs/07_item_local_attention/*.json -text
+tests/test_ocn_autocast_gradient.py text eol=lf
+tests/test_item_local_alternating_joint.py text eol=lf
+tests/test_item_local_joint_training_state.py text eol=lf
+experiments/07_item_local_attention/joint_alternating/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+
+# Retired Stage08 historical receipts and shared stage07 compatibility oracle.
+experiments/08_session_codeword/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+tests/fixtures/diffgrm_pre_item_local_model.py -text -whitespace
+
+# KuaiRec data protocol and audit receipts retain exact bytes across checkouts.
+configs/kuairec_listwise_v1.json -text
+docs/research/onerec_listwise/kuairec_preparation/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/research/onerec_listwise/kuairec_preparation/*.JSON -text whitespace=trailing-space,space-before-tab,cr-at-eol
+tests/test_kuairec*.py text eol=lf
+
+# Stage09 manifests, native receipts, reports and analysis are SHA-bound.
+# Keep exact bytes when restoring on Windows or Linux.
+experiments/09_kuairec_listwise/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/guides/PROJECT_HANDOFF.md -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/research/onerec_listwise/H1_TRAINING_STABILITY_REVIEW_20261028.md -text whitespace=trailing-space,space-before-tab,cr-at-eol
+
+# RQ Mixer immutable source/evidence manifests retain their original bytes.
+experiments/rqcd_mixer/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+configs/rqcd_mixer/** -text
+docs/research/rqcd_mixer/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+
+# Five-arm design/config hashes must survive Windows/Linux checkout unchanged.
+configs/session_wise_ar/** -text
+docs/research/session_wise_ar_mixer/** -text
+tests/test_session_ar*.py text eol=lf

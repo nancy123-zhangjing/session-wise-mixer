@@ -1,0 +1,41 @@
+{
+  "format": "stage09_spread200_gpu_ledger_v1",
+  "budget_gpu_hours": 24,
+  "preflight_max_gpu_hours": 0.5,
+  "max_concurrent_gpus": 1,
+  "model": "H100",
+  "jobs": [
+    {
+      "name": "nancy-s09-d-preflight-1031-r1",
+      "kind": "preflight",
+      "gpu_count": 1,
+      "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+      "created_at_ms": 1793381961000,
+      "platform_max_hours": 0.45,
+      "inner_max_seconds": 1500,
+      "status": "SUCCEEDED",
+      "allocated_start": null,
+      "allocated_end": null,
+      "finished_at_ms": 1793382103000,
+      "created_to_finished_seconds_upper_bound": 142
+    },
+    {
+      "name": "nancy-s09-d-1031-r1",
+      "kind": "formal",
+      "gpu_count": 1,
+      "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+      "created_at_ms": 1793382198000,
+      "scheduled_at": "2026-10-31T01:43:36+08:00",
+      "platform_max_hours": 23.9,
+      "inner_max_seconds": 86040,
+      "status": "RUNNING",
+      "allocated_start": "2026-10-31T01:43:36+08:00",
+      "allocated_end": null
+    }
+  ],
+  "allocated_gpu_hours": null,
+  "settlement_verified": false,
+  "status": "formal_running_actual_duration_pending",
+  "completed_created_to_finished_gpu_hours_upper_bound": 0.03944444444444444,
+  "budget_reservation_gpu_hours": 23.989444444444445
+}

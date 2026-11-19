@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-stage07-item-local-joint-formal-item-local-20261020-r1-r2",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda13.2版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 2.95,
+    "image": "pytorch:25.06-py3:25.06",
+    "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -u -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code/scripts/train/item_local_joint_gpu_job.py --mode formal --variant item_local --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2 --expected-root-commit 842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1 --expected-engine-commit 1c879252f6395d6e64462511823c3929b9c42c00 --max-seconds 10440 --platform-max-seconds 10620 --prior-allocated-seconds 19838 --training-reserve-seconds 1200 --attempt 1 --smoke-evidence /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/smoke_attempt1/receipt.json --budget-evidence /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/FORMAL_BUDGET_ITEM_LOCAL_LIVE_V2.json'",
+    "shared_memory_gib": 32
+  }
+}

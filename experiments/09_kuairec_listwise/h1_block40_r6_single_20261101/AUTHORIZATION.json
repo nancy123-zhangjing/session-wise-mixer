@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-01",
+  "user_instruction": "改成单张卡跑，沿用之前那个版本的代码，只需要修改必要的内容；删除八卡版本代码，修改好后继续跑实验、验收",
+  "supersedes": "Eight-GPU backend and distributed acceptance requirements in the active Goal",
+  "max_gpus": 1,
+  "global_batch": 1024,
+  "R_epochs": 35,
+  "T_updates": 200,
+  "schedule": "5 x (40T + 6R) after shared R5",
+  "total_budget_gpu_seconds": 86400,
+  "prior_eight_gpu_attempts_gpu_seconds": 3287,
+  "unnecessary_repeated_tests": "omit; reuse delivered D numerical implementation and verification, check only E schedule/order changes and observe first formal boundaries",
+  "delete_eight_gpu_code": "completed for eight-specific source, launch scripts, compiled files and staging packages via narrow file operations"
+}

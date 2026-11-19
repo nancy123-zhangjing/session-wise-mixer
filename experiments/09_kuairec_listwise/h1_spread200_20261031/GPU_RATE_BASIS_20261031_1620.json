@@ -1,0 +1,47 @@
+{
+  "query": "& 'C:/Users/nancy/AppData/Roaming/uv/tools/inspire-skill/Scripts/python.exe' -X utf8 'experiments/09_kuairec_listwise/h1_spread200_20261031/inspire_compat.py' --json --account sii-shared  job quota --workspace 分布式训练空间 --group 开发区-H100-cuda12.8版本-183核 --all",
+  "queried_for": "Current H100 continuation resource rate; not an actual settlement",
+  "result": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        }
+      ]
+    }
+  }
+}

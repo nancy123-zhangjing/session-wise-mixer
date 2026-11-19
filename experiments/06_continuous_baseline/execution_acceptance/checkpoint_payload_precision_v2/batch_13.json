@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "new_trials": 2,
+  "cumulative_trials": 60,
+  "records": [
+    {
+      "status": "PASS",
+      "task_id": "search__sasrec_fullce_30__seed2024",
+      "phase": "search",
+      "seed": 2024,
+      "protocol": "full_train_prefix_v1",
+      "config_sha256": "1ac7fd47e32620cf2944b49722bc2b813a4f67b94819b0695defe7b7a9fd59d8",
+      "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+      "gpu_uuid_at_training": "GPU-5b538adf-8822-b42b-21d4-3f69ca3ddb57",
+      "checks": {
+        "best": {
+          "sha256": "d84c5d4b1f31309e7816dd534db9834c0c23180476cb34cf928264e8ce376140",
+          "epoch": 52,
+          "updates": 26728,
+          "model_parameter_shapes_and_pad": "PASS",
+          "model_optimizer_tensors_finite": true,
+          "optimizer_shapes_steps_hyperparameters": "PASS",
+          "scheduler_epoch_lr": "PASS",
+          "checkpoint_curves_match_csv": true,
+          "python_numpy_cpu_rng_state_acceptance": "PASS",
+          "cuda_rng_byte_state_present": true
+        },
+        "last": {
+          "sha256": "852c370191e04fd7feefb0bd52221a580302db7710ab385eca7cd9edc738a6e2",
+          "epoch": 102,
+          "updates": 52428,
+          "model_parameter_shapes_and_pad": "PASS",
+          "model_optimizer_tensors_finite": true,
+          "optimizer_shapes_steps_hyperparameters": "PASS",
+          "scheduler_epoch_lr": "PASS",
+          "checkpoint_curves_match_csv": true,
+          "python_numpy_cpu_rng_state_acceptance": "PASS",
+          "cuda_rng_byte_state_present": true
+        }
+      },
+      "effective_gpu_uuid_after_resume": "GPU-5b538adf-8822-b42b-21d4-3f69ca3ddb57"
+    },
+    {
+      "status": "PASS",
+      "task_id": "search__sasrec_fullce_31__seed2024",
+      "phase": "search",
+      "seed": 2024,
+      "protocol": "full_train_prefix_v1",
+      "config_sha256": "a569e59f9c899e27fbf0128fe63f2c009f1435de48a88f55af8090147419ade7",
+      "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+      "gpu_uuid_at_training": "GPU-0c5e19c5-eac6-b7a4-6df0-bb1cf5c8832f",
+      "checks": {
+        "best": {
+          "sha256": "ea58a43835792af5fdf5eeb8f8a678004751c0f0d131f4a951e8f01185f9a79f",
+          "epoch": 23,
+          "updates": 23621,
+          "model_parameter_shapes_and_pad": "PASS",
+          "model_optimizer_tensors_finite": true,
+          "optimizer_shapes_steps_hyperparameters": "PASS",
+          "scheduler_epoch_lr": "PASS",
+          "checkpoint_curves_match_csv": true,
+          "python_numpy_cpu_rng_state_acceptance": "PASS",
+          "cuda_rng_byte_state_present": true
+        },
+        "last": {
+          "sha256": "41d81d8b62277691b9444dd534233744e2555254e13ac964d53e19ea3aa28e8e",
+          "epoch": 73,
+          "updates": 74971,
+          "model_parameter_shapes_and_pad": "PASS",
+          "model_optimizer_tensors_finite": true,
+          "optimizer_shapes_steps_hyperparameters": "PASS",
+          "scheduler_epoch_lr": "PASS",
+          "checkpoint_curves_match_csv": true,
+          "python_numpy_cpu_rng_state_acceptance": "PASS",
+          "cuda_rng_byte_state_present": true
+        }
+      },
+      "effective_gpu_uuid_after_resume": "GPU-0c5e19c5-eac6-b7a4-6df0-bb1cf5c8832f"
+    }
+  ],
+  "elapsed_seconds": 1.6246361276134849,
+  "max_runs": 8,
+  "max_seconds_before_next_trial": 180,
+  "audit_script_sha256": "ec043dacc3cab4eb03329b9333a90f0e0ed44ae9dac4a2899bd81e535d947b4f",
+  "scope": "Read-only completed best/last payloads on CPU; no optimizer updates, validation or test forwards; CUDA RNG checked as bytes, not replayed on GPU",
+  "pipeline": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2_supervisor_v3",
+  "supervisor_sha256": "578fdcaed74a47ac470abc393af62fa29e9bc2bd676fbe97533e1a49ad98dd91"
+}

@@ -1,0 +1,218 @@
+{
+  "config": {
+    "alignment": {
+      "crosspse_attention_scope": "full",
+      "crosspse_dropout": 0.0,
+      "crosspse_heads": 4,
+      "crosspse_learn_residual_scale": false,
+      "crosspse_residual_scale_init": 1.0,
+      "crosspse_train_base_codebooks": true,
+      "crosspse_zero_init_attention_output": true,
+      "joint_diger_assignment_temperature": 0.1,
+      "joint_diger_gumbel_noise_end": 0.2,
+      "joint_diger_gumbel_noise_start": 1.0,
+      "joint_diger_softmax_temperature_end": 1.0,
+      "joint_diger_softmax_temperature_start": 1.0,
+      "joint_diger_uncertainty_decay": "cosine",
+      "joint_gradient_mode": "diger_st"
+    },
+    "architecture": "H",
+    "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_stage0_20261117_v1/assets",
+    "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_stage0_20261117_v1/dataset",
+    "evaluation": {
+      "aggregate_ks": [
+        10,
+        20,
+        50
+      ],
+      "aggregation": "list_score_order_then_item_position_first_occurrence",
+      "batch_size": 128,
+      "candidate_lists": 32,
+      "collision_rule": "reconstruction_error_then_original_id",
+      "ev_min": 1.0,
+      "filter_history": false,
+      "protocol": "l5o",
+      "selection": "ev_ndcg@5",
+      "sensitivity_beam": 256,
+      "test_beam": 32,
+      "tie_break": "earlier",
+      "val_beam": 32
+    },
+    "execution": {
+      "batched_frontier": true,
+      "compile": false,
+      "device_resident_cache": true,
+      "fused_adamw": true,
+      "keep_validated_checkpoints": true,
+      "optimized_io": true,
+      "optimized_model_checks": true,
+      "vectorized_cache": true
+    },
+    "history_max": 128,
+    "list_length": 5,
+    "model": {
+      "attn_pdrop": 0.1,
+      "codebook_size": 256,
+      "current_split": "val",
+      "decoder_n_layer": 4,
+      "dedup_strategy": "simple",
+      "diffusion_loss_reduction": "per_view",
+      "dropout": 0.1,
+      "encoder_n_layer": 1,
+      "guided_conf_metric": "msp",
+      "guided_refresh_each_step": false,
+      "guided_select": "least",
+      "guided_steps": 4,
+      "item_local_attention": {
+        "enabled": false
+      },
+      "label_smoothing": 0.2,
+      "masking_strategy": "guided",
+      "n_digit": 4,
+      "n_embd": 256,
+      "n_head": 4,
+      "n_inner": 1024,
+      "norm_eps": 1e-05,
+      "norm_type": "layernorm",
+      "resid_pdrop": 0.1,
+      "share_decoder_output_embedding": true
+    },
+    "protocol_id": "kuairec_l5o_pse_diffgrm_v1",
+    "provenance": "docs/research/onerec_listwise/L5O_IMPLEMENTATION_20261117.md",
+    "seed": 2024,
+    "training": {
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_eps": 1e-08,
+      "anchor_weight": 0.01,
+      "balance_temperature": 0.1,
+      "balance_weight": 0.01,
+      "checkpoint_every_updates": 100,
+      "codebook_lr": 1e-05,
+      "cycles": 10,
+      "decoder_lr": 0.001,
+      "decoder_warmup_updates": 500,
+      "decoder_weight_decay": 0.0,
+      "deterministic_algorithms": true,
+      "effective_batch_size": 1024,
+      "max_grad_norm": 1.0,
+      "microbatch_size": 1024,
+      "mixer_lr": 0.0001,
+      "r_epochs_per_cycle": 3,
+      "r_updates_per_unit": 693,
+      "recommendation_weight": 1.0,
+      "reconstruction_weight": 1.0,
+      "sia_weight": 0.0,
+      "t_updates_per_cycle": 40,
+      "tokenizer_weight_decay": 0.0001,
+      "validate_every_r_unit": true,
+      "warmup_epochs": 5
+    }
+  },
+  "asset_manifest": "59ddee433b6557d75bd05bd80260959d5fc952325e22ff0ac57c2cff149ef291",
+  "data": {
+    "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+    "files": {
+      "config.json": {
+        "bytes": 1269,
+        "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+      },
+      "item_map.json": {
+        "bytes": 653690,
+        "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+      },
+      "item_catalog.parquet": {
+        "bytes": 801420,
+        "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+      },
+      "item_text.jsonl": {
+        "bytes": 7724679,
+        "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+      },
+      "train_seen.json": {
+        "bytes": 177258,
+        "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+      },
+      "train.parquet": {
+        "bytes": 533947591,
+        "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+      },
+      "validation.parquet": {
+        "bytes": 10356757,
+        "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+      },
+      "test.parquet": {
+        "bytes": 10354214,
+        "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+      }
+    },
+    "history_max": 128,
+    "list_length": 5,
+    "pad_id": 0
+  },
+  "code": {
+    "scripts/listwise_diffgrm/__init__.py": "23b895b1c072e3c8a22aa3e8b4d906ad315a35a668cb46fa1e77a21efbdbfb60",
+    "scripts/listwise_diffgrm/alignment.py": "ec13c12fa03e54f360a0670f347c2d1f148053c3444a2332f7e17f36cdfe1c13",
+    "scripts/listwise_diffgrm/analysis.py": "4e056eecfded4ff2c1e25ecc1c32a348f01004f31d1b649946ea544f2aa79bdd",
+    "scripts/listwise_diffgrm/asset_diagnostics.py": "9e4be481b3652c834b6a057690b3283ea9c47496ae6c5ef467ba918485011afa",
+    "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+    "scripts/listwise_diffgrm/data.py": "56020697df05d6975bebbabd19f142faa5879928c4a72e82aaadff36ae77a0e8",
+    "scripts/listwise_diffgrm/decoding.py": "646e9174853f4e8f6bdc8c5ebf4519ef3da03149570b40944bdd4c285eec819d",
+    "scripts/listwise_diffgrm/encode_text.py": "3602360c2b67c24eef167c612ee9fba144d79003efddff95a8792aab06d1ac52",
+    "scripts/listwise_diffgrm/encoder_cpu_probe.py": "c4f4fb5428e21e4a7f84bb9ef095ba771354f3462fedc15c3bbdf415f8ef2bc9",
+    "scripts/listwise_diffgrm/execution.py": "53c4ac5723b9f4a2fa557d4f2e6fbcaf802c35ba9e1ce8417e8701b8c3961c80",
+    "scripts/listwise_diffgrm/faiss_cpu_smoke.py": "b9a06a5093983750a206a373edd0dcb4216b5f2ef24bb10ab62dbb7253690675",
+    "scripts/listwise_diffgrm/l5o_evaluation.py": "eb8b7e477777034f13b0e90a2a82e66b7cafa4af60576d30d5a927c50b01535e",
+    "scripts/listwise_diffgrm/metrics.py": "2f2223d8966d3bb0ebe153e71f421bf2fa97862c50161fd74821af04142f16bb",
+    "scripts/listwise_diffgrm/model.py": "c0ac945ad61e299fd10b26580fced45d5caedad95d408542f9ddf09d58e8f10e",
+    "scripts/listwise_diffgrm/model_manifest.py": "eef37ca9d23521c1d3c854e066f512d090e1970e0461704fd621bf0c9fcf3a39",
+    "scripts/listwise_diffgrm/prefix_decoder.py": "4a72c0a7b6b841b5f2b99e2524f703ff44dbdebe0cd906deec014e95875ca3ad",
+    "scripts/listwise_diffgrm/preflight.py": "ecc3aa03527e0ce3ca4cf0efcbfcc1476d57e66b1e50e059f4040b99c0cbc94f",
+    "scripts/listwise_diffgrm/prepare_assets.py": "caf8dd5db0126ae3792069c579da05dd2ee23d9686be9a33571d7e88eb49a79b",
+    "scripts/listwise_diffgrm/rebind_static_assets.py": "59b88d34b613c35ceeb64c73a8df821af8508313b7a80f0dac803bc4a6577270",
+    "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+    "scripts/listwise_diffgrm/recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+    "scripts/listwise_diffgrm/recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+    "scripts/listwise_diffgrm/recovery35_preflight.py": "fbaf56bad6860f394d82a92258957032d845bfa89267bc8567337c083bede230",
+    "scripts/listwise_diffgrm/recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+    "scripts/listwise_diffgrm/recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+    "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+    "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+    "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+    "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0",
+    "scripts/listwise_diffgrm/run.py": "b3c17dac34ef047303f060ec13b4e7bbff2c96c903c26fdd8efbacb38aa0b3d1",
+    "scripts/listwise_diffgrm/runtime.py": "3841660fae1502e73203e72726e44beaa6979352c024e182dec2b24696d12d46",
+    "scripts/listwise_diffgrm/spread200.py": "dd6d73fbde357af55e6d69be0fbd3c9d7e44757a8e7896b34a05aed1bd43f9cb",
+    "scripts/listwise_diffgrm/spread200_preflight.py": "ed298f4455bf096edc8511f198aa8d6db5a89d0f81d685858c047e12c083334f",
+    "scripts/listwise_diffgrm/spread200_run.py": "f5eacd9f50688c463d3b0f8c3d87210cb388df1f32a627ff7f36f9778dfe4459",
+    "scripts/listwise_diffgrm/subset.py": "33f6fb79033ba31d2ec454c19e7b4c2cad38abaf3c926f263c6f6ff2e23aee2a",
+    "scripts/listwise_diffgrm/tokenizer_cpu_smoke.py": "481041f47f5b438a83f0616330b0f9fc1fae71bb6fa6a8a8003756f1cbb51738",
+    "scripts/listwise_diffgrm/training.py": "058a2041ffdff8dab2246e91d5e9480101bed32a596b07eaa00a3097878314f8",
+    "scripts/kuairec_data/l5o.py": "44d2a3fd9188b34ad75639c388dd7d69eca3637c99d9d1fa64b6f750916db8d0",
+    "scripts/kuairec_data/l5o_metrics.py": "bf0ffa46fc5573c945800c7022043e33c2dd352561a0c8043a6ddd1366b06b43"
+  },
+  "engine": {
+    "genrec/dataset.py": "d7f016dcfbab0c296bc58616e9e0ac642b7b9f7150e67ba508c426a87b071e38",
+    "genrec/evaluator.py": "386d384385c833ecaf31282ae870a18cfb3452e45873edb86f24872876e24964",
+    "genrec/model.py": "67906006e4b7f966815638702d10f1c25cb82a4e12556ec695ee4aaf4c9a1286",
+    "genrec/models/DIFF_GRM/__init__.py": "07e3bd8a1473570ef1b008185927b301a0e51231077ea364aa44367b2fe737d2",
+    "genrec/models/DIFF_GRM/ablate_decode.py": "2916ea320389da7fbc5084df4e26b4edb0a9f8808d7acd3a702a4dc9e73c8b56",
+    "genrec/models/DIFF_GRM/beam.py": "d7bfb5758627e69a93efec9020a7d63637f7e53400e70f6617e20b4fc28b5f9e",
+    "genrec/models/DIFF_GRM/collate.py": "e319e271c5f4c294763cedb4647e8d1e8481b0db72b692e5fd852b060f5af4cb",
+    "genrec/models/DIFF_GRM/comb_topk.py": "bdb20b667b23fe4a6e70645c8f6bd836e4673c5066eb62a5f5a3b67918b1383e",
+    "genrec/models/DIFF_GRM/cross_pse.py": "6e99ee1f7b6047fa1b5eac26f66e710238ed7f8e3f44906bf72db017e8748851",
+    "genrec/models/DIFF_GRM/evaluator.py": "f69d352b52f3cfa7bdafcc66ceffacf289f8e85061ce5d272fa259c32216111a",
+    "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+    "genrec/models/DIFF_GRM/joint_cross_pse.py": "1e9bb701b28b773d6a4631e511b41323fe31921040a30aefd8bd616c27ac8d13",
+    "genrec/models/DIFF_GRM/model.py": "a9345b67fc09476753191e2459572ffbc877624051cf04ce7bf0f589371d027c",
+    "genrec/models/DIFF_GRM/tokenizer.py": "e7eab2444e652adf04c9888191f96e8e1aa6e0e0c9f6a9adf08d75599810e35a",
+    "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+    "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+    "genrec/pipeline.py": "8df6ced213c2556bdbf16fe48d07624ab3caea75bf425497391a8fbb23d1f719",
+    "genrec/tokenizer.py": "c0c7cbf5449d0eef7861b1cf4ebfd83b75061d642cdbe459da6891ce978ae54f",
+    "genrec/trainer.py": "ed94f3872d1491ebb4b8bca5c9c9331f5b1e674306e728031f6c649c804ac3a2",
+    "genrec/utils.py": "6797bd202220573bbb782d8a9cb736cbc2361cbb9dd82a968bddc4df3a9b913a"
+  }
+}

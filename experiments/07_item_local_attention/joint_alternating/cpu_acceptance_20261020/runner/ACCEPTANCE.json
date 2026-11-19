@@ -1,0 +1,66 @@
+{
+  "status": "CPU_RUNNER_CONTRACTS_PASS_GPU_UNVERIFIED",
+  "created_utc": "2026-10-20T03:15:55.489672+00:00",
+  "runner": {
+    "path": "scripts/train/run_item_local_joint.py",
+    "sha256": "0681a6c92a12de655cf36d4586a608685be24508708b1917430a470231acd9b8",
+    "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00"
+  },
+  "logs": [
+    {
+      "file": "CPU_ITEM_LOCAL_JOINT_RUNNER_20261020.log",
+      "sha256": "bbdf218f55737351e5636fad6a50f9aaced8ada8f59764914c8bc9bcef92c537",
+      "size_bytes": 920,
+      "status": "passed_cpu_contracts",
+      "raw_source": ".runtime/stage07/CPU_ITEM_LOCAL_JOINT_RUNNER_20261020.log"
+    },
+    {
+      "file": "CPU_ITEM_LOCAL_JOINT_RECOVERY_HELPER_20261020.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "status": "failed_fixture_before_verification",
+      "raw_source": ".runtime/stage07/CPU_ITEM_LOCAL_JOINT_RECOVERY_HELPER_20261020.log"
+    },
+    {
+      "file": "CPU_ITEM_LOCAL_JOINT_RECOVERY_HELPER_20261020_v2.log",
+      "sha256": "c3c63609f52db6321142dff7df3b839fc4db0accdec3edb2b312e34c53c52ec9",
+      "size_bytes": 681,
+      "status": "passed_cpu_recovery_helper",
+      "raw_source": ".runtime/stage07/CPU_ITEM_LOCAL_JOINT_RECOVERY_HELPER_20261020_v2.log"
+    },
+    {
+      "file": "CPU_ITEM_LOCAL_JOINT_RUNNER_FINAL_20261020.log",
+      "sha256": "04a523fe8e1578d4ebbee3e49f21aa515c85bcacb8de09fe58089b29dae87999",
+      "size_bytes": 615,
+      "status": "passed_final_source_contracts",
+      "raw_source": ".runtime/stage07/CPU_ITEM_LOCAL_JOINT_RUNNER_FINAL_20261020.log"
+    }
+  ],
+  "passed_scope": [
+    "actual CLI help and AST; import/prepare failure path without torch or CUDA",
+    "locked Stage05 Refined recipe merge and metadata audit; identity/input/metric negative cases",
+    "actual four-layer Decoder CPU BF16 rec/tokenizer/rec forwards, backwards and Adam phase isolation; nearest-SID and mapping checks",
+    "actual runner recovery helper restores model/Adam/LambdaLR/RNG/joint runtime; 16 microbatches execute one recommender update while tokenizer/SID stay fixed",
+    "once-only test diagnostic snapshots survive simulated recovery truncation; damaged snapshots rejected"
+  ],
+  "boundaries": [
+    "Catalogue/data are synthetic for neural CPU checks. Recovery helper additionally uses a minimal CPU accumulation adapter, not the actual GPU Accelerator.",
+    "The first recovery fixture lacked collate_fn and failed before restore. Its empty raw log is preserved; the corrected v2 fixture passed.",
+    "The earlier broad CPU-contract log records source 2db4366b; the recovery-helper v2 and final static checks record the frozen 0681a6c source. Later source changes only tightened variant/root guards and isolated HF cache paths.",
+    "No new tests were run while packaging this receipt. CPU checks do not establish H100/BF16/accumulation16 acceptance."
+  ],
+  "remote": {
+    "new_runner_control_prepare_executed": false,
+    "new_runner_item_local_prepare_executed": false,
+    "new_joint_gpu_smoke_executed": false,
+    "new_joint_formal_training_executed": false,
+    "basis": "This agent executed no platform operations; no two-arm runner PREPARED/execution acceptance receipt exists in the local joint campaign delivery at packaging time. Parent execution remains the authority for later platform changes.",
+    "historical_asset_readonly_check": {
+      "path": "experiments/07_item_local_attention/joint_alternating/REMOTE_INPUT_ASSET_CHECK.json",
+      "sha256": "66eae0de9d0970b3511a9048f1d24e7a9076cdc35cd5241aef9062fa8f82a5c8",
+      "status": "JOINT_INPUT_ASSETS_VERIFIED",
+      "checked_utc": "2026-10-20T03:05:15.041693+00:00",
+      "note": "Existing read-only historical-asset verification is not the new runner prepare/copy/configuration gate."
+    }
+  }
+}

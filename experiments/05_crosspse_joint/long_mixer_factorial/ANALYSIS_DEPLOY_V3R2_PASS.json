@@ -1,0 +1,495 @@
+{
+  "status": "ANALYSIS_DEPLOY_AND_PARTIAL_PREFIX_CHECK_PASS_NOT_COMPLETION",
+  "utc": "2026-10-20T05:38:58.469916+00:00",
+  "archive_sha256": "2a95d2d53ac53a5adcdb7f1b0f43eff5beb42414f76a6e19f169b63066d3f2f5",
+  "unit_tests": 25,
+  "actual_partial_complete_checkpoint_checks": {
+    "no_mixer_frozen": {
+      "model_tensor_sha256": "9a17d5e090406672232826fe675e1d7aa7be78eecafe5c3858c0e48f9ca5f0c9",
+      "SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "recommender_epochs": 14,
+      "tokenizer_updates": 0,
+      "optimizer_state_counts": {
+        "recommender": 84
+      },
+      "actual_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "actual_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "no_mixer_joint": {
+      "model_tensor_sha256": "2324f2788112c94ac6596d612c0a9c7b471133f951eaf76f96598a44f0b48a9e",
+      "SID_sha256": "d5aff88e22a8352868219f5a5bd6642fd5408a263ec1e31412fcb3100c967230",
+      "recommender_epochs": 19,
+      "tokenizer_updates": 30,
+      "optimizer_state_counts": {
+        "recommender": 84,
+        "tokenizer": 1
+      },
+      "actual_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10650,
+          "collided_items": 2177,
+          "collision_rate": 0.17990248739773573,
+          "collision_groups": 726,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7281,
+            "collision_rate": 0.6016858110899925,
+            "collision_groups": 2130,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9855,
+            "collided_items": 3309,
+            "collision_rate": 0.2734484753326171,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10650,
+            "collided_items": 2177,
+            "collision_rate": 0.17990248739773573,
+            "collision_groups": 726,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "actual_SID_change_since_initial": {
+        "changed_items": 9,
+        "item_change_rate": 0.0007437401867614247,
+        "changed_digits": 9,
+        "digit_change_rate": 0.00018593504669035617,
+        "per_position_change_rate": [
+          0.00016527559705809436,
+          0.00016527559705809436,
+          0.00016527559705809436,
+          0.00024791339558714154
+        ]
+      }
+    },
+    "mixer_frozen": {
+      "model_tensor_sha256": "789597fda20d45d9abe2f7300346b6e412610cc4c1c9024e9df9322bbc8ef42c",
+      "SID_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+      "recommender_epochs": 19,
+      "tokenizer_updates": 0,
+      "optimizer_state_counts": {
+        "recommender": 84
+      },
+      "actual_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10652,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 725,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 129
+          },
+          "2": {
+            "unique_semantic_ids": 6950,
+            "collided_items": 7282,
+            "collision_rate": 0.6017684488885217,
+            "collision_groups": 2131,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9857,
+            "collided_items": 3307,
+            "collision_rate": 0.27328319973555903,
+            "collision_groups": 1063,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 725,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "actual_SID_change_since_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mixer_joint": {
+      "model_tensor_sha256": "74741955c3fa9e830d880a09856598a17b0fb7943d3de5c7c848db4e9fac20d4",
+      "SID_sha256": "6785bdc47aafe233e0e5cf99452024519d588e63b203bd8752a19194b30ebe55",
+      "recommender_epochs": 15,
+      "tokenizer_updates": 24,
+      "optimizer_state_counts": {
+        "recommender": 84,
+        "tokenizer": 9
+      },
+      "actual_SID_statistics": {
+        "full_sid": {
+          "unique_semantic_ids": 10651,
+          "collided_items": 2174,
+          "collision_rate": 0.17965457400214857,
+          "collision_groups": 724,
+          "largest_group": 40
+        },
+        "prefixes": {
+          "1": {
+            "unique_semantic_ids": 256,
+            "collided_items": 12099,
+            "collision_rate": 0.9998347244029419,
+            "collision_groups": 254,
+            "largest_group": 130
+          },
+          "2": {
+            "unique_semantic_ids": 6948,
+            "collided_items": 7280,
+            "collision_rate": 0.6016031732914635,
+            "collision_groups": 2127,
+            "largest_group": 57
+          },
+          "3": {
+            "unique_semantic_ids": 9859,
+            "collided_items": 3303,
+            "collision_rate": 0.27295264854144285,
+            "collision_groups": 1061,
+            "largest_group": 43
+          },
+          "4": {
+            "unique_semantic_ids": 10651,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "collision_groups": 724,
+            "largest_group": 40
+          }
+        },
+        "positions": [
+          {
+            "position": 0,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 1,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 2,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          },
+          {
+            "position": 3,
+            "codebook_size": 256,
+            "used_codes": 256,
+            "utilization_rate": 1.0
+          }
+        ]
+      },
+      "actual_SID_change_since_initial": {
+        "changed_items": 114,
+        "item_change_rate": 0.009420709032311379,
+        "changed_digits": 117,
+        "digit_change_rate": 0.00241715560697463,
+        "per_position_change_rate": [
+          0.003636063135278076,
+          0.0020659449632261795,
+          0.001818031567639038,
+          0.002148582761755227
+        ]
+      }
+    }
+  },
+  "common_initial_independently_verified_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+  "summaries": {
+    "no_mixer_frozen": {
+      "arm": "no_mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 14,
+      "recommender_updates": 1456,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.046117802811922716,
+        "ndcg@10": 0.0477573918575561,
+        "weighted_score": 0.05165670304319084
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.046117802811922716,
+        "ndcg@10": 0.0477573918575561,
+        "weighted_score": 0.05165670304319084
+      }
+    },
+    "no_mixer_joint": {
+      "arm": "no_mixer_joint",
+      "complete": false,
+      "recommender_epochs": 19,
+      "recommender_updates": 1976,
+      "tokenizer_updates": 30,
+      "noisy_calls": 960,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 12,
+      "best_validation": {
+        "hit_rate@5": 0.06273755757277646,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.04663113859436174,
+        "ndcg@10": 0.04814530879143168,
+        "weighted_score": 0.051967036679846194
+      },
+      "final_validation": {
+        "hit_rate@5": 0.061709073022403076,
+        "hit_rate@10": 0.06644904529803694,
+        "ndcg@5": 0.04611373192636164,
+        "ndcg@10": 0.04770369791032504,
+        "weighted_score": 0.051452767746086994
+      }
+    },
+    "mixer_frozen": {
+      "arm": "mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 19,
+      "recommender_updates": 1976,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 15,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      }
+    },
+    "mixer_joint": {
+      "arm": "mixer_joint",
+      "complete": false,
+      "recommender_epochs": 15,
+      "recommender_updates": 1560,
+      "tokenizer_updates": 24,
+      "noisy_calls": 768,
+      "best_epoch": 15,
+      "best_tokenizer_updates": 24,
+      "best_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06577829450431516,
+        "ndcg@5": 0.04726762664567026,
+        "ndcg@10": 0.04841812683075063,
+        "weighted_score": 0.05189016069969519
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06577829450431516,
+        "ndcg@5": 0.04726762664567026,
+        "ndcg@10": 0.04841812683075063,
+        "weighted_score": 0.05189016069969519
+      }
+    }
+  },
+  "controls": {
+    "common_recommender_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "frozen_loss_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "common_tokenizer_cycles": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "matplotlib_available": true,
+  "goal_complete": false
+}

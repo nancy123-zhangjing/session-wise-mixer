@@ -1,0 +1,28 @@
+{
+  "scope": "Real CPU static/config/budget/negative guards only; no GPU, platform, or fabricated successful model results",
+  "status": "passed",
+  "checks": [
+    "AST_passed",
+    "default_smoke_budget_passed",
+    "prior_omits_used_time",
+    "smoke_process_over_900",
+    "smoke_platform_over_1100",
+    "total_over_28h",
+    "nonfinite_budget",
+    "insufficient_cleanup_margin",
+    "single_rank_environment_normalized",
+    "multi_process_environment_rejected",
+    "distributed_plugin_rejected",
+    "real_campaign_config_and_run_ids_passed",
+    "short_execution_commit_rejected",
+    "missing_smoke_not_accepted",
+    "smoke_invalid_resume_rejected",
+    "formal_invalid_resume_rejected",
+    "test_started_without_result_rejected",
+    "incompatible_resource_policy_rejected",
+    "failed_source_preflight_exit1_before_GPU_child",
+    "existing_attempt_directory_never_overwritten",
+    "no_torch_or_CUDA_imported"
+  ],
+  "source_sha256": "4c0d5e3f7ff1122e76e5d153e40f4b23aa6d1b2bc980c97a4c83055bf6ea2502"
+}

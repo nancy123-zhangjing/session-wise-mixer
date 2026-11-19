@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-12",
+  "change": "Align four new configs with historical multiseed training microbatch 256",
+  "configs": [
+    {
+      "path": "configs/09_kuairec_listwise/h0_prefix_asymmetric.json",
+      "previous_microbatch": 16,
+      "microbatch": 256,
+      "effective_batch": 1024,
+      "accumulation_steps": 4,
+      "training_config_matches_historical": true,
+      "sha256": "5dcc31be66b03bb9bded7561e55a0338bb82c19467f6bae7c81064cd2104e82d"
+    },
+    {
+      "path": "configs/09_kuairec_listwise/h0_prefix_cross_attention.json",
+      "previous_microbatch": 16,
+      "microbatch": 256,
+      "effective_batch": 1024,
+      "accumulation_steps": 4,
+      "training_config_matches_historical": true,
+      "sha256": "483553807f5870819bfe87f1b1a29890d4697faede208cf9689d3f5a6f24b734"
+    },
+    {
+      "path": "configs/09_kuairec_listwise/h1_prefix_asymmetric.json",
+      "previous_microbatch": 16,
+      "microbatch": 256,
+      "effective_batch": 1024,
+      "accumulation_steps": 4,
+      "training_config_matches_historical": true,
+      "sha256": "5dcc31be66b03bb9bded7561e55a0338bb82c19467f6bae7c81064cd2104e82d"
+    },
+    {
+      "path": "configs/09_kuairec_listwise/h1_prefix_cross_attention.json",
+      "previous_microbatch": 16,
+      "microbatch": 256,
+      "effective_batch": 1024,
+      "accumulation_steps": 4,
+      "training_config_matches_historical": true,
+      "sha256": "483553807f5870819bfe87f1b1a29890d4697faede208cf9689d3f5a6f24b734"
+    }
+  ],
+  "formal_training_started": false,
+  "note": "Prior CPU optimization equivalence remains an execution-path test, not an equivalence claim between microbatch 16 and 256. GPU capacity/performance not tested."
+}

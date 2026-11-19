@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "families": {
+    "sasrec_fullce": {
+      "completed_searches": 31,
+      "top3_not_unlocked": true
+    },
+    "esasrec": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "esasrec_16",
+        "esasrec_19",
+        "esasrec_08"
+      ],
+      "confirmation_trials": 6,
+      "exact_configs_and_seeds": true
+    }
+  },
+  "runs_at_300_epoch_cap": [
+    {
+      "task_id": "search__esasrec_29__seed2024",
+      "phase": "search",
+      "seed": 2024,
+      "protocol": "full_train_prefix_v1",
+      "epochs": 300,
+      "best_epoch": 255,
+      "updates": 154200,
+      "maximum_logged_epoch_last_gradient_norm": 19.28558349609375,
+      "bindings_and_checkpoint_receipts": "PASS"
+    }
+  ],
+  "queue_sha256": "275db6a731b85a62bdaace76f81f12ae52c7bda0aab3bec2802ec4da564113db",
+  "test_metrics_read": false,
+  "scope": "First real Top-3 confirmation boundary only; no configuration or final model selected",
+  "audit_script_sha256": "b3e8a895e942d61f56ed279ccdd643670726e3977824f2359caa78c270606a79"
+}

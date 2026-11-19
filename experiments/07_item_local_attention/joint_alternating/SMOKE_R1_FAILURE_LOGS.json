@@ -1,0 +1,117 @@
+{
+  "success": true,
+  "data": {
+    "logs": [
+      {
+        "message": "watch file /etc/exit_code/<redacted>-worker-0",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:23:38.732581586+08:00",
+        "timestamp_ms": "1792466618732",
+        "timestamp_str": "2026-10-20T03:23:38.732Z"
+      },
+      {
+        "message": "[control] Traceback (most recent call last):",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410180534+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]   File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/scripts/train/run_item_local_joint.py\", line 976, in <module>",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410252801+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]     main()",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410270853+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]   File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/scripts/train/run_item_local_joint.py\", line 972, in main",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410274818+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]     run(args, prepared)",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410444665+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]   File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/scripts/train/run_item_local_joint.py\", line 766, in run",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410451999+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control]     import genrec.models.DIFF_GRM.trainer as trainer_module",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410599933+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[control] ImportError: cannot import name 'trainer' from 'DIFF_GRM' (unknown location)",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:43.410621461+08:00",
+        "timestamp_ms": "1792466683410",
+        "timestamp_str": "2026-10-20T03:24:43.410Z"
+      },
+      {
+        "message": "[wrapper] {\"status\": \"failed_or_incomplete\", \"receipt\": \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/smoke_attempt1/receipt.json\"}",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:45.963312389+08:00",
+        "timestamp_ms": "1792466685963",
+        "timestamp_str": "2026-10-20T03:24:45.963Z"
+      },
+      {
+        "message": "exit code 1",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:45.971401346+08:00",
+        "timestamp_ms": "1792466685971",
+        "timestamp_str": "2026-10-20T03:24:45.971Z"
+      },
+      {
+        "message": "failed",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:45.971549336+08:00",
+        "timestamp_ms": "1792466685971",
+        "timestamp_str": "2026-10-20T03:24:45.971Z"
+      },
+      {
+        "message": "processExitCode: 1",
+        "node": "qb-prod-gpu032",
+        "pod_name": "<redacted>-worker-0",
+        "time": "2026-10-20T11:24:45.971727623+08:00",
+        "timestamp_ms": "1792466685971",
+        "timestamp_str": "2026-10-20T03:24:45.971Z"
+      }
+    ],
+    "truncated": false,
+    "shown": 13,
+    "total": 13,
+    "limit": 110,
+    "character_limit": 16000,
+    "shown_chars": 1659
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format": "freeze35_c_frozen_state_spotcheck_request_v1",
+  "started_utc": "2026-10-29T14:10:41.416938+00:00",
+  "script_sha256": "86e3c50133f52d078dea8f5eef2c8a690538cbeb4901f00445145b109357d189",
+  "runner_sha256": "b8c6d60a28da036d60d49d6dcd5ba91d2bfc48d414365cb0a99437f1ef11671a",
+  "prior_freeze_evidence": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\C_R20_REPLAY_FREEZE_EVIDENCE.json",
+    "sha256": "e5d9c79eeb955432db1ad09d4cd489f0393d7ec57dbd7eebc36b451350a0058d"
+  },
+  "prior_evidence_scope": "Accepted replay/freeze gate at R20; no previous independent R21/R22 tensor comparison found.",
+  "cpu_notebook_precheck": {
+    "name": "nancy-stage09-prep-20261027-r1",
+    "account": "sii-shared",
+    "checked_begin_utc": "2026-10-29T14:06:08.057362+00:00",
+    "checked_end_utc": "2026-10-29T14:06:10.162061+00:00",
+    "status": "RUNNING",
+    "node": "hpc-compute792",
+    "node_status": "READY",
+    "gpu_count": 0,
+    "cpu_count": 4,
+    "memory_gib": 16
+  },
+  "command_argv": [
+    "C:\\Users\\nancy\\.local\\bin\\inspire.EXE",
+    "--account",
+    "sii-shared",
+    "notebook",
+    "exec",
+    "nancy-stage09-prep-20261027-r1",
+    "--workspace",
+    "CPU资源空间",
+    "--timeout",
+    "110",
+    "--stdin",
+    "env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 timeout 100s /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -c 'import hashlib,sys; source=sys.stdin.buffer.read(); digest=hashlib.sha256(source).hexdigest(); assert digest == '\"'\"'86e3c50133f52d078dea8f5eef2c8a690538cbeb4901f00445145b109357d189'\"'\"'; exec(compile(source,'\"'\"'<pinned-c-frozen-spotcheck>'\"'\"','\"'\"'exec'\"'\"'), {'\"'\"'EXECUTED_SOURCE_SHA256'\"'\"':digest,'\"'\"'__name__'\"'\"':'\"'\"'__main__'\"'\"'})' # end of command"
+  ],
+  "remote_command": "env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 timeout 100s /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -c 'import hashlib,sys; source=sys.stdin.buffer.read(); digest=hashlib.sha256(source).hexdigest(); assert digest == '\"'\"'86e3c50133f52d078dea8f5eef2c8a690538cbeb4901f00445145b109357d189'\"'\"'; exec(compile(source,'\"'\"'<pinned-c-frozen-spotcheck>'\"'\"','\"'\"'exec'\"'\"'), {'\"'\"'EXECUTED_SOURCE_SHA256'\"'\"':digest,'\"'\"'__name__'\"'\"':'\"'\"'__main__'\"'\"'})' # end of command",
+  "input_mode": "Exact saved script bytes over confirmed CPU SSH stdin; remote SHA checked before exec",
+  "limits": {
+    "remote_script_alarm_seconds": 90,
+    "remote_timeout_seconds": 100,
+    "cli_timeout_seconds": 110,
+    "local_timeout_seconds": 140,
+    "max_checkpoint_count": 3,
+    "max_bytes_per_checkpoint": 104857600,
+    "cpu_threads": 1,
+    "remote_writes": false,
+    "last_checkpoint_read": false
+  },
+  "local_runner_command": [
+    "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\c_frozen_state_spotcheck_20261029\\run_spotcheck.py"
+  ]
+}

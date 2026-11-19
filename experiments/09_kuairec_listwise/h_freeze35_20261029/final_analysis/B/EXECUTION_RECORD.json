@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "recorded_utc": "2026-10-29T08:46:36.842556+00:00",
+  "command_argv": [
+    "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\analyze_results.py",
+    "--runs-root",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\h_freeze35_20261029_early_B\\runs",
+    "--dataset",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\kuairec_listwise_v1\\run1",
+    "--references",
+    "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\h_freeze35_20261029_early_B\\code\\FREEZE35_REFERENCE_RESULTS.json",
+    "--branch",
+    "B",
+    "--output",
+    "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B"
+  ],
+  "command_exit_code": 0,
+  "analysis_report_sha256": "7596546bb014f56b69d0a574d9cfd3a991e267bf667af6b80603cc6f48361a7e",
+  "scope": "Independent CPU-only B metrics and user-cluster bootstrap; not full Goal backup/model restore",
+  "writes_limited_to": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B",
+  "audits": [
+    {
+      "model": "B_R32_test",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\audits\\B_R32_test.json",
+      "sha256": "014efe0e545cb8957527f3e6c5986e7c71434fc83c01f43c817c071a8c5fd570",
+      "examples": 53194,
+      "users": 4153,
+      "mismatches": 0
+    },
+    {
+      "model": "B_R32_validation",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\audits\\B_R32_validation.json",
+      "sha256": "137c22685b8378a0cdc551fdec8151fd30513283cf38ca3d998a0bead8a423bc",
+      "examples": 71657,
+      "users": 4733,
+      "mismatches": 0
+    },
+    {
+      "model": "B_R35_test",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\audits\\B_R35_test.json",
+      "sha256": "5fc4d37a81af71f335e20fc04fd3a296a243ae8b8fab21ff3b760d3f25ea581b",
+      "examples": 53194,
+      "users": 4153,
+      "mismatches": 0
+    },
+    {
+      "model": "B_R35_validation",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\audits\\B_R35_validation.json",
+      "sha256": "2bfe10299bf2f9cb59ec46443c5e9d5e28957f960ab0e3e9c08a35d004767017",
+      "examples": 71657,
+      "users": 4733,
+      "mismatches": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "B_R35_minus_B_R32_test",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\comparisons\\B_R35_minus_B_R32_test.json",
+      "sha256": "f1497ab502a56b13e22b3b5933e27260b22dd29a8dacff7e489c574a47b0b76c",
+      "bootstrap": {
+        "repeats": 2000,
+        "seed": 2024,
+        "confidence": 0.95,
+        "quantile": "linear_percentile",
+        "unit": "user; draw U users with replacement, carrying every sample of each selected user"
+      },
+      "primary_result": {
+        "baseline": 0.008607058312356749,
+        "treatment": 0.008456919317551478,
+        "delta": -0.00015013899480526276,
+        "relative_delta": -0.017443706009254666,
+        "confidence_interval": [
+          -0.00035307096102178546,
+          5.3117078812426386e-05
+        ]
+      }
+    },
+    {
+      "name": "B_R35_minus_B_R32_validation",
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\h_freeze35_20261029\\final_analysis\\B\\comparisons\\B_R35_minus_B_R32_validation.json",
+      "sha256": "b59caddb95a229a1b612c36a7bd40666daf9c5e698accd45bc746bcc7ea7c51a",
+      "bootstrap": {
+        "repeats": 2000,
+        "seed": 2024,
+        "confidence": 0.95,
+        "quantile": "linear_percentile",
+        "unit": "user; draw U users with replacement, carrying every sample of each selected user"
+      },
+      "primary_result": {
+        "baseline": 0.008919807955457838,
+        "treatment": 0.008634497640850001,
+        "delta": -0.00028531031460783457,
+        "relative_delta": -0.03198614992974813,
+        "confidence_interval": [
+          -0.0004440754665288369,
+          -0.00012895266474205382
+        ]
+      }
+    }
+  ],
+  "torch_imported": false,
+  "gpu_evaluation_performed": false
+}

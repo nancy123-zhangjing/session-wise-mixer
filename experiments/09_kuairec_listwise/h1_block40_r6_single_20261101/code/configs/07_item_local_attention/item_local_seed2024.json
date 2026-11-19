@@ -1,0 +1,41 @@
+{
+  "experiment": "stage07_item_local_attention",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "baseline_id": "pse_seed2024",
+  "max_gpu_hours": 8.0,
+  "baseline_stage": "03",
+  "baseline_recipe": "pse_seed2024",
+  "baseline_run_id": "diff_formal_pse_4x256_repo_repro_v6_bf16",
+  "seed": 2024,
+  "item_local_attention": {
+    "enabled": true,
+    "num_heads": 4,
+    "dropout": 0.0
+  },
+  "resources": {
+    "gpu_type": "H100",
+    "gpu_count": 1,
+    "total_allocated_gpu_hours_limit": 8.0,
+    "includes": ["smoke", "formal_training", "final_evaluation"]
+  },
+  "signal_rule": {
+    "ndcg_at_10_relative_gain_min": 0.03,
+    "hit_rate_at_10_must_not_decrease": true,
+    "interpretation": "exploratory signal only; not statistical significance"
+  },
+  "baseline_test": {
+    "hit_rate@5": 0.05205026159280955,
+    "hit_rate@10": 0.07490050529893127,
+    "ndcg@5": 0.03656712724405234,
+    "ndcg@10": 0.04391882613008758,
+    "legal@10": 1.0,
+    "duplicate@10": 0.0007735992616193003
+  },
+  "limitations": [
+    "Historical runtime commit and complete resolved configuration were not recorded.",
+    "Migration input hashes identify preserved assets, not original runtime hash receipts.",
+    "One new seed2024 run compared with historical baseline; not a strict paired experiment.",
+    "SID-level evaluation with collisions; not directly comparable with Stage06 item-level results.",
+    "Does not test continuous embedding generation or reduced decoding latency."
+  ]
+}

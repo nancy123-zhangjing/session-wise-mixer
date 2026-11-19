@@ -1,0 +1,530 @@
+{
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "status": "BUNDLE_GIT_RESTORE_RECIPE_PROBE_PASS_NOT_FINAL_BACKUP_RESTORE",
+  "utc": "2026-10-20T05:39:03.242315+00:00",
+  "probe_directory": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z",
+  "scope": "Current local real source bundles only; repeat from final downloaded verified package before delivery",
+  "input_bundles": [
+    {
+      "local_path": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code.bundle",
+      "expected_backup_path": "prep/code.bundle",
+      "sha256": "b3cb871bd303d6fe45279d9929c7b1bd2693569a3f6574f4af27830e8fc0d397",
+      "size_bytes": 9682979
+    },
+    {
+      "local_path": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code_r2.bundle",
+      "expected_backup_path": "prep/code_r2.bundle",
+      "sha256": "81c1f50eef5802c665ad5b170bba9e8576c40409d826ef6211b524249df8d319",
+      "size_bytes": 9836
+    },
+    {
+      "local_path": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\engine.bundle",
+      "expected_backup_path": "prep/engine.bundle",
+      "sha256": "69faf55e0188bcb6ac1cbe619ada855428fee0c07bdb4487e57b760a35b47d2c",
+      "size_bytes": 135337
+    }
+  ],
+  "engine_shallow_boundary": "ad7b971c7e525e9fea6fb8e362a5c49dccb2473c",
+  "engine_shallow_encoding": "ASCII without BOM, trailing LF",
+  "repository_settings": {
+    "core.autocrlf": "false",
+    "core.eol": "lf",
+    "core.longpaths": "true"
+  },
+  "previous_attempts": [
+    {
+      "directory": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe",
+      "status": "CHECKOUT_INCOMPLETE_WITHOUT_CORE_LONGPATHS",
+      "reason": "Windows Git default path limit omitted 15 tracked historical CSV files despite checkout exit 0; retained unchanged"
+    }
+  ],
+  "repositories": {
+    "code": {
+      "head": "69682698c15ba796b98e6329c950061a2f68a05b",
+      "tree": "fe625851b4edaa5436a0ce328b9ab19206a47c00",
+      "tracked_files": 1456,
+      "all_tracked_paths_exist": true,
+      "clean": true,
+      "shallow": false
+    },
+    "engine": {
+      "head": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "tree": "f1bccd3ec4e201aa759bf595d394663e0e9af801",
+      "tracked_files": 37,
+      "all_tracked_paths_exist": true,
+      "clean": true,
+      "shallow": true
+    }
+  },
+  "frozen_execution_source_checks": [
+    {
+      "repository": "code",
+      "path": "scripts/train/run_diger_mixer_long.py",
+      "sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "code",
+      "path": "scripts/checks/diger_mixer_long_protocol.py",
+      "sha256": "6d7feff7af9ab146ad299e06219f839ae74dcc6f3f051d54ad9217f3b8ab2919",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "code",
+      "path": "scripts/train/run_diger_noise_pilot.py",
+      "sha256": "12fcb1c19973495dd13237f750ced8ff9d96da781994cd5562fa67eef0d65d3b",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "code",
+      "path": "scripts/train/run_diger_mixer_factorial.py",
+      "sha256": "8347fd4c06608742c4af1c55cd3e9780e431d0fe8148443ae827992b73dcd179",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "code",
+      "path": "scripts/checks/diger_mixer_factorial_protocol.py",
+      "sha256": "64a1e468d788e26ae8285622947d1ffe49c5f8ce72eea5466cf201878a3dbacd",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "code",
+      "path": "scripts/checks/diger_noise_pilot_protocol.py",
+      "sha256": "879716431edc4bc918e545b703d167b80d19172f0003f761381b4ccc77837336",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/model.py",
+      "sha256": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/trainer.py",
+      "sha256": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/training_state.py",
+      "sha256": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/cross_pse.py",
+      "sha256": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/joint_cross_pse.py",
+      "sha256": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/tokenizer.py",
+      "sha256": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/collate.py",
+      "sha256": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/models/DIFF_GRM/config.yaml",
+      "sha256": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/default.yaml",
+      "sha256": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/datasets/AmazonReviews2014/config.yaml",
+      "sha256": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/datasets/AmazonReviews2014/dataset.py",
+      "sha256": "a57c27f3f12a98005406ec04b76cea00815bfe2c30f9cb2770c2abe30e56a9b7",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/pipeline.py",
+      "sha256": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56",
+      "matches_frozen_formal_identity": true
+    },
+    {
+      "repository": "engine",
+      "path": "genrec/utils.py",
+      "sha256": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+      "matches_frozen_formal_identity": true
+    }
+  ],
+  "commands": [
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z",
+      "argv": [
+        "git",
+        "init",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code"
+      ],
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in C:/Users/nancy/Documents/experiment1/.runtime/stage05_long/git_restore_recipe_probe_20261020T053859459026Z/code/.git/",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "config",
+        "core.autocrlf",
+        "false"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "config",
+        "core.eol",
+        "lf"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "config",
+        "core.longpaths",
+        "true"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z",
+      "argv": [
+        "git",
+        "init",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine"
+      ],
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in C:/Users/nancy/Documents/experiment1/.runtime/stage05_long/git_restore_recipe_probe_20261020T053859459026Z/engine/.git/",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "config",
+        "core.autocrlf",
+        "false"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "config",
+        "core.eol",
+        "lf"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "config",
+        "core.longpaths",
+        "true"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "bundle",
+        "verify",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code.bundle"
+      ],
+      "exit_code": 0,
+      "stdout": "The bundle contains this ref:\nfd04bfd6d9ab8009fdc4fb1d613a4db3adacb98f refs/heads/codex/stage05-mixer-long\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "C:/Users/nancy/Documents/experiment1/.runtime/stage05_long/code.bundle is okay"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code.bundle",
+        "refs/heads/codex/stage05-mixer-long:refs/heads/codex/stage05-mixer-long"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "From C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code.bundle\n * [new branch]      codex/stage05-mixer-long -> codex/stage05-mixer-long"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/codex/stage05-mixer-long"
+      ],
+      "exit_code": 0,
+      "stdout": "fd04bfd6d9ab8009fdc4fb1d613a4db3adacb98f",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "bundle",
+        "verify",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code_r2.bundle"
+      ],
+      "exit_code": 0,
+      "stdout": "The bundle contains this ref:\n69682698c15ba796b98e6329c950061a2f68a05b refs/heads/codex/stage05-mixer-long\nThe bundle requires this ref:\nfd04bfd6d9ab8009fdc4fb1d613a4db3adacb98f \nThe bundle uses this hash algorithm: sha1",
+      "stderr": "C:/Users/nancy/Documents/experiment1/.runtime/stage05_long/code_r2.bundle is okay"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code_r2.bundle",
+        "refs/heads/codex/stage05-mixer-long:refs/heads/codex/stage05-mixer-long"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "From C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\code_r2.bundle\n   fd04bfd..6968269  codex/stage05-mixer-long -> codex/stage05-mixer-long"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "checkout",
+        "--detach",
+        "69682698c15ba796b98e6329c950061a2f68a05b"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "HEAD is now at 6968269 Preserve immutable CPU Adam recovery state and record stage SID diagnostics"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "fsck",
+        "--full"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "bundle",
+        "verify",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\engine.bundle"
+      ],
+      "exit_code": 0,
+      "stdout": "The bundle contains this ref:\n1c879252f6395d6e64462511823c3929b9c42c00 HEAD\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1",
+      "stderr": "C:/Users/nancy/Documents/experiment1/.runtime/stage05_long/engine.bundle is okay"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\engine.bundle",
+        "HEAD:refs/heads/codex/stage05-engine-restore"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "From C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\engine.bundle\n * [new ref]         HEAD       -> codex/stage05-engine-restore"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "checkout",
+        "--detach",
+        "1c879252f6395d6e64462511823c3929b9c42c00"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "HEAD is now at 1c87925 Support alternating joint phase recovery and preserve teacher modes"
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "fsck",
+        "--full"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "rev-parse",
+        "--is-shallow-repository"
+      ],
+      "exit_code": 0,
+      "stdout": "true",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "69682698c15ba796b98e6329c950061a2f68a05b",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit_code": 0,
+      "stdout": "fe625851b4edaa5436a0ce328b9ab19206a47c00",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\code",
+      "argv": [
+        "git",
+        "rev-parse",
+        "--is-shallow-repository"
+      ],
+      "exit_code": 0,
+      "stdout": "false",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit_code": 0,
+      "stdout": "f1bccd3ec4e201aa759bf595d394663e0e9af801",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine",
+      "argv": [
+        "git",
+        "rev-parse",
+        "--is-shallow-repository"
+      ],
+      "exit_code": 0,
+      "stdout": "true",
+      "stderr": ""
+    }
+  ],
+  "final_downloaded_package_probed": false,
+  "model_optimizer_scheduler_rng_sid_restore_verified": false,
+  "cuda_execution_verified": false,
+  "goal_complete": false,
+  "restore_guide_sha256": "19a07ba41c06c8ade0dd55b55764d9767ab35e92740ca778541b8b0ec74cdbd1",
+  "guide_python_recipe_syntax_checked": true
+}

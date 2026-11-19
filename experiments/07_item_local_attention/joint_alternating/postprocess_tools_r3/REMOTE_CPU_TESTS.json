@@ -1,0 +1,13 @@
+{
+  "status": "REMOTE_CPU_PRECISION_REGRESSION_PASS",
+  "auditor_sha256": "60fc621973140f6af71b1914505142ef566d611ee972fbbe10fc1050a06c6615",
+  "archive_sha256": "4e75b30bb75f3ec4ff66e3483527c5d7778c65e15625345244cc16a90c4dd176",
+  "scope": "Tests of the postprocess auditor in the existing grm-exp CPU environment; not actual campaign artifact acceptance.",
+  "tool_result": {
+    "chunk_id": "fd5f66",
+    "wall_time_seconds": 7.0349668,
+    "exit_code": 0,
+    "original_token_count": 334,
+    "output": "Could not restrict private path C:\\Users\\nancy\\.inspire: Could not verify private Windows file permissions.\r\nCould not restrict private path C:\\Users\\nancy\\.inspire\\accounts: Existing Windows ACL lacks direct current-user FullControl; left unchanged to avoid removing your access.\r\nCould not restrict private path C:\\Users\\nancy\\.inspire\\accounts\\sii-shared: Existing Windows ACL lacks direct current-user FullControl; left unchanged to avoid removing your access.\r\n⚠ InspireSkill v7.1.13 available (current v7.1.9); run `inspire update` to upgrade.\r\nStarting client (stdio mode)...\r\nTLS verification: disabled (use --secure to enable)\r\ntest_corrupted_sid_rejected (__main__.SIDPrecisionAcceptance) ... ok\r\ntest_four_states_without_common_precision_rejected (__main__.SIDPrecisionAcceptance) ... ok\r\ntest_per_position_precision_mixture_rejected (__main__.SIDPrecisionAcceptance) ... ok\r\ntest_quantified_tf32_boundary_and_shared_mode_accepted (__main__.SIDPrecisionAcceptance) ... ok\r\ntest_rounding_hand_specified_bits (__main__.SIDPrecisionAcceptance) ... ok\r\ntest_strict_fp32_full_catalogue_accepted (__main__.SIDPrecisionAcceptance) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 6 tests in 0.192s\r\n\r\nOK\r\ntime=2026-10-20T20:41:05.026+08:00 level=INFO msg=\"stopping client\" component=client\r\n"
+  }
+}

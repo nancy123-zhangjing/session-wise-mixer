@@ -1,0 +1,72 @@
+{
+  "stage": "01",
+  "id": "rqvae_seed2026",
+  "method": "RQ-VAE",
+  "run_id": "ar_formal_rqvae_3x256",
+  "seed": 2026,
+  "model": "AR_GRM",
+  "stamp": "AmazonReviews2014_Aug-08-2026_11-37-10",
+  "config": [
+    "ar_formal_common.yaml",
+    "ar_formal_rqvae.yaml"
+  ],
+  "artifact_dir": "outputs/tokenizers/rqvae/Beauty/seed2026",
+  "semantic_codebook_sizes": [
+    256,
+    256,
+    256
+  ],
+  "reference": null,
+  "required_artifacts": [
+    "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+    "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+    "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+    "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+    "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+    "data/formal_embeddings/beauty_item_keys.json",
+    "data/formal_embeddings/beauty_sentence_t5_xl.npy",
+    "data/formal_embeddings/beauty_sentence_t5_xl_manifest.json",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/semantic_ids.json"
+  ],
+  "tokenizer_artifacts": [
+    "outputs/tokenizers/rqvae/Beauty/seed2026/best.pt",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/geometry_summary.json",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/last.pt",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/reconstructed_embeddings.npy",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/semantic_ids.json",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/semantic_ids.npy",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/summary.json",
+    "outputs/tokenizers/rqvae/Beauty/seed2026/training.csv"
+  ],
+  "evaluation_artifacts": [
+    "external/DiffGRM/saved/AmazonReviews2014_Aug-08-2026_11-37-10/pytorch_model.bin"
+  ],
+  "initial_sid": "outputs/tokenizers/rqvae/Beauty/seed2026/semantic_ids.json",
+  "historical_initial_sid_sha256": null,
+  "decoder_initialization": {
+    "type": "random_initialization_with_seed",
+    "seed": 2026,
+    "checkpoint": null
+  },
+  "historical_final_checkpoint": "external/DiffGRM/saved/AmazonReviews2014_Aug-08-2026_11-37-10/pytorch_model.bin",
+  "metadata": "evidence/rqvae_seed2026/run_metadata.json",
+  "replay_mode": "frozen_historical_sid_random_decoder",
+  "historical_runtime_commit": null,
+  "config_layers": [
+    "evidence/configs/ar_formal_common.yaml",
+    "evidence/configs/ar_formal_rqvae.yaml"
+  ],
+  "config_basis": "migration YAML plus pinned replay source defaults; not original fully resolved config",
+  "selection_metric": "ndcg@10",
+  "evaluation_level": "item",
+  "report_per_seed": "evidence/reports/reports/per_seed.csv",
+  "historical_console": "outputs/console/ar_formal_rqvae_seed2026_20260808_113708.log",
+  "missing_inputs": [],
+  "status": {
+    "analysis": "verified_at_build",
+    "gpu_smoke": "not_run",
+    "full_retraining": "not_run",
+    "tokenizer_retraining": "not_run",
+    "checkpoint_evaluation": "not_run"
+  }
+}

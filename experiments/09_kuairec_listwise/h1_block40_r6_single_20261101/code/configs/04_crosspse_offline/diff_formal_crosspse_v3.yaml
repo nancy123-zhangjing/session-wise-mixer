@@ -1,0 +1,42 @@
+# Controlled tokenizer ablation: train PSE codebooks with cross-codebook mixing.
+run_id: diff_formal_crosspse_4x256_v3_bf16
+reproduction_protocol: controlled_trainable_cross_codebook_pse_v3
+protocol_note: trainable OPQ/PQ centroids plus a zero-output-initialized full self-attention mixer; checkpoint selected against the exact step-0 PSE validation baseline
+
+sid_quantizer: cross_pse
+semantic_n_digit: 4
+crosspse_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_seed2024/semantic_ids.json
+crosspse_summary_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_seed2024/summary.json
+
+# Cross-PSE v3 differs from Refined-PSE only by enabling the mixer.
+crosspse_mixer_enabled: true
+crosspse_train_base_codebooks: true
+crosspse_attention_scope: full
+crosspse_heads: 4
+crosspse_dropout: 0.0
+crosspse_residual_scale_init: 1.0
+crosspse_learn_residual_scale: false
+crosspse_zero_init_attention_output: true
+
+# Exactly the same tokenizer training protocol as Refined-PSE.
+crosspse_validation_fraction: 0.1
+crosspse_split_seed: 2024
+crosspse_batch_size: 1024
+crosspse_eval_batch_size: 1024
+crosspse_codebook_lr: 0.0001
+crosspse_lr: 0.001
+crosspse_weight_decay: 0.0001
+crosspse_warmup_ratio: 0.05
+crosspse_max_steps: 5000
+crosspse_eval_interval: 100
+crosspse_patience: 10
+crosspse_min_delta: 0.000001
+crosspse_profile_steps: 50
+crosspse_mixed_precision: bf16
+crosspse_balance_weight: 0.01
+crosspse_balance_temperature: 0.1
+crosspse_anchor_weight: 0.01
+
+faiss_omp_num_threads: 16
+force_regenerate_opq: false

@@ -1,24 +1,13 @@
-# 技术文档索引
+# 项目文档索引
 
-## 当前主线
+当前项目结构与进度看 [项目总入口](../README.md)，科学结果与可汇报材料看 [实验包索引](../experiments/README.md)。
 
-| 主题 | 文档 |
+| 分类 | 内容 |
 |---|---|
-| DiffGRM pipeline | `diffgrm_pipeline.md` |
-| 当前 DiffGRM 复现协议 | `diffgrm_repo_reproduction_v6.md` |
-| RQ-KMeans / RQ-VAE 接入 | `diffgrm_rqkmeans_v6.md`、`diffgrm_rqvae_v6.md` |
-| Refined-PSE 与 Cross-PSE v3 | `refinedpse_crosspse_v3.md` |
-| Cross-PSE 交替联合 SIA | `diffgrm_crosspse_joint_sia.md` |
-| DIGER-style 梯度桥接 | `diffgrm_crosspse_diger.md` |
-| Frozen Cross-PSE 严格对照 | `diffgrm_crosspse_frozen_control.md` |
-| Joint Refined-PSE 对照 | `diffgrm_refinedpse_joint_control.md` |
-| Frozen Refined-PSE 对照 | `diffgrm_refinedpse_frozen_control.md` |
+| [现用指南](guides/README.md) | 后续实验工作流、目录重构进度与边界 |
+| [方法与协议](methods/README.md) | DiffGRM、Tokenizer 接入及对照方案的原始技术说明 |
+| [历史记录](history/README.md) | 早期搭建、被替代版本和 pilot 原文 |
 
-## 早期搭建与历史记录
+日常复现使用 [01–04 复现手册](../reproducibility/README.md) 和 [05 复现手册](../experiments/05_crosspse_joint/reproducibility/README.md)；本地检查见 [tests 说明](../tests/README.md)。方法与历史原文不是当前运行入口，其中旧命令、计划和状态不应直接当作今天的操作要求。
 
-- `START_HERE.md`、`FIRST_STAGE.md`、`FORMAL_3X256.md`：项目早期的环境搭建与 AR 实验手册，其中机器配置和部分路径可能已过时。
-- `diffgrm_repo_reproduction_v5.md`：v5 复现记录，已由 v6 取代。
-- `diffgrm_crosspse_v1.md`、`diffgrm_crosspse_v2.md`：Cross-PSE 早期失败/试验版本，用于解释方法演进，不作为当前正式设置。
-- `diff_pilot_seed2024_warmup_misaligned_20260810.md`：学习率 warmup 未对齐的失败记录。
-
-阶段性结论与可汇报材料统一从 [`../output/README.md`](../output/README.md) 进入，不要直接把这些技术记录当成最终报告。
+A、B1、B2a、B2b 已分别提交为 `737bebf`、`5f4f433`、`07d6a83`、`3d41254`。B2c 将全部根层脚本按职责归类，完整结构看 [项目地图](guides/PROJECT_MAP.md)，核验看 [B2c记录](../reproducibility/layout_migrations/20261008_b2c_scripts/README.md)。原始证据、方法/历史原文保留；C批删除未执行。

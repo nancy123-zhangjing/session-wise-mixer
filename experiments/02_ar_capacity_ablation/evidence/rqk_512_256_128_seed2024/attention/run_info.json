@@ -1,0 +1,36 @@
+{
+  "variant": "rqk_512x256x128",
+  "quantizer": "rq_kmeans",
+  "run_id": "ar_formal_rqkmeans_512x256x128",
+  "seed": 2024,
+  "split": "test",
+  "teacher_forcing": true,
+  "attention_stage": "masked_softmax_before_dropout",
+  "checkpoint": "/home/jingzhang/experiment1/external/DiffGRM/saved/AmazonReviews2014_Aug-14-2026_10-19-23/pytorch_model.bin",
+  "checkpoint_best_epoch": 70,
+  "metadata": "/home/jingzhang/experiment1/outputs/run_metadata/AmazonReviews2014/AR_GRM/AmazonReviews2014_Aug-14-2026_10-19-23_run_metadata.json",
+  "examples": 22363,
+  "decoder_layers": 4,
+  "attention_heads": 8,
+  "total_sid_positions": 4,
+  "semantic_sid_positions": 3,
+  "semantic_codebook_sizes": [
+    512,
+    256,
+    128
+  ],
+  "codebook_sizes": [
+    512,
+    256,
+    128,
+    256
+  ],
+  "observed_attention_shape": [
+    32,
+    8,
+    5,
+    5
+  ],
+  "max_row_sum_error": 1.2293457984924316e-07,
+  "max_future_attention": 0.0
+}

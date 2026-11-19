@@ -1,0 +1,122 @@
+{
+  "schema": "stage09_generated_assets_backup_v1",
+  "status": "PASS",
+  "created_at_utc": "2026-10-27T10:30:40.668332+00:00",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1",
+  "archive": {
+    "path": "delivery/stage09_generated_assets_r1.tar",
+    "bytes": 94105600,
+    "sha256": "94804ee383c8f2cf103d831c7afaabc1da975c1a47441bce200fcab6c91ba37a"
+  },
+  "source_policy": {
+    "bge_final_files": [
+      "dense_embeddings.npy",
+      "original_item_ids.npy",
+      "untruncated_token_lengths.npy",
+      "metadata.json",
+      "ordered_text.jsonl"
+    ],
+    "pse_scope": "all_regular_files_recursive",
+    "sources_read_only": true,
+    "symlinks_allowed": false,
+    "overwrite_allowed": false,
+    "deletes_performed": false,
+    "network_or_gpu_used": false
+  },
+  "file_count": 18,
+  "payload_bytes": 94090157,
+  "files": [
+    {
+      "path": "assets/bge_m3_cuda_v1/dense_embeddings.npy",
+      "bytes": 43942016,
+      "sha256": "e781d7873365acf35548af81e8ae529fd9d9021afecd159d05450e8cb49dc5a4"
+    },
+    {
+      "path": "assets/bge_m3_cuda_v1/metadata.json",
+      "bytes": 4479,
+      "sha256": "af049ac78278f0e7063f63dc5816975c28e82ef2bb84c1e91e0dab64d5331ffd"
+    },
+    {
+      "path": "assets/bge_m3_cuda_v1/ordered_text.jsonl",
+      "bytes": 2327626,
+      "sha256": "b1fa03eb1f6d1c93f0ac7c3ccc1597a51cc91de863627904c0b07295b3a8ad2e"
+    },
+    {
+      "path": "assets/bge_m3_cuda_v1/original_item_ids.npy",
+      "bytes": 85952,
+      "sha256": "2077ee736910cd39c3657c671f720a0343dc4132c18e81470110e1f32339d6c0"
+    },
+    {
+      "path": "assets/bge_m3_cuda_v1/untruncated_token_lengths.npy",
+      "bytes": 85952,
+      "sha256": "cdf0fab8a5f14093379bca7224fc99c6bd6469a2c2c4dfcda1fa4f723ab1556a"
+    },
+    {
+      "path": "assets/pse_v1/assets.pt",
+      "bytes": 22708537,
+      "sha256": "7b360a539b340b7dab4e83737519f6c167cbb28dd91abc5ed0395dee411af11c"
+    },
+    {
+      "path": "assets/pse_v1/base_pse.faiss",
+      "bytes": 654307,
+      "sha256": "ee8ed4603248f4bd4addf0d70377e8782fd507dc8429a3cb40edd82dcd984f02"
+    },
+    {
+      "path": "assets/pse_v1/base_pse_codebooks.npy",
+      "bytes": 262272,
+      "sha256": "f46cc7d7989ac0f33598dfad685141873503ef87f72d6300b472eb0da6bcaa2c"
+    },
+    {
+      "path": "assets/pse_v1/coarse_centroid.npy",
+      "bytes": 1152,
+      "sha256": "2776ce7f7e7eb73a1208002efcb4cf940d0600e32fde8ca11a626b680dbfab28"
+    },
+    {
+      "path": "assets/pse_v1/content_features.npy",
+      "bytes": 10985600,
+      "sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7"
+    },
+    {
+      "path": "assets/pse_v1/initial_mixer.pt",
+      "bytes": 399692,
+      "sha256": "4414735d150474e5122e3fe490c9ecf31919898847766396998c6bf1e6c5edb5"
+    },
+    {
+      "path": "assets/pse_v1/items.json",
+      "bytes": 106901,
+      "sha256": "3b3867ca60456b23e7a073996ab591f58ae3c7d5210bca964490f9620838e904"
+    },
+    {
+      "path": "assets/pse_v1/manifest.json",
+      "bytes": 9739,
+      "sha256": "7cc6dcdfcdeb4087e38fd2080f322a01375b189b284a59d5c9bfd279862525d4"
+    },
+    {
+      "path": "assets/pse_v1/opq_residual_embeddings.npy",
+      "bytes": 10985600,
+      "sha256": "e4f034c059d9f1d2ca3da914c6ad7b048c129d2b955e2c40d5f2f6c095b5e637"
+    },
+    {
+      "path": "assets/pse_v1/original_item_ids.npy",
+      "bytes": 85952,
+      "sha256": "2077ee736910cd39c3657c671f720a0343dc4132c18e81470110e1f32339d6c0"
+    },
+    {
+      "path": "assets/pse_v1/pca_transform.npz",
+      "bytes": 1057916,
+      "sha256": "9388f2a2f44e447e96ef01928113da4e798f87b460e8d32f98c7cba8267f3b91"
+    },
+    {
+      "path": "assets/pse_v1/reconstruction_errors.npy",
+      "bytes": 43040,
+      "sha256": "c5d827a452818f93c866a3e68b002231b585155c68a2d9b0603111ead5ee5254"
+    },
+    {
+      "path": "assets/pse_v1/semantic_ids.npy",
+      "bytes": 343424,
+      "sha256": "f39c3a11636e6e8a3f37f7ba8f38a5a9edd0a9c3a4d29d3ba639f888d4a4dc24"
+    }
+  ],
+  "archive_payloads_independently_rehashed": true,
+  "limitation": "A tar without a complete PASS manifest is an incomplete backup; preserve failed outputs."
+}

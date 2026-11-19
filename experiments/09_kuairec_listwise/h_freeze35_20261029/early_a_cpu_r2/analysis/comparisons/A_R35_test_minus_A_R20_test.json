@@ -1,0 +1,395 @@
+{
+  "format": "stage09_paired_user_bootstrap_v1",
+  "examples": 53194,
+  "users": 4153,
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 2024,
+    "confidence": 0.95,
+    "quantile": "linear_percentile",
+    "unit": "user; draw U users with replacement, carrying every sample of each selected user"
+  },
+  "interpretation": "One training-seed comparison. User bootstrap does not establish cross-seed stability.",
+  "primary_estimand": "sample mean; sum resampled user metric sums divided by sum resampled user sample counts",
+  "secondary_estimand": "mean of per-user sample means; each user has equal weight",
+  "primary": {
+    "list/ndcg@5": {
+      "baseline": 0.00794367350448588,
+      "treatment": 0.008956341761612958,
+      "delta": 0.0010126682571270744,
+      "relative_delta": 0.12748110261017268,
+      "confidence_interval": [
+        0.0006046431832968375,
+        0.001429309255122689
+      ]
+    },
+    "list/recall@5": {
+      "baseline": 0.007617400458698235,
+      "treatment": 0.008538556980110409,
+      "delta": 0.0009211565214121908,
+      "relative_delta": 0.12092793682132481,
+      "confidence_interval": [
+        0.0005481448291535965,
+        0.0012958518614584475
+      ]
+    },
+    "list/hr@5": {
+      "baseline": 0.03729743956085273,
+      "treatment": 0.04171523104109486,
+      "delta": 0.004417791480242132,
+      "relative_delta": 0.11844758064516128,
+      "confidence_interval": [
+        0.0026167354805229697,
+        0.006244271972700664
+      ]
+    },
+    "aggregate/ndcg@10": {
+      "baseline": 0.010973957491829967,
+      "treatment": 0.011988721982251697,
+      "delta": 0.001014764490421721,
+      "relative_delta": 0.09247024067454299,
+      "confidence_interval": [
+        0.000605896852015491,
+        0.0014285225132339976
+      ]
+    },
+    "aggregate/recall@10": {
+      "baseline": 0.013144339587171466,
+      "treatment": 0.014076775576192845,
+      "delta": 0.0009324359890213197,
+      "relative_delta": 0.07093821510297506,
+      "confidence_interval": [
+        0.0004933439550977219,
+        0.001362441040684366
+      ]
+    },
+    "aggregate/hr@10": {
+      "baseline": 0.06354100086475918,
+      "treatment": 0.06769560476745498,
+      "delta": 0.004154603902695793,
+      "relative_delta": 0.06538461538461539,
+      "confidence_interval": [
+        0.0020266550659386977,
+        0.006239969831817661
+      ]
+    },
+    "aggregate/ndcg@20": {
+      "baseline": 0.012705473197179868,
+      "treatment": 0.014209227580354764,
+      "delta": 0.0015037543831748824,
+      "relative_delta": 0.11835485068817891,
+      "confidence_interval": [
+        0.0010627255811855732,
+        0.0019319145350126762
+      ]
+    },
+    "aggregate/recall@20": {
+      "baseline": 0.017114712185584913,
+      "treatment": 0.019216452983419355,
+      "delta": 0.0021017407978343463,
+      "relative_delta": 0.12280316344463944,
+      "confidence_interval": [
+        0.0015473279324023424,
+        0.0026267562055611406
+      ]
+    },
+    "aggregate/hr@20": {
+      "baseline": 0.08136255968718277,
+      "treatment": 0.09110050005639733,
+      "delta": 0.009737940369214573,
+      "relative_delta": 0.11968576709796672,
+      "confidence_interval": [
+        0.007276324913913156,
+        0.012276041546020435
+      ]
+    },
+    "aggregate/ndcg@50": {
+      "baseline": 0.01309661530109249,
+      "treatment": 0.014817005723735932,
+      "delta": 0.0017203904226434298,
+      "relative_delta": 0.1313614535581509,
+      "confidence_interval": [
+        0.0012881458880028443,
+        0.0021510244812767343
+      ]
+    },
+    "aggregate/recall@50": {
+      "baseline": 0.01820130089859769,
+      "treatment": 0.020889574012106837,
+      "delta": 0.002688273113509043,
+      "relative_delta": 0.14769675686841482,
+      "confidence_interval": [
+        0.002126186877206556,
+        0.003232789690487082
+      ]
+    },
+    "aggregate/hr@50": {
+      "baseline": 0.08609993608301689,
+      "treatment": 0.09845095311501297,
+      "delta": 0.01235101703199609,
+      "relative_delta": 0.14344978165938865,
+      "confidence_interval": [
+        0.00976148387654047,
+        0.014847836487767137
+      ]
+    }
+  },
+  "user_average": {
+    "list/ndcg@5": {
+      "baseline": 0.006034059977776606,
+      "treatment": 0.007166653162595208,
+      "delta": 0.0011325931848185998,
+      "relative_delta": 0.18770002104552014,
+      "confidence_interval": [
+        0.0006169507296926277,
+        0.001665611560992265
+      ]
+    },
+    "list/recall@5": {
+      "baseline": 0.005744735065197584,
+      "treatment": 0.0069080554193148205,
+      "delta": 0.0011633203541172147,
+      "relative_delta": 0.20250200242736582,
+      "confidence_interval": [
+        0.0006670051091048493,
+        0.0016669054818470202
+      ]
+    },
+    "list/hr@5": {
+      "baseline": 0.02824979827437959,
+      "treatment": 0.03392991592111912,
+      "delta": 0.00568011764673959,
+      "relative_delta": 0.20106754715806316,
+      "confidence_interval": [
+        0.0032338871658927014,
+        0.00818130279158529
+      ]
+    },
+    "aggregate/ndcg@10": {
+      "baseline": 0.008263947452358691,
+      "treatment": 0.00959824346903826,
+      "delta": 0.0013342960166795763,
+      "relative_delta": 0.16145988637654543,
+      "confidence_interval": [
+        0.0007706388476810634,
+        0.0019237628470121502
+      ]
+    },
+    "aggregate/recall@10": {
+      "baseline": 0.009822152701303962,
+      "treatment": 0.01133604763530337,
+      "delta": 0.0015138949339993932,
+      "relative_delta": 0.15413066565320377,
+      "confidence_interval": [
+        0.0008235111226019057,
+        0.0021848426893997302
+      ]
+    },
+    "aggregate/hr@10": {
+      "baseline": 0.04746707990787937,
+      "treatment": 0.05493771832170743,
+      "delta": 0.00747063841382811,
+      "relative_delta": 0.15738567504735024,
+      "confidence_interval": [
+        0.004152762174343959,
+        0.010709969419186217
+      ]
+    },
+    "aggregate/ndcg@20": {
+      "baseline": 0.009424959680786644,
+      "treatment": 0.011223894524436314,
+      "delta": 0.00179893484364968,
+      "relative_delta": 0.19086923494398797,
+      "confidence_interval": [
+        0.0012174412390346852,
+        0.0023904532467234644
+      ]
+    },
+    "aggregate/recall@20": {
+      "baseline": 0.012485250054929545,
+      "treatment": 0.015086800286045903,
+      "delta": 0.002601550231116307,
+      "relative_delta": 0.20836989404862885,
+      "confidence_interval": [
+        0.0018899234019024425,
+        0.003352792591268631
+      ]
+    },
+    "aggregate/hr@20": {
+      "baseline": 0.05957388660495594,
+      "treatment": 0.07217306114830642,
+      "delta": 0.012599174543350583,
+      "relative_delta": 0.2114882083638045,
+      "confidence_interval": [
+        0.009151926214653517,
+        0.016220657114240245
+      ]
+    },
+    "aggregate/ndcg@50": {
+      "baseline": 0.009710339346433646,
+      "treatment": 0.011633613985254237,
+      "delta": 0.0019232746388205837,
+      "relative_delta": 0.1980646165086859,
+      "confidence_interval": [
+        0.0013435984203212055,
+        0.002524486384040695
+      ]
+    },
+    "aggregate/recall@50": {
+      "baseline": 0.013278366975037125,
+      "treatment": 0.01621501800445529,
+      "delta": 0.002936651029418086,
+      "relative_delta": 0.22116055648551433,
+      "confidence_interval": [
+        0.0022019546151386413,
+        0.003675235397037704
+      ]
+    },
+    "aggregate/hr@50": {
+      "baseline": 0.06290476438061271,
+      "treatment": 0.07710420640800371,
+      "delta": 0.014199442027391195,
+      "relative_delta": 0.2257291982126472,
+      "confidence_interval": [
+        0.01073008642071737,
+        0.017775294816400663
+      ]
+    }
+  },
+  "groups": {
+    "cold_target": {
+      "examples": 7639,
+      "metrics": {
+        "list/ndcg@5": {
+          "baseline": 0.004522808369483601,
+          "treatment": 0.004940702720508435,
+          "delta": 0.00041789435102483407
+        },
+        "list/recall@5": {
+          "baseline": 0.004110485665663036,
+          "treatment": 0.004634114412881262,
+          "delta": 0.0005236287472182269
+        },
+        "list/hr@5": {
+          "baseline": 0.019897892394292446,
+          "treatment": 0.022908757690797223,
+          "delta": 0.003010865296504778
+        },
+        "aggregate/ndcg@10": {
+          "baseline": 0.006078430089007937,
+          "treatment": 0.006541985371747962,
+          "delta": 0.00046355528274002436
+        },
+        "aggregate/recall@10": {
+          "baseline": 0.006964262338002382,
+          "treatment": 0.007566435397303346,
+          "delta": 0.0006021730593009642
+        },
+        "aggregate/hr@10": {
+          "baseline": 0.03364314700877078,
+          "treatment": 0.03691582667888467,
+          "delta": 0.0032726796701138894
+        },
+        "aggregate/ndcg@20": {
+          "baseline": 0.007015989068213941,
+          "treatment": 0.007889886546764448,
+          "delta": 0.0008738974785505082
+        },
+        "aggregate/recall@20": {
+          "baseline": 0.009111140201597123,
+          "treatment": 0.010708207880612724,
+          "delta": 0.0015970676790156007
+        },
+        "aggregate/hr@20": {
+          "baseline": 0.04398481476633067,
+          "treatment": 0.05183924597460401,
+          "delta": 0.007854431208273335
+        },
+        "aggregate/ndcg@50": {
+          "baseline": 0.007222698935239512,
+          "treatment": 0.008128767756188737,
+          "delta": 0.0009060688209492242
+        },
+        "aggregate/recall@50": {
+          "baseline": 0.009687131823537176,
+          "treatment": 0.01136274381463551,
+          "delta": 0.0016756119910983352
+        },
+        "aggregate/hr@50": {
+          "baseline": 0.046733865689226335,
+          "treatment": 0.05471920408430423,
+          "delta": 0.00798533839507789
+        }
+      }
+    },
+    "seen_targets": {
+      "examples": 45555,
+      "metrics": {
+        "list/ndcg@5": {
+          "baseline": 0.00851730952174596,
+          "treatment": 0.00962971387521186,
+          "delta": 0.001112404353465901
+        },
+        "list/recall@5": {
+          "baseline": 0.008205465920315829,
+          "treatment": 0.009193282844912417,
+          "delta": 0.0009878169245965864
+        },
+        "list/hr@5": {
+          "baseline": 0.04021512457468993,
+          "treatment": 0.04486883986390078,
+          "delta": 0.004653715289210844
+        },
+        "aggregate/ndcg@10": {
+          "baseline": 0.011794875806617977,
+          "treatment": 0.01290207114189715,
+          "delta": 0.0011071953352791725
+        },
+        "aggregate/recall@10": {
+          "baseline": 0.014180660739765299,
+          "treatment": 0.015168477664362134,
+          "delta": 0.000987816924596836
+        },
+        "aggregate/hr@10": {
+          "baseline": 0.06855449456700692,
+          "treatment": 0.07285698606080562,
+          "delta": 0.0043024914937987045
+        },
+        "aggregate/ndcg@20": {
+          "baseline": 0.013659528059679694,
+          "treatment": 0.015268901516379493,
+          "delta": 0.001609373456699798
+        },
+        "aggregate/recall@20": {
+          "baseline": 0.01845681044890892,
+          "treatment": 0.020643178575349936,
+          "delta": 0.0021863681264410136
+        },
+        "aggregate/hr@20": {
+          "baseline": 0.08763033695532872,
+          "treatment": 0.09768411809900121,
+          "delta": 0.010053781143672483
+        },
+        "aggregate/ndcg@50": {
+          "baseline": 0.014081597127868006,
+          "treatment": 0.015938539031476014,
+          "delta": 0.0018569419036080098
+        },
+        "aggregate/recall@50": {
+          "baseline": 0.019629019866097157,
+          "treatment": 0.022487103501264,
+          "delta": 0.0028580836351668427
+        },
+        "aggregate/hr@50": {
+          "baseline": 0.09270113050159148,
+          "treatment": 0.10578421688069367,
+          "delta": 0.013083086379102184
+        }
+      }
+    }
+  },
+  "inputs": {
+    "baseline_sha256": "10a2edb7baeb337eba781e26cd9a4d396ff8e6de7cd97bebcc3efd48d3c6b1a2",
+    "treatment_sha256": "ff4f7e4989fc0a12860fa9170837e3815d67456847c7cfcee0e145f6f2714bca"
+  }
+}

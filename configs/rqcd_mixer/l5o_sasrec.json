@@ -1,0 +1,32 @@
+{
+  "seed": 2024,
+  "history_max": 128,
+  "list_length": 5,
+  "catalog_size": 10728,
+  "split_counts": {
+    "train": 2288120,
+    "validation": 7176,
+    "test": 7176
+  },
+  "teacher": {
+    "width": 256,
+    "layers": 2,
+    "heads": 4,
+    "ffn": 1024,
+    "dropout": 0.2,
+    "batch_size": 256,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 200,
+    "patience": 10,
+    "validation_metric": "ev_ndcg@5"
+  },
+  "training": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "max_grad_norm": 1.0
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "format": "freeze35_notification_receipts_v1",
+  "automation_id": "09-h1",
+  "interval_minutes": 5,
+  "sent": [
+    {
+      "event": "B_training_R35",
+      "reported_utc": "2026-10-29T14:51:35.1827271+08:00",
+      "channel": "commentary",
+      "evidence": "OBSERVATION_20261029T145034.json",
+      "evidence_sha256": "79c8e2036dbd635af7cc479e8183ad192ab35028de57138fd0276cb25616dfb9",
+      "scope": "B R35 training complete; full validation and test still pending. H1 R29 full validation in progress; no new H1 metric reported."
+    },
+    {
+      "event": "validation_R29",
+      "branch": "A",
+      "reported_utc": "2026-10-29T15:31:30.5108774+08:00",
+      "channel": "commentary",
+      "evidence": "H1_R29_STAGE_EVIDENCE.json",
+      "evidence_sha256": "9faf0e542292629f2e0c951578d868cf71c4fe432da3bbb654af2cc9890e7218",
+      "current_validation_best_epoch": 29,
+      "scope": "Full validation summary and source SHA verified; NDCG5 +1.81466%, HR5 +0.46110%, aggregateNDCG50 +0.87226% vs R26. Per-sample recompute and test pending; not final selected best."
+    },
+    {
+      "event": "B_validation_R35",
+      "reported_utc": "2026-10-29T15:41:16.2377025+08:00",
+      "channel": "commentary",
+      "evidence": "B_R35_STAGE_EVIDENCE.json",
+      "evidence_sha256": "41feee367b0341607866af22c1bad7af4b4ef7e5a4332281ef572e9cdfb80b3e",
+      "scope": "B R35 full val NDCG5 0.0086344976, -3.1986% vs parent R32; fixed endpoint, not newly selected best; test running."
+    },
+    {
+      "event": "C_replay_R08",
+      "reported_utc": "2026-10-29T15:41:16.2447869+08:00",
+      "channel": "commentary",
+      "evidence": "B_R35_STAGE_EVIDENCE.json",
+      "evidence_sha256": "41feee367b0341607866af22c1bad7af4b4ef7e5a4332281ef572e9cdfb80b3e",
+      "scope": "C R8 replay gate passed: all 71657 Top5 lists identical, NDCG5 difference zero; later gates and R20 acceptance pending."
+    },
+    {
+      "event": "B_test_independently_audited",
+      "branch": "B",
+      "reported_utc": "2026-10-29T16:47:58.473429+08:00",
+      "channel": "commentary",
+      "evidence": "final_analysis/B/analysis_report.json",
+      "evidence_sha256": "7596546bb014f56b69d0a574d9cfd3a991e267bf667af6b80603cc6f48361a7e",
+      "scope": "B fixed R35 test independently audited: NDCG5 0.0084569193 vs parent R32 0.0086070583, -1.74437%; 95% user-cluster CI crosses zero. Four per-sample audits and two 2000-replicate comparisons passed. Not A-C interaction control or full Goal/model-restore completion."
+    },
+    {
+      "event": "validation_R32",
+      "branch": "A",
+      "reported_utc": "2026-10-29T16:50:25.5109616+08:00",
+      "channel": "commentary",
+      "evidence": "H1_R32_STAGE_EVIDENCE.json",
+      "evidence_sha256": "ceaf0ed4ae791c9b75cb7b4544677e0c9b79afc4415f1f008e46a792ebac7318",
+      "current_validation_best_epoch": 32,
+      "scope": "Full validation summary/source SHA/protocol verified; NDCG5 0.0106897301, +1.29934% vs R29 and +3.13758% vs R26; HR5 0.0489833512; aggregateNDCG50 0.0157531180. Per-sample audit/test/final selection pending; not tokenizer convergence proof."
+    },
+    {
+      "event": "C_replay_R11",
+      "branch": "C",
+      "reported_utc": "2026-10-29T16:58:20.3110495+08:00",
+      "channel": "commentary",
+      "evidence": "C_R11_REPLAY_EVIDENCE.json",
+      "evidence_sha256": "9f78b6690a6ea378e62669e27469c42c32c7ef96b13b93001754e8ba5091058f",
+      "scope": "C R11 replay gate passed: 71657 Top5 lists identical to old H0 reference, NDCG5 delta zero; not bitwise old-state recovery; R14/R17/R20 gates pending."
+    },
+    {
+      "event": "training_R35",
+      "branch": "A",
+      "reported_utc": "2026-10-29T17:28:21.3815079+08:00",
+      "channel": "commentary",
+      "evidence": "H1_TRAINING_R35_EVIDENCE.json",
+      "evidence_sha256": "9d2abbf0a710f411839a38aabda54d98da5ed6378a499852a062bcc942699dda",
+      "scope": "H1 R35 training completion reported immediately after source verification; 6237 new R updates, 24255 total R, T200; immutable complete-state receipt and actual checkpoint SHA verified. R35 full validation/selection and test pending; whole Goal not complete."
+    },
+    {
+      "event": "validation_R35",
+      "branch": "A",
+      "reported_utc": "2026-10-29T18:07:17.5934865+08:00",
+      "channel": "commentary",
+      "evidence": "H1_R35_STAGE_EVIDENCE.json",
+      "evidence_sha256": "0c8ccbb09c3b0ef69c70f3aca2d37ea59d3e76f24d032b7cae32b4c3107b75f9",
+      "selected_epoch": 32,
+      "scope": "Full validation and validation-only grid selection source verified; best R32, R35 NDCG5 0.0104455471 (-2.28428% vs R32, +0.78163% vs R26). User informed immediately; fixed R35 and selected R32 tests pending independent audit."
+    },
+    {
+      "event": "C_replay_R14",
+      "branch": "C",
+      "reported_utc": "2026-10-29T18:19:29.5603034+08:00",
+      "channel": "commentary",
+      "evidence": "C_R14_REPLAY_EVIDENCE.json",
+      "evidence_sha256": "976c9c747e3787ceb9d55cd64f04a8bf2c18cac99f0770cae8e886ee40bbafef",
+      "scope": "C R14 replay gate passed: 71657 Top5 lists identical, source hashes verified, recomputed NDCG5 both 0.008306701119491238, delta zero. R17/R20 pending; not bitwise old-state recovery."
+    },
+    {
+      "event": "test_independently_audited",
+      "branch": "A",
+      "reported_utc": "2026-10-29T19:37:50.852941+08:00",
+      "channel": "commentary",
+      "evidence": "early_a_cpu_r2/analysis/COMPLETE.json",
+      "evidence_sha256": "301fd4519a5db9d1685acf456221c471fcc352584c041ccc2da8789a04b40256",
+      "selected_epoch": 32,
+      "scope": "Fixed R35 and validation-best R32 tests independently audited on CPU; all five test replays passed and six 2000-replicate paired user bootstrap comparisons completed. R32 vs old H0 best +9.57045%, CI above zero; vs Freeze26 +2.98980%, CI crosses zero; vs original H1 R20 +18.72079%. R35 declined. Reported before C completion; C/common-freeze comparison and full backup/model restore pending."
+    },
+    {
+      "event": "C_replay_R17",
+      "branch": "C",
+      "reported_utc": "2026-10-29T19:43:04.209255+08:00",
+      "channel": "commentary",
+      "evidence": "C_R17_REPLAY_EVIDENCE.json",
+      "evidence_sha256": "d87c7a486057ae56b6e06804341a7cec26f8d3f4f07012b57c30144a0d65b214",
+      "scope": "C R17 gate passed: all 71657 Top5 lists identical to historical reference, recomputed NDCG5 both 0.007686899892820197, delta zero; source hashes verified. R20 gate remains; not bitwise missing-state recovery."
+    },
+    {
+      "event": "C_replay_R20_freeze_accepted",
+      "branch": "C",
+      "reported_utc": "2026-10-29T21:06:05.4730497+08:00",
+      "channel": "commentary",
+      "evidence": "C_R20_REPLAY_FREEZE_EVIDENCE.json",
+      "evidence_sha256": "e5d9c79eeb955432db1ad09d4cd489f0393d7ec57dbd7eebc36b451350a0058d",
+      "scope": "R20 full validation and all five replay gates passed: 71657 Top5 identical, NDCG5 0.007728139395127303 delta zero. Twenty trajectory stages passed with zero loss/gradient norm differences; actual historical log prefix hashes and R20 immutable checkpoint bytes verified. Entered frozen R21/T200. Not bitwise old-weight recovery or final model restore/Goal completion."
+    },
+    {
+      "event": "H1_frozen_R32_temporal_validation",
+      "branch": "A",
+      "report_recorded_utc": "2026-10-29T21:39:22.9736828+08:00",
+      "channel": "final",
+      "evidence": "temporal_validation_r32_20261029/VERIFY.json",
+      "evidence_sha256": "554a0be6a3ab00a6a0a99282a507ac1fd79e40aacf299771ef552bdb983a4277",
+      "scope": "User-requested fixed historical early/late validation split completed and table delivered. H1 frozen R32 versus old H0 best: NDCG5 +27.16% early/+8.77% late; both user-cluster CIs positive. Own R20 late +14.46%. Old late -4.97% CI crosses zero, aggregate larger-K gains versus H0 uncertain. Encoding endpoint tensors/T optimizer unchanged; no new GPU inference, no causal Mixer or final-restore claim."
+    },
+    {
+      "event": "C_frozen_validation_R23",
+      "branch": "C",
+      "reported_utc": "2026-10-30T01:01:55.570605+08:00",
+      "channel": "commentary",
+      "evidence": "C_R23_FROZEN_VALIDATION_EVIDENCE.json",
+      "evidence_sha256": "69708d5d9e380a449c340b1802053cb717eb10dec43913a6ed6078eba5701924",
+      "scope": "Completed full validation source/byte/protocol checked and NDCG5 with same-epoch A reported after connection recovery. Not independent per-sample recompute, paired uncertainty, test, or full model restore."
+    },
+    {
+      "event": "C_frozen_validation_R26",
+      "branch": "C",
+      "reported_utc": "2026-10-30T01:01:55.570605+08:00",
+      "channel": "commentary",
+      "evidence": "C_R26_FROZEN_VALIDATION_EVIDENCE.json",
+      "evidence_sha256": "c7a0e302c0ef36123912ebe01708db513abee515f63643d816b928da8127b42e",
+      "scope": "Completed full validation source/byte/protocol checked and NDCG5 with same-epoch A reported after connection recovery. Not independent per-sample recompute, paired uncertainty, test, or full model restore."
+    },
+    {
+      "event": "C_frozen_validation_R29",
+      "branch": "C",
+      "reported_utc": "2026-10-30T01:17:34.605758+08:00",
+      "channel": "commentary",
+      "evidence": "C_R29_FROZEN_VALIDATION_EVIDENCE.json",
+      "evidence_sha256": "b2fc1ff4823f4bee0e94b34600d6cb77306940cd058ed6749fb48276b0da843e",
+      "scope": "R29 full validation source, bytes and protocol checked; NDCG5/HR5/aggregateNDCG50 and same-epoch A differences reported. C NDCG5 -4.72% vs R26; current common-grid best R23. Independent metric replay/paired intervals, tests and model restore remain pending."
+    },
+    {
+      "event": "cold_popularity_initial_report",
+      "branch": "diagnostic",
+      "reported_utc": "2026-10-30T02:27:09.138605+08:00",
+      "channel": "commentary",
+      "evidence": "cold_popularity_audit_20261030/REPORT.md",
+      "evidence_sha256": "950b708f40896d906780cb99598fc34b4a4cc8f1e27ebe0c49b1b87bde557090",
+      "scope": "Initial three-model saved-prediction CPU diagnostic and report delivered; fixed original validation split; cold target mix, per-target gain and output concentration independently verified. C fixed-R32 and selected-best supplement pending; not Goal completion."
+    },
+    {
+      "event": "C_frozen_validation_R32",
+      "branch": "C",
+      "reported_utc": "2026-10-30T02:34:22.7335976Z",
+      "channel": "commentary",
+      "evidence": "C_R32_FROZEN_VALIDATION_EVIDENCE.json",
+      "evidence_sha256": "770d51b5fcfac7e79775bc1ab399f6fa6df6b025b63e03d995ca853c64c5b9c7",
+      "scope": "Full validation source/byte/protocol checked; metrics reported after connection recovery. C selected best R23. Independent sample metrics/bootstrap/tests/model restore pending."
+    },
+    {
+      "event": "C_frozen_validation_R35",
+      "branch": "C",
+      "reported_utc": "2026-10-30T02:34:22.7423420Z",
+      "channel": "commentary",
+      "evidence": "C_R35_FROZEN_VALIDATION_EVIDENCE.json",
+      "evidence_sha256": "66cf394044aad8ce6cb7830d338c61c35b1096b19b1e6609621acaee06e6aec0",
+      "scope": "Full validation source/byte/protocol checked; metrics reported after connection recovery. C selected best R23. Independent sample metrics/bootstrap/tests/model restore pending."
+    },
+    {
+      "event": "C_training_R35",
+      "branch": "C",
+      "reported_utc": "2026-10-30T02:34:22.7427049Z",
+      "channel": "commentary",
+      "evidence": "OBSERVATION_20261030_RECOVERED_FINAL.json",
+      "scope": "Actual R35 training milestone and 24255 R / 200 T updates observed and reported. Test predictions generated; independent audit pending."
+    },
+    {
+      "event": "final_archive_transfer_blocked_20261030T1125",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T03:26:11.968598+00:00",
+      "channel": "commentary",
+      "evidence": "FINAL_DOWNLOAD_BLOCKER_20261030T1125.json",
+      "evidence_sha256": "8351597860b2b0d27520e39a2e90ae65188496b94dbf73dbf6fd9bcba193597c",
+      "scope": "Archive transfer stalled at 99.136%; local SCP stopped, prefix preserved, readonly elevated SSH returned ECONNRESET. Browser fallback stopped because URL could not be verified. 59142144 bytes remain; full verification, extraction, C statistics and actual restore pending. Original GPU releases unchanged; no new training."
+    },
+    {
+      "event": "final_archive_transfer_and_extraction_verified",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T03:33:22.791095+00:00",
+      "channel": "commentary",
+      "evidence": "FINAL_BACKUP_VERIFICATION.json",
+      "evidence_sha256": "1d531247dd4cf57a0a422ff76091a579139045c29332da90e55065058d95550b",
+      "scope": "Recovered original CPU connection; preserved prefix authenticated, remaining bytes appended, full archive and manifest SHA verified. Fresh extraction 3405 files, 63 immutable plus 3 last structural coverage and external dependency SHA passed. Actual model restore and final analyses in progress."
+    },
+    {
+      "event": "C_test_independently_audited",
+      "branch": "C",
+      "reported_utc": "2026-10-30T03:34:15.310532+00:00",
+      "channel": "commentary",
+      "evidence": [
+        {
+          "path": "final_analysis\\C\\audits\\C_R35_test.json",
+          "sha256": "44c59a2cb4525e0a3a7e02bb7b185c45b75f09171cabec2fb0c21c3e2a81bddc"
+        },
+        {
+          "path": "final_analysis\\C\\audits\\C_R23_test.json",
+          "sha256": "1299e7a8b49b4a541cb3adba1906e482f42b82c33a0c252fed0688a04b325af7"
+        }
+      ],
+      "scope": "C fixed35 and validation-best23 full test per-sample metrics passed with zero mismatches, 53194 examples/4153 users each. NDCG5 .008256232153207987/.008470896467819447, HR5 .03756062713839907/.038876565026130766, aggregate NDCG50 .0133895969396749/.013325997915052524 reported. Cross-branch confidence intervals, cold supplement and full final delivery pending."
+    },
+    {
+      "event": "cold_popularity_complete_C_report",
+      "branch": "diagnostic",
+      "reported_utc": "2026-10-30T03:46:39.117455+00:00",
+      "channel": "commentary",
+      "evidence": "cold_popularity_audit_20261030/FINAL_REPORT.md",
+      "evidence_sha256": "acb366d436260caa459845a6156fc62d1944d83410dcdcfa14e85894bb697225",
+      "scope": "Five-model report including matched R32/T200 C and original selected C R23 delivered after full array/bootstrap verification and independent report/table review. Coarse composition 0.31%; mid within-class dominates; H1 lower train-head share but higher top10 concentration than C R32. No training/inference/GPU, no split/selection changes. Main Goal final delivery still being closed."
+    },
+    {
+      "event": "final_three_arm_scientific_report_and_postprocessing_backup",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T04:02:35.824371+00:00",
+      "channel": "commentary",
+      "evidence": "REPORT.md",
+      "evidence_sha256": "d9e7c04edcd9f8cd482146bee051e8af389607a8963e0af6f7976d9edc51f4c2",
+      "scope": "Main final report, A-C fixed35 +8.48% and selected-best +11.33% with original paired CIs, cold full report and all scientific/restore evidence delivered. Separate postprocess raw archive and Git restore passed for 411 files bound to content commit 563f8db2dcc2814c23439d2a7546256948272300. All GPU released; original zero-GPU CPU entry close remains unconfirmed due connection reset; tracking and Goal not closed."
+    },
+    {
+      "event": "final_cpu_closure_goal_blocked_after_three_turns",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T04:13:35.306959+00:00",
+      "channel": "commentary",
+      "evidence": "CPU_CLOSURE_FOLLOWUP_STATE.json",
+      "evidence_sha256": "73427f6fccb4d5009b838d2b028a36611e41d1cda81c7f9a9a6c8ac7572de81a",
+      "scope": "Goal changed to blocked after three consecutive equivalent ECONNRESET status-query failures. All scientific work and GPU release complete; only original zero-GPU CPU closure unconfirmed. Existing user question and 09-h1 retained; no duplicate resource action."
+    },
+    {
+      "event": "original_cpu_stopped_and_tracking_deleted",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T04:40:00.808939+00:00",
+      "channel": "commentary",
+      "evidence": "final_lifecycle_r1/CPU_RELEASE.json",
+      "evidence_sha256": "cdf9f7eeec4fb977fa43c57229e703419520f03859346eae1e85b81d0f609bf2",
+      "scope": "Parent live status RUNNING -> authorized stop -> independent live STOPPED readback. Independent saved-receipt review passed; 09-h1 deleted and config absence checked. Final Git/Goal receipt follows."
+    },
+    {
+      "event": "original_goal_and_c_diagnostic_finally_complete",
+      "branch": "delivery",
+      "reported_utc": "2026-10-30T04:42:09.395783+00:00",
+      "channel": "commentary",
+      "evidence": "GOAL_COMPLETION.json",
+      "evidence_sha256": "95ca6212ee6b926415d3ee9905fbe0a7b32aa0cd902afc3abe593a50dd10bac6",
+      "scope": "Existing Goal tool status complete after all scientific work, C diagnostic, backups/restores, GPU release and original CPU STOPPED readback. 09-h1 deleted; final closure content commit 19bd6a6; no user operation needed."
+    }
+  ],
+  "required_h1_events": [
+    "validation_R29",
+    "validation_R32",
+    "training_R35",
+    "validation_R35",
+    "test_independently_audited"
+  ],
+  "note": "Mark an event sent only after the corresponding user-facing report is delivered. Stage reports do not complete the Goal."
+}

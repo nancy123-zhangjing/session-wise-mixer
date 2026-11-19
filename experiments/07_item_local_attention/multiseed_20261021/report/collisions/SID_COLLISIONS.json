@@ -1,0 +1,343 @@
+{
+  "status": "SAVED_BEST_SID_COLLISIONS_VERIFIED",
+  "GPU_initialized": false,
+  "source_field": "joint_alignment.hard_codes",
+  "item_id_range": [
+    1,
+    12101
+  ],
+  "excluded_padding_item_id": 0,
+  "item_mapping": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\workspace\\data\\cache\\AmazonReviews2014\\Beauty\\processed\\id_mapping.json",
+    "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+    "size_bytes": 1351806
+  },
+  "historical_reference": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\joint_alternating\\BEST_SID_STATISTICS_20261020_final_r3.json",
+    "sha256": "aa20c94b7459673e6deece8675bcf73ff4067008cd4a9ad6167513e170ee9019",
+    "size_bytes": 1159
+  },
+  "historical_statistics_reproduced": true,
+  "tools": {
+    "diagnostic": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\summarize_sid_collisions.py",
+      "sha256": "6bebb0550d0eab762cc6d6e172bb6341992e2c8111171182c9a173b3a0b22bb8",
+      "size_bytes": 11510
+    },
+    "cpu_helper": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\postprocess\\checkpoint_payload_checks.py",
+      "sha256": "0d348456478ee08596ba35b676166bc873ad4c11a43db7679b45202c7be5bb29",
+      "size_bytes": 8882
+    }
+  },
+  "arms": [
+    {
+      "seed": 2024,
+      "variant": "control",
+      "best_epoch": 25,
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "item_count": 12101,
+      "unique_sid_count": 10651,
+      "colliding_item_count": 2171,
+      "collision_group_count": 721,
+      "colliding_item_ratio": 0.17940666060656144,
+      "duplicate_excess_count": 1450,
+      "duplicate_excess_ratio": 0.11982480786711842,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\identity.json",
+          "sha256": "39c6217e3fcfe0ebb953044de67fa46701698d82b2b9b9f08cfb651abe4b1581",
+          "size_bytes": 1970
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\results.json",
+          "sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+          "size_bytes": 6820
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\COMPLETE.json",
+          "sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417",
+          "size_bytes": 492
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\checkpoint_reload.json",
+          "sha256": "ce962649ddc054dfcc9a4a81a9646439398f5bacf080a0894a07b5bd104a079b",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\training_state\\best_model.bin",
+          "sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+          "size_bytes": 36147558
+        }
+      }
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "best_epoch": 25,
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "item_count": 12101,
+      "unique_sid_count": 10651,
+      "colliding_item_count": 2171,
+      "collision_group_count": 721,
+      "colliding_item_ratio": 0.17940666060656144,
+      "duplicate_excess_count": 1450,
+      "duplicate_excess_ratio": 0.11982480786711842,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\identity.json",
+          "sha256": "8dc628f2004858675d9bbad97b754bffdbd94299b5b399022c062b10bb9eb057",
+          "size_bytes": 1979
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\results.json",
+          "sha256": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+          "size_bytes": 7140
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\COMPLETE.json",
+          "sha256": "5376fcdbc61f46f4f74617c4fcf91fe0a10786bc0a79728558a230cd7276dae3",
+          "size_bytes": 498
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\checkpoint_reload.json",
+          "sha256": "de2759a92aa35399752bc0665a0a69a365f7bab69de8b1d932bfd0a6f9bdb919",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\training_state\\best_model.bin",
+          "sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+          "size_bytes": 37204442
+        }
+      }
+    },
+    {
+      "seed": 2025,
+      "variant": "control",
+      "best_epoch": 25,
+      "checkpoint_sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+      "SID_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+      "item_count": 12101,
+      "unique_sid_count": 10651,
+      "colliding_item_count": 2172,
+      "collision_group_count": 722,
+      "colliding_item_ratio": 0.17948929840509048,
+      "duplicate_excess_count": 1450,
+      "duplicate_excess_ratio": 0.11982480786711842,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\identity.json",
+          "sha256": "c4b527ea206a3735e5e82f1de1ce30b3db939d543178cd4e3181c06130ab1c66",
+          "size_bytes": 2674
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\results.json",
+          "sha256": "c09f58c88bc93e4345d4f6c035a01731436595ee39b30cfd07903b45c3e48d8b",
+          "size_bytes": 6664
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\COMPLETE.json",
+          "sha256": "cae3b5014554f629cc246d0df55d33387f78c67d1bb0da25cdb8abfaba98446f",
+          "size_bytes": 520
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\checkpoint_reload.json",
+          "sha256": "ef8b4405c20d96835d502e0d292b1ac19d803e7a76e8334e0811a63de07b3908",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\training_state\\best_model.bin",
+          "sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+          "size_bytes": 36147558
+        },
+        "validation/EVALUATION_COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+          "sha256": "a66cc21b24687c046bf7a697ff3c6cb8de47076a91afb36ffe3ac5bf3de73ed6",
+          "size_bytes": 9240
+        }
+      }
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "best_epoch": 19,
+      "checkpoint_sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+      "SID_sha256": "edb58b81459a31ebca01310d1f50ce4bec0d55b2d3d6e2dcae6a55544ad1ada4",
+      "item_count": 12101,
+      "unique_sid_count": 10649,
+      "colliding_item_count": 2176,
+      "collision_group_count": 724,
+      "colliding_item_ratio": 0.1798198495992067,
+      "duplicate_excess_count": 1452,
+      "duplicate_excess_ratio": 0.11999008346417651,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\identity.json",
+          "sha256": "5c848165ee31e7bfcaf32451242763746d08fcef47eca5afcb0afaa894ac217e",
+          "size_bytes": 2683
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\results.json",
+          "sha256": "49b357054ecb1a71178076624ba177d9411c48f8d148229855077a93b3830786",
+          "size_bytes": 6981
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\COMPLETE.json",
+          "sha256": "cdb41aacb45bc7659000fd4222d1ef3aa5cb7f80bd52820a04f8ea53c95b977f",
+          "size_bytes": 526
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\checkpoint_reload.json",
+          "sha256": "5bcaf132bb15f6db4be722f67eb07ad976d4d2beb60c7eb66916b29ba3470cd1",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\training_state\\best_model.bin",
+          "sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+          "size_bytes": 37204442
+        },
+        "validation/EVALUATION_COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+          "sha256": "a3392b3f6d6f1102eb93193010dc5d952f06237a421bc95bb3c654760759928e",
+          "size_bytes": 9248
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "best_epoch": 25,
+      "checkpoint_sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+      "SID_sha256": "d7f110282fc9465a62891c21f7d61199604e2e9b69ab74eac79bd8d5d52296e6",
+      "item_count": 12101,
+      "unique_sid_count": 10650,
+      "colliding_item_count": 2174,
+      "collision_group_count": 723,
+      "colliding_item_ratio": 0.17965457400214857,
+      "duplicate_excess_count": 1451,
+      "duplicate_excess_ratio": 0.11990744566564747,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\identity.json",
+          "sha256": "fd8873ef2eafb05534d4eea4f8390a1fd74ede6f2d2b5bfb2a07cb2913a1d965",
+          "size_bytes": 2674
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\results.json",
+          "sha256": "0a78608b5763b0c980c4ec1525ec8899580cc54ac9191259c5a74ef933b78526",
+          "size_bytes": 6664
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\COMPLETE.json",
+          "sha256": "4aa3c0897176d8c7a7c5a5bce193b6e31ca0142024332684eb49e8fd9e1d8a2c",
+          "size_bytes": 520
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\checkpoint_reload.json",
+          "sha256": "e386792ef1e9f910364db5226212f2492da972da0ec0c82eab32d4b80689c253",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\training_state\\best_model.bin",
+          "sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+          "size_bytes": 36147558
+        },
+        "validation/EVALUATION_COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+          "sha256": "0b7e988c42bbfe1464e9f96af4882d476425f86630bac4f4d594c56b574d7c64",
+          "size_bytes": 9241
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "best_epoch": 25,
+      "checkpoint_sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+      "SID_sha256": "2ae61eb4d054d3cd27c0908c101a46ad342ef01c47820bd9028b417bfa001903",
+      "item_count": 12101,
+      "unique_sid_count": 10650,
+      "colliding_item_count": 2174,
+      "collision_group_count": 723,
+      "colliding_item_ratio": 0.17965457400214857,
+      "duplicate_excess_count": 1451,
+      "duplicate_excess_ratio": 0.11990744566564747,
+      "maximum_group_size": 40,
+      "files": {
+        "identity.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\identity.json",
+          "sha256": "94c2d9aea75eee43baa594955bd7d412504ae149f9432c84ec2499692d03adc1",
+          "size_bytes": 2683
+        },
+        "results.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\results.json",
+          "sha256": "2780dfbc7e2649a1fef822b90f2d658f0af778942b6a053b94d32e6ed8346080",
+          "size_bytes": 6982
+        },
+        "COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\COMPLETE.json",
+          "sha256": "e6223069d29484a24389381abd3bea535d1119d8256300696d56cf37499ed432",
+          "size_bytes": 526
+        },
+        "checkpoint_reload.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\checkpoint_reload.json",
+          "sha256": "b1c056b41898e4718f9ab99aa12175915531b9c13c4d81fac6f8cb333631aada",
+          "size_bytes": 307
+        },
+        "input_identities.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\input_identities.json",
+          "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+          "size_bytes": 3084
+        },
+        "training_state/best_model.bin": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\training_state\\best_model.bin",
+          "sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+          "size_bytes": 37204442
+        },
+        "validation/EVALUATION_COMPLETE.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+          "sha256": "0f352b7bf43ecd8be9e46011bcb9ff805e19b5df7efa249d79f1af762c69823b",
+          "size_bytes": 9274
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "colliding_item_ratio": "Items in SID groups of size >1 / real item count",
+    "duplicate_excess_ratio": "(Real item count - unique SID count) / real item count"
+  },
+  "scope": "Saved selected best only; no re-quantization, inference, training or test evaluation",
+  "limitation": "Equal global collision counts do not imply identical collision memberships or equal target-weighted collision effects; this diagnostic alone cannot attribute recommendation gains"
+}

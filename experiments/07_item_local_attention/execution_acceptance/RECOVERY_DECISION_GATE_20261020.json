@@ -1,0 +1,40 @@
+{
+  "schema": "stage07_recovery_decision_gate_v1",
+  "date_local": "2026-10-20",
+  "status": "USER_SCOPE_DECISION_REQUIRED_BEFORE_GPU_RECOVERY",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "goal_complete": false,
+  "formal_training_acceptance_passed": false,
+  "last_complete_epoch": 84,
+  "last_complete_optimizer_updates": 8736,
+  "last_complete_validation_epoch": 80,
+  "best_complete_validation_epoch": 75,
+  "uncommitted_training_epoch": 85,
+  "final_test_started": false,
+  "optimizer_parameter_group_tensors": 90,
+  "optimizer_parameter_states_present": 50,
+  "missing_decoder_linear_parameter_states": 40,
+  "cpu_pinned_baseline_and_item_local_reproduction": true,
+  "cpu_four_layer_teacher_only_fix_verified": true,
+  "historical_stage03_actual_runtime_affected": null,
+  "cuda_fix_verified": false,
+  "candidate_patch_applied_to_frozen_execution_source": false,
+  "formal_recovery_job_submitted": false,
+  "accounted_allocated_gpu_seconds": 11273,
+  "total_gpu_seconds_limit": 28800,
+  "remaining_gpu_seconds": 17527,
+  "accounted_gpu_jobs_released": true,
+  "prior_allocation_receipt": "RECOVERY_PRIOR_ALLOCATION_AUDIT_20261020.json",
+  "recovery_preflight_receipt": "RECOVERY_PREFLIGHT_V2_20261020.json",
+  "diagnosis": "ocn_gradient_diagnosis_20261020/README.md",
+  "decision_requested": [
+    "Repair the training gradient path, then agree the necessary same-implementation baseline/control and additional GPU budget.",
+    "Explicitly accept the inherited execution behavior and finish only a limited legacy-behavior exploration within the original cumulative budget."
+  ],
+  "cannot_claim": [
+    "The current model has completed normal optimization of all intended parameters.",
+    "Historical Stage03 training definitely had the same gradient issue.",
+    "Applying the fix at epoch84 constitutes training the corrected model from scratch.",
+    "CPU candidate-fix checks constitute H100 training acceptance or Goal completion."
+  ]
+}

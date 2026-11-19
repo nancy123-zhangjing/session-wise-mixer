@@ -1,0 +1,17 @@
+# Decoder-only control for Joint Refined-PSE DIGER-ST V1.
+#
+# Load this after diff_formal_refinedpse_joint_diger_v1.yaml. It keeps the same
+# Refined-PSE artifact, matching pretrained DiffGRM checkpoint and evaluation
+# protocol, but excludes every tokenizer parameter from optimization and never
+# refreshes hard SIDs.
+run_id: diff_formal_refinedpse_frozen_decoder_continuation_4x256_seed2024
+epochs: 35
+reproduction_protocol: frozen_refinedpse_decoder_continuation_v1
+protocol_note: matched decoder-only continuation control for Joint Refined-PSE; initialize the same Refined-PSE v2 catalog tokenizer and DiffGRM checkpoint, freeze base codebooks and hard SIDs, and spend exactly 35 epochs on Decoder updates
+
+joint_frozen_tokenizer_control: true
+
+# All wall-clock epochs update the Decoder. These guards make an accidental
+# tokenizer phase impossible even if the inherited cycle is changed later.
+joint_recommender_warmup_epochs: 35
+joint_max_tokenizer_phases: 0

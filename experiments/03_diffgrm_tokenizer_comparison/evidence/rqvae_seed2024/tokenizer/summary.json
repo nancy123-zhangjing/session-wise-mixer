@@ -1,0 +1,114 @@
+{
+  "seed": 2024,
+  "n_digit": 4,
+  "codebook_size": 256,
+  "input_dim": 256,
+  "embed_dim": 32,
+  "mixed_precision": "bf16",
+  "max_steps": 60000,
+  "best_step": 3000,
+  "best_validation_total_loss": 2.0968442704066756,
+  "train_items": 10891,
+  "validation_items": 1210,
+  "elapsed_seconds": 519.4734338894486,
+  "peak_vram_mb": 96.51171875,
+  "reconstruction_mse_sum": 1.1516363620758057,
+  "reconstruction_cosine": 0.42418184876441956,
+  "neighbor_recall_at_10": 0.2914,
+  "mean_residual_norm_before_position": [
+    0.8442975813352848,
+    0.5002536330771992,
+    0.41329400983292963,
+    0.3527818816465323
+  ],
+  "items": 12101,
+  "unique_semantic_ids": 11967,
+  "collided_items": 254,
+  "collision_rate": 0.020990000826377985,
+  "colliding_groups": 120,
+  "largest_collision_group": 4,
+  "per_prefix": [
+    {
+      "prefix_length": 1,
+      "items": 12101,
+      "unique_prefixes": 256,
+      "collided_items": 12101,
+      "collision_rate": 1.0,
+      "colliding_groups": 256,
+      "largest_collision_group": 132
+    },
+    {
+      "prefix_length": 2,
+      "items": 12101,
+      "unique_prefixes": 9087,
+      "collided_items": 4916,
+      "collision_rate": 0.40624741756879595,
+      "colliding_groups": 1902,
+      "largest_collision_group": 27
+    },
+    {
+      "prefix_length": 3,
+      "items": 12101,
+      "unique_prefixes": 11677,
+      "collided_items": 779,
+      "collision_rate": 0.06437484505412776,
+      "colliding_groups": 355,
+      "largest_collision_group": 4
+    },
+    {
+      "prefix_length": 4,
+      "items": 12101,
+      "unique_prefixes": 11967,
+      "collided_items": 254,
+      "collision_rate": 0.020990000826377985,
+      "colliding_groups": 120,
+      "largest_collision_group": 4
+    }
+  ],
+  "per_position": [
+    {
+      "position": 1,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.460765926447275,
+      "normalized_entropy": 0.9847774901926137,
+      "effective_codes_perplexity": 235.27756067702242,
+      "largest_code_share": 0.010908189405834228
+    },
+    {
+      "position": 2,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.513686103048906,
+      "normalized_entropy": 0.9943209497358814,
+      "effective_codes_perplexity": 248.0638327207559,
+      "largest_code_share": 0.010825551607305181
+    },
+    {
+      "position": 3,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.526736083157449,
+      "normalized_entropy": 0.9966743424341681,
+      "effective_codes_perplexity": 251.32227586940223,
+      "largest_code_share": 0.0059499214940913975
+    },
+    {
+      "position": 4,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.535495040383391,
+      "normalized_entropy": 0.9982539054533213,
+      "effective_codes_perplexity": 253.53326578124694,
+      "largest_code_share": 0.006363110486736634
+    }
+  ],
+  "embedding_sha256": "a98f2b1b42ae6ddec1ad7781c4817f1c2554eafc9de426b3f4bae4014df5e3f0",
+  "items_sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+  "best_checkpoint_sha256": "7fc0b98467f9a64b0cc3c0f518aa7a1282bfbafb931be3d3c7430bbf5f0af266",
+  "semantic_ids_sha256": "dcae3644a15612de139928aa6ab64a535ee0b88195ea401f447ea5da98ffdbb8"
+}

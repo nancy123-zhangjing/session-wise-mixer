@@ -1,0 +1,334 @@
+{
+  "runs/H0/test/best/summary.json": {
+    "split": "test",
+    "full_split": true,
+    "diagnostic_prefix_limit": null,
+    "examples": 7176,
+    "dataset_binding": {
+      "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+      "files": {
+        "config.json": {
+          "bytes": 1269,
+          "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 801420,
+          "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 177258,
+          "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+        },
+        "train.parquet": {
+          "bytes": 533947591,
+          "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+        },
+        "validation.parquet": {
+          "bytes": 10356757,
+          "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+        },
+        "test.parquet": {
+          "bytes": 10354214,
+          "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+        }
+      },
+      "history_max": 128,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "beam": 32,
+    "inference_precision": "fp32",
+    "r_updates": 20790,
+    "t_updates": 360,
+    "metrics": {
+      "imp_hit@5": 0.2872073578595318,
+      "imp_recall@5": 0.0701644370122631,
+      "imp_ndcg@5": 0.08010089757197054,
+      "legacy_fixed5_ndcg@5": 0.0794873063046441,
+      "ev_hit@5": 0.1629760850310009,
+      "ev_recall@5": 0.08677590788308238,
+      "ev_ndcg@5": 0.06964490095937934,
+      "samples": 7176,
+      "ev_samples": 5645,
+      "ev_min": 1.0
+    },
+    "sensitivity_ev2": {
+      "imp_hit@5": 0.2872073578595318,
+      "imp_recall@5": 0.0701644370122631,
+      "imp_ndcg@5": 0.08010089757197054,
+      "legacy_fixed5_ndcg@5": 0.0794873063046441,
+      "ev_hit@5": 0.15510204081632653,
+      "ev_recall@5": 0.12519727891156462,
+      "ev_ndcg@5": 0.08776132470923727,
+      "samples": 7176,
+      "ev_samples": 2450,
+      "ev_min": 2.0
+    },
+    "seconds": 369.3341957728844,
+    "metric_protocol": {
+      "name": "l5o",
+      "selection": "ev_ndcg@5",
+      "filter_history": true,
+      "target_relevance": "deduplicated target set; EV by record watch_ratio",
+      "ev_denominator": "slates with nonempty EV target set",
+      "idcg": "min(5, unique relevant items)"
+    }
+  },
+  "runs/H0/test/final/summary.json": {
+    "split": "test",
+    "full_split": true,
+    "diagnostic_prefix_limit": null,
+    "examples": 7176,
+    "dataset_binding": {
+      "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+      "files": {
+        "config.json": {
+          "bytes": 1269,
+          "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 801420,
+          "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 177258,
+          "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+        },
+        "train.parquet": {
+          "bytes": 533947591,
+          "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+        },
+        "validation.parquet": {
+          "bytes": 10356757,
+          "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+        },
+        "test.parquet": {
+          "bytes": 10354214,
+          "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+        }
+      },
+      "history_max": 128,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "beam": 32,
+    "inference_precision": "fp32",
+    "r_updates": 24255,
+    "t_updates": 400,
+    "metrics": {
+      "imp_hit@5": 0.28051839464882944,
+      "imp_recall@5": 0.06805323299888517,
+      "imp_ndcg@5": 0.07688338847230744,
+      "legacy_fixed5_ndcg@5": 0.07627440269067678,
+      "ev_hit@5": 0.15553587245349867,
+      "ev_recall@5": 0.08253026276941246,
+      "ev_ndcg@5": 0.06462730931154564,
+      "samples": 7176,
+      "ev_samples": 5645,
+      "ev_min": 1.0
+    },
+    "sensitivity_ev2": {
+      "imp_hit@5": 0.28051839464882944,
+      "imp_recall@5": 0.06805323299888517,
+      "imp_ndcg@5": 0.07688338847230744,
+      "legacy_fixed5_ndcg@5": 0.07627440269067678,
+      "ev_hit@5": 0.14816326530612245,
+      "ev_recall@5": 0.11944897959183673,
+      "ev_ndcg@5": 0.08526561163732921,
+      "samples": 7176,
+      "ev_samples": 2450,
+      "ev_min": 2.0
+    },
+    "seconds": 371.16265650303103,
+    "metric_protocol": {
+      "name": "l5o",
+      "selection": "ev_ndcg@5",
+      "filter_history": true,
+      "target_relevance": "deduplicated target set; EV by record watch_ratio",
+      "ev_denominator": "slates with nonempty EV target set",
+      "idcg": "min(5, unique relevant items)"
+    }
+  },
+  "runs/H1/test/best/summary.json": {
+    "split": "test",
+    "full_split": true,
+    "diagnostic_prefix_limit": null,
+    "examples": 7176,
+    "dataset_binding": {
+      "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+      "files": {
+        "config.json": {
+          "bytes": 1269,
+          "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 801420,
+          "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 177258,
+          "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+        },
+        "train.parquet": {
+          "bytes": 533947591,
+          "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+        },
+        "validation.parquet": {
+          "bytes": 10356757,
+          "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+        },
+        "test.parquet": {
+          "bytes": 10354214,
+          "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+        }
+      },
+      "history_max": 128,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "beam": 32,
+    "inference_precision": "fp32",
+    "r_updates": 11781,
+    "t_updates": 160,
+    "metrics": {
+      "imp_hit@5": 0.2826086956521739,
+      "imp_recall@5": 0.0663670568561873,
+      "imp_ndcg@5": 0.07939136727175859,
+      "legacy_fixed5_ndcg@5": 0.07885364725998673,
+      "ev_hit@5": 0.14774136403897253,
+      "ev_recall@5": 0.07545615589016828,
+      "ev_ndcg@5": 0.0590697167309234,
+      "samples": 7176,
+      "ev_samples": 5645,
+      "ev_min": 1.0
+    },
+    "sensitivity_ev2": {
+      "imp_hit@5": 0.2826086956521739,
+      "imp_recall@5": 0.0663670568561873,
+      "imp_ndcg@5": 0.07939136727175859,
+      "legacy_fixed5_ndcg@5": 0.07885364725998673,
+      "ev_hit@5": 0.14530612244897959,
+      "ev_recall@5": 0.11580952380952382,
+      "ev_ndcg@5": 0.07826736819854546,
+      "samples": 7176,
+      "ev_samples": 2450,
+      "ev_min": 2.0
+    },
+    "seconds": 373.7559643108398,
+    "metric_protocol": {
+      "name": "l5o",
+      "selection": "ev_ndcg@5",
+      "filter_history": true,
+      "target_relevance": "deduplicated target set; EV by record watch_ratio",
+      "ev_denominator": "slates with nonempty EV target set",
+      "idcg": "min(5, unique relevant items)"
+    }
+  },
+  "runs/H1/test/final/summary.json": {
+    "split": "test",
+    "full_split": true,
+    "diagnostic_prefix_limit": null,
+    "examples": 7176,
+    "dataset_binding": {
+      "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+      "files": {
+        "config.json": {
+          "bytes": 1269,
+          "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 801420,
+          "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 177258,
+          "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+        },
+        "train.parquet": {
+          "bytes": 533947591,
+          "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+        },
+        "validation.parquet": {
+          "bytes": 10356757,
+          "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+        },
+        "test.parquet": {
+          "bytes": 10354214,
+          "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+        }
+      },
+      "history_max": 128,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "beam": 32,
+    "inference_precision": "fp32",
+    "r_updates": 24255,
+    "t_updates": 400,
+    "metrics": {
+      "imp_hit@5": 0.00013935340022296544,
+      "imp_recall@5": 2.787068004459309E-05,
+      "imp_ndcg@5": 2.0355121215538804E-05,
+      "legacy_fixed5_ndcg@5": 2.0355121215538804E-05,
+      "ev_hit@5": 0.0,
+      "ev_recall@5": 0.0,
+      "ev_ndcg@5": 0.0,
+      "samples": 7176,
+      "ev_samples": 5645,
+      "ev_min": 1.0
+    },
+    "sensitivity_ev2": {
+      "imp_hit@5": 0.00013935340022296544,
+      "imp_recall@5": 2.787068004459309E-05,
+      "imp_ndcg@5": 2.0355121215538804E-05,
+      "legacy_fixed5_ndcg@5": 2.0355121215538804E-05,
+      "ev_hit@5": 0.0,
+      "ev_recall@5": 0.0,
+      "ev_ndcg@5": 0.0,
+      "samples": 7176,
+      "ev_samples": 2450,
+      "ev_min": 2.0
+    },
+    "seconds": 402.44669673987664,
+    "metric_protocol": {
+      "name": "l5o",
+      "selection": "ev_ndcg@5",
+      "filter_history": true,
+      "target_relevance": "deduplicated target set; EV by record watch_ratio",
+      "ev_denominator": "slates with nonempty EV target set",
+      "idcg": "min(5, unique relevant items)"
+    }
+  }
+}

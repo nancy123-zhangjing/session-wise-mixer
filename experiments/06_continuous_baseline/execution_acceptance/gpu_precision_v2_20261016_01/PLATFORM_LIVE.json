@@ -1,0 +1,47 @@
+{
+  "observed_utc": "2026-10-16 03:53:58 UTC",
+  "status": "RUNNING",
+  "job_name": "nancy-stage06-20261016-8h100-precision-v2",
+  "platform_status": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-precision-v2",
+      "status": "RUNNING",
+      "project": "\u516c\u5171\u79d1\u7814\u9879\u76ee",
+      "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+      "resource": {
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu": 8,
+        "nodes": 1,
+        "shared_memory_gib": 64,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "nodes": [
+        "qb-prod-gpu001"
+      ],
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1792122092000"
+    }
+  },
+  "platform_instances": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-precision-v2",
+      "items": [
+        {
+          "status": "instance_running",
+          "type": "instance_type_worker",
+          "node": "qb-prod-gpu001",
+          "rank": 0
+        }
+      ]
+    }
+  },
+  "billing_status": "SETTLEMENT_NOT_VERIFIED",
+  "billing_reason": "Current CLI exposes quota price and Job status, not per-Job settlement. Read-only portal check redirected to CAS login. No credentials read, changed or transmitted.",
+  "billing_scope": "Business runtime and platform allocation durations will be reconciled separately; not project-wide balance subtraction.",
+  "old_job_preserved": "nancy-stage06-20261016-8h100-01",
+  "execution_source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907"
+}

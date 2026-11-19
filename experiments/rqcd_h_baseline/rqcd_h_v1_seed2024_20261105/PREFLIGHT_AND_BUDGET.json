@@ -1,0 +1,49 @@
+{
+  "run_id": "rqcd_h_v1_seed2024_20261105",
+  "preflight": {
+    "notebook": "nancy-rqcd-h100-20261105-r1",
+    "node": "qb-prod-gpu125",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "gpu_hours_used_approx": 0.1,
+    "status": "PASSED",
+    "runtime": {
+      "torch": "2.6.0+cu118",
+      "cuda": "11.8",
+      "bf16": true,
+      "tf32": false,
+      "deterministic": true
+    },
+    "attention": "aten::_scaled_dot_product_flash_attention (profiled)",
+    "optimizer": "fused AdamW",
+    "receipt_remote": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_rqcd/rqcd_h_v1_seed2024_20261105/preflight/synthetic_h100/PREFLIGHT.json"
+  },
+  "measured": {
+    "rq_update_s": 0.0264,
+    "recommender_update_s_eff1024": 0.2206,
+    "generation_ms_per_list": {
+      "B32": 39.4,
+      "B64": 20.2,
+      "B128": 10.06,
+      "B256": 5.12,
+      "B512": 2.6,
+      "B1024": 1.35
+    },
+    "quantize_ms_b32_n10728": 1.79,
+    "pack_validation_s": 0.77,
+    "pack_train_s": 4.45
+  },
+  "budget_estimate_gpu_hours": {
+    "rq_train_60000u": 0.5,
+    "recommender_24255u": 1.49,
+    "probes_35epochs": 0.05,
+    "validation_11x71657_at_B1024": 0.3,
+    "test_2x53194_at_B1024": 0.04,
+    "checkpoints_and_overhead": 0.25,
+    "subtotal": 2.63,
+    "margin_30pct": 0.79,
+    "proposed_total": 4.0,
+    "preflight_already_used": 0.1
+  },
+  "notes": "eval batch 32->1024 committed as 0dbd420; results mathematically identical (per-sample noise, independent lists)",
+  "blocked_on": "user confirmation of formal cumulative GPU budget (initial 1 GPU-hour preflight budget not exceeded)"
+}

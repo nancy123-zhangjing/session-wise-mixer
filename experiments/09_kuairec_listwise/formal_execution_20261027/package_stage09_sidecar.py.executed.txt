@@ -1,0 +1,93 @@
+"""Upload exact terminal evidence and run one verified CPU sidecar pack."""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+
+ROOT=Path(__file__).absolute().parents[3]
+F=ROOT/'experiments/09_kuairec_listwise/formal_execution_20261027'
+D=Path(__file__).absolute().parent
+G='/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1'
+PY='/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python'
+CLI=shutil.which('inspire') or 'inspire'
+NB=['notebook','ssh','nancy-stage09-prep-20261027-r1','--workspace','CPU资源空间','--command-timeout','180','--timeout','60','--',PY,'-B']
+def need(v,msg):
+    if not v:raise RuntimeError(msg)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def save(p,v):
+    with p.open('x',encoding='utf-8') as f:json.dump(v,f,ensure_ascii=False,indent=2);f.write('\n')
+def call(args,timeout=240):
+    r=subprocess.run([CLI,'--account','sii-shared',*args],capture_output=True,encoding='utf-8',errors='replace',timeout=timeout)
+    need(r.returncode==0,'CLI operation failed; private output withheld');return r.stdout
+def packet(code,marker='SIDECAR_PACKET '):
+    raw=call(NB+['-c',code]);rows=[json.loads(x[len(marker):]) for x in raw.splitlines() if x.startswith(marker)]
+    need(len(rows)==1,'No complete framed receipt');return rows[0]
+def ref(local,remote):return dict(path=remote,sha256=sha(local))
+def release_audit(name):return dict(job_name=name,all_allocated_pods_released=True,native_events_query_was_scoped_to_this_job=True,checked_at_utc=datetime.now(timezone.utc).isoformat(),auditor='root native scoped events and single-rank interval verification')
+
+def main(scope):
+    os.environ['NO_PROXY']='.sii.edu.cn,<institution-host>'
+    files={};jobs=[]
+    def add(filename):
+        local=F/filename;remote='delivery/backup_evidence/'+filename
+        need(local.is_file() and not local.is_symlink(),'Missing local evidence');files[remote]=local;return ref(local,remote)
+    name='nancy-stage09-four-arm-20261027-r1'
+    jobs.append(dict(name=name,status_receipt=add('FORMAL_STATUS_20261028T090148Z.json'),events_receipt=add('FORMAL_EVENTS_20261028T090305Z.json'),release_audit=release_audit(name)))
+    index=dict(schema='stage09_sidecar_terminal_inputs_v1',root=G,scope=scope,jobs=jobs,additional_json=[])
+    if scope=='operations':
+        index['additional_json']=[add(n) for n in ('FORMAL_RELEASE_ACCOUNTING_20261028.json','FOUR_BEST_FREEZE_20261028.json')]
+    else:
+        for a in ('J0','J1','H0','H1'):
+            name='nancy-stage09-final-eval-'+a.lower()+'-20261027-'+('r2' if a=='H1' else 'r1')
+            sp='FINAL_EVAL_'+a+'_STATUS_TERMINAL_20261028.json';ep='FINAL_EVAL_'+a+'_EVENTS_TERMINAL_20261028.json'
+            st=read(F/sp);need(st['data']['name']==name and st['data']['status']=='SUCCEEDED','Evaluation not complete')
+            ev=read(F/ep)['data']['items'];need(any(x.get('reason')=='SuccessfulDeletePod' for x in ev),'No evaluation release evidence')
+            jobs.append(dict(name=name,status_receipt=add(sp),events_receipt=add(ep),release_audit=release_audit(name)))
+        old='nancy-stage09-final-eval-h1-20261027-r1'
+        index['failed_attempt']=dict(name=old,status_receipt=add('FINAL_EVAL_H1_STATUS_FAILURE_20261028.json'),events_receipt=add('FINAL_EVAL_H1_EVENTS_FAILURE_20261028.json'),retry_plan=add('FINAL_EVAL_H1_RETRY_PLAN_20261028.json'),release_audit=release_audit(old))
+        index['four_best_freeze']=add('FOUR_BEST_FREEZE_20261028.json')
+        index['additional_json']=[add(n) for n in ('FINAL_EVAL_BOUND_PLAN_20261028.json','FINAL_EVAL_EXECUTION_GATE_20261028.json','FINAL_EVAL_H1_RETRY_CREATE_20261028.json','FINAL_EVAL_H1_RETRY_OUTPUT_PROBE_20261028.json')]
+    local_index=D/(scope+'_terminal.json');save(local_index,index)
+    files['delivery/backup_evidence/'+local_index.name]=local_index
+    helper=F/'backup_final_sidecars_r2.py';need(sha(helper)=='39c9fe26263c3807d315c32fe5df0d62e406e0707e83c8303745e5319f9df252','Helper changed after checks')
+    files['delivery/backup_final_sidecars_r2.py']=helper
+    identities={key:dict(sha256=sha(p),bytes=p.stat().st_size) for key,p in files.items()}
+    check=f'''from pathlib import Path
+import hashlib,json
+g=Path({G!r});assert str(g.resolve())==str(g) and g.is_dir()
+(g/'delivery/backup_evidence').mkdir(exist_ok=True)
+inventory={identities!r};result={{}}
+for name,want in inventory.items():
+ p=g/name;assert p.resolve().is_relative_to(g) and not p.is_symlink()
+ if p.exists():
+  raw=p.read_bytes();assert len(raw)==want['bytes'] and hashlib.sha256(raw).hexdigest()==want['sha256'];result[name]='identical_exists'
+ else:result[name]='absent'
+for name in ('stage09_{scope}_r1.tar','STAGE09_{scope.upper()}_R1.json'):
+ assert not (g/'delivery'/name).exists()
+print('SIDECAR_PACKET '+json.dumps(result))
+'''
+    existence=packet(check)
+    for name,local in files.items():
+        if existence[name]=='absent':
+            call(['notebook','scp','nancy-stage09-prep-20261027-r1','--workspace','CPU资源空间',str(local),G+'/'+name,'--timeout','90'],timeout=120)
+    verified=packet(check)
+    need(all(v=='identical_exists' for v in verified.values()),'Upload SHA verification failed')
+    save(F/('SIDECAR_'+scope.upper()+'_INPUT_BINDING_20261028.json'),dict(status='PASS',scope=scope,terminal_index=ref(local_index,'delivery/backup_evidence/'+local_index.name),files=identities,gpu_used=0))
+    raw=call(NB+[G+'/delivery/backup_final_sidecars_r2.py','pack','--scope',scope,'--terminal-index-sha256',sha(local_index)],timeout=300)
+    rows=[]
+    for line in raw.splitlines():
+        try:v=json.loads(line)
+        except ValueError:continue
+        if isinstance(v,dict) and v.get('stage')=='sidecars_backup_pass':rows.append(v)
+    need(len(rows)==1 and rows[0]['scope']==scope,'Missing remote archive PASS')
+    receipt=rows[0];save(D/('SIDECAR_'+scope.upper()+'_REMOTE_PASS_20261028.json'),receipt)
+    save(F/('SIDECAR_'+scope.upper()+'_REMOTE_PASS_20261028.json'),receipt)
+    print(json.dumps(receipt),flush=True)
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--scope',choices=['operations','evaluations'],required=True);args=p.parse_args();main(args.scope)

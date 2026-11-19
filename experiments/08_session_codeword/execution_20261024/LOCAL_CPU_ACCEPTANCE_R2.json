@@ -1,0 +1,261 @@
+{
+  "status": "passed",
+  "utc": "2026-10-23T17:22:06.909334+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+  "root_head": "037876cbb3de339ad011e5abcf0e66169967ce3b",
+  "engine_head": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "source_sha256": {
+    "external/DiffGRM/genrec/models/DIFF_GRM/session_codeword.py": "2b5ab81ea43e15bd1af662b58c3f742170fea7aaa8d9554180a031c247e57d5e",
+    "external/DiffGRM/genrec/models/DIFF_GRM/model.py": "32f0f7bdfe9f574047ee3814330a9d3612f9ab887f088e6036cd326c2c70b492",
+    "external/DiffGRM/genrec/models/DIFF_GRM/joint_cross_pse.py": "418178e22747e2b8d130e84db1d208cd7332e4d5ce0ecef095cbdd3cbd540d39",
+    "scripts/train/run_session_codeword_joint.py": "70d6af54058c92820fcaf1c29f9cb5dcf5d9ce8d6950494aec823734d57a03a3",
+    "scripts/train/session_codeword_gpu_job.py": "a11c124705f59229cff560f6f5ed3fd1ec9bfd1b67e0d5f4c336b72aa4cf8070",
+    "scripts/checks/session_codeword_h100_gate.py": "d150e0c0a8cdebf0ef1d9630d42d525455187e9c981cc4ee8cda30f90cb217ef",
+    "scripts/checks/session_inference_diagnostics.py": "a45aaff32eb978bd65e52d8004c9ff22d4d7be33aa58c04807ad7bd06d96ab15",
+    "scripts/analysis/report_session_codeword.py": "a89a96338cd2b3afa4e549230dab42221d4913a87980552cfab774193e46f809",
+    "scripts/analysis/pack_session_codeword.py": "b96288eccf10e2df2c9110a06fef2846b30b700fc1838830e95c77425d74bdb5",
+    "scripts/analysis/audit_mixer_long_campaign.py": "51d2b6f31e380f451a5e08c810eb23c48556fb180e1b55ad3a4a0a006bb71e6f",
+    "tests/fixtures/diffgrm_pre_item_local_model.py": "624bd29e63f265949d96494b62ad126283552eac80b3fb79995a84bf406031d0",
+    "configs/08_session_codeword/session_codeword_seed2024.json": "afe01cb84dfd9afa4e9af3a2313e1f43a795d986006c9a79cf28674a0eb58c0f",
+    "scripts/checks/verify_session_codeword_cpu.py": "09ebf3b1885033efc5bd55ff180da59aa3d54c6e460b2031f3aa66f3700a42dc",
+    "configs/shared/diff_formal_common.yaml": "e36001a04ce41023727ef4e38cceda9f2280ecd716b96dc02f132735779ae1c2",
+    "configs/shared/diff_formal_repo_v6.yaml": "535e6fdccdd95225b7b5b72c0de2a2648de93bdbf01a377f2a74fff060df31ee",
+    "configs/05_crosspse_joint/diff_formal_crosspse_joint_diger_v2.yaml": "ef2032bbb694a5b4d4131e3e1f698288196f38687bf3d4aa18fb27731e301336",
+    "tests/test_session_codeword.py": "02f0e0ecf3c4b1908981f537371958b3f4eff535269d4458aae18654c6384263",
+    "tests/test_session_codeword_integration.py": "4e97babbc85707ed46d8fc3ba63385571f231cb2e2549c8b05c847fd7da4f886",
+    "tests/test_session_codeword_runner.py": "b7689f834b95d4562119a5bb1ad2c51d5185256df6fee4306d82e022a47916e2",
+    "tests/test_session_codeword_context.py": "50229f373d6c0919502b3ba4c66f6407064663730ca3d3347c0f42254db3d6e5",
+    "tests/test_session_codeword_h100_gate.py": "bc127535efa2efe178efb42cfe676f527989ee8eb32ac2a6090f771e97e0180c",
+    "tests/test_session_codeword_gpu_job.py": "cdd1edcf42d812690523ddbf873130154931637c1fe5e6ab74d276aba3594432",
+    "tests/test_session_inference_diagnostics.py": "aff468a245326726c5e0dac0de6acb19828bc3ddae8539e50992a31f33c8235f",
+    "tests/test_session_codeword_report.py": "e6f4673c38d72187573a9fc0823ba1df422ac29cf994db7eba777430ff7783c0",
+    "tests/test_session_codeword_backup.py": "98b319d280bbad535df04b47b76f401ead8b97af33098b221a8249bb7193731b",
+    "tests/test_item_local_attention.py": "ab081b14856b54896aec698ed93cc1d81d20255a98bebc958ef7f24531b10231",
+    "tests/test_item_local_alternating_joint.py": "1f10d032e9178ef5aaa2b401d2970f42a0a4f1d8edec6200ae22ca8b5c74f320",
+    "tests/test_item_local_joint_training_state.py": "3974f4ce2cb481db502ec0c579b1275010b4d00a5620b9746fa227a85697e81a",
+    "tests/test_diger_mixer_long.py": "ed199a080fa221b3043106799bcbf3f1fd5f224d401c3361d6379c866a589f05"
+  },
+  "sources_unchanged_during_checks": true,
+  "results": [
+    {
+      "test": "tests/test_session_codeword.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword.py"
+      ],
+      "exit_code": 0,
+      "tests": 10,
+      "skipped": 0,
+      "passed": 10,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword.log",
+      "log_sha256": "fa1df4eb8cf8842e1a9c299bbce6dc2bee5d7f7ad70c0b6ef806b713fcda09b4"
+    },
+    {
+      "test": "tests/test_session_codeword_integration.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_integration.py"
+      ],
+      "exit_code": 0,
+      "tests": 8,
+      "skipped": 0,
+      "passed": 8,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_integration.log",
+      "log_sha256": "e12bfdb8d40610cc167dc6792f6c7f0dbbd81194bba88d9dfee10389707b1b1e"
+    },
+    {
+      "test": "tests/test_session_codeword_runner.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_runner.py"
+      ],
+      "exit_code": 0,
+      "tests": 10,
+      "skipped": 0,
+      "passed": 10,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_runner.log",
+      "log_sha256": "52db66731b0f34aa6b2c5c4d04965be335c100609ab83efdd4e46cab4372a289"
+    },
+    {
+      "test": "tests/test_session_codeword_context.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_context.py"
+      ],
+      "exit_code": 0,
+      "tests": 4,
+      "skipped": 0,
+      "passed": 4,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_context.log",
+      "log_sha256": "bf79ff176a2444b0271a855ba9466d0c0ba7b4d47c81f42463f0eb6c0f5d7ad1"
+    },
+    {
+      "test": "tests/test_session_codeword_h100_gate.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_h100_gate.py"
+      ],
+      "exit_code": 0,
+      "tests": 11,
+      "skipped": 0,
+      "passed": 11,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_h100_gate.log",
+      "log_sha256": "cf5a0e6082d729b6822d3abf567140e2486d724aee33c1169153806a11dbe26c"
+    },
+    {
+      "test": "tests/test_session_codeword_gpu_job.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_gpu_job.py"
+      ],
+      "exit_code": 0,
+      "tests": 15,
+      "skipped": 0,
+      "passed": 15,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_gpu_job.log",
+      "log_sha256": "e7140a2773485795ec3f8d5d28a267071803fc36a98adf4eec951f9fed031a88"
+    },
+    {
+      "test": "tests/test_session_inference_diagnostics.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_inference_diagnostics.py"
+      ],
+      "exit_code": 0,
+      "tests": 2,
+      "skipped": 0,
+      "passed": 2,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_inference_diagnostics.log",
+      "log_sha256": "0b1a006fdabf34308d47f43d77cb7dd6afb32c461201f3d23706f102fe055eb4"
+    },
+    {
+      "test": "tests/test_session_codeword_report.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_report.py"
+      ],
+      "exit_code": 0,
+      "tests": 11,
+      "skipped": 0,
+      "passed": 11,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_report.log",
+      "log_sha256": "fc78f151936f3bc955957fa9e5016e94ff1c7046e50a70f06d0ff7a4287964a6"
+    },
+    {
+      "test": "tests/test_session_codeword_backup.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_session_codeword_backup.py"
+      ],
+      "exit_code": 0,
+      "tests": 6,
+      "skipped": 0,
+      "passed": 6,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_session_codeword_backup.log",
+      "log_sha256": "8a5339f9eae53310df2950a4c8593055c0b5d16598892b9f09c66df38135b49d"
+    },
+    {
+      "test": "tests/test_item_local_attention.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_item_local_attention.py"
+      ],
+      "exit_code": 0,
+      "tests": 8,
+      "skipped": 0,
+      "passed": 8,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_item_local_attention.log",
+      "log_sha256": "96f929ba02c9f6097114e9c292220dbc4efa712668d114b4e4c79c959d0d1257"
+    },
+    {
+      "test": "tests/test_item_local_alternating_joint.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_item_local_alternating_joint.py"
+      ],
+      "exit_code": 0,
+      "tests": 5,
+      "skipped": 0,
+      "passed": 5,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_item_local_alternating_joint.log",
+      "log_sha256": "8ccb92adad9d246b7f07bce321d73c138974e49c9410d214840d610c1fe0d832"
+    },
+    {
+      "test": "tests/test_item_local_joint_training_state.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_item_local_joint_training_state.py"
+      ],
+      "exit_code": 0,
+      "tests": 3,
+      "skipped": 0,
+      "passed": 3,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_item_local_joint_training_state.log",
+      "log_sha256": "1136830560c8559da90abb014d1906adb3bd6f6ba4ccaa85c8ae1b92371a4134"
+    },
+    {
+      "test": "tests/test_diger_mixer_long.py",
+      "command": [
+        "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\continuous_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tests/test_diger_mixer_long.py"
+      ],
+      "exit_code": 0,
+      "tests": 14,
+      "skipped": 1,
+      "passed": 13,
+      "log": "experiments\\08_session_codeword\\execution_20261024\\test_diger_mixer_long.log",
+      "log_sha256": "1437762306ec8c3d93805270a13be013f7f04cd87b78bb101379046a1ed4ec83"
+    }
+  ],
+  "tests": 107,
+  "passed": 106,
+  "skipped": 1,
+  "gpu_started": false,
+  "formal_training_started": false,
+  "real_Beauty_pipeline_prepared": false,
+  "remote_assets_verified": false,
+  "limits": [
+    "Synthetic CPU model/optimizer checks only; no H100 acceptance or recommendation metrics.",
+    "The legacy shared-filesystem lock check requires Linux and is skipped on Windows."
+  ]
+}

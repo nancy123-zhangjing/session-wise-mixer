@@ -1,0 +1,29 @@
+{
+  "goal_status": "active",
+  "turn_classification": "verified_wait",
+  "observed": 1794497751.7817142,
+  "jobs_confirmed_live": [
+    "nancy-prefix-h0-a-r20-1112-v1",
+    "nancy-prefix-h1-a-r20-1112-v1",
+    "nancy-prefix-h0-b-r20-1112-v1",
+    "nancy-prefix-h1-b-r20-1112-v1"
+  ],
+  "new_validation_nodes_notified": [
+    "H0-A:R5",
+    "H1-A:R5",
+    "H0-B:R5",
+    "H1-B:R5"
+  ],
+  "monitor_command": "python -X utf8 experiments/09_kuairec_listwise/decoder_prefix_formal_20261112_v1/monitor.py",
+  "temporary_cpu": "env-zzl running for monitoring; stop only after final artifact collection or if monitoring no longer needs it",
+  "baselines": "BASELINES_R20.json plus BASELINES_R20_EXTRA.json; exclude J0 entry in extra; original H0 budget-best R14 test 0.00892254574671228; original H1 budget-best R20 test 0.007943673498936111",
+  "remaining": [
+    "R5 pair fingerprints verified for A and B in R5_ACCEPTANCE.json; final remote checkpoint SHA audit remains",
+    "Report each new validation node with exact same-budget controls and measured ETA",
+    "Verify all runs stop at R20/T200; no T201",
+    "Verify validation-selected best and R20 full test results and artifact SHA hashes remotely",
+    "Produce comparison report, verify resource release, then complete goal"
+  ],
+  "restart_policy": "Never restart because polling timed out; inspect terminal state and recover only latest valid checkpoint after established failure",
+  "latest_evidence": "LATEST.json"
+}

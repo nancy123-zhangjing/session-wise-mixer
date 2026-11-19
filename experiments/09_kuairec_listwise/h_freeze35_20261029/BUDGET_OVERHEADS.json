@@ -1,0 +1,61 @@
+{
+  "c_replay_trajectory_and_prediction_audit_total": {
+    "low": 180,
+    "high": 600,
+    "basis": "operator_allowance",
+    "evidence": "20 trajectory scans and six paired 71657-row prediction comparisons including R20 recheck; 3-10 minutes GPU-allocated CPU overhead, not an observed time."
+  },
+  "checkpoint_coverage_validation_per_file": {
+    "low": 0.2,
+    "high": 2,
+    "basis": "operator_allowance",
+    "evidence": "Clock and optimizer-field validation beyond the separately measured checkpoint file read/hash/fingerprint."
+  },
+  "evaluation_output_and_unprofiled_cpu_per_call": {
+    "low": 60,
+    "high": 180,
+    "basis": "operator_allowance",
+    "evidence": "Full split load, item metrics/gzip publication and preservation checks absent from the 128-request decode profile; allow 1-3 minutes per full evaluation."
+  },
+  "extra_gpu_allocated_cpu_audit": {
+    "A": {
+      "low": 0,
+      "high": 0,
+      "basis": "operator_allowance",
+      "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere."
+    },
+    "B": {
+      "low": 0,
+      "high": 0,
+      "basis": "operator_allowance",
+      "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere."
+    },
+    "C": {
+      "low": 0,
+      "high": 0,
+      "basis": "operator_allowance",
+      "evidence": "Independent metric/bootstrap and archive restore audits are planned on CPU after GPU exit. Test checkpoint restore and on-GPU coverage are counted explicitly elsewhere."
+    }
+  },
+  "format": "stage09_freeze35_budget_overheads_v1",
+  "instructions": "Fill every GPU-allocated range with measured or operator_allowance basis; null is not zero. An operator allowance is an explicit conservative assumption, never an observed timing.",
+  "offline_cpu_audit_total": {
+    "low": 1800,
+    "high": 7200,
+    "basis": "operator_allowance",
+    "evidence": "Estimated local download, complete SHA/extraction, real CPU restore, metric recomputation/bootstrap and report generation; excluded from GPU budget, network throughput remains uncertain."
+  },
+  "package_verification_platform_startup_release_per_job": {
+    "low": 60,
+    "high": 180,
+    "basis": "operator_allowance",
+    "evidence": "Explicit allowance for startup/import/package authentication/release; preflight platform log shows about 31 seconds through package verification, model build is counted separately."
+  },
+  "phase_indices_logging_per_phase": {
+    "low": 1,
+    "high": 5,
+    "basis": "operator_allowance",
+    "evidence": "Index generation and up to 693 JSONL updates per phase; checkpoint and replay auditing separately counted."
+  },
+  "units": "seconds"
+}

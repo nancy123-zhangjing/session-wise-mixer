@@ -1,0 +1,68 @@
+{
+  "jobs": [
+    {
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda13.2版本-183核",
+      "quota": "1,20,200",
+      "image": "pytorch:25.06-py3:25.06",
+      "priority": 4,
+      "nodes": 1,
+      "shm_size": 32,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "name": "nancy-stage07-multiseed-2025-formal-control-20261021-r1",
+      "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code && exec /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/item_local_multiseed_gpu_job.py --mode formal --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1 --seed 2025 --deployment-lock /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/DEPLOYMENT_LOCK.json --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/CPU_GATE.json --budget-reservation /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/BUDGET_RESERVATION.json --project-root /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized --attempt 1 --variant control --max-seconds 10440 --platform-max-seconds 10620 --smoke-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/delivery/smoke_seed2025_attempt1/receipt.json'",
+      "max_time": 2.95,
+      "description": "Stage07 paired joint training; validation beam32/256; no test"
+    },
+    {
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda13.2版本-183核",
+      "quota": "1,20,200",
+      "image": "pytorch:25.06-py3:25.06",
+      "priority": 4,
+      "nodes": 1,
+      "shm_size": 32,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "name": "nancy-stage07-multiseed-2025-formal-item-local-20261021-r1",
+      "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code && exec /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/item_local_multiseed_gpu_job.py --mode formal --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1 --seed 2025 --deployment-lock /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/DEPLOYMENT_LOCK.json --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/CPU_GATE.json --budget-reservation /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/BUDGET_RESERVATION.json --project-root /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized --attempt 1 --variant item_local --max-seconds 10440 --platform-max-seconds 10620 --smoke-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/delivery/smoke_seed2025_attempt1/receipt.json'",
+      "max_time": 2.95,
+      "description": "Stage07 paired joint training; validation beam32/256; no test"
+    },
+    {
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda13.2版本-183核",
+      "quota": "1,20,200",
+      "image": "pytorch:25.06-py3:25.06",
+      "priority": 4,
+      "nodes": 1,
+      "shm_size": 32,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "name": "nancy-stage07-multiseed-2026-formal-control-20261021-r1",
+      "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code && exec /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/item_local_multiseed_gpu_job.py --mode formal --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1 --seed 2026 --deployment-lock /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/DEPLOYMENT_LOCK.json --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/CPU_GATE.json --budget-reservation /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/BUDGET_RESERVATION.json --project-root /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized --attempt 1 --variant control --max-seconds 10440 --platform-max-seconds 10620 --smoke-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/delivery/smoke_seed2026_attempt1/receipt.json'",
+      "max_time": 2.95,
+      "description": "Stage07 paired joint training; validation beam32/256; no test"
+    },
+    {
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda13.2版本-183核",
+      "quota": "1,20,200",
+      "image": "pytorch:25.06-py3:25.06",
+      "priority": 4,
+      "nodes": 1,
+      "shm_size": 32,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "name": "nancy-stage07-multiseed-2026-formal-item-local-20261021-r1",
+      "command": "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code && exec /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/item_local_multiseed_gpu_job.py --mode formal --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1 --seed 2026 --deployment-lock /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/DEPLOYMENT_LOCK.json --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/CPU_GATE.json --budget-reservation /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/BUDGET_RESERVATION.json --project-root /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized --attempt 1 --variant item_local --max-seconds 10440 --platform-max-seconds 10620 --smoke-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/delivery/smoke_seed2026_attempt1/receipt.json'",
+      "max_time": 2.95,
+      "description": "Stage07 paired joint training; validation beam32/256; no test"
+    }
+  ]
+}

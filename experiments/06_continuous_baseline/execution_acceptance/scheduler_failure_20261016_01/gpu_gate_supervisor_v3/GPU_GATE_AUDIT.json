@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "distinct_h100s": 8,
+  "parallel_tasks": 10,
+  "actual_resume_updates": [
+    20,
+    21
+  ],
+  "gradient_checks": [
+    {
+      "model": "sasrec_fullce",
+      "dim": 64,
+      "heads": 1,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.0026898375598361705,
+      "gradient_cosine": 0.9999964212184121,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 9.45421028137207,
+      "bf16_loss": 9.454681396484375
+    },
+    {
+      "model": "esasrec",
+      "dim": 64,
+      "heads": 1,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.0035503332717746194,
+      "gradient_cosine": 0.9999948539997273,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 5.500828742980957,
+      "bf16_loss": 5.500802040100098
+    },
+    {
+      "model": "sasrec_fullce",
+      "dim": 512,
+      "heads": 2,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.004229486024020971,
+      "gradient_cosine": 0.9999910611979358,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 9.404308319091797,
+      "bf16_loss": 9.404239654541016
+    },
+    {
+      "model": "esasrec",
+      "dim": 512,
+      "heads": 2,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.005159048786328214,
+      "gradient_cosine": 0.9999872934912413,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 5.5475311279296875,
+      "bf16_loss": 5.54758882522583
+    }
+  ],
+  "stress_full_epochs": 35,
+  "stress_updates": 17990,
+  "stress_max_gradient_norm": 6.677355766296387,
+  "all_stress_loss_norm_rows_equal_prior_candidate": true,
+  "retained_completed": 38,
+  "actual_resumed_tasks": 8,
+  "test_unlocked": false,
+  "scope": "Independent GPU gate and actual recovery receipt checks; not 89-run completion or final recommendation quality",
+  "gate_sha256": "b93531d617196d97f156216efb901610f2a24186f45a13dc696a6aac043ba857",
+  "audit_script_sha256": "9c5ce80494942690aa0ac6c09fed04958d87a32f3961b1a55e94aec772b6561b"
+}

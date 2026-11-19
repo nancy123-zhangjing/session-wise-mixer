@@ -1,0 +1,148 @@
+{
+  "validation_only": true,
+  "test_unlocked": true,
+  "selected_model": "sasrec_fullce",
+  "models": {
+    "sasrec_fullce": {
+      "trial_id": "sasrec_fullce_13",
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "sasrec_fullce",
+        "dim": 256,
+        "layers": 1,
+        "heads": 1,
+        "dropout": 0.3,
+        "lr": 0.0001,
+        "weight_decay": 0.0,
+        "batch_size": 256
+      },
+      "config_sha256": "16591d8a8c9cd2fa42a12f6f144253684c04f64021cb96d8982a1b7c4dca61e0",
+      "confirmation_mean": {
+        "NDCG@10": 0.05618383995578209,
+        "HR@10": 0.09739301524840138
+      },
+      "candidates": [
+        {
+          "trial_id": "sasrec_fullce_13",
+          "metrics": {
+            "NDCG@10": 0.05618383995578209,
+            "HR@10": 0.09739301524840138
+          }
+        },
+        {
+          "trial_id": "sasrec_fullce_16",
+          "metrics": {
+            "NDCG@10": 0.05451778421530497,
+            "HR@10": 0.09241455380166644
+          }
+        },
+        {
+          "trial_id": "sasrec_fullce_01",
+          "metrics": {
+            "NDCG@10": 0.05496330256271139,
+            "HR@10": 0.09256360953360461
+          }
+        }
+      ],
+      "formal_validation_mean": {
+        "NDCG@10": 0.05552036368337769,
+        "HR@10": 0.09566694987255735
+      },
+      "parameter_count": 3900672,
+      "formal_tasks": [
+        "formal__sasrec_fullce_13__seed3031",
+        "formal__sasrec_fullce_13__seed3032",
+        "formal__sasrec_fullce_13__seed3033",
+        "formal__sasrec_fullce_13__seed3034",
+        "formal__sasrec_fullce_13__seed3035"
+      ]
+    },
+    "esasrec": {
+      "trial_id": "esasrec_19",
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "esasrec",
+        "dim": 512,
+        "layers": 1,
+        "heads": 4,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "batch_size": 128,
+        "negatives": 1024
+      },
+      "config_sha256": "788085c484e41db412bc2ba900fd7ed82db68775e6d19ffeaab6a61a54ce04a3",
+      "confirmation_mean": {
+        "NDCG@10": 0.05204478027884104,
+        "HR@10": 0.0853493121077971
+      },
+      "candidates": [
+        {
+          "trial_id": "esasrec_16",
+          "metrics": {
+            "NDCG@10": 0.048664382157769345,
+            "HR@10": 0.08503629507072695
+          }
+        },
+        {
+          "trial_id": "esasrec_19",
+          "metrics": {
+            "NDCG@10": 0.05204478027884104,
+            "HR@10": 0.0853493121077971
+          }
+        },
+        {
+          "trial_id": "esasrec_08",
+          "metrics": {
+            "NDCG@10": 0.050685007392038926,
+            "HR@10": 0.08539402882737855
+          }
+        }
+      ],
+      "formal_validation_mean": {
+        "NDCG@10": 0.051511270979504635,
+        "HR@10": 0.08674149264409962
+      },
+      "parameter_count": 10945536,
+      "formal_tasks": [
+        "formal__esasrec_19__seed3031",
+        "formal__esasrec_19__seed3032",
+        "formal__esasrec_19__seed3033",
+        "formal__esasrec_19__seed3034",
+        "formal__esasrec_19__seed3035"
+      ]
+    }
+  },
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "training_results_sha256": "746b5ecda8e3c929a5a6a52af242f64a806d2b4e00b2f203818f60ff945d7232"
+}

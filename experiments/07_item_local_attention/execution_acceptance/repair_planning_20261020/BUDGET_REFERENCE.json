@@ -1,0 +1,45 @@
+{
+  "status": "PROPOSAL_NOT_AUTHORIZED",
+  "basis": "Old defective execution speed only; repaired GPU throughput and stopping epoch are unknown",
+  "committed_training_epochs": 84,
+  "excluded_uncommitted_epochs": [
+    85
+  ],
+  "train_seconds_sum": 8253.272673239931,
+  "train_seconds_mean": 98.25324610999918,
+  "complete_val_calls": 13,
+  "val_seconds_sum": 2431.5354510420584,
+  "val_seconds_mean": 187.0411885416968,
+  "val_seconds_max": 212.72863275400596,
+  "fit_other_seconds": 32.34978226496605,
+  "test_seconds_reference": 511.46655656571966,
+  "test_reference_is_extrapolated_from_validation_samples": true,
+  "reference_scenarios": [
+    {
+      "epochs_per_model": 120,
+      "validation_calls_per_model": 21,
+      "two_models_old_mean_reference_gpu_hours": 9.016511693967363,
+      "two_models_old_conservative_reference_gpu_hours": 11.576648802444359
+    },
+    {
+      "epochs_per_model": 200,
+      "validation_calls_per_model": 37,
+      "two_models_old_mean_reference_gpu_hours": 15.04591097478241,
+      "two_models_old_conservative_reference_gpu_hours": 19.341347760257744
+    }
+  ],
+  "already_allocated_gpu_hours": 3.131388888888889,
+  "original_cumulative_limit_gpu_hours": 8,
+  "proposed_cumulative_limit_gpu_hours": 28,
+  "proposed_increase_over_original_limit_gpu_hours": 20,
+  "future_allocation_available_under_proposed_limit_gpu_hours": 24.86861111111111,
+  "initial_H100_gate_and_profile_max_gpu_hours": 0.5,
+  "formal_training_requires_explicit_budget_approval_and_H100_gate": true,
+  "source_sha256": {
+    "PRESERVED_EPOCH_TIMINGS.json": "bf3045219bd24ccef8cda93023e6d37afcb071d69f6a46a347d1ac705a72e491",
+    "PRESERVED_EVALUATION_TIMINGS.json": "d2b00724a2a279d43c5505a5e6fd460813187f6b480a246ed06b319506528b0e"
+  },
+  "formula": "2 * (E * train_seconds + ((E-20)//5+1) * val_seconds + test_seconds) / 3600",
+  "reference_excludes": "GPU checks, startup, cleanup, canceled-work replay, and changed backward cost",
+  "policy": "gpu < 40% for 3h; no claim that this fix alone meets it; no dummy load or repeated resubmission to evade it"
+}

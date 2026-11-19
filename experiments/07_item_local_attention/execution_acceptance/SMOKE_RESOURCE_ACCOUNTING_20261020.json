@@ -1,0 +1,62 @@
+{
+  "status": "SMOKES_ACCOUNTED_FORMAL_PENDING",
+  "verified_utc": "2026-10-19T17:20:45.510931+00:00",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "allocation_basis": "Single-job Scheduled event to SuccessfulDeletePod event; timestamps UTC+08:00",
+  "jobs": [
+    {
+      "job_name": "nancy-stage07-item-local-smoke-20261020-0045",
+      "terminal_status": "FAILED",
+      "gpu_count": 1,
+      "scheduled_local": "2026-10-20T00:51:46+08:00",
+      "pod_deleted_local": "2026-10-20T00:55:10+08:00",
+      "allocated_seconds": 204.0,
+      "allocated_gpu_hours": 0.056666666666666664,
+      "created_to_terminal_seconds": 247.0,
+      "released_by_pod_deletion": true,
+      "sources": {
+        "status": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\execution_acceptance\\SMOKE_TERMINAL_20261020.json",
+          "sha256": "aac9ec256af70ec41743f4aa0e8eed4d31b1b489fde1cac11ef4a5863ef01323"
+        },
+        "events": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\execution_acceptance\\SMOKE_R1_EVENTS_FINAL_20261020.json",
+          "sha256": "2070feaec73b10d6cc3314d05bff81a8952408f57c4ab53ea5eba5b180debeb9"
+        }
+      }
+    },
+    {
+      "job_name": "nancy-stage07-item-local-smoke-20261020-0045-r2",
+      "terminal_status": "SUCCEEDED",
+      "gpu_count": 1,
+      "scheduled_local": "2026-10-20T00:59:43+08:00",
+      "pod_deleted_local": "2026-10-20T01:02:47+08:00",
+      "allocated_seconds": 184.0,
+      "allocated_gpu_hours": 0.051111111111111114,
+      "created_to_terminal_seconds": 238.0,
+      "released_by_pod_deletion": true,
+      "sources": {
+        "status": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\execution_acceptance\\SMOKE_R2_TERMINAL_20261020.json",
+          "sha256": "8d656b6ae3d58ba57100e5b474e84ab65645cf99233992c10214e4fa01a51985"
+        },
+        "events": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\execution_acceptance\\SMOKE_R2_EVENTS_FINAL_20261020.json",
+          "sha256": "55b95fd4f631f7afd9f2fd85d3e5587e02e917ed6bda695ecfc1887df3f9f3c4"
+        }
+      }
+    }
+  ],
+  "allocated_seconds": 388.0,
+  "allocated_gpu_hours": 0.10777777777777778,
+  "limit_gpu_hours": 8.0,
+  "within_limit_for_accounted_jobs": true,
+  "formal_job_accounted": false,
+  "all_goal_gpu_jobs_accounted": false,
+  "all_accounted_allocations_released": true,
+  "billing_or_settlement_verified": false,
+  "goal_complete": false,
+  "formal_cap_gpu_hours": 7.5,
+  "smokes_plus_formal_cap_gpu_hours": 7.607777777777778,
+  "scope": "Two completed smokes only; not final Goal resource acceptance"
+}

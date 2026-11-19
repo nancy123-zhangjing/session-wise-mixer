@@ -1,0 +1,53 @@
+{
+  "format": "h1_recovery_test_resource_accounting_v1",
+  "status": "verified_events_invoice_unverified",
+  "jobs": [
+    {
+      "policy": "decay",
+      "name": "nancy-h1-recovery-test-decay-20261029-r1",
+      "status": "SUCCEEDED",
+      "allocated_gpus": 1,
+      "scheduled_at": "2026-10-29T10:54:19+08:00",
+      "last_job_terminated_at": "2026-10-29T11:21:09+08:00",
+      "successful_delete_pod_at": "2026-10-29T11:21:06+08:00",
+      "gpu_seconds": 1610.0,
+      "gpu_hours": 0.44722222222222224,
+      "unit_points_per_gpu_hour": 1,
+      "estimated_points": 0.44722222222222224,
+      "released": true,
+      "source_files": {
+        "experiments\\09_kuairec_listwise\\h1_recovery_test_20261029\\DECAY_FINAL_EVENTS.json": "7b7af7acd31d19c8d3058d9941397aa8a3b319e348ee30503bf12831b87770d7",
+        "experiments\\09_kuairec_listwise\\h1_recovery_test_20261029\\DECAY_FINAL_STATUS.json": "daf1713b34f8bdf1d7ba4b0129d636923497d5eb4f7d92c8bc2d4743e1420840"
+      }
+    },
+    {
+      "policy": "freeze",
+      "name": "nancy-h1-recovery-test-freeze-20261029-r1",
+      "status": "SUCCEEDED",
+      "allocated_gpus": 1,
+      "scheduled_at": "2026-10-29T10:54:45+08:00",
+      "last_job_terminated_at": "2026-10-29T11:26:22+08:00",
+      "successful_delete_pod_at": "2026-10-29T11:26:18+08:00",
+      "gpu_seconds": 1897.0,
+      "gpu_hours": 0.5269444444444444,
+      "unit_points_per_gpu_hour": 1,
+      "estimated_points": 0.5269444444444444,
+      "released": true,
+      "source_files": {
+        "experiments\\09_kuairec_listwise\\h1_recovery_test_20261029\\FREEZE_FINAL_EVENTS.json": "0d2b5994f59beeaaf1a31fb60eab975252ff7a047125ce305873b3461813558f",
+        "experiments\\09_kuairec_listwise\\h1_recovery_test_20261029\\FREEZE_FINAL_STATUS.json": "a1d9e109275cd504ae38bc846b8a00d77b9faddb765b1d6f174ec2730cf9fce5"
+      }
+    }
+  ],
+  "total_gpu_seconds": 3507.0,
+  "total_gpu_hours": 0.9741666666666666,
+  "estimated_points": 0.9741666666666666,
+  "execution_cap_gpu_hours": 1.6,
+  "remaining_cap_gpu_hours": 0.6258333333333335,
+  "parallel_wall_seconds": 1923.0,
+  "accounting": "Scheduled to last JobTerminated, each one GPU; excludes pre-scheduling queue and zero-GPU CPU file entrance",
+  "all_test_gpu_resources_released": true,
+  "settlement_verified": false,
+  "new_training_or_resubmission_performed": false,
+  "prior_recovery_goal_accounting_separate": true
+}

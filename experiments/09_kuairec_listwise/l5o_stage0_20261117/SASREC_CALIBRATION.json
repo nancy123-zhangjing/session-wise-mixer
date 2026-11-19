@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "test": {
+    "1.0": {
+      "imp_hit@5": 0.4084448160535117,
+      "imp_recall@5": 0.1039878298030472,
+      "imp_ndcg@5": 0.1203004996483238,
+      "legacy_fixed5_ndcg@5": 0.11930504894070115,
+      "ev_hit@5": 0.2421612046058459,
+      "ev_recall@5": 0.13104812518452907,
+      "ev_ndcg@5": 0.10885826425357226,
+      "samples": 7176,
+      "ev_samples": 5645,
+      "ev_min": 1.0
+    },
+    "2.0": {
+      "imp_hit@5": 0.4084448160535117,
+      "imp_recall@5": 0.1039878298030472,
+      "imp_ndcg@5": 0.1203004996483238,
+      "legacy_fixed5_ndcg@5": 0.11930504894070115,
+      "ev_hit@5": 0.23469387755102042,
+      "ev_recall@5": 0.1885986394557823,
+      "ev_ndcg@5": 0.13834145978589482,
+      "samples": 7176,
+      "ev_samples": 2450,
+      "ev_min": 2.0
+    }
+  },
+  "selection": {
+    "best_sha256": "0f8126ffaf48a5c2a217910570826accb6589c1ae725654438303fa31befe908",
+    "epoch": 11,
+    "filter_history": true,
+    "validation": {
+      "False": {
+        "1.0": {
+          "imp_hit@5": 0.3685897435897436,
+          "imp_recall@5": 0.09245169082125605,
+          "imp_ndcg@5": 0.10057001825402627,
+          "legacy_fixed5_ndcg@5": 0.0985879247774956,
+          "ev_hit@5": 0.19788732394366196,
+          "ev_recall@5": 0.10370305164319249,
+          "ev_ndcg@5": 0.08097283093657075,
+          "samples": 7176,
+          "ev_samples": 5680,
+          "ev_min": 1.0
+        }
+      },
+      "True": {
+        "1.0": {
+          "imp_hit@5": 0.4230769230769231,
+          "imp_recall@5": 0.10956661092530658,
+          "imp_ndcg@5": 0.1257819925185523,
+          "legacy_fixed5_ndcg@5": 0.12452753663192513,
+          "ev_hit@5": 0.23873239436619717,
+          "ev_recall@5": 0.12777582159624412,
+          "ev_ndcg@5": 0.1067012661885602,
+          "samples": 7176,
+          "ev_samples": 5680,
+          "ev_min": 1.0
+        }
+      }
+    },
+    "binding": {
+      "data_binding": {
+        "manifest_sha256": "6a147e6d92ba6005c29f63f6f2bc32422b1dee93ccf0ee7d587649a92dbed6e4",
+        "files": {
+          "config.json": {
+            "bytes": 1269,
+            "sha256": "eee0a87083bf30f6a858c1d468a1b43208ae097d005f6faaf3640552a662af95"
+          },
+          "item_map.json": {
+            "bytes": 653690,
+            "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+          },
+          "item_catalog.parquet": {
+            "bytes": 801420,
+            "sha256": "d3e5d1de0695b3f97b69606a6da7b648b9dabba424684a244605dd48d468e103"
+          },
+          "item_text.jsonl": {
+            "bytes": 7724679,
+            "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+          },
+          "train_seen.json": {
+            "bytes": 177258,
+            "sha256": "fb8d8f6a146ec92c1c0fa78fcd1d7e04424a03df0ae2a8f5e23c8b3e3f0c4b8f"
+          },
+          "train.parquet": {
+            "bytes": 533947591,
+            "sha256": "3838659dae3b30bb588c270b69b3d2c73c75e6a82223e739eb231dc5e5521f4f"
+          },
+          "validation.parquet": {
+            "bytes": 10356757,
+            "sha256": "27d36abd7c0ac53cca1b818300e09e32b1504bb4db3529c8c0f950b7a45c0405"
+          },
+          "test.parquet": {
+            "bytes": 10354214,
+            "sha256": "ce63b6b3954cc97cdf592056b795133acd2e5eefd7eb8639cad00c6c5a7b3b29"
+          }
+        },
+        "history_max": 128,
+        "list_length": 5,
+        "pad_id": 0
+      },
+      "environment": {
+        "python": "3.10.20",
+        "torch": "2.6.0+cu118",
+        "numpy": "2.2.6",
+        "pyarrow": "25.0.0",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "cuda": "11.8",
+        "device": "cuda",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "runtime": {
+          "micro_r": null,
+          "micro_t": null,
+          "evaluation_batch": null,
+          "precision": "bf16",
+          "attention_backend": "auto",
+          "fused_adamw": true,
+          "data_device": "cuda",
+          "deterministic": true,
+          "checkpoint_every_updates": 200,
+          "evaluation_write_batches": 8
+        },
+        "tf32": false
+      },
+      "source": {
+        "teacher.py": "4769257976070ebec4a247c8ba5e389a3d262abbbb84a648471bdd09f08730e0",
+        "targets.py": "d91ad2857e426a497b7e027d7c4de8f918a00b12376606122b03ec2fc729c815",
+        "data.py": "3dab997fa44e2917a1b9d3beb9f429a5a9d2801482669bbedfe263f4d004751c",
+        "common.py": "17d7f082a24aa0f0cbaebb8020fa1b373ecf6887e42df9527b6a8fa4675a531f",
+        "../rqcd/data.py": "0980105e92b45dd5e60e2a4cfeb4ccdeb1960d212351626407dd99213f4f99cc",
+        "../listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f"
+      },
+      "calibration": "2ae2f92dc411c8bbcfabbc49a59aa75c252f92041b3cebf0b7e96a0ee13a5ff6"
+    }
+  },
+  "items_sha256": "9834125a48e0adecc6d322ba124e61e9525b6fa695660d42d742c51b4dbd0829",
+  "completed_epochs": 21
+}

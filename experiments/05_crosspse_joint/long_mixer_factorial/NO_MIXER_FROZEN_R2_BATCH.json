@@ -1,0 +1,27 @@
+{
+  "jobs": [
+    {
+      "name": "nancy-stage05-long-no-mixer-frozen-20261020-r2",
+      "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/code/scripts/train/mixer_long_gpu_job.py --goal-root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1 --mode train_arm --arm no_mixer_frozen --attempt train_no_mixer_frozen_r2 --ledger /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/ALLOCATION_LEDGER_2.json --process-seconds 9240 --platform-cap-seconds 9420 --expected-code-commit 69682698c15ba796b98e6329c950061a2f68a05b --expected-engine-commit 1c879252f6395d6e64462511823c3929b9c42c00",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "group": "开发区-H100-cuda13.2版本-183核",
+      "quota": "1,20,200",
+      "image": "pytorch:25.06-py3:25.06",
+      "nodes": 1,
+      "priority": 4,
+      "shm_size": 64,
+      "public_path_readonly": true,
+      "auto_fault_tolerance": false,
+      "enable_notification": false,
+      "max_time": 2.6166666666666667,
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  ]
+}

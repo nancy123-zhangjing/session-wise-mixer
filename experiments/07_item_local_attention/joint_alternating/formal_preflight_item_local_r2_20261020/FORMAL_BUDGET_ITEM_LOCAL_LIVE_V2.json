@@ -1,0 +1,216 @@
+{
+  "schema": "stage07_item_local_joint_budget_gate_v1",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "variant": "item_local",
+  "status": "passed",
+  "full_job": true,
+  "smoke_receipt_sha256": "bf2c76123ca98ae592cad1af868ac3f88f9088989e37c1bad43e6909e73b3b8a",
+  "policy_sha256": "577da149976b5afc7aab0f7768e7cd09c9d6fe0d2f05c4b8a08bc4afd0370c26",
+  "resource_policy_compatible": true,
+  "required_process_seconds": 9717,
+  "source_binding": {
+    "code_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+    "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+    "runner_sha256": "61f6c36c02ee59498add74c28af8b3a15a54e2f38465bc65bf3c0d8353850475",
+    "wrapper_sha256": "3d435473cfb492e0dae087d20a11bddad65914ded43654541b44082b57774558",
+    "launcher_helper_sha256": "78ab756b30c036b8048e0ee4797ecbcd85d7a57d594da85a455d490b01704b71",
+    "sampler_helper_sha256": "d1b65c3776dead7cb573fe81c6a3cb14804b08e709d365bc21987e90b5cb49f8",
+    "stage05_helper_sha256": "88a76b6b16df48b29d77b6d593d7675288d361d24d6d2894c9c7b98732f4d244",
+    "engine_files": {
+      "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+      "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+      "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+      "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+      "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+      "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+    }
+  },
+  "reason": "Completed/released control and paired smoke; prespecified component maxima, measured overhead and conservative test bound fit the original complete-model Job windows. No assumed early stop, planned segmentation or artificial GPU work.",
+  "forecast": {
+    "recommender_epochs_max": 35,
+    "tokenizer_phases_max": 10,
+    "full_validation_calls_max": 8,
+    "recommender_batches_each": 1652,
+    "tokenizer_batches_each": 96,
+    "full_evaluation_batches": 2796,
+    "paired_smoke_ratios": {
+      "recommender": 1.004800556257201,
+      "tokenizer": 1.0,
+      "validation": 1.049856176345779
+    },
+    "phase_upper_seconds": {
+      "recommender": 5943.468317427458,
+      "tokenizer": 95.33514949998789,
+      "validation": 2104.2117635527475
+    },
+    "control_observed_counts": {
+      "recommender": 35,
+      "tokenizer": 10,
+      "validation": 8,
+      "test": 1
+    },
+    "control_phase_seconds": {
+      "recommender": [
+        147.37257973600026,
+        140.035753492999,
+        148.3398346319991,
+        150.10754710100082,
+        148.81604132200118,
+        166.56700743699912,
+        157.67574939500082,
+        165.61688201300058,
+        169.0020765219997,
+        158.10463907099984,
+        144.861143979997,
+        141.92870381500325,
+        141.5968654850003,
+        140.14736036200338,
+        130.0998790880003,
+        138.28159862900065,
+        150.43897673500032,
+        162.72040272700178,
+        151.6161719869997,
+        157.77707339600238,
+        148.9847994110023,
+        152.28406147799978,
+        154.63063638300082,
+        146.6230932810031,
+        139.71329874299772,
+        132.96499291200234,
+        134.13633542000025,
+        144.963624901,
+        137.78674447400044,
+        167.4731338950005,
+        161.10626948299978,
+        157.79298631100028,
+        164.2689580719998,
+        158.62810305099993,
+        155.41924165399905
+      ],
+      "tokenizer": [
+        9.476241348998883,
+        9.53351494999879,
+        7.720022857000004,
+        7.763288398997247,
+        8.90811528300037,
+        7.75782557400089,
+        8.520058594000147,
+        7.332656981001492,
+        8.142318103000434,
+        9.41838202100189
+      ],
+      "validation": [
+        240.88734285899955,
+        247.05411133300004,
+        244.54038810699785,
+        214.75883692999923,
+        250.53571753000142,
+        218.16813612800252,
+        239.05132563400184,
+        231.29775361200154
+      ],
+      "test": 342.18329784800153
+    },
+    "control_wrapper_process_seconds": 7861.696414232254,
+    "control_timed_components_seconds": 7580.931900487021,
+    "control_other_overhead_seconds": 280.76451374523276,
+    "other_overhead_bound_seconds": 500.0,
+    "training_including_full_validations_bound_seconds": 8643.015230480192,
+    "test_beam256_prior_seconds": 511.46655656571966,
+    "test_bound_seconds": 1073.932646809657,
+    "required_process_seconds": 9717,
+    "training_window_slack_seconds": 506.98476951980774,
+    "test_reserve_slack_seconds": 126.06735319034306
+  },
+  "caps": {
+    "max_process_seconds": 10440,
+    "platform_max_seconds": 10620,
+    "wrapper_deadline_margin_seconds": 90,
+    "training_reserve_seconds": 1200,
+    "training_window_seconds": 9150,
+    "cumulative_prior_allocated_gpu_seconds": 19838.0,
+    "prior_plus_item_local_platform_gpu_hours": 8.460555555555555
+  },
+  "sources": {
+    "completed_control_wrapper": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/formal_control_attempt1/receipt.json",
+      "sha256": "d0fa2b731653b1a381866d9b6d7753cd0e2e52f6fc354a0b943307b40d650c2b"
+    },
+    "control_parsed_config": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/parsed_config.json",
+      "sha256": "1a67beecce93dc0a56c074082a2858d63589cd79d645341e38c7067d84086879"
+    },
+    "control_epoch_timings": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/epoch_timings.json",
+      "sha256": "dd4d54c2262470c129d330f82616c1a7635dcc67712da259004f60900db3b600"
+    },
+    "control_evaluation_timings": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/evaluation_timings.json",
+      "sha256": "020c2fca4931f025dfad8f62d2b81fd94b5872bb5517358dd2498ef426eb68c4"
+    },
+    "control_smoke_epochs": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/epoch_timings.json",
+      "sha256": "26ae2cb718208786bf615287aa814e22ceb1c1854e58f3a4fc78a92b2a9c382b"
+    },
+    "control_smoke_evaluation": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/smoke/evaluation_timings.json",
+      "sha256": "ed85d2b3ccf4e62eb6110ce9757d63281afd2d893512a93c53edf6cf708c2d01"
+    },
+    "item_local_smoke_epochs": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/epoch_timings.json",
+      "sha256": "abf50139597719ea84a4758b452e4c9da80f9cee071f6fbaf483cd74cc6df0fb"
+    },
+    "item_local_smoke_evaluation": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1/smoke/evaluation_timings.json",
+      "sha256": "34a3cd1bf28ef34a0871d2a3ff0906d64d4a1e43b27b4ac653f6aa854069280d"
+    },
+    "historical_validation_beam256_probe": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/HISTORICAL_BEAM256_VALIDATION_PROBE.json",
+      "sha256": "292984609f6763c4c8b084694828e60c74dd6c43017f5d309eb871b43fc69645"
+    },
+    "updated_released_allocation_ledger": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/ALLOCATION_AFTER_CONTROL_R2.json",
+      "sha256": "bb5b304974d096f9dd416acfd0fa0076dd25ca0743ffd19d2624686d1bf8bb30"
+    },
+    "live_resource_policy": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/PRE_ITEM_LOCAL_RESOURCE_POLICY_LIVE_V2.json",
+      "sha256": "577da149976b5afc7aab0f7768e7cd09c9d6fe0d2f05c4b8a08bc4afd0370c26"
+    },
+    "prespecified_timing_rule": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/SECOND_FORMAL_TIMING_RULE.md",
+      "sha256": "ced907564eaeae1f70de3004d7db122036a8150f237bad570aa5ca9218d12eef"
+    },
+    "control_COMPLETE.json": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/COMPLETE.json",
+      "sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417"
+    },
+    "control_results.json": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/results.json",
+      "sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf"
+    },
+    "control_TEST_STARTED.json": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/TEST_STARTED.json",
+      "sha256": "db6ac28682ca3f4533ce66a72b8de1dd0daded1db9aca156e02a9d396ceea845"
+    },
+    "control_TEST_RESULT.json": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1/TEST_RESULT.json",
+      "sha256": "ed3176b91b7a6a907d35b97d64e0f17267a299cc7f01e9f10ef0d9e72259f211"
+    }
+  },
+  "tool_sha256": "a553646d9738d14c969bda7f1c21b162b67e1148a3a1cd7ab451eeb2bf5d2725",
+  "created_utc": "2026-10-20T10:20:01.386765+00:00",
+  "goal_complete": false,
+  "timer_scope": "Pinned sequential engine loop timers and evaluate wrapper exclude each other; full wrapper remainder includes initialization, snapshots, SID refresh and cleanup.",
+  "limitations": [
+    "Forecast is not a future-runtime guarantee or utilisation improvement.",
+    "Parent still checks live-inventory/policy freshness and explains late-phase slowdown/other overhead before submission.",
+    "Same 35rec/10tok/8val maximum counts even if control legally stopped early; no cap, recipe or margin reduced."
+  ]
+}

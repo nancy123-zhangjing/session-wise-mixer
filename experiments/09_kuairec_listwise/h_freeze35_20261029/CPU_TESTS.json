@@ -1,0 +1,63 @@
+{
+  "format": "stage09_freeze35_local_cpu_tests_v1",
+  "status": "passed",
+  "started_utc": "2026-10-29T05:41:48.142481+00:00",
+  "finished_utc": "2026-10-29T05:44:23.676901+00:00",
+  "seconds": 155.51500000013039,
+  "tests_run": 40,
+  "test_suites": {
+    "test_listwise_recovery35.py": 16,
+    "test_listwise_recovery35_runner.py": 12,
+    "test_listwise_recovery35_trajectory.py": 12
+  },
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "raw_log": "experiments\\09_kuairec_listwise\\h_freeze35_20261029\\CPU_TESTS.log",
+  "raw_log_sha256": "d70b91b7ed12b2eb02715ee87dcdd622ce7f86580f8c880f8aee2724a2e3c923",
+  "source_sha256_before": {
+    "scripts\\listwise_diffgrm\\recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+    "scripts\\listwise_diffgrm\\recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+    "scripts\\listwise_diffgrm\\recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+    "scripts\\listwise_diffgrm\\recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+    "scripts\\listwise_diffgrm\\training.py": "2da7cc318fc35c576a5144489c5ea2db43e4e534a3664c041ebcd5bf141cddd8",
+    "scripts\\listwise_diffgrm\\run.py": "cf4edf00afd748be741d3ae4080a904f4310d97d1e273a96fc289ecabd5d373b",
+    "scripts\\listwise_diffgrm\\recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+    "tests\\test_listwise_recovery35.py": "3e709133bbcb353fddab06d5f5129166993143b089d2ee3ecf8041726f631df1",
+    "tests\\test_listwise_recovery35_runner.py": "29548198a92fa5d30f395acd676258a4bdc41614b9a269eb91aadca60c4d1812",
+    "tests\\test_listwise_recovery35_trajectory.py": "2d040a5e5c0c370ef44860048c9483a3872700d0d0556ed7e6c442cd5d8706ea"
+  },
+  "source_sha256_after": {
+    "scripts\\listwise_diffgrm\\recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+    "scripts\\listwise_diffgrm\\recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+    "scripts\\listwise_diffgrm\\recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+    "scripts\\listwise_diffgrm\\recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+    "scripts\\listwise_diffgrm\\training.py": "2da7cc318fc35c576a5144489c5ea2db43e4e534a3664c041ebcd5bf141cddd8",
+    "scripts\\listwise_diffgrm\\run.py": "cf4edf00afd748be741d3ae4080a904f4310d97d1e273a96fc289ecabd5d373b",
+    "scripts\\listwise_diffgrm\\recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+    "tests\\test_listwise_recovery35.py": "3e709133bbcb353fddab06d5f5129166993143b089d2ee3ecf8041726f631df1",
+    "tests\\test_listwise_recovery35_runner.py": "29548198a92fa5d30f395acd676258a4bdc41614b9a269eb91aadca60c4d1812",
+    "tests\\test_listwise_recovery35_trajectory.py": "2d040a5e5c0c370ef44860048c9483a3872700d0d0556ed7e6c442cd5d8706ea"
+  },
+  "sources_unchanged": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "cuda_initialized_after": false,
+  "gpu_or_platform_resource_requested": false,
+  "coverage": [
+    "Real tiny H-model ABC controller R/T updates and complete CPU optimizer/scheduler/RNG resume",
+    "Mocked runner interruption, immutable boundaries, evaluation isolation, selection/test reuse and early milestones",
+    "Prepared C boundary re-enters trajectory gate without repeating update/order/seed",
+    "Synthetic trajectory/order gates plus authenticated small 20-phase metadata table"
+  ],
+  "limitations": [
+    "Not actual KuaiRec full-model/data builder acceptance",
+    "Not H100 acceptance or GPU throughput measurement",
+    "Not formal training, complete-split inference or recommendation quality evidence"
+  ]
+}

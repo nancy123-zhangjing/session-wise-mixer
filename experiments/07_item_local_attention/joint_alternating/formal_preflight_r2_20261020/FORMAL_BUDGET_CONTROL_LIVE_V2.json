@@ -1,0 +1,57 @@
+{
+  "schema": "stage07_item_local_joint_budget_gate_v1",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "variant": "control",
+  "status": "passed",
+  "full_job": true,
+  "smoke_receipt_sha256": "bf2c76123ca98ae592cad1af868ac3f88f9088989e37c1bad43e6909e73b3b8a",
+  "policy_sha256": "577da149976b5afc7aab0f7768e7cd09c9d6fe0d2f05c4b8a08bc4afd0370c26",
+  "resource_policy_compatible": true,
+  "required_process_seconds": 9653,
+  "reason": "One complete 45-logical-epoch model per Job, including initial validation, all seven scheduled full validations and once-only beam256 test. The measured full-model forecast with margins fits before the three-hour reclaim threshold. No planned phase/epoch segmentation, no artificial GPU load, and no claim that low utilization was fixed.",
+  "forecast": {
+    "recommender_epochs_max": 35,
+    "tokenizer_phases_max": 10,
+    "recommender_batches_each": 1652,
+    "tokenizer_batches_each": 96,
+    "full_validation_calls_max": 8,
+    "full_evaluation_batches": 2796,
+    "measured_recommender_loop_extrapolation_seconds": 4712.199828297598,
+    "measured_tokenizer_loop_extrapolation_seconds": 77.1540411002934,
+    "measured_validation_extrapolation_seconds": 1713.9510724022985,
+    "train_and_validation_margin_multiplier": 1.25,
+    "initialization_serialization_and_other_margin_seconds": 500,
+    "training_including_full_validations_bound_seconds": 8629.131177250238,
+    "test_beam256_prior_seconds": 511.46655656571966,
+    "test_prior_multiplier": 2,
+    "test_prior_source_sha256": "292984609f6763c4c8b084694828e60c74dd6c43017f5d309eb871b43fc69645"
+  },
+  "caps": {
+    "max_process_seconds": 10440,
+    "platform_max_seconds": 10620,
+    "wrapper_deadline_margin_seconds": 90,
+    "training_reserve_seconds": 1200,
+    "cumulative_prior_allocated_gpu_seconds": 11946,
+    "two_complete_job_caps_plus_prior_gpu_hours": 9.218333333333334
+  },
+  "sources": {
+    "result": {
+      "relative_path": "raw\\control_result.json",
+      "sha256": "a9a6f79210f826ebcaf8bbe392570448a974d9ab8f2480a7ae17a8dc6b38050f"
+    },
+    "epochs": {
+      "relative_path": "raw\\control_epochs.json",
+      "sha256": "26ae2cb718208786bf615287aa814e22ceb1c1854e58f3a4fc78a92b2a9c382b"
+    },
+    "evaluation": {
+      "relative_path": "raw\\control_evaluation.json",
+      "sha256": "ed85d2b3ccf4e62eb6110ce9757d63281afd2d893512a93c53edf6cf708c2d01"
+    }
+  },
+  "limitations": [
+    "Only 32-batch training and 8-batch validation timings; heterogeneous host/load may differ.",
+    "Beam256 test prior is a previous same-shape validation-only benchmark, not a current-model full test measurement; a factor of two is used.",
+    "Observed short-run utilization remained below 40%; compatibility relies on measured complete-model duration below three hours, not improved utilization.",
+    "At the bounded deadline preserve incomplete state; do not claim completion or plan resubmission to evade resource policy."
+  ]
+}

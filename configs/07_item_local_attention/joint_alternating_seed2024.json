@@ -1,0 +1,29 @@
+{
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "protocol_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "seed": 2024,
+  "recipe_id": "refined_joint",
+  "variants": {
+    "control": {
+      "run_id": "stage07_item_local_joint_control_seed2024_20261020_r1",
+      "item_local_attention": {"enabled": false, "num_heads": 4, "dropout": 0.0}
+    },
+    "item_local": {
+      "run_id": "stage07_item_local_joint_item_local_seed2024_20261020_r1",
+      "item_local_attention": {"enabled": true, "num_heads": 4, "dropout": 0.0}
+    }
+  },
+  "max_gpu_hours": 28.0,
+  "prior_allocated_gpu_seconds": 11637,
+  "gpu_type": "H100",
+  "gpu_count": 1,
+  "initialization": "Locked offline Refined-PSE v2 tokenizer and its matching offline DiffGRM checkpoint from the Stage05 refined_joint recipe",
+  "local_attention_location": "History SID embeddings after the hard/ST embedding branches join, before item_mlp; belongs to the recommender parameter group",
+  "training": "Stage05 full alternating protocol: five recommender warmup epochs, then one tokenizer phase plus three recommender epochs per cycle, up to 45 logical epochs; each tokenizer phase uses 96 batches",
+  "global_codebook_mixer_enabled": false,
+  "tokenizer_codebooks_trainable": true,
+  "recommendation_gradient_bridge": "diger_st",
+  "evaluation_level": "sid",
+  "historical_results_role": "background only",
+  "signal_rule": {"ndcg_at_10_relative_improvement": 0.03, "hit_rate_at_10_must_not_decrease": true}
+}

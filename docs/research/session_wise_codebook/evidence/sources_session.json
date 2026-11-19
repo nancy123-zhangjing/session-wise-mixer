@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "scope": "Session-level discrete tokenization, context-conditioned representation/identifiers, and retrieval-index implications",
+  "status": "Primary papers and selected author source bodies read; no reproduction",
+  "execution": {
+    "author_code_executed": false,
+    "weights_downloaded": false,
+    "gpu_started": false,
+    "source_access": "Web paper pages; git ls-remote; GitHub raw Python files read in memory using Python standard-library urllib; AST used only for navigation and SHA256 computed on raw bytes"
+  },
+  "commit_boundary": "Repository HEADs were resolved at access time, not verified as the commits used for published experiments or the experiment1 frozen runtime.",
+  "selection": [
+    {
+      "id": "actionpiece",
+      "title": "ActionPiece: Contextually Tokenizing Action Sequences for Generative Recommendation",
+      "paper_url": "https://arxiv.org/html/2502.13581v3",
+      "version": "2502.13581v3",
+      "sections_read": ["Method: feature-set actions and weighted pair merging", "Set permutation regularization", "Generative training and inference", "Experimental setup"],
+      "role": "Closest cross-action tokenization precedent",
+      "protocol": {"dataset": "Amazon Reviews 2014: Sports, Beauty, CDs", "split": "chronological leave-last-out", "target": "next item", "complete_reproduction_audit": false},
+      "author_repo": "https://github.com/google-deepmind/action_piece",
+      "head_commit": "ae8e61a89ade8d545a16119bcb5b3a43d9da852f",
+      "implementation_status": "Relevant author tokenizer, core merging, target separation, and generation source read; not executed",
+      "code_sources": [
+        {
+          "path": "genrec/models/ActionPiece/core.py",
+          "url": "https://github.com/google-deepmind/action_piece/blob/ae8e61a89ade8d545a16119bcb5b3a43d9da852f/genrec/models/ActionPiece/core.py",
+          "sha256": "3e8c5a8d8d898d60830acbffb5ce7e2460f7b838a211a2952c9abdfff8d808c0",
+          "body_ranges_read": ["233-258", "424-470", "646-691", "821-852"]
+        },
+        {
+          "path": "genrec/models/ActionPiece/tokenizer.py",
+          "url": "https://github.com/google-deepmind/action_piece/blob/ae8e61a89ade8d545a16119bcb5b3a43d9da852f/genrec/models/ActionPiece/tokenizer.py",
+          "sha256": "08df41a553c659fd02c3f10424ae5324192fcb874ec53fd9020f691e780da531",
+          "body_ranges_read": ["308-390", "418-472"]
+        },
+        {
+          "path": "genrec/models/ActionPiece/model.py",
+          "url": "https://github.com/google-deepmind/action_piece/blob/ae8e61a89ade8d545a16119bcb5b3a43d9da852f/genrec/models/ActionPiece/model.py",
+          "sha256": "8ecb31d4783560186fa5da072f1c00c480a4dd541c4936338ce02fed254d3ec9",
+          "methods_read": ["forward", "generate", "beam_search"]
+        }
+      ]
+    },
+    {
+      "id": "pctx",
+      "title": "Pctx: Tokenizing Personalized Context for Generative Recommendation",
+      "paper_url": "https://arxiv.org/html/2510.21276v1",
+      "version": "2510.21276v1",
+      "sections_read": ["2.2 Personalized Action Tokenization", "2.3 Generative Recommendation under Pctx", "C.1-C.4 Experimental Setup"],
+      "role": "Closest context-dependent multiple-SID precedent",
+      "protocol": {"dataset": "Amazon Reviews 2023: Musical Instruments, Industrial and Scientific, Video Games", "split": "chronological leave-last-out", "max_history": 20, "ranking": "full candidate evaluation; author evaluator maps SID to item ID", "ar_beam": 50, "complete_reproduction_audit": false},
+      "author_repo": "https://github.com/YoungZ365/Pctx",
+      "head_commit": "1e9f101d97a153734c7286d693e822d20fa16a47",
+      "implementation_status": "Relevant author clustering, tokenizer, beam merge and evaluator bodies read; full upstream/data-cache pipeline not audited",
+      "paper_code_caution": "Appendix and source include a FAISS residual-quantizer branch as well as an RQ-VAE branch; do not describe the current implementation as exclusively RQ-VAE.",
+      "code_sources": [
+        {
+          "path": "genrec/models/Pctx/tokenizer.py",
+          "url": "https://github.com/YoungZ365/Pctx/blob/1e9f101d97a153734c7286d693e822d20fa16a47/genrec/models/Pctx/tokenizer.py",
+          "sha256": "eb3a5748a36f6b9b51f9972df0759940d9d1d70d14f18167d76fe35709b7a522",
+          "body_ranges_read": ["1258-1294", "1691-1732", "1847-1908", "1913-1969", "2168-2222"]
+        },
+        {
+          "path": "genrec/models/Pctx/cluster.py",
+          "url": "https://github.com/YoungZ365/Pctx/blob/1e9f101d97a153734c7286d693e822d20fa16a47/genrec/models/Pctx/cluster.py",
+          "sha256": "ee7f591e73b6197184a825f263c3a56ea07a4ab8769650abccdfaf1f54313afc",
+          "body_ranges_read": ["283-310", "330-371"]
+        },
+        {
+          "path": "genrec/models/Pctx/model.py",
+          "url": "https://github.com/YoungZ365/Pctx/blob/1e9f101d97a153734c7286d693e822d20fa16a47/genrec/models/Pctx/model.py",
+          "sha256": "6a5c61bc2d1c12342a97827fcc5e4366dc616e4fec182cac91bda629e6c91fbd",
+          "methods_read": ["_load_sid_mapping_if_needed", "_merge_beams_for_one_group", "generate", "beam_search"]
+        },
+        {
+          "path": "genrec/evaluator.py",
+          "url": "https://github.com/YoungZ365/Pctx/blob/1e9f101d97a153734c7286d693e822d20fa16a47/genrec/evaluator.py",
+          "sha256": "36f9ad559e8b3ddeef6981055ad9d7f3a929cd6513011ef60897f048dc2ea9a7",
+          "body_ranges_read": ["1-121"]
+        }
+      ]
+    },
+    {
+      "id": "pit",
+      "title": "PIT: A Dynamic Personalized Item Tokenizer for End-to-End Generative Recommendation",
+      "paper_url": "https://arxiv.org/html/2602.08530v1",
+      "version": "2602.08530v1",
+      "sections_read": ["3.2 Co-Generative Architecture", "3.3 Co-Evolution Learning", "3.4 Dynamic Beam Index", "3.5 System Deployment", "4.1 Public Dataset Experiments"],
+      "role": "Joint tokenizer-recommender selection and index synchronization precedent",
+      "protocol": {"dataset": "Amazon Reviews 2014: Beauty, Sports, Toys; separate private industrial study", "split": "5-core; chronological leave-last-out", "max_history": 50, "metrics": "Recall/NDCG@5,10", "candidate_filtering": "not independently verified in code"},
+      "author_repo": null,
+      "head_commit": null,
+      "implementation_status": "No confirmed author implementation located in this bounded search; paper-only assessment",
+      "code_sources": []
+    },
+    {
+      "id": "tiger",
+      "title": "Recommender Systems with Generative Retrieval",
+      "paper_url": "https://arxiv.org/html/2305.05065v2",
+      "version": "2305.05065v2",
+      "sections_read": ["3.1 Semantic ID Generation", "3.2 Generative Retrieval with Semantic IDs", "4 Experiments"],
+      "role": "Static SID, residual quantization, and collision-resolution anchor",
+      "protocol": {"dataset": "Amazon Reviews 2014: Beauty, Sports, Toys", "metrics": "Recall/NDCG@5,10", "complete_reproduction_audit": false},
+      "author_repo": null,
+      "head_commit": null,
+      "implementation_status": "No confirmed complete original-author implementation inspected; paper anchor only; third-party repositories excluded",
+      "code_sources": []
+    },
+    {
+      "id": "diffgrm",
+      "title": "DiffGRM: Diffusion-based Generative Recommendation Model",
+      "paper_url": "https://arxiv.org/html/2510.21805v1",
+      "version": "2510.21805v1",
+      "sections_read": ["3.1 Overview", "3.2 Parallel Semantic Encoding", "3.3 On-policy Coherent Noising", "3.4 Confidence-guided Parallel Denoising", "4.1-4.2 Evaluation"],
+      "role": "Project-adjacent fixed OPQ SID and masked discrete decoder anchor",
+      "protocol": {"dataset": "Amazon Reviews: Sports, Beauty, Toys", "split": "chronological leave-last-out", "metric_unit": "SID-based evaluation explicitly stated in section 4.2", "metrics": "Recall/NDCG@5,10", "complete_reproduction_audit": false},
+      "author_repo": "https://github.com/liuzhao09/DiffGRM",
+      "head_commit": "238911435b6ca4f576d0b4d943359b98c865c172",
+      "implementation_status": "Relevant author OPQ tokenizer, reverse mapping, history embedding and digit-logit bodies read; not executed",
+      "code_sources": [
+        {
+          "path": "genrec/models/DIFF_GRM/tokenizer.py",
+          "url": "https://github.com/liuzhao09/DiffGRM/blob/238911435b6ca4f576d0b4d943359b98c865c172/genrec/models/DIFF_GRM/tokenizer.py",
+          "sha256": "15c18ff56461662c20a7ec9571517a409d01a1e2a82e799ea1674415e0cf1a32",
+          "body_ranges_read": ["167-230", "470-476", "599-627"]
+        },
+        {
+          "path": "genrec/models/DIFF_GRM/model.py",
+          "url": "https://github.com/liuzhao09/DiffGRM/blob/238911435b6ca4f576d0b4d943359b98c865c172/genrec/models/DIFF_GRM/model.py",
+          "sha256": "bf8de24f164fe2d7a765b5d4d443d5f10872cba40cc420c58875d3f6bb93c5a1",
+          "body_ranges_read": ["480-511", "521-598"]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a scoped selection, not an exhaustive novelty review.",
+    "Published gains have not been reproduced locally and do not establish benefit in experiment1.",
+    "Dataset names alone do not establish identical preprocessing, candidates, collisions, or metric units.",
+    "A session-conditioned representation and a session-conditioned target identifier are different interventions.",
+    "No per-request full-catalogue re-encoding or unconstrained dynamic SID serving has been implemented."
+  ]
+}

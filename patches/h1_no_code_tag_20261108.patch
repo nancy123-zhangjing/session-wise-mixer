@@ -1,0 +1,57 @@
+diff --git a/genrec/models/DIFF_GRM/cross_pse.py b/genrec/models/DIFF_GRM/cross_pse.py
+index f041ecf..faf6edd 100644
+--- a/genrec/models/DIFF_GRM/cross_pse.py
++++ b/genrec/models/DIFF_GRM/cross_pse.py
+@@ -28,6 +28,7 @@ class CrossPSECodebookMixer(nn.Module):
+         zero_init_attention_output: bool = False,
+         train_base_codebooks: bool = False,
+         mixer_enabled: bool = True,
++        code_embedding_enabled: bool = True,
+     ) -> None:
+         super().__init__()
+         if base_codebooks.ndim != 3:
+@@ -49,6 +50,7 @@ class CrossPSECodebookMixer(nn.Module):
+         self.zero_init_attention_output = bool(zero_init_attention_output)
+         self.train_base_codebooks = bool(train_base_codebooks)
+         self.mixer_enabled = bool(mixer_enabled)
++        self.code_embedding_enabled = bool(code_embedding_enabled)
+ 
+         initial = base_codebooks.detach().to(torch.float32).clone()
+         # The immutable reference can always be reconstructed from the saved
+@@ -63,6 +65,9 @@ class CrossPSECodebookMixer(nn.Module):
+         # semantics.  Zero initialization preserves the exact PSE start point.
+         self.book_embedding = nn.Parameter(torch.zeros(n_digit, code_dim))
+         self.code_embedding = nn.Parameter(torch.zeros(codebook_size, code_dim))
++        # Keep the legacy state/optimizer layout, but bypass the parameter
++        # entirely in the no-code-tag ablation (even after loading old weights).
++        self.code_embedding.requires_grad_(self.code_embedding_enabled)
+         self.input_norm = nn.LayerNorm(code_dim)
+         self.attention = nn.MultiheadAttention(
+             embed_dim=code_dim,
+@@ -116,11 +121,9 @@ class CrossPSECodebookMixer(nn.Module):
+         base = self.base_codebooks
+         if not self.mixer_enabled:
+             return base, None
+-        tagged = (
+-            base
+-            + self.book_embedding[:, None, :]
+-            + self.code_embedding[None, :, :]
+-        )
++        tagged = base + self.book_embedding[:, None, :]
++        if self.code_embedding_enabled:
++            tagged = tagged + self.code_embedding[None, :, :]
+         tokens = tagged.reshape(1, self.n_digit * self.codebook_size, self.code_dim)
+         mixed, weights = self.attention(
+             self.input_norm(tokens),
+diff --git a/genrec/models/DIFF_GRM/joint_cross_pse.py b/genrec/models/DIFF_GRM/joint_cross_pse.py
+index 8f81ea5..1679e98 100644
+--- a/genrec/models/DIFF_GRM/joint_cross_pse.py
++++ b/genrec/models/DIFF_GRM/joint_cross_pse.py
+@@ -94,6 +94,7 @@ class JointCrossPSEAlignment(nn.Module):
+                 config.get("crosspse_train_base_codebooks", True)
+             ),
+             mixer_enabled=mixer_enabled,
++            code_embedding_enabled=bool(config.get("crosspse_code_embedding_enabled", True)),
+         )
+         state = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+         self.mixer.load_state_dict(state.get("model", state), strict=True)

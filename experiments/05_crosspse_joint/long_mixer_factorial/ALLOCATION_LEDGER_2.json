@@ -1,0 +1,67 @@
+{
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "platform_prior_allocation_verified": true,
+  "allocated_gpu_seconds": 682.0,
+  "acceptance_allocated_gpu_seconds": 636.0,
+  "prior_jobs": [
+    {
+      "job_name": "nancy-stage05-long-20261020-smoke-r1",
+      "released": true,
+      "gpu_count": 1,
+      "allocated_gpu_seconds": 636.0,
+      "started_at_beijing": "2026-10-20 12:09:31",
+      "released_at_beijing": "2026-10-20 12:20:07",
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "SMOKE_STATUS_AFTER_EXIT.json": "02bae180c7ee7524659d8fb6678bae0f8e8ed8bbe14a1241ea5681f950d49dea",
+        "SMOKE_EVENTS_AFTER_EXIT.json": "3ec54ed0be23aa16ff46036b090e73eac5fae4c1c7381d3246e3fb3afb595457",
+        "SMOKE_RELEASE_EVENTS.json": "b3fe4293a8504646db2e6f2eda81cf4cb71d743b09eda0854981d5d388c2fd3c"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-frozen-20261020-r1",
+      "released": true,
+      "arm": "no_mixer_frozen",
+      "attempt": "train_no_mixer_frozen_r1",
+      "mode": "train_arm",
+      "gpu_count": 1,
+      "allocated_gpu_seconds": 46.0,
+      "started_at_beijing": "2026-10-20 12:24:23",
+      "released_at_beijing": "2026-10-20 12:25:09",
+      "time_basis": "Scheduled through SuccessfulDeletePod",
+      "training_updates_executed": 0,
+      "failure": "Concurrent initial identity.json.tmp rename before Pipeline construction",
+      "events_sha256": "ddb011da9307d22433406808180cdd859d22da524ac5ee9f6a4cdb4bc5704de0",
+      "platform_logs_sha256": "d6d957282d9bb87c46ec5989d2f7903736f61c91dba3d3a562c3b2ad2e72d504"
+    }
+  ],
+  "reservations": [
+    {
+      "attempt": "train_no_mixer_frozen_r2",
+      "mode": "train_arm",
+      "arm": "no_mixer_frozen",
+      "platform_cap_seconds": 9420
+    },
+    {
+      "attempt": "train_no_mixer_joint_r1",
+      "mode": "train_arm",
+      "arm": "no_mixer_joint",
+      "platform_cap_seconds": 9480
+    },
+    {
+      "attempt": "train_mixer_frozen_r1",
+      "mode": "train_arm",
+      "arm": "mixer_frozen",
+      "platform_cap_seconds": 9420
+    },
+    {
+      "attempt": "train_mixer_joint_r1",
+      "mode": "train_arm",
+      "arm": "mixer_joint",
+      "platform_cap_seconds": 9480
+    }
+  ],
+  "future_evaluation_reserved_gpu_seconds": 2640,
+  "total_reserved_including_future_test_gpu_seconds": 41122.0,
+  "plan_sha256": "3eb4744512e865dc6cc0eb580411bf981c97d1146d90c95650f40af624803135"
+}

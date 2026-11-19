@@ -1,0 +1,57 @@
+{
+  "format": "best_h0_reference_independent_review_v1",
+  "reviewed_utc": "2026-10-30T05:22:57.250775+00:00",
+  "passed": true,
+  "status": "PASS_WITH_OPTIONAL_CLARIFICATIONS",
+  "required_corrections": [],
+  "optional_clarifications": [
+    {
+      "severity": "optional_clarity",
+      "location": "REPORT.md section 4",
+      "suggestion": "明确写出本节推荐份额、集中度、商品数均取单份五件列表 @5；当前数字正确，但 CSV 还同时包含 aggregate50。"
+    },
+    {
+      "severity": "optional_clarity",
+      "location": "REPORT.md sections 1 and 7",
+      "suggestion": "将旧 H1 后段已落后写成点估计低于 H0 更直接；现有总脚注已经保留非显著性边界，原整体 NDCG@5 后段差的已保存 CI 跨零。"
+    },
+    {
+      "severity": "optional_clarity",
+      "location": "REPORT.md section 7",
+      "suggestion": "可再明确冻结与新增 R 更新同时发生，不能单独归因于冻结；报告目前使用冻结后续训且保留训练量差异，未直接作纯冻结因果断言。"
+    }
+  ],
+  "checks": 7490,
+  "csv_rows_checked": 1116,
+  "csv_unique_metric_keys": 1116,
+  "csv_zero_reference_rows": 255,
+  "csv_zero_over_zero_rows": 215,
+  "markdown_tables_checked": 10,
+  "markdown_data_cells_checked": 239,
+  "group_gap_records_checked": 10,
+  "initial_supplement_full_model_identity": true,
+  "provenance_sources_match_current_sha": true,
+  "presentation_outputs_match_provenance_sha": true,
+  "source_unchanged_during_review": true,
+  "reviewed_files_sha256": {
+    "c_supplement_r1/MODEL_H0_best_R32.json": "81fa77b849834472e2b62078e35e41e60627feca935df751fc6a83bd6af9c477",
+    "c_supplement_r1/MODEL_H1_R20.json": "33c4382ac9d8b72cb92d5d04f848cc3ba2ab5dd89dfef83bdfbb4811d7d490e3",
+    "c_supplement_r1/MODEL_H1_freeze_R32.json": "821c66524c0eca67a6a4d4c3846feac094dd3a46776f64548926c4223b8675f6",
+    "c_supplement_r1/MODEL_C_best_R23.json": "5e9a9ed54e0f4c0f93a6fbdf225713aac2d6effeb9cacc2fa13355110ec99d6e",
+    "c_supplement_r1/DECOMPOSITION.json": "06d7a766e2e7dd429507197a3b715980e4ab1b78e2aabbb6ee97247f545f7fc2",
+    "c_supplement_r1/DATA_COMPOSITION.json": "4d65cfd4b6a0aadb4aa375059de0a3b26e7e9b97269973b18a6d27e7b3b075cc",
+    "PROTOCOL.md": "3df7e08561473cfa4f7ca8fd7a19bdc710e107069e5bc3448d8e90b5dbdd3d59",
+    "FINAL_REPORT.md": "acb366d436260caa459845a6156fc62d1944d83410dcdcfa14e85894bb697225",
+    "STATUS.json": "66623b57dc450afbcb6fbad8d07baf94384039a96bcc8e9aeb32dd2dcdb0bcf6",
+    "initial_r1/MODEL_H0_best_R32.json": "81fa77b849834472e2b62078e35e41e60627feca935df751fc6a83bd6af9c477",
+    "initial_r1/MODEL_H1_R20.json": "33c4382ac9d8b72cb92d5d04f848cc3ba2ab5dd89dfef83bdfbb4811d7d490e3",
+    "initial_r1/MODEL_H1_freeze_R32.json": "821c66524c0eca67a6a4d4c3846feac094dd3a46776f64548926c4223b8675f6",
+    "best_h0_reference_20261030_r1/REPORT.md": "451c95e5d47ec3425b5be9453dbb8d1f8a90235750c23f29c9514a20c7a7f8aa",
+    "best_h0_reference_20261030_r1/RELATIVE_CHANGES.csv": "4b1477727bda2fa75dcc83bc24274c40f64190d383a08d06a44df6cc357b19e0",
+    "best_h0_reference_20261030_r1/ADVANTAGE_CHANGE_BY_GROUP.json": "5094cb45593c21559fe58e0390b2cafc7fb382b305265dc62cf3ac471af890e4",
+    "best_h0_reference_20261030_r1/PROVENANCE.json": "be5db668810f9d58666d5711aa646b03ad326208aa5818e22144d782631b8fd2",
+    "best_h0_reference_20261030_r1/build_report.py": "08a58f670444e047ba2edea39cda496cd977eeadf677308db33e576b7a10bada"
+  },
+  "method": "Independent standard-library JSON/CSV arithmetic and Markdown cell comparison; did not import or execute build_report.py; no raw predictions, inference, training, network, GPU or bootstrap rerun.",
+  "scope_limit": "Rechecks presentation against existing audited aggregates; does not rerun original prediction-level or bootstrap audit. Source_unchanged is verified against recorded SHA and across this review, not inferred solely from its boolean field."
+}

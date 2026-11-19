@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-11-12T12:46:30.327132+00:00",
+  "formal_training_started": false,
+  "gpu_released": true,
+  "cpu_restored_stopped": true,
+  "all_exact": true,
+  "all_no_oom": true,
+  "checks": {
+    "H0-A": {
+      "initial": true,
+      "prediction": true,
+      "restore": true,
+      "R_state": true,
+      "R_values_rng": true,
+      "T_state": true,
+      "T_values_rng": true
+    },
+    "H1-A": {
+      "initial": true,
+      "prediction": true,
+      "restore": true,
+      "R_state": true,
+      "R_values_rng": true,
+      "T_state": true,
+      "T_values_rng": true
+    },
+    "H0-B": {
+      "initial": true,
+      "prediction": true,
+      "restore": true,
+      "R_state": true,
+      "R_values_rng": true,
+      "T_state": true,
+      "T_values_rng": true
+    },
+    "H1-B": {
+      "initial": true,
+      "prediction": true,
+      "restore": true,
+      "R_state": true,
+      "R_values_rng": true,
+      "T_state": true,
+      "T_values_rng": true
+    }
+  },
+  "source_verification_receipt": "ARTIFACT_VERIFICATION.json",
+  "remote_report_receipt": "REPORT_REMOTE_SHA.json",
+  "files_sha256": {
+    "COMPLETE.json": "14eb6be3f9191b72589e4a7de9b104c9584df9b82ca525d05833ef60cccc4a43",
+    "REPORT.md": "256913eb20151c0f7167bb2bf68d7a6c4e7c428fce0d4e054d4a05354010c6bd",
+    "SUMMARY.csv": "3a4da258ef5a7caf3caaedd1d1a14d1476223fb1b78bcb7e6dd98ec6bd17bbc4",
+    "benchmark.py": "2ae7c0fef0f89b316343458beffb4e8a8207338abcf5dbf13c9cf1a950d41e18",
+    "SOURCE_MANIFEST.json": "822e0c9357b614120334e3537f4ff4e750ade3cd3a3764cfa4ff3dc56ee679a0"
+  },
+  "conclusion": "No clear substantial speedup: most phases near 0-1 percent, H1-B R approximately 3 percent. Seven timed steps per phase; not proof of sustained speedup."
+}

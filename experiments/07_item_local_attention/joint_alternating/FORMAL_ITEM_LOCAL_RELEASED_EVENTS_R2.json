@@ -1,0 +1,176 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-20 18:28:32",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-20 18:28:32",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 18:28:32",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 18:28:36",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod embodied-world-model/<redacted>-worker-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-20 18:28:37",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu508, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 18:28:41",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu529, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 18:28:46",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu529, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 18:28:46",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 148 Insufficient rdma/hca_shared_devices, 152 Insufficient nvidia.com/gpu, 320 Insufficient memory, 4 node(s) didn't match Pod's node affinity/selector, 5 node(s) were unschedulable, 68 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 18:28:51",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu508, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 18:28:53",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu457"
+      },
+      {
+        "time": "2026-10-20 18:28:56",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/inspire-studio/pytorch:25.06-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 18:28:56",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-20 18:28:57",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 18:28:57",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 18:28:57",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-20 18:28:57",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 20:23:37",
+        "type": "Warning",
+        "reason": "JobReservingStart",
+        "message": "Job start reserving, pod:<redacted>-worker-0 exitCode:0"
+      },
+      {
+        "time": "2026-10-20 20:23:37",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      {
+        "time": "2026-10-20 20:23:37",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      {
+        "time": "2026-10-20 20:23:37",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "PodReservingStart",
+        "message": "Pod start reserving, exitCode:0"
+      },
+      {
+        "time": "2026-10-20 20:23:56",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 20:23:56",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-20 20:23:56",
+        "type": "Normal",
+        "reason": "SuccessfulDeleteService",
+        "message": "Deleted service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 20:23:57",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-20 20:24:17",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-20 20:24:17",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      }
+    ]
+  }
+}

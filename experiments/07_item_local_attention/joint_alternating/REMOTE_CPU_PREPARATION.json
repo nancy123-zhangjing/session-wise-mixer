@@ -1,0 +1,293 @@
+{
+  "schema": "stage07_item_local_joint_CPU_preparation_v1",
+  "status": "CPU_PREPARATION_PASS",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "started_utc": "2026-10-20T03:20:22.602782+00:00",
+  "new_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1",
+  "old_root_read_only": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1",
+  "root_commit": "a6236b7ad7bdead84869e83221049268d3a123ab",
+  "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "bootstrap_sha256": "a39d52f8c9a419b88894f4ab8b26516d03eebbb1d6e45aea0a5c8d94eb29ce8b",
+  "input_receipt_sha256": "66eae0de9d0970b3511a9048f1d24e7a9076cdc35cd5241aef9062fa8f82a5c8",
+  "sources": {
+    "code": {
+      "commit": "a6236b7ad7bdead84869e83221049268d3a123ab",
+      "bundle_sha256": "77aa64d3a44645ec31cc8f80d9b8adc0d1dbbd6b99c3e8214599e925ed0446a9",
+      "clone_mode": "no-hardlinks_no-alternates"
+    },
+    "engine": {
+      "commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "bundle_sha256": "27aa5c31605290970a2e969de12a3569f60d84be52cbd5dd1b97f8390b4fa02c",
+      "clone_mode": "no-hardlinks_no-alternates"
+    }
+  },
+  "checks": [
+    {
+      "label": "clone_code",
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/code",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_00_clone_code.log",
+      "returncode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "verify_code_bundle",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code",
+        "bundle",
+        "verify",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/code_joint.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_01_verify_code_bundle.log",
+      "returncode": 0,
+      "sha256": "595b9fef2b5388eba313f0d54b79bf7cdbf0a41f2893ad7167c1019de67277f1"
+    },
+    {
+      "label": "list_code_bundle_heads",
+      "argv": [
+        "git",
+        "bundle",
+        "list-heads",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/code_joint.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_02_list_code_bundle_heads.log",
+      "returncode": 0,
+      "sha256": "1a84b5121379667e4670d0bbea11aaf7436685b5577585443bc050bdec800b41"
+    },
+    {
+      "label": "fetch_code",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code",
+        "fetch",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/code_joint.bundle",
+        "refs/heads/codex/item-local-attention"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_03_fetch_code.log",
+      "returncode": 0,
+      "sha256": "c586be5245a55ac6fff8d8e967c708431c05cffd87ac4f4fc7a4c6f366d93162"
+    },
+    {
+      "label": "checkout_code",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code",
+        "checkout",
+        "--detach",
+        "a6236b7ad7bdead84869e83221049268d3a123ab"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_04_checkout_code.log",
+      "returncode": 0,
+      "sha256": "04217e84ee5b5e36b0aeefa6c3f713d8b2ad8c360969d1c0b146e44abf594592"
+    },
+    {
+      "label": "clone_engine",
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_ocn_repair_r1/engine",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_05_clone_engine.log",
+      "returncode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "verify_engine_bundle",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "bundle",
+        "verify",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/engine_joint.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_06_verify_engine_bundle.log",
+      "returncode": 0,
+      "sha256": "adf24a351f7696ff89f6a7198669e919be039e5a50b41c427353efb43c47ff5f"
+    },
+    {
+      "label": "list_engine_bundle_heads",
+      "argv": [
+        "git",
+        "bundle",
+        "list-heads",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/engine_joint.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_07_list_engine_bundle_heads.log",
+      "returncode": 0,
+      "sha256": "d89da1e215bba12396167c4c0dfb660fd3b720d5511e8e1636d345e5bdae112c"
+    },
+    {
+      "label": "fetch_engine",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "fetch",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/engine_joint.bundle",
+        "refs/heads/codex/item-local-attention"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_08_fetch_engine.log",
+      "returncode": 0,
+      "sha256": "139f5ddb1e9833e1ba40878d9e4c5f8419584835fc3d4646fb638432dc4c357c"
+    },
+    {
+      "label": "checkout_engine",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "checkout",
+        "--detach",
+        "1c879252f6395d6e64462511823c3929b9c42c00"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_09_checkout_engine.log",
+      "returncode": 0,
+      "sha256": "388fdca32bb873dd5ade09a3910bf80d60f9923526ed53ca146f9fabc1ae08fa"
+    },
+    {
+      "label": "verify_ignored_engine_link",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code",
+        "check-ignore",
+        "external/DiffGRM"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_10_verify_ignored_engine_link.log",
+      "returncode": 0,
+      "sha256": "b7745f68d810c16c683bae822ec32cfd77a1b5509ed5d958c55fd4be1eaee2d6"
+    },
+    {
+      "label": "test_test_item_local_alternating_joint",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-X",
+        "utf8",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/tests/test_item_local_alternating_joint.py"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_11_test_test_item_local_alternating_joint.log",
+      "returncode": 0,
+      "sha256": "b0abd051b2546fd6662d0054cb790fe174c65269dad18f2512ffe55ff457f794"
+    },
+    {
+      "label": "test_test_item_local_joint_training_state",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-X",
+        "utf8",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/tests/test_item_local_joint_training_state.py"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_12_test_test_item_local_joint_training_state.log",
+      "returncode": 0,
+      "sha256": "084ca6ea557a4cb58360adfbfe32127971bca237d7bfeec079302824fa4bca13"
+    },
+    {
+      "label": "test_test_ocn_autocast_gradient",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-X",
+        "utf8",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/tests/test_ocn_autocast_gradient.py"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_13_test_test_ocn_autocast_gradient.log",
+      "returncode": 0,
+      "sha256": "91a162bf8a4fe25d1161383c61310f196743dd0e2433295d25b0878fb59f4666"
+    },
+    {
+      "label": "test_test_item_local_training_state",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-X",
+        "utf8",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/tests/test_item_local_training_state.py"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_14_test_test_item_local_training_state.log",
+      "returncode": 0,
+      "sha256": "541e092b07e77371f4accaf39692aca252410226be823439928232c5e2d88bcb"
+    },
+    {
+      "label": "prepare_control",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport builtins, runpy, sys\noriginal_import = builtins.__import__\ndef cpu_import(name, globals=None, locals=None, fromlist=(), level=0):\n    if name.split('.')[0] in {'torch', 'cuda', 'cupy', 'pycuda'}:\n        raise RuntimeError('CPU prepare must not import Torch/CUDA: ' + name)\n    return original_import(name, globals, locals, fromlist, level)\nbuiltins.__import__ = cpu_import\nrunner = sys.argv[1]\nsys.argv = sys.argv[1:]\nrunpy.run_path(runner, run_name='__main__')\nif any(name.split('.')[0] in {'torch', 'cuda', 'cupy', 'pycuda'} for name in sys.modules):\n    raise RuntimeError('A Torch/CUDA module escaped the CPU preparation import guard')\nprint('PREPARE_CPU_IMPORT_GUARD_PASS')\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/scripts/train/run_item_local_joint.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/configs/07_item_local_attention/joint_alternating_seed2024.json",
+        "--variant",
+        "control",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/runs/stage07_item_local_joint_control_seed2024_20261020_r1",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_15_prepare_control.log",
+      "returncode": 0,
+      "sha256": "e7409a41353b193b7859523c7571f0fe12ff6fc94ac2eafcd9287f79e5fb9f20"
+    },
+    {
+      "label": "prepare_item_local",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport builtins, runpy, sys\noriginal_import = builtins.__import__\ndef cpu_import(name, globals=None, locals=None, fromlist=(), level=0):\n    if name.split('.')[0] in {'torch', 'cuda', 'cupy', 'pycuda'}:\n        raise RuntimeError('CPU prepare must not import Torch/CUDA: ' + name)\n    return original_import(name, globals, locals, fromlist, level)\nbuiltins.__import__ = cpu_import\nrunner = sys.argv[1]\nsys.argv = sys.argv[1:]\nrunpy.run_path(runner, run_name='__main__')\nif any(name.split('.')[0] in {'torch', 'cuda', 'cupy', 'pycuda'} for name in sys.modules):\n    raise RuntimeError('A Torch/CUDA module escaped the CPU preparation import guard')\nprint('PREPARE_CPU_IMPORT_GUARD_PASS')\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/scripts/train/run_item_local_joint.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code/configs/07_item_local_attention/joint_alternating_seed2024.json",
+        "--variant",
+        "item_local",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/joint_bootstrap_16_prepare_item_local.log",
+      "returncode": 0,
+      "sha256": "0b41a5fc232ec2b7be1680d3147d6e9c4221f9ceaa34dd35b92c2dec6d7bee28"
+    }
+  ],
+  "tests_expected": 20,
+  "gpu_started": false,
+  "goal_complete": false,
+  "tests_passed": 20,
+  "prepared_variants": [
+    "control",
+    "item_local"
+  ],
+  "prepare_torch_imports_blocked": true,
+  "ended_utc": "2026-10-20T03:21:09.470998+00:00"
+}

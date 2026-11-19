@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "kind": "real_data_cpu_smoke_not_formal",
+  "gpu_used": false,
+  "test_evaluated": false,
+  "formal_runs": 0,
+  "models": {
+    "sasrec_fullce": {
+      "updates": 3,
+      "validation_samples": 22363,
+      "validation_audit": "PASS",
+      "portable_recommender_exact_query": true,
+      "input_output_tied": true,
+      "checkpoint_sha256": "9e2092386d671e78df9edb869f2e07c6b7f278ab66c653fe5271883dcb0a355a",
+      "exported_files": {
+        "input_item_embeddings_with_pad.npy": "2d650a09f17d9da4378718b713fbae10463c4e1de2057b71fd1ddd60a36cdb9e",
+        "output_item_embeddings.npy": "6cfd6b6a469d1088381f79edf99e82b31a12cf34cd6c1e12b651ae1ea2bc32ca",
+        "recommender.pt": "f07a6d50824c1cf390603eafb01909c6429353bf4663da204dbe706f3caee13c"
+      },
+      "output_directory": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage06_continuous\\cpu_integration_20261016_v1\\sasrec_fullce"
+    },
+    "esasrec": {
+      "updates": 3,
+      "validation_samples": 22363,
+      "validation_audit": "PASS",
+      "portable_recommender_exact_query": true,
+      "input_output_tied": true,
+      "checkpoint_sha256": "93cfe14286324c2a90fdaf18fd7da169b3a1847cd6e0a64e280feca100c0fb49",
+      "exported_files": {
+        "input_item_embeddings_with_pad.npy": "ac0d01bde9aee889f461799670ce6e6f90331d9cbaa5e8f72c757b8447380450",
+        "output_item_embeddings.npy": "b046e41c663cb4a82f56892b8f82c18d9220cda45774972d752daa096bb596cc",
+        "recommender.pt": "fd4ad6887094b0962936331754944adacbeec023450afa217277b9e8286b4317"
+      },
+      "output_directory": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage06_continuous\\cpu_integration_20261016_v1\\esasrec"
+    }
+  },
+  "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc"
+}

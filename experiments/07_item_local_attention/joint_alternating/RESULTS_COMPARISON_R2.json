@@ -1,0 +1,207 @@
+{
+  "status": "OBSERVED_FORMAL_RESULTS_ARITHMETIC_REVIEW_PASS",
+  "verified_utc": "2026-10-20T12:25:45.993244+00:00",
+  "observation_utc": "2026-10-20T12:23:24.642540+00:00",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "evaluation_level": "sid",
+  "seed": 2024,
+  "sources": {
+    "formal_completion_observation": {
+      "path": "experiments/07_item_local_attention/joint_alternating/progress_snapshots/item_local_formal_completed_20261020.json",
+      "sha256": "1e9b1285257f42e7e39a7f7434e1fcdb2ee22b2d53e60279af03d3e75f779538",
+      "size_bytes": 38924
+    },
+    "historical_background": {
+      "path": "experiments/07_item_local_attention/joint_alternating/HISTORICAL_BACKGROUND.json",
+      "sha256": "876b36eb2e4aeaafab2e3685a69a5adc08f4eb895160a935df07ab625cc3883a",
+      "size_bytes": 2889
+    },
+    "control_review": {
+      "path": "experiments/07_item_local_attention/joint_alternating/control_final_r2_20261020/CONTROL_RESULT_REVIEW.json",
+      "sha256": "309d084634ec363c2a926268e64c951cb48a9db169f65f6e61f97b4bb07f5a62",
+      "size_bytes": 6019
+    },
+    "B_validation_csv": {
+      "path": "experiments/07_item_local_attention/joint_alternating/progress_snapshots/item_local_validation_through25_20261020_1934.csv",
+      "sha256": "c1ad3dc98e9ff2efaf070b1704ea4baa3f95b5e8266b7348ea22830d0d2c3c57",
+      "size_bytes": 2246
+    }
+  },
+  "relative_change_definition": "100*(B/reference-1); absolute differences use original 0-1 values, not percentage points.",
+  "observed_test_identity": {
+    "control": {
+      "run_id": "stage07_item_local_joint_control_seed2024_20261020_r1",
+      "best_epoch": 25,
+      "result_sha256_referenced_by_COMPLETE": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "test_completed_utc": "2026-10-20T10:17:10.954929+00:00"
+    },
+    "item_local": {
+      "run_id": "stage07_item_local_joint_item_local_seed2024_20261020_r1",
+      "best_epoch": 25,
+      "result_sha256_referenced_by_COMPLETE": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "test_completed_utc": "2026-10-20T12:23:06.254619+00:00"
+    }
+  },
+  "paired_test_B_vs_A": {
+    "hit_rate@5": {
+      "reference": 0.05446496445020793,
+      "item_local": 0.055985332915977286,
+      "absolute_difference_B_minus_reference": 0.0015203684657693547,
+      "relative_change_percent": 2.791461412151075,
+      "recommendation_metric": true
+    },
+    "hit_rate@10": {
+      "reference": 0.0801323614899611,
+      "item_local": 0.08035594508786835,
+      "absolute_difference_B_minus_reference": 0.0002235835979072509,
+      "relative_change_percent": 0.2790178571428381,
+      "recommendation_metric": true
+    },
+    "ndcg@5": {
+      "reference": 0.03809946608054043,
+      "item_local": 0.038680866246721755,
+      "absolute_difference_B_minus_reference": 0.0005814001661813284,
+      "relative_change_percent": 1.5260060730307279,
+      "recommendation_metric": true
+    },
+    "ndcg@10": {
+      "reference": 0.04636611616718627,
+      "item_local": 0.046563159358398554,
+      "absolute_difference_B_minus_reference": 0.00019704319121228303,
+      "relative_change_percent": 0.4249723882453038,
+      "recommendation_metric": true
+    },
+    "legal@10": {
+      "reference": 1,
+      "item_local": 1,
+      "absolute_difference_B_minus_reference": 0,
+      "relative_change_percent": 0.0,
+      "recommendation_metric": false
+    },
+    "duplicate@10": {
+      "reference": 0.0020882708452332455,
+      "item_local": 0.0018154988413936405,
+      "absolute_difference_B_minus_reference": -0.00027277200383960497,
+      "relative_change_percent": -13.062098935214417,
+      "recommendation_metric": false
+    },
+    "weighted_score": {
+      "reference": 0.053119365875683555,
+      "item_local": 0.05332171721060342,
+      "absolute_difference_B_minus_reference": 0.00020235133491986607,
+      "relative_change_percent": 0.38093703037311855,
+      "recommendation_metric": true
+    }
+  },
+  "best_validation_B_vs_A": {
+    "hit_rate@5": {
+      "reference": 0.06394490900147565,
+      "item_local": 0.06577829450431516,
+      "absolute_difference_B_minus_reference": 0.001833385502839513,
+      "relative_change_percent": 2.867132867132871,
+      "recommendation_metric": true
+    },
+    "hit_rate@10": {
+      "reference": 0.06904261503376112,
+      "item_local": 0.07150203461074095,
+      "absolute_difference_B_minus_reference": 0.0024594195769798294,
+      "relative_change_percent": 3.5621761658030993,
+      "recommendation_metric": true
+    },
+    "ndcg@5": {
+      "reference": 0.046632220254880244,
+      "item_local": 0.048021688540943595,
+      "absolute_difference_B_minus_reference": 0.0013894682860633514,
+      "relative_change_percent": 2.9796314189392215,
+      "recommendation_metric": true
+    },
+    "ndcg@10": {
+      "reference": 0.048331840190596186,
+      "item_local": 0.04991417263544923,
+      "absolute_difference_B_minus_reference": 0.001582332444853042,
+      "relative_change_percent": 3.273892404289036,
+      "recommendation_metric": true
+    },
+    "legal@10": {
+      "reference": 0.9999105665608371,
+      "item_local": 0.9998658498412556,
+      "absolute_difference_B_minus_reference": -4.471671958150569e-05,
+      "relative_change_percent": -0.004472071910921471,
+      "recommendation_metric": false
+    },
+    "duplicate@10": {
+      "reference": 0.3553503601450467,
+      "item_local": 0.3605419712791912,
+      "absolute_difference_B_minus_reference": 0.005191611134144514,
+      "relative_change_percent": 1.4609837828855499,
+      "recommendation_metric": false
+    },
+    "weighted_score": {
+      "reference": 0.05247399556222619,
+      "item_local": 0.05423174543616992,
+      "absolute_difference_B_minus_reference": 0.0017577498739437258,
+      "relative_change_percent": 3.349754207032518,
+      "recommendation_metric": true
+    }
+  },
+  "test_screening": {
+    "required_ndcg10_relative_increase": 0.03,
+    "observed_ndcg10_relative_increase": 0.004249723882453038,
+    "ndcg10_requirement_met": false,
+    "hr10_not_decreased": true,
+    "screening_met": false,
+    "scope": "Arithmetic screening of observed final-test values; full paired artifact acceptance remains pending."
+  },
+  "historical_B_vs_03_background_only": {
+    "hit_rate@5": {
+      "reference": 0.05205026159280955,
+      "item_local": 0.055985332915977286,
+      "absolute_difference_B_minus_reference": 0.003935071323167734,
+      "relative_change_percent": 7.560137457044669,
+      "recommendation_metric": true
+    },
+    "hit_rate@10": {
+      "reference": 0.07490050529893127,
+      "item_local": 0.08035594508786835,
+      "absolute_difference_B_minus_reference": 0.005455439788937075,
+      "relative_change_percent": 7.283582089552221,
+      "recommendation_metric": true
+    },
+    "ndcg@5": {
+      "reference": 0.03656712724405234,
+      "item_local": 0.038680866246721755,
+      "absolute_difference_B_minus_reference": 0.0021137390026694167,
+      "relative_change_percent": 5.780434947930502,
+      "recommendation_metric": true
+    },
+    "ndcg@10": {
+      "reference": 0.04391882613008758,
+      "item_local": 0.046563159358398554,
+      "absolute_difference_B_minus_reference": 0.002644333228310973,
+      "relative_change_percent": 6.020956071272154,
+      "recommendation_metric": true
+    }
+  },
+  "interpretation": [
+    "Validation NDCG@10 increased by about 3.27 percent, but the observed final-test change is about 0.425 percent.",
+    "The final-test 3-percent NDCG@10 screening threshold is not met; HR@10 did not decrease.",
+    "Single-seed small increases establish neither a definite useful effect nor complete ineffectiveness.",
+    "Stage03 differs in warm start, fixed versus alternating SID training and execution recipe; its differences cannot be attributed to local attention.",
+    "duplicate@10 is a decoding diagnostic; relative change is not labeled recommendation improvement."
+  ],
+  "follow_up_hypothesis": {
+    "status": "unverified_not_an_experiment_authorization",
+    "statement": "The observed validation gain may depend on decoding/search protocol: validation uses beam32 and final test beam256. Split differences and single-seed variation are also possible; this evidence does not identify the cause.",
+    "automatic_new_experiment_started": false
+  },
+  "scope": "Arithmetic over preserved completion-observation/CSV/history bytes only; referenced original file/checkpoint SHA values were not independently read back here.",
+  "full_pair_audit_performed": false,
+  "actual_weights_read_back": false,
+  "platform_release_verified": false,
+  "backup_verified": false,
+  "goal_complete": false
+}

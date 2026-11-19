@@ -1,0 +1,113 @@
+{
+  "actual": {
+    "position_nll_sums": [
+      453.7289733886719,
+      471.4198303222656,
+      435.6305236816406,
+      431.36700439453125
+    ],
+    "position_loss_sums": [
+      452.545166015625,
+      467.7159118652344,
+      438.449462890625,
+      437.4400939941406
+    ],
+    "position_correct_counts": [
+      1,
+      0,
+      2,
+      0
+    ]
+  },
+  "reference": {
+    "position_nll_sums": [
+      453.84375,
+      471.296875,
+      435.4375,
+      431.234375
+    ],
+    "position_loss_sums": [
+      452.63433837890625,
+      467.6190185546875,
+      438.29364013671875,
+      437.3316345214844
+    ],
+    "position_correct_counts": [
+      1,
+      0,
+      2,
+      0
+    ]
+  },
+  "same_logits_per_digit": {
+    "position_nll_sums": [
+      453.84375,
+      471.296875,
+      435.4375,
+      431.234375
+    ],
+    "position_loss_sums": [
+      452.63433837890625,
+      467.6190185546875,
+      438.29364013671875,
+      437.3316345214844
+    ],
+    "position_correct_counts": [
+      1,
+      0,
+      2,
+      0
+    ]
+  },
+  "dtypes": {
+    "logits": "torch.bfloat16",
+    "flattened_nll": "torch.float32",
+    "flattened_loss": "torch.float32",
+    "per_digit_nll": [
+      "torch.float32",
+      "torch.float32",
+      "torch.float32",
+      "torch.float32"
+    ],
+    "per_digit_loss": [
+      "torch.float32",
+      "torch.float32",
+      "torch.float32",
+      "torch.float32"
+    ],
+    "original_sums": {
+      "position_nll_sums": "torch.float32",
+      "position_loss_sums": "torch.float32",
+      "position_correct_counts": "torch.int64"
+    }
+  },
+  "guard_rtol": 1e-05,
+  "guard_atol": 1e-05,
+  "max_absolute_differences": {
+    "own_vs_original": {
+      "position_nll_sums": 0.193023681640625,
+      "position_loss_sums": 0.15582275390625,
+      "position_correct_counts": 0.0
+    },
+    "flat_vs_per_digit": {
+      "position_nll_sums": 0.193023681640625,
+      "position_loss_sums": 0.15582275390625,
+      "position_correct_counts": 0.0
+    },
+    "per_digit_vs_original": {
+      "position_nll_sums": 0.0,
+      "position_loss_sums": 0.0,
+      "position_correct_counts": 0.0
+    }
+  },
+  "arm": "frozen",
+  "split": "train",
+  "label_smoothing": 0.2,
+  "logits_shape": [
+    64,
+    4,
+    256
+  ],
+  "global_autocast_enabled": true,
+  "training_modules": []
+}

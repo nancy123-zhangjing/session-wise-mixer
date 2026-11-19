@@ -1,0 +1,44 @@
+{
+  "status": "accepted_gpu_smoke",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "elapsed_seconds": 38.61605314491317,
+  "verified_inputs": 18,
+  "summary_sha256": "21a50d14368ce302b7e42a378bad96bd01627c5f3970d0b1583ce437e99bc280",
+  "noise_applied_calls": {
+    "A": 0,
+    "B": 0,
+    "C": 32
+  },
+  "gradient_sides": {
+    "A": {
+      "recommender": {
+        "recommender": 1.2459609623463463,
+        "tokenizer": 0.0
+      }
+    },
+    "B": {
+      "tokenizer": {
+        "recommender": 0.0,
+        "tokenizer": 0.5765509204435257
+      },
+      "recommender": {
+        "recommender": 1.2459609623463463,
+        "tokenizer": 0.0
+      }
+    },
+    "C": {
+      "tokenizer": {
+        "recommender": 0.0,
+        "tokenizer": 0.9452824923266049
+      },
+      "recommender": {
+        "recommender": 1.2459609623463463,
+        "tokenizer": 0.0
+      }
+    }
+  },
+  "paired_decoder_data_order_sha256": "dacff8a3e2a4ff069013fa92f71cfbc2d7f40fe6b0d03428732307886b5e5f47",
+  "research_metric_result": false,
+  "frozen_full_tokenizer_state": "locked runner assertion passed before COMPLETE; not independently deserialized",
+  "frozen_sid_and_codebook_files": "independently SHA-verified"
+}

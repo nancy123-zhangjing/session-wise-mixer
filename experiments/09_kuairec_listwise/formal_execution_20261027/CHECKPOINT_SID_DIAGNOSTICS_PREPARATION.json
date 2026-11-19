@@ -1,0 +1,52 @@
+{
+  "schema": "stage09_checkpoint_sid_diagnostics_preparation_v1",
+  "created_at_utc": "2026-10-27T20:12:54.599871+00:00",
+  "status": "PREPARED_CPU_FIXTURES_PASSED_FINAL_RUN_PENDING",
+  "script": "checkpoint_sid_diagnostics.py",
+  "script_sha256": "22c9aec337efa241c595b08dded581c567ae854baa4a191e4a3f1002ee6b3e37",
+  "test_script": "test_checkpoint_sid_diagnostics.py",
+  "test_script_sha256": "12ccad7eaa765f81b20d8db162bcb630a5adb2eb3159d8cd9e7efa5ea46e7c6f",
+  "verification": {
+    "command": ".runtime/stage08_restore_env/Scripts/python.exe -B experiments/09_kuairec_listwise/formal_execution_20261027/test_checkpoint_sid_diagnostics.py",
+    "exit_code": 0,
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "test_runner_seconds": 0.148,
+    "gpu_initialized": false,
+    "checks": [
+      "hand-computed PAD exclusion, retained real all-zero SID and duplicate buckets; fingerprint compatibility",
+      "invalid SID dtype, shape, PAD and range rejected",
+      "four-arm final selection and best/last receipt identity mismatch rejected",
+      "checkpoint SHA, arm, epoch and SID fingerprint mismatch rejected",
+      "JSON SHA rejected; CPU-only runtime and bound statistics sources"
+    ]
+  },
+  "statistics_sources": {
+    "scripts/listwise_diffgrm/__init__.py": "23b895b1c072e3c8a22aa3e8b4d906ad315a35a668cb46fa1e77a21efbdbfb60",
+    "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+    "scripts/listwise_diffgrm/asset_diagnostics.py": "9e4be481b3652c834b6a057690b3283ea9c47496ae6c5ef467ba918485011afa"
+  },
+  "future_execution": {
+    "requires": "Real passed four-arm final selection receipt and independently restored final best/last models",
+    "checkpoint_roles": 8,
+    "output": "experiments/09_kuairec_listwise/final_analysis_20261027/checkpoint_sid_diagnostics.json",
+    "real_final_checkpoint_loaded": false,
+    "final_selection_executed": false,
+    "model_forward": false,
+    "sid_reassigned": false,
+    "remote_upload": false,
+    "training_code_changed": false
+  },
+  "limitations": [
+    "CPU fixtures are not final checkpoint acceptance.",
+    "Initial asset collision statistics do not describe trained best/last SID snapshots.",
+    "Saved-SID bucket statistics cannot establish that collisions caused low candidate coverage."
+  ],
+  "independent_static_review": {
+    "passed": true,
+    "scope": "CLI and final receipt fields, eight role clocks, SID fingerprint, restored three-file source binding, PAD handling, CPU-only and read-only behavior",
+    "real_final_checkpoint_loaded": false,
+    "tests_rerun_by_reviewer": false
+  }
+}

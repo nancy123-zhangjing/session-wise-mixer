@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "task": "per-user leave-five-out slate continuation (OGR arXiv:2608.17613 / HiGR arXiv:2512.24787 alignment)",
+  "source_dataset": "outputs/kuairec_listwise_v1/run1",
+  "source_events_note": "Reuses the verified deduplicated big_matrix events of kuairec_listwise_v1 (same cleaning, duplicate and ambiguity rules). Invalid and ambiguous (same user, same timestamp) events are dropped from sequences.",
+  "list_length": 5,
+  "history_max": 128,
+  "history_min": 5,
+  "protocol_id": "kuairec_l5o_records_v1",
+  "split": "per user: last 5 records = test, previous 5 = validation, earlier non-overlapping blocks = train (history >= 5)",
+  "slate_rule": "consecutive records, stride 5 anchored at sequence end; retain repeated items in every split",
+  "allow_repeated_targets": true,
+  "minimum_user_records": 15,
+  "short_user_note": "15..19 records permit held-out slates and a training prefix, but no supervised train block; report explicitly",
+  "zero_play_events": "kept as impressions (in history and targets)",
+  "effective_view_watch_ratio_min": 1.0,
+  "effective_view_sensitivity_watch_ratio_min": 2.0,
+  "session_gap_seconds": null,
+  "max_target_span_seconds": null
+}

@@ -1,0 +1,99 @@
+{
+  "optimizer_updates": 1,
+  "microbatches": 16,
+  "diagnostic_only_not_resume_checkpoint": true,
+  "no_mapping_refresh_no_rng_or_model_state_change": true,
+  "tokenizer_tensor_state_sha256": "194bc06a758d10c0cf7efa7a00a3690134c6292919b6cba8c35750ff634c63c7",
+  "semantic_ids_array_sha256": "239ae4431864f13e22596180e46e77a386efc9db2b744197c24b55b6594dbb02",
+  "catalog_reconstruction_squared_l2_mean": 0.6253518562515494,
+  "deterministic_sid_change": {
+    "changed_items": 3,
+    "item_change_rate": 0.00024791339558714154,
+    "changed_digits": 3,
+    "digit_change_rate": 6.197834889678539e-05,
+    "per_position_change_rate": [
+      0.0,
+      8.263779852904718e-05,
+      8.263779852904718e-05,
+      8.263779852904718e-05
+    ]
+  },
+  "validation_coverage": {
+    "examples": 22363,
+    "target_changed_examples": 9,
+    "history_changed_examples": 93,
+    "either_changed_examples": 102,
+    "target_changed_rate": 0.00040245047623306356,
+    "history_changed_rate": 0.00415865492107499,
+    "either_changed_rate": 0.004561105397308054
+  },
+  "fresh_catalog_stats": {
+    "full_sid": {
+      "unique_semantic_ids": 10651,
+      "collided_items": 2175,
+      "collision_rate": 0.17973721180067764,
+      "collision_groups": 725,
+      "largest_group": 40
+    },
+    "prefixes": {
+      "1": {
+        "unique_semantic_ids": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "collision_groups": 254,
+        "largest_group": 129
+      },
+      "2": {
+        "unique_semantic_ids": 6950,
+        "collided_items": 7282,
+        "collision_rate": 0.6017684488885217,
+        "collision_groups": 2131,
+        "largest_group": 57
+      },
+      "3": {
+        "unique_semantic_ids": 9856,
+        "collided_items": 3308,
+        "collision_rate": 0.2733658375340881,
+        "collision_groups": 1063,
+        "largest_group": 43
+      },
+      "4": {
+        "unique_semantic_ids": 10651,
+        "collided_items": 2175,
+        "collision_rate": 0.17973721180067764,
+        "collision_groups": 725,
+        "largest_group": 40
+      }
+    },
+    "positions": [
+      {
+        "position": 0,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 1,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 2,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      },
+      {
+        "position": 3,
+        "codebook_size": 256,
+        "used_codes": 256,
+        "utilization_rate": 1.0
+      }
+    ]
+  },
+  "files": {
+    "fresh_probe_codes.npy": "4f4faca52617aa9974afbad744c1889e7c66ff4785fd545052a18ce8fe161387",
+    "crossed_codebooks.npy": "c598ac98dbb130bde76d79426c95481091582899069b00a19d7218923863fa57"
+  }
+}

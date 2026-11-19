@@ -1,0 +1,61 @@
+{
+  "c_replay_trajectory_and_prediction_audit_total": {
+    "basis": null,
+    "evidence": "C total: 20 trajectory audits, 5 replay prediction checks plus R20 recheck/gate. Does not include inference, checkpoint I/O, or offline final bootstrap.",
+    "high": null,
+    "low": null
+  },
+  "checkpoint_coverage_validation_per_file": {
+    "basis": null,
+    "evidence": "Per coverage checkpoint: validate_clocks and receipt processing. Exclude separately profiled read/hash/fingerprint.",
+    "high": null,
+    "low": null
+  },
+  "evaluation_output_and_unprofiled_cpu_per_call": {
+    "basis": null,
+    "evidence": "Per full validation/test: dataset load, metrics, prediction/gzip output, full-state preservation checks and SHA receipts. Exclude profiled batch preparation/decode/catalog.",
+    "high": null,
+    "low": null
+  },
+  "extra_gpu_allocated_cpu_audit": {
+    "A": {
+      "basis": null,
+      "evidence": "Additional actual-restore/CPU audit while this GPU remains allocated; justify zero if none.",
+      "high": null,
+      "low": null
+    },
+    "B": {
+      "basis": null,
+      "evidence": "Additional actual-restore/CPU audit while this GPU remains allocated; justify zero if none.",
+      "high": null,
+      "low": null
+    },
+    "C": {
+      "basis": null,
+      "evidence": "Additional actual-restore/CPU audit while this GPU remains allocated; justify zero if none.",
+      "high": null,
+      "low": null
+    }
+  },
+  "format": "stage09_freeze35_budget_overheads_v1",
+  "instructions": "Fill every GPU-allocated range with measured or operator_allowance basis; null is not zero. An operator allowance is an explicit conservative assumption, never an observed timing.",
+  "offline_cpu_audit_total": {
+    "basis": null,
+    "evidence": "Optional post-GPU-release CPU-only work estimate; excluded from GPU budget.",
+    "high": null,
+    "low": null
+  },
+  "package_verification_platform_startup_release_per_job": {
+    "basis": null,
+    "evidence": "Per job: package verification, historical-reference authentication, process imports and platform startup/release. Exclude model build_timing already counted.",
+    "high": null,
+    "low": null
+  },
+  "phase_indices_logging_per_phase": {
+    "basis": null,
+    "evidence": "Per phase: index generation, training JSONL/console logging and remaining host work. Exclude checkpoint I/O and C replay audits.",
+    "high": null,
+    "low": null
+  },
+  "units": "seconds"
+}

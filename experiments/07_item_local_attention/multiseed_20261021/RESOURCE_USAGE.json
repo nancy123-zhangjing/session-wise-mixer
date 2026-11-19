@@ -1,0 +1,773 @@
+{
+  "schema": "stage07_multiseed_observed_resource_usage_v1",
+  "campaign_id": "stage07_item_local_joint_multiseed_20261021_r1",
+  "status": "OBSERVED_ALLOCATIONS_VERIFIED",
+  "generated_at": "2026-10-22T01:24:18.726335+08:00",
+  "method": "For each one-GPU Job, SuccessfulDeletePod time minus Scheduled time; sum allocation_seconds times gpu_count. Queue time before Scheduled is excluded; startup, work and release tail are included.",
+  "event_timezone": "Asia/Shanghai (UTC+08:00)",
+  "event_resolution_seconds": 1,
+  "allocation_count": 6,
+  "smoke_allocations": 2,
+  "formal_allocations": 4,
+  "retry_allocations_observed": 0,
+  "all_six_released": true,
+  "all_six_exit_code_zero": true,
+  "total_allocation_gpu_seconds": 28696,
+  "total_allocation_gpu_hours": 7.971111111111111,
+  "subtotals": {
+    "smoke": {
+      "allocation_gpu_seconds": 469,
+      "allocation_gpu_hours": 0.13027777777777777
+    },
+    "formal": {
+      "allocation_gpu_seconds": 28227,
+      "allocation_gpu_hours": 7.840833333333333
+    }
+  },
+  "execution_safety_cap_gpu_hours": 14,
+  "within_execution_safety_cap": true,
+  "historical_28_gpu_hour_goal_included": false,
+  "billing_settlement_verified": false,
+  "actual_billed_cost": null,
+  "scope_limits": [
+    "These are observed allocation durations, not GPU busy time, process time, billed time or an actual monetary settlement.",
+    "The six names in the two submission receipts have one observed successful Pod lifecycle each; no retry is present in these saved submissions/events. This is not a new exhaustive platform inventory query.",
+    "Single-job event payloads omit the job name and redact internal identifiers; query provenance uses the parent-provided saved-file mapping, corroborated by named submission/status and combined-event records.",
+    "Some status snapshots predate completion. Terminal success and release are accepted from the later full event files, not stale RUNNING status.",
+    "The old 28 GPU-hour experiment is outside this campaign. No price or billing record was used."
+  ],
+  "allocations": [
+    {
+      "job_name": "nancy-stage07-multiseed-2025-smoke-20261021-r1",
+      "mode": "smoke",
+      "seed": 2025,
+      "variant": null,
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:11:49+08:00",
+      "released_at": "2026-10-21T23:15:29+08:00",
+      "allocation_seconds": 220,
+      "allocation_gpu_seconds": 220,
+      "allocation_gpu_hours": 0.06111111111111111,
+      "successful_completion_at": "2026-10-21T23:15:19+08:00",
+      "release_tail_seconds": 10,
+      "queued_seconds_excluded": 37,
+      "source_file": "SMOKE_FULL_EVENTS_2025.json",
+      "source_file_sha256": "f1189c45d5f9988b826d47a913f740e7b7710f82a5c85ef48455cefb1cbd58aa",
+      "source_event_count": 31,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "Preempted": 1,
+        "FailedScheduling": 7,
+        "Unschedulable": 3,
+        "Scheduled": 1,
+        "Pulled": 2,
+        "Created": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "ExitedWithCode": 1,
+        "PyTorchJobSucceeded": 1,
+        "PodReservingStart": 1,
+        "JobTerminated": 2,
+        "SuccessfulDeletePodGroup": 2,
+        "SuccessfulDeletePod": 1,
+        "SuccessfulDeleteService": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:11:49",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu162"
+      },
+      "release_event": {
+        "time": "2026-10-21 23:15:29",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-21 23:15:19",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-21 23:15:19",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "SMOKE_SUBMISSION.json",
+      "resource_status_evidence_file": "SMOKE_STATUS_2315.json",
+      "resource_status_at_snapshot": "RUNNING",
+      "snapshot_finish_matches_event": null,
+      "request_evidence_file": "SMOKE_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2025-smoke-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:12",
+            "reason": "SuccessfulCreatePod"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:13",
+            "reason": "SuccessfulCreateService"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:19",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:30",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:40",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:29",
+            "reason": "SuccessfulDeletePodGroup"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:29",
+            "reason": "SuccessfulDeletePod"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:29",
+            "reason": "SuccessfulDeleteService"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:40",
+            "reason": "JobTerminated"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:40",
+            "reason": "SuccessfulDeletePodGroup"
+          }
+        ]
+      }
+    },
+    {
+      "job_name": "nancy-stage07-multiseed-2026-smoke-20261021-r1",
+      "mode": "smoke",
+      "seed": 2026,
+      "variant": null,
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:11:45+08:00",
+      "released_at": "2026-10-21T23:15:54+08:00",
+      "allocation_seconds": 249,
+      "allocation_gpu_seconds": 249,
+      "allocation_gpu_hours": 0.06916666666666667,
+      "successful_completion_at": "2026-10-21T23:15:44+08:00",
+      "release_tail_seconds": 10,
+      "queued_seconds_excluded": 33,
+      "source_file": "SMOKE_FULL_EVENTS_2026.json",
+      "source_file_sha256": "383610a1790593374645a04fe3bd63fc0a0014887b5247916ff521359c806025",
+      "source_event_count": 31,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "FailedScheduling": 7,
+        "Unschedulable": 4,
+        "Scheduled": 1,
+        "Pulled": 2,
+        "Created": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "PyTorchJobSucceeded": 1,
+        "ExitedWithCode": 1,
+        "PodReservingStart": 1,
+        "SuccessfulDeletePod": 1,
+        "JobTerminated": 2,
+        "SuccessfulDeletePodGroup": 2,
+        "SuccessfulDeleteService": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:11:45",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu408"
+      },
+      "release_event": {
+        "time": "2026-10-21 23:15:54",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-21 23:15:44",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-21 23:15:44",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "SMOKE_SUBMISSION.json",
+      "resource_status_evidence_file": "SMOKE_STATUS_2315.json",
+      "resource_status_at_snapshot": "RUNNING",
+      "snapshot_finish_matches_event": null,
+      "request_evidence_file": "SMOKE_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2026-smoke-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:12",
+            "reason": "SetPodTemplateSchedulerName"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:12",
+            "reason": "SuccessfulCreatePod"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:13",
+            "reason": "SuccessfulCreateService"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:19",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:28",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:35",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:11:45",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:44",
+            "reason": "JobReservingStart"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:44",
+            "reason": "PyTorchJobSucceeded"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:44",
+            "reason": "ExitedWithCode"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:54",
+            "reason": "SuccessfulDeletePod"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:54",
+            "reason": "JobTerminated"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:54",
+            "reason": "SuccessfulDeletePodGroup"
+          },
+          {
+            "source_file": "SMOKE_EVENTS_TERMINAL.json",
+            "time": "2026-10-21 23:15:54",
+            "reason": "SuccessfulDeleteService"
+          }
+        ]
+      }
+    },
+    {
+      "job_name": "nancy-stage07-multiseed-2025-formal-control-20261021-r1",
+      "mode": "formal",
+      "seed": 2025,
+      "variant": "control",
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:17:28+08:00",
+      "released_at": "2026-10-22T00:58:42+08:00",
+      "allocation_seconds": 6074,
+      "allocation_gpu_seconds": 6074,
+      "allocation_gpu_hours": 1.6872222222222222,
+      "successful_completion_at": "2026-10-22T00:58:28+08:00",
+      "release_tail_seconds": 14,
+      "queued_seconds_excluded": 36,
+      "source_file": "FORMAL_FINAL_EVENTS_2025_control.json",
+      "source_file_sha256": "ece5636ec664dfe978d01dc01fd2ccca009189acbb2099ecb986bbb673fd5263",
+      "source_event_count": 30,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "Preempted": 1,
+        "FailedScheduling": 6,
+        "Unschedulable": 3,
+        "Scheduled": 1,
+        "Created": 2,
+        "Pulled": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "ExitedWithCode": 1,
+        "PyTorchJobSucceeded": 1,
+        "PodReservingStart": 1,
+        "SuccessfulDeletePod": 1,
+        "JobTerminated": 2,
+        "SuccessfulDeletePodGroup": 2,
+        "SuccessfulDeleteService": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:17:28",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu476"
+      },
+      "release_event": {
+        "time": "2026-10-22 00:58:42",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-22 00:58:28",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-22 00:58:28",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "FORMAL_SUBMISSION.json",
+      "resource_status_evidence_file": "STATUS_20261022_012112.json",
+      "resource_status_at_snapshot": "SUCCEEDED",
+      "snapshot_finish_matches_event": true,
+      "request_evidence_file": "FORMAL_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2025-formal-control-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:09",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:25",
+            "reason": "Unschedulable"
+          }
+        ]
+      }
+    },
+    {
+      "job_name": "nancy-stage07-multiseed-2025-formal-item-local-20261021-r1",
+      "mode": "formal",
+      "seed": 2025,
+      "variant": "item_local",
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:17:21+08:00",
+      "released_at": "2026-10-22T01:21:20+08:00",
+      "allocation_seconds": 7439,
+      "allocation_gpu_seconds": 7439,
+      "allocation_gpu_hours": 2.066388888888889,
+      "successful_completion_at": "2026-10-22T01:21:04+08:00",
+      "release_tail_seconds": 16,
+      "queued_seconds_excluded": 29,
+      "source_file": "FORMAL_FINAL_EVENTS_2025_item_local.json",
+      "source_file_sha256": "3a2e7b757a00543dab79cce506a36e92c7a337e05b5aec2f5a6b9879a717fd0e",
+      "source_event_count": 26,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "FailedScheduling": 5,
+        "Preempted": 1,
+        "Unschedulable": 2,
+        "Scheduled": 1,
+        "Pulled": 2,
+        "Created": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "ExitedWithCode": 1,
+        "PyTorchJobSucceeded": 1,
+        "PodReservingStart": 1,
+        "SuccessfulDeleteService": 1,
+        "JobTerminated": 1,
+        "SuccessfulDeletePod": 1,
+        "SuccessfulDeletePodGroup": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:17:21",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu532"
+      },
+      "release_event": {
+        "time": "2026-10-22 01:21:20",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-22 01:21:04",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-22 01:21:04",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "FORMAL_SUBMISSION.json",
+      "resource_status_evidence_file": "STATUS_20261022_012112.json",
+      "resource_status_at_snapshot": "SUCCEEDED",
+      "snapshot_finish_matches_event": true,
+      "request_evidence_file": "FORMAL_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2025-formal-item-local-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:00",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:12",
+            "reason": "Unschedulable"
+          }
+        ]
+      }
+    },
+    {
+      "job_name": "nancy-stage07-multiseed-2026-formal-control-20261021-r1",
+      "mode": "formal",
+      "seed": 2026,
+      "variant": "control",
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:17:24+08:00",
+      "released_at": "2026-10-22T01:21:29+08:00",
+      "allocation_seconds": 7445,
+      "allocation_gpu_seconds": 7445,
+      "allocation_gpu_hours": 2.0680555555555555,
+      "successful_completion_at": "2026-10-22T01:21:13+08:00",
+      "release_tail_seconds": 16,
+      "queued_seconds_excluded": 32,
+      "source_file": "FORMAL_FINAL_EVENTS_2026_control.json",
+      "source_file_sha256": "31c033a82ce64cb1fa2c8e2b704fab6cfb8cc287a0a6a4e0096fa09bfb4a09ef",
+      "source_event_count": 30,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "FailedScheduling": 8,
+        "Preempted": 1,
+        "Unschedulable": 3,
+        "Scheduled": 1,
+        "Created": 2,
+        "Pulled": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "ExitedWithCode": 1,
+        "PyTorchJobSucceeded": 1,
+        "PodReservingStart": 1,
+        "SuccessfulDeleteService": 1,
+        "JobTerminated": 1,
+        "SuccessfulDeletePodGroup": 1,
+        "SuccessfulDeletePod": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:17:24",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu170"
+      },
+      "release_event": {
+        "time": "2026-10-22 01:21:29",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-22 01:21:13",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-22 01:21:13",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "FORMAL_SUBMISSION.json",
+      "resource_status_evidence_file": "STATUS_20261022_012112.json",
+      "resource_status_at_snapshot": "RUNNING",
+      "snapshot_finish_matches_event": null,
+      "request_evidence_file": "FORMAL_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2026-formal-control-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:00",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:09",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:19",
+            "reason": "Unschedulable"
+          }
+        ]
+      }
+    },
+    {
+      "job_name": "nancy-stage07-multiseed-2026-formal-item-local-20261021-r1",
+      "mode": "formal",
+      "seed": 2026,
+      "variant": "item_local",
+      "attempt": 1,
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "gpu_count": 1,
+      "nodes": 1,
+      "scheduled_at": "2026-10-21T23:17:32+08:00",
+      "released_at": "2026-10-22T01:18:41+08:00",
+      "allocation_seconds": 7269,
+      "allocation_gpu_seconds": 7269,
+      "allocation_gpu_hours": 2.0191666666666666,
+      "successful_completion_at": "2026-10-22T01:18:22+08:00",
+      "release_tail_seconds": 19,
+      "queued_seconds_excluded": 40,
+      "source_file": "FORMAL_FINAL_EVENTS_2026_item_local.json",
+      "source_file_sha256": "c821d453fffc2f2d73e92d85637e8b55c54d14f200d02a3969dc87628f0aa227",
+      "source_event_count": 32,
+      "event_reason_counts": {
+        "SetPodTemplateSchedulerName": 1,
+        "SuccessfulCreatePod": 1,
+        "SuccessfulCreateService": 1,
+        "FailedScheduling": 10,
+        "Preempted": 1,
+        "Unschedulable": 3,
+        "Scheduled": 1,
+        "Pulled": 2,
+        "Created": 2,
+        "Started": 2,
+        "JobReservingStart": 1,
+        "PyTorchJobSucceeded": 1,
+        "ExitedWithCode": 1,
+        "PodReservingStart": 1,
+        "JobTerminated": 1,
+        "SuccessfulDeleteService": 1,
+        "SuccessfulDeletePod": 1,
+        "SuccessfulDeletePodGroup": 1
+      },
+      "scheduled_event": {
+        "time": "2026-10-21 23:17:32",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu168"
+      },
+      "release_event": {
+        "time": "2026-10-22 01:18:41",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      "success_event": {
+        "time": "2026-10-22 01:18:22",
+        "type": "Normal",
+        "reason": "PyTorchJobSucceeded",
+        "message": "PyTorchJob project-public/<redacted> successfully completed."
+      },
+      "exit_event": {
+        "time": "2026-10-22 01:18:22",
+        "type": "Normal",
+        "reason": "ExitedWithCode",
+        "message": "Pod: project-public.<redacted>-worker-0 exited with code 0, reason:Completed"
+      },
+      "all_observed_lifecycle_counts_one": true,
+      "exit_code": 0,
+      "released": true,
+      "submission_evidence_file": "FORMAL_SUBMISSION.json",
+      "resource_status_evidence_file": "STATUS_20261022_012112.json",
+      "resource_status_at_snapshot": "SUCCEEDED",
+      "snapshot_finish_matches_event": true,
+      "request_evidence_file": "FORMAL_DRY_RUN_LIVE.json",
+      "requested_auto_fault_tolerance": false,
+      "query_binding": {
+        "requested_job_name": "nancy-stage07-multiseed-2026-formal-item-local-20261021-r1",
+        "basis": "Parent task supplied the named per-job query-to-file mapping; payload platform identifiers are redacted and the single-job envelope omits job name. Named submission/status records and matching named combined events corroborate the mapping.",
+        "named_event_matches": [
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:00",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:12",
+            "reason": "Unschedulable"
+          },
+          {
+            "source_file": "FORMAL_EVENTS_INITIAL.json",
+            "time": "2026-10-21 23:17:25",
+            "reason": "Unschedulable"
+          }
+        ]
+      }
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_SUBMISSION.json",
+      "sha256": "9a3affc16b1ea60f1243dc2551a678ce62f1ac6eb912396d453e07e1d5af2fa0",
+      "size_bytes": 153
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_SUBMISSION.json",
+      "sha256": "ff2b891c004bee6297ac5d523baaf56fd063bc3bcdb728604166d9f51d5adbea",
+      "size_bytes": 311
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_STATUS_2315.json",
+      "sha256": "70e3936cde2f6db13e12dceff1675733cf4589330e9ba32735b28f114c892523",
+      "size_bytes": 795
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\STATUS_20261022_012112.json",
+      "sha256": "f4f1b81661d6bdf7924c9dd379997285457344dc9e9c6fbf791e5cdc4c2900fd",
+      "size_bytes": 1594
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_DRY_RUN_LIVE.json",
+      "sha256": "c04173decdc089a3e146fa9721e2fc7580a3884f9286ea283611f3ddc1308a66",
+      "size_bytes": 3109
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_DRY_RUN_LIVE.json",
+      "sha256": "dc6e2aeb23d68fc070815d3cdad6a3f2c290200b344c2ed14ef4e0b576f30287",
+      "size_bytes": 6981
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_EVENTS_INITIAL.json",
+      "sha256": "6e468ede4ced0a0ca74e314a91c5939748367da104d7cfb2bfb8152b415b2811",
+      "size_bytes": 3348
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_EVENTS_INITIAL.json",
+      "sha256": "ec0945a053d17de6742c676fbbc6d7f62de6dd8ea760ebab89914203b261cfba",
+      "size_bytes": 3461
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_EVENTS_TERMINAL.json",
+      "sha256": "8c22117a5f2d14e4cb6c6c1bf1738bad1a2200ea9f4e99f8e4d9147ba6ae4bef",
+      "size_bytes": 2328
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_FULL_EVENTS_2025.json",
+      "sha256": "f1189c45d5f9988b826d47a913f740e7b7710f82a5c85ef48455cefb1cbd58aa",
+      "size_bytes": 5696
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\SMOKE_FULL_EVENTS_2026.json",
+      "sha256": "383610a1790593374645a04fe3bd63fc0a0014887b5247916ff521359c806025",
+      "size_bytes": 5760
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_FINAL_EVENTS_2025_control.json",
+      "sha256": "ece5636ec664dfe978d01dc01fd2ccca009189acbb2099ecb986bbb673fd5263",
+      "size_bytes": 5449
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_FINAL_EVENTS_2025_item_local.json",
+      "sha256": "3a2e7b757a00543dab79cce506a36e92c7a337e05b5aec2f5a6b9879a717fd0e",
+      "size_bytes": 4678
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_FINAL_EVENTS_2026_control.json",
+      "sha256": "31c033a82ce64cb1fa2c8e2b704fab6cfb8cc287a0a6a4e0096fa09bfb4a09ef",
+      "size_bytes": 5692
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FORMAL_FINAL_EVENTS_2026_item_local.json",
+      "sha256": "c821d453fffc2f2d73e92d85637e8b55c54d14f200d02a3969dc87628f0aa227",
+      "size_bytes": 6186
+    }
+  ]
+}

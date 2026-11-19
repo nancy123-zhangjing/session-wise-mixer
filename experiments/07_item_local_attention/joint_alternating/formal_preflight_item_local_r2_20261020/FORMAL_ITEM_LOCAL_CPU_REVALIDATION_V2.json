@@ -1,0 +1,46 @@
+{
+  "status": "FORMAL_ITEM_LOCAL_CPU_REVALIDATION_PASS",
+  "source_binding": {
+    "code_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+    "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+    "runner_sha256": "61f6c36c02ee59498add74c28af8b3a15a54e2f38465bc65bf3c0d8353850475",
+    "wrapper_sha256": "3d435473cfb492e0dae087d20a11bddad65914ded43654541b44082b57774558",
+    "launcher_helper_sha256": "78ab756b30c036b8048e0ee4797ecbcd85d7a57d594da85a455d490b01704b71",
+    "sampler_helper_sha256": "d1b65c3776dead7cb573fe81c6a3cb14804b08e709d365bc21987e90b5cb49f8",
+    "stage05_helper_sha256": "88a76b6b16df48b29d77b6d593d7675288d361d24d6d2894c9c7b98732f4d244",
+    "engine_files": {
+      "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+      "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+      "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+      "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+      "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+      "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+    }
+  },
+  "smoke_receipt_sha256": "bf2c76123ca98ae592cad1af868ac3f88f9088989e37c1bad43e6909e73b3b8a",
+  "budget_sha256": "789cce63d72487207b56e2c95b4d0bad9794ce7151ab7c6a1565e4afb076d190",
+  "completed_control_artifacts": {
+    "complete_sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417",
+    "result_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f"
+  },
+  "full_formal_configuration_verified": true,
+  "item_local_attention_enabled": true,
+  "all_13_workspace_inputs_rehashed": true,
+  "python_packages_exact_match_both_H100_smokes_after_production_import": true,
+  "package_import_context_evidence_sha256": "95bfcd5010e4330c083e75156d57dac73a9be743733f78a177f047528248e6c3",
+  "explanation": "Accelerate import exposes setuptools._vendor metadata; compare the exact sorted list after production imports.",
+  "no_model_constructed": true,
+  "no_training": true,
+  "no_evaluation": true,
+  "formal_started": false,
+  "goal_complete": false,
+  "scope": "CPU launch revalidation only; parent separately verifies completed control Job release, live policy and cumulative allocation."
+}

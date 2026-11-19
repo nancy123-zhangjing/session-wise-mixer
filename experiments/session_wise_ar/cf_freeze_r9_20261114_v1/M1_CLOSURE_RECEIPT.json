@@ -1,0 +1,24 @@
+{
+  "arm": "M1",
+  "job": "nancy-cf-freeze-m1-1114-v1",
+  "platform_status": "SUCCEEDED",
+  "instance_status": "instance_success",
+  "training": {
+    "kind": "joint_training_complete",
+    "arm": "B1",
+    "R": 35,
+    "T": 40,
+    "R_updates": 24255,
+    "best_R": 9,
+    "final_checkpoint": "checkpoints/R35_T040.pt",
+    "final_sha256": "4eddba653677dc1723874b4befee4ae873cd971b87e0bb8102a75a642f85d4b9",
+    "peak_gpu_bytes": 5448301056
+  },
+  "cpu_audit_status": "passed_cpu_artifact_audit",
+  "checked_new_nodes": 26,
+  "best_R": 9,
+  "final_R": 35,
+  "best_test_ndcg5": 0.008854949313989101,
+  "final_test_ndcg5": 0.007738626310678515,
+  "boundary": "All new nodes CPU state/SHA checked; GPU restore evidence retained in STARTUP_RECEIPT.json and START_FREEZE_AUDIT.json. No extra inference/training. Overall five-arm goal incomplete."
+}

@@ -1,0 +1,314 @@
+{
+  "schema": "stage09_h1_recovery_final_resource_accounting_v1",
+  "status": "FOUR_JOB_EVENT_ACCOUNTING_COMPLETE_INVOICE_UNVERIFIED",
+  "created_utc": "2026-10-28T18:53:57.135505+00:00",
+  "timezone": "Asia/Shanghai (UTC+08:00)",
+  "goal_scope": "H1 R20-to-R26 recovery: two preflight Jobs including failed r1, plus formal Decay and Freeze; CPU entrance/inspection/backup operations do not add GPU allocation hours.",
+  "primary_method": "For each Job, (latest JobTerminated event time - its unique Scheduled event time) * (GPUs per node * nodes); sum the four actual recorded allocations. Queuing before Scheduled is excluded.",
+  "primary_method_is_platform_settlement": false,
+  "jobs": [
+    {
+      "job_name": "nancy-h1-recovery-preflight-20261028-r1",
+      "role": "preflight_failed",
+      "terminal_status": "FAILED",
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "nodes": 1,
+      "GPUs_per_node": 2,
+      "allocated_GPU_count": 2,
+      "created_at": "2026-10-28T23:00:32+08:00",
+      "scheduled_at": "2026-10-28T23:01:22+08:00",
+      "platform_finished_at": "2026-10-28T23:03:18+08:00",
+      "last_job_terminated_at": "2026-10-28T23:03:29+08:00",
+      "last_successful_delete_pod_at": "2026-10-28T23:03:22+08:00",
+      "scheduled_to_last_JobTerminated_seconds": 127,
+      "primary_GPU_seconds": 254,
+      "primary_GPU_hours": 0.07055555555555555,
+      "scheduled_to_SuccessfulDeletePod_seconds": 120,
+      "delete_pod_GPU_seconds": 240,
+      "created_to_scheduled_queue_seconds_excluded": 50.0,
+      "unit_points_per_GPU_hour": 1.0,
+      "estimated_points_primary": 0.07055555555555555,
+      "release_evidence": {
+        "terminal_event_reason": "PyTorchJobFailed",
+        "terminal_event_matches_platform_finished_at": true,
+        "successful_delete_pod_observed": true,
+        "successful_delete_podgroup_observed": true,
+        "job_terminated_event_count": 2,
+        "pod_release_confirmed_for_this_recorded_job": true
+      },
+      "events_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R1_EVENTS.json",
+        "sha256": "3f607c8f3dab227b03e3701b7803ffa5ee8a7b972b04ca34396d156adc3530d8",
+        "size_bytes": 6099
+      },
+      "create_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_CREATE.json",
+        "sha256": "5e58fff595c6bcabcc5edb1e4d27b644a5243088b867ee4445611e861aaab3b1",
+        "size_bytes": 118
+      }
+    },
+    {
+      "job_name": "nancy-h1-recovery-preflight-20261028-r2",
+      "role": "preflight_passed",
+      "terminal_status": "SUCCEEDED",
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "nodes": 1,
+      "GPUs_per_node": 2,
+      "allocated_GPU_count": 2,
+      "created_at": "2026-10-28T23:13:03+08:00",
+      "scheduled_at": "2026-10-28T23:13:52+08:00",
+      "platform_finished_at": "2026-10-28T23:15:03+08:00",
+      "last_job_terminated_at": "2026-10-28T23:15:10+08:00",
+      "last_successful_delete_pod_at": "2026-10-28T23:15:06+08:00",
+      "scheduled_to_last_JobTerminated_seconds": 78,
+      "primary_GPU_seconds": 156,
+      "primary_GPU_hours": 0.043333333333333335,
+      "scheduled_to_SuccessfulDeletePod_seconds": 74,
+      "delete_pod_GPU_seconds": 148,
+      "created_to_scheduled_queue_seconds_excluded": 49.0,
+      "unit_points_per_GPU_hour": 1.0,
+      "estimated_points_primary": 0.043333333333333335,
+      "release_evidence": {
+        "terminal_event_reason": "PyTorchJobSucceeded",
+        "terminal_event_matches_platform_finished_at": true,
+        "successful_delete_pod_observed": true,
+        "successful_delete_podgroup_observed": true,
+        "job_terminated_event_count": 2,
+        "pod_release_confirmed_for_this_recorded_job": true
+      },
+      "events_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R2_EVENTS.json",
+        "sha256": "8af60a16e85a865f23eea5f6dfe37c303365a01c6f144ab41d259c2253da4671",
+        "size_bytes": 5035
+      },
+      "create_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R2_CREATE.json",
+        "sha256": "b98d752f94e111cfd56e06b151ae7d59134664910c8bf71eb0ebea632875006a",
+        "size_bytes": 118
+      }
+    },
+    {
+      "job_name": "nancy-h1-recovery-formal-decay-20261028-r1",
+      "role": "formal_decay",
+      "terminal_status": "SUCCEEDED",
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "nodes": 1,
+      "GPUs_per_node": 1,
+      "allocated_GPU_count": 1,
+      "created_at": "2026-10-28T23:31:11+08:00",
+      "scheduled_at": "2026-10-28T23:32:00+08:00",
+      "platform_finished_at": "2026-10-29T02:50:49+08:00",
+      "last_job_terminated_at": "2026-10-29T02:50:56+08:00",
+      "last_successful_delete_pod_at": "2026-10-29T02:50:52+08:00",
+      "scheduled_to_last_JobTerminated_seconds": 11936,
+      "primary_GPU_seconds": 11936,
+      "primary_GPU_hours": 3.3155555555555556,
+      "scheduled_to_SuccessfulDeletePod_seconds": 11932,
+      "delete_pod_GPU_seconds": 11932,
+      "created_to_scheduled_queue_seconds_excluded": 49.0,
+      "unit_points_per_GPU_hour": 1.0,
+      "estimated_points_primary": 3.3155555555555556,
+      "release_evidence": {
+        "terminal_event_reason": "PyTorchJobSucceeded",
+        "terminal_event_matches_platform_finished_at": true,
+        "successful_delete_pod_observed": true,
+        "successful_delete_podgroup_observed": true,
+        "job_terminated_event_count": 2,
+        "pod_release_confirmed_for_this_recorded_job": true
+      },
+      "events_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_DECAY_FINAL_EVENTS.json",
+        "sha256": "a8b4fe3bb3d16cd726c515a47281589bccbf66d5621d7ab66720d1581a27bc0d",
+        "size_bytes": 5441
+      },
+      "create_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_DECAY_CREATE.json",
+        "sha256": "b8bd3e1bb6dcc7e2be932cbd6bbb84799ea027217de4559e3f54e1f55549ee92",
+        "size_bytes": 121
+      }
+    },
+    {
+      "job_name": "nancy-h1-recovery-formal-freeze-20261028-r1",
+      "role": "formal_freeze",
+      "terminal_status": "SUCCEEDED",
+      "gpu_type": "NVIDIA H100 (80GB)",
+      "nodes": 1,
+      "GPUs_per_node": 1,
+      "allocated_GPU_count": 1,
+      "created_at": "2026-10-28T23:33:02+08:00",
+      "scheduled_at": "2026-10-28T23:33:51+08:00",
+      "platform_finished_at": "2026-10-29T02:41:22+08:00",
+      "last_job_terminated_at": "2026-10-29T02:41:29+08:00",
+      "last_successful_delete_pod_at": "2026-10-29T02:41:26+08:00",
+      "scheduled_to_last_JobTerminated_seconds": 11258,
+      "primary_GPU_seconds": 11258,
+      "primary_GPU_hours": 3.127222222222222,
+      "scheduled_to_SuccessfulDeletePod_seconds": 11255,
+      "delete_pod_GPU_seconds": 11255,
+      "created_to_scheduled_queue_seconds_excluded": 49.0,
+      "unit_points_per_GPU_hour": 1.0,
+      "estimated_points_primary": 3.127222222222222,
+      "release_evidence": {
+        "terminal_event_reason": "PyTorchJobSucceeded",
+        "terminal_event_matches_platform_finished_at": true,
+        "successful_delete_pod_observed": true,
+        "successful_delete_podgroup_observed": true,
+        "job_terminated_event_count": 2,
+        "pod_release_confirmed_for_this_recorded_job": true
+      },
+      "events_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_FREEZE_FINAL_EVENTS.json",
+        "sha256": "7001db42c92215e791589c9f237b255d2c65ecc09809e652c52d5f1dd5a37866",
+        "size_bytes": 5441
+      },
+      "create_evidence": {
+        "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_FREEZE_CREATE.json",
+        "sha256": "9dfa3c1238ca5e1388475de6b6d59e4cbdbc7776b282730bd2a20f24a1672579",
+        "size_bytes": 122
+      }
+    }
+  ],
+  "totals": {
+    "preflight_GPU_seconds": 410,
+    "preflight_GPU_hours": 0.11388888888888889,
+    "formal_GPU_seconds": 23194,
+    "formal_GPU_hours": 6.442777777777778,
+    "all_goal_GPU_seconds": 23604,
+    "all_goal_GPU_hours": 6.556666666666667,
+    "estimated_points_at_saved_unit_rate": 6.556666666666667,
+    "optional_Scheduled_to_SuccessfulDeletePod_GPU_seconds": 23575,
+    "optional_Scheduled_to_SuccessfulDeletePod_GPU_hours": 6.548611111111111,
+    "optional_estimated_points": 6.548611111111111,
+    "primary_minus_delete_pod_GPU_seconds": 29
+  },
+  "formal_wall_time": {
+    "scope": "First formal Scheduled to last formal JobTerminated; two parallel single-H100 Jobs, not the sum of GPU-hours.",
+    "first_scheduled": "2026-10-28T23:32:00+08:00",
+    "last_terminated": "2026-10-29T02:50:56+08:00",
+    "seconds": 11936,
+    "hours": 3.3155555555555556,
+    "formatted": "03:18:56",
+    "submission_to_last_termination_seconds_including_queue": 11985,
+    "submit_to_end_hours_including_queue": 3.3291666666666666
+  },
+  "authorized_budget": {
+    "source": "Explicit user-authorized cumulative 8.5 GPU-hours including both preflight allocations; recorded in EXECUTION.md authorization section.",
+    "limit_GPU_hours": 8.5,
+    "limit_GPU_seconds": 30600,
+    "includes_failed_preflight": true,
+    "used_GPU_seconds_primary": 23604,
+    "remaining_GPU_seconds": 6996,
+    "remaining_GPU_hours": 1.9433333333333334,
+    "used_percent": 77.13725490196079,
+    "remaining_estimated_points_at_saved_rate": 1.9433333333333334,
+    "within_budget": true
+  },
+  "price": {
+    "source": {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/H100_QUOTA_20261028.json",
+      "sha256": "49d2098d195b55b0868e8155f063c35e3982d09d455b93ee8f476b6431886736",
+      "size_bytes": 1237
+    },
+    "unit_points_per_GPU_hour": 1.0,
+    "matching_allocation_quota_rows": [
+      {
+        "quota": "1,10,200",
+        "points_per_hour": 1,
+        "GPU_count": 1,
+        "points_per_GPU_hour": 1.0
+      },
+      {
+        "quota": "2,20,400",
+        "points_per_hour": 2,
+        "GPU_count": 2,
+        "points_per_GPU_hour": 1.0
+      },
+      {
+        "quota": "4,55,900",
+        "points_per_hour": 4,
+        "GPU_count": 4,
+        "points_per_GPU_hour": 1.0
+      },
+      {
+        "quota": "8,110,1800",
+        "points_per_hour": 8,
+        "GPU_count": 8,
+        "points_per_GPU_hour": 1.0
+      }
+    ],
+    "actual_invoice_or_settlement_verified": false,
+    "verified_settlement_points": null,
+    "scope": "Linear event-duration estimate using the saved platform display price; no invoice, billing-rounding, credits or final charge is inferred."
+  },
+  "release_summary": {
+    "named_jobs_checked": 4,
+    "successful_jobs": 3,
+    "failed_preflight_jobs_counted": 1,
+    "all_four_recorded_jobs_terminal": true,
+    "all_four_recorded_jobs_have_SuccessfulDeletePod_and_JobTerminated": true,
+    "GPU_pod_release_proven_by_saved_events": true,
+    "fresh_live_usage_or_account_wide_inventory_queried_by_this_auditor": false,
+    "CPU_entry_GPU_count_in_this_accounting": 0
+  },
+  "evidence_limits": [
+    "The saved event messages redact internal Job/Pod IDs. Event-file-to-Job association follows the four explicitly supplied filenames and matching creation receipts; each final terminal event exactly matches that named Job status finished_at.",
+    "The primary/optional event durations are the requested observable accounting conventions, not independently proven bounds on platform-billed time.",
+    "CPU-side entry, download, independent analysis and backup are outside this GPU allocation count; this is not a CPU-resource invoice.",
+    "Only the four identified Goal Jobs are covered; no statement about unrelated account resources is made."
+  ],
+  "missing_required_evidence": [],
+  "sources": [
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FINAL_PLATFORM_STATUS.json",
+      "sha256": "03702b097cf4a9bbff4c84d39052ea9e844f9cc04ee49dc629cd733efcae3d41",
+      "size_bytes": 2301
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/H100_QUOTA_20261028.json",
+      "sha256": "49d2098d195b55b0868e8155f063c35e3982d09d455b93ee8f476b6431886736",
+      "size_bytes": 1237
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R1_EVENTS.json",
+      "sha256": "3f607c8f3dab227b03e3701b7803ffa5ee8a7b972b04ca34396d156adc3530d8",
+      "size_bytes": 6099
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_CREATE.json",
+      "sha256": "5e58fff595c6bcabcc5edb1e4d27b644a5243088b867ee4445611e861aaab3b1",
+      "size_bytes": 118
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R2_EVENTS.json",
+      "sha256": "8af60a16e85a865f23eea5f6dfe37c303365a01c6f144ab41d259c2253da4671",
+      "size_bytes": 5035
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/PREFLIGHT_R2_CREATE.json",
+      "sha256": "b98d752f94e111cfd56e06b151ae7d59134664910c8bf71eb0ebea632875006a",
+      "size_bytes": 118
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_DECAY_FINAL_EVENTS.json",
+      "sha256": "a8b4fe3bb3d16cd726c515a47281589bccbf66d5621d7ab66720d1581a27bc0d",
+      "size_bytes": 5441
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_DECAY_CREATE.json",
+      "sha256": "b8bd3e1bb6dcc7e2be932cbd6bbb84799ea027217de4559e3f54e1f55549ee92",
+      "size_bytes": 121
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_FREEZE_FINAL_EVENTS.json",
+      "sha256": "7001db42c92215e791589c9f237b255d2c65ecc09809e652c52d5f1dd5a37866",
+      "size_bytes": 5441
+    },
+    {
+      "path": "experiments/09_kuairec_listwise/h1_recovery_20261028/FORMAL_FREEZE_CREATE.json",
+      "sha256": "9dfa3c1238ca5e1388475de6b6d59e4cbdbc7776b282730bd2a20f24a1672579",
+      "size_bytes": 122
+    }
+  ],
+  "platform_or_GPU_tool_called_by_this_auditor": false,
+  "goal_complete": false
+}

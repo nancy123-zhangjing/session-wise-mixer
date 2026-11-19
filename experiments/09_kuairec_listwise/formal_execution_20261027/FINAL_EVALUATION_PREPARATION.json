@@ -1,0 +1,22 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "files_sha256": {
+    "formal_final_acceptance.py": "d5b981a6077dead491289965d559a235082d63e6bf73fbca4cd4a42896f09935",
+    "FINAL_EVAL_JOB_TEMPLATES.json": "6ee4e5ad2cfc617f8e11179096f868bf7ae4834aaa4e0cfe34f150bd929f2546"
+  },
+  "execution_source": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "actual_four_arm_completion_verified": false,
+  "actual_best_checkpoints_loaded": false,
+  "submitted_evaluation_jobs": 0,
+  "checks": [
+    "Final acceptance script AST and small synthetic clock/tie/invalid summary cases passed; independent read-only source cross-review found no concrete issue.",
+    "Four shell templates parsed as bash -c bodies; four embedded Python snippets compiled; twelve stage commands match argv; four Git Bash syntax-only checks passed."
+  ],
+  "pending": [
+    "All four branch jobs complete and released.",
+    "CPU final acceptance on actual checkpoints and 42 full validations.",
+    "Freeze all four best identities and actual float32 parameter dtypes before any test.",
+    "Fill actual freeze/SHA/time placeholders and recheck cumulative GPU budget."
+  ],
+  "precision_note": "Use CLI bf16 for checkpoint restore identity; frozen evaluate runs without autocast and uses float32 model parameters. Actual checkpoint dtype verification is still pending."
+}

@@ -1,0 +1,4756 @@
+{
+  "audit_id": "stage05_feedback_hr10_disagreement_case_audit_v1",
+  "created_at_utc": "2026-10-13T03:51:20.697023+00:00",
+  "audit_script_sha256": "a73fad960c5299c053396b73560864d447fe6879522b793baacdc1f2d436fcfb",
+  "source_inputs": {
+    "catalog_ids.json": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\catalog_ids.json",
+      "sha256": "1f451eee4c60228202ab4d579a2ae5d3ef9eb9c1a142d42d37621b4819a4baf1",
+      "size_bytes": 3055213
+    },
+    "frozen/records.jsonl.gz": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\frozen\\records.jsonl.gz",
+      "sha256": "71930806a5375171d82e70a1d037e590a2844913d05adc341d2756def8cc3b9e",
+      "size_bytes": 1369696
+    },
+    "cross_recon/records.jsonl.gz": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\cross_recon\\records.jsonl.gz",
+      "sha256": "029ca148309ef1cb2d0e93b8a474e04bb9c531feddbe7201e11ed4260514bdc8",
+      "size_bytes": 1368861
+    },
+    "cross_rec/records.jsonl.gz": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\cross_rec\\records.jsonl.gz",
+      "sha256": "a78f94fa2a5aeaeb892b6ef67e8a59f899c670f4d8530bc2ee956300c44cf09e",
+      "size_bytes": 1368888
+    },
+    "paired_summary.json": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\paired_summary.json",
+      "sha256": "02b129b8000733a814ff9ac3d8bba36a73873f00eb4709ed414d5dc1e8146845",
+      "size_bytes": 35008
+    },
+    "COMPLETE.json": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\pilots_delivery\\feedback_paired_20261013_1123\\formal_local\\paired_formal_20261013_1123\\COMPLETE.json",
+      "sha256": "b36168b40a9cfcd9b0b6e6f7d600598f38c9ef51a3da022045ab447ea253edcf",
+      "size_bytes": 204
+    }
+  },
+  "evaluation_level": "single-seed validation SID-level; not strict item-level",
+  "primary_pair": "cross_rec_minus_cross_recon",
+  "validation_count": 22363,
+  "summary": {
+    "new_hits_at10": 24,
+    "lost_hits_at10": 31,
+    "net_hits_at10": -7,
+    "disagreement_cases": 55,
+    "changed_union_items": 126,
+    "changed_items_by_arm": {
+      "frozen": 0,
+      "cross_recon": 53,
+      "cross_rec": 92
+    },
+    "groups": {
+      "target_changed": {
+        "new_hits_at10": 3,
+        "lost_hits_at10": 1,
+        "net_hits_at10": 2,
+        "disagreement_cases": 4
+      },
+      "history_only": {
+        "new_hits_at10": 5,
+        "lost_hits_at10": 7,
+        "net_hits_at10": -2,
+        "disagreement_cases": 12
+      },
+      "unchanged": {
+        "new_hits_at10": 16,
+        "lost_hits_at10": 23,
+        "net_hits_at10": -7,
+        "disagreement_cases": 39
+      }
+    },
+    "target_changed_disagreement_cases": 4
+  },
+  "checks": {
+    "all_sample_identities_and_official_labels": true,
+    "raw_first_hit_and_original_scores": true,
+    "24_new_31_lost": true,
+    "four_target_cases": true,
+    "group_counts_match_paired_summary": true,
+    "source_bytes_unchanged_during_audit": true
+  },
+  "interpretation_limits": [
+    "New/lost hits refer to the same validation item identity but each arm's official SID label.",
+    "A collision-group SID hit cannot establish which item was recommended.",
+    "A retained target SID can outperform another arm's changed SID; this is not an active recoding gain.",
+    "Unchanged target/history SIDs are not a wholly untreated control because decoder trajectories and the global legal SID set differ.",
+    "Cases with unchanged HR but improved/worse hit rank are not selected by this HR disagreement audit."
+  ],
+  "target_changed_cases": [
+    {
+      "sample_index": 3252,
+      "group": "target_changed",
+      "target_item_id": 2390,
+      "history_item_ids": [
+        2469,
+        4007,
+        7206,
+        5533,
+        7334,
+        813,
+        1777,
+        3424,
+        373,
+        372,
+        377,
+        5570,
+        909,
+        3646,
+        1172,
+        1173,
+        1177,
+        385,
+        386,
+        704,
+        706,
+        707,
+        1802,
+        2265,
+        8885,
+        3088,
+        3648,
+        9419,
+        3649,
+        817,
+        1985,
+        3428,
+        820,
+        711,
+        8886,
+        1076,
+        1846
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          53,
+          149,
+          200,
+          98
+        ],
+        "frozen": [
+          53,
+          149,
+          200,
+          98
+        ],
+        "cross_recon": [
+          53,
+          149,
+          77,
+          98
+        ],
+        "cross_rec": [
+          53,
+          149,
+          200,
+          98
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 9,
+        "cross_recon": 0,
+        "cross_rec": 8
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.31546488404273987
+    },
+    {
+      "sample_index": 9897,
+      "group": "target_changed",
+      "target_item_id": 814,
+      "history_item_ids": [
+        158,
+        810,
+        879,
+        5706,
+        4448
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "frozen": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "cross_recon": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "cross_rec": [
+          93,
+          240,
+          72,
+          176
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 11236,
+      "group": "target_changed",
+      "target_item_id": 2965,
+      "history_item_ids": [
+        1661,
+        1896,
+        10141,
+        10195
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "frozen": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "cross_recon": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "cross_rec": [
+          87,
+          194,
+          3,
+          145
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 6
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3562071919441223
+    },
+    {
+      "sample_index": 15829,
+      "group": "target_changed",
+      "target_item_id": 1225,
+      "history_item_ids": [
+        917,
+        916,
+        1167,
+        6216
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          115,
+          76,
+          198,
+          132
+        ],
+        "frozen": [
+          115,
+          76,
+          198,
+          132
+        ],
+        "cross_recon": [
+          115,
+          76,
+          225,
+          132
+        ],
+        "cross_rec": [
+          115,
+          76,
+          198,
+          132
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    }
+  ],
+  "all_hr10_disagreement_cases": [
+    {
+      "sample_index": 2583,
+      "group": "unchanged",
+      "target_item_id": 2929,
+      "history_item_ids": [
+        4262,
+        2083,
+        2716,
+        2261,
+        6752
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          243,
+          157,
+          198,
+          37
+        ],
+        "frozen": [
+          243,
+          157,
+          198,
+          37
+        ],
+        "cross_recon": [
+          243,
+          157,
+          198,
+          37
+        ],
+        "cross_rec": [
+          243,
+          157,
+          198,
+          37
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 2800,
+      "group": "unchanged",
+      "target_item_id": 416,
+      "history_item_ids": [
+        701,
+        776,
+        1974,
+        4385,
+        1738,
+        1071,
+        603,
+        415
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          50,
+          115,
+          71,
+          182
+        ],
+        "frozen": [
+          50,
+          115,
+          71,
+          182
+        ],
+        "cross_recon": [
+          50,
+          115,
+          71,
+          182
+        ],
+        "cross_rec": [
+          50,
+          115,
+          71,
+          182
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 9,
+        "cross_recon": 0,
+        "cross_rec": 9
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3010300099849701
+    },
+    {
+      "sample_index": 3065,
+      "group": "history_only",
+      "target_item_id": 863,
+      "history_item_ids": [
+        2517,
+        9259,
+        672
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          154,
+          130,
+          89,
+          162
+        ],
+        "frozen": [
+          154,
+          130,
+          89,
+          162
+        ],
+        "cross_recon": [
+          154,
+          130,
+          89,
+          162
+        ],
+        "cross_rec": [
+          154,
+          130,
+          89,
+          162
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 4,
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 4
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 6
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3562071919441223
+    },
+    {
+      "sample_index": 3252,
+      "group": "target_changed",
+      "target_item_id": 2390,
+      "history_item_ids": [
+        2469,
+        4007,
+        7206,
+        5533,
+        7334,
+        813,
+        1777,
+        3424,
+        373,
+        372,
+        377,
+        5570,
+        909,
+        3646,
+        1172,
+        1173,
+        1177,
+        385,
+        386,
+        704,
+        706,
+        707,
+        1802,
+        2265,
+        8885,
+        3088,
+        3648,
+        9419,
+        3649,
+        817,
+        1985,
+        3428,
+        820,
+        711,
+        8886,
+        1076,
+        1846
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          53,
+          149,
+          200,
+          98
+        ],
+        "frozen": [
+          53,
+          149,
+          200,
+          98
+        ],
+        "cross_recon": [
+          53,
+          149,
+          77,
+          98
+        ],
+        "cross_rec": [
+          53,
+          149,
+          200,
+          98
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 9,
+        "cross_recon": 0,
+        "cross_rec": 8
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.31546488404273987
+    },
+    {
+      "sample_index": 3439,
+      "group": "history_only",
+      "target_item_id": 69,
+      "history_item_ids": [
+        8099,
+        2853,
+        3922,
+        9580,
+        244,
+        4781,
+        2704
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          145,
+          6,
+          0,
+          117
+        ],
+        "frozen": [
+          145,
+          6,
+          0,
+          117
+        ],
+        "cross_recon": [
+          145,
+          6,
+          0,
+          117
+        ],
+        "cross_rec": [
+          145,
+          6,
+          0,
+          117
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 4,
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 4
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 7,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3333333432674408
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.3333333432674408
+    },
+    {
+      "sample_index": 4619,
+      "group": "unchanged",
+      "target_item_id": 3656,
+      "history_item_ids": [
+        8537,
+        7928,
+        7749,
+        278,
+        673,
+        9520,
+        10556,
+        5949,
+        1351,
+        9521,
+        3295,
+        2720,
+        309,
+        553,
+        5208,
+        6628,
+        7208
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          154,
+          94,
+          100,
+          183
+        ],
+        "frozen": [
+          154,
+          94,
+          100,
+          183
+        ],
+        "cross_recon": [
+          154,
+          94,
+          100,
+          183
+        ],
+        "cross_rec": [
+          154,
+          94,
+          100,
+          183
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 5727,
+      "group": "history_only",
+      "target_item_id": 6824,
+      "history_item_ids": [
+        2230,
+        71,
+        11023,
+        10085
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          43,
+          172,
+          161,
+          189
+        ],
+        "frozen": [
+          43,
+          172,
+          161,
+          189
+        ],
+        "cross_recon": [
+          43,
+          172,
+          161,
+          189
+        ],
+        "cross_rec": [
+          43,
+          172,
+          161,
+          189
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 3,
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 6
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3562071919441223
+    },
+    {
+      "sample_index": 6021,
+      "group": "unchanged",
+      "target_item_id": 1121,
+      "history_item_ids": [
+        2995,
+        2454,
+        3655,
+        3636,
+        9354,
+        1247,
+        2134,
+        4156,
+        1872,
+        4731,
+        103,
+        7303,
+        1904,
+        2315,
+        13,
+        1537,
+        10577,
+        11122,
+        6449,
+        10501
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          226,
+          136,
+          78,
+          189
+        ],
+        "frozen": [
+          226,
+          136,
+          78,
+          189
+        ],
+        "cross_recon": [
+          226,
+          136,
+          78,
+          189
+        ],
+        "cross_rec": [
+          226,
+          136,
+          78,
+          189
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 10,
+        "cross_recon": 10,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.28906482458114624
+    },
+    {
+      "sample_index": 6219,
+      "group": "unchanged",
+      "target_item_id": 9455,
+      "history_item_ids": [
+        4619,
+        3354,
+        10005
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          62,
+          140,
+          125,
+          168
+        ],
+        "frozen": [
+          62,
+          140,
+          125,
+          168
+        ],
+        "cross_recon": [
+          62,
+          140,
+          125,
+          168
+        ],
+        "cross_rec": [
+          62,
+          140,
+          125,
+          168
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 8361,
+      "group": "unchanged",
+      "target_item_id": 10050,
+      "history_item_ids": [
+        2920,
+        1007,
+        1465,
+        3720,
+        147
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          220,
+          121,
+          106,
+          81
+        ],
+        "frozen": [
+          220,
+          121,
+          106,
+          81
+        ],
+        "cross_recon": [
+          220,
+          121,
+          106,
+          81
+        ],
+        "cross_rec": [
+          220,
+          121,
+          106,
+          81
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 3,
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 8,
+        "cross_recon": 8,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.31546488404273987
+    },
+    {
+      "sample_index": 8560,
+      "group": "unchanged",
+      "target_item_id": 1417,
+      "history_item_ids": [
+        3868,
+        1770,
+        701,
+        751,
+        6231,
+        1412,
+        375,
+        376,
+        1780,
+        6710,
+        1781,
+        5313,
+        1170,
+        915,
+        908,
+        377,
+        374,
+        1054,
+        372,
+        921,
+        3519,
+        922,
+        1173,
+        920,
+        383,
+        388,
+        704,
+        386,
+        705,
+        4166,
+        2891,
+        2892,
+        1802,
+        1808,
+        1809,
+        1810,
+        399,
+        8886,
+        1076,
+        1075,
+        1074,
+        5384
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          237,
+          223,
+          216,
+          206
+        ],
+        "frozen": [
+          237,
+          223,
+          216,
+          206
+        ],
+        "cross_recon": [
+          237,
+          223,
+          216,
+          206
+        ],
+        "cross_rec": [
+          237,
+          223,
+          216,
+          206
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    },
+    {
+      "sample_index": 8994,
+      "group": "unchanged",
+      "target_item_id": 3507,
+      "history_item_ids": [
+        1302,
+        1156,
+        1752,
+        3868,
+        2349,
+        1165,
+        1411,
+        701,
+        751,
+        4089,
+        1223,
+        3508,
+        6216,
+        913,
+        6954,
+        1168
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          124,
+          76,
+          96,
+          131
+        ],
+        "frozen": [
+          124,
+          76,
+          96,
+          131
+        ],
+        "cross_recon": [
+          124,
+          76,
+          96,
+          131
+        ],
+        "cross_rec": [
+          124,
+          76,
+          96,
+          131
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 9228,
+      "group": "unchanged",
+      "target_item_id": 5382,
+      "history_item_ids": [
+        11723,
+        9438,
+        4716,
+        1711,
+        10703,
+        1484,
+        471,
+        3852,
+        422,
+        6954,
+        702,
+        703,
+        704,
+        4072,
+        6544,
+        5384
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "frozen": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "cross_recon": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "cross_rec": [
+          156,
+          123,
+          255,
+          231
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 0,
+        "cross_rec": 5
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.38685280084609985
+    },
+    {
+      "sample_index": 9690,
+      "group": "history_only",
+      "target_item_id": 90,
+      "history_item_ids": [
+        4454,
+        5412,
+        3235,
+        6853,
+        5059,
+        10381,
+        2903
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          15,
+          46,
+          12,
+          137
+        ],
+        "frozen": [
+          15,
+          46,
+          12,
+          137
+        ],
+        "cross_recon": [
+          15,
+          46,
+          12,
+          137
+        ],
+        "cross_rec": [
+          15,
+          46,
+          12,
+          137
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 7
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3333333432674408
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3333333432674408
+    },
+    {
+      "sample_index": 9897,
+      "group": "target_changed",
+      "target_item_id": 814,
+      "history_item_ids": [
+        158,
+        810,
+        879,
+        5706,
+        4448
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "frozen": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "cross_recon": [
+          93,
+          240,
+          204,
+          176
+        ],
+        "cross_rec": [
+          93,
+          240,
+          72,
+          176
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 10012,
+      "group": "history_only",
+      "target_item_id": 953,
+      "history_item_ids": [
+        1225,
+        1054,
+        1169,
+        3515,
+        3516,
+        703,
+        6710,
+        1171,
+        384,
+        1061,
+        3277,
+        1175,
+        1312,
+        919,
+        1060,
+        915,
+        1782,
+        921,
+        1173,
+        920,
+        702,
+        916,
+        376,
+        923,
+        1172,
+        1174,
+        381,
+        382,
+        383,
+        704,
+        386,
+        705,
+        388,
+        2891,
+        2892,
+        1802,
+        1808,
+        1809,
+        1810,
+        3806,
+        4768,
+        1072,
+        1075,
+        8886,
+        5384,
+        5382,
+        1076,
+        769,
+        3532,
+        1417
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          237,
+          223,
+          77,
+          206
+        ],
+        "frozen": [
+          237,
+          223,
+          77,
+          206
+        ],
+        "cross_recon": [
+          237,
+          223,
+          77,
+          206
+        ],
+        "cross_rec": [
+          237,
+          223,
+          77,
+          206
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 10822,
+      "group": "unchanged",
+      "target_item_id": 2883,
+      "history_item_ids": [
+        7569,
+        6392,
+        1922,
+        1697,
+        8459,
+        9,
+        8846,
+        10747,
+        3038,
+        6465,
+        7008
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          209,
+          46,
+          122,
+          90
+        ],
+        "frozen": [
+          209,
+          46,
+          122,
+          90
+        ],
+        "cross_recon": [
+          209,
+          46,
+          122,
+          90
+        ],
+        "cross_rec": [
+          209,
+          46,
+          122,
+          90
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 4
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.43067657947540283
+    },
+    {
+      "sample_index": 11159,
+      "group": "unchanged",
+      "target_item_id": 1978,
+      "history_item_ids": [
+        113,
+        8861,
+        5923,
+        3628,
+        2537
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          77,
+          118,
+          147,
+          32
+        ],
+        "frozen": [
+          77,
+          118,
+          147,
+          32
+        ],
+        "cross_recon": [
+          77,
+          118,
+          147,
+          32
+        ],
+        "cross_rec": [
+          77,
+          118,
+          147,
+          32
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 11236,
+      "group": "target_changed",
+      "target_item_id": 2965,
+      "history_item_ids": [
+        1661,
+        1896,
+        10141,
+        10195
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "frozen": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "cross_recon": [
+          122,
+          194,
+          3,
+          145
+        ],
+        "cross_rec": [
+          87,
+          194,
+          3,
+          145
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 6
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3562071919441223
+    },
+    {
+      "sample_index": 11324,
+      "group": "unchanged",
+      "target_item_id": 5356,
+      "history_item_ids": [
+        2834,
+        8185,
+        8181,
+        9921
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          90,
+          172,
+          41,
+          208
+        ],
+        "frozen": [
+          90,
+          172,
+          41,
+          208
+        ],
+        "cross_recon": [
+          90,
+          172,
+          41,
+          208
+        ],
+        "cross_rec": [
+          90,
+          172,
+          41,
+          208
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 6,
+        "cross_recon": 6,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.3562071919441223
+    },
+    {
+      "sample_index": 11755,
+      "group": "history_only",
+      "target_item_id": 1062,
+      "history_item_ids": [
+        692,
+        757,
+        3871,
+        910,
+        814,
+        372,
+        919
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          156,
+          110,
+          255,
+          231
+        ],
+        "frozen": [
+          156,
+          110,
+          255,
+          231
+        ],
+        "cross_recon": [
+          156,
+          110,
+          255,
+          231
+        ],
+        "cross_rec": [
+          156,
+          110,
+          255,
+          231
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 3,
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 11953,
+      "group": "unchanged",
+      "target_item_id": 5977,
+      "history_item_ids": [
+        422,
+        7878,
+        5062,
+        4198,
+        9288,
+        5149,
+        7974,
+        7697,
+        87,
+        6254
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          206,
+          60,
+          26,
+          89
+        ],
+        "frozen": [
+          206,
+          60,
+          26,
+          89
+        ],
+        "cross_recon": [
+          206,
+          60,
+          26,
+          89
+        ],
+        "cross_rec": [
+          206,
+          60,
+          26,
+          89
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 4,
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 4
+      },
+      "first_hit_rank": {
+        "frozen": 9,
+        "cross_recon": 0,
+        "cross_rec": 10
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.28906482458114624
+    },
+    {
+      "sample_index": 12531,
+      "group": "unchanged",
+      "target_item_id": 2156,
+      "history_item_ids": [
+        510,
+        856,
+        1117,
+        2544
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          197,
+          152,
+          83,
+          171
+        ],
+        "frozen": [
+          197,
+          152,
+          83,
+          171
+        ],
+        "cross_recon": [
+          197,
+          152,
+          83,
+          171
+        ],
+        "cross_rec": [
+          197,
+          152,
+          83,
+          171
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 10,
+        "cross_recon": 9,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.3010300099849701
+    },
+    {
+      "sample_index": 12707,
+      "group": "unchanged",
+      "target_item_id": 5631,
+      "history_item_ids": [
+        5262,
+        6574,
+        8709,
+        998
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          92,
+          100,
+          5,
+          195
+        ],
+        "frozen": [
+          92,
+          100,
+          5,
+          195
+        ],
+        "cross_recon": [
+          92,
+          100,
+          5,
+          195
+        ],
+        "cross_rec": [
+          92,
+          100,
+          5,
+          195
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 13,
+        "frozen": 13,
+        "cross_recon": 13,
+        "cross_rec": 13
+      },
+      "first_hit_rank": {
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.6309297680854797,
+          "ndcg@10": 0.6309297680854797
+        },
+        "cross_recon": {
+          "ndcg@5": 0.6309297680854797,
+          "ndcg@10": 0.6309297680854797
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.6309297680854797
+    },
+    {
+      "sample_index": 12787,
+      "group": "unchanged",
+      "target_item_id": 5573,
+      "history_item_ids": [
+        6736,
+        95,
+        536,
+        8457,
+        699,
+        879,
+        812,
+        3131,
+        3132,
+        2257,
+        3516,
+        3515,
+        702,
+        1780,
+        5514,
+        711
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          237,
+          223,
+          82,
+          206
+        ],
+        "frozen": [
+          237,
+          223,
+          82,
+          206
+        ],
+        "cross_recon": [
+          237,
+          223,
+          82,
+          206
+        ],
+        "cross_rec": [
+          237,
+          223,
+          82,
+          206
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 13327,
+      "group": "unchanged",
+      "target_item_id": 1918,
+      "history_item_ids": [
+        2966,
+        4015,
+        1917
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          117,
+          195,
+          242,
+          87
+        ],
+        "frozen": [
+          117,
+          195,
+          242,
+          87
+        ],
+        "cross_recon": [
+          117,
+          195,
+          242,
+          87
+        ],
+        "cross_rec": [
+          117,
+          195,
+          242,
+          87
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 4
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.43067657947540283
+    },
+    {
+      "sample_index": 13982,
+      "group": "unchanged",
+      "target_item_id": 2678,
+      "history_item_ids": [
+        5402,
+        6629,
+        10235
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          154,
+          130,
+          79,
+          162
+        ],
+        "frozen": [
+          154,
+          130,
+          79,
+          162
+        ],
+        "cross_recon": [
+          154,
+          130,
+          79,
+          162
+        ],
+        "cross_rec": [
+          154,
+          130,
+          79,
+          162
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 6,
+        "frozen": 6,
+        "cross_recon": 6,
+        "cross_rec": 6
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 14294,
+      "group": "unchanged",
+      "target_item_id": 706,
+      "history_item_ids": [
+        879,
+        3851,
+        1974
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "frozen": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "cross_recon": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "cross_rec": [
+          182,
+          143,
+          13,
+          28
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 4,
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 4
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 14510,
+      "group": "unchanged",
+      "target_item_id": 4054,
+      "history_item_ids": [
+        4655,
+        2526,
+        3275
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          212,
+          116,
+          204,
+          97
+        ],
+        "frozen": [
+          212,
+          116,
+          204,
+          97
+        ],
+        "cross_recon": [
+          212,
+          116,
+          204,
+          97
+        ],
+        "cross_rec": [
+          212,
+          116,
+          204,
+          97
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 3,
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 3
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 6,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.3562071919441223
+    },
+    {
+      "sample_index": 14592,
+      "group": "unchanged",
+      "target_item_id": 1112,
+      "history_item_ids": [
+        99,
+        103,
+        10764,
+        9384,
+        3767
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          74,
+          13,
+          241,
+          6
+        ],
+        "frozen": [
+          74,
+          13,
+          241,
+          6
+        ],
+        "cross_recon": [
+          74,
+          13,
+          241,
+          6
+        ],
+        "cross_rec": [
+          74,
+          13,
+          241,
+          6
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 4
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.43067657947540283
+    },
+    {
+      "sample_index": 15100,
+      "group": "unchanged",
+      "target_item_id": 176,
+      "history_item_ids": [
+        343,
+        5262,
+        2317,
+        677
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          92,
+          185,
+          185,
+          41
+        ],
+        "frozen": [
+          92,
+          185,
+          185,
+          41
+        ],
+        "cross_recon": [
+          92,
+          185,
+          185,
+          41
+        ],
+        "cross_rec": [
+          92,
+          185,
+          185,
+          41
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 15778,
+      "group": "history_only",
+      "target_item_id": 823,
+      "history_item_ids": [
+        366,
+        5326,
+        757,
+        1166,
+        10419,
+        3519,
+        1808,
+        1802,
+        1809,
+        1810,
+        5275,
+        1075,
+        3280,
+        953,
+        1417,
+        2390,
+        1984,
+        824
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          237,
+          177,
+          70,
+          132
+        ],
+        "frozen": [
+          237,
+          177,
+          70,
+          132
+        ],
+        "cross_recon": [
+          237,
+          177,
+          70,
+          132
+        ],
+        "cross_rec": [
+          237,
+          177,
+          70,
+          132
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 4,
+        "cross_recon": 0,
+        "cross_rec": 4
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.43067657947540283
+    },
+    {
+      "sample_index": 15813,
+      "group": "history_only",
+      "target_item_id": 3429,
+      "history_item_ids": [
+        812,
+        751,
+        814,
+        3507,
+        6954,
+        919,
+        763,
+        1062,
+        1978,
+        1977,
+        380,
+        1836
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          53,
+          149,
+          207,
+          98
+        ],
+        "frozen": [
+          53,
+          149,
+          207,
+          98
+        ],
+        "cross_recon": [
+          53,
+          149,
+          207,
+          98
+        ],
+        "cross_rec": [
+          53,
+          149,
+          207,
+          98
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 10,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.28906482458114624
+    },
+    {
+      "sample_index": 15829,
+      "group": "target_changed",
+      "target_item_id": 1225,
+      "history_item_ids": [
+        917,
+        916,
+        1167,
+        6216
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          115,
+          76,
+          198,
+          132
+        ],
+        "frozen": [
+          115,
+          76,
+          198,
+          132
+        ],
+        "cross_recon": [
+          115,
+          76,
+          225,
+          132
+        ],
+        "cross_rec": [
+          115,
+          76,
+          198,
+          132
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    },
+    {
+      "sample_index": 16138,
+      "group": "unchanged",
+      "target_item_id": 6448,
+      "history_item_ids": [
+        2238,
+        3324,
+        1322,
+        6043,
+        5762,
+        1201,
+        1614,
+        4120
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          149,
+          136,
+          130,
+          161
+        ],
+        "frozen": [
+          149,
+          136,
+          130,
+          161
+        ],
+        "cross_recon": [
+          149,
+          136,
+          130,
+          161
+        ],
+        "cross_rec": [
+          149,
+          136,
+          130,
+          161
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 10,
+        "cross_recon": 0,
+        "cross_rec": 9
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010300099849701
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3010300099849701
+    },
+    {
+      "sample_index": 16286,
+      "group": "history_only",
+      "target_item_id": 5470,
+      "history_item_ids": [
+        5909,
+        2168,
+        6722
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          191,
+          195,
+          239,
+          89
+        ],
+        "frozen": [
+          191,
+          195,
+          239,
+          89
+        ],
+        "cross_recon": [
+          191,
+          195,
+          239,
+          89
+        ],
+        "cross_rec": [
+          191,
+          195,
+          239,
+          89
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 17382,
+      "group": "unchanged",
+      "target_item_id": 5378,
+      "history_item_ids": [
+        1384,
+        2577,
+        1044,
+        700,
+        2257
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          222,
+          86,
+          244,
+          9
+        ],
+        "frozen": [
+          222,
+          86,
+          244,
+          9
+        ],
+        "cross_recon": [
+          222,
+          86,
+          244,
+          9
+        ],
+        "cross_rec": [
+          222,
+          86,
+          244,
+          9
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 5,
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 5
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    },
+    {
+      "sample_index": 17496,
+      "group": "history_only",
+      "target_item_id": 10316,
+      "history_item_ids": [
+        10873,
+        10262,
+        10559
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          102,
+          92,
+          194,
+          170
+        ],
+        "frozen": [
+          102,
+          92,
+          194,
+          170
+        ],
+        "cross_recon": [
+          102,
+          92,
+          194,
+          170
+        ],
+        "cross_rec": [
+          102,
+          92,
+          194,
+          170
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": true,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 6,
+        "frozen": 6,
+        "cross_recon": 6,
+        "cross_rec": 6
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 8,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.31546488404273987
+    },
+    {
+      "sample_index": 17806,
+      "group": "unchanged",
+      "target_item_id": 1766,
+      "history_item_ids": [
+        1872,
+        7731,
+        1663,
+        105
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          3,
+          20,
+          229,
+          67
+        ],
+        "frozen": [
+          3,
+          20,
+          229,
+          67
+        ],
+        "cross_recon": [
+          3,
+          20,
+          229,
+          67
+        ],
+        "cross_rec": [
+          3,
+          20,
+          229,
+          67
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 17909,
+      "group": "history_only",
+      "target_item_id": 920,
+      "history_item_ids": [
+        4895,
+        3638,
+        6266,
+        1974,
+        702,
+        3646,
+        915
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          216,
+          110,
+          134,
+          182
+        ],
+        "frozen": [
+          216,
+          110,
+          134,
+          182
+        ],
+        "cross_recon": [
+          216,
+          110,
+          134,
+          182
+        ],
+        "cross_rec": [
+          216,
+          110,
+          134,
+          182
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    },
+    {
+      "sample_index": 17983,
+      "group": "history_only",
+      "target_item_id": 912,
+      "history_item_ids": [
+        3131,
+        701,
+        814
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          124,
+          165,
+          67,
+          169
+        ],
+        "frozen": [
+          124,
+          165,
+          67,
+          169
+        ],
+        "cross_recon": [
+          124,
+          165,
+          67,
+          169
+        ],
+        "cross_rec": [
+          124,
+          165,
+          67,
+          169
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": true
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 18422,
+      "group": "unchanged",
+      "target_item_id": 5382,
+      "history_item_ids": [
+        366,
+        5374,
+        6030,
+        879,
+        3515,
+        1412,
+        1053,
+        3516,
+        6710,
+        5313,
+        4785,
+        703,
+        763,
+        704,
+        1978,
+        1977,
+        1067,
+        706,
+        1414,
+        1179,
+        6711,
+        819,
+        1076,
+        713,
+        8886,
+        7279,
+        5384
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "frozen": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "cross_recon": [
+          156,
+          123,
+          255,
+          231
+        ],
+        "cross_rec": [
+          156,
+          123,
+          255,
+          231
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 0,
+        "cross_rec": 3
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.5
+    },
+    {
+      "sample_index": 18638,
+      "group": "unchanged",
+      "target_item_id": 1117,
+      "history_item_ids": [
+        3210,
+        1625,
+        5658,
+        5813
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          170,
+          228,
+          218,
+          0
+        ],
+        "frozen": [
+          170,
+          228,
+          218,
+          0
+        ],
+        "cross_recon": [
+          170,
+          228,
+          218,
+          0
+        ],
+        "cross_rec": [
+          170,
+          228,
+          218,
+          0
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 10,
+        "cross_recon": 10,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.28906482458114624
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.28906482458114624
+    },
+    {
+      "sample_index": 18981,
+      "group": "unchanged",
+      "target_item_id": 1126,
+      "history_item_ids": [
+        662,
+        1034,
+        1186
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          193,
+          104,
+          37,
+          128
+        ],
+        "frozen": [
+          193,
+          104,
+          37,
+          128
+        ],
+        "cross_recon": [
+          193,
+          104,
+          37,
+          128
+        ],
+        "cross_rec": [
+          193,
+          104,
+          37,
+          128
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 0,
+        "cross_rec": 5
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.38685280084609985
+    },
+    {
+      "sample_index": 19835,
+      "group": "unchanged",
+      "target_item_id": 9426,
+      "history_item_ids": [
+        3618,
+        3619,
+        494,
+        1620
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          16,
+          120,
+          33,
+          171
+        ],
+        "frozen": [
+          16,
+          120,
+          33,
+          171
+        ],
+        "cross_recon": [
+          16,
+          120,
+          33,
+          171
+        ],
+        "cross_rec": [
+          16,
+          120,
+          33,
+          171
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 25,
+        "frozen": 25,
+        "cross_recon": 25,
+        "cross_rec": 25
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 5
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.38685280084609985
+    },
+    {
+      "sample_index": 20502,
+      "group": "unchanged",
+      "target_item_id": 2010,
+      "history_item_ids": [
+        10408,
+        2651,
+        2045
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          54,
+          9,
+          15,
+          173
+        ],
+        "frozen": [
+          54,
+          9,
+          15,
+          173
+        ],
+        "cross_recon": [
+          54,
+          9,
+          15,
+          173
+        ],
+        "cross_rec": [
+          54,
+          9,
+          15,
+          173
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 20882,
+      "group": "unchanged",
+      "target_item_id": 1977,
+      "history_item_ids": [
+        775,
+        1978,
+        373
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          77,
+          50,
+          147,
+          32
+        ],
+        "frozen": [
+          77,
+          50,
+          147,
+          32
+        ],
+        "cross_recon": [
+          77,
+          50,
+          147,
+          32
+        ],
+        "cross_rec": [
+          77,
+          50,
+          147,
+          32
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 0,
+        "cross_rec": 5
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.38685280084609985
+    },
+    {
+      "sample_index": 21070,
+      "group": "unchanged",
+      "target_item_id": 670,
+      "history_item_ids": [
+        5715,
+        301,
+        279,
+        302,
+        7841
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          154,
+          130,
+          89,
+          252
+        ],
+        "frozen": [
+          154,
+          130,
+          89,
+          252
+        ],
+        "cross_recon": [
+          154,
+          130,
+          89,
+          252
+        ],
+        "cross_rec": [
+          154,
+          130,
+          89,
+          252
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 8,
+        "cross_recon": 0,
+        "cross_rec": 8
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546488404273987
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.31546488404273987
+    },
+    {
+      "sample_index": 21394,
+      "group": "unchanged",
+      "target_item_id": 293,
+      "history_item_ids": [
+        24,
+        287,
+        7746,
+        2844
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          22,
+          11,
+          14,
+          170
+        ],
+        "frozen": [
+          22,
+          11,
+          14,
+          170
+        ],
+        "cross_recon": [
+          22,
+          11,
+          14,
+          170
+        ],
+        "cross_rec": [
+          22,
+          11,
+          14,
+          170
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    },
+    {
+      "sample_index": 21533,
+      "group": "unchanged",
+      "target_item_id": 3024,
+      "history_item_ids": [
+        278,
+        295,
+        7746,
+        302,
+        613,
+        6414
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          22,
+          27,
+          14,
+          148
+        ],
+        "frozen": [
+          22,
+          27,
+          14,
+          148
+        ],
+        "cross_recon": [
+          22,
+          27,
+          14,
+          148
+        ],
+        "cross_rec": [
+          22,
+          27,
+          14,
+          148
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 4,
+        "cross_recon": 0,
+        "cross_rec": 4
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.43067657947540283
+    },
+    {
+      "sample_index": 21583,
+      "group": "unchanged",
+      "target_item_id": 706,
+      "history_item_ids": [
+        3433,
+        1411,
+        752,
+        1150,
+        11685,
+        5800,
+        1172,
+        1978
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "frozen": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "cross_recon": [
+          182,
+          143,
+          13,
+          28
+        ],
+        "cross_rec": [
+          182,
+          143,
+          13,
+          28
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 4,
+        "frozen": 4,
+        "cross_recon": 4,
+        "cross_rec": 4
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 4,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.43067657947540283,
+          "ndcg@10": 0.43067657947540283
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.43067657947540283
+    },
+    {
+      "sample_index": 21682,
+      "group": "unchanged",
+      "target_item_id": 9345,
+      "history_item_ids": [
+        281,
+        7746,
+        11296,
+        10398,
+        10222,
+        269
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          181,
+          9,
+          15,
+          173
+        ],
+        "frozen": [
+          181,
+          9,
+          15,
+          173
+        ],
+        "cross_recon": [
+          181,
+          9,
+          15,
+          173
+        ],
+        "cross_rec": [
+          181,
+          9,
+          15,
+          173
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 2,
+        "frozen": 2,
+        "cross_recon": 2,
+        "cross_rec": 2
+      },
+      "first_hit_rank": {
+        "frozen": 6,
+        "cross_recon": 6,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.3562071919441223
+    },
+    {
+      "sample_index": 21900,
+      "group": "unchanged",
+      "target_item_id": 415,
+      "history_item_ids": [
+        369,
+        371,
+        6266,
+        1842,
+        1983
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          217,
+          115,
+          71,
+          182
+        ],
+        "frozen": [
+          217,
+          115,
+          71,
+          182
+        ],
+        "cross_recon": [
+          217,
+          115,
+          71,
+          182
+        ],
+        "cross_rec": [
+          217,
+          115,
+          71,
+          182
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 3,
+        "cross_recon": 3,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_recon": {
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.5
+    },
+    {
+      "sample_index": 21971,
+      "group": "unchanged",
+      "target_item_id": 10398,
+      "history_item_ids": [
+        7598,
+        12064,
+        10555,
+        3414
+      ],
+      "primary_outcome": "new_sid_hit",
+      "target_sid": {
+        "initial": [
+          244,
+          78,
+          127,
+          41
+        ],
+        "frozen": [
+          244,
+          78,
+          127,
+          41
+        ],
+        "cross_recon": [
+          244,
+          78,
+          127,
+          41
+        ],
+        "cross_rec": [
+          244,
+          78,
+          127,
+          41
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 6,
+        "frozen": 6,
+        "cross_recon": 6,
+        "cross_rec": 6
+      },
+      "first_hit_rank": {
+        "frozen": 0,
+        "cross_recon": 0,
+        "cross_rec": 6
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_recon": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071919441223
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": 0.3562071919441223
+    },
+    {
+      "sample_index": 22089,
+      "group": "unchanged",
+      "target_item_id": 772,
+      "history_item_ids": [
+        378,
+        909,
+        390,
+        6352
+      ],
+      "primary_outcome": "lost_sid_hit",
+      "target_sid": {
+        "initial": [
+          90,
+          186,
+          67,
+          168
+        ],
+        "frozen": [
+          90,
+          186,
+          67,
+          168
+        ],
+        "cross_recon": [
+          90,
+          186,
+          67,
+          168
+        ],
+        "cross_rec": [
+          90,
+          186,
+          67,
+          168
+        ]
+      },
+      "target_sid_changed_from_initial": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "history_contains_changed_item_by_arm": {
+        "frozen": false,
+        "cross_recon": false,
+        "cross_rec": false
+      },
+      "target_collision_size": {
+        "initial": 1,
+        "frozen": 1,
+        "cross_recon": 1,
+        "cross_rec": 1
+      },
+      "first_hit_rank": {
+        "frozen": 5,
+        "cross_recon": 5,
+        "cross_rec": 0
+      },
+      "ndcg": {
+        "frozen": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_recon": {
+          "ndcg@5": 0.38685280084609985,
+          "ndcg@10": 0.38685280084609985
+        },
+        "cross_rec": {
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "delta_ndcg_at10_rec_minus_recon": -0.38685280084609985
+    }
+  ]
+}

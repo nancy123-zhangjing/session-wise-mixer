@@ -1,0 +1,144 @@
+{
+  "format": "stage09_h1_recovery_local_delivery_audit_v1",
+  "status": "passed",
+  "created_utc": "2026-10-28T19:18:06.241968+00:00",
+  "delivery": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_delivery\\h1_recovery_20261028_r2",
+  "extraction": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\h1_recovery_20261028_r2",
+  "archive": {
+    "bytes": 1722453940,
+    "sha256": "607f9124b9cb5f6c8e906e92a9eaf200b40cfc5f3cba8ed7e8ea0d1feb6c83cd",
+    "block_bytes": 67108864,
+    "block_count": 26,
+    "all_blocks_verified": true,
+    "contiguous_complete_ranges": true
+  },
+  "manifest_sha256": "f6dee18b9931c9efe9798211034e8c7205c5a405829f877c781828f299efbaec",
+  "archive_receipt_sha256": "05581fd30d796d7eb3107436511f6f04c8b17f408284f535a6a8c8869bc6d7f4",
+  "manifest_inside_outside_bytes_equal": true,
+  "regular_members_only": true,
+  "exact_manifest_member_set": true,
+  "no_path_or_case_collisions": true,
+  "verified_payload_files": 3155,
+  "verified_regular_members": 3156,
+  "verified_payload_bytes": 1907978137,
+  "extracted_disk_hashes_all_verified": true,
+  "input_bytes_unchanged": true,
+  "checkpoint_inventory": {
+    "decay": {
+      "expected_counts": {
+        "policy": "decay",
+        "r_updates": 18018,
+        "t_updates": 280,
+        "phase": 33,
+        "endpoint_epoch": 26
+      },
+      "files": {
+        "initial.pt": {
+          "bytes": 79915252,
+          "sha256": "00eb345c41e77169c962374fa930eebc694af67308b0b8f0d85ebc045ce1eb96"
+        },
+        "last.pt": {
+          "bytes": 80521648,
+          "sha256": "2ccf71e14ade6dbc58848a249f9396cd36d061f64abb65f56152e8afb84585c6"
+        },
+        "phase25_T_R20_T240.pt": {
+          "bytes": 80521456,
+          "sha256": "853c511945785a46e6b8270577a83b2f46a60e7d603ad5d3712c9a3d3bb1d14e"
+        },
+        "phase26_R_R21_T240.pt": {
+          "bytes": 80521520,
+          "sha256": "af237366c17569f0c1f297f499467e0332ddeaab07437328544f0a8d0f20310c"
+        },
+        "phase27_R_R22_T240.pt": {
+          "bytes": 80521456,
+          "sha256": "8e1bd2e9c03eed83873f35bf4dc39f40e0534ae52758ba0d81fa45d70e10f88e"
+        },
+        "phase28_R_R23_T240.pt": {
+          "bytes": 80521520,
+          "sha256": "19ad324a3d0769fcb6104067b7d345968f4e2523c605804bc428c7ba7df60c1b"
+        },
+        "phase29_T_R23_T280.pt": {
+          "bytes": 80521584,
+          "sha256": "de1db6f583a381ab366aded54fc1bc89802dc60cd4a490a3bef32a37ab564d77"
+        },
+        "phase30_R_R24_T280.pt": {
+          "bytes": 80521648,
+          "sha256": "1c6f009ac02194361becf3c5d0f08ebc2c15c53ad9081b5e71c3a2294cde0cad"
+        },
+        "phase31_R_R25_T280.pt": {
+          "bytes": 80521648,
+          "sha256": "d6241876049104c0266401e1dc58157c03abf832d33b6bc568b6347633978ad0"
+        },
+        "phase32_R_R26_T280.pt": {
+          "bytes": 80521648,
+          "sha256": "257706b75e8cd3e5cfe8ab5b1e9fd6723717b216c0233cfe6feaac1fc3a0a450"
+        }
+      },
+      "saved_stage_boundaries": 8,
+      "freeze_skipped_T_boundaries_present": false,
+      "checkpoint_content_loaded": false,
+      "note": "Presence and bytes only; separate cold CPU restore is required."
+    },
+    "freeze": {
+      "expected_counts": {
+        "policy": "freeze",
+        "r_updates": 18018,
+        "t_updates": 200,
+        "phase": 33,
+        "endpoint_epoch": 26
+      },
+      "files": {
+        "initial.pt": {
+          "bytes": 79915252,
+          "sha256": "75cf4bd533bf346ab3242c031976a9bc47182f2922f17881a4c8aaca534c33f5"
+        },
+        "last.pt": {
+          "bytes": 80521392,
+          "sha256": "1e39813b34709e4c5741fe5ac64f2e7f2778fbc321669985aad908726c58a3a9"
+        },
+        "phase25_T_R20_T200.pt": {
+          "bytes": 80521328,
+          "sha256": "d680cd456bb7c9e688edd19c962f260528f12d34b97b16bc308b79a32868e149"
+        },
+        "phase26_R_R21_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "db6ff47cdcbafcf24955b1766832f1880958e6533c624bbcca0cd576483f472f"
+        },
+        "phase27_R_R22_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "ce4fffaadffb338e3df19949a76a7f7f183d5df80d5084da2032e4ac1eec6bf1"
+        },
+        "phase28_R_R23_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "1dd0ceea3d6dd93492db5a5ab5d29762abe1fa73bcff18651efce7eac5f37300"
+        },
+        "phase29_T_R23_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "25b76cb32dac791af71dd82a44f8b5883711c2847e08ad334bad5925a030ec32"
+        },
+        "phase30_R_R24_T200.pt": {
+          "bytes": 80521456,
+          "sha256": "e6bfd8007076a72d9614a7f521faa9ec06d33053a5b7684fadb0bd9a425ade40"
+        },
+        "phase31_R_R25_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "150433713fb46e06f4436293b5a44d4cc18d801d6c992ade2d6439ca032739a1"
+        },
+        "phase32_R_R26_T200.pt": {
+          "bytes": 80521392,
+          "sha256": "433ae121c9646d50d420e6c65f908c00a0af43f1950e5a5c50843f0d151b3e47"
+        }
+      },
+      "saved_stage_boundaries": 8,
+      "freeze_skipped_T_boundaries_present": true,
+      "checkpoint_content_loaded": false,
+      "note": "Presence and bytes only; separate cold CPU restore is required."
+    }
+  },
+  "self_contained_dataset": false,
+  "local_delivery_verified": true,
+  "checkpoint_restore_verified": false,
+  "gpu_execution_verified": false,
+  "evidence_scope": "Independent archive/block/member and saved-disk byte verification only. External data/PSE identities, actual checkpoint restoration, scientific metrics and platform resource release require separate audits.",
+  "verifier_sha256": "0c6ae99749bac49584bdca68df072ff6111827729114446074d8caa982500622"
+}

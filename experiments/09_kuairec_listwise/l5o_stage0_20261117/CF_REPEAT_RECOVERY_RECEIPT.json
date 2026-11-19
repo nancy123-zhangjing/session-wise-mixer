@@ -1,0 +1,25 @@
+{
+  "base_revision": "d8d828244db6575542566e8ffb44e489e94809ba",
+  "fix_revision": "8ccc857",
+  "submission_revision": "1572a51",
+  "source_snapshot": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_wave_20261117_v1/code_cf_l5o_repeat_v2",
+  "overlay_archive_sha256": "ae8c406cbc4d7e0dee3bb92eeda95a12778614be802577ea446b5beb62dc1e7f",
+  "source_sha256": {
+    "scripts/rqcd_mixer/losses.py": "a918e777f7e556f28b3aebb37eea5578be0d3eebfdbc2132b0b38851951a8914",
+    "scripts/rqcd_mixer/run.py": "f8dba0bde2924ac50739cf077c6cdcbf24a47af7c20c6cfc51a025d1f2cc3b2b"
+  },
+  "old_run_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_wave_20261117_v1/runs",
+  "recovery_run_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_wave_20261117_v1/cf_repeat_v2/runs",
+  "shared_pretrain": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_wave_20261117_v1/parents/cf_rq",
+  "jobs": {
+    "CF-M0": "nancy-l5o-cf-m0-1117-v2",
+    "CF-M1": "nancy-l5o-cf-m1-1117-v2"
+  },
+  "verified_checks": [
+    "CPU test_rqcd_targets.LandingTests (2 tests)",
+    "remote overlay source SHA256",
+    "recovery parents symlink resolves to the original parent directory",
+    "both first attempts terminal FAILED and both recovery jobs created"
+  ],
+  "boundary": "Training and validation acceptance pending."
+}

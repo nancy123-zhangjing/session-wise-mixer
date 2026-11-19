@@ -1,0 +1,58 @@
+{
+  "kind": "CPU diagnostic only; not exact CUDA RNG replay and not a valid training run",
+  "gpu_used": false,
+  "checkpoint_epoch": 27,
+  "checkpoint_sha256": "31f9ebaf43457e9fd44eae8c09a5a5eceafc582aa8a702066cd0d84dbfa33f9d",
+  "model_stats": {
+    "all_finite": true,
+    "max_absolute_parameter": 5.697666168212891
+  },
+  "optimizer_tensors_finite": true,
+  "results": [
+    {
+      "precision": "float32",
+      "batch": 0,
+      "loss": 5.641811370849609,
+      "all_gradient_elements_finite": true,
+      "nonfinite_gradient_parameters": [],
+      "total_norm_fp32": 2.514089345932007,
+      "total_norm_fp64": 2.51418114398231,
+      "maximum_absolute_gradient": 0.22080707550048828,
+      "seconds": 7.521751642227173
+    },
+    {
+      "precision": "float32",
+      "batch": 1,
+      "loss": 5.622066497802734,
+      "all_gradient_elements_finite": true,
+      "nonfinite_gradient_parameters": [],
+      "total_norm_fp32": 1.9414629936218262,
+      "total_norm_fp64": 1.9415519351723847,
+      "maximum_absolute_gradient": 0.15519392490386963,
+      "seconds": 6.826122999191284
+    },
+    {
+      "precision": "cpu_bf16",
+      "batch": 0,
+      "loss": 5.642193794250488,
+      "all_gradient_elements_finite": true,
+      "nonfinite_gradient_parameters": [],
+      "total_norm_fp32": 6.563972473144531,
+      "total_norm_fp64": 6.564082648588182,
+      "maximum_absolute_gradient": 0.4743330776691437,
+      "seconds": 0.8679494857788086
+    },
+    {
+      "precision": "cpu_bf16",
+      "batch": 1,
+      "loss": 5.622015953063965,
+      "all_gradient_elements_finite": true,
+      "nonfinite_gradient_parameters": [],
+      "total_norm_fp32": 4.488633632659912,
+      "total_norm_fp64": 4.488775662048933,
+      "maximum_absolute_gradient": 0.2805722951889038,
+      "seconds": 0.8854396343231201
+    }
+  ],
+  "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc"
+}

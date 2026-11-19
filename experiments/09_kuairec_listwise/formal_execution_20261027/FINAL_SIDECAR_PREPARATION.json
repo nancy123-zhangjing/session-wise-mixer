@@ -1,0 +1,23 @@
+{
+  "schema": "stage09_final_sidecar_preparation_v1",
+  "date": "2026-10-28",
+  "status": "DEPLOYED_SHA_VERIFIED_NOT_PACKED",
+  "helper_sha256": "beeb91532752d247563214473cc03b225ef2e49408e3a89df5a37cb4ac62a8c6",
+  "test_sha256": "1d55c88e63070ebd6a2143f9f8ddeaa40817e3c6e80470c117dd7907f34258e0",
+  "base_helper_sha256": "0800f6dd99b573b8780ebe8b1eea3ca64fe4713d527475e620a6b943fb65f403",
+  "cpu_receipt": "FINAL_SIDECAR_CPU_CHECKS.json",
+  "cpu_tests": 6,
+  "cpu_failures": 0,
+  "static_review": "Independent read-only review found no definite blocking defect in the allowlist, restore confinement, supervisor fields and four-best freeze fields.",
+  "scientific_training_source_modified": false,
+  "gpu_or_platform_used_for_helper_checks": false,
+  "deployed": true,
+  "actual_operations_archive_created": false,
+  "actual_evaluations_archive_created": false,
+  "limitations": [
+    "Windows CPU pack checks use mocked remote I/O; Linux no-follow pack and actual final inputs are pending.",
+    "Native events do not identify the Job internally; the external verifier must bind the scoped platform query and all allocated Pod releases.",
+    "Backup readiness and SHA checks do not replace final protocol/model binding checks, independent metric replay, or representative checkpoint forward acceptance."
+  ],
+  "deployment_receipt": "FINAL_SIDECAR_DEPLOYMENT_20261028.json"
+}

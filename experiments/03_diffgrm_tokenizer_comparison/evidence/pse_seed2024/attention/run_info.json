@@ -1,0 +1,19 @@
+{
+  "run_id": "diff_formal_pse_4x256_repo_repro_v6_bf16",
+  "seed": 2024,
+  "split": "test",
+  "checkpoint": "/home/jingzhang/experiment1/external/DiffGRM/saved/AmazonReviews2014_Aug-11-2026_14-09-45/pytorch_model.bin",
+  "metadata": "/home/jingzhang/experiment1/outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-11-2026_14-09-45_run_metadata.json",
+  "examples": 22363,
+  "diagnostic_path": "beam-width-one greedy CPD",
+  "attention_stage": "masked softmax before dropout",
+  "decoder_layers": 4,
+  "attention_heads": 4,
+  "sid_positions": 4,
+  "has_bos": false,
+  "key_state_definition": {
+    "masked": "position unresolved before the current CPD update",
+    "revealed": "position predicted in an earlier CPD rank"
+  },
+  "max_row_sum_error": 1.2665987014770508e-07
+}

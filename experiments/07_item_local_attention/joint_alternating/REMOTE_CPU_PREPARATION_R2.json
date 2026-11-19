@@ -1,0 +1,272 @@
+{
+  "schema": "stage07_joint_r2_CPU_preparation_v1",
+  "status": "CPU_PREPARATION_PASS",
+  "started_utc": "2026-10-20T03:33:03.726836+00:00",
+  "root_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+  "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "bootstrap_sha256": "5d7e84b895dc4500a76c41c93fa1f8ee5054f92d7d23e22de3fc0fc936f80b67",
+  "checks": [
+    {
+      "label": "clone_code",
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/code",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_00_clone_code.log",
+      "returncode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "clone_engine",
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/engine",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/engine"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_01_clone_engine.log",
+      "returncode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "verify_bundle",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code",
+        "bundle",
+        "verify",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/code_joint_r2.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_02_verify_bundle.log",
+      "returncode": 0,
+      "sha256": "2a61e8fd6c04d71829781840585b886dc76756961b32930d173f319c985eb524"
+    },
+    {
+      "label": "bundle_heads",
+      "argv": [
+        "git",
+        "bundle",
+        "list-heads",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/code_joint_r2.bundle"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_03_bundle_heads.log",
+      "returncode": 0,
+      "sha256": "bd7d77708d2e6d7d42a8684904f69d144c8f5e23649e8f6668034bd5226dae24"
+    },
+    {
+      "label": "fetch_code",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code",
+        "fetch",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/code_joint_r2.bundle",
+        "refs/heads/codex/item-local-attention"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_04_fetch_code.log",
+      "returncode": 0,
+      "sha256": "ebf845401b638adf4a7a44478e8d3bd43da1ac83f0cfea52cc38c59779570fe5"
+    },
+    {
+      "label": "checkout_code",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code",
+        "checkout",
+        "--detach",
+        "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_05_checkout_code.log",
+      "returncode": 0,
+      "sha256": "e28f64dd7f6e3f8c1e38acbf8ea668ef5708a45e738e16724eb1d5c2b8c209df"
+    },
+    {
+      "label": "checkout_engine",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/engine",
+        "checkout",
+        "--detach",
+        "1c879252f6395d6e64462511823c3929b9c42c00"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_06_checkout_engine.log",
+      "returncode": 0,
+      "sha256": "4bc4e4688d775f40d22c4d0c92a932ea002bb832cbb10dedfda26028432b5878"
+    },
+    {
+      "label": "ignored_engine_link",
+      "argv": [
+        "git",
+        "-C",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code",
+        "check-ignore",
+        "external/DiffGRM"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_07_ignored_engine_link.log",
+      "returncode": 0,
+      "sha256": "b7745f68d810c16c683bae822ec32cfd77a1b5509ed5d958c55fd4be1eaee2d6"
+    },
+    {
+      "label": "prepare_control",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport builtins, runpy, sys\noriginal = builtins.__import__\ndef guarded(name, globals=None, locals=None, fromlist=(), level=0):\n    if name.split('.')[0] in {'torch','cuda','cupy','pycuda'}: raise RuntimeError('Prepare imported Torch/CUDA: '+name)\n    return original(name, globals, locals, fromlist, level)\nbuiltins.__import__ = guarded\nsys.argv = sys.argv[1:]\nrunpy.run_path(sys.argv[0], run_name='__main__')\nif any(x.split('.')[0] in {'torch','cuda','cupy','pycuda'} for x in sys.modules): raise RuntimeError('Import guard escaped')\nprint('PREPARE_CPU_IMPORT_GUARD_PASS')\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code/scripts/train/run_item_local_joint.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code/configs/07_item_local_attention/joint_alternating_seed2024.json",
+        "--variant",
+        "control",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_control_seed2024_20261020_r1",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_08_prepare_control.log",
+      "returncode": 0,
+      "sha256": "b82b188466689b276caadcc4a93e4e06bcfae3d2c005acbe09fc629a2000a6f3"
+    },
+    {
+      "label": "production_pipeline_control",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport importlib, importlib.util, json, os, sys\nfrom pathlib import Path\nroot, variant, target = Path(sys.argv[1]), sys.argv[2], Path(sys.argv[3])\nspec = importlib.util.spec_from_file_location('joint_runner', root/'code/scripts/train/run_item_local_joint.py')\nrunner = importlib.util.module_from_spec(spec); spec.loader.exec_module(runner)\nwork = root/'runs'/runner.run_id(variant)\nconfig = runner.read_json(work/'resolved_config.json')\nconfig.update(run_id=config['run_id']+'_CPU_preflight', resume_training_state=False,\n              training_deadline_unix_seconds=None, training_deadline_reserve_seconds=0)\nconfig['run_local_time'] = config['run_id']\nfor key, sub in {'log_dir':'logs','tensorboard_log_dir':'tensorboard','ckpt_dir':'checkpoints',\n    'run_metadata_dir':'run_metadata','diffusion_diagnostics_log_dir':'diagnostics',\n    'position_loss_log_dir':'position_loss','training_state_dir':'training_state'}.items(): config[key] = str(target/sub)\nrunner.write_json(target/'resolved_config.json', config)\n(target/'runtime').mkdir(); os.chdir(target/'runtime')\nos.environ.update(HF_HOME=str(work/'workspace/huggingface'), HF_DATASETS_CACHE=str(work/'workspace/huggingface/datasets'))\nsys.path.insert(0, str(root/'engine'))\nimport torch\nfrom torch.utils.data import DataLoader\nimport genrec.utils as utils\nutils.get_local_time = lambda: config['run_id']\ntrainer_module = importlib.import_module('genrec.models.DIFF_GRM.trainer')\nfrom genrec.models.DIFF_GRM.training_state import capture_rng\nfrom genrec.pipeline import Pipeline\ndef forbidden(*args, **kwargs): raise RuntimeError('CPU preflight may not fit/evaluate')\ntrainer_module.DIFF_GRMTrainer.fit = forbidden; trainer_module.DIFF_GRMTrainer.evaluate = forbidden\npipeline = Pipeline('DIFF_GRM', 'AmazonReviews2014', config_dict=config)\nmodel = pipeline.model\nrunner.need(not torch.cuda.is_available() and not torch.cuda.is_initialized() and\n    str(pipeline.config['device']) == 'cpu' and pipeline.accelerator.device.type == 'cpu' and\n    pipeline.accelerator.num_processes == 1 and not pipeline.config['use_ddp'], 'CPU/single-process contract failed')\nrunner.need(pipeline.config['mixed_precision'] == 'bf16' and pipeline.accelerator.mixed_precision == 'bf16' and\n    pipeline.config['gradient_accumulation_steps'] == pipeline.accelerator.gradient_accumulation_steps == 16, 'BF16/16 accumulation changed')\nrunner.need(model.joint_crosspse_enabled and model.item_local_attention_enabled == (variant == 'item_local') and\n    not model.joint_alignment.mixer.mixer_enabled and model.joint_alignment.gradient_mode == 'diger_st' and\n    pipeline.config['crosspse_train_base_codebooks'] is True and model.joint_alignment.mixer.train_base_codebooks and\n    isinstance(model.joint_alignment.mixer.base_codebooks, torch.nn.Parameter), 'Joint/local/codebook configuration changed')\nrunner.need(Path(pipeline.tokenizer.semantic_ids_path).resolve() == Path(config['precomputed_semantic_ids_path']).resolve(), 'Consumed SID differs')\nrecords = runner.read_json(work/'input_identities.json')['artifacts']\nrunner.need(len(records) == 13, 'Expected thirteen inputs')\nfor row in records:\n    path = runner.stage05.under(work/'workspace', row['path'])\n    runner.need(path.stat().st_size == row['size_bytes'] and runner.sha(path) == row['sha256'], 'Input SHA mismatch: '+row['path'])\ncounts = {split:len(pipeline.tokenized_datasets[split]) for split in ('train','val','test')}\nrunner.need(counts == dict(train=105668,val=22363,test=22363), 'Actual tokenized dataset counts differ')\nloader = DataLoader(pipeline.tokenized_datasets['train'], batch_size=config['train_batch_size'], shuffle=True, collate_fn=pipeline.tokenizer.collate_fn['train'])\nmodel.to(pipeline.accelerator.device)\nstate = {name:value for name,value in model.state_dict().items() if not name.startswith('item_local_attention.')}\nreceipt = dict(status='CPU_PIPELINE_CONSTRUCTION_PASS', variant=variant, counts=counts, device='cpu',\n    initial_base_state_sha256=runner.json_sha(runner.nested_summary(state)),\n    initial_rng_sha256=runner.json_sha(runner.nested_summary(capture_rng(loader))),\n    input_sha_verified=13, trainer_import_module=trainer_module.__name__, fit_called=False, evaluate_called=False,\n    gpu_started=False, mixed_precision='bf16', gradient_accumulation_steps=16,\n    rng_scope='CPU two-arm equality only; CUDA RNG is None, not a GPU replay proof')\nrunner.write_json(target/'parsed_config.json', {k:str(v) if k=='device' else v for k,v in pipeline.config.items() if k!='accelerator'})\nrunner.write_json(target/'receipt.json', receipt)\nprint(json.dumps(receipt, sort_keys=True))\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2",
+        "control",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/cpu_preflight/control"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_09_production_pipeline_control.log",
+      "returncode": 0,
+      "sha256": "5f053bf04bb90bb807125d263c315f2bce61de10f20cdf817d7a5f28eaad1aba"
+    },
+    {
+      "label": "prepare_item_local",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport builtins, runpy, sys\noriginal = builtins.__import__\ndef guarded(name, globals=None, locals=None, fromlist=(), level=0):\n    if name.split('.')[0] in {'torch','cuda','cupy','pycuda'}: raise RuntimeError('Prepare imported Torch/CUDA: '+name)\n    return original(name, globals, locals, fromlist, level)\nbuiltins.__import__ = guarded\nsys.argv = sys.argv[1:]\nrunpy.run_path(sys.argv[0], run_name='__main__')\nif any(x.split('.')[0] in {'torch','cuda','cupy','pycuda'} for x in sys.modules): raise RuntimeError('Import guard escaped')\nprint('PREPARE_CPU_IMPORT_GUARD_PASS')\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code/scripts/train/run_item_local_joint.py",
+        "--mode",
+        "prepare",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/code/configs/07_item_local_attention/joint_alternating_seed2024.json",
+        "--variant",
+        "item_local",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/runs/stage07_item_local_joint_item_local_seed2024_20261020_r1",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_10_prepare_item_local.log",
+      "returncode": 0,
+      "sha256": "c99996a1e76a4119064b28b4ea9579a8c846f847b65e25fb3007606f1e35775b"
+    },
+    {
+      "label": "production_pipeline_item_local",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-B",
+        "-c",
+        "\nimport importlib, importlib.util, json, os, sys\nfrom pathlib import Path\nroot, variant, target = Path(sys.argv[1]), sys.argv[2], Path(sys.argv[3])\nspec = importlib.util.spec_from_file_location('joint_runner', root/'code/scripts/train/run_item_local_joint.py')\nrunner = importlib.util.module_from_spec(spec); spec.loader.exec_module(runner)\nwork = root/'runs'/runner.run_id(variant)\nconfig = runner.read_json(work/'resolved_config.json')\nconfig.update(run_id=config['run_id']+'_CPU_preflight', resume_training_state=False,\n              training_deadline_unix_seconds=None, training_deadline_reserve_seconds=0)\nconfig['run_local_time'] = config['run_id']\nfor key, sub in {'log_dir':'logs','tensorboard_log_dir':'tensorboard','ckpt_dir':'checkpoints',\n    'run_metadata_dir':'run_metadata','diffusion_diagnostics_log_dir':'diagnostics',\n    'position_loss_log_dir':'position_loss','training_state_dir':'training_state'}.items(): config[key] = str(target/sub)\nrunner.write_json(target/'resolved_config.json', config)\n(target/'runtime').mkdir(); os.chdir(target/'runtime')\nos.environ.update(HF_HOME=str(work/'workspace/huggingface'), HF_DATASETS_CACHE=str(work/'workspace/huggingface/datasets'))\nsys.path.insert(0, str(root/'engine'))\nimport torch\nfrom torch.utils.data import DataLoader\nimport genrec.utils as utils\nutils.get_local_time = lambda: config['run_id']\ntrainer_module = importlib.import_module('genrec.models.DIFF_GRM.trainer')\nfrom genrec.models.DIFF_GRM.training_state import capture_rng\nfrom genrec.pipeline import Pipeline\ndef forbidden(*args, **kwargs): raise RuntimeError('CPU preflight may not fit/evaluate')\ntrainer_module.DIFF_GRMTrainer.fit = forbidden; trainer_module.DIFF_GRMTrainer.evaluate = forbidden\npipeline = Pipeline('DIFF_GRM', 'AmazonReviews2014', config_dict=config)\nmodel = pipeline.model\nrunner.need(not torch.cuda.is_available() and not torch.cuda.is_initialized() and\n    str(pipeline.config['device']) == 'cpu' and pipeline.accelerator.device.type == 'cpu' and\n    pipeline.accelerator.num_processes == 1 and not pipeline.config['use_ddp'], 'CPU/single-process contract failed')\nrunner.need(pipeline.config['mixed_precision'] == 'bf16' and pipeline.accelerator.mixed_precision == 'bf16' and\n    pipeline.config['gradient_accumulation_steps'] == pipeline.accelerator.gradient_accumulation_steps == 16, 'BF16/16 accumulation changed')\nrunner.need(model.joint_crosspse_enabled and model.item_local_attention_enabled == (variant == 'item_local') and\n    not model.joint_alignment.mixer.mixer_enabled and model.joint_alignment.gradient_mode == 'diger_st' and\n    pipeline.config['crosspse_train_base_codebooks'] is True and model.joint_alignment.mixer.train_base_codebooks and\n    isinstance(model.joint_alignment.mixer.base_codebooks, torch.nn.Parameter), 'Joint/local/codebook configuration changed')\nrunner.need(Path(pipeline.tokenizer.semantic_ids_path).resolve() == Path(config['precomputed_semantic_ids_path']).resolve(), 'Consumed SID differs')\nrecords = runner.read_json(work/'input_identities.json')['artifacts']\nrunner.need(len(records) == 13, 'Expected thirteen inputs')\nfor row in records:\n    path = runner.stage05.under(work/'workspace', row['path'])\n    runner.need(path.stat().st_size == row['size_bytes'] and runner.sha(path) == row['sha256'], 'Input SHA mismatch: '+row['path'])\ncounts = {split:len(pipeline.tokenized_datasets[split]) for split in ('train','val','test')}\nrunner.need(counts == dict(train=105668,val=22363,test=22363), 'Actual tokenized dataset counts differ')\nloader = DataLoader(pipeline.tokenized_datasets['train'], batch_size=config['train_batch_size'], shuffle=True, collate_fn=pipeline.tokenizer.collate_fn['train'])\nmodel.to(pipeline.accelerator.device)\nstate = {name:value for name,value in model.state_dict().items() if not name.startswith('item_local_attention.')}\nreceipt = dict(status='CPU_PIPELINE_CONSTRUCTION_PASS', variant=variant, counts=counts, device='cpu',\n    initial_base_state_sha256=runner.json_sha(runner.nested_summary(state)),\n    initial_rng_sha256=runner.json_sha(runner.nested_summary(capture_rng(loader))),\n    input_sha_verified=13, trainer_import_module=trainer_module.__name__, fit_called=False, evaluate_called=False,\n    gpu_started=False, mixed_precision='bf16', gradient_accumulation_steps=16,\n    rng_scope='CPU two-arm equality only; CUDA RNG is None, not a GPU replay proof')\nrunner.write_json(target/'parsed_config.json', {k:str(v) if k=='device' else v for k,v in pipeline.config.items() if k!='accelerator'})\nrunner.write_json(target/'receipt.json', receipt)\nprint(json.dumps(receipt, sort_keys=True))\n",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2",
+        "item_local",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/cpu_preflight/item_local"
+      ],
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/r2_11_production_pipeline_item_local.log",
+      "returncode": 0,
+      "sha256": "50c286790edf8339765af382748653007e5cb10521b96aecdb296a521296bc33"
+    }
+  ],
+  "sources": {
+    "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+    "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+    "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+    "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+    "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+    "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+    "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+    "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+    "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+    "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+    "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+    "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+    "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+  },
+  "engine_tests_reused_from": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r1/delivery/JOINT_PREPARATION.json",
+  "old_CPU20_receipt_sha256": "5e62fb57ff792b7cc89f8042c33f4c620698f31d6b9769362103c0a03f118a36",
+  "gpu_started": false,
+  "goal_complete": false,
+  "platform_launcher_env": {},
+  "prepare_torch_imports_blocked": true,
+  "engine_tests_rerun": false,
+  "CPU_pipeline_preflights": [
+    {
+      "status": "CPU_PIPELINE_CONSTRUCTION_PASS",
+      "variant": "control",
+      "counts": {
+        "train": 105668,
+        "val": 22363,
+        "test": 22363
+      },
+      "device": "cpu",
+      "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+      "initial_rng_sha256": "1edc2fe56302632f3b9830fd89dbebc55c119ec7fd997c0d0d9104819b9686c4",
+      "input_sha_verified": 13,
+      "trainer_import_module": "genrec.models.DIFF_GRM.trainer",
+      "fit_called": false,
+      "evaluate_called": false,
+      "gpu_started": false,
+      "mixed_precision": "bf16",
+      "gradient_accumulation_steps": 16,
+      "rng_scope": "CPU two-arm equality only; CUDA RNG is None, not a GPU replay proof"
+    },
+    {
+      "status": "CPU_PIPELINE_CONSTRUCTION_PASS",
+      "variant": "item_local",
+      "counts": {
+        "train": 105668,
+        "val": 22363,
+        "test": 22363
+      },
+      "device": "cpu",
+      "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+      "initial_rng_sha256": "1edc2fe56302632f3b9830fd89dbebc55c119ec7fd997c0d0d9104819b9686c4",
+      "input_sha_verified": 13,
+      "trainer_import_module": "genrec.models.DIFF_GRM.trainer",
+      "fit_called": false,
+      "evaluate_called": false,
+      "gpu_started": false,
+      "mixed_precision": "bf16",
+      "gradient_accumulation_steps": 16,
+      "rng_scope": "CPU two-arm equality only; CUDA RNG is None, not a GPU replay proof"
+    }
+  ],
+  "formal_artifacts_unchanged": true,
+  "test_data_evaluated": false,
+  "ended_utc": "2026-10-20T03:34:58.306777+00:00"
+}

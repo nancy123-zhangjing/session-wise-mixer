@@ -1,0 +1,149 @@
+{
+  "observed_base_rates": {
+    "sasrec_fullce": {
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "sasrec_fullce",
+        "dim": 64,
+        "layers": 1,
+        "heads": 1,
+        "dropout": 0.2,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "batch_size": 128
+      },
+      "train_seconds_per_update": 0.08528514294885099,
+      "validation_seconds": 0.36386831011623144,
+      "checkpoint_seconds": 0.13456636853516102
+    },
+    "esasrec": {
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "esasrec",
+        "dim": 64,
+        "layers": 1,
+        "heads": 1,
+        "dropout": 0.2,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "batch_size": 128,
+        "negatives": 256
+      },
+      "train_seconds_per_update": 0.08609898583963513,
+      "validation_seconds": 0.34705451782792807,
+      "checkpoint_seconds": 0.14589573442935944
+    }
+  },
+  "training_run_budget": 89,
+  "max_epochs_per_run": 300,
+  "maximum_concurrent_workers": 8,
+  "points_per_node_hour": 8.0,
+  "observed_maximum_shape_rates": {
+    "sasrec_fullce": {
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "sasrec_fullce",
+        "dim": 512,
+        "layers": 4,
+        "heads": 4,
+        "dropout": 0.5,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "batch_size": 256
+      },
+      "train_seconds_per_update": 0.20713876001536846,
+      "validation_seconds": 0.25985418632626534,
+      "checkpoint_seconds": 0.6155176553875208
+    },
+    "esasrec": {
+      "config": {
+        "n_items": 12101,
+        "max_length": 50,
+        "ffn_multiplier": 4,
+        "max_epochs": 300,
+        "patience": 50,
+        "adam_betas": [
+          0.9,
+          0.98
+        ],
+        "grad_clip": 1.0,
+        "label_smoothing": 0.0,
+        "eval_batch_size": 512,
+        "precision": "bf16",
+        "lr_schedule": "constant",
+        "cpu_threads": 2,
+        "evaluation": "full_catalog_item_id_tie_ascending_no_history_filter",
+        "model": "esasrec",
+        "dim": 512,
+        "layers": 4,
+        "heads": 4,
+        "dropout": 0.5,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "batch_size": 256,
+        "negatives": 1024
+      },
+      "train_seconds_per_update": 0.2044645450077951,
+      "validation_seconds": 0.32967929914593697,
+      "checkpoint_seconds": 0.6675074230879545
+    }
+  },
+  "projected_node_hours_range": [
+    10.875861952841415,
+    98.81676114398918
+  ],
+  "projected_gpu_hours_range": [
+    87.00689562273132,
+    790.5340891519135
+  ],
+  "projected_points_range": [
+    87.00689562273132,
+    790.5340891519135
+  ],
+  "interpretation": "Sizing estimate from base/max-shape smoke, linear compute-work interpolation, 51..300 epochs, and an upper tail allowance. Not a runtime or convergence guarantee; excludes platform scheduling and final evaluation overhead."
+}

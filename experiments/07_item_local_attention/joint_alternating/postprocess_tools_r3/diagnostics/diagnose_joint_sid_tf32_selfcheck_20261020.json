@@ -1,0 +1,106 @@
+{
+  "status": "CPU_BIT_ROUNDING_SELFCHECK_PASS",
+  "cases": [
+    {
+      "name": "positive_zero",
+      "input_bits": "00000000",
+      "nearest_even_bits": "00000000",
+      "nearest_ties_away_bits": "00000000"
+    },
+    {
+      "name": "negative_zero",
+      "input_bits": "80000000",
+      "nearest_even_bits": "80000000",
+      "nearest_ties_away_bits": "80000000"
+    },
+    {
+      "name": "positive_exact",
+      "input_bits": "3f800000",
+      "nearest_even_bits": "3f800000",
+      "nearest_ties_away_bits": "3f800000"
+    },
+    {
+      "name": "negative_exact",
+      "input_bits": "bf800000",
+      "nearest_even_bits": "bf800000",
+      "nearest_ties_away_bits": "bf800000"
+    },
+    {
+      "name": "positive_below_half",
+      "input_bits": "3f800fff",
+      "nearest_even_bits": "3f800000",
+      "nearest_ties_away_bits": "3f800000"
+    },
+    {
+      "name": "positive_above_half",
+      "input_bits": "3f801001",
+      "nearest_even_bits": "3f802000",
+      "nearest_ties_away_bits": "3f802000"
+    },
+    {
+      "name": "negative_below_half",
+      "input_bits": "bf800fff",
+      "nearest_even_bits": "bf800000",
+      "nearest_ties_away_bits": "bf800000"
+    },
+    {
+      "name": "negative_above_half",
+      "input_bits": "bf801001",
+      "nearest_even_bits": "bf802000",
+      "nearest_ties_away_bits": "bf802000"
+    },
+    {
+      "name": "positive_even_tie",
+      "input_bits": "3f801000",
+      "nearest_even_bits": "3f800000",
+      "nearest_ties_away_bits": "3f802000"
+    },
+    {
+      "name": "negative_even_tie",
+      "input_bits": "bf801000",
+      "nearest_even_bits": "bf800000",
+      "nearest_ties_away_bits": "bf802000"
+    },
+    {
+      "name": "positive_odd_tie",
+      "input_bits": "3f803000",
+      "nearest_even_bits": "3f804000",
+      "nearest_ties_away_bits": "3f804000"
+    },
+    {
+      "name": "negative_odd_tie",
+      "input_bits": "bf803000",
+      "nearest_even_bits": "bf804000",
+      "nearest_ties_away_bits": "bf804000"
+    },
+    {
+      "name": "fractional_intermediate",
+      "input_bits": "3fa66666",
+      "nearest_even_bits": "3fa66000",
+      "nearest_ties_away_bits": "3fa66000"
+    },
+    {
+      "name": "positive_subnormal_tie",
+      "input_bits": "00001000",
+      "nearest_even_bits": "00000000",
+      "nearest_ties_away_bits": "00002000"
+    },
+    {
+      "name": "negative_subnormal_tie",
+      "input_bits": "80001000",
+      "nearest_even_bits": "80000000",
+      "nearest_ties_away_bits": "80002000"
+    }
+  ],
+  "input_unchanged": true,
+  "both_modes_idempotent": true,
+  "GPU_or_platform_used": false,
+  "scope": "Mantissa rounding unit cases only; no real checkpoint or CUDA acceptance.",
+  "verified_utc": "2026-10-20T12:32:07.910547+00:00",
+  "source": ".runtime/stage07/diagnose_joint_sid_tf32.py",
+  "source_sha256": "94d1f30a8882b863b2f0e45390b5e53940a3eb28c9a13e16ab390d06749b8f7f",
+  "AST_parse_passed": true,
+  "case_count": 15,
+  "quantizer_modes_checked": 2,
+  "real_checkpoint_loaded": false
+}

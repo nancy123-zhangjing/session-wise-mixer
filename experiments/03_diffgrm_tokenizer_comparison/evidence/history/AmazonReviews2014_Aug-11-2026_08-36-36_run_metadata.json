@@ -1,0 +1,102 @@
+{
+  "run_id": "diff_profile_pse_4x256",
+  "seed": 2024,
+  "model": "DIFF_GRM",
+  "sid_quantizer": "opq_pq",
+  "n_digit": 4,
+  "codebook_size": 256,
+  "masking_strategy": "guided",
+  "guided_select": "least",
+  "guided_refresh_each_step": false,
+  "diffusion_loss_reduction": "per_view",
+  "train_batch_size": 64,
+  "gradient_accumulation_steps": 4,
+  "effective_base_batch": 256,
+  "updates_per_epoch": 25,
+  "total_optimizer_steps": 25,
+  "warmup_steps": 0,
+  "lr": 0.01,
+  "mixed_precision": "bf16",
+  "max_grad_norm": 1.0,
+  "numerical_guard": true,
+  "numerical_guard_parameter_interval": 100,
+  "eval_start_epoch": 1,
+  "eval_interval": 1,
+  "patience": 1,
+  "best_epoch": 1,
+  "best_val_score": 0.0,
+  "fit_elapsed_seconds": 7.586653599515557,
+  "peak_vram_mb": 3757.369140625,
+  "evaluation_level": "sid",
+  "test_results": {
+    "legal_ratio": 1.0,
+    "duplicate_ratio": 0.8318749904632569,
+    "dup@10": 0.09687500270083546,
+    "duplicate@10": 0.09687500270083546,
+    "legal@10": 1.0,
+    "ndcg@5": 0.0,
+    "ndcg@10": 0.0,
+    "recall@5": 0.0,
+    "hit_rate@5": 0.0,
+    "recall@10": 0.0,
+    "hit_rate@10": 0.0,
+    "weighted_score": 0.0
+  },
+  "position_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-11-2026_08-36-36_position_metrics.csv",
+  "order_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-11-2026_08-36-36_order_metrics.csv",
+  "training_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-11-2026_08-36-36_training_metrics.csv",
+  "evaluation_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-11-2026_08-36-36_evaluation_metrics.csv",
+  "checkpoint": "saved/AmazonReviews2014_Aug-11-2026_08-36-36/pytorch_model.bin",
+  "sid_collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 10656,
+    "collided_items": 2172,
+    "collision_rate": 0.17948929840509048,
+    "colliding_groups": 727,
+    "largest_collision_group": 40,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "colliding_groups": 254,
+        "largest_collision_group": 130
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6953,
+        "collided_items": 7287,
+        "collision_rate": 0.6021816378811669,
+        "colliding_groups": 2139,
+        "largest_collision_group": 57
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 9876,
+        "collided_items": 3280,
+        "collision_rate": 0.2710519791752748,
+        "colliding_groups": 1055,
+        "largest_collision_group": 43
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 10656,
+        "collided_items": 2172,
+        "collision_rate": 0.17948929840509048,
+        "colliding_groups": 727,
+        "largest_collision_group": 40
+      }
+    ]
+  },
+  "diagnostic_definitions": {
+    "train_position_context": "OCN masked views; a position contributes only when masked",
+    "eval_position_context": "all SID positions masked in the same context",
+    "train_order": "OCN noising order, hard/least-confident to easy",
+    "eval_order": "beam-width-one CPD model-generated path, confident to hard"
+  }
+}

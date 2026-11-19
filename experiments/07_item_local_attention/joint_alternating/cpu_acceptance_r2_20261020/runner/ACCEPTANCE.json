@@ -1,0 +1,29 @@
+{
+  "status": "MINIMAL_RUNNER_FIX_CPU_PASS_REMOTE_UNVERIFIED",
+  "created_utc": "2026-10-20T03:29:41.327663+00:00",
+  "runner_sha256": "61f6c36c02ee59498add74c28af8b3a15a54e2f38465bc65bf3c0d8353850475",
+  "changes": [
+    "Explicit importlib.import_module for trainer avoids the DIFF_GRM class shadowing the package attribute.",
+    "Weighted score tolerance1e-9 ->1e-7; actual22363-sample float32 means differ by2.2351741776893697e-9."
+  ],
+  "checks": [
+    "Actual genrec.models/__init__.py with minimal leaf-module stubs reproduces the old ImportError.",
+    "Exact revised runner AST import statement resolves the trainer module under the same parent-package shadowing.",
+    "Actual float32 example passes; +0.001 formula error fails.",
+    "AST, CLI --help, no-torch CPU import and git diff --check pass."
+  ],
+  "logs": [
+    {
+      "path": "CPU_ITEM_LOCAL_JOINT_IMPORT_FLOAT32_DIAG_20261020.log",
+      "sha256": "1a83df8ca2566347b72f6f72b833b8cfe7ad68d02db251170da258f831553458",
+      "size_bytes": 858
+    },
+    {
+      "path": "CPU_ITEM_LOCAL_JOINT_IMPORT_FLOAT32_FIX_20261020.log",
+      "sha256": "36a7e65222ae080098dcb3be8ab8eb7d4929663fa0743c2322d08e3670cf46d1",
+      "size_bytes": 721
+    }
+  ],
+  "boundary": "Leaf modules are stubs because the local complete production dependencies are unavailable. Full remote production import/Pipeline construction and H100 smoke remain unverified by this receipt. No engine/protocol/GPU/platform mutation.",
+  "historical_failure": "Original r1 execution and allocation receipts remain unchanged."
+}

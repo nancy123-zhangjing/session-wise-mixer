@@ -1,0 +1,63 @@
+{
+  "schema": "stage09_four_arm_linux_cpu_smoke_v1",
+  "status": "passed",
+  "helper_sha256": "52b9837a1fa970577d43fba53fe84e71062c472f6ad428c8d0c3a76359327dfe",
+  "real_popen": true,
+  "real_killpg": true,
+  "gpu_used": false,
+  "training_started": false,
+  "cases": [
+    {
+      "case": "normal_real_exit_after_one_second",
+      "status": "passed",
+      "returncode": 0,
+      "elapsed_seconds": 1.6178951356559992
+    },
+    {
+      "case": "nonzero_exit_cleans_other_groups_and_descendants",
+      "status": "passed",
+      "original_exitcode": 7,
+      "signals": [
+        {
+          "label": "sleeper_a",
+          "signal": 15,
+          "at": 9508382.640039068
+        },
+        {
+          "label": "sleeper_b",
+          "signal": 15,
+          "at": 9508382.64004365
+        }
+      ]
+    },
+    {
+      "case": "deadline_cleans_real_group_and_descendant",
+      "status": "passed",
+      "signals": [
+        {
+          "label": "deadline_sleeper",
+          "signal": 15,
+          "at": 9508383.240719348
+        }
+      ]
+    }
+  ],
+  "watchdog_seconds": 18,
+  "cleanup_after_watchdog_seconds": 0.5,
+  "maximum_intended_seconds": 19,
+  "executable": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+  "survivors": {
+    "0": [],
+    "1": [],
+    "2": []
+  },
+  "elapsed_seconds": 2.7223304118961096,
+  "process_exits": {
+    "normal": 0,
+    "sleeper_a": 143,
+    "sleeper_b": 143,
+    "failing": 7,
+    "deadline_sleeper": 143
+  },
+  "script_sha256": "4f9bc7ac36f30bb0a6d095bf0365ade28fd59db4ad85c38b2ea49b0beebafc58"
+}

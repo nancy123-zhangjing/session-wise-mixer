@@ -1,0 +1,80 @@
+{
+  "status": "passed_CPU_input_only",
+  "preflight_only": true,
+  "model_execution": false,
+  "data_binding": {
+    "manifest_sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649",
+    "files": {
+      "config.json": {
+        "bytes": 1746,
+        "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+      },
+      "item_map.json": {
+        "bytes": 653690,
+        "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+      },
+      "item_catalog.parquet": {
+        "bytes": 799712,
+        "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+      },
+      "item_text.jsonl": {
+        "bytes": 7724679,
+        "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+      },
+      "train_seen.json": {
+        "bytes": 159883,
+        "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+      },
+      "train.parquet": {
+        "bytes": 531624261,
+        "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+      },
+      "validation.parquet": {
+        "bytes": 61527190,
+        "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+      },
+      "test.parquet": {
+        "bytes": 45918501,
+        "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+      }
+    },
+    "history_max": 50,
+    "list_length": 5,
+    "pad_id": 0
+  },
+  "records": [
+    {
+      "update": 401,
+      "indices_sha256": "a2e68ef1d802996761f285c00df349cbf77db11e7b338317d1848ca893be3938",
+      "batch_fingerprint": "b6e11ea8b7e2db1980057b8dfaa85880ad376b75af606cce0171cc5085f179a5",
+      "cpu_input_seconds": 0.31806290009990335
+    },
+    {
+      "update": 402,
+      "indices_sha256": "ccd092c873def6b8bec6882dee8ed3862cbb15329d3a49e5b139cf96336eac01",
+      "batch_fingerprint": "759f23e50a9a09d7de055645100cae26f873b6a3ced2c5a610637eae65ca6836",
+      "cpu_input_seconds": 0.2651430999394506
+    },
+    {
+      "update": 403,
+      "indices_sha256": "520fa6996eb8ce768384276fbf7a51e8892e90b487b58486fe263dde34544a4f",
+      "batch_fingerprint": "f6a0e82de08f71604d9a7787377ac2f9c4c55f8e8ac2b39bd25793cbeebb7245",
+      "cpu_input_seconds": 0.2711215000599623
+    },
+    {
+      "update": 404,
+      "indices_sha256": "3ad4e447f3565562efcabc25619d01922deb2d57c5d9dcdf26e984e8b8ed862b",
+      "batch_fingerprint": "1667852f96f2684df2abdc8d00033357682c134cce98e0d72b9cd4afd14b4a15",
+      "cpu_input_seconds": 0.30462299985811114
+    },
+    {
+      "update": 405,
+      "indices_sha256": "598fc9a335274e7c7b6b24da02acbe03ed998a1faf687806a9e981f55a8a1469",
+      "batch_fingerprint": "db5f4dd9f0fce90a08cc11577958ac5083c8cb5ec6c9214f81e3db3dfa8f7cab",
+      "cpu_input_seconds": 0.2743307000491768
+    }
+  ],
+  "script_sha256": "55a74650ac0e47730c82a42cc7c0ad2874bbfcbde125508b3e488bfa49044a77",
+  "seconds": 12.640000000130385,
+  "limitation": "Local CPU data-preparation timing, not GPU training speed."
+}

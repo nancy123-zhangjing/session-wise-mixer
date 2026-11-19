@@ -1,0 +1,15 @@
+--- a/genrec/models/DIFF_GRM/model.py
++++ b/genrec/models/DIFF_GRM/model.py
+@@ -1073,7 +1073,11 @@
+ 
+                 _was_training = self.training
+                 self.eval()
+-                with torch.no_grad():
++                # Teacher scoring must not cache detached casts for training.
++                with torch.no_grad(), torch.autocast(
++                    device_type=device.type, dtype=torch.get_autocast_dtype(device.type),
++                    enabled=torch.is_autocast_enabled(device.type), cache_enabled=False
++                ):
+                     if B == 1:  # 只在单样本时打印，避免多worker刷屏
+                         print(f"[GUIDED] scoring: self.training={self.training}")  # 这里应为 False
+                     logits = self.forward_decoder_only(

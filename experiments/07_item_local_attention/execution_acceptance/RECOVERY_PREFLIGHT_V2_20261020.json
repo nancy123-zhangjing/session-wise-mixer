@@ -1,0 +1,198 @@
+{
+  "schema": "stage07_recovery_attempt2_preflight_v2",
+  "status": "FAIL",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "goal_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045",
+  "next_epoch": 84,
+  "optimizer_updates": 8736,
+  "best_complete_validation": {
+    "epoch": 75,
+    "weighted_score": 0.05117739781877923,
+    "metrics": {
+      "legal_ratio": 1.0,
+      "duplicate_ratio": 0.49361140881058824,
+      "dup@10": 0.35920941334330897,
+      "duplicate@10": 0.35920941334330897,
+      "legal@10": 1.0,
+      "ndcg@5": 0.045010248141217755,
+      "ndcg@10": 0.046968214126891915,
+      "recall@5": 0.06220095693779904,
+      "hit_rate@5": 0.06220095693779904,
+      "recall@10": 0.06801413048338774,
+      "hit_rate@10": 0.06801413048338774,
+      "weighted_score": 0.05117739781877923
+    },
+    "latest_complete_validation_epoch": 80
+  },
+  "eval_count": 13,
+  "fit_elapsed_seconds": 10717.157906546956,
+  "training_complete": false,
+  "test_started": false,
+  "attempt2_process_receipt_exists": false,
+  "recorded_best_epoch": 75,
+  "recorded_best_val_score": 0.05117739781877923,
+  "execution_attempt": "attempts/20261019T170634_71_1792429594907540258",
+  "root_first_preparation_project_head": "64abf0f06eb4ba4d9759091f74d397c91061726b",
+  "actual_execution_project_head": "8b7b9afe17ef425efe9279524ecf7a1e97148853",
+  "visible_training_csv_last_epoch": 85,
+  "resume_replays_training_epoch": 85,
+  "pending_validation_supported": false,
+  "current_best_matches_committed": true,
+  "frozen_restore_would_replace_current_best_from_embedded": false,
+  "created_utc": "2026-10-19T20:23:12.829226+00:00",
+  "failed_checks": [
+    "model_optimizer_scheduler_RNG_and_best_SHA"
+  ],
+  "checks": [
+    {
+      "check": "revalidate_existing_preservation_before_inspection",
+      "status": "passed",
+      "details": {
+        "existing_source_and_copy_files_rechecked": 49,
+        "original_FAIL_sha256": "eedfeb15ed7c117797b86b522c967dbc1ba7323ff70592fbb247518cc90fff3a",
+        "original_manifest_sha256": "e18ac8521c71f26f37663419994f7c075ba000001249a5c8d5c1f9c05decfd4c",
+        "old_files_overwritten": false
+      }
+    },
+    {
+      "check": "CPU_last_pt_and_recovery_phase",
+      "status": "passed",
+      "details": {
+        "format": "diffgrm_epoch_boundary_v1",
+        "actual_progress": {
+          "run_id": "stage07_item_local_seed2024_20261020_0045",
+          "goal_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045",
+          "next_epoch": 84,
+          "optimizer_updates": 8736,
+          "best_complete_validation": null,
+          "eval_count": 13,
+          "fit_elapsed_seconds": 10717.157906546956,
+          "training_complete": false,
+          "test_started": false,
+          "attempt2_process_receipt_exists": false,
+          "recorded_best_epoch": 75,
+          "recorded_best_val_score": 0.05117739781877923
+        },
+        "root_INCOMPLETE_marker_preserved": false
+      }
+    },
+    {
+      "check": "frozen_configuration_and_source_binding",
+      "status": "passed",
+      "details": {
+        "code_commit": "8b7b9afe17ef425efe9279524ecf7a1e97148853",
+        "engine_commit": "1dc2a0c5ad01e2a2878b9de400b91f3a7e809f25",
+        "source_hashes": {
+          "genrec/models/DIFF_GRM/model.py": "e2688ba246f57d0d72a3bf8b4e5e939e42c93b1eb6fe522a890f375105d079c7",
+          "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+          "genrec/models/DIFF_GRM/trainer.py": "1f7f7c03edadc4681694a513ef4751bba64f75094e4961876f7ddc910a781f1b",
+          "genrec/models/DIFF_GRM/training_state.py": "8fc67fb43dc83644b65a21128a35eaf30c0833e63eb94a701a729115e4957203"
+        },
+        "actual_execution_attempt": "attempts/20261019T170634_71_1792429594907540258",
+        "root_first_preparation_receipt_retained": true,
+        "configuration_fingerprint": "62bc2fb4d08dee2bb751f299dffaee242de5d65aef7bab9306c96deadd58f73c",
+        "renewed_deadline_and_resume_flag_do_not_change_fingerprint": true
+      }
+    },
+    {
+      "check": "runtime_and_prepare_input_byte_identities",
+      "status": "passed",
+      "details": {
+        "identities": 12,
+        "byte_checked_copies": 36,
+        "scope": "Runtime, immutable preparation copy, and historical read-only source required by frozen runner prepare"
+      }
+    },
+    {
+      "check": "five_CSV_offsets_and_best_complete_validation",
+      "status": "passed",
+      "details": {
+        "csv_offsets": {
+          "position_metrics_csv": {
+            "committed_bytes": 52020,
+            "current_bytes": 52570,
+            "committed_rows": 388,
+            "current_rows_if_parseable": 392,
+            "uncommitted_tail_bytes_preserved": 550,
+            "uncommitted_tail_parse_error": null
+          },
+          "order_metrics_csv": {
+            "committed_bytes": 116878,
+            "current_bytes": 117959,
+            "committed_rows": 1552,
+            "current_rows_if_parseable": 1568,
+            "uncommitted_tail_bytes_preserved": 1081,
+            "uncommitted_tail_parse_error": null
+          },
+          "training_metrics_csv": {
+            "committed_bytes": 4694,
+            "current_bytes": 4742,
+            "committed_rows": 84,
+            "current_rows_if_parseable": 85,
+            "uncommitted_tail_bytes_preserved": 48,
+            "uncommitted_tail_parse_error": null
+          },
+          "evaluation_metrics_csv": {
+            "committed_bytes": 5768,
+            "current_bytes": 5768,
+            "committed_rows": 156,
+            "current_rows_if_parseable": 156,
+            "uncommitted_tail_bytes_preserved": 0,
+            "uncommitted_tail_parse_error": null
+          },
+          "joint_metrics_csv": {
+            "committed_bytes": 8581,
+            "current_bytes": 8678,
+            "committed_rows": 84,
+            "current_rows_if_parseable": 85,
+            "uncommitted_tail_bytes_preserved": 97,
+            "uncommitted_tail_parse_error": null
+          }
+        },
+        "updates_per_epoch": 104,
+        "best_complete_validation": {
+          "epoch": 75,
+          "weighted_score": 0.05117739781877923,
+          "metrics": {
+            "legal_ratio": 1.0,
+            "duplicate_ratio": 0.49361140881058824,
+            "dup@10": 0.35920941334330897,
+            "duplicate@10": 0.35920941334330897,
+            "legal@10": 1.0,
+            "ndcg@5": 0.045010248141217755,
+            "ndcg@10": 0.046968214126891915,
+            "recall@5": 0.06220095693779904,
+            "hit_rate@5": 0.06220095693779904,
+            "recall@10": 0.06801413048338774,
+            "hit_rate@10": 0.06801413048338774,
+            "weighted_score": 0.05117739781877923
+          },
+          "latest_complete_validation_epoch": 80
+        },
+        "uncommitted_training_tail_will_be_backed_up_by_frozen_trainer": true,
+        "pending_validation_supported": false
+      }
+    },
+    {
+      "check": "model_optimizer_scheduler_RNG_and_best_SHA",
+      "status": "failed",
+      "error_type": "ValueError",
+      "error": "Optimizer does not cover each model parameter exactly once"
+    },
+    {
+      "check": "original_and_backup_bytes_unchanged",
+      "status": "passed",
+      "details": {
+        "original_files_rehashed_unchanged": 88,
+        "backup_files_rehashed_unchanged": 49
+      }
+    }
+  ],
+  "pre_resume_manifest": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_0045/delivery/recovery_attempt2/pre_resume_manifest.json",
+  "inspect_existing_preservation": true,
+  "original_artifacts_modified": false,
+  "trainer_instantiated": false,
+  "restore_or_truncate_executed": false,
+  "scope": "CPU recovery-input readiness only; prior job termination, GPU release, remaining cumulative budget, and actual resume execution are verified separately",
+  "fit_time_boundary": "Saved fit_elapsed_seconds omits the canceled uncommitted epoch's training and partial validation; use platform lifecycle for GPU time"
+}

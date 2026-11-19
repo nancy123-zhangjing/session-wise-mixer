@@ -1,0 +1,733 @@
+{
+  "format": "h1_recovery_final_result_tables_v1",
+  "status": "passed",
+  "full_validation": [
+    {
+      "arm": "H1_R20",
+      "epoch": 20,
+      "sample_means": {
+        "list/ndcg@5": 0.009372055726960326,
+        "list/hr@5": 0.044378078903666074,
+        "list/recall@5": 0.009115648157193429,
+        "aggregate/ndcg@10": 0.012330945366656628,
+        "aggregate/hr@10": 0.06924654953458839,
+        "aggregate/recall@10": 0.014488465886097477,
+        "aggregate/ndcg@20": 0.01370913965042467,
+        "aggregate/hr@20": 0.08343916156132687,
+        "aggregate/recall@20": 0.01764796181810762,
+        "aggregate/ndcg@50": 0.014033191777104482,
+        "aggregate/hr@50": 0.08762577277865387,
+        "aggregate/recall@50": 0.018560643063485097
+      },
+      "user_mean_ndcg5": 0.010062558271297685
+    },
+    {
+      "arm": "decay",
+      "epoch": 23,
+      "sample_means": {
+        "list/ndcg@5": 0.006749105339628599,
+        "list/hr@5": 0.030911146154597596,
+        "list/recall@5": 0.006366440124481672,
+        "aggregate/ndcg@10": 0.009862666355714799,
+        "aggregate/hr@10": 0.057845011652734556,
+        "aggregate/recall@10": 0.012015574193729181,
+        "aggregate/ndcg@20": 0.011562865682337246,
+        "aggregate/hr@20": 0.07598699359448484,
+        "aggregate/recall@20": 0.01592866014485829,
+        "aggregate/ndcg@50": 0.012057583054540936,
+        "aggregate/hr@50": 0.08242041949844398,
+        "aggregate/recall@50": 0.017313032920721394
+      },
+      "user_mean_ndcg5": 0.00887408200354329
+    },
+    {
+      "arm": "decay",
+      "epoch": 26,
+      "sample_means": {
+        "list/ndcg@5": 0.006159300304721693,
+        "list/hr@5": 0.02710132994683004,
+        "list/recall@5": 0.005543073251740742,
+        "aggregate/ndcg@10": 0.008915563497712985,
+        "aggregate/hr@10": 0.05078359406617637,
+        "aggregate/recall@10": 0.010575379934968399,
+        "aggregate/ndcg@20": 0.01103160273588836,
+        "aggregate/hr@20": 0.07351689297626192,
+        "aggregate/recall@20": 0.015465341836807313,
+        "aggregate/ndcg@50": 0.011579985776211927,
+        "aggregate/hr@50": 0.08028524777760722,
+        "aggregate/recall@50": 0.0169836861716249
+      },
+      "user_mean_ndcg5": 0.008576790735912556
+    },
+    {
+      "arm": "freeze",
+      "epoch": 23,
+      "sample_means": {
+        "list/ndcg@5": 0.009629051950971487,
+        "list/hr@5": 0.04520144577640705,
+        "list/recall@5": 0.009333351940494465,
+        "aggregate/ndcg@10": 0.012775940143189762,
+        "aggregate/hr@10": 0.07156314107484266,
+        "aggregate/recall@10": 0.015024352121915448,
+        "aggregate/ndcg@20": 0.01419183942380749,
+        "aggregate/hr@20": 0.08623023570621154,
+        "aggregate/recall@20": 0.018253624907547707,
+        "aggregate/ndcg@50": 0.014424043579368436,
+        "aggregate/hr@50": 0.08911899744616716,
+        "aggregate/recall@50": 0.01890673625745086
+      },
+      "user_mean_ndcg5": 0.01043044087202002
+    },
+    {
+      "arm": "freeze",
+      "epoch": 26,
+      "sample_means": {
+        "list/ndcg@5": 0.010364534495377659,
+        "list/hr@5": 0.048425136413748834,
+        "list/recall@5": 0.009961343623093661,
+        "aggregate/ndcg@10": 0.013370344613418237,
+        "aggregate/hr@10": 0.0730284550009071,
+        "aggregate/recall@10": 0.015398356057330058,
+        "aggregate/ndcg@20": 0.014960049209931575,
+        "aggregate/hr@20": 0.0893841494899312,
+        "aggregate/recall@20": 0.01904349889055019,
+        "aggregate/ndcg@50": 0.015323636818968192,
+        "aggregate/hr@50": 0.0938219573802978,
+        "aggregate/recall@50": 0.02005386773099866
+      },
+      "user_mean_ndcg5": 0.011222262315633707
+    }
+  ],
+  "comparisons": {
+    "decay_R26_minus_freeze_R26": {
+      "baseline": 0.010364534495377435,
+      "treatment": 0.006159300304721695,
+      "delta": -0.004205234190655651,
+      "relative_delta": -0.40573304980857355,
+      "confidence_interval": [
+        -0.0045524718141591956,
+        -0.003850607136227756
+      ]
+    },
+    "decay_R26_minus_H1_R20": {
+      "baseline": 0.009372055726960172,
+      "treatment": 0.006159300304721695,
+      "delta": -0.003212755422238413,
+      "relative_delta": -0.34280157052378846,
+      "confidence_interval": [
+        -0.003597892409676261,
+        -0.0028511178542533107
+      ]
+    },
+    "freeze_R26_minus_H1_R20": {
+      "baseline": 0.009372055726960172,
+      "treatment": 0.010364534495377435,
+      "delta": 0.0009924787684172443,
+      "relative_delta": 0.10589765973779107,
+      "confidence_interval": [
+        0.0006417822523956319,
+        0.0013198051696184418
+      ]
+    }
+  },
+  "process_subset": {
+    "decay": [
+      {
+        "stage": "initial_R20",
+        "ndcg5": 0.008266785869486858,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "after_T240",
+        "ndcg5": 0.007424406535886746,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R21",
+        "ndcg5": 0.00665940096351275,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R22",
+        "ndcg5": 0.005741110855514175,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R23",
+        "ndcg5": 0.005895383493497259,
+        "extracted_from_full": true
+      },
+      {
+        "stage": "after_T280",
+        "ndcg5": 0.004809167110044438,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R24",
+        "ndcg5": 0.005795829434815157,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R25",
+        "ndcg5": 0.006510957065250428,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R26",
+        "ndcg5": 0.005059659161557548,
+        "extracted_from_full": true
+      }
+    ],
+    "freeze": [
+      {
+        "stage": "initial_R20",
+        "ndcg5": 0.008266785869486858,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R21",
+        "ndcg5": 0.008220432939225256,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R22",
+        "ndcg5": 0.009347222681678131,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R23",
+        "ndcg5": 0.008992714285405509,
+        "extracted_from_full": true
+      },
+      {
+        "stage": "R24",
+        "ndcg5": 0.009146693226790742,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R25",
+        "ndcg5": 0.009806438724009893,
+        "extracted_from_full": false
+      },
+      {
+        "stage": "R26",
+        "ndcg5": 0.009429730576173806,
+        "extracted_from_full": true
+      }
+    ]
+  },
+  "diagnostics": {
+    "decay": [
+      {
+        "t_updates": 200,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          181,
+          137,
+          190,
+          218
+        ],
+        "unique_sid_count": 9600,
+        "collision_item_percent": 12.91014168530947,
+        "mixer_delta_over_base_global_norm": 0.8236872116316729,
+        "mean_nearest_reconstruction_sse": 0.744637756106078,
+        "previous_change": {
+          "sid_item_change_fraction": null,
+          "sid_digit_change_fraction": null,
+          "sid_change_fraction_per_slot": null,
+          "effective_displacement_norm": null,
+          "effective_displacement_over_previous_global_norm": null
+        },
+        "effective_codes_per_slot": [
+          140.53197948405435,
+          110.96411121279843,
+          147.0523280220813,
+          164.1859883990938
+        ],
+        "entropy_nats_per_slot": [
+          4.945435074860274,
+          4.709206826625154,
+          4.99078849637473,
+          5.100999860850466
+        ]
+      },
+      {
+        "t_updates": 210,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          177,
+          131,
+          180,
+          212
+        ],
+        "unique_sid_count": 9620,
+        "collision_item_percent": 12.630499627143923,
+        "mixer_delta_over_base_global_norm": 0.9148823421762713,
+        "mean_nearest_reconstruction_sse": 0.7507402877622644,
+        "previous_change": {
+          "sid_item_change_fraction": 0.18577554064131246,
+          "sid_digit_change_fraction": 0.050824944071588364,
+          "sid_change_fraction_per_slot": [
+            0.05080164056674124,
+            0.06058911260253542,
+            0.04893736017897092,
+            0.04297166293810589
+          ],
+          "effective_displacement_norm": 2.04162516566352,
+          "effective_displacement_over_previous_global_norm": 0.07843333719080098
+        },
+        "effective_codes_per_slot": [
+          135.75914279804007,
+          108.06540670322875,
+          139.87444396848568,
+          157.25568103412184
+        ],
+        "entropy_nats_per_slot": [
+          4.910882306807923,
+          4.6827366614343635,
+          4.940745191421226,
+          5.057873022330972
+        ]
+      },
+      {
+        "t_updates": 220,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          174,
+          130,
+          171,
+          204
+        ],
+        "unique_sid_count": 9629,
+        "collision_item_percent": 12.537285607755406,
+        "mixer_delta_over_base_global_norm": 1.013515710888274,
+        "mean_nearest_reconstruction_sse": 0.7566511094411781,
+        "previous_change": {
+          "sid_item_change_fraction": 0.1814876957494407,
+          "sid_digit_change_fraction": 0.048634414615958244,
+          "sid_change_fraction_per_slot": [
+            0.04436987322893363,
+            0.06450410141685309,
+            0.04390380313199105,
+            0.041759880686055184
+          ],
+          "effective_displacement_norm": 2.1381055251190495,
+          "effective_displacement_over_previous_global_norm": 0.07853505541671692
+        },
+        "effective_codes_per_slot": [
+          129.753772134998,
+          104.20273159697432,
+          134.18976647414786,
+          149.55443552092345
+        ],
+        "entropy_nats_per_slot": [
+          4.865638593954797,
+          4.646338343917833,
+          4.899254965848649,
+          5.007660443752974
+        ]
+      },
+      {
+        "t_updates": 230,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          166,
+          128,
+          165,
+          190
+        ],
+        "unique_sid_count": 9626,
+        "collision_item_percent": 12.55592841163311,
+        "mixer_delta_over_base_global_norm": 1.0948302570949426,
+        "mean_nearest_reconstruction_sse": 0.7608309513031888,
+        "previous_change": {
+          "sid_item_change_fraction": 0.16871737509321402,
+          "sid_digit_change_fraction": 0.045208799403430276,
+          "sid_change_fraction_per_slot": [
+            0.03859060402684564,
+            0.05536912751677853,
+            0.047073079791200595,
+            0.039802386278896346
+          ],
+          "effective_displacement_norm": 1.8088308910112791,
+          "effective_displacement_over_previous_global_norm": 0.06328996956855615
+        },
+        "effective_codes_per_slot": [
+          124.91918120707683,
+          100.84599513661712,
+          127.83534967763816,
+          144.55044619309044
+        ],
+        "entropy_nats_per_slot": [
+          4.827666977855107,
+          4.613594552522147,
+          4.850743105242744,
+          4.97362855523096
+        ]
+      },
+      {
+        "t_updates": 240,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          161,
+          122,
+          159,
+          184
+        ],
+        "unique_sid_count": 9630,
+        "collision_item_percent": 12.5,
+        "mixer_delta_over_base_global_norm": 1.1627836365963857,
+        "mean_nearest_reconstruction_sse": 0.7638210996135335,
+        "previous_change": {
+          "sid_item_change_fraction": 0.15445563012677108,
+          "sid_digit_change_fraction": 0.04089765100671141,
+          "sid_change_fraction_per_slot": [
+            0.03355704697986577,
+            0.05089485458612975,
+            0.04157345264727815,
+            0.03756524981357196
+          ],
+          "effective_displacement_norm": 1.5563211618261112,
+          "effective_displacement_over_previous_global_norm": 0.05233785445291487
+        },
+        "effective_codes_per_slot": [
+          121.48253531153355,
+          96.73890614172548,
+          122.7777528861938,
+          140.43682990472766
+        ],
+        "entropy_nats_per_slot": [
+          4.799770510156785,
+          4.5720156601335304,
+          4.81037583387873,
+          4.944757778450249
+        ]
+      },
+      {
+        "t_updates": 250,
+        "r_updates": 15939,
+        "used_codes_per_slot": [
+          155,
+          117,
+          147,
+          175
+        ],
+        "unique_sid_count": 9627,
+        "collision_item_percent": 12.537285607755406,
+        "mixer_delta_over_base_global_norm": 1.2585824035794293,
+        "mean_nearest_reconstruction_sse": 0.7687279240188558,
+        "previous_change": {
+          "sid_item_change_fraction": 0.21373974645786725,
+          "sid_digit_change_fraction": 0.05774608501118568,
+          "sid_change_fraction_per_slot": [
+            0.05098806860551827,
+            0.0686055182699478,
+            0.06366517524235644,
+            0.047725577926920205
+          ],
+          "effective_displacement_norm": 2.2011143400191333,
+          "effective_displacement_over_previous_global_norm": 0.07163091938524391
+        },
+        "effective_codes_per_slot": [
+          117.95549220031377,
+          90.6007210601178,
+          116.05628612143093,
+          134.85163351014623
+        ],
+        "entropy_nats_per_slot": [
+          4.770307368570504,
+          4.50646217173821,
+          4.754075298607441,
+          4.904175163047011
+        ]
+      },
+      {
+        "t_updates": 260,
+        "r_updates": 15939,
+        "used_codes_per_slot": [
+          150,
+          108,
+          138,
+          169
+        ],
+        "unique_sid_count": 9638,
+        "collision_item_percent": 12.397464578672633,
+        "mixer_delta_over_base_global_norm": 1.358573995464086,
+        "mean_nearest_reconstruction_sse": 0.772611556540704,
+        "previous_change": {
+          "sid_item_change_fraction": 0.17114093959731544,
+          "sid_digit_change_fraction": 0.045931208053691275,
+          "sid_change_fraction_per_slot": [
+            0.03523489932885906,
+            0.049683072334079044,
+            0.04409023117076808,
+            0.05471662938105891
+          ],
+          "effective_displacement_norm": 2.220547158637987,
+          "effective_displacement_over_previous_global_norm": 0.06901705050305919
+        },
+        "effective_codes_per_slot": [
+          115.3508151763657,
+          87.88328142197885,
+          112.46911597198321,
+          128.74126738061315
+        ],
+        "entropy_nats_per_slot": [
+          4.747978051576722,
+          4.476009586623334,
+          4.722678659262191,
+          4.857804711073552
+        ]
+      },
+      {
+        "t_updates": 270,
+        "r_updates": 15939,
+        "used_codes_per_slot": [
+          146,
+          103,
+          136,
+          164
+        ],
+        "unique_sid_count": 9632,
+        "collision_item_percent": 12.472035794183444,
+        "mixer_delta_over_base_global_norm": 1.4350048440612506,
+        "mean_nearest_reconstruction_sse": 0.774909711193955,
+        "previous_change": {
+          "sid_item_change_fraction": 0.1401938851603281,
+          "sid_digit_change_fraction": 0.037029269202087996,
+          "sid_change_fraction_per_slot": [
+            0.033743475018642805,
+            0.0389634601043997,
+            0.04036167039522744,
+            0.035048471290082026
+          ],
+          "effective_displacement_norm": 1.691847141756601,
+          "effective_displacement_over_previous_global_norm": 0.05018472301053615
+        },
+        "effective_codes_per_slot": [
+          112.25694005863063,
+          85.48278877434223,
+          110.30930073971881,
+          124.91252854732087
+        ],
+        "entropy_nats_per_slot": [
+          4.720790351514111,
+          4.448315054794086,
+          4.703288244914138,
+          4.827613720726426
+        ]
+      },
+      {
+        "t_updates": 280,
+        "r_updates": 15939,
+        "used_codes_per_slot": [
+          144,
+          101,
+          134,
+          158
+        ],
+        "unique_sid_count": 9643,
+        "collision_item_percent": 12.350857568978375,
+        "mixer_delta_over_base_global_norm": 1.4902229332471315,
+        "mean_nearest_reconstruction_sse": 0.7765240212584827,
+        "previous_change": {
+          "sid_item_change_fraction": 0.12304250559284116,
+          "sid_digit_change_fraction": 0.03208892617449664,
+          "sid_change_fraction_per_slot": [
+            0.024235645041014168,
+            0.033650260999254285,
+            0.041759880686055184,
+            0.02870991797166294
+          ],
+          "effective_displacement_norm": 1.2565831156607314,
+          "effective_displacement_over_previous_global_norm": 0.035991030381119546
+        },
+        "effective_codes_per_slot": [
+          110.41707695833566,
+          84.81193891796066,
+          108.03030183615412,
+          122.05120156555688
+        ],
+        "entropy_nats_per_slot": [
+          4.704264804474496,
+          4.440436322014893,
+          4.682411760328083,
+          4.804440641653736
+        ]
+      }
+    ],
+    "freeze": [
+      {
+        "t_updates": 200,
+        "r_updates": 13860,
+        "used_codes_per_slot": [
+          181,
+          137,
+          190,
+          218
+        ],
+        "unique_sid_count": 9600,
+        "collision_item_percent": 12.91014168530947,
+        "mixer_delta_over_base_global_norm": 0.8236872116316729,
+        "mean_nearest_reconstruction_sse": 0.744637756106078,
+        "previous_change": {
+          "sid_item_change_fraction": null,
+          "sid_digit_change_fraction": null,
+          "sid_change_fraction_per_slot": null,
+          "effective_displacement_norm": null,
+          "effective_displacement_over_previous_global_norm": null
+        },
+        "effective_codes_per_slot": [
+          140.53197948405435,
+          110.96411121279843,
+          147.0523280220813,
+          164.1859883990938
+        ],
+        "entropy_nats_per_slot": [
+          4.945435074860274,
+          4.709206826625154,
+          4.99078849637473,
+          5.100999860850466
+        ]
+      }
+    ]
+  },
+  "learning_rates_used": {
+    "decay": {
+      "R": {
+        "recorded_steps": 4158,
+        "first": [
+          13860,
+          0.0004025967118548794
+        ],
+        "last": [
+          18017,
+          0.00016071193112412112
+        ]
+      },
+      "codebook": {
+        "recorded_steps": 80,
+        "first": [
+          200,
+          5e-06
+        ],
+        "last": [
+          279,
+          2.0929340784008474e-06
+        ]
+      },
+      "mixer": {
+        "recorded_steps": 80,
+        "first": [
+          200,
+          5e-05
+        ],
+        "last": [
+          279,
+          2.092934078400847e-05
+        ]
+      }
+    },
+    "freeze": {
+      "R": {
+        "recorded_steps": 4158,
+        "first": [
+          13860,
+          0.0004025967118548794
+        ],
+        "last": [
+          18017,
+          0.00016071193112412112
+        ]
+      },
+      "codebook": {
+        "recorded_steps": 0,
+        "first": null,
+        "last": null
+      },
+      "mixer": {
+        "recorded_steps": 0,
+        "first": null,
+        "last": null
+      }
+    }
+  },
+  "audit": {
+    "count": 17,
+    "evaluated_records": 456589,
+    "all_passed": true,
+    "max_absolute_error": 6.720989620401241e-08,
+    "primary_estimand": "sample mean",
+    "bootstrap": {
+      "repeats": 2000,
+      "seed": 2024,
+      "confidence": 0.95,
+      "unit": "user cluster"
+    }
+  },
+  "figure_verification": [
+    {
+      "file": "validation_ndcg5.png",
+      "sha256": "dcc8c07f21205b0e2f8e6cae2567854079039cd852790bbc6b87b93aa8dc602d",
+      "bytes": 320737,
+      "pixels": [
+        3875,
+        1414
+      ],
+      "visually_inspected": "Legible titles, axes, legend, captions; full/subset panels separated."
+    },
+    {
+      "file": "validation_ndcg5.pdf",
+      "sha256": "11079682388243b7274165557bef7623d1af42508b359d8a48f0164214d663f9",
+      "bytes": 18598
+    },
+    {
+      "file": "learning_rates.png",
+      "sha256": "29dced276d6432cfb049bcdacaea9810e7c230f7eb6c965d414eae74d34c10ff",
+      "bytes": 229234,
+      "pixels": [
+        3870,
+        1236
+      ],
+      "visually_inspected": "Legible titles, axes, legend, captions; full/subset panels separated."
+    },
+    {
+      "file": "learning_rates.pdf",
+      "sha256": "4d32dafda19adcd75797176bde77819fc09f053833ab0f04cd5fa1417dd33376",
+      "bytes": 18347
+    },
+    {
+      "file": "code_usage.png",
+      "sha256": "41c837b5df3740d4487f9da27a4c55f00d97bf6e562d91adf408a0052c051918",
+      "bytes": 252505,
+      "pixels": [
+        3276,
+        2156
+      ],
+      "visually_inspected": "Legible titles, axes, legend, captions; full/subset panels separated."
+    },
+    {
+      "file": "code_usage.pdf",
+      "sha256": "0e5618c6c0e629053ffe0d63b969e3be94df7b5c5f8f01c3917529716324d87e",
+      "bytes": 19687
+    },
+    {
+      "file": "catalog_diagnostics.png",
+      "sha256": "28e28f3a7ada6886a91c615f4b29c0ed2d9abaf11735dcda08b3ea538ce25f6f",
+      "bytes": 458642,
+      "pixels": [
+        3875,
+        2216
+      ],
+      "visually_inspected": "Legible titles, axes, legend, captions; full/subset panels separated."
+    },
+    {
+      "file": "catalog_diagnostics.pdf",
+      "sha256": "2fec3603fd551a79d37149bfc4e2d502ab9ab6dcf342658b5c06778abdcdd3bc",
+      "bytes": 21277
+    }
+  ],
+  "source_analysis_sha256": "61cae3b9b4fa000f0a0ce7903fcbdbb584ff7ac1aac9d565e026b10295469d60",
+  "source_plot_data_sha256": "2304b26d0d0f0877cb7cb1d1579738159e94234362d92ad14dfd97d5f1ce3046",
+  "interpretation": "Fixed R26 endpoint, validation only. R23 and the 8192-row subset are process diagnostics, not model selection. User-cluster intervals describe validation-user sampling for these fixed models; they do not cover training-seed variation, selection of R20, or the post-hoc proposal of the recovery policy. Failure to detect a decline is not equivalence."
+}

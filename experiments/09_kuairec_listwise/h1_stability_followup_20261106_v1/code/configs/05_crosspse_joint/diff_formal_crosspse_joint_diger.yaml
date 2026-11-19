@@ -1,0 +1,76 @@
+# Cross-PSE + DiffGRM with a DIGER-style differentiable SID bridge.
+#
+# Controlled variables: the Cross-PSE v3 tokenizer initialization, pretrained
+# DiffGRM checkpoint, dataset, 4x256 layout, OCN objective, beam evaluation and
+# decoder optimization budget are identical to the SIA pilot.  The changed
+# variable is the tokenizer/recommender coupling mechanism.
+run_id: diff_formal_crosspse_joint_diger_st_4x256_seed2024
+epochs: 45
+reproduction_protocol: alternating_crosspse_diffgrm_diger_st_v1
+protocol_note: pretrained Cross-PSE v3 and DiffGRM; alternate one tokenizer phase and three recommender phases; hard SID in forward, soft assignment in backward; recommendation loss directly updates Cross-PSE only during tokenizer phases
+
+sid_quantizer: cross_pse
+semantic_n_digit: 4
+crosspse_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json
+crosspse_summary_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/summary.json
+
+crosspse_heads: 4
+crosspse_dropout: 0.0
+crosspse_attention_scope: full
+crosspse_residual_scale_init: 1.0
+crosspse_learn_residual_scale: false
+crosspse_zero_init_attention_output: true
+
+joint_crosspse_enabled: true
+joint_gradient_mode: diger_st
+joint_recommender_source_run_id: diff_formal_crosspse_4x256_v3_catalog_bf16
+joint_crosspse_artifact_dir: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024
+joint_crosspse_items_path: ../../data/diff_formal_embeddings/beauty_item_keys.json
+
+# Honor the requested alternating protocol: five decoder stabilization epochs,
+# then ten cycles of one tokenizer phase followed by three decoder phases.
+joint_recommender_warmup_epochs: 5
+joint_cycle_epochs: 4
+joint_tokenizer_epochs_per_cycle: 1
+joint_max_tokenizer_phases: 10
+joint_tokenizer_batches_per_phase: 96
+joint_sid_refresh_batch_size: 2048
+joint_evaluate_initial_state: true
+
+# DIGER/DRIL-style hard-forward, soft-backward assignment. Gumbel exploration
+# and softmax temperature decay over tokenizer optimizer updates; hard catalog
+# IDs are refreshed only after a complete tokenizer phase.
+joint_diger_recommendation_weight: 1.0
+joint_diger_assignment_temperature: 0.1
+joint_diger_softmax_temperature_start: 1.0
+joint_diger_softmax_temperature_end: 0.2
+joint_diger_gumbel_noise_start: 1.0
+joint_diger_gumbel_noise_end: 0.0
+joint_diger_uncertainty_decay: cosine
+
+# SIA is deliberately disabled: this run tests direct recommendation-gradient
+# coupling rather than the previous indirect ETEGRec-style surrogate.
+joint_recommender_sia_weight: 0.0
+joint_tokenizer_sia_weight: 0.0
+joint_sia_temperature: 0.1
+
+# Tokenizer regularizers prevent recommendation-driven code collapse.
+joint_codebook_lr: 0.00001
+joint_mixer_lr: 0.0001
+joint_weight_decay: 0.0001
+joint_balance_weight: 0.01
+joint_balance_temperature: 0.1
+joint_anchor_weight: 0.01
+
+# Same DiffGRM and evaluation protocol as the controlled SIA pilot.
+mixed_precision: bf16
+lr: 0.001
+warmup_steps: 500
+warmup_ratio: 0.0
+eval_start_epoch: 5
+eval_interval: 5
+patience: 5
+early_stop_after_warmup: true
+evaluation_level: sid
+eval_expand_sid_to_items: false

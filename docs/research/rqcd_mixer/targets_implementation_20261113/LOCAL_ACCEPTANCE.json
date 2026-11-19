@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-13",
+  "status": "LOCAL_CPU_SYNTHETIC_ACCEPTANCE_PASS",
+  "experiments_started": false,
+  "gpu_requested": false,
+  "gpu_numerics_or_throughput_measured": false,
+  "validation": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "passed": true,
+    "seconds": 20.51560280000558,
+    "scope": "CPU synthetic data only; no real experiment or GPU run"
+  },
+  "syntax_check": "all rqcd_mixer Python modules and new tests passed",
+  "baseline_model_and_v1_config_unchanged": true,
+  "same_v1_sections": [
+    "catalog_size",
+    "content_sha256",
+    "diffusion",
+    "evaluation",
+    "history_max",
+    "list_length",
+    "mixer",
+    "model",
+    "quantization",
+    "rq",
+    "seed",
+    "split_counts",
+    "training"
+  ],
+  "source_sha256": {
+    "scripts/rqcd_mixer/benchmark.py": "e6373b0ba9ccc806aee3c89fedd59087b9305249513784c3c2b756144383dc4d",
+    "scripts/rqcd_mixer/catalog.py": "1bb1074b471f92997c331d2edc6535da5b8eb2747b323a228bb0c6a13afda5d9",
+    "scripts/rqcd_mixer/common.py": "17d7f082a24aa0f0cbaebb8020fa1b373ecf6887e42df9527b6a8fa4675a531f",
+    "scripts/rqcd_mixer/config.py": "6ca56571f9444b757bb867858c7d468917e28e120a8a4b191cb78d198d017247",
+    "scripts/rqcd_mixer/data.py": "3dab997fa44e2917a1b9d3beb9f429a5a9d2801482669bbedfe263f4d004751c",
+    "scripts/rqcd_mixer/evaluation.py": "15a9e9bd2f571d57d83309fc28672408e86b10899f3109c590653298754965d9",
+    "scripts/rqcd_mixer/losses.py": "eaaa2697deaece12ee13d308ed0bb2300d898a24554b91cf8499e970ee758468",
+    "scripts/rqcd_mixer/model.py": "1b00276d22c5a69db8bd38b7b1836b7e0f1f6abf22455058a920d4539a7c331e",
+    "scripts/rqcd_mixer/report.py": "81e7cc1b7c5f3591847b7bc425fbd04b1651f3b95f20e77af61e97c085431519",
+    "scripts/rqcd_mixer/run.py": "9d13405724c6789d870bfc1d846adecb0ae26dceb249e723795e28432ecfb9d8",
+    "scripts/rqcd_mixer/targets.py": "d91ad2857e426a497b7e027d7c4de8f918a00b12376606122b03ec2fc729c815",
+    "scripts/rqcd_mixer/teacher.py": "4769257976070ebec4a247c8ba5e389a3d262abbbb84a648471bdd09f08730e0",
+    "scripts/rqcd_mixer/tokenizer.py": "382175365d56ec596ed1d72c601f42a4c7340773332c94a0e6ce86f2deae0348",
+    "scripts/rqcd_mixer/training.py": "d46bafa99b5e7957b9b2a9685e2e8beb1ccaace83524de853eaf5c9dec316bfc",
+    "scripts/rqcd_mixer/__init__.py": "77dd2ba48f33f87fd0f2e828c2747dece39c3a56b70e672dfb23fc84cdc41512",
+    "configs/rqcd_mixer/v2_cf.json": "5538cee1e9cbe2e084e49104f9632cd6df53d496c694d5d165ee92288aecd642",
+    "configs/rqcd_mixer/v2_hybrid.json": "82586869e5f8bbb0b973e6730b4b5fbd716cf77381878155e29b846adc6b4efe",
+    "tests/test_rqcd_targets.py": "79a0b3f978909c6aea807355570ae63dd7c3cfa579f44d5f0e19b46c11de0f1d",
+    "docs/research/rqcd_mixer/RQCD_TARGETS_DESIGN_20261113.md": "2635703cb16b7153b594519d35c2a27c18138bfcbd34e167176cfe6fe0ac270e"
+  },
+  "commits_before_final_integration": [
+    "b40b243 feat: lock collaborative and hybrid target protocols with shared settings",
+    "7efb959 feat: add shared resumable collaborative teacher and target asset binding",
+    "c33c148 feat: integrate collaborative targets and fixed-objective RQ pretraining",
+    "e5fd9c1 feat: supervise diffusion with legal RQ path and collision-bucket losses"
+  ],
+  "other_work_preserved": [
+    "experiments/09_kuairec_listwise/decoder_prefix_formal_20261112_v1/GOAL_TRACKING_STATE.json"
+  ]
+}

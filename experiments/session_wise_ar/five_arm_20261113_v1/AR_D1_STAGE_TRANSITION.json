@@ -1,0 +1,76 @@
+{
+  "pretrain_complete": true,
+  "selected_sha256": "9542f7d05682ebb92240a44e97caa20c602b6370c537a570512191557b8aac7d",
+  "parent_sha256": "2224b2aea3b8d0fc6d31ef1a5f22e296a4b2be60f9ae4590b7b5b00824caef2a",
+  "selection": "best_collision",
+  "final_pretrain": {
+    "epoch": 10000,
+    "step": 110000,
+    "encoding": {
+      "utilization": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "perplexity": [
+        253.33816528320312,
+        247.99620056152344,
+        240.0911407470703
+      ],
+      "collision_item_fraction": 0.125,
+      "collision_redundancy": 0.10356077554064136,
+      "relative_correction_rms": [
+        0.45448777079582214,
+        0.5408061742782593,
+        0.6589280366897583
+      ],
+      "max_collision_bucket": 84,
+      "suffix_capacity_ok": true
+    },
+    "loss": {
+      "total": 0.006306021215851119,
+      "reconstruction": 0.0005865533477720498,
+      "vq": 0.005719467854574545
+    }
+  },
+  "selected_record": {
+    "epoch": 9600,
+    "step": 105600,
+    "encoding": {
+      "utilization": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "perplexity": [
+        253.34878540039062,
+        249.92672729492188,
+        243.85423278808594
+      ],
+      "collision_item_fraction": 0.12406785786151886,
+      "collision_redundancy": 0.10262863534675615,
+      "relative_correction_rms": [
+        0.45396363735198975,
+        0.5395885109901428,
+        0.6574872732162476
+      ],
+      "max_collision_bucket": 84,
+      "suffix_capacity_ok": true
+    },
+    "loss": {
+      "total": 0.006401305475038192,
+      "reconstruction": 0.000599137073328738,
+      "vq": 0.00580216840192909
+    }
+  },
+  "train": {
+    "step": 200,
+    "train_seconds": 19.370389197021723,
+    "sid_shape": [
+      10729,
+      4
+    ],
+    "source_keys": 22,
+    "parent_sha256": "9542f7d05682ebb92240a44e97caa20c602b6370c537a570512191557b8aac7d"
+  }
+}

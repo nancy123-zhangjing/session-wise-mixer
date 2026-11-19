@@ -1,0 +1,153 @@
+{
+  "common_config": {
+    "protocol_id": "kuairec_five_item_diffgrm_full_mixer_v1",
+    "architecture": "H",
+    "seed": 2024,
+    "list_length": 5,
+    "history_max": 50,
+    "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+    "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+    "model": {
+      "n_digit": 4,
+      "codebook_size": 256,
+      "encoder_n_layer": 1,
+      "decoder_n_layer": 4,
+      "n_embd": 256,
+      "n_head": 4,
+      "n_inner": 1024,
+      "dropout": 0.1,
+      "attn_pdrop": 0.1,
+      "resid_pdrop": 0.1,
+      "norm_type": "layernorm",
+      "norm_eps": 1e-05,
+      "share_decoder_output_embedding": true,
+      "masking_strategy": "guided",
+      "guided_steps": 4,
+      "guided_conf_metric": "msp",
+      "guided_select": "least",
+      "guided_refresh_each_step": false,
+      "diffusion_loss_reduction": "per_view",
+      "label_smoothing": 0.2,
+      "item_local_attention": {
+        "enabled": false
+      },
+      "dedup_strategy": "simple",
+      "current_split": "val"
+    },
+    "alignment": {
+      "crosspse_heads": 4,
+      "crosspse_dropout": 0.0,
+      "crosspse_attention_scope": "full",
+      "crosspse_residual_scale_init": 1.0,
+      "crosspse_learn_residual_scale": false,
+      "crosspse_zero_init_attention_output": true,
+      "crosspse_train_base_codebooks": true,
+      "joint_gradient_mode": "diger_st",
+      "joint_diger_assignment_temperature": 0.1,
+      "joint_diger_softmax_temperature_start": 1.0,
+      "joint_diger_softmax_temperature_end": 1.0,
+      "joint_diger_gumbel_noise_start": 1.0,
+      "joint_diger_gumbel_noise_end": 0.2,
+      "joint_diger_uncertainty_decay": "cosine"
+    },
+    "training": {
+      "deterministic_algorithms": true,
+      "effective_batch_size": 1024,
+      "microbatch_size": 256,
+      "warmup_epochs": 5,
+      "cycles": 10,
+      "r_epochs_per_cycle": 3,
+      "t_updates_per_cycle": 40,
+      "checkpoint_every_updates": 100,
+      "decoder_lr": 0.001,
+      "decoder_warmup_updates": 500,
+      "decoder_weight_decay": 0.0,
+      "codebook_lr": 1e-05,
+      "mixer_lr": 0.0001,
+      "tokenizer_weight_decay": 0.0001,
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_eps": 1e-08,
+      "recommendation_weight": 1.0,
+      "reconstruction_weight": 1.0,
+      "balance_weight": 0.01,
+      "anchor_weight": 0.01,
+      "balance_temperature": 0.1,
+      "sia_weight": 0.0,
+      "max_grad_norm": 1.0
+    },
+    "evaluation": {
+      "val_beam": 32,
+      "test_beam": 32,
+      "candidate_lists": 32,
+      "batch_size": 32,
+      "selection": "ndcg@5",
+      "tie_break": "earlier",
+      "aggregate_ks": [
+        10,
+        20,
+        50
+      ],
+      "sensitivity_beam": 256,
+      "filter_history": false,
+      "collision_rule": "reconstruction_error_then_original_id",
+      "aggregation": "list_score_order_then_item_position_first_occurrence"
+    },
+    "provenance": "docs/research/onerec_listwise/IMPLEMENTATION_REFERENCES.md"
+  },
+  "common_parent_hashes": {
+    "model": "8e5b2dd514705c8b2df9cc933ac5835db009bdc20098a4ec735b7680092c22c7",
+    "alignment": "d37bd09e69f5798258c09d018c75330383f201c3abf71044a2fa694954ce15b6",
+    "r_optimizer": "4f3542898994e5fb72e201cdabdd09e471f25ef533697e7faa0ca1a2790b8bca",
+    "t_optimizer": "643d9996007b5d811255517ecacde0928b2cfd8f9c7cd0b910d5bc38a4e72c06",
+    "scheduler": "dd13fc0f621dee94178d99c88043551738f47f4cb03b6a5b71f71cffbe27b6a7"
+  },
+  "policies": {
+    "decay": {
+      "format": "stage09_h1_recovery_v1",
+      "policy": "decay",
+      "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+      "start_phase": 25,
+      "stop_phase": 33,
+      "t_lr": "peak_times_half_one_plus_cos_pi_completed_T_over_original_total",
+      "source_proof": {
+        "relocations": {},
+        "extensions": {
+          "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+          "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+          "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+          "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+          "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0"
+        }
+      }
+    },
+    "freeze": {
+      "format": "stage09_h1_recovery_v1",
+      "policy": "freeze",
+      "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+      "start_phase": 25,
+      "stop_phase": 33,
+      "t_lr": "peak_times_half_one_plus_cos_pi_completed_T_over_original_total",
+      "source_proof": {
+        "relocations": {},
+        "extensions": {
+          "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+          "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+          "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+          "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+          "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0"
+        }
+      }
+    }
+  },
+  "runtime_source_note": "Recovery additions commit 8b5acc8853101975a0ba09fe904f990549643dcc; historical 40 bound files are restored byte-for-byte from the authenticated old archive. The execution package, not current HEAD alone, defines runtime source.",
+  "execution_package_sha256": "057d01605fdc6d1183ad40bfb053c5d577bdb2f9c6909d8f7210ab388ff65d3b",
+  "execution_manifest_sha256": "5dec44adb958cc3f9c0d65e811986c2f40097f45ad9ef066daf24e4c654d797f",
+  "unused_legacy_config_fields": [
+    "warmup_epochs/cycles describe the original schedule; no new warmup is performed",
+    "test_beam/sensitivity_beam remain inherited fields; this recovery performed validation beam32 only",
+    "Freeze retains original T optimizer LR values in state but executes no T steps"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-stage09-shared-gpu-probe-20261027-r1",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda13.2版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 0.2,
+    "image": "pytorch:25.06-py3:25.06",
+    "command": "bash -c 'set -euo pipefail\ncd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/code\ntest ! -e /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/diagnostics/shared_gpu_probe_r1\ntest ! -L /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/diagnostics/shared_gpu_probe_r1\ntest ! -e /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/logs/shared_gpu_probe_20261027_r1.log\ntest ! -L /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/logs/shared_gpu_probe_20261027_r1.log\ntest -d /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/logs\nprintf '\"'\"'%s\\n'\"'\"' '\"'\"'a1e064cf3b13657dc961b2fe17ea636bff4cd48de34e7cc06958ccc97ae28b7f  /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/delivery/shared_gpu_probe.py'\"'\"' | sha256sum --check --status\ntimeout --signal=KILL 600s /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -u -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/delivery/shared_gpu_probe.py --warmup-j-sha256 a809564b0b1095ad6e3efe4e6dabcd97d89629232bacc8d634e0aee8464ca8dc --warmup-h-sha256 8baca622e3b8cbc3b0cde2078f545c712f1a6c9c668ff1641b10ce3b24430073 --max-seconds 600 2>&1 | tee /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/logs/shared_gpu_probe_20261027_r1.log'",
+    "shared_memory_gib": 32,
+    "env": [
+      "PYTHONDONTWRITEBYTECODE",
+      "HF_HUB_OFFLINE",
+      "TRANSFORMERS_OFFLINE",
+      "HF_HOME",
+      "TMPDIR",
+      "OMP_NUM_THREADS",
+      "MKL_NUM_THREADS",
+      "CUBLAS_WORKSPACE_CONFIG"
+    ]
+  }
+}

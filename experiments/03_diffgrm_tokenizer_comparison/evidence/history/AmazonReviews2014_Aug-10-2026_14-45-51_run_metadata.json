@@ -1,0 +1,48 @@
+{
+  "run_id": "diff_profile_pse_4x256",
+  "seed": 2024,
+  "model": "DIFF_GRM",
+  "sid_quantizer": "opq_pq",
+  "n_digit": 4,
+  "codebook_size": 256,
+  "masking_strategy": "guided",
+  "guided_select": "least",
+  "guided_refresh_each_step": false,
+  "diffusion_loss_reduction": "per_view",
+  "best_epoch": 1,
+  "best_val_score": 0.0,
+  "fit_elapsed_seconds": 7.707877524197102,
+  "peak_vram_mb": 3762.9599609375,
+  "evaluation_level": "sid",
+  "test_results": {
+    "legal_ratio": 0.95,
+    "duplicate_ratio": 0.9493749886751175,
+    "dup@10": 0.7931249942630529,
+    "duplicate@10": 0.7931249942630529,
+    "legal@10": 0.95,
+    "ndcg@5": 0.0,
+    "ndcg@10": 0.0,
+    "recall@5": 0.0,
+    "hit_rate@5": 0.0,
+    "recall@10": 0.0,
+    "hit_rate@10": 0.0,
+    "weighted_score": 0.0
+  },
+  "position_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-10-2026_14-45-51_position_metrics.csv",
+  "order_metrics_csv": "../../outputs/diffusion_diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Aug-10-2026_14-45-51_order_metrics.csv",
+  "checkpoint": "saved/AmazonReviews2014_Aug-10-2026_14-45-51/pytorch_model.bin",
+  "sid_collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 10656,
+    "collided_items": 2172,
+    "collision_rate": 0.17948929840509048,
+    "colliding_groups": 727,
+    "largest_collision_group": 40
+  },
+  "diagnostic_definitions": {
+    "train_position_context": "OCN masked views; a position contributes only when masked",
+    "eval_position_context": "all SID positions masked in the same context",
+    "train_order": "OCN noising order, hard/least-confident to easy",
+    "eval_order": "beam-width-one CPD model-generated path, confident to hard"
+  }
+}

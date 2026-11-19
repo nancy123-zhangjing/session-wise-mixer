@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-12",
+  "protocol_id": "stage05_diger_noise_once_freeze_recover_v1",
+  "purpose": "CPU plumbing and input verification only; no research metric comparison",
+  "local_project_head": "fea2f0636d3591fa1285ede52d9351270f798b2a",
+  "local_new_source_uncommitted": true,
+  "remote_project_head": "594b6add85c0a72731890fa45fa67d414fa358a2",
+  "engine_head": "39e94e6153c97e59877ba02d4ef1d9a202ed5384",
+  "remote_project_root": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+  "remote_temporary_delivery": "/tmp/experiment1_noise_pilot_cpu_20261012_v3",
+  "remote_project_full_sync_completed": false,
+  "device": "cpu",
+  "gpu_started": false,
+  "gpu_smoke_completed": false,
+  "formal_pilot_completed": false,
+  "tests": {
+    "protocol_local": {"passed": 40, "failed": 0},
+    "protocol_remote_python310": {"passed": 40, "failed": 0},
+    "historical_repro_local": {"passed": 78, "failed": 0, "suites": 6}
+  },
+  "executed_source_sha256": {
+    "scripts/train/run_diger_noise_pilot.py": "655a843616d4311a046f9cbd5a5bf2a57364256c043254a1f1727681ba4c0bd7",
+    "scripts/checks/diger_noise_pilot_protocol.py": "879716431edc4bc918e545b703d167b80d19172f0003f761381b4ccc77837336",
+    "configs/05_crosspse_joint/pilots/diger_noise_pilot_seed2024.json": "9cd123e0fe763947eb49c4002b17d458a870e9ac6bd1273fb0478423fd726d92",
+    "tests/test_diger_noise_pilot.py": "ea99ee88f9ebee1de9d2b11c18f8995067cb762634fc6a99379e0a73cd8e2165"
+  },
+  "delivery_archive_sha256": "010e22d9ccb7b507046a676abfcb6579788495812c69ffec84c230c77c86a010",
+  "proof_archive_sha256": "969fb1c1aae55947fda5c1eeb799d39b8aedb2250aac6ef607d1b1877e9447da",
+  "verified_input_count": 18,
+  "inputs_post_run_unchanged": true,
+  "shared_initial_tensor_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+  "decoder_data_order_sha256": "dacff8a3e2a4ff069013fa92f71cfbc2d7f40fe6b0d03428732307886b5e5f47",
+  "smoke_elapsed_seconds": 37.8242735648528,
+  "smoke_noise_applied_calls": {"A": 0, "B": 0, "C": 32},
+  "mode_guard": "restore Decoder/Tokenizer mixed training modes per microbatch; validate actual noise gate counts",
+  "historical_engine_modified": false,
+  "policy_checked_date": "2026-10-12",
+  "job_reclaim_rule": "gpu utilization below 40 percent for 3 hours",
+  "local_login_required_after_background_job_starts": false,
+  "pending": ["commit and synchronize reviewed source", "live resource image budget and output quota checks", "single-GPU smoke", "validation-only short pilot"]
+}

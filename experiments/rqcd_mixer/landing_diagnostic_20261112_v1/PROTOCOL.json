@@ -1,0 +1,35 @@
+{
+  "source": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1",
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "cuda": "11.8",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "runtime": {
+      "micro_r": 256,
+      "micro_t": 256,
+      "evaluation_batch": 256,
+      "precision": "bf16",
+      "attention_backend": "auto",
+      "fused_adamw": true,
+      "data_device": "cuda",
+      "deterministic": true,
+      "checkpoint_every_updates": 200,
+      "evaluation_write_batches": 8
+    },
+    "tf32": false
+  },
+  "subset_sha256": "7afa32f28d6adfd45ce0313b8af906076bf5e8d988f6e7497f7e03746edcce1c",
+  "noise_sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e",
+  "checkpoint": "validation-selected best, B0/B1/B2",
+  "training": false,
+  "generation": "original RQ rollout; original history, 20-step DDIM, BF16, original fixed noise",
+  "comparison": "same captured generated z; RQ vs full-catalog squared Euclidean NN to pre-quantization z_i",
+  "prefix": "both readouts use exactly the RQ rollout generated vectors; NN is post-hoc, never feeds back",
+  "exclusion": "each readout excludes its own earlier selections; history items allowed as original",
+  "oracle": "all catalog z plus normalization roundtrip; validation targets with true earlier-item exclusions"
+}

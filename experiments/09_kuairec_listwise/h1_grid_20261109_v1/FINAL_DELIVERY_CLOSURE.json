@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "timestamp": "2026-11-10T07:15:34.922128+00:00",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_grid_20261109_v1",
+  "artifact_audit_sha256": "89639d080c5e369a7b10661462b1d1e40976030251f4a941b5ff3e4483e6b006",
+  "report_sync": {
+    "status": "passed",
+    "sha256": {
+      "REPORT.md": "f6f25ebe399092e376dc38c83b0fcaaa4064cec7515bb25bb80286aafe11e69d",
+      "COMPARISON.json": "ba2df36b0366c28a51894b788a3c7b04b603ffecaf28526bc692ca310c81ac2f",
+      "ARTIFACT_SHA256.json": "fbd9791cb3e32198810120affd3bc426bfcd342e71d2c983e6d11696b0607c49",
+      "EXECUTION.md": "e019abb69705dcbe6193fccbd076e793f3b07ad8013fd2b78e24a69028ad9fdb",
+      "B_FINAL_STATUS.json": "ee837ebf853170e79c2c88b4ed79b19854df8885563b8df2dedb1dbcb24703e1",
+      "C_FINAL_STATUS.json": "d32ac59488f2115808b9026ef84cbf30b5caa497d6263245718bf7bf0d41d437",
+      "B_FINAL_INSTANCES.json": "502c412f1bd9b1f9887f8a18a0e5c5c4c28164317e664d9d8d8623a635bf8df5",
+      "C_FINAL_INSTANCES.json": "a8832dfb4e243372f85fb58aecfaed84707c63a0af0e7d68448a866a75d0edce"
+    }
+  },
+  "requirements": {
+    "both_single_card_jobs_succeeded": true,
+    "R35_T200": true,
+    "all_20_node_checkpoints_CPU_restored": true,
+    "tokenizer_SID_frozen_after_R20": true,
+    "grid_changed_after_R20": true,
+    "validation_selected_best_and_R35_full_tests": true,
+    "artifact_hashes_verified": 72,
+    "resource_release_verified": true,
+    "new_temporary_CPU_resources": 0,
+    "borrowed_env_zzl_preserved": true,
+    "large_files_remote_only": true
+  },
+  "limitations": [
+    "Single seed 2024",
+    "CPU structural restoration verified; CUDA next-step numerical equivalence not retested"
+  ],
+  "resource_evidence": [
+    "B_FINAL_STATUS.json",
+    "C_FINAL_STATUS.json",
+    "B_FINAL_INSTANCES.json",
+    "C_FINAL_INSTANCES.json"
+  ]
+}

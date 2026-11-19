@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-24 01:43:18",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-24 01:43:18",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:43:18",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-24 01:43:20",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu018"
+      },
+      {
+        "time": "2026-10-24 01:43:21",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulling",
+        "message": "Pulling image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\""
+      },
+      {
+        "time": "2026-10-24 01:43:22",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Successfully pulled image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\" in 297.381216ms (297.396366ms including waiting)"
+      },
+      {
+        "time": "2026-10-24 01:43:22",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-24 01:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-24 01:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-24 01:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-24 01:43:23",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      }
+    ]
+  },
+  "queried_unix": 1792780516.6371691
+}

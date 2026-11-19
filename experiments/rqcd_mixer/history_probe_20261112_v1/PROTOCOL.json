@@ -1,0 +1,61 @@
+{
+  "training": false,
+  "arms": [
+    "B0",
+    "B1"
+  ],
+  "count": 8192,
+  "split": "validation",
+  "positions": [
+    1
+  ],
+  "checkpoint": "original validation-selected best",
+  "runtime": {
+    "micro_r": 256,
+    "micro_t": 256,
+    "evaluation_batch": 256,
+    "precision": "bf16",
+    "attention_backend": "auto",
+    "fused_adamw": true,
+    "data_device": "cuda",
+    "deterministic": true,
+    "checkpoint_every_updates": 200,
+    "evaluation_write_batches": 8
+  },
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "cuda": "11.8",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "runtime": {
+      "micro_r": 256,
+      "micro_t": 256,
+      "evaluation_batch": 256,
+      "precision": "bf16",
+      "attention_backend": "auto",
+      "fused_adamw": true,
+      "data_device": "cuda",
+      "deterministic": true,
+      "checkpoint_every_updates": 200,
+      "evaluation_write_batches": 8
+    },
+    "tf32": false
+  },
+  "time_levels": {
+    "low": 100,
+    "medium": 500,
+    "high": 900
+  },
+  "free_generation": "original 20 DDIM steps from original first-item noise",
+  "teacher_probe": "single denoising prediction at fixed t of true first target plus fixed epsilon; no prefix",
+  "rank": "squared L2 to all catalog prequantization z; ties broken by ascending catalog ID",
+  "metric_note": "first-target accuracy/rank and any-of-five hit are separate; these are not list NDCG@5",
+  "shuffle_sha256": "76047263a9e103ce40297bba72de5a0e8a2c871b60957581100b4da8f94a3744",
+  "epsilon_sha256": "95435bfb7d8b286462edcdd1aba25bd60e93c766f448592e68e35fcef013cfa2",
+  "noise_sha256": "dc34faa0d57ac7d0c8e18412ab3374d8818605b32d5de29308b28fc2980b183e",
+  "script_sha256": "d54ee7cba32b47dd24985984d3201b407164bc54c9e9079c12813a83b37b61ae"
+}

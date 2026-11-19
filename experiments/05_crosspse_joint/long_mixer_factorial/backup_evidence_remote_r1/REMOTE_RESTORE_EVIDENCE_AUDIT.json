@@ -1,0 +1,211 @@
+{
+  "status": "REMOTE_FINAL_ARCHIVE_AND_CPU_RESTORE_EVIDENCE_PASS_NOT_LOCAL_BACKUP",
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "utc": "2026-10-20T08:39:17.149529+00:00",
+  "source_sidecar_archive_sha256": "2e88d78ebff511d647e320936712945a3165f386bd35b13a26da6eb1fd035014",
+  "source_sidecar_archive_bytes": 103805,
+  "source_sidecar_members": [
+    {
+      "member": "delivery/FINAL_PACK_COLLECTION_FORECAST.json",
+      "size_bytes": 4118,
+      "sha256": "e34749d039eceeb009d56d47444babec33345f8486dfa57d694c0e4d4159a2f0"
+    },
+    {
+      "member": "delivery/final_package_r1/PACKAGE.json",
+      "size_bytes": 1000,
+      "sha256": "23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300"
+    },
+    {
+      "member": "delivery/package_extract_r1/goal_20261020_long_mixer_v1/BYTE_VERIFICATION.json",
+      "size_bytes": 446,
+      "sha256": "cdc76fa608e3dcbdf85a4389301b3679857d8bf5db6192cb9466272065125044"
+    },
+    {
+      "member": "delivery/package_extract_r1/goal_20261020_long_mixer_v1/MANIFEST.json",
+      "size_bytes": 420545,
+      "sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8"
+    },
+    {
+      "member": "delivery/RESOURCE_RELEASE_REMOTE_RECHECK.json",
+      "size_bytes": 5712,
+      "sha256": "be2d469b55f3076b3f9f3d98aaf4d74ea34954695125ee9eae132cb66cc09846"
+    },
+    {
+      "member": "delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/RESTORE_PASS.json",
+      "size_bytes": 5833,
+      "sha256": "c882878f5f2f4f92ac73cde8a03e03bfd5fd11061daa75567073b9cd5290dfc1"
+    },
+    {
+      "member": "delivery/restore_check_execution_r1/byte_verification.log",
+      "size_bytes": 446,
+      "sha256": "cdc76fa608e3dcbdf85a4389301b3679857d8bf5db6192cb9466272065125044"
+    },
+    {
+      "member": "delivery/restore_check_execution_r1/cpu_model_restore.log",
+      "size_bytes": 27006,
+      "sha256": "aaf2b1970a5e244b4f93cc8eb4ce5b70e0e61825091369031bf7a7a8d7f692a6"
+    },
+    {
+      "member": "delivery/restore_check_execution_r1/REMOTE_RESTORE_SUMMARY.json",
+      "size_bytes": 727,
+      "sha256": "fddd5b1db0df608b59d54cd4cd623657830f3f004b964aabda5610d588cd1aa9"
+    }
+  ],
+  "bindings": {
+    "package_raw_sha256": "23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300",
+    "archive_sha256": "c2ad35b0c87b219e6435a970dfd62bf5677cf7e7c2924b34c53e48c6fec47af7",
+    "manifest_raw_sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8",
+    "remote_byte_verification_raw_sha256": "cdc76fa608e3dcbdf85a4389301b3679857d8bf5db6192cb9466272065125044",
+    "remote_byte_verification_canonical_json_sha256": "36e6369e00335169770dfe53e0f4a8219cbd1167c54acafdd87a91bd2b6f6759",
+    "remote_cpu_restore_raw_sha256": "c882878f5f2f4f92ac73cde8a03e03bfd5fd11061daa75567073b9cd5290dfc1",
+    "remote_summary_raw_sha256": "fddd5b1db0df608b59d54cd4cd623657830f3f004b964aabda5610d588cd1aa9"
+  },
+  "remote_byte_verification_semantics": {
+    "status": "FULL_BACKUP_BYTE_VERIFICATION_PASS_NOT_RESTORE",
+    "campaign_id": "goal_20261020_long_mixer_v1",
+    "package_sha256": "23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300",
+    "manifest_sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8",
+    "files": 1871,
+    "all_member_bytes_verified": true,
+    "all_14_locked_inputs_included": true,
+    "model_restore_verified": false,
+    "goal_complete": false
+  },
+  "manifest_registered_member_count": 1871,
+  "manifest_uncompressed_bytes": 1701159613,
+  "formal_complete_state_count": 9,
+  "formal_complete_state_bytes": 688118398,
+  "manifest_has_fourteen_locked_input_members": true,
+  "remote_archive_byte_verification_receipt_validated": true,
+  "real_cpu_pipeline_log_and_saved_receipt_match": true,
+  "eight_unique_real_checkpoint_restores_validated": true,
+  "checkpoint_bindings": [
+    {
+      "member": "formal/no_mixer_frozen/last.pt",
+      "checkpoint_sha256": "985a89a147b64310bc095907acd245150cbb4fdfef6fd0bfca4b903bfce5ba37",
+      "size_bytes": 81209642,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1"
+    },
+    {
+      "member": "formal/no_mixer_frozen/best.pt",
+      "checkpoint_sha256": "7a7f68b902a2b8fc6b6f5724065efcd69be1f4fa4122d9c277868ec7ca486a83",
+      "size_bytes": 81116522,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de"
+    },
+    {
+      "member": "formal/no_mixer_joint/last.pt",
+      "checkpoint_sha256": "c155399a5c8d4343aaf070ba667784af1590a7324cc2882cf49277564c17bfa1",
+      "size_bytes": 81749732,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 60,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1"
+    },
+    {
+      "member": "formal/no_mixer_joint/best.pt",
+      "checkpoint_sha256": "3e2f4038b20b5ae21e3290e8096cd96acd96a58a9b1aba4031d9da42e154b95b",
+      "size_bytes": 81621732,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 10,
+      "decoder_updates": 1040,
+      "tokenizer_updates": 12,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "f46145842ebc36a9ea8179a1afcd85f3e2881d703e853f822f596c5ab4347a09"
+    },
+    {
+      "member": "formal/mixer_frozen/last.pt",
+      "checkpoint_sha256": "f653b74d315c857c6d871f9ae741f5964c56464d693b32d2ec38cf8f22143fb4",
+      "size_bytes": 81209642,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1"
+    },
+    {
+      "member": "formal/mixer_frozen/best.pt",
+      "checkpoint_sha256": "0ba48df58e3eb6786afe8221877752512328c9898c18ca1668e1773531943a69",
+      "size_bytes": 81116522,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de"
+    },
+    {
+      "member": "formal/mixer_joint/last.pt",
+      "checkpoint_sha256": "a715d0c6d767366711e6f5da1071beb570db33c72509e6fcdb346b0934215fe3",
+      "size_bytes": 82027636,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 60,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1"
+    },
+    {
+      "member": "formal/mixer_joint/best.pt",
+      "checkpoint_sha256": "07757b55a958af5ee59b9c84523e76848f0c4f297f01c865abbb646d59c688b8",
+      "size_bytes": 81923316,
+      "matches_manifest_and_raw_training_receipt": true,
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 24,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "official_SID_and_E0_anchor_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de"
+    }
+  ],
+  "common_initial_reconstruction_enforced_by_locked_restorer": true,
+  "restorer_source_sha256": "f2d90ce373e6051dfaee8b8d89e0f795513668ae2551310fa60101a59ef659b5",
+  "all_restored_states_bound_to_packaged_raw_training_receipts": true,
+  "checkpoint_file_sha256_is_cross_tool_binding": true,
+  "different_model_tensor_digest_algorithms_not_mixed": true,
+  "original_sidecar_member_bytes_preserved": true,
+  "forecast_delta_exactly_its_added_receipt": true,
+  "resource_release_sidecar_bound_to_manifest": true,
+  "recorded_all_goal_gpu_seconds": 35549,
+  "evidence_scope": "Nine small remote sidecars and independently retained raw training receipts; full archive and model tensor bytes are still being downloaded and were not locally reverified here.",
+  "subsequent_local_binding_requirements": [
+    "Rehash all three completed local parts and concatenate in original PACKAGE order; original PACKAGE/archive/MANIFEST hashes must equal these pinned bindings",
+    "Run locked local full byte verifier over all 1871 manifest members plus MANIFEST; compare BYTE_VERIFICATION JSON semantics with remote receipt and record both raw receipt hashes separately",
+    "Run final downloaded-backup Git recovery; require exact training HEAD/tree, long-path-safe1493 tracked bytes, shallow boundary and19 formal execution source hashes",
+    "Bind CPU RESTORE_PASS to remote BYTE_VERIFICATION raw hash; bind local Git receipt to local BYTE_VERIFICATION raw hash; do not require cross-platform receipt raw hashes to match",
+    "Preserve this audit as remote evidence only; combine with actual local full verification and Git receipts before declaring full delivery"
+  ],
+  "local_full_archive_bytes_verified": false,
+  "local_full_backup_verified": false,
+  "local_git_restore_verified": false,
+  "local_cpu_pipeline_restore_executed_here": false,
+  "cuda_execution_verified_here": false,
+  "goal_complete": false
+}

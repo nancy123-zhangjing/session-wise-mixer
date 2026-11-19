@@ -1,0 +1,33 @@
+{
+  "status": "FORMAL_PAIR_INITIALIZATION_MATCH",
+  "observed_utc": "2026-10-20T10:32:09.471359+00:00",
+  "control": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "resume_requested": false,
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+    "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+  },
+  "item_local": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "item_local",
+    "resume_requested": false,
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+    "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+  },
+  "comparisons": {
+    "initial_base_state_sha256": true,
+    "initial_rng_sha256": true,
+    "initial_SID_sha256": true
+  },
+  "scope": "Actual fresh formal initialization: all shared base parameters, RNG state and initial SID match. The optional item-local module is excluded from shared-base comparison; its zero-residual initialization was verified in paired smoke.",
+  "item_local_job": "nancy-stage07-item-local-joint-formal-item-local-20261020-r1-r2",
+  "scheduled_local": "2026-10-20T18:28:53+08:00",
+  "current_phase": "initial full validation, epoch 0",
+  "formal_pair_completed": false,
+  "goal_complete": false
+}

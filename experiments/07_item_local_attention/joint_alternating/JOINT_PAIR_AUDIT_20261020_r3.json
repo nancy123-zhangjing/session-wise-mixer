@@ -1,0 +1,473 @@
+{
+  "status": "JOINT_PAIR_ARTIFACT_AUDIT_PASS",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "verified_utc": "2026-10-20T12:41:36.129758+00:00",
+  "source_binding": {
+    "code_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+    "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+    "runner_sha256": "61f6c36c02ee59498add74c28af8b3a15a54e2f38465bc65bf3c0d8353850475",
+    "wrapper_sha256": "3d435473cfb492e0dae087d20a11bddad65914ded43654541b44082b57774558",
+    "launcher_helper_sha256": "78ab756b30c036b8048e0ee4797ecbcd85d7a57d594da85a455d490b01704b71",
+    "sampler_helper_sha256": "d1b65c3776dead7cb573fe81c6a3cb14804b08e709d365bc21987e90b5cb49f8",
+    "stage05_helper_sha256": "88a76b6b16df48b29d77b6d593d7675288d361d24d6d2894c9c7b98732f4d244",
+    "engine_files": {
+      "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+      "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+      "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+      "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+      "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+      "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+    }
+  },
+  "auditor_sha256": "60fc621973140f6af71b1914505142ef566d611ee972fbbe10fc1050a06c6615",
+  "variants": {
+    "control": {
+      "variant": "control",
+      "metrics": {
+        "hit_rate@5": 0.05446496445020793,
+        "hit_rate@10": 0.0801323614899611,
+        "ndcg@5": 0.03809946608054043,
+        "ndcg@10": 0.04636611616718627,
+        "legal@10": 1.0,
+        "duplicate@10": 0.0020882708452332455,
+        "weighted_score": 0.053119365875683555
+      },
+      "selection": {
+        "completed_epochs": 45,
+        "best_epoch": 25,
+        "best_val_score": 0.05247399556222619,
+        "stop_reason": "max_epochs",
+        "eval_count": 8,
+        "no_improve_count": 3,
+        "decoder_epochs_completed": 35,
+        "tokenizer_epochs_completed": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      },
+      "initial": {
+        "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+        "variant": "control",
+        "resume_requested": false,
+        "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+        "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+      },
+      "checkpoint_hashes": {
+        "complete_sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417",
+        "result_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+        "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f"
+      },
+      "actual_Adam_state_count": 85,
+      "phase_count": 45,
+      "formal_wrapper_receipts": [
+        "d0fa2b731653b1a381866d9b6d7753cd0e2e52f6fc354a0b943307b40d650c2b"
+      ],
+      "SID_precision": {
+        "best": {
+          "code_positions": 48404,
+          "matching_modes": [
+            "tf32_nearest_even_cpu",
+            "tf32_nearest_ties_away_cpu"
+          ],
+          "modes": {
+            "strict_fp32_cpu": {
+              "argmin_mismatches": 1,
+              "minimum_top2_margin": 5.364418029785156e-06,
+              "maximum_saved_distance_gap": 1.8149614334106445e-05
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 1.6063451766967773e-05,
+              "maximum_saved_distance_gap": 0.0
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 1.6063451766967773e-05,
+              "maximum_saved_distance_gap": 0.0
+            }
+          },
+          "strict_fp64_reference": {
+            "argmin_mismatches": 1,
+            "old_tolerance_failures": 1,
+            "maximum_saved_distance_gap": 1.8232579739041466e-05,
+            "maximum_old_tolerance_ratio": 15.437883136916263,
+            "old_tolerance_formula": "1e-6*(1+abs(saved_distance_fp64))",
+            "examples": [
+              {
+                "catalogue_row_zero_based": 6380,
+                "digit_zero_based": 2,
+                "saved_code": 217,
+                "fp64_argmin": 193,
+                "saved_distance_fp64": 0.18102848540434324,
+                "minimum_distance_fp64": 0.1810102528246042,
+                "gap_fp64": 1.8232579739041466e-05,
+                "old_tolerance": 1.1810284854043433e-06
+              }
+            ],
+            "example_limit": 16,
+            "examples_truncated": false
+          },
+          "arithmetic": "Norms use original FP32 inputs; TF32 variants round only dot operands to 10 fraction bits, accumulate on CPU in FP32, then clamp_min(0). Exact first argmin required.",
+          "scope": "CPU arithmetic consistency, not historical CUDA flags or a bitwise CUDA replay; no distance tolerance grants acceptance."
+        },
+        "last": {
+          "code_positions": 48404,
+          "matching_modes": [
+            "tf32_nearest_even_cpu",
+            "tf32_nearest_ties_away_cpu"
+          ],
+          "modes": {
+            "strict_fp32_cpu": {
+              "argmin_mismatches": 4,
+              "minimum_top2_margin": 3.993511199951172e-06,
+              "maximum_saved_distance_gap": 6.008148193359375e-05
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 8.702278137207031e-06,
+              "maximum_saved_distance_gap": 0.0
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 8.702278137207031e-06,
+              "maximum_saved_distance_gap": 0.0
+            }
+          },
+          "strict_fp64_reference": {
+            "argmin_mismatches": 4,
+            "old_tolerance_failures": 4,
+            "maximum_saved_distance_gap": 6.0145965772084864e-05,
+            "maximum_old_tolerance_ratio": 51.37800298890929,
+            "old_tolerance_formula": "1e-6*(1+abs(saved_distance_fp64))",
+            "examples": [
+              {
+                "catalogue_row_zero_based": 5086,
+                "digit_zero_based": 1,
+                "saved_code": 47,
+                "fp64_argmin": 103,
+                "saved_distance_fp64": 0.23512574580754286,
+                "minimum_distance_fp64": 0.23508271540291237,
+                "gap_fp64": 4.3030404630495234e-05,
+                "old_tolerance": 1.2351257458075427e-06
+              },
+              {
+                "catalogue_row_zero_based": 6467,
+                "digit_zero_based": 2,
+                "saved_code": 206,
+                "fp64_argmin": 200,
+                "saved_distance_fp64": 0.21109583706772095,
+                "minimum_distance_fp64": 0.2110736407134225,
+                "gap_fp64": 2.219635429845379e-05,
+                "old_tolerance": 1.2110958370677209e-06
+              },
+              {
+                "catalogue_row_zero_based": 6510,
+                "digit_zero_based": 3,
+                "saved_code": 112,
+                "fp64_argmin": 0,
+                "saved_distance_fp64": 0.16059739670156437,
+                "minimum_distance_fp64": 0.16059335668531882,
+                "gap_fp64": 4.0400162455433986e-06,
+                "old_tolerance": 1.1605973967015644e-06
+              },
+              {
+                "catalogue_row_zero_based": 10309,
+                "digit_zero_based": 0,
+                "saved_code": 125,
+                "fp64_argmin": 77,
+                "saved_distance_fp64": 0.17065596701117935,
+                "minimum_distance_fp64": 0.17059582104540727,
+                "gap_fp64": 6.0145965772084864e-05,
+                "old_tolerance": 1.1706559670111793e-06
+              }
+            ],
+            "example_limit": 16,
+            "examples_truncated": false
+          },
+          "arithmetic": "Norms use original FP32 inputs; TF32 variants round only dot operands to 10 fraction bits, accumulate on CPU in FP32, then clamp_min(0). Exact first argmin required.",
+          "scope": "CPU arithmetic consistency, not historical CUDA flags or a bitwise CUDA replay; no distance tolerance grants acceptance."
+        }
+      }
+    },
+    "item_local": {
+      "variant": "item_local",
+      "metrics": {
+        "hit_rate@5": 0.055985332915977286,
+        "hit_rate@10": 0.08035594508786835,
+        "ndcg@5": 0.038680866246721755,
+        "ndcg@10": 0.046563159358398554,
+        "legal@10": 1.0,
+        "duplicate@10": 0.0018154988413936405,
+        "weighted_score": 0.05332171721060342
+      },
+      "selection": {
+        "completed_epochs": 45,
+        "best_epoch": 25,
+        "best_val_score": 0.05423174543616992,
+        "stop_reason": "max_epochs",
+        "eval_count": 8,
+        "no_improve_count": 3,
+        "decoder_epochs_completed": 35,
+        "tokenizer_epochs_completed": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      },
+      "initial": {
+        "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+        "variant": "item_local",
+        "resume_requested": false,
+        "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+        "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+      },
+      "checkpoint_hashes": {
+        "complete_sha256": "5376fcdbc61f46f4f74617c4fcf91fe0a10786bc0a79728558a230cd7276dae3",
+        "result_sha256": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+        "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b"
+      },
+      "actual_Adam_state_count": 91,
+      "phase_count": 45,
+      "formal_wrapper_receipts": [
+        "bfbf60a8c0e525eec3f47658c8af9492add244c0d1a67579ca6b1d71fbc18881"
+      ],
+      "SID_precision": {
+        "best": {
+          "code_positions": 48404,
+          "matching_modes": [
+            "tf32_nearest_even_cpu",
+            "tf32_nearest_ties_away_cpu"
+          ],
+          "modes": {
+            "strict_fp32_cpu": {
+              "argmin_mismatches": 3,
+              "minimum_top2_margin": 5.364418029785156e-06,
+              "maximum_saved_distance_gap": 1.8894672393798828e-05
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 2.980232238769531e-07,
+              "maximum_saved_distance_gap": 0.0
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 2.980232238769531e-07,
+              "maximum_saved_distance_gap": 0.0
+            }
+          },
+          "strict_fp64_reference": {
+            "argmin_mismatches": 3,
+            "old_tolerance_failures": 3,
+            "maximum_saved_distance_gap": 1.8938571795357184e-05,
+            "maximum_old_tolerance_ratio": 17.325033808745832,
+            "old_tolerance_formula": "1e-6*(1+abs(saved_distance_fp64))",
+            "examples": [
+              {
+                "catalogue_row_zero_based": 4160,
+                "digit_zero_based": 1,
+                "saved_code": 40,
+                "fp64_argmin": 105,
+                "saved_distance_fp64": 0.0931333239763622,
+                "minimum_distance_fp64": 0.09311438540456685,
+                "gap_fp64": 1.8938571795357184e-05,
+                "old_tolerance": 1.093133323976362e-06
+              },
+              {
+                "catalogue_row_zero_based": 6380,
+                "digit_zero_based": 2,
+                "saved_code": 217,
+                "fp64_argmin": 193,
+                "saved_distance_fp64": 0.18102872775863044,
+                "minimum_distance_fp64": 0.1810193144127078,
+                "gap_fp64": 9.41334592263754e-06,
+                "old_tolerance": 1.1810287277586304e-06
+              },
+              {
+                "catalogue_row_zero_based": 8861,
+                "digit_zero_based": 3,
+                "saved_code": 137,
+                "fp64_argmin": 64,
+                "saved_distance_fp64": 0.12685598582756763,
+                "minimum_distance_fp64": 0.12684651476346454,
+                "gap_fp64": 9.47106410309484e-06,
+                "old_tolerance": 1.1268559858275676e-06
+              }
+            ],
+            "example_limit": 16,
+            "examples_truncated": false
+          },
+          "arithmetic": "Norms use original FP32 inputs; TF32 variants round only dot operands to 10 fraction bits, accumulate on CPU in FP32, then clamp_min(0). Exact first argmin required.",
+          "scope": "CPU arithmetic consistency, not historical CUDA flags or a bitwise CUDA replay; no distance tolerance grants acceptance."
+        },
+        "last": {
+          "code_positions": 48404,
+          "matching_modes": [
+            "tf32_nearest_even_cpu",
+            "tf32_nearest_ties_away_cpu"
+          ],
+          "modes": {
+            "strict_fp32_cpu": {
+              "argmin_mismatches": 4,
+              "minimum_top2_margin": 1.5497207641601562e-06,
+              "maximum_saved_distance_gap": 0.00010454654693603516
+            },
+            "tf32_nearest_even_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 9.119510650634766e-06,
+              "maximum_saved_distance_gap": 0.0
+            },
+            "tf32_nearest_ties_away_cpu": {
+              "argmin_mismatches": 0,
+              "minimum_top2_margin": 9.119510650634766e-06,
+              "maximum_saved_distance_gap": 0.0
+            }
+          },
+          "strict_fp64_reference": {
+            "argmin_mismatches": 4,
+            "old_tolerance_failures": 4,
+            "maximum_saved_distance_gap": 0.00010460294321379404,
+            "maximum_old_tolerance_ratio": 87.39818170216368,
+            "old_tolerance_formula": "1e-6*(1+abs(saved_distance_fp64))",
+            "examples": [
+              {
+                "catalogue_row_zero_based": 4610,
+                "digit_zero_based": 1,
+                "saved_code": 67,
+                "fp64_argmin": 43,
+                "saved_distance_fp64": 0.19685491364409524,
+                "minimum_distance_fp64": 0.19675031070088145,
+                "gap_fp64": 0.00010460294321379404,
+                "old_tolerance": 1.196854913644095e-06
+              },
+              {
+                "catalogue_row_zero_based": 4679,
+                "digit_zero_based": 1,
+                "saved_code": 42,
+                "fp64_argmin": 99,
+                "saved_distance_fp64": 0.114360220068216,
+                "minimum_distance_fp64": 0.1143182959803487,
+                "gap_fp64": 4.192408786729551e-05,
+                "old_tolerance": 1.114360220068216e-06
+              },
+              {
+                "catalogue_row_zero_based": 4893,
+                "digit_zero_based": 3,
+                "saved_code": 38,
+                "fp64_argmin": 166,
+                "saved_distance_fp64": 0.20273489459315663,
+                "minimum_distance_fp64": 0.20273332190156668,
+                "gap_fp64": 1.5726915899572091e-06,
+                "old_tolerance": 1.2027348945931565e-06
+              },
+              {
+                "catalogue_row_zero_based": 5086,
+                "digit_zero_based": 1,
+                "saved_code": 47,
+                "fp64_argmin": 103,
+                "saved_distance_fp64": 0.23518029144957697,
+                "minimum_distance_fp64": 0.23514271945756693,
+                "gap_fp64": 3.7571992010043687e-05,
+                "old_tolerance": 1.235180291449577e-06
+              }
+            ],
+            "example_limit": 16,
+            "examples_truncated": false
+          },
+          "arithmetic": "Norms use original FP32 inputs; TF32 variants round only dot operands to 10 fraction bits, accumulate on CPU in FP32, then clamp_min(0). Exact first argmin required.",
+          "scope": "CPU arithmetic consistency, not historical CUDA flags or a bitwise CUDA replay; no distance tolerance grants acceptance."
+        }
+      }
+    }
+  },
+  "comparison": {
+    "metrics": {
+      "hit_rate@5": {
+        "control": 0.05446496445020793,
+        "item_local": 0.055985332915977286,
+        "absolute_delta": 0.0015203684657693547,
+        "relative_delta": 0.02791461412151075
+      },
+      "hit_rate@10": {
+        "control": 0.0801323614899611,
+        "item_local": 0.08035594508786835,
+        "absolute_delta": 0.0002235835979072509,
+        "relative_delta": 0.002790178571428381
+      },
+      "ndcg@5": {
+        "control": 0.03809946608054043,
+        "item_local": 0.038680866246721755,
+        "absolute_delta": 0.0005814001661813284,
+        "relative_delta": 0.015260060730307279
+      },
+      "ndcg@10": {
+        "control": 0.04636611616718627,
+        "item_local": 0.046563159358398554,
+        "absolute_delta": 0.00019704319121228303,
+        "relative_delta": 0.004249723882453038
+      },
+      "legal@10": {
+        "control": 1.0,
+        "item_local": 1.0,
+        "absolute_delta": 0.0,
+        "relative_delta": 0.0
+      },
+      "duplicate@10": {
+        "control": 0.0020882708452332455,
+        "item_local": 0.0018154988413936405,
+        "absolute_delta": -0.00027277200383960497,
+        "relative_delta": -0.13062098935214417
+      },
+      "weighted_score": {
+        "control": 0.053119365875683555,
+        "item_local": 0.05332171721060342,
+        "absolute_delta": 0.00020235133491986607,
+        "relative_delta": 0.0038093703037311855
+      }
+    },
+    "exploratory_positive_signal": false,
+    "signal_rule": "relative NDCG@10 >=3% and HR@10 does not decrease; same-seed SID-level pair, no significance claim"
+  },
+  "SID_precision_acceptance": {
+    "common_exact_matching_modes": [
+      "tf32_nearest_even_cpu",
+      "tf32_nearest_ties_away_cpu"
+    ],
+    "state_matching_modes": {
+      "control/best": [
+        "tf32_nearest_even_cpu",
+        "tf32_nearest_ties_away_cpu"
+      ],
+      "control/last": [
+        "tf32_nearest_even_cpu",
+        "tf32_nearest_ties_away_cpu"
+      ],
+      "item_local/best": [
+        "tf32_nearest_even_cpu",
+        "tf32_nearest_ties_away_cpu"
+      ],
+      "item_local/last": [
+        "tf32_nearest_even_cpu",
+        "tf32_nearest_ties_away_cpu"
+      ]
+    },
+    "rule": "One common arithmetic mode must match the exact first argmin at every catalogue position of all four best/last checkpoints; no per-position or per-state mixing.",
+    "scope": "CPU emulation consistency only; not proof of historical CUDA precision flags or bitwise CUDA replay."
+  },
+  "goal_complete": false,
+  "scope": "Offline CPU artifact consistency; no platform allocation, GPU release or settlement acceptance",
+  "limitations": [
+    "Initial shared state/RNG aggregation is a SHA-bound runner attestation, not independent reconstruction of every initial byte.",
+    "Per-phase freezing/direct-CE gradients are SHA-bound runtime attestations cross-checked against curves and actual Adam clocks.",
+    "SID acceptance requires a common exact CPU FP32 or explicitly rounded TF32 operand mode; original FP64 tolerance failures/gaps remain reported and grant no acceptance.",
+    "Matching CPU arithmetic does not prove which CUDA precision flags were active historically; saved weights/SID bytes are unchanged.",
+    "Single seed and SID-level metrics; Stage03/05 historical scores are background only."
+  ]
+}

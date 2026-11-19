@@ -1,0 +1,105 @@
+# Shared protocol for the paired RQ-VAE vs RQ-KMeans formal experiment.
+run_id: ar_formal_3x256
+rand_seed: 2024
+reproducibility: true
+
+cache_dir: ../../data/cache/
+log_dir: ../../outputs/logs/
+tensorboard_log_dir: ../../outputs/tensorboard/
+ckpt_dir: ../../outputs/checkpoints/
+position_loss_log_dir: ../../outputs/position_loss_logs/
+run_metadata_dir: ../../outputs/run_metadata/
+
+category: Beauty
+metadata: sentence
+split: leave_one_out
+train_sliding: true
+min_hist_len: 2
+max_hist_len: 50
+max_history_len: 50
+
+# Three semantic digits plus one deterministic item-disambiguation suffix.
+n_digit: 3
+semantic_n_digit: 3
+use_collision_suffix: true
+require_unique_sid: true
+strict_item_eval: true
+codebook_size: 256
+semantic_codebook_sizes: [256, 256, 256]
+collision_suffix_codebook_size: 256
+
+# One frozen embedding matrix is consumed by both tokenizers.
+sent_emb_model: sentence-transformers/sentence-t5-xl
+sent_emb_dim: 768
+sent_emb_pca: 32
+sent_emb_batch_size: 8
+sent_emb_fp16: true
+sent_emb_path: ../../data/formal_embeddings/beauty_sentence_t5_xl.npy
+normalize_after_pca: true
+pca_whiten: true
+
+# Paired tokenizer fit/validation split. Override both seeds together per run.
+sid_fit_scope: catalog_split
+sid_fit_val_fraction: 0.1
+sid_fit_seed: 2024
+
+# Medium AR model: restore the selected upstream's regular model scale.
+encoder_n_layer: 2
+decoder_n_layer: 4
+n_head: 8
+n_embd: 256
+n_inner: 1024
+dropout: 0.1
+attn_pdrop: 0.1
+resid_pdrop: 0.1
+share_embeddings: true
+share_decoder_output_embedding: true
+
+# Safe physical batch for a 10 GB RTX 3080; effective batch = 64 * 8 = 512.
+mixed_precision: fp16
+gradient_accumulation_steps: 8
+train_batch_size: 64
+eval_batch_size: 8
+lr: 0.003
+weight_decay: 0.0
+warmup_ratio: 0.05
+warmup_steps: 0
+epochs: 100
+max_grad_norm: 1.0
+label_smoothing: 0.1
+
+eval_start_epoch: 5
+eval_interval: 5
+patience: 6
+topk: [5, 10]
+metrics: [ndcg, recall]
+val_metric: ndcg@10
+
+# Start with beam 64. The profile stage compares memory/time before long runs.
+ar_beam_search:
+  pre_cut_num: [64, 64, 64, 64]
+  beam_search_num: [64, 64, 64, 64]
+  top_k_final: 10
+  self_kv_cache: true
+  cross_kv_cache: true
+  seed: 42
+
+# RQ-VAE tokenizer protocol (used only by train_rqvae_tokenizer.py).
+rqvae_input_dim: 768
+rqvae_hidden_dims: [512, 256, 128, 64]
+rqvae_embed_dim: 32
+rqvae_commitment_weight: 0.25
+rqvae_codebook_normalize: false
+rqvae_batch_size: 1024
+rqvae_eval_batch_size: 1024
+rqvae_lr: 0.001
+rqvae_weight_decay: 0.0001
+rqvae_warmup_ratio: 0.01
+rqvae_max_steps: 60000
+rqvae_eval_interval: 1000
+rqvae_profile_steps: 50
+rqvae_fp16: true
+# A low reconstruction loss is not sufficient: reject collapsed checkpoints.
+rqvae_min_code_utilization: 0.25
+rqvae_min_unique_sid_ratio: 0.5
+tokenizer_neighbor_queries: 1000

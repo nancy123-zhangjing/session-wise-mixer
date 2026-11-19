@@ -1,0 +1,250 @@
+{
+  "schema": "stage07_multiseed_independent_final_results_review_v1",
+  "reviewed_utc": "2026-10-21T17:40:52.058922+00:00",
+  "status": "RESULTS_AND_COLLISION_EVIDENCE_VERIFIED_SOURCE_RESTORE_PENDING",
+  "reviewer": "beam_trace_review",
+  "scope": "Independent read-only review of actual local artifacts; no GPU, no remote access, no repeated unit-test suite. Only this review record is written.",
+  "checks": {
+    "summary_evidence_files_independently_rehashed": 152,
+    "raw_cells_recomputed": 12,
+    "raw_rows_recomputed": 268356,
+    "all_user_item_orders_aligned": true,
+    "paired_new_lost_hit_counts_recomputed": true,
+    "paired_mean_and_sample_sd_recomputed": true,
+    "same_seed_initial_base_SID_RNG_inputs_and_engine_sources_equal": true,
+    "all_six_training_budgets_verified_in_summary": true,
+    "same_best_and_saved_SID_for_both_beams": true,
+    "all_val32_selected_scores_reproduced": true,
+    "collision_counts_and_checkpoint_SID_bindings_verified": true,
+    "checkpoint_readback_manifest_and_package_bindings_verified": true,
+    "full_archive_not_rehashed_here": "Already BYTE_RESTORATION_VERIFIED; independent review checks the receipt binding and 152 research-evidence files.",
+    "full_CPU_checkpoint_readback_not_repeated_here": "Existing SHA-bound readback covers 56 checkpoints/28 required joint states; no independent model reload or resume performed here."
+  },
+  "raw_cell_checks": [
+    {
+      "seed": 2025,
+      "variant": "control",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1523,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2025,
+      "variant": "control",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2280,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1550,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2304,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1570,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2277,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1563,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2277,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2024,
+      "variant": "control",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1544,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2024,
+      "variant": "control",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2326,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "beam": 32,
+      "count": 22363,
+      "hits10": 1599,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "beam": 256,
+      "count": 22363,
+      "hits10": 2351,
+      "raw_sid_rank_recomputation": "PASS",
+      "stored_float32_mean_recomputation": "PASS"
+    }
+  ],
+  "new_seed_paired_results": [
+    {
+      "seed": 2025,
+      "beam": 32,
+      "delta": {
+        "hit_rate@5": 0.0017439520636766126,
+        "hit_rate@10": 0.0012073514286991965,
+        "ndcg@5": 0.0011602573492219617,
+        "ndcg@10": 0.0009964525630316995,
+        "weighted_score": 0.0010386323537563413,
+        "duplicate@10": 8.943327058141826e-06
+      },
+      "new_hit_users": 389,
+      "lost_hit_users": 362,
+      "net_hit_users": 27
+    },
+    {
+      "seed": 2025,
+      "beam": 256,
+      "delta": {
+        "hit_rate@5": 0.00031301703707016515,
+        "hit_rate@10": 0.001073201269954846,
+        "ndcg@5": 0.0005158429382920229,
+        "ndcg@10": 0.00076887454371629,
+        "weighted_score": 0.0008297398815010903,
+        "duplicate@10": -0.0008406743366603255
+      },
+      "new_hit_users": 481,
+      "lost_hit_users": 457,
+      "net_hit_users": 24
+    },
+    {
+      "seed": 2026,
+      "beam": 32,
+      "delta": {
+        "hit_rate@5": -0.001028484550373382,
+        "hit_rate@10": -0.00031301703707016515,
+        "ndcg@5": -0.0002536709180795266,
+        "ndcg@10": -2.486564491194221e-05,
+        "weighted_score": -8.249595212909272e-05,
+        "duplicate@10": -0.0075794838527812325
+      },
+      "new_hit_users": 301,
+      "lost_hit_users": 308,
+      "net_hit_users": -7
+    },
+    {
+      "seed": 2026,
+      "beam": 256,
+      "delta": {
+        "hit_rate@5": -0.00040245047623305163,
+        "hit_rate@10": 0.0,
+        "ndcg@5": -9.023920131359664e-05,
+        "ndcg@10": 1.1653277100301396e-06,
+        "weighted_score": 9.323357309659608e-07,
+        "duplicate@10": -0.0007870142543720485
+      },
+      "new_hit_users": 330,
+      "lost_hit_users": 330,
+      "net_hit_users": 0
+    }
+  ],
+  "interpretation": {
+    "primary": "2025 improves at both beams; 2026 is slightly negative at beam32 and practically tied at beam256. Stable cross-seed improvement is not established.",
+    "seed2026_beam256": "HR@10 unchanged; NDCG@10 +0.0000011653277100301396 is a tiny numerical positive, not evidence of a practically stable gain. Same HR has 330 new and 330 lost hits, so predictions are not identical.",
+    "historical2024": "Supplemental exploratory reference, not a third prospective independent confirmation.",
+    "statistics": "Mean and sample SD describe paired warm-start training-seed outcomes; not end-to-end independent pretraining, not CI, no significance claim.",
+    "collisions": "Collision ratios are nearly unchanged; equal counts do not mean equal members. All metrics remain SID-level, not item-level gains.",
+    "generalization": "Shared validation used for selection and evaluation; no newly evaluated test evidence or serving-latency claim."
+  },
+  "report_wording_risk": "The numerical positive count of 2/2 NDCG seeds at beam256 needs the immediate clarification that 2026 is effectively flat; do not infer stability from that count or a positive mean.",
+  "source_restore_status": "pending",
+  "source_restore_boundary": "Parent reported the original engine Git shallow-clone boundary has missing history; supplementary source restoration is being repaired and is outside this results-only acceptance. Original archive remains unchanged.",
+  "overall_delivery_accepted": false,
+  "goal_complete": false,
+  "artifacts": [
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\SUMMARY.json",
+      "sha256": "59bef478e5ad4bb5fd8772d6aa38ba0361c65b3364cbd8c728e63bc7a888c7fc",
+      "size_bytes": 106329
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\REPORT.md",
+      "sha256": "c5d369de2a49e37be62aed5f3be1786713c5b288018b71c4dc51474665368800",
+      "size_bytes": 2737
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\collisions\\SID_COLLISIONS.json",
+      "sha256": "0f51e811913e664912604abf0ad6cb5abb6431e07d54724465fff54326e0f442",
+      "size_bytes": 21526
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\collisions\\SID_COLLISIONS.md",
+      "sha256": "732d6f31344237254148eb27fe14836494c713fb71e51934fa1b1c8da284357a",
+      "size_bytes": 1184
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\BYTE_VERIFICATION.json",
+      "sha256": "a00d2dbffe9cb1603b80e9dbb05635b1506b0eb0eaebeff3d1c9e5679c31d346",
+      "size_bytes": 218
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\CHECKPOINT_READBACK.json",
+      "sha256": "7019a246855972d92f5366495e5e8af7975e9f2860f4c50d01d71eb7fa213819",
+      "size_bytes": 34840
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\package\\PACKAGE.json",
+      "sha256": "bc189d6eff510368e4fb3950497ced678aa7f605f18aa61ea167ef193968f603",
+      "size_bytes": 2248
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\MANIFEST.json",
+      "sha256": "de15eb7178adc917374fdc2b2dfc7e5e666585a7e8489685217cfea99402fee3",
+      "size_bytes": 245155
+    }
+  ]
+}

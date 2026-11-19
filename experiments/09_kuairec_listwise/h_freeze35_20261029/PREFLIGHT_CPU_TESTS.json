@@ -1,0 +1,76 @@
+{
+  "format": "stage09_recovery35_preflight_cpu_tests_v1",
+  "status": "passed",
+  "recorded_date_local": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "workspace": "C:/Users/nancy/Documents/experiment1",
+  "evidence_source": "Existing tool execution session 23653, final chunk 2905e3; recorded without rerunning tests",
+  "command": ".\\.runtime\\stage08_restore_env\\Scripts\\python.exe -B -X utf8 tests/test_listwise_recovery35_preflight.py -v",
+  "exit_code": 0,
+  "tests_run": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "unittest_reported_seconds": 101.633,
+  "runtime": {
+    "python_entrypoint": "C:/Users/nancy/Documents/experiment1/.runtime/stage08_restore_env/Scripts/python.exe",
+    "torch_version_readback": "2.6.0+cpu",
+    "torch_module_readback": "C:/Users/nancy/Documents/experiment1/.runtime/continuous_env/Lib/site-packages/torch/__init__.py",
+    "gpu_requested": false,
+    "remote_access": false,
+    "production_checkpoint_training": false
+  },
+  "source_sha256_after_success": {
+    "scripts/listwise_diffgrm/recovery35_preflight.py": "fbaf56bad6860f394d82a92258957032d845bfa89267bc8567337c083bede230",
+    "tests/test_listwise_recovery35_preflight.py": "38fff27fc6dbf4ebaaedfb4341d790a64c355d054e269046ef4c7e8d7924c2b9"
+  },
+  "tests": [
+    {
+      "name": "test_bundle_tampering_and_overwrite_fail_before_restore",
+      "status": "passed",
+      "scope": "Published disposable bundle cannot be overwritten; tampered snapshot digest is rejected before controller state changes."
+    },
+    {
+      "name": "test_c_executes_all_original_40_t_then_r_without_schedule_shortening",
+      "status": "passed",
+      "scope": "Actual tiny H0 performs all 40 T updates and four logical R updates, retaining phase 5 then phase 6 and the unshortened plan. T/R disk replay both pass; 44 original-style logical update rows are retained."
+    },
+    {
+      "name": "test_gpu_identity_rejects_mig_small_memory_and_unverified_uuid",
+      "status": "passed",
+      "scope": "Mocked device properties and nvidia-smi text validate UUID correlation and reject insufficient memory, MIG UUID and unknown UUID. This is not a real H100 or nvidia-smi check."
+    },
+    {
+      "name": "test_invalid_budget_is_rejected_before_supervisor_or_gpu",
+      "status": "passed",
+      "scope": "Invalid, nonfinite and over-limit durations fail argument parsing without dispatching the worker."
+    },
+    {
+      "name": "test_real_abc_next_update_disk_restore_exact_and_published_bundle_rejected",
+      "status": "passed",
+      "scope": "Real tiny A/B R and C T updates preserve inactive state and counters. Disk restore reproduces full next-update state and values; reusable optimizer snapshots are not aliased. Each R decoder layer has active gradients/updates. Outer preflight bundles are rejected even with allow_preflight=True."
+    },
+    {
+      "name": "test_real_fp32_batch32_decode_preserves_training_rng_gradients_and_modes",
+      "status": "passed",
+      "scope": "Real toy catalog and FP32 beam32/batch32 generation run twice; complete lists are valid and equal. Full training state, RNG, modes and gradients are unchanged. Only dataset release lookup and its source SHA are mocked."
+    },
+    {
+      "name": "test_supervisor_terminates_hanging_cpu_worker_before_deadline",
+      "status": "passed",
+      "scope": "A real disposable sleeping CPU subprocess is terminated by the deadline supervisor; no training or GPU worker is used."
+    }
+  ],
+  "additional_import_check": {
+    "command": ".\\.runtime\\stage08_restore_env\\Scripts\\python.exe -B -X utf8 -m scripts.listwise_diffgrm.recovery35_preflight --help",
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "limits": [
+    "Tests use nine-item synthetic assets and tiny model dimensions; production KuaiRec and fixed parent checkpoints are not trained by this suite.",
+    "CPU BF16 update checks do not establish CUDA kernel determinism, H100 memory fit, real GPU identity or production throughput.",
+    "The exact next-update comparisons concern saved and restored state within the tested tiny CPU execution; they do not claim bitwise recovery of the unavailable historical H0 R20 checkpoint.",
+    "The complete imported runtime was not separately snapshotted by this test command. These results must not be attributed to later source modifications without checking the final package.",
+    "Formal H100 acceptance, source/data bindings and the cumulative 0.5 GPU-hour budget remain separately required."
+  ]
+}

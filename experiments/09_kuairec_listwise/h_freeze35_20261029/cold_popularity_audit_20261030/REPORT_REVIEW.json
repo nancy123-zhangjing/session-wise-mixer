@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-29T18:26:59.617607+00:00",
+  "reviewer": "independent cli_connection_audit agent",
+  "scope": "REPORT.md and four presentation CSVs only; source statistical VERIFY unchanged; no inference, training, GPU, or network",
+  "report_sha256": "950b708f40896d906780cb99598fc34b4a4cc8f1e27ebe0c49b1b87bde557090",
+  "tables_manifest_sha256": "b8bf1532d315ca0197c3b143dc43e254b98138379c3253f85582e9ed0a086a9e",
+  "source_complete_sha256": "b2fdc9321554a986eec0b7342dcd60d877a708635849f43ca304d458d2aa0134",
+  "original_verify_sha256": "9ef74db94e73ba6a55a6734ad2fb130ac6eab09ffbd86c9e79fda83aeeea0264",
+  "files": {
+    "prediction_bias.csv": "48f9bf96f766ddf5bbe87f0cf675dc3a8a851bb5bdac7bf26346c3438f648aa3",
+    "recommended_top10.csv": "c1cc6859e62b7bd8f18b6139a0cd826ceb0ba09aee3a82d754e67e08dad330bc",
+    "target_composition.csv": "fd1de73ba05c765a26b505e1279f98aae2b336645f6e174163a9b02e3554156a",
+    "target_metrics.csv": "cd4aa8f46f5eb36eca092d8187a6c97e90ae9177625ad0bc232cd51aa2c1e627"
+  },
+  "checks": {
+    "all_csv_rows_match_locked_json_sources": true,
+    "csv_row_counts": {
+      "target_composition.csv": 24,
+      "target_metrics.csv": 216,
+      "prediction_bias.csv": 18,
+      "recommended_top10.csv": 180
+    },
+    "unique_csv_row_keys": true,
+    "three_and_five_class_partition_closure": true,
+    "ndcg_contribution_closure_each_partition": true,
+    "markdown_numeric_rows_checked_against_source": 35,
+    "reported_relative_changes_and_bootstrap_bounds_match_rounding": true,
+    "aggregate_valid_items_19_to_21_confirmed_all_models_and_segments": true,
+    "top1_zero_cold_historyonly_tail_hits_and_mid_only_H1_top10_correct": true,
+    "status_initial_verified_true_and_C_pending": true
+  },
+  "semantic_review": [
+    "Train-unseen is defined over retained training history union target; static content may be known. History-only is not no-gradient.",
+    "Popularity uses only training target occurrence counts; top10 recommendation concentration is distinct from training-head exposure.",
+    "Grouped target hit rate is not list HR. NDCG contributions retain original five-target IDCG and sum to overall metric.",
+    "Aggregate @50 uses original candidate score sorting and first-occurrence deduplication; PAD is excluded from recommendation exposure denominators.",
+    "Within-group decomposition is descriptive and mixes item/user/time differences; report does not claim causal identification.",
+    "Time-change bootstrap uses shared user draws; single seed and validation selection limitations are stated.",
+    "H0 T360 versus H1 T200 is not a pure Mixer comparison. C fixed R32/T200 and original-rule selected best are pending, and original fixed R35 final tests remain required.",
+    "Report makes no claim that freezing alone caused all improvements or that time-generalization differences disappeared."
+  ],
+  "resolved_review_note": "STATUS.json was initially stale and was updated by parent to verified/report prepared/C pending before final review.",
+  "blocking_findings": [],
+  "full_goal_complete": false
+}

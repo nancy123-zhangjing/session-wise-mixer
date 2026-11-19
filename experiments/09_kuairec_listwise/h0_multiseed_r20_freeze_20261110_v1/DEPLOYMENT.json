@@ -1,0 +1,48 @@
+{
+  "status": "submitted_awaiting_scheduler",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h0_multiseed_r20_freeze_20261110_v1",
+  "parents": {
+    "2025": {
+      "epoch": 20,
+      "T": 200,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/multiseed_freeze_20261109_v1/seed2025_H0/checkpoints/R20_T200.pt",
+      "sha256": "5a167c61d636df34b5a9007b3319411be4a551cdcdf06472d463fe12c7c5c475",
+      "validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/multiseed_freeze_20261109_v1/seed2025_H0/validation_R20",
+      "ndcg5": 0.006910279535226795
+    },
+    "2026": {
+      "epoch": 20,
+      "T": 200,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/multiseed_freeze_20261109_v1/seed2026_H0/checkpoints/R20_T200.pt",
+      "sha256": "94f830524dbd03f7548a78cebbe2e2f957ee8c2149e5389a0c7ac8d8957fcb30",
+      "validation": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/multiseed_freeze_20261109_v1/seed2026_H0/validation_R20",
+      "ndcg5": 0.008008365514392967
+    }
+  },
+  "settings": {
+    "freeze": "entire Tokenizer and SID at R20/T200",
+    "continue_R_to": 35,
+    "new_R_updates": 10395,
+    "new_T_updates": 0,
+    "gpu_per_job": 1,
+    "precision": "bf16",
+    "inference": "fp32",
+    "global_batch": 1024,
+    "microbatch": 256,
+    "beam": 32
+  },
+  "jobs": [
+    {
+      "seed": 2025,
+      "name": "nancy-s09-h0freeze-s2025-1110-v1",
+      "observed_status": "QUEUING"
+    },
+    {
+      "seed": 2026,
+      "name": "nancy-s09-h0freeze-s2026-1110-v1",
+      "observed_status": "QUEUING"
+    }
+  ],
+  "training_started_confirmed": false,
+  "final_acceptance": false
+}

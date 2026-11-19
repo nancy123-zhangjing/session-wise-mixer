@@ -1,0 +1,47 @@
+{
+  "schema": "stage09_cpu_final_delivery_readiness_v1",
+  "checked_at_utc": "2026-10-28T07:38:35.310470+00:00",
+  "notebook": "nancy-stage09-prep-20261027-r1",
+  "account": "sii-shared",
+  "workspace": "CPU资源空间",
+  "project": "公共科研项目",
+  "previous_live_status": "STOPPED",
+  "start_command_succeeded": true,
+  "started_existing_notebook": true,
+  "current_live_status": "RUNNING",
+  "node": "hpc-compute716",
+  "resource": {
+    "gpu_count": 0,
+    "gpu_type": "CPU",
+    "cpu_count": 4,
+    "memory_gib": 16
+  },
+  "native_status_receipt": "CPU_READY_STATUS_20261028T0737.json",
+  "native_status_sha256": "99e2d2149e651b63e5ff484438c44fe3f6012afa7f8315c3002eaa6133034a79",
+  "native_status_observed_at_utc": "2026-10-28T07:37:21.1253438Z",
+  "auto_stop_in_seconds_at_observation": 14110,
+  "ssh_readonly_probe": {
+    "command": "sha256sum",
+    "remote_source": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/delivery/SOURCE_LOCK.json",
+    "exit_code": 0,
+    "sha256": "cab24153327c0e7747cb1d006a21acc2869bd68f4018fbf4e9a20ba2d4b32f38"
+  },
+  "scp_download": {
+    "exit_code": 0,
+    "local_path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_delivery\\goal_20261027_r1\\CPU_RECOVERY_SOURCE_LOCK_20261028T073556Z.json",
+    "bytes": 1367,
+    "sha256": "cab24153327c0e7747cb1d006a21acc2869bd68f4018fbf4e9a20ba2d4b32f38",
+    "matched_existing_local_source_lock": true
+  },
+  "gpu_workloads_created_or_restarted": false,
+  "shared_environment_upgraded": false,
+  "connection_cache_rediscovered_by_official_cli": true,
+  "manual_transfer_service_recovery_rerun": false,
+  "connection_urls_or_tokens_saved": false,
+  "final_model_transfer_completed": false,
+  "final_training_acceptance_completed": false,
+  "limitations": [
+    "This verifies the CPU file channel and source-lock identity only; final four-arm acceptance, model backup and CPU model-forward checks remain pending.",
+    "The CPU Notebook has a platform time limit; this does not guarantee availability after its current run ends."
+  ]
+}

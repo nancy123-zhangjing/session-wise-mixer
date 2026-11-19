@@ -1,0 +1,1640 @@
+{
+  "format": "stage09_recovery35_branch_preflight_v1",
+  "status": "passed",
+  "branch": "B",
+  "name": "H0-Freeze32-R35",
+  "preflight_only": true,
+  "formal_training_started": false,
+  "parent_sha256": "8914c253a679e4ad18c213d4092733a8a6ce995a9b290d8bfedd6507a403b84e",
+  "build_timing": {
+    "seconds": 2.5547742396593094,
+    "peak_allocated_bytes": 146875904,
+    "peak_reserved_bytes": 184549376
+  },
+  "initial_checkpoint": {
+    "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/B/initial.preflight.bundle.pt",
+    "bytes": 79642404,
+    "sha256": "1dbd68499a7a975655dac9110158cb12b5fda2863b1e9cb83c5088fafedf8628",
+    "seconds": 0.3182187043130398,
+    "state_materialization_seconds": 0.04137098044157028,
+    "payload_fingerprint_seconds": 0.07251022756099701,
+    "file_sha256_seconds": 0.07686057314276695,
+    "preflight_only": true,
+    "formal_restore_rejected": true,
+    "fsync_completed": true
+  },
+  "source_binding": {
+    "config": {
+      "protocol_id": "kuairec_five_item_diffgrm_full_mixer_v1",
+      "architecture": "H",
+      "seed": 2024,
+      "list_length": 5,
+      "history_max": 50,
+      "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+      "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+      "model": {
+        "n_digit": 4,
+        "codebook_size": 256,
+        "encoder_n_layer": 1,
+        "decoder_n_layer": 4,
+        "n_embd": 256,
+        "n_head": 4,
+        "n_inner": 1024,
+        "dropout": 0.1,
+        "attn_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "norm_type": "layernorm",
+        "norm_eps": 1e-05,
+        "share_decoder_output_embedding": true,
+        "masking_strategy": "guided",
+        "guided_steps": 4,
+        "guided_conf_metric": "msp",
+        "guided_select": "least",
+        "guided_refresh_each_step": false,
+        "diffusion_loss_reduction": "per_view",
+        "label_smoothing": 0.2,
+        "item_local_attention": {
+          "enabled": false
+        },
+        "dedup_strategy": "simple",
+        "current_split": "val"
+      },
+      "alignment": {
+        "crosspse_heads": 4,
+        "crosspse_dropout": 0.0,
+        "crosspse_attention_scope": "full",
+        "crosspse_residual_scale_init": 1.0,
+        "crosspse_learn_residual_scale": false,
+        "crosspse_zero_init_attention_output": true,
+        "crosspse_train_base_codebooks": true,
+        "joint_gradient_mode": "diger_st",
+        "joint_diger_assignment_temperature": 0.1,
+        "joint_diger_softmax_temperature_start": 1.0,
+        "joint_diger_softmax_temperature_end": 1.0,
+        "joint_diger_gumbel_noise_start": 1.0,
+        "joint_diger_gumbel_noise_end": 0.2,
+        "joint_diger_uncertainty_decay": "cosine"
+      },
+      "training": {
+        "deterministic_algorithms": true,
+        "effective_batch_size": 1024,
+        "microbatch_size": 256,
+        "warmup_epochs": 5,
+        "cycles": 10,
+        "r_epochs_per_cycle": 3,
+        "t_updates_per_cycle": 40,
+        "checkpoint_every_updates": 100,
+        "decoder_lr": 0.001,
+        "decoder_warmup_updates": 500,
+        "decoder_weight_decay": 0.0,
+        "codebook_lr": 1e-05,
+        "mixer_lr": 0.0001,
+        "tokenizer_weight_decay": 0.0001,
+        "adam_betas": [
+          0.9,
+          0.999
+        ],
+        "adam_eps": 1e-08,
+        "recommendation_weight": 1.0,
+        "reconstruction_weight": 1.0,
+        "balance_weight": 0.01,
+        "anchor_weight": 0.01,
+        "balance_temperature": 0.1,
+        "sia_weight": 0.0,
+        "max_grad_norm": 1.0
+      },
+      "evaluation": {
+        "val_beam": 32,
+        "test_beam": 32,
+        "candidate_lists": 32,
+        "batch_size": 32,
+        "selection": "ndcg@5",
+        "tie_break": "earlier",
+        "aggregate_ks": [
+          10,
+          20,
+          50
+        ],
+        "sensitivity_beam": 256,
+        "filter_history": false,
+        "collision_rule": "reconstruction_error_then_original_id",
+        "aggregation": "list_score_order_then_item_position_first_occurrence"
+      },
+      "provenance": "docs/research/onerec_listwise/IMPLEMENTATION_REFERENCES.md"
+    },
+    "asset_manifest": "7cc6dcdfcdeb4087e38fd2080f322a01375b189b284a59d5c9bfd279862525d4",
+    "data": {
+      "manifest_sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649",
+      "files": {
+        "config.json": {
+          "bytes": 1746,
+          "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+        },
+        "item_map.json": {
+          "bytes": 653690,
+          "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+        },
+        "item_catalog.parquet": {
+          "bytes": 799712,
+          "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+        },
+        "item_text.jsonl": {
+          "bytes": 7724679,
+          "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+        },
+        "train_seen.json": {
+          "bytes": 159883,
+          "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+        },
+        "train.parquet": {
+          "bytes": 531624261,
+          "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+        },
+        "validation.parquet": {
+          "bytes": 61527190,
+          "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+        },
+        "test.parquet": {
+          "bytes": 45918501,
+          "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+        }
+      },
+      "history_max": 50,
+      "list_length": 5,
+      "pad_id": 0
+    },
+    "code": {
+      "scripts/listwise_diffgrm/__init__.py": "23b895b1c072e3c8a22aa3e8b4d906ad315a35a668cb46fa1e77a21efbdbfb60",
+      "scripts/listwise_diffgrm/alignment.py": "e84aa754627ca0d29862d31b51509340c0ef673110ed1d5dfefd34efce3aa894",
+      "scripts/listwise_diffgrm/analysis.py": "487415686596235afe7204168708892d195b203418d1def054bd1355f4f2f29b",
+      "scripts/listwise_diffgrm/asset_diagnostics.py": "9e4be481b3652c834b6a057690b3283ea9c47496ae6c5ef467ba918485011afa",
+      "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+      "scripts/listwise_diffgrm/data.py": "f5d10972973c0126f1b4da8e8df23f53e5180b96799f985b97fe33fdcff0c862",
+      "scripts/listwise_diffgrm/decoding.py": "0eb50c5c3da3d17718d3de40019441e6573cdebdf67453586b16988916523afe",
+      "scripts/listwise_diffgrm/encode_text.py": "3602360c2b67c24eef167c612ee9fba144d79003efddff95a8792aab06d1ac52",
+      "scripts/listwise_diffgrm/encoder_cpu_probe.py": "c4f4fb5428e21e4a7f84bb9ef095ba771354f3462fedc15c3bbdf415f8ef2bc9",
+      "scripts/listwise_diffgrm/faiss_cpu_smoke.py": "b9a06a5093983750a206a373edd0dcb4216b5f2ef24bb10ab62dbb7253690675",
+      "scripts/listwise_diffgrm/metrics.py": "2f2223d8966d3bb0ebe153e71f421bf2fa97862c50161fd74821af04142f16bb",
+      "scripts/listwise_diffgrm/model.py": "55badb671bec5f71cc355f3bb6cc1076f2f88ed0819c61546f042896b3676855",
+      "scripts/listwise_diffgrm/model_manifest.py": "eef37ca9d23521c1d3c854e066f512d090e1970e0461704fd621bf0c9fcf3a39",
+      "scripts/listwise_diffgrm/preflight.py": "ecc3aa03527e0ce3ca4cf0efcbfcc1476d57e66b1e50e059f4040b99c0cbc94f",
+      "scripts/listwise_diffgrm/prepare_assets.py": "caf8dd5db0126ae3792069c579da05dd2ee23d9686be9a33571d7e88eb49a79b",
+      "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+      "scripts/listwise_diffgrm/recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+      "scripts/listwise_diffgrm/recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+      "scripts/listwise_diffgrm/recovery35_preflight.py": "fbaf56bad6860f394d82a92258957032d845bfa89267bc8567337c083bede230",
+      "scripts/listwise_diffgrm/recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+      "scripts/listwise_diffgrm/recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+      "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+      "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+      "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+      "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0",
+      "scripts/listwise_diffgrm/run.py": "cf4edf00afd748be741d3ae4080a904f4310d97d1e273a96fc289ecabd5d373b",
+      "scripts/listwise_diffgrm/runtime.py": "c6fbcd59529141c5a1151adba4d3fd398858f3d9ca022e17efa0938aad5fcd09",
+      "scripts/listwise_diffgrm/subset.py": "33f6fb79033ba31d2ec454c19e7b4c2cad38abaf3c926f263c6f6ff2e23aee2a",
+      "scripts/listwise_diffgrm/tokenizer_cpu_smoke.py": "481041f47f5b438a83f0616330b0f9fc1fae71bb6fa6a8a8003756f1cbb51738",
+      "scripts/listwise_diffgrm/training.py": "2da7cc318fc35c576a5144489c5ea2db43e4e534a3664c041ebcd5bf141cddd8"
+    },
+    "engine": {
+      "genrec/dataset.py": "89e5b7298c7dd32203a00d2be0ac5496afd681af31a334900a8ced5b865f4f48",
+      "genrec/evaluator.py": "d166bd7b141c770fb5ecae02191adcde949976f4e17931d9f004823198bb1bdf",
+      "genrec/model.py": "8f715ab3f21935500ed063767191f378389b95e9cde0aa90bad1dbeea171a278",
+      "genrec/models/DIFF_GRM/__init__.py": "5147ee78f25faab67a1c4dbd977c35ca81d3c3195d71c272de9849c6ec937d5a",
+      "genrec/models/DIFF_GRM/ablate_decode.py": "ade897a8d4fbe379c4e25c39322f6f391f0f9beb84722bcc059a615468e2fd05",
+      "genrec/models/DIFF_GRM/beam.py": "ff0699d1dacd6a9c6f8b859d49ee6ba817119b10f8617d6f82bdd062e3cdf0b6",
+      "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "genrec/models/DIFF_GRM/comb_topk.py": "207b5575afa5a884eebb98366908e05d2c2c5bcb62e08601e9e6342ab4a3bf3a",
+      "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "genrec/models/DIFF_GRM/evaluator.py": "77683fc060f079e29396980529c7522bed3abb2cd04dac50cce05484061adbfa",
+      "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+      "genrec/models/DIFF_GRM/joint_cross_pse.py": "206b8cd20dee778f3d6a2689e9b6ab3d91123670fbad0b9acc052745adce9473",
+      "genrec/models/DIFF_GRM/model.py": "a9345b67fc09476753191e2459572ffbc877624051cf04ce7bf0f589371d027c",
+      "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+      "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56",
+      "genrec/tokenizer.py": "ae59cf3b98a4d9a68929f2165cb9a9097c52c626186fd73c14bd94b735e2e060",
+      "genrec/trainer.py": "e2bae211439a2d7f5cb013896be39a09b1b5ac3c149c7bf1bdffee488e733235",
+      "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802"
+    }
+  },
+  "initial_state_sha256": "6c266aba7d4536675f6f2687243d2fc92aa75be6a8e121df7de735878d9f149f",
+  "initial_counts": {
+    "R": 22176,
+    "T": 360,
+    "phase": 41
+  },
+  "original_scheduler": {
+    "base_lrs": [
+      0.001
+    ],
+    "last_epoch": 22176,
+    "verbose": false,
+    "_step_count": 22177,
+    "_get_lr_called_within_step": false,
+    "_last_lr": [
+      1.8780235250824395e-05
+    ],
+    "lr_lambdas": [
+      null
+    ]
+  },
+  "training_profile": {
+    "frozen_T_boundary": {
+      "from_phase": 41,
+      "to_phase": 42,
+      "r_updates": 22176,
+      "t_updates": 360,
+      "exact_non_cursor_state_unchanged": true
+    },
+    "R_disk_replay": {
+      "kind": "R",
+      "save": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/B/before_replay_R.preflight.bundle.pt",
+        "bytes": 79642340,
+        "sha256": "d2fceb4ac019c67d6df103b20a77f809d25f2a44f7c6d66a83623eb511254585",
+        "seconds": 0.14951582998037338,
+        "state_materialization_seconds": 0.041377775371074677,
+        "payload_fingerprint_seconds": 0.07276807725429535,
+        "file_sha256_seconds": 0.0743165910243988,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "load": {
+        "seconds": 0.0865582562983036,
+        "peak_allocated_bytes": 169404928,
+        "peak_reserved_bytes": 4546625536,
+        "payload_fingerprint_seconds": 0.06972980499267578
+      },
+      "restore": {
+        "seconds": 0.0714084580540657,
+        "peak_allocated_bytes": 214239744,
+        "peak_reserved_bytes": 4546625536
+      },
+      "exact_loaded_state": true,
+      "exact_next_update": true,
+      "reusable_snapshot_unchanged": true,
+      "extra_discarded_update_seconds": 0.8684077858924866,
+      "extra_discarded_updates": 1,
+      "formal_restore_rejected": true,
+      "actual_update": {
+        "seconds": 0.8581365011632442,
+        "peak_allocated_bytes": 4271410176,
+        "peak_reserved_bytes": 4546625536,
+        "kind": "R",
+        "original_phase_index": 42,
+        "update": 4,
+        "values": {
+          "recommendation": 2.9035433530807495,
+          "loss": 2.9035433530807495,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.08014511317014694,
+          "r_updates": 22180,
+          "t_updates": 360,
+          "learning_rates_used": {
+            "R": 1.8726415185090108e-05,
+            "codebook": 1e-05,
+            "mixer": 0.0001
+          },
+          "phase_index": 42
+        },
+        "gradients": {
+          "sid_embedding": {
+            "gradient_l1": 10.722114926557879,
+            "parameters_with_gradient": [
+              "backbone.embedding.weight"
+            ]
+          },
+          "history_projection": {
+            "gradient_l1": 9.93604952719761,
+            "parameters_with_gradient": [
+              "backbone.item_mlp.0.weight",
+              "backbone.item_mlp.0.bias",
+              "backbone.item_mlp.2.weight",
+              "backbone.item_mlp.2.bias"
+            ]
+          },
+          "history_position": {
+            "gradient_l1": 0.5382512297212543,
+            "parameters_with_gradient": [
+              "backbone.pos_emb_enc.weight"
+            ]
+          },
+          "mask_embedding": {
+            "gradient_l1": 0.06889002034517944,
+            "parameters_with_gradient": [
+              "backbone.mask_emb_table.weight"
+            ]
+          },
+          "list_position": {
+            "gradient_l1": 0.46627421409903036,
+            "parameters_with_gradient": [
+              "item_position_embedding.weight"
+            ]
+          },
+          "encoder_0": {
+            "gradient_l1": 16.02387303458181,
+            "parameters_with_gradient": [
+              "backbone.encoder_blocks.0.ln_1.weight",
+              "backbone.encoder_blocks.0.ln_1.bias",
+              "backbone.encoder_blocks.0.attn.qkv.weight",
+              "backbone.encoder_blocks.0.attn.proj.weight",
+              "backbone.encoder_blocks.0.attn.proj.bias",
+              "backbone.encoder_blocks.0.ln_2.weight",
+              "backbone.encoder_blocks.0.ln_2.bias",
+              "backbone.encoder_blocks.0.mlp.c_fc.weight",
+              "backbone.encoder_blocks.0.mlp.c_fc.bias",
+              "backbone.encoder_blocks.0.mlp.c_proj.weight",
+              "backbone.encoder_blocks.0.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_0_self_attn": {
+            "gradient_l1": 8.072998026269488,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.self_attn.qkv.weight",
+              "backbone.decoder_blocks.0.self_attn.proj.weight",
+              "backbone.decoder_blocks.0.self_attn.proj.bias"
+            ]
+          },
+          "decoder_0_cross_attn": {
+            "gradient_l1": 5.739362608408555,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.0.cross_attn.proj.weight",
+              "backbone.decoder_blocks.0.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_0_mlp": {
+            "gradient_l1": 12.66750614886405,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.0.mlp.c_fc.weight",
+              "backbone.decoder_blocks.0.mlp.c_fc.bias",
+              "backbone.decoder_blocks.0.mlp.c_proj.weight",
+              "backbone.decoder_blocks.0.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_1_self_attn": {
+            "gradient_l1": 3.5650063413690987,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.self_attn.qkv.weight",
+              "backbone.decoder_blocks.1.self_attn.proj.weight",
+              "backbone.decoder_blocks.1.self_attn.proj.bias"
+            ]
+          },
+          "decoder_1_cross_attn": {
+            "gradient_l1": 4.760342754336307,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.1.cross_attn.proj.weight",
+              "backbone.decoder_blocks.1.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_1_mlp": {
+            "gradient_l1": 12.370115082769189,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.1.mlp.c_fc.weight",
+              "backbone.decoder_blocks.1.mlp.c_fc.bias",
+              "backbone.decoder_blocks.1.mlp.c_proj.weight",
+              "backbone.decoder_blocks.1.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_2_self_attn": {
+            "gradient_l1": 2.971894921065541,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.self_attn.qkv.weight",
+              "backbone.decoder_blocks.2.self_attn.proj.weight",
+              "backbone.decoder_blocks.2.self_attn.proj.bias"
+            ]
+          },
+          "decoder_2_cross_attn": {
+            "gradient_l1": 3.395205899614666,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.2.cross_attn.proj.weight",
+              "backbone.decoder_blocks.2.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_2_mlp": {
+            "gradient_l1": 10.942833335186151,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.2.mlp.c_fc.weight",
+              "backbone.decoder_blocks.2.mlp.c_fc.bias",
+              "backbone.decoder_blocks.2.mlp.c_proj.weight",
+              "backbone.decoder_blocks.2.mlp.c_proj.bias"
+            ]
+          },
+          "decoder_3_self_attn": {
+            "gradient_l1": 3.0754966385824787,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.self_attn.qkv.weight",
+              "backbone.decoder_blocks.3.self_attn.proj.weight",
+              "backbone.decoder_blocks.3.self_attn.proj.bias"
+            ]
+          },
+          "decoder_3_cross_attn": {
+            "gradient_l1": 2.2064131741353776,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+              "backbone.decoder_blocks.3.cross_attn.proj.weight",
+              "backbone.decoder_blocks.3.cross_attn.proj.bias"
+            ]
+          },
+          "decoder_3_mlp": {
+            "gradient_l1": 9.165714413189562,
+            "parameters_with_gradient": [
+              "backbone.decoder_blocks.3.mlp.c_fc.weight",
+              "backbone.decoder_blocks.3.mlp.c_fc.bias",
+              "backbone.decoder_blocks.3.mlp.c_proj.weight",
+              "backbone.decoder_blocks.3.mlp.c_proj.bias"
+            ]
+          }
+        },
+        "changed_parameters": [
+          "backbone.embedding.weight",
+          "backbone.item_mlp.0.weight",
+          "backbone.item_mlp.0.bias",
+          "backbone.item_mlp.2.weight",
+          "backbone.item_mlp.2.bias",
+          "backbone.mask_emb_table.weight",
+          "backbone.pos_emb_enc.weight",
+          "backbone.encoder_blocks.0.ln_1.weight",
+          "backbone.encoder_blocks.0.ln_1.bias",
+          "backbone.encoder_blocks.0.attn.qkv.weight",
+          "backbone.encoder_blocks.0.attn.proj.weight",
+          "backbone.encoder_blocks.0.attn.proj.bias",
+          "backbone.encoder_blocks.0.ln_2.weight",
+          "backbone.encoder_blocks.0.ln_2.bias",
+          "backbone.encoder_blocks.0.mlp.c_fc.weight",
+          "backbone.encoder_blocks.0.mlp.c_fc.bias",
+          "backbone.encoder_blocks.0.mlp.c_proj.weight",
+          "backbone.encoder_blocks.0.mlp.c_proj.bias",
+          "backbone.decoder_blocks.0.ln_1.weight",
+          "backbone.decoder_blocks.0.ln_1.bias",
+          "backbone.decoder_blocks.0.self_attn.qkv.weight",
+          "backbone.decoder_blocks.0.self_attn.proj.weight",
+          "backbone.decoder_blocks.0.self_attn.proj.bias",
+          "backbone.decoder_blocks.0.ln_2.weight",
+          "backbone.decoder_blocks.0.ln_2.bias",
+          "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.0.cross_attn.proj.weight",
+          "backbone.decoder_blocks.0.cross_attn.proj.bias",
+          "backbone.decoder_blocks.0.ln_3.weight",
+          "backbone.decoder_blocks.0.ln_3.bias",
+          "backbone.decoder_blocks.0.mlp.c_fc.weight",
+          "backbone.decoder_blocks.0.mlp.c_fc.bias",
+          "backbone.decoder_blocks.0.mlp.c_proj.weight",
+          "backbone.decoder_blocks.0.mlp.c_proj.bias",
+          "backbone.decoder_blocks.1.ln_1.weight",
+          "backbone.decoder_blocks.1.ln_1.bias",
+          "backbone.decoder_blocks.1.self_attn.qkv.weight",
+          "backbone.decoder_blocks.1.self_attn.proj.weight",
+          "backbone.decoder_blocks.1.self_attn.proj.bias",
+          "backbone.decoder_blocks.1.ln_2.weight",
+          "backbone.decoder_blocks.1.ln_2.bias",
+          "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.1.cross_attn.proj.weight",
+          "backbone.decoder_blocks.1.cross_attn.proj.bias",
+          "backbone.decoder_blocks.1.ln_3.weight",
+          "backbone.decoder_blocks.1.ln_3.bias",
+          "backbone.decoder_blocks.1.mlp.c_fc.weight",
+          "backbone.decoder_blocks.1.mlp.c_fc.bias",
+          "backbone.decoder_blocks.1.mlp.c_proj.weight",
+          "backbone.decoder_blocks.1.mlp.c_proj.bias",
+          "backbone.decoder_blocks.2.ln_1.weight",
+          "backbone.decoder_blocks.2.ln_1.bias",
+          "backbone.decoder_blocks.2.self_attn.qkv.weight",
+          "backbone.decoder_blocks.2.self_attn.proj.weight",
+          "backbone.decoder_blocks.2.self_attn.proj.bias",
+          "backbone.decoder_blocks.2.ln_2.weight",
+          "backbone.decoder_blocks.2.ln_2.bias",
+          "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.2.cross_attn.proj.weight",
+          "backbone.decoder_blocks.2.cross_attn.proj.bias",
+          "backbone.decoder_blocks.2.ln_3.weight",
+          "backbone.decoder_blocks.2.ln_3.bias",
+          "backbone.decoder_blocks.2.mlp.c_fc.weight",
+          "backbone.decoder_blocks.2.mlp.c_fc.bias",
+          "backbone.decoder_blocks.2.mlp.c_proj.weight",
+          "backbone.decoder_blocks.2.mlp.c_proj.bias",
+          "backbone.decoder_blocks.3.ln_1.weight",
+          "backbone.decoder_blocks.3.ln_1.bias",
+          "backbone.decoder_blocks.3.self_attn.qkv.weight",
+          "backbone.decoder_blocks.3.self_attn.proj.weight",
+          "backbone.decoder_blocks.3.self_attn.proj.bias",
+          "backbone.decoder_blocks.3.ln_2.weight",
+          "backbone.decoder_blocks.3.ln_2.bias",
+          "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+          "backbone.decoder_blocks.3.cross_attn.proj.weight",
+          "backbone.decoder_blocks.3.cross_attn.proj.bias",
+          "backbone.decoder_blocks.3.ln_3.weight",
+          "backbone.decoder_blocks.3.ln_3.bias",
+          "backbone.decoder_blocks.3.mlp.c_fc.weight",
+          "backbone.decoder_blocks.3.mlp.c_fc.bias",
+          "backbone.decoder_blocks.3.mlp.c_proj.weight",
+          "backbone.decoder_blocks.3.mlp.c_proj.bias",
+          "backbone.ln_f.weight",
+          "backbone.ln_f.bias",
+          "item_position_embedding.weight"
+        ],
+        "frozen_module_and_optimizer_unchanged": true,
+        "hard_sids_unchanged": true,
+        "data_prepare_seconds": 0.3355954624712467,
+        "selected_indices_sha256": "88d153be78760792365fa848c83e557cf29d3c18263ab1572509fa0463da85e1",
+        "effective_lists": 1024,
+        "microbatch": 256,
+        "accumulation": 4,
+        "first_sample_ids": [
+          "u2767:e4796926:b12",
+          "u2172:e3791973:b4",
+          "u1078:e1906949:b11",
+          "u6709:e11710328:b4"
+        ]
+      }
+    },
+    "R": {
+      "records": [
+        {
+          "seconds": 0.9192252792418003,
+          "peak_allocated_bytes": 4273198080,
+          "peak_reserved_bytes": 4546625536,
+          "kind": "R",
+          "original_phase_index": 42,
+          "update": 1,
+          "values": {
+            "recommendation": 2.8889094591140747,
+            "loss": 2.8889094591140747,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.07923215627670288,
+            "r_updates": 22177,
+            "t_updates": 360,
+            "learning_rates_used": {
+              "R": 1.8780235250824395e-05,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 42
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 10.630158361624959,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 9.736831737798639,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.5204504702657005,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.06602688104715071,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.44319201920552587,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 16.359832351657815,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 8.054500411060872,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 5.760365006151915,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 12.667463680030778,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 3.5684397273234936,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.711205063955276,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 12.256047063856386,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 2.9666528461712005,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.379700604986283,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 10.766507121821633,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 3.0460333151386294,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.2067903936986113,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 9.199358866550028,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.346564594656229,
+          "selected_indices_sha256": "46f21fb4494f49d11faffe79cce5f920cf693be72778fe65271e7cba11226126",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u4729:e8324043:b16",
+            "u3258:e5677793:b14",
+            "u43:e78401:b1",
+            "u4763:e8384280:b21"
+          ]
+        },
+        {
+          "seconds": 0.8625384531915188,
+          "peak_allocated_bytes": 4272122880,
+          "peak_reserved_bytes": 4546625536,
+          "kind": "R",
+          "original_phase_index": 42,
+          "update": 2,
+          "values": {
+            "recommendation": 2.899170458316803,
+            "loss": 2.899170458316803,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.07969235628843307,
+            "r_updates": 22178,
+            "t_updates": 360,
+            "learning_rates_used": {
+              "R": 1.87622868119634e-05,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 42
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 10.656726994641168,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 10.151968315360136,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.5500747507311985,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.063640680999697,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.41215634308900917,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 16.034236204886838,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 7.760637481216236,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 5.5048033891944215,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 12.411077692260733,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 3.4994310078236595,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.709647117531858,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 12.14123983142781,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 2.924780083307269,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.2879523603478447,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 10.813881987443892,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 3.0514254518093367,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.2298550710620475,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 9.148171789493063,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.341048177331686,
+          "selected_indices_sha256": "688c175b210d032dc7a66b91d204832aa5d615c9d5d664a50de733cb47262019",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2446:e4257970:b7",
+            "u5818:e10205513:b1",
+            "u3325:e5808614:b7",
+            "u1389:e2440791:b2"
+          ]
+        },
+        {
+          "seconds": 0.8508464433252811,
+          "peak_allocated_bytes": 4272122880,
+          "peak_reserved_bytes": 4546625536,
+          "kind": "R",
+          "original_phase_index": 42,
+          "update": 3,
+          "values": {
+            "recommendation": 2.8933247923851013,
+            "loss": 2.8933247923851013,
+            "lists": 1024,
+            "phase": "R",
+            "gradient_norm": 0.08258344233036041,
+            "r_updates": 22179,
+            "t_updates": 360,
+            "learning_rates_used": {
+              "R": 1.8744346789947408e-05,
+              "codebook": 1e-05,
+              "mixer": 0.0001
+            },
+            "phase_index": 42
+          },
+          "gradients": {
+            "sid_embedding": {
+              "gradient_l1": 10.581324817934549,
+              "parameters_with_gradient": [
+                "backbone.embedding.weight"
+              ]
+            },
+            "history_projection": {
+              "gradient_l1": 10.623423069831915,
+              "parameters_with_gradient": [
+                "backbone.item_mlp.0.weight",
+                "backbone.item_mlp.0.bias",
+                "backbone.item_mlp.2.weight",
+                "backbone.item_mlp.2.bias"
+              ]
+            },
+            "history_position": {
+              "gradient_l1": 0.5632246637628668,
+              "parameters_with_gradient": [
+                "backbone.pos_emb_enc.weight"
+              ]
+            },
+            "mask_embedding": {
+              "gradient_l1": 0.06528692845313344,
+              "parameters_with_gradient": [
+                "backbone.mask_emb_table.weight"
+              ]
+            },
+            "list_position": {
+              "gradient_l1": 0.4575146536799366,
+              "parameters_with_gradient": [
+                "item_position_embedding.weight"
+              ]
+            },
+            "encoder_0": {
+              "gradient_l1": 15.94895872827965,
+              "parameters_with_gradient": [
+                "backbone.encoder_blocks.0.ln_1.weight",
+                "backbone.encoder_blocks.0.ln_1.bias",
+                "backbone.encoder_blocks.0.attn.qkv.weight",
+                "backbone.encoder_blocks.0.attn.proj.weight",
+                "backbone.encoder_blocks.0.attn.proj.bias",
+                "backbone.encoder_blocks.0.ln_2.weight",
+                "backbone.encoder_blocks.0.ln_2.bias",
+                "backbone.encoder_blocks.0.mlp.c_fc.weight",
+                "backbone.encoder_blocks.0.mlp.c_fc.bias",
+                "backbone.encoder_blocks.0.mlp.c_proj.weight",
+                "backbone.encoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_0_self_attn": {
+              "gradient_l1": 8.130831444344949,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.self_attn.qkv.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.weight",
+                "backbone.decoder_blocks.0.self_attn.proj.bias"
+              ]
+            },
+            "decoder_0_cross_attn": {
+              "gradient_l1": 5.691074207134079,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.weight",
+                "backbone.decoder_blocks.0.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_0_mlp": {
+              "gradient_l1": 12.78694749751594,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.0.mlp.c_fc.weight",
+                "backbone.decoder_blocks.0.mlp.c_fc.bias",
+                "backbone.decoder_blocks.0.mlp.c_proj.weight",
+                "backbone.decoder_blocks.0.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_1_self_attn": {
+              "gradient_l1": 3.615807024290916,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.self_attn.qkv.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.weight",
+                "backbone.decoder_blocks.1.self_attn.proj.bias"
+              ]
+            },
+            "decoder_1_cross_attn": {
+              "gradient_l1": 4.750443678713054,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.weight",
+                "backbone.decoder_blocks.1.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_1_mlp": {
+              "gradient_l1": 12.43090132184443,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.1.mlp.c_fc.weight",
+                "backbone.decoder_blocks.1.mlp.c_fc.bias",
+                "backbone.decoder_blocks.1.mlp.c_proj.weight",
+                "backbone.decoder_blocks.1.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_2_self_attn": {
+              "gradient_l1": 2.9411562568675436,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.self_attn.qkv.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.weight",
+                "backbone.decoder_blocks.2.self_attn.proj.bias"
+              ]
+            },
+            "decoder_2_cross_attn": {
+              "gradient_l1": 3.33777108907816,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.weight",
+                "backbone.decoder_blocks.2.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_2_mlp": {
+              "gradient_l1": 10.877787687066302,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.2.mlp.c_fc.weight",
+                "backbone.decoder_blocks.2.mlp.c_fc.bias",
+                "backbone.decoder_blocks.2.mlp.c_proj.weight",
+                "backbone.decoder_blocks.2.mlp.c_proj.bias"
+              ]
+            },
+            "decoder_3_self_attn": {
+              "gradient_l1": 3.063925098198524,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.self_attn.qkv.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.weight",
+                "backbone.decoder_blocks.3.self_attn.proj.bias"
+              ]
+            },
+            "decoder_3_cross_attn": {
+              "gradient_l1": 2.222830323560629,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.weight",
+                "backbone.decoder_blocks.3.cross_attn.proj.bias"
+              ]
+            },
+            "decoder_3_mlp": {
+              "gradient_l1": 9.175665190676227,
+              "parameters_with_gradient": [
+                "backbone.decoder_blocks.3.mlp.c_fc.weight",
+                "backbone.decoder_blocks.3.mlp.c_fc.bias",
+                "backbone.decoder_blocks.3.mlp.c_proj.weight",
+                "backbone.decoder_blocks.3.mlp.c_proj.bias"
+              ]
+            }
+          },
+          "changed_parameters": [
+            "backbone.embedding.weight",
+            "backbone.item_mlp.0.weight",
+            "backbone.item_mlp.0.bias",
+            "backbone.item_mlp.2.weight",
+            "backbone.item_mlp.2.bias",
+            "backbone.mask_emb_table.weight",
+            "backbone.pos_emb_enc.weight",
+            "backbone.encoder_blocks.0.ln_1.weight",
+            "backbone.encoder_blocks.0.ln_1.bias",
+            "backbone.encoder_blocks.0.attn.qkv.weight",
+            "backbone.encoder_blocks.0.attn.proj.weight",
+            "backbone.encoder_blocks.0.attn.proj.bias",
+            "backbone.encoder_blocks.0.ln_2.weight",
+            "backbone.encoder_blocks.0.ln_2.bias",
+            "backbone.encoder_blocks.0.mlp.c_fc.weight",
+            "backbone.encoder_blocks.0.mlp.c_fc.bias",
+            "backbone.encoder_blocks.0.mlp.c_proj.weight",
+            "backbone.encoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.0.ln_1.weight",
+            "backbone.decoder_blocks.0.ln_1.bias",
+            "backbone.decoder_blocks.0.self_attn.qkv.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.weight",
+            "backbone.decoder_blocks.0.self_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_2.weight",
+            "backbone.decoder_blocks.0.ln_2.bias",
+            "backbone.decoder_blocks.0.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.weight",
+            "backbone.decoder_blocks.0.cross_attn.proj.bias",
+            "backbone.decoder_blocks.0.ln_3.weight",
+            "backbone.decoder_blocks.0.ln_3.bias",
+            "backbone.decoder_blocks.0.mlp.c_fc.weight",
+            "backbone.decoder_blocks.0.mlp.c_fc.bias",
+            "backbone.decoder_blocks.0.mlp.c_proj.weight",
+            "backbone.decoder_blocks.0.mlp.c_proj.bias",
+            "backbone.decoder_blocks.1.ln_1.weight",
+            "backbone.decoder_blocks.1.ln_1.bias",
+            "backbone.decoder_blocks.1.self_attn.qkv.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.weight",
+            "backbone.decoder_blocks.1.self_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_2.weight",
+            "backbone.decoder_blocks.1.ln_2.bias",
+            "backbone.decoder_blocks.1.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.weight",
+            "backbone.decoder_blocks.1.cross_attn.proj.bias",
+            "backbone.decoder_blocks.1.ln_3.weight",
+            "backbone.decoder_blocks.1.ln_3.bias",
+            "backbone.decoder_blocks.1.mlp.c_fc.weight",
+            "backbone.decoder_blocks.1.mlp.c_fc.bias",
+            "backbone.decoder_blocks.1.mlp.c_proj.weight",
+            "backbone.decoder_blocks.1.mlp.c_proj.bias",
+            "backbone.decoder_blocks.2.ln_1.weight",
+            "backbone.decoder_blocks.2.ln_1.bias",
+            "backbone.decoder_blocks.2.self_attn.qkv.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.weight",
+            "backbone.decoder_blocks.2.self_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_2.weight",
+            "backbone.decoder_blocks.2.ln_2.bias",
+            "backbone.decoder_blocks.2.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.weight",
+            "backbone.decoder_blocks.2.cross_attn.proj.bias",
+            "backbone.decoder_blocks.2.ln_3.weight",
+            "backbone.decoder_blocks.2.ln_3.bias",
+            "backbone.decoder_blocks.2.mlp.c_fc.weight",
+            "backbone.decoder_blocks.2.mlp.c_fc.bias",
+            "backbone.decoder_blocks.2.mlp.c_proj.weight",
+            "backbone.decoder_blocks.2.mlp.c_proj.bias",
+            "backbone.decoder_blocks.3.ln_1.weight",
+            "backbone.decoder_blocks.3.ln_1.bias",
+            "backbone.decoder_blocks.3.self_attn.qkv.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.weight",
+            "backbone.decoder_blocks.3.self_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_2.weight",
+            "backbone.decoder_blocks.3.ln_2.bias",
+            "backbone.decoder_blocks.3.cross_attn.qkv.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.weight",
+            "backbone.decoder_blocks.3.cross_attn.proj.bias",
+            "backbone.decoder_blocks.3.ln_3.weight",
+            "backbone.decoder_blocks.3.ln_3.bias",
+            "backbone.decoder_blocks.3.mlp.c_fc.weight",
+            "backbone.decoder_blocks.3.mlp.c_fc.bias",
+            "backbone.decoder_blocks.3.mlp.c_proj.weight",
+            "backbone.decoder_blocks.3.mlp.c_proj.bias",
+            "backbone.ln_f.weight",
+            "backbone.ln_f.bias",
+            "item_position_embedding.weight"
+          ],
+          "frozen_module_and_optimizer_unchanged": true,
+          "hard_sids_unchanged": true,
+          "data_prepare_seconds": 0.3466910272836685,
+          "selected_indices_sha256": "b6394112d7b71c14641a7991eb3d175652a2530d8ba01274fa91f4f6b2474118",
+          "effective_lists": 1024,
+          "microbatch": 256,
+          "accumulation": 4,
+          "first_sample_ids": [
+            "u2264:e3950344:b1",
+            "u1608:e2822387:b9",
+            "u277:e499288:b9",
+            "u3361:e5868103:b8"
+          ]
+        }
+      ],
+      "updates": 3,
+      "median_update_seconds": 0.8625384531915188,
+      "median_end_to_end_seconds": 1.2035866305232048,
+      "warm_median_update_seconds": 0.8566924482584,
+      "warm_records": 2,
+      "timing_scope": "Update includes H2D, forward, backward and optimizer; data preparation is separate. State/gradient auditing is excluded from throughput, included in overall wall time."
+    },
+    "short_endpoint": {
+      "phase": 42,
+      "update": 4,
+      "r_updates": 22180,
+      "t_updates": 360
+    }
+  },
+  "decode_profile": {
+    "examples": 128,
+    "batch_size": 32,
+    "beam": 32,
+    "inference_precision": "fp32",
+    "records": [
+      {
+        "seconds": 1.0870773270726204,
+        "peak_allocated_bytes": 1003496448,
+        "peak_reserved_bytes": 6434062336,
+        "data_prepare_seconds": 0.005866535007953644,
+        "end_to_end_seconds": 1.092943862080574,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u2122:e3708198:b31",
+          "u5110:e8972540:b11",
+          "u236:e434209:b18",
+          "u1145:e2011341:b7",
+          "u2596:e4518320:b14",
+          "u3500:e6132093:b21",
+          "u6754:e11800140:b26",
+          "u5766:e10113995:b24",
+          "u2353:e4104544:b5",
+          "u3928:e6879361:b40",
+          "u4990:e8774125:b28",
+          "u4059:e7110240:b3",
+          "u2457:e4278618:b2",
+          "u292:e531601:b4",
+          "u3105:e5395207:b36",
+          "u6490:e11343185:b4",
+          "u1241:e2175184:b1",
+          "u2379:e4146835:b0",
+          "u6271:e10965972:b11",
+          "u4179:e7352329:b4",
+          "u6179:e10826942:b11",
+          "u3309:e5781667:b5",
+          "u3851:e6751070:b10",
+          "u1346:e2366283:b1",
+          "u6148:e10773873:b1",
+          "u6642:e11608350:b10",
+          "u5610:e9840654:b18",
+          "u3033:e5267974:b2",
+          "u5733:e10056269:b0",
+          "u880:e1574787:b10",
+          "u4111:e7221989:b3",
+          "u1866:e3262573:b4"
+        ],
+        "output_sha256": "6f70d4312a7f85ff69ecaa6431d92528cb4fc9e5eac18aef1de496a9eb0a3ef4",
+        "complete_lists": 863,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18600,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3240,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.213635664433241,
+        "peak_allocated_bytes": 1044230656,
+        "peak_reserved_bytes": 7006584832,
+        "data_prepare_seconds": 0.0059165023267269135,
+        "end_to_end_seconds": 1.2195521667599678,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u3259:e5681447:b2",
+          "u2849:e4940662:b1",
+          "u3225:e5621845:b0",
+          "u206:e379949:b25",
+          "u6189:e10844021:b1",
+          "u3656:e6422653:b3",
+          "u5883:e10312667:b18",
+          "u6533:e11423659:b9",
+          "u4522:e7955541:b11",
+          "u697:e1246870:b4",
+          "u3728:e6544068:b0",
+          "u4007:e7019607:b22",
+          "u501:e912069:b11",
+          "u3540:e6192476:b10",
+          "u3034:e5268726:b37",
+          "u1734:e3041469:b1",
+          "u4363:e7683261:b7",
+          "u2590:e4507342:b30",
+          "u912:e1634354:b2",
+          "u1750:e3070842:b3",
+          "u1661:e2927730:b10",
+          "u3159:e5510103:b3",
+          "u4160:e7318737:b14",
+          "u5946:e10422102:b1",
+          "u3744:e6573561:b12",
+          "u6956:e12158479:b0",
+          "u5320:e9362800:b0",
+          "u912:e1634229:b3",
+          "u4469:e7866995:b2",
+          "u6788:e11857747:b3",
+          "u733:e1310868:b2",
+          "u707:e1266595:b13"
+        ],
+        "output_sha256": "7673b40deccf2f0765f4cfeaa5a13061bcdcaef6eaef7fb54638b1dc8bf8bff7",
+        "complete_lists": 893,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18615,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3255,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.114118903875351,
+        "peak_allocated_bytes": 1098769408,
+        "peak_reserved_bytes": 7610564608,
+        "data_prepare_seconds": 0.0062441229820251465,
+        "end_to_end_seconds": 1.120363026857376,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u1430:e2517574:b0",
+          "u933:e1674845:b37",
+          "u4989:e8771419:b15",
+          "u2280:e3980895:b49",
+          "u440:e800174:b6",
+          "u6998:e12240422:b5",
+          "u4047:e7088503:b4",
+          "u1376:e2422649:b10",
+          "u1932:e3382521:b11",
+          "u868:e1546762:b2",
+          "u2213:e3860520:b17",
+          "u6051:e10612282:b33",
+          "u7032:e12302542:b11",
+          "u4291:e7558375:b1",
+          "u6027:e10573066:b3",
+          "u5642:e9889918:b9",
+          "u5884:e10315042:b0",
+          "u4717:e8306727:b1",
+          "u6061:e10628390:b1",
+          "u4004:e7014927:b11",
+          "u219:e409293:b6",
+          "u2038:e3560537:b9",
+          "u1586:e2785028:b10",
+          "u3950:e6919037:b29",
+          "u5248:e9236496:b13",
+          "u5980:e10493102:b2",
+          "u5531:e9718377:b17",
+          "u2066:e3602980:b5",
+          "u5495:e9656809:b5",
+          "u6148:e10773873:b7",
+          "u5884:e10315075:b7",
+          "u604:e1091540:b5"
+        ],
+        "output_sha256": "dfa0647f8533ec1e4909492685d7bdb8539632a6efef1f169efdbcf9e00b0014",
+        "complete_lists": 893,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18821,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3461,
+          "context_cache_enabled": 1
+        }
+      },
+      {
+        "seconds": 1.1158803664147854,
+        "peak_allocated_bytes": 1029305856,
+        "peak_reserved_bytes": 7610564608,
+        "data_prepare_seconds": 0.006172548979520798,
+        "end_to_end_seconds": 1.1220529153943062,
+        "batch_size": 32,
+        "beam": 32,
+        "inference_precision": "fp32",
+        "sample_ids": [
+          "u4854:e8545990:b25",
+          "u6577:e11497225:b12",
+          "u6922:e12101092:b11",
+          "u5314:e9352822:b6",
+          "u2154:e3761826:b11",
+          "u4383:e7725206:b7",
+          "u6725:e11749438:b22",
+          "u3843:e6737301:b25",
+          "u5248:e9236496:b37",
+          "u1372:e2414318:b7",
+          "u6562:e11465259:b36",
+          "u6720:e11737313:b1",
+          "u1429:e2515147:b0",
+          "u5973:e10477907:b2",
+          "u6986:e12217862:b52",
+          "u6219:e10884136:b0",
+          "u5210:e9164354:b2",
+          "u703:e1257657:b18",
+          "u4618:e8147403:b10",
+          "u4702:e8279727:b18",
+          "u6725:e11749438:b28",
+          "u953:e1709587:b8",
+          "u6984:e12214415:b15",
+          "u1858:e3244028:b0",
+          "u1512:e2652090:b2",
+          "u1090:e1932677:b1",
+          "u4245:e7470133:b3",
+          "u6604:e11543593:b6",
+          "u6725:e11749438:b16",
+          "u430:e783646:b12",
+          "u820:e1470545:b5",
+          "u4244:e7468704:b12"
+        ],
+        "output_sha256": "9fab06ef07acc1e5cd2d99cf9c9182447d11d848e7f77403c8d1cfabd1f422e1",
+        "complete_lists": 847,
+        "counters": {
+          "route": "H",
+          "beam_size": 32,
+          "model_forward_calls": 20,
+          "decoder_state_rows": 18612,
+          "logical_steps_requested": 20,
+          "encoder_forward_calls": 5,
+          "encoder_state_rows": 3252,
+          "context_cache_enabled": 1
+        }
+      }
+    ],
+    "catalog_timing": {
+      "seconds": 0.05317364260554314,
+      "peak_allocated_bytes": 184095232,
+      "peak_reserved_bytes": 4546625536
+    },
+    "median_batch_seconds": 1.1149996351450682,
+    "median_end_to_end_seconds": 1.1212079711258411,
+    "exact_output_repeat": true,
+    "full_training_state_rng_modes_gradients_unchanged": true,
+    "quality_metric": false,
+    "scope": "Fixed small validation requests for throughput only; not full validation or model selection."
+  },
+  "finished_at_exact_parent_state": true,
+  "formal_resume_from_preflight_forbidden": true
+}

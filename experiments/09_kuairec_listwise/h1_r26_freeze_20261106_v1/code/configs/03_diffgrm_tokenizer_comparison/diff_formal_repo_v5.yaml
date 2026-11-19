@@ -1,0 +1,43 @@
+# Author-repository-aligned DiffGRM Beauty reproduction.
+#
+# Source reconciliation:
+# - Paper Table 7: lr=0.01, warmup=10,000, max_epochs=100, alpha=0.1.
+# - Official Beauty README command: base batch=1024, lr=0.01, alpha=0.2.
+# - Official model config supplies epochs=200 because the README command does
+#   not override epochs.  With about 104 optimizer updates per epoch, this
+#   yields a complete schedule: warmup ends near epoch 96, followed by about
+#   104 epochs of cosine decay.
+#
+# On the 10 GB RTX 3080, 64 physical examples x 16 accumulation steps
+# approximates the official base batch of 1024. BF16 and finite guards are
+# engineering adaptations; model/data/tokenizer/evaluation semantics stay fixed.
+run_id: diff_formal_pse_4x256_repo_repro_v5_bf16
+reproduction_protocol: author_repository_beauty
+protocol_note: README Beauty overrides plus official DIFF_GRM model defaults
+
+mixed_precision: bf16
+train_batch_size: 64
+gradient_accumulation_steps: 16
+lr: 0.01
+warmup_steps: 10000
+warmup_ratio: 0.0
+epochs: 200
+label_smoothing: 0.2
+eval_start_epoch: 20
+# Full CPD validation is substantially slower than one training epoch on the
+# RTX 3080. Evaluate every five epochs and allow five unsuccessful evaluations
+# (about 25 epochs) before stopping. This changes checkpoint/early-stop
+# granularity only; optimizer updates and the LR schedule are unchanged.
+eval_interval: 5
+patience: 5
+
+paper_repo_discrepancy:
+  paper_max_epochs: 100
+  repository_effective_epochs: 200
+  paper_label_smoothing: 0.1
+  repository_beauty_label_smoothing: 0.2
+  repository_default_eval_interval: 1
+  single_gpu_eval_interval: 5
+
+numerical_guard: true
+numerical_guard_parameter_interval: 100

@@ -1,0 +1,21 @@
+{
+  "status": "awaiting_platform_connectivity_for_remaining_resource_closure",
+  "goal_complete": false,
+  "network_condition_first_observed_in_this_goal_turn": true,
+  "consecutive_goal_turns_with_this_external_blocker": 1,
+  "last_query": "PLATFORM_CLOSURE_LAST_QUERY.json",
+  "error": "Platform API read ECONNRESET; existing cached CPU connection also unavailable",
+  "science_and_local_delivery": "passed; report, two-test independent replay, paired statistics, process/time diagnostics, model archive SHA, fresh extraction and actual cold restoration completed",
+  "scientific_source_bindings_currently_verified": 268,
+  "all_five_GPU_attempts_terminal_and_released": true,
+  "gpu_hours_upper_including_start_and_release_reserves": 14.375277777777777,
+  "CPU_r2": "Last successfully queried RUNNING; current state unavailable and shutdown not confirmed",
+  "remaining": [
+    "Upload and verify the already sealed 1.23MB science_delivery_r1.tar.gz and companion receipts on the existing remote shared path",
+    "Stop the existing temporary CPU r2 and record final STOPPED status for both owned CPU entrances",
+    "Verify owned local task processes are closed, run goal_completion_audit.py, then mark Goal complete"
+  ],
+  "question_to_user": "Restore a network/proxy that can access <institution-host>, or provide an available access route",
+  "global_network_configuration_changed": false,
+  "resume_rule": "Recheck existing state; do not recreate training, rerun statistics, overwrite sealed bundles or revive old monitors. Do not mark blocked until the same genuine blocker persists for three consecutive Goal turns and no independent progress remains."
+}

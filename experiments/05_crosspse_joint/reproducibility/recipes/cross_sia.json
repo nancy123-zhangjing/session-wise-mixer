@@ -1,0 +1,52 @@
+{
+  "id": "cross_sia",
+  "label": "Joint Cross-PSE / SIA",
+  "role": "history",
+  "historical_run_id": "diff_formal_crosspse_joint_sia_4x256_seed2024",
+  "seed": 2024,
+  "historical_runtime_commit": null,
+  "configuration_status": "reconstructed from migration YAML snapshots and frozen current code defaults; not an original fully resolved run config",
+  "config_layers": [
+    "evidence/configs/diff_formal_common.yaml",
+    "evidence/configs/diff_formal_repo_v6.yaml",
+    "evidence/configs/diff_formal_crosspse_joint_sia.yaml"
+  ],
+  "smoke_config": "evidence/configs/diff_joint_smoke.yaml",
+  "initial_decoder": "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_19-01-02/pytorch_model.bin",
+  "initial_tokenizer_dir": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024",
+  "required_artifacts": [
+    "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_19-01-02/pytorch_model.bin",
+    "data/diff_formal_embeddings/beauty_item_keys.json",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/best.pt",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/base_pse_codebooks.npy",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/opq_residual_embeddings.npy",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.npy",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/summary.json",
+    "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+    "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+    "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+    "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+    "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz"
+  ],
+  "evaluation_artifacts": [
+    "external/DiffGRM/saved/AmazonReviews2014_Sep-01-2026_09-09-53/pytorch_model.bin",
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_09-09-53_joint_semantic_ids.npy",
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_09-09-53_joint_crossed_codebooks.npy"
+  ],
+  "metadata": "evidence/cross_sia/run_metadata.json",
+  "evaluation_level": "sid",
+  "verification": {
+    "analysis": "verified",
+    "gpu_smoke": "not_run",
+    "full_training": "not_run",
+    "checkpoint_evaluation": "not_run"
+  },
+  "missing_from_archive": [],
+  "historically_recorded_input_hashes": {
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json": "c74e87dbbe949b28f1b38fb53e10189acec421979a40cb81fca6ca441ade4e17",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/best.pt": "20830421ecc634344bfd1e17daf9f4e84427ee224d3ff8caa79113a7549da7d7",
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+    "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6"
+  }
+}

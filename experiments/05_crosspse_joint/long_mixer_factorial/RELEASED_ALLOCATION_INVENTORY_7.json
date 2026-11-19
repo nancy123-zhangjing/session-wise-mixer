@@ -1,0 +1,64 @@
+{
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "quota_file": "PRE_GPU_QUOTA.json",
+  "jobs": [
+    {
+      "job_name": "nancy-stage05-long-20261020-smoke-r1",
+      "mode": "smoke",
+      "status_file": "SMOKE_STATUS_AFTER_EXIT.json",
+      "event_files": [
+        "SMOKE_EVENTS_AFTER_EXIT.json",
+        "SMOKE_RELEASE_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-frozen-20261020-r1",
+      "mode": "train_arm",
+      "status_file": "NO_MIXER_FROZEN_R1_TERMINAL_STATUS.json",
+      "event_files": [
+        "NO_MIXER_FROZEN_R1_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-mixer-frozen-20261020-r1",
+      "mode": "train_arm",
+      "status_file": "MIXER_FROZEN_R1_TERMINAL_STATUS.json",
+      "event_files": [
+        "MIXER_FROZEN_R1_TERMINAL_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-joint-20261020-r1",
+      "mode": "train_arm",
+      "status_file": "NO_MIXER_JOINT_R1_TERMINAL_STATUS.json",
+      "event_files": [
+        "NO_MIXER_JOINT_R1_TERMINAL_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-frozen-20261020-r2",
+      "mode": "train_arm",
+      "status_file": "NO_MIXER_FROZEN_R2_TERMINAL_STATUS.json",
+      "event_files": [
+        "NO_MIXER_FROZEN_R2_TERMINAL_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-mixer-joint-20261020-r1",
+      "mode": "train_arm",
+      "status_file": "MIXER_JOINT_R1_TERMINAL_STATUS.json",
+      "event_files": [
+        "MIXER_JOINT_R1_TERMINAL_EVENTS.json"
+      ]
+    },
+    {
+      "job_name": "nancy-stage05-long-evaluate-20261020-r1",
+      "mode": "evaluate",
+      "status_file": "EVALUATE_R1_TERMINAL_STATUS.json",
+      "event_files": [
+        "EVALUATE_R1_TERMINAL_EVENTS.json"
+      ]
+    }
+  ],
+  "final_job_list_file": "FINAL_JOB_LIST_R1.json"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "verification_date_local": "2026-10-27",
+  "timezone": "Asia/Shanghai",
+  "status": "verified_existing_inputs_reused",
+  "download_performed": false,
+  "official_entrypoints": [
+    "https://kuairec.com/",
+    "https://github.com/chongminggao/KuaiRec"
+  ],
+  "release": {
+    "zenodo_record_url": "https://zenodo.org/records/18164998",
+    "doi": "10.5281/zenodo.18164998",
+    "zenodo_title": "KuaiRec Dataset with Raw Features",
+    "zenodo_record_version": "v1",
+    "zenodo_publication_date": "2026-01-06",
+    "dataset_version_inside_archive": "KuaiRec 2.0",
+    "dataset_v2_announcement_date": "2022-05-16",
+    "caption_release_announcement_date": "2024-06-02",
+    "version_note": "The Zenodo record version v1 is not the dataset's 2.0 version; files are pinned by size and hashes below."
+  },
+  "files": [
+    {
+      "path": "outputs/dataset_audit_20261026/kuairec/KuaiRec.zip",
+      "official_download_url": "https://zenodo.org/records/18164998/files/KuaiRec.zip",
+      "bytes": 431964858,
+      "published_md5": "261550d472c48eff4990fb13c0e5bcf7",
+      "observed_md5": "261550d472c48eff4990fb13c0e5bcf7",
+      "sha256": "c23f211cf109c7a060a25a4afe9e8c681b1ccbbc816cca921d87ad37dd11c70c",
+      "published_md5_match": true
+    },
+    {
+      "path": "outputs/dataset_audit_20261026/kuairec/kuairec_caption_category.csv",
+      "official_download_url": "https://zenodo.org/records/18164998/files/kuairec_caption_category.csv",
+      "bytes": 1964578,
+      "published_md5": "31bc38cdccdf75a71df137779035f8cb",
+      "observed_md5": "31bc38cdccdf75a71df137779035f8cb",
+      "sha256": "08f6ec40059c5a7ecdcebf615d080d9cf8f59f9497f6d66e8d5ccabdc7cab2d9",
+      "published_md5_match": true,
+      "matches_archive_member_sha256": true
+    }
+  ],
+  "archive_integrity": {
+    "method": "Python zipfile.ZipFile.testzip(): reads all members and checks CRC32",
+    "member_count": 15,
+    "first_bad_member": null,
+    "passed": true,
+    "license_member": "KuaiRec 2.0/LICENSE",
+    "license_title": "Attribution-ShareAlike 4.0 International"
+  },
+  "main_input": {
+    "member": "KuaiRec 2.0/data/big_matrix.csv",
+    "uncompressed_bytes": 1083521226,
+    "crc32": "d7691b83",
+    "sha256": "4ee1a72ff9ce4e86ef50525da9dfd7aefcefa717b37c9d570010f689c42f4ef9",
+    "fields": ["user_id", "video_id", "play_duration", "video_duration", "time", "date", "timestamp", "watch_ratio"],
+    "csv_index_column_present": false,
+    "official_statistics_before_cleaning": {"users": 7176, "items": 10728, "rows": 12530806},
+    "first_timestamp_literal": "1593878903.438",
+    "first_human_readable_time": "2020-07-05 00:08:23.438",
+    "timestamp_unit": "Unix seconds, includes fractional seconds",
+    "duration_unit": "milliseconds",
+    "watch_ratio_semantics": "play_duration / video_duration; values above 1 are allowed",
+    "like_signal_available": false,
+    "full_timestamp_precision_check": "Must be checked by the full preparation pipeline; the source audit examples alone do not certify all rows."
+  },
+  "scope_and_limits": [
+    "Use only big_matrix for behavioral events; do not mix small_matrix intervention/evaluation observations.",
+    "The paper states that small-matrix user-item interactions were excluded from big_matrix; the observed timeline is not the full natural trajectory.",
+    "No native request ID or authoritative five-item request partition is supplied; session/list grouping is a project protocol.",
+    "Caption information was released later than the interaction collection; it is not certified as a historical snapshot available at each event time.",
+    "The author acknowledged duplicate records and retained the release for consistency. Cleaning is a project transformation, not proof the raw source is corrupt.",
+    "Checksums establish exact file identity with this publication, not the semantic correctness of every row."
+  ],
+  "evidence_urls": {
+    "field_units_and_release_history": "https://kuairec.com/",
+    "official_download_mirror": "https://github.com/chongminggao/KuaiRec",
+    "published_checksums": "https://zenodo.org/records/18164998",
+    "duplicate_records_author_response": "https://github.com/chongminggao/KuaiRec/issues/2",
+    "sampling_boundary_paper": "https://hexiangnan.github.io/papers/cikm22-kuairec.pdf"
+  }
+}

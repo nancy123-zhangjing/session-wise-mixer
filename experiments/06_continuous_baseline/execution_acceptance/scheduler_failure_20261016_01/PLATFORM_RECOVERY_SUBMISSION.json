@@ -1,0 +1,122 @@
+{
+  "status": "CREATED_AND_QUEUING",
+  "job_name": "nancy-stage06-20261016-8h100-supervisor-v3",
+  "training_git_commit": "bbaa45b515a15912a04665721e0a5c43d64dc9e9",
+  "training_source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "supervisor_git_commit": "37ef4065546c3fb13397a4d9cdc0d3f29d1462df",
+  "supervisor_sha256": "578fdcaed74a47ac470abc393af62fa29e9bc2bd676fbe97533e1a49ad98dd91",
+  "deployment_archive_sha256": "068896b56baf17f1b7388c946e42808750af6e14b079f0744d780f96f3581e6c",
+  "deployment_manifest_sha256": "229b9948c63571d65f08e75d1a16a40ec37bf6ec104d1a9c7fb7ddea5e55b0a6",
+  "pipeline": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2_supervisor_v3",
+  "dry_run": {
+    "success": true,
+    "data": {
+      "dry_run": true,
+      "name": "nancy-stage06-20261016-8h100-supervisor-v3",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "compute_group": "训练区-H100-cuda13.2版本-183核",
+      "resource": {
+        "gpu": 8,
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 4,
+      "nodes": 1,
+      "framework": "pytorch",
+      "enable_notification": false,
+      "auto_fault_tolerance": false,
+      "max_time_hours": null,
+      "image": "pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime",
+      "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/orchestration_v3/scripts/train/continuous_queue_supervisor.py --root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/remote_cpu_gate_20261016_precision_v2/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2_supervisor_v3 --job-name nancy-stage06-20261016-8h100-supervisor-v3 --deployment-manifest /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/orchestration_v3/DEPLOYMENT_MANIFEST.json'",
+      "shared_memory_gib": 64,
+      "env": [
+        "OMP_NUM_THREADS",
+        "MKL_NUM_THREADS",
+        "PYTHONUNBUFFERED",
+        "PYTHONDONTWRITEBYTECODE"
+      ]
+    }
+  },
+  "submission": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-supervisor-v3",
+      "status": "created"
+    }
+  },
+  "platform": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-supervisor-v3",
+      "status": "QUEUING",
+      "project": "公共科研项目",
+      "compute_group": "训练区-H100-cuda13.2版本-183核",
+      "resource": {
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu": 8,
+        "nodes": 1,
+        "shared_memory_gib": 64,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1792127781000"
+    }
+  },
+  "quota": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        }
+      ]
+    }
+  },
+  "retained_completed": 38,
+  "interrupted_checkpoints_prepared": 8,
+  "training_tests_unlocked": false,
+  "scope": "Submission and CPU recovery receipts only; fresh GPU gate and restored queue are not yet verified"
+}

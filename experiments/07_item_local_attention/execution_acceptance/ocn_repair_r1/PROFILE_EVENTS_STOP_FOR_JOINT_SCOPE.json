@@ -1,0 +1,183 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-20 10:51:33",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-20 10:51:33",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 10:51:33",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 10:51:40",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod embodied-world-model/<redacted>-worker-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-20 10:51:41",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu005, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 10:51:47",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 15 Insufficient rdma/hca_shared_devices, 276 Insufficient nvidia.com/gpu, 323 Insufficient memory, 5 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 71 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 10:51:49",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: 0/697 nodes are unavailable: 15 Insufficient rdma/hca_shared_devices, 276 Insufficient nvidia.com/gpu, 323 Insufficient memory, 5 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 71 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 10:51:53",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 21 Insufficient rdma/hca_shared_devices, 270 Insufficient nvidia.com/gpu, 323 Insufficient memory, 5 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 71 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 10:51:57",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 18 Insufficient rdma/hca_shared_devices, 273 Insufficient nvidia.com/gpu, 323 Insufficient memory, 5 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 71 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 10:52:00",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu020"
+      },
+      {
+        "time": "2026-10-20 10:52:03",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-20 10:52:03",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/inspire-studio/pytorch:25.06-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 10:52:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-20 10:52:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 10:52:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 10:52:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 10:57:48",
+        "type": "Normal",
+        "reason": "StopJob",
+        "message": "The job is stopped by user 周哲立 <redacted>"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePod",
+        "message": "Deleted pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "type": "Normal",
+        "reason": "PyTorchJobSuspended",
+        "message": "PyTorchJob <redacted> is suspended."
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "type": "Normal",
+        "reason": "SuccessfulDeleteService",
+        "message": "Deleted service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Killing",
+        "message": "Stopping container pytorch"
+      },
+      {
+        "time": "2026-10-20 10:58:04",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Killing",
+        "message": "Stopping container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 10:58:19",
+        "type": "Normal",
+        "reason": "SuccessfulDeletePodGroup",
+        "message": "Deleted PodGroup: <redacted>"
+      },
+      {
+        "time": "2026-10-20 10:58:19",
+        "type": "Normal",
+        "reason": "PyTorchJobSuspended",
+        "message": "PyTorchJob <redacted> is suspended."
+      },
+      {
+        "time": "2026-10-20 10:58:19",
+        "type": "Normal",
+        "reason": "JobTerminated",
+        "message": "Job has been terminated. Deleting PodGroup"
+      }
+    ]
+  }
+}

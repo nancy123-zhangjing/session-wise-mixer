@@ -1,0 +1,1021 @@
+{
+  "model": "C_freeze_R32",
+  "baseline_reproduction_absolute_error": {
+    "list/ndcg@5": 0.0,
+    "list/hr@5": 0.0,
+    "list/recall@5": 0.0,
+    "aggregate/ndcg@10": 0.0,
+    "aggregate/hr@10": 0.0,
+    "aggregate/recall@10": 0.0,
+    "aggregate/ndcg@20": 0.0,
+    "aggregate/hr@20": 0.0,
+    "aggregate/recall@20": 0.0,
+    "aggregate/ndcg@50": 0.0,
+    "aggregate/hr@50": 0.0,
+    "aggregate/recall@50": 0.0
+  },
+  "segments": {
+    "early": {
+      "metrics": {
+        "list/ndcg@5": 0.00970551933302042,
+        "list/hr@5": 0.045207535451816584,
+        "list/recall@5": 0.009289928578822066,
+        "aggregate/ndcg@10": 0.01317661614069721,
+        "aggregate/hr@10": 0.07419004243867094,
+        "aggregate/recall@10": 0.015593623848462893,
+        "aggregate/ndcg@20": 0.015062319872619741,
+        "aggregate/hr@20": 0.09367560293965428,
+        "aggregate/recall@20": 0.0199306490011386,
+        "aggregate/ndcg@50": 0.015441110264014632,
+        "aggregate/hr@50": 0.09833350584825587,
+        "aggregate/recall@50": 0.020970913984059623
+      },
+      "classes": {
+        "never_seen": {
+          "target_occurrences": 4255,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "50": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            }
+          }
+        },
+        "history_only": {
+          "target_occurrences": 10639,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "50": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            }
+          }
+        },
+        "target_head": {
+          "target_occurrences": 29002,
+          "metrics": {
+            "5": {
+              "target_hits": 366,
+              "target_hit_rate": 0.012619819322805323,
+              "discounted_gain_sum": 225.41046305644662,
+              "mean_discounted_gain_per_target": 0.007772238571700111,
+              "ndcg_contribution": 0.0019783215743982324
+            },
+            "20": {
+              "target_hits": 753,
+              "target_hit_rate": 0.0259637266395421,
+              "discounted_gain_sum": 337.4292775060757,
+              "mean_discounted_gain_per_target": 0.011634689935386378,
+              "ndcg_contribution": 0.0029614580018706297
+            },
+            "50": {
+              "target_hits": 775,
+              "target_hit_rate": 0.026722295014136956,
+              "discounted_gain_sum": 342.19549064815766,
+              "mean_discounted_gain_per_target": 0.011799030778848274,
+              "ndcg_contribution": 0.0030032888120260564
+            }
+          }
+        },
+        "target_mid": {
+          "target_occurrences": 126367,
+          "metrics": {
+            "5": {
+              "target_hits": 1429,
+              "target_hit_rate": 0.011308332080369084,
+              "discounted_gain_sum": 880.4388767936189,
+              "mean_discounted_gain_per_target": 0.00696731644174206,
+              "ndcg_contribution": 0.007727197758622187
+            },
+            "20": {
+              "target_hits": 3093,
+              "target_hit_rate": 0.02447632688914036,
+              "discounted_gain_sum": 1377.4210266761575,
+              "mean_discounted_gain_per_target": 0.01090016401968993,
+              "ndcg_contribution": 0.012088976248723751
+            },
+            "50": {
+              "target_hits": 3267,
+              "target_hit_rate": 0.025853268653999856,
+              "discounted_gain_sum": 1414.7481450111866,
+              "mean_discounted_gain_per_target": 0.0111955506185253,
+              "ndcg_contribution": 0.012416578803241426
+            }
+          }
+        },
+        "target_tail": {
+          "target_occurrences": 22957,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 5,
+              "target_hit_rate": 0.00021779849283442957,
+              "discounted_gain_sum": 1.3542507947755673,
+              "mean_discounted_gain_per_target": 5.8990756404389396e-05,
+              "ndcg_contribution": 1.1885622025360707e-05
+            },
+            "50": {
+              "target_hits": 10,
+              "target_hit_rate": 0.00043559698566885915,
+              "discounted_gain_sum": 2.4203927979187894,
+              "mean_discounted_gain_per_target": 0.00010543158069080409,
+              "ndcg_contribution": 2.1242648747151398e-05
+            }
+          }
+        },
+        "target_seen": {
+          "target_occurrences": 178326,
+          "metrics": {
+            "5": {
+              "target_hits": 1795,
+              "target_hit_rate": 0.010065834482913316,
+              "discounted_gain_sum": 1105.8493398500655,
+              "mean_discounted_gain_per_target": 0.006201279341487307,
+              "ndcg_contribution": 0.00970551933302042
+            },
+            "20": {
+              "target_hits": 3851,
+              "target_hit_rate": 0.021595280553592857,
+              "discounted_gain_sum": 1716.2045549770091,
+              "mean_discounted_gain_per_target": 0.009623972695944557,
+              "ndcg_contribution": 0.015062319872619745
+            },
+            "50": {
+              "target_hits": 4052,
+              "target_hit_rate": 0.022722429707389837,
+              "discounted_gain_sum": 1759.364028457263,
+              "mean_discounted_gain_per_target": 0.009865998387544515,
+              "ndcg_contribution": 0.015441110264014632
+            }
+          }
+        }
+      },
+      "predictions": {
+        "list5": {
+          "real_item_slots": 193220,
+          "total_slots": 193220,
+          "coverage": 1.0,
+          "unique_recommended_items": 735,
+          "top10_concentration": 0.3404409481420143,
+          "top10_items": [
+            {
+              "item_id": 9116,
+              "count": 10866,
+              "train_target_occurrences": 392,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4664,
+              "count": 8921,
+              "train_target_occurrences": 402,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9235,
+              "count": 8704,
+              "train_target_occurrences": 318,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4807,
+              "count": 6393,
+              "train_target_occurrences": 636,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 699,
+              "count": 6084,
+              "train_target_occurrences": 1270,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4722,
+              "count": 5565,
+              "train_target_occurrences": 607,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4823,
+              "count": 5327,
+              "train_target_occurrences": 313,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 7821,
+              "count": 5142,
+              "train_target_occurrences": 711,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 827,
+              "count": 4411,
+              "train_target_occurrences": 1922,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 9220,
+              "count": 4367,
+              "train_target_occurrences": 560,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.4210397685981455,
+          "hhi": 0.017894609564195165,
+          "class_shares": {
+            "never_seen": 0.002391056826415485,
+            "history_only": 0.00650553772901356,
+            "target_head": 0.23961805196149466,
+            "target_mid": 0.7335161991512266,
+            "target_tail": 0.017969154331849705,
+            "target_seen": 0.991103405444571
+          }
+        },
+        "aggregate50": {
+          "real_item_slots": 741803,
+          "total_slots": 1932200,
+          "coverage": 0.3839162612565987,
+          "unique_recommended_items": 1573,
+          "top10_concentration": 0.16106836990413897,
+          "top10_items": [
+            {
+              "item_id": 2895,
+              "count": 13537,
+              "train_target_occurrences": 1227,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9235,
+              "count": 13157,
+              "train_target_occurrences": 318,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4722,
+              "count": 12717,
+              "train_target_occurrences": 607,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 5795,
+              "count": 12635,
+              "train_target_occurrences": 1360,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 5958,
+              "count": 12556,
+              "train_target_occurrences": 885,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4807,
+              "count": 12467,
+              "train_target_occurrences": 636,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9116,
+              "count": 12295,
+              "train_target_occurrences": 392,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 3184,
+              "count": 10398,
+              "train_target_occurrences": 470,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4664,
+              "count": 9953,
+              "train_target_occurrences": 402,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2781,
+              "count": 9766,
+              "train_target_occurrences": 906,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.201474798219038,
+          "hhi": 0.006190735947167653,
+          "class_shares": {
+            "never_seen": 0.0073523563533714476,
+            "history_only": 0.013193529818563688,
+            "target_head": 0.25489651565172966,
+            "target_mid": 0.6475937681567748,
+            "target_tail": 0.07696383001956045,
+            "target_seen": 0.9794541138280649
+          }
+        }
+      }
+    },
+    "late": {
+      "metrics": {
+        "list/ndcg@5": 0.007284839624040882,
+        "list/hr@5": 0.033956320237482206,
+        "list/recall@5": 0.006973010632175204,
+        "aggregate/ndcg@10": 0.010037801791600357,
+        "aggregate/hr@10": 0.057492502953382,
+        "aggregate/recall@10": 0.012001332808287643,
+        "aggregate/ndcg@20": 0.011892777350137202,
+        "aggregate/hr@20": 0.07724229848847423,
+        "aggregate/recall@20": 0.01626631932874928,
+        "aggregate/ndcg@50": 0.012289224001437357,
+        "aggregate/hr@50": 0.082028291885015,
+        "aggregate/recall@50": 0.01735679883682186
+      },
+      "classes": {
+        "never_seen": {
+          "target_occurrences": 5022,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 1,
+              "target_hit_rate": 0.00019912385503783353,
+              "discounted_gain_sum": 0.25,
+              "mean_discounted_gain_per_target": 4.978096375945838e-05,
+              "ndcg_contribution": 2.568383706976162e-06
+            },
+            "50": {
+              "target_hits": 1,
+              "target_hit_rate": 0.00019912385503783353,
+              "discounted_gain_sum": 0.25,
+              "mean_discounted_gain_per_target": 4.978096375945838e-05,
+              "ndcg_contribution": 2.568383706976162e-06
+            }
+          }
+        },
+        "history_only": {
+          "target_occurrences": 15460,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "50": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            }
+          }
+        },
+        "target_head": {
+          "target_occurrences": 20624,
+          "metrics": {
+            "5": {
+              "target_hits": 249,
+              "target_hit_rate": 0.012073312645461598,
+              "discounted_gain_sum": 156.83763061803893,
+              "mean_discounted_gain_per_target": 0.0076046174659638735,
+              "ndcg_contribution": 0.0016112768604804673
+            },
+            "20": {
+              "target_hits": 502,
+              "target_hit_rate": 0.02434057408844065,
+              "discounted_gain_sum": 231.95434364289764,
+              "mean_discounted_gain_per_target": 0.011246816507122654,
+              "ndcg_contribution": 0.002382991027899072
+            },
+            "50": {
+              "target_hits": 523,
+              "target_hit_rate": 0.025358805275407292,
+              "discounted_gain_sum": 236.5031780990289,
+              "mean_discounted_gain_per_target": 0.011467376750340812,
+              "ndcg_contribution": 0.0024297236371105093
+            }
+          }
+        },
+        "target_mid": {
+          "target_occurrences": 108643,
+          "metrics": {
+            "5": {
+              "target_hits": 902,
+              "target_hit_rate": 0.008302421693068123,
+              "discounted_gain_sum": 552.2503070851587,
+              "mean_discounted_gain_per_target": 0.00508316511036292,
+              "ndcg_contribution": 0.0056735627635604155
+            },
+            "20": {
+              "target_hits": 2180,
+              "target_hit_rate": 0.020065719834687922,
+              "discounted_gain_sum": 924.8985938027283,
+              "mean_discounted_gain_per_target": 0.008513190852634116,
+              "ndcg_contribution": 0.009501977915712364
+            },
+            "50": {
+              "target_hits": 2339,
+              "target_hit_rate": 0.021529228758410575,
+              "discounted_gain_sum": 958.9388776920508,
+              "mean_discounted_gain_per_target": 0.008826513237779247,
+              "ndcg_contribution": 0.009851691957801079
+            }
+          }
+        },
+        "target_tail": {
+          "target_occurrences": 15316,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 2,
+              "target_hit_rate": 0.00013058239749281798,
+              "discounted_gain_sum": 0.5100506209954512,
+              "mean_discounted_gain_per_target": 3.330181646614332e-05,
+              "ndcg_contribution": 5.240022818791161e-06
+            },
+            "50": {
+              "target_hits": 2,
+              "target_hit_rate": 0.00013058239749281798,
+              "discounted_gain_sum": 0.5100506209954512,
+              "mean_discounted_gain_per_target": 3.330181646614332e-05,
+              "ndcg_contribution": 5.240022818791161e-06
+            }
+          }
+        },
+        "target_seen": {
+          "target_occurrences": 144583,
+          "metrics": {
+            "5": {
+              "target_hits": 1151,
+              "target_hit_rate": 0.007960825269914167,
+              "discounted_gain_sum": 709.0879377031977,
+              "mean_discounted_gain_per_target": 0.004904365919251901,
+              "ndcg_contribution": 0.007284839624040883
+            },
+            "20": {
+              "target_hits": 2684,
+              "target_hit_rate": 0.018563731559035294,
+              "discounted_gain_sum": 1157.3629880666215,
+              "mean_discounted_gain_per_target": 0.008004834510742076,
+              "ndcg_contribution": 0.011890208966430227
+            },
+            "50": {
+              "target_hits": 2864,
+              "target_hit_rate": 0.019808691201593547,
+              "discounted_gain_sum": 1195.952106412075,
+              "mean_discounted_gain_per_target": 0.008271733927308709,
+              "ndcg_contribution": 0.012286655617730378
+            }
+          }
+        }
+      },
+      "predictions": {
+        "list5": {
+          "real_item_slots": 165065,
+          "total_slots": 165065,
+          "coverage": 1.0,
+          "unique_recommended_items": 691,
+          "top10_concentration": 0.2196286311453064,
+          "top10_items": [
+            {
+              "item_id": 9116,
+              "count": 4147,
+              "train_target_occurrences": 392,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 8851,
+              "count": 3934,
+              "train_target_occurrences": 1913,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 827,
+              "count": 3921,
+              "train_target_occurrences": 1922,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 699,
+              "count": 3911,
+              "train_target_occurrences": 1270,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2781,
+              "count": 3838,
+              "train_target_occurrences": 906,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 7821,
+              "count": 3796,
+              "train_target_occurrences": 711,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 8740,
+              "count": 3653,
+              "train_target_occurrences": 2044,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 4664,
+              "count": 3131,
+              "train_target_occurrences": 402,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 255,
+              "count": 2970,
+              "train_target_occurrences": 1454,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 4807,
+              "count": 2952,
+              "train_target_occurrences": 636,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.389885554988056,
+          "hhi": 0.010972658333122977,
+          "class_shares": {
+            "never_seen": 0.0020113288704449762,
+            "history_only": 0.011298579347529761,
+            "target_head": 0.2705116166358707,
+            "target_mid": 0.6898797443431376,
+            "target_tail": 0.026298730803016993,
+            "target_seen": 0.9866900917820253
+          }
+        },
+        "aggregate50": {
+          "real_item_slots": 647770,
+          "total_slots": 1650650,
+          "coverage": 0.3924332838578742,
+          "unique_recommended_items": 1527,
+          "top10_concentration": 0.1175108448986523,
+          "top10_items": [
+            {
+              "item_id": 5958,
+              "count": 12068,
+              "train_target_occurrences": 885,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2781,
+              "count": 10956,
+              "train_target_occurrences": 906,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 10387,
+              "count": 8129,
+              "train_target_occurrences": 305,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 482,
+              "count": 6896,
+              "train_target_occurrences": 2503,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 4188,
+              "count": 6749,
+              "train_target_occurrences": 1452,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 8849,
+              "count": 6651,
+              "train_target_occurrences": 2254,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 725,
+              "count": 6620,
+              "train_target_occurrences": 1446,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 2895,
+              "count": 6189,
+              "train_target_occurrences": 1227,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4532,
+              "count": 6115,
+              "train_target_occurrences": 885,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 6060,
+              "count": 5747,
+              "train_target_occurrences": 1331,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.131999630165363,
+          "hhi": 0.004732249882613623,
+          "class_shares": {
+            "never_seen": 0.010066844713401362,
+            "history_only": 0.01758957654723127,
+            "target_head": 0.2604643623508344,
+            "target_mid": 0.6367198233941059,
+            "target_tail": 0.07515939299442703,
+            "target_seen": 0.9723435787393674
+          }
+        }
+      }
+    },
+    "full": {
+      "metrics": {
+        "list/ndcg@5": 0.008590291243196099,
+        "list/hr@5": 0.04002400323764601,
+        "list/recall@5": 0.008222504430830203,
+        "aggregate/ndcg@10": 0.011730537207630875,
+        "aggregate/hr@10": 0.066497341501877,
+        "aggregate/recall@10": 0.013938624279553988,
+        "aggregate/ndcg@20": 0.013602084204161445,
+        "aggregate/hr@20": 0.08610463736969172,
+        "aggregate/recall@20": 0.018242460610966127,
+        "aggregate/ndcg@50": 0.013989008987287116,
+        "aggregate/hr@50": 0.0908215526745468,
+        "aggregate/recall@50": 0.019305859860167186
+      },
+      "classes": {
+        "never_seen": {
+          "target_occurrences": 9277,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 1,
+              "target_hit_rate": 0.00010779346771585642,
+              "discounted_gain_sum": 0.25,
+              "mean_discounted_gain_per_target": 2.6948366928964104e-05,
+              "ndcg_contribution": 1.1832765998912043e-06
+            },
+            "50": {
+              "target_hits": 1,
+              "target_hit_rate": 0.00010779346771585642,
+              "discounted_gain_sum": 0.25,
+              "mean_discounted_gain_per_target": 2.6948366928964104e-05,
+              "ndcg_contribution": 1.1832765998912043e-06
+            }
+          }
+        },
+        "history_only": {
+          "target_occurrences": 26099,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "50": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            }
+          }
+        },
+        "target_head": {
+          "target_occurrences": 49626,
+          "metrics": {
+            "5": {
+              "target_hits": 615,
+              "target_hit_rate": 0.012392697376375288,
+              "discounted_gain_sum": 382.2480936744856,
+              "mean_discounted_gain_per_target": 0.00770257715057602,
+              "ndcg_contribution": 0.0018092208983921593
+            },
+            "20": {
+              "target_hits": 1255,
+              "target_hit_rate": 0.02528916293878209,
+              "discounted_gain_sum": 569.3836211489735,
+              "mean_discounted_gain_per_target": 0.011473494159290967,
+              "ndcg_contribution": 0.002694953261067596
+            },
+            "50": {
+              "target_hits": 1298,
+              "target_hit_rate": 0.026155644218756297,
+              "discounted_gain_sum": 578.6986687471866,
+              "mean_discounted_gain_per_target": 0.011661199144544929,
+              "ndcg_contribution": 0.0027390423724669493
+            }
+          }
+        },
+        "target_mid": {
+          "target_occurrences": 235010,
+          "metrics": {
+            "5": {
+              "target_hits": 2331,
+              "target_hit_rate": 0.009918726862686694,
+              "discounted_gain_sum": 1432.689183878778,
+              "mean_discounted_gain_per_target": 0.006096290302024502,
+              "ndcg_contribution": 0.00678107034480394
+            },
+            "20": {
+              "target_hits": 5273,
+              "target_hit_rate": 0.02243734309178333,
+              "discounted_gain_sum": 2302.319620478886,
+              "mean_discounted_gain_per_target": 0.009796687887659614,
+              "ndcg_contribution": 0.010897123729532256
+            },
+            "50": {
+              "target_hits": 5606,
+              "target_hit_rate": 0.02385430407216714,
+              "discounted_gain_sum": 2373.687022703238,
+              "mean_discounted_gain_per_target": 0.010100366038480227,
+              "ndcg_contribution": 0.011234913237720655
+            }
+          }
+        },
+        "target_tail": {
+          "target_occurrences": 38273,
+          "metrics": {
+            "5": {
+              "target_hits": 0,
+              "target_hit_rate": 0.0,
+              "discounted_gain_sum": 0.0,
+              "mean_discounted_gain_per_target": 0.0,
+              "ndcg_contribution": 0.0
+            },
+            "20": {
+              "target_hits": 7,
+              "target_hit_rate": 0.00018289655893188408,
+              "discounted_gain_sum": 1.8643014157710185,
+              "mean_discounted_gain_per_target": 4.8710616250908436e-05,
+              "ndcg_contribution": 8.823936961703557e-06
+            },
+            "50": {
+              "target_hits": 12,
+              "target_hit_rate": 0.00031353695816894415,
+              "discounted_gain_sum": 2.9304434189142405,
+              "mean_discounted_gain_per_target": 7.656685963771434e-05,
+              "ndcg_contribution": 1.3870100499625594e-05
+            }
+          }
+        },
+        "target_seen": {
+          "target_occurrences": 322909,
+          "metrics": {
+            "5": {
+              "target_hits": 2946,
+              "target_hit_rate": 0.0091233133793112,
+              "discounted_gain_sum": 1814.9372775532631,
+              "mean_discounted_gain_per_target": 0.005620584367587348,
+              "ndcg_contribution": 0.008590291243196097
+            },
+            "20": {
+              "target_hits": 6535,
+              "target_hit_rate": 0.020237899841751082,
+              "discounted_gain_sum": 2873.56754304363,
+              "mean_discounted_gain_per_target": 0.008899001090225513,
+              "ndcg_contribution": 0.013600900927561553
+            },
+            "50": {
+              "target_hits": 6916,
+              "target_hit_rate": 0.021417798822578497,
+              "discounted_gain_sum": 2955.316134869338,
+              "mean_discounted_gain_per_target": 0.009152164030328477,
+              "ndcg_contribution": 0.013987825710687223
+            }
+          }
+        }
+      },
+      "predictions": {
+        "list5": {
+          "real_item_slots": 358285,
+          "total_slots": 358285,
+          "coverage": 1.0,
+          "unique_recommended_items": 833,
+          "top10_concentration": 0.2759758292979053,
+          "top10_items": [
+            {
+              "item_id": 9116,
+              "count": 15013,
+              "train_target_occurrences": 392,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4664,
+              "count": 12052,
+              "train_target_occurrences": 402,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9235,
+              "count": 11088,
+              "train_target_occurrences": 318,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 699,
+              "count": 9995,
+              "train_target_occurrences": 1270,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4807,
+              "count": 9345,
+              "train_target_occurrences": 636,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 7821,
+              "count": 8938,
+              "train_target_occurrences": 711,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 827,
+              "count": 8332,
+              "train_target_occurrences": 1922,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 8851,
+              "count": 8282,
+              "train_target_occurrences": 1913,
+              "fine_class": "target_head"
+            },
+            {
+              "item_id": 4722,
+              "count": 7971,
+              "train_target_occurrences": 607,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2781,
+              "count": 7862,
+              "train_target_occurrences": 906,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.406686752787969,
+          "hhi": 0.01351675342839724,
+          "class_shares": {
+            "never_seen": 0.002216112871038419,
+            "history_only": 0.008713733480329906,
+            "target_head": 0.2538509845514046,
+            "target_mid": 0.7134125068032432,
+            "target_tail": 0.021806662293983838,
+            "target_seen": 0.9890701536486317
+          }
+        },
+        "aggregate50": {
+          "real_item_slots": 1389573,
+          "total_slots": 3582850,
+          "coverage": 0.387840127272981,
+          "unique_recommended_items": 1747,
+          "top10_concentration": 0.13297106377282805,
+          "top10_items": [
+            {
+              "item_id": 5958,
+              "count": 24624,
+              "train_target_occurrences": 885,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2781,
+              "count": 20722,
+              "train_target_occurrences": 906,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 2895,
+              "count": 19726,
+              "train_target_occurrences": 1227,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 5795,
+              "count": 18053,
+              "train_target_occurrences": 1360,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4807,
+              "count": 18026,
+              "train_target_occurrences": 636,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9235,
+              "count": 17885,
+              "train_target_occurrences": 318,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 4722,
+              "count": 17876,
+              "train_target_occurrences": 607,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 9116,
+              "count": 17507,
+              "train_target_occurrences": 392,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 10387,
+              "count": 15629,
+              "train_target_occurrences": 305,
+              "fine_class": "target_mid"
+            },
+            {
+              "item_id": 3184,
+              "count": 14725,
+              "train_target_occurrences": 470,
+              "fine_class": "target_mid"
+            }
+          ],
+          "mean_log1p_train_target_frequency": 6.1690879213797984,
+          "hhi": 0.005200699119434007,
+          "class_shares": {
+            "never_seen": 0.008617755238479734,
+            "history_only": 0.015242812000521024,
+            "target_head": 0.2574920497159919,
+            "target_mid": 0.6425247180248896,
+            "target_tail": 0.07612266502011769,
+            "target_seen": 0.9761394327609992
+          }
+        }
+      }
+    }
+  }
+}

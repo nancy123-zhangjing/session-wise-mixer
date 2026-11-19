@@ -1,0 +1,124 @@
+{
+  "status": "RESOURCE_RELEASE_AND_ALLOCATION_AUDIT_PASS",
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "utc": "2026-10-20T07:43:31.207177+00:00",
+  "auditor_sha256": "29be744cf1defec3fe0140aea24a1d3f1d7fadffce40b1d93d36dceea5fcd7a2",
+  "all_goal_jobs_released": true,
+  "actual_allocated_gpu_seconds": 35549.0,
+  "actual_allocated_gpu_hours": 9.874722222222223,
+  "acceptance_allocated_gpu_seconds": 636.0,
+  "jobs": [
+    {
+      "job_name": "nancy-stage05-long-20261020-smoke-r1",
+      "mode": "smoke",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:09:31+08:00",
+      "released_at_beijing": "2026-10-20T12:20:07+08:00",
+      "allocated_gpu_seconds": 636.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "SMOKE_STATUS_AFTER_EXIT.json": "02bae180c7ee7524659d8fb6678bae0f8e8ed8bbe14a1241ea5681f950d49dea",
+        "SMOKE_EVENTS_AFTER_EXIT.json": "3ec54ed0be23aa16ff46036b090e73eac5fae4c1c7381d3246e3fb3afb595457",
+        "SMOKE_RELEASE_EVENTS.json": "b3fe4293a8504646db2e6f2eda81cf4cb71d743b09eda0854981d5d388c2fd3c"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-frozen-20261020-r1",
+      "mode": "train_arm",
+      "released": true,
+      "status": "FAILED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:24:23+08:00",
+      "released_at_beijing": "2026-10-20T12:25:09+08:00",
+      "allocated_gpu_seconds": 46.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "NO_MIXER_FROZEN_R1_TERMINAL_STATUS.json": "d77d9875ed1c4cbc3e233960520d248f3137663b8c1e84827893654e7511ae21",
+        "NO_MIXER_FROZEN_R1_EVENTS.json": "ddb011da9307d22433406808180cdd859d22da524ac5ee9f6a4cdb4bc5704de0"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-mixer-frozen-20261020-r1",
+      "mode": "train_arm",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:24:23+08:00",
+      "released_at_beijing": "2026-10-20T14:34:44+08:00",
+      "allocated_gpu_seconds": 7821.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "MIXER_FROZEN_R1_TERMINAL_STATUS.json": "d8c4ca492938db3d474101d6f3bcc4fa5d0c09d7df255fe7c7c811d033a1c3d6",
+        "MIXER_FROZEN_R1_TERMINAL_EVENTS.json": "ccf0de726edcb6b9c31c35ba93151321f91cf4be100b0c00949da4e5616047a6"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-joint-20261020-r1",
+      "mode": "train_arm",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:24:23+08:00",
+      "released_at_beijing": "2026-10-20T14:36:08+08:00",
+      "allocated_gpu_seconds": 7905.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "NO_MIXER_JOINT_R1_TERMINAL_STATUS.json": "34c730507257a25f4a511157d6a1fc5a445ee2fda7152de6a8b1c365f299dd75",
+        "NO_MIXER_JOINT_R1_TERMINAL_EVENTS.json": "203e6904f455757a6b01ee24f7f3bec49d6c12e5de14200d2310ae1353f74ca4"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-no-mixer-frozen-20261020-r2",
+      "mode": "train_arm",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:40:53+08:00",
+      "released_at_beijing": "2026-10-20T14:54:55+08:00",
+      "allocated_gpu_seconds": 8042.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "NO_MIXER_FROZEN_R2_TERMINAL_STATUS.json": "bcd6db84d53b080430b0b553b3a001046fa73ff273205053631a11ce3c24564b",
+        "NO_MIXER_FROZEN_R2_TERMINAL_EVENTS.json": "977cb2a374817709d888d675629c7aee160f02e13eb4a4507d3cbefe8012a514"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-mixer-joint-20261020-r1",
+      "mode": "train_arm",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T12:24:23+08:00",
+      "released_at_beijing": "2026-10-20T14:57:02+08:00",
+      "allocated_gpu_seconds": 9159.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "MIXER_JOINT_R1_TERMINAL_STATUS.json": "e93725fc2e7c2e2bf9203439833979d754fced535fcadf30ea0e8d7bb6351397",
+        "MIXER_JOINT_R1_TERMINAL_EVENTS.json": "2f9061aa6812c75cb17dc4eaf95f6faf991147c527408f98fb89d071eb0eba44"
+      }
+    },
+    {
+      "job_name": "nancy-stage05-long-evaluate-20261020-r1",
+      "mode": "evaluate",
+      "released": true,
+      "status": "SUCCEEDED",
+      "gpu_count": 1,
+      "started_at_beijing": "2026-10-20T15:01:42+08:00",
+      "released_at_beijing": "2026-10-20T15:34:02+08:00",
+      "allocated_gpu_seconds": 1940.0,
+      "time_basis": "Scheduled through SuccessfulDeletePod, including retention",
+      "platform_evidence_sha256": {
+        "EVALUATE_R1_TERMINAL_STATUS.json": "68a3702d064c1f6fa50563b47054ab75fde210c00cef7ac76f1a1db667c80a24",
+        "EVALUATE_R1_TERMINAL_EVENTS.json": "421e62ac053d5dc3a1e5fc585195537e846f32bf6553de9512108329ab045544"
+      }
+    }
+  ],
+  "quota_evidence_sha256": "9f83a1f733271dcad493db127e79af40c409be7bec3cf513ff339f4a32b5b44d",
+  "final_job_list_sha256": "f4b58f476d2f436287ae27856433abcd01d209cb55c2ad6bfebebeb6537e6133",
+  "rate_points_per_allocated_gpu_hour": 1.0,
+  "estimated_points_from_allocated_time": 9.874722222222223,
+  "actual_goal_invoice_settlement_verified": false,
+  "goal_complete": false
+}

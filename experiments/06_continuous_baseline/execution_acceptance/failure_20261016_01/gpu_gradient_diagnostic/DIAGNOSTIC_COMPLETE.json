@@ -1,0 +1,40 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE",
+  "not_valid_training_run": true,
+  "checkpoint_sha256": "31f9ebaf43457e9fd44eae8c09a5a5eceafc582aa8a702066cd0d84dbfa33f9d",
+  "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+  "max_steps_per_variant": 514,
+  "max_seconds": 240,
+  "torch": "2.6.0+cu118",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "inventory": "GPU-27a38b24-3ebd-4615-41ef-7ce6c1c7565b, 595.58.03",
+  "variants": [
+    {
+      "variant": "original_bf16_default",
+      "config_unchanged": true,
+      "checkpoint_epoch": 27,
+      "mode": "diagnostic replay only; no checkpoint writes",
+      "steps_completed": 147,
+      "failed": true,
+      "elapsed_since_start_seconds": 17.544448375701904
+    },
+    {
+      "variant": "bf16_math",
+      "config_unchanged": true,
+      "checkpoint_epoch": 27,
+      "mode": "diagnostic replay only; no checkpoint writes",
+      "steps_completed": 514,
+      "failed": false,
+      "elapsed_since_start_seconds": 21.364722967147827
+    },
+    {
+      "variant": "fp32_math",
+      "config_unchanged": true,
+      "checkpoint_epoch": 27,
+      "mode": "diagnostic replay only; no checkpoint writes",
+      "steps_completed": 514,
+      "failed": false,
+      "elapsed_since_start_seconds": 28.987619161605835
+    }
+  ]
+}

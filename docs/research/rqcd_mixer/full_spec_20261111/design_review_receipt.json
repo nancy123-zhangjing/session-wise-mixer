@@ -1,0 +1,216 @@
+{
+  "status": "PASS_WITH_DECLARED_IMPLEMENTATION_DEFAULTS",
+  "scope": "Design document and agreement audit only; no model code, training, inference, GPU or remote operation.",
+  "created_at": "2026-11-11T13:45:05.028997+00:00",
+  "checks": {
+    "18_design_sections": true,
+    "four_independent_embeddings": true,
+    "history_200_tokens": true,
+    "two_mixer_variants": true,
+    "scale_ratio_stop_gradient": true,
+    "no_old_gate": true,
+    "cached_hard_and_internal_hard_split": true,
+    "no_extra_residual_detach": true,
+    "T_four_R_two_losses": true,
+    "microbatch_pending": true,
+    "core_learning_rates": true,
+    "explicit_pretrain_STE": true,
+    "no_implementation_claim": true,
+    "audit_primary_chat_evidence": true,
+    "balanced_display_math": true,
+    "no_replacement_character": true,
+    "schedule_rows": true,
+    "R_update_budget": true,
+    "pretrain_update_budget": true,
+    "T_budget": true,
+    "T_noise_endpoints": true,
+    "R_lr_endpoints": true,
+    "DDIM_time_grid": true,
+    "local_links": true,
+    "evidence_169": true,
+    "evidence_170": true,
+    "evidence_171": true,
+    "evidence_182": true
+  },
+  "schedule": [
+    {
+      "R": 5,
+      "T": 0,
+      "R_updates": 3465
+    },
+    {
+      "R": 8,
+      "T": 30,
+      "R_updates": 5544
+    },
+    {
+      "R": 11,
+      "T": 60,
+      "R_updates": 7623
+    },
+    {
+      "R": 14,
+      "T": 90,
+      "R_updates": 9702
+    },
+    {
+      "R": 17,
+      "T": 120,
+      "R_updates": 11781
+    },
+    {
+      "R": 20,
+      "T": 150,
+      "R_updates": 13860
+    },
+    {
+      "R": 23,
+      "T": 180,
+      "R_updates": 15939
+    },
+    {
+      "R": 26,
+      "T": 210,
+      "R_updates": 18018
+    },
+    {
+      "R": 29,
+      "T": 240,
+      "R_updates": 20097
+    },
+    {
+      "R": 32,
+      "T": 270,
+      "R_updates": 22176
+    },
+    {
+      "R": 35,
+      "T": 300,
+      "R_updates": 24255
+    }
+  ],
+  "DDIM_steps_descending": [
+    1000,
+    947,
+    895,
+    842,
+    790,
+    737,
+    685,
+    632,
+    579,
+    527,
+    474,
+    422,
+    369,
+    316,
+    264,
+    211,
+    159,
+    106,
+    54,
+    1
+  ],
+  "DDIM_terminal": 0,
+  "math": {
+    "R_updates_per_epoch": 693,
+    "R_total_updates": 24255,
+    "pretraining_updates": 110000,
+    "pretraining_warmup_updates": 550,
+    "T_total_updates": 300,
+    "R_tail_sessions": 835,
+    "pretraining_tail_items": 488,
+    "decoder_view_lengths": [
+      1,
+      5,
+      9,
+      13,
+      17
+    ]
+  },
+  "files": [
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\docs\\research\\rqcd_mixer\\RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "bytes": 57026,
+      "sha256": "fdb73fe54c9dba4a27fc7d0d56cf049a5f23e9b6888408e12ea261a8be51f61d"
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\docs\\research\\rqcd_mixer\\RQCD_MIXER_DESIGN_CONSISTENCY_AUDIT_20261111.md",
+      "bytes": 11355,
+      "sha256": "b8c07fad61f71b7725965bb0941a7ce257197c59581f6793af65e9a1dfc0433d"
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\docs\\research\\rqcd_mixer\\RQCD_MIXER_DESIGN_V1_20261111.md",
+      "bytes": 28113,
+      "sha256": "3e0e1365365d2028cc4a674b1b9f23dc2187e2e1f7dad855eacf2d5219f607ba"
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\docs\\research\\rqcd_mixer\\RQCD_MIXER_DESIGN_FOR_DISCUSSION_20261111.md",
+      "bytes": 17266,
+      "sha256": "0c9179dae624681f374838020c655f2fa06b84c717f6e45f3b50f78e3892dbe5"
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\docs\\research\\rqcd_mixer\\full_spec_20261111\\conversation_evidence.jsonl",
+      "bytes": 608276,
+      "sha256": "e215dd19a987570135f1c29415765c43949f433f4c0a37fef0cfc1002588535b"
+    }
+  ],
+  "local_links": [
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "RQCD_MIXER_DESIGN_CONSISTENCY_AUDIT_20261111.md",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "full_spec_20261111/conversation_evidence.jsonl",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "../../../configs/09_kuairec_listwise/rqcd_h_v1.json",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "../../../scripts/listwise_diffgrm/metrics.py",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "../onerec_listwise/MODEL_EXPERIMENT_PLAN_20261027.md",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "../../../configs/09_kuairec_listwise/base.json",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "target": "../../../scripts/listwise_diffgrm/metrics.py",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_DESIGN_CONSISTENCY_AUDIT_20261111.md",
+      "target": "RQCD_MIXER_FULL_DESIGN_20261111.md",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_DESIGN_CONSISTENCY_AUDIT_20261111.md",
+      "target": "full_spec_20261111/conversation_evidence.jsonl",
+      "exists": true
+    },
+    {
+      "document": "RQCD_MIXER_DESIGN_CONSISTENCY_AUDIT_20261111.md",
+      "target": "full_spec_20261111/design_review_receipt.json",
+      "exists": true
+    }
+  ],
+  "limitations": [
+    "No new model implementation or executable verification performed.",
+    "Microbatch, actual kernel, package versions and runtime remain to be determined.",
+    "Technical defaults added within delegated scope are explicitly listed in the audit.",
+    "Full agreement audit is human review; keyword checks are only supplementary."
+  ]
+}

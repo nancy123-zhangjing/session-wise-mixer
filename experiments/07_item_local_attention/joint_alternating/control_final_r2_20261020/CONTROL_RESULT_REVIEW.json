@@ -1,0 +1,135 @@
+{
+  "status": "CONTROL_COMPLETED_RESULT_REVIEW_PASS",
+  "verified_utc": "2026-10-20T10:34:59.303586+00:00",
+  "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+  "variant": "control",
+  "run_id": "stage07_item_local_joint_control_seed2024_20261020_r1",
+  "seed": 2024,
+  "evaluation_level": "sid",
+  "scope": "Control metadata/CSV/selected-SID export/phase evidence CPU review; not paired comparison, local full-weight readback, full resume or Goal completion.",
+  "best_epoch": 25,
+  "selection_rule": "First maximum validation weighted_score=0.8*NDCG@10+0.2*HR@10, includes epoch0",
+  "weighted_score_arithmetic_tolerance": 1e-07,
+  "best_validation": {
+    "hit_rate@5": 0.06394490900147565,
+    "hit_rate@10": 0.06904261503376112,
+    "ndcg@5": 0.046632220254880244,
+    "ndcg@10": 0.048331840190596186,
+    "legal@10": 0.9999105665608371,
+    "duplicate@10": 0.3553503601450467,
+    "weighted_score": 0.05247399556222619
+  },
+  "test": {
+    "hit_rate@5": 0.05446496445020793,
+    "hit_rate@10": 0.0801323614899611,
+    "ndcg@5": 0.03809946608054043,
+    "ndcg@10": 0.04636611616718627,
+    "legal@10": 1.0,
+    "duplicate@10": 0.0020882708452332455,
+    "weighted_score": 0.053119365875683555
+  },
+  "validation_epochs": [
+    0,
+    5,
+    12,
+    19,
+    25,
+    32,
+    39,
+    45
+  ],
+  "test_metric_groups": 1,
+  "evaluation_csv_rows": 108,
+  "best_checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+  "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+  "selected_best_SID_collision_recomputed_from_export": {
+    "items": 12101,
+    "unique_semantic_ids": 10651,
+    "collided_items": 2171,
+    "collision_rate": 0.17940666060656144,
+    "colliding_groups": 721,
+    "largest_collision_group": 40
+  },
+  "terminal_last_phase_collision_for_distinction_only": {
+    "digit_change_rate": 0.00010329725046176463,
+    "item_change_rate": 0.00041318900184705853,
+    "unique_semantic_ids": 10652,
+    "collision_rate": 0.17924138500950335
+  },
+  "training": {
+    "logical_epochs_completed": 45,
+    "recommender_epochs": 35,
+    "tokenizer_phases": 10,
+    "recommender_batches_per_epoch": 1652,
+    "tokenizer_batches_per_phase": 96,
+    "recommender_optimizer_updates": 3640,
+    "tokenizer_optimizer_updates": 60,
+    "sid_refresh_count": 10,
+    "selected_best_tokenizer_optimizer_step": 30,
+    "stop_reason": "max_epochs"
+  },
+  "phase_evidence": {
+    "phase_records": 45,
+    "all_active_gradient_hooks_called_and_finite": true,
+    "all_frozen_parameters_unchanged": true,
+    "all_phases_have_actual_active_tensor_changes": true,
+    "tokenizer_recommendation_only_gradient_norm_positive_all_phases": true,
+    "active_parameter_tensors_by_phase": {
+      "recommender": [
+        84
+      ],
+      "tokenizer": [
+        1
+      ]
+    },
+    "actual_Adam_state_count_attested_by_runner": 85,
+    "all_active_Adam_steps_match_attested_by_runner": true,
+    "boundary": "Hooks/deltas/Adam coverage are SHA-bound runtime evidence cross-checked here; Adam tensors and full best/last weights were not loaded by this metadata review."
+  },
+  "sources": {
+    "run_metadata": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\control_run_metadata_20261020T103144Z.json",
+      "sha256": "fe1134bc23eb6881722fded5481950550b554df94cb24ea20ad1521df57963c1",
+      "size_bytes": 21670
+    },
+    "evaluation_csv": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\control_evaluation_metrics_20261020T103144Z.csv",
+      "sha256": "b62d246c832b91800d0cb13c81cd8ad079115b41097afde4dc9c038aa5c94eda",
+      "size_bytes": 4106
+    },
+    "selected_sid": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\control_selected_sid_20261020T103248Z.npy",
+      "sha256": "1e8a31969cb8edb7eda76cd903bfdda309ff4d14ca68d48228589ed04d31ff5c",
+      "size_bytes": 387360
+    },
+    "phase_integrity": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\control_phase_integrity_20261020T103248Z.json",
+      "sha256": "75dee1286cc1ee4fcfca3876263a59ec0f1bd043b2f8b99b87545f9212271d82",
+      "size_bytes": 296581
+    },
+    "epoch_timings": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\control_epoch_timings_20261020T103248Z.json",
+      "sha256": "dd4d54c2262470c129d330f82616c1a7635dcc67712da259004f60900db3b600",
+      "size_bytes": 3587
+    },
+    "completion_snapshot": {
+      "path": "experiments\\07_item_local_attention\\joint_alternating\\control_final_r2_20261020\\LIVE_COMPLETION_OBSERVATION.json",
+      "sha256": "881412aeaf70f0ba8cb97ce795b9050e2944171f639e5f8315ad0d6b56dbcc0e",
+      "size_bytes": 19251
+    }
+  },
+  "completion_snapshot_original_file_references": {
+    "result_expected_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+    "basis": "results/TEST_RESULT values read from preserved LIVE_COMPLETION_OBSERVATION; original result SHA is the COMPLETE reference, not a reserialization of snapshot values."
+  },
+  "interpretation_limits": [
+    "Single seed and SID-level metrics; no significance claim.",
+    "Stage03 historical fixed-SID metrics are background only; primary comparison awaits completed joint item_local B.",
+    "Validation beam32 and test beam256 differ: metric/duplicate changes are not identical-protocol comparisons.",
+    "Collision rate is collided_items/items, not 1-unique/items; duplicate@10 measures a different decoding outcome.",
+    "No added training, evaluation or GPU operation."
+  ],
+  "goal_complete": false,
+  "pair_comparison_complete": false
+}

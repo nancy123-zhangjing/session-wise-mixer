@@ -1,0 +1,96 @@
+{
+  "status": "ROOT_CODE_DIFF_ARCHIVED_NOT_APPLIED",
+  "created_utc": "2026-10-20T11:42:12.696814+00:00",
+  "base_commit": "2fc97b62693628f6507ad2ca60472f6063a84250",
+  "target_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+  "scope_paths": [
+    "scripts",
+    "configs",
+    "tests"
+  ],
+  "generation_argv": [
+    "git",
+    "diff",
+    "--binary",
+    "--full-index",
+    "--output=experiments/07_item_local_attention/joint_alternating/root_joint_runtime_changes.patch",
+    "2fc97b62693628f6507ad2ca60472f6063a84250",
+    "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+    "--",
+    "scripts",
+    "configs",
+    "tests"
+  ],
+  "changed_file_count": 8,
+  "changed_files": [
+    {
+      "status": "A",
+      "path": "configs/07_item_local_attention/joint_alternating_seed2024.json"
+    },
+    {
+      "status": "M",
+      "path": "scripts/analysis/audit_item_local_resources.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/analysis/audit_ocn_repair_pair.py"
+    },
+    {
+      "status": "M",
+      "path": "scripts/analysis/pack_item_local_delivery.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/train/item_local_joint_gpu_job.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/train/run_item_local_joint.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_item_local_alternating_joint.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_item_local_joint_training_state.py"
+    }
+  ],
+  "patch": {
+    "path": "experiments/07_item_local_attention/joint_alternating/root_joint_runtime_changes.patch",
+    "sha256": "d115759fa4fc0e25c85c05b4a21685b4f2e3c9fe934bd33d455458d4bf5a47b3",
+    "size_bytes": 211469,
+    "saved_bytes_equal_read_only_git_output": true
+  },
+  "scope": "Root repository runtime, configuration and checking code changes between the specified commits, limited to scripts/configs/tests. This is not a diff of only the local-attention ablation.",
+  "limitations": [
+    "Historical evidence and documentation changes outside scripts/configs/tests are excluded.",
+    "Frozen engine implementation changes are tracked separately by the existing three-patch chain and ENGINE_BINDING.json.",
+    "No patch application, relocated recovery acceptance, tests, training or platform operation was performed."
+  ],
+  "engine_diff_chain": [
+    {
+      "base_commit": "39e94e6153c97e59877ba02d4ef1d9a202ed5384",
+      "target_commit": "1dc2a0c5ad01e2a2878b9de400b91f3a7e809f25",
+      "patch": "experiments/07_item_local_attention/engine_changes.patch.gz",
+      "binding": "experiments/07_item_local_attention/execution_acceptance/SOURCE_BINDING_20261020.json"
+    },
+    {
+      "base_commit": "1dc2a0c5ad01e2a2878b9de400b91f3a7e809f25",
+      "target_commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+      "patch": "experiments/07_item_local_attention/execution_acceptance/repair_planning_20261020/ocn_teacher_cache_fix.patch.gz",
+      "binding": "experiments/07_item_local_attention/execution_acceptance/repair_planning_20261020/LOCAL_REPAIR_ACCEPTANCE.json"
+    },
+    {
+      "base_commit": "8a48a300daa6621d6c705966ff73fa837ef8f12e",
+      "target_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "patch": "experiments/07_item_local_attention/joint_alternating/engine_joint_changes.patch.gz",
+      "binding": "experiments/07_item_local_attention/joint_alternating/ENGINE_BINDING.json"
+    }
+  ],
+  "patch_applied": false,
+  "recovery_acceptance_performed": false,
+  "tests_executed": false,
+  "gpu_or_platform_operation": false,
+  "goal_complete": false
+}

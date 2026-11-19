@@ -1,0 +1,52 @@
+{
+  "status": "FIRST_VALIDATION_SNAPSHOT_CHECKED_NOT_FINAL",
+  "run_id": "stage07_item_local_seed2024_20261020_0045",
+  "verified_utc": "2026-10-19T17:47:23.295323+00:00",
+  "epoch": 20,
+  "split": "val",
+  "metrics": {
+    "legal_ratio": 1.0,
+    "duplicate_ratio": 0.5127965544319801,
+    "dup@10": 0.2588159053070475,
+    "duplicate@10": 0.2588159053070475,
+    "legal@10": 1.0,
+    "ndcg@5": 0.037472387497835435,
+    "ndcg@10": 0.040013885470594035,
+    "recall@5": 0.05205026159280955,
+    "hit_rate@5": 0.05205026159280955,
+    "recall@10": 0.059607387202074855,
+    "hit_rate@10": 0.059607387202074855,
+    "weighted_score": 0.04393258621668883
+  },
+  "validation_seconds": 212.72863275400596,
+  "weighted_score_recomputed": 0.043932585816890204,
+  "weighted_score_absolute_rounding_difference": 3.997986247616936e-10,
+  "training_epochs_observed": 20,
+  "training_batches_per_epoch": 1652,
+  "cumulative_optimizer_updates_expected": 2080,
+  "warmup_optimizer_updates": 10000,
+  "max_eval_batches": null,
+  "validation_beam": 32,
+  "test_beam_configured": 256,
+  "test_rows_in_this_snapshot": 0,
+  "files": {
+    "evaluation_metrics.csv": {
+      "sha256": "ede0878fecbc4ef0accd1d677976cf9c749c22d07e8299829c302b176ae89086",
+      "size_bytes": 460
+    },
+    "parsed_config.json": {
+      "sha256": "baa1aedb09177390e53f43abd2ddabfe1c63456c1067175e8dcaf2857652f73f",
+      "size_bytes": 7543
+    },
+    "evaluation_timings.json": {
+      "sha256": "18e591352ea470fe07d72fe2114be95abfdebfdca38bce2147cd36ed4d43d129",
+      "size_bytes": 140
+    },
+    "epoch_timings.json": {
+      "sha256": "bc0c505f581f4cd048ec151d22ac7b1f3e5170837882e29741814023b11f40c8",
+      "size_bytes": 1600
+    }
+  },
+  "scope": "Checks this early validation snapshot only; does not establish training completion, final selection, testing, improvement, resource release, or Goal completion",
+  "goal_complete": false
+}

@@ -1,0 +1,19 @@
+# Short throughput/VRAM profile; excluded from formal summaries.
+run_id: diff_profile_pse_4x256
+epochs: 1
+warmup_steps: 0
+eval_start_epoch: 1
+eval_interval: 1
+patience: 1
+max_train_batches_per_epoch: 100
+max_eval_batches: 20
+vectorized_beam_search:
+  top_k_final: 10
+  neg_inf_fp32: -1000000000.0
+  neg_inf_fp16: -65504.0
+  dedup_strategy: simple
+  val: {beam_act: 32, beam_max: 32}
+  # Match the formal test beam so the profile can expose test-time OOM.
+  test: {beam_act: 256, beam_max: 256}
+  beam_act: 32
+  beam_max: 32

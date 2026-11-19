@@ -1,0 +1,151 @@
+{
+  "schema": "stage07_multiseed_independent_source_restore_review_v1",
+  "status": "SOURCE_RESTORE_AND_REPORT_REVIEW_PASSED",
+  "reviewed_utc": "2026-10-21T17:43:11.897733+00:00",
+  "reviewer": "beam_trace_review",
+  "scope": "Read-only local review of actual completed restoration; no GPU, no remote, no test-suite repetition or metric recomputation. Only this review record is written.",
+  "source_restore_status": "passed_with_actual_captured_shallow_boundary",
+  "supersedes_pending_field_in": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\FINAL_RESULTS_REVIEW.json",
+    "sha256": "f679baa4a257e0018c3645f4d8ccf28b001d70a2fccce3766a11a824c56ccbe1",
+    "size_bytes": 9737
+  },
+  "superseded_fields": [
+    "source_restore_status",
+    "source_restore_boundary"
+  ],
+  "supersedes_prior_results_checks": false,
+  "checks": {
+    "restore_receipt_evidence_and_tool_records_rehashed": 12,
+    "original_package_parts_independently_rehashed": 10,
+    "original_archive_concatenated_sha256_recomputed": "4583a41ff271e7f08c5b9984d4904fb708da544b04010897e860d3073fad99de",
+    "original_archive_size_bytes": 4872019271,
+    "original_archive_unchanged": true,
+    "original_manifest_and_package_bound_to_capture": true,
+    "both_repositories_exact_HEAD_clean_fsck_verified": true,
+    "engine_actual_shallow_bytes_equal_capture": true,
+    "same_summary_as_prior_independent_results_review": true
+  },
+  "repositories": {
+    "code": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\restored_git_verified\\code",
+      "HEAD": "037876cbb3de339ad011e5abcf0e66169967ce3b",
+      "clean": true,
+      "fsck_full_strict_exit_zero": true,
+      "shallow": false,
+      "reachable_commits": 73,
+      "external_alternates": false
+    },
+    "engine": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\restored_git_verified\\engine",
+      "HEAD": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "clean": true,
+      "fsck_full_strict_exit_zero": true,
+      "shallow": true,
+      "reachable_commits": 7,
+      "external_alternates": false
+    }
+  },
+  "parts": [
+    {
+      "member": "multiseed_delivery.tar.gz.part0001",
+      "sha256": "76a9b127594eceb46620e968121d19dba11718df3466bf21c4378bf8dcac5f11",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0002",
+      "sha256": "e734fe877a072efa08490aa34614597c58d64e1a52b1b8e85446f12cf3d94620",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0003",
+      "sha256": "1dca2e707c8f76052e9c71d73c3ab9ba3b4fc4e86e6cb84451fb2e76ab11da51",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0004",
+      "sha256": "bf6c31a78af8eec8fe1efa01d8799bbcf4282d1fce4a772e90e321c22321a850",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0005",
+      "sha256": "b1b75c9e87d64f068854b229802a393bf4c906ac7551d2cc7270b23aa6f03ce3",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0006",
+      "sha256": "3bf235017671375c9df261b9ad670dc9333040c1bc2cef9aecc6245e2a65664c",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0007",
+      "sha256": "3d31f75a27a4b7304c799ca7c8ba0e4ddc649a626cc6651fc2401b44e0cbb7a9",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0008",
+      "sha256": "555f1d36b9f2e2d173ef221460db24b89a46ae78db264d8b244c3a036ad48fa1",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0009",
+      "sha256": "17aa5db9fe79cc80d529f1aa2070b7d0274fb9c2d079b4bfaa74420bdc60d14d",
+      "size_bytes": 536870912
+    },
+    {
+      "member": "multiseed_delivery.tar.gz.part0010",
+      "sha256": "615bd40fc1f95b5fe602f7137382860f49d284a0798ca958d4c326b3bb4f9b04",
+      "size_bytes": 40181063
+    }
+  ],
+  "restored_scope": "Exact code and engine source trees at the frozen commits, including the history available in the original repositories. Engine has its genuine captured shallow boundary and 7 reachable commits; full upstream history is not included.",
+  "complete_upstream_engine_history_included": false,
+  "original_engine_bundle_alone_sufficient": false,
+  "required_restore_inputs": "Original verified package, SOURCE_SHALLOW.json, engine.shallow, and restore_git_with_shallow.py with its original helper dependencies. Keep the supplement with the package.",
+  "research_report_deliverable": true,
+  "report_review": "REPORT.md now leads with 2025 improvement versus 2026 flat/slightly negative and explains the tiny NDCG positive. FINDINGS.md correctly states 330 new and 330 lost hits, validation/SID-level scope, warm-start two-seed limitation, and no stable-gain claim. No substantive misleading statement found.",
+  "remaining_scope_boundary": "Root is separately finishing the analysis supplement and total delivery acceptance. This record accepts source restoration and research report wording, not the entire Goal. Actual relocated training resume was not exercised.",
+  "goal_complete": false,
+  "artifacts": [
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\restored_git_verified\\GIT_RESTORE_WITH_SHALLOW.json",
+      "sha256": "c93574a7cf352224d08b765d61de272d6778639000a4709f0fc72ed703199de1",
+      "size_bytes": 7276
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\source_supplement\\SOURCE_SHALLOW.json",
+      "sha256": "597e860e8b9ee25ff3f1702c596bf3891f5d3ae5b62736317b36854110be302c",
+      "size_bytes": 1463
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\source_supplement\\engine.shallow",
+      "sha256": "b19ce47d24ae7eea13296c35490344a804223b919bddf5f4f7be2d55377e5916",
+      "size_bytes": 41
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\package\\PACKAGE.json",
+      "sha256": "bc189d6eff510368e4fb3950497ced678aa7f605f18aa61ea167ef193968f603",
+      "size_bytes": 2248
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\MANIFEST.json",
+      "sha256": "de15eb7178adc917374fdc2b2dfc7e5e666585a7e8489685217cfea99402fee3",
+      "size_bytes": 245155
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\SUMMARY.json",
+      "sha256": "59bef478e5ad4bb5fd8772d6aa38ba0361c65b3364cbd8c728e63bc7a888c7fc",
+      "size_bytes": 106329
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\REPORT.md",
+      "sha256": "9c0bfeb5784ac46e95042d1640f30caec8f10fac030cb9f3c6e73862a0f08bac",
+      "size_bytes": 2958
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\07_item_local_attention\\multiseed_20261021\\report\\FINDINGS.md",
+      "sha256": "6ace97393d777b9072b4266ce19d5642483d55e9ca4654e6c9a4d8ef9ff04676",
+      "size_bytes": 2956
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# Protocol v2 GPU short tests, 2026-11-18 (exit code per stage; 0 = passed). Logs stay on Inspire under l5o_v2_20261118/.
+
+## smoke (code_302f9b7, job nancy-l5o-v2-smoke-1118, stopped by Claude after CF-M1 could only wait)
+probe 1            # fused SDPA refused: bias key-axis stride 6 (fixed in fde70d5)
+h H0 0
+h H1 0
+tiger T0A 1        # same SDPA error
+tiger T1A 1        # same SDPA error
+sasrec SASREC 0
+cf CF-M0 1         # smoke-only: 5 RQ epochs < eval_interval 50, no best_objective.pt (fixed in d819508 smoke budgets)
+
+## smoke_tiger_fde70d5 (job nancy-l5o-v2-smoke-tiger-1118)
+probe 0            # kernel matches eager; SDPA slower; b1024 loss gate +2.3% (see V2_PROBE_fde70d5.json)
+tiger T0A 1        # CUDA OOM at batch 1024 (73 GiB)
+tiger T1A 1        # same
+DONE
+
+## smoke_tiger_cf_d819508 (final TIGER: TF32 + eager + b256; job nancy-l5o-v2-smoke-tc-1118)
+tiger T0A 0
+tiger T1A 0
+cf CF-M0 0
+cf CF-M1 0
+DONE
+# All four pipelines passed; the CF second batch is submitted by the watcher after both H jobs end.

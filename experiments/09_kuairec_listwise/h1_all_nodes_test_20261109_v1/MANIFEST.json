@@ -1,0 +1,65 @@
+{
+  "arm": "H1",
+  "pending": [
+    {
+      "epoch": 8,
+      "t_updates": 40,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1/runs/H1-Replay-R20/checkpoints/R08_T040.pt",
+      "sha256": "2db3d71bcaa1994abd986918220551239cb7aacc437df553d6c4a00b1bf60bd4",
+      "source": "exact_replay"
+    },
+    {
+      "epoch": 11,
+      "t_updates": 80,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1/runs/H1-Replay-R20/checkpoints/R11_T080.pt",
+      "sha256": "68985c06f6a928a05e30b89e17991245d96bd28ee519a554b50593e960d9468d",
+      "source": "exact_replay"
+    },
+    {
+      "epoch": 14,
+      "t_updates": 120,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1/runs/H1-Replay-R20/checkpoints/R14_T120.pt",
+      "sha256": "3cd65569e89cc5f8f1d3215cdc403e3ae0d5e6954d7e8818a891c12ed737f51f",
+      "source": "exact_replay"
+    },
+    {
+      "epoch": 17,
+      "t_updates": 160,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1/runs/H1-Replay-R20/checkpoints/R17_T160.pt",
+      "sha256": "e1c100a47b3e88ef0fce8f4ce90dbae6e56e467d19fbc5d25cc030fab693be00",
+      "source": "exact_replay"
+    },
+    {
+      "epoch": 35,
+      "t_updates": 400,
+      "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/last.pt",
+      "sha256": "58982eeac04250e6d8126b9bc46ea6ec414ee9dbdc90e65a52c56ef685300c01",
+      "source": "original"
+    }
+  ],
+  "reuse_epochs": [
+    5,
+    20
+  ],
+  "unavailable_epochs": [
+    23,
+    26,
+    29,
+    32
+  ],
+  "no_training": true,
+  "shared_R5": {
+    "model_equal": true,
+    "hard_codes_equal": true,
+    "h0_sha256": "b1adf68c7c5b3f1818773c1ef34adaeac4df49be57a867c6b11bcaf38cdf9166",
+    "h1_sha256": "991352d4b48998427d44397411eb4178678487de21f1e08e5cd9d39240a06fc1",
+    "catalog_checks": {
+      "mixer.base_codebooks": true,
+      "item_slots": true,
+      "hard_codes": true,
+      "mixer.attention.out_proj.weight": true,
+      "mixer.attention.out_proj.bias": true
+    }
+  },
+  "replay_verification_sha256": "aeb937fd4411304dfa5a63ef26baae6eaf5896eabf59aa2d491943c602e795fd"
+}

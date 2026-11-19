@@ -1,0 +1,81 @@
+{
+  "scope": "Synthetic CPU reproduction; no real dataset, Trainer, CUDA, or platform work",
+  "results": [
+    {
+      "architecture": "pinned_baseline",
+      "precision": "float32",
+      "autocast_cache_enabled": true,
+      "loss": 2.0796756744384766,
+      "finite_loss": true,
+      "parameters": 36,
+      "missing_gradient_names": []
+    },
+    {
+      "architecture": "pinned_baseline",
+      "precision": "bf16",
+      "autocast_cache_enabled": true,
+      "loss": 2.079719305038452,
+      "finite_loss": true,
+      "parameters": 36,
+      "missing_gradient_names": [
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.mlp.c_proj.bias"
+      ]
+    },
+    {
+      "architecture": "pinned_baseline",
+      "precision": "bf16",
+      "autocast_cache_enabled": false,
+      "loss": 2.079719305038452,
+      "finite_loss": true,
+      "parameters": 36,
+      "missing_gradient_names": []
+    },
+    {
+      "architecture": "item_local",
+      "precision": "float32",
+      "autocast_cache_enabled": true,
+      "loss": 2.0796756744384766,
+      "finite_loss": true,
+      "parameters": 42,
+      "missing_gradient_names": []
+    },
+    {
+      "architecture": "item_local",
+      "precision": "bf16",
+      "autocast_cache_enabled": true,
+      "loss": 2.079719305038452,
+      "finite_loss": true,
+      "parameters": 42,
+      "missing_gradient_names": [
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.mlp.c_proj.bias"
+      ]
+    },
+    {
+      "architecture": "item_local",
+      "precision": "bf16",
+      "autocast_cache_enabled": false,
+      "loss": 2.079719305038452,
+      "finite_loss": true,
+      "parameters": 42,
+      "missing_gradient_names": []
+    }
+  ]
+}

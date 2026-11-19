@@ -1,0 +1,36 @@
+{
+  "request": [
+    "job",
+    "create",
+    "-n",
+    "nancy-tiger-adamw-t1a-1114-v1",
+    "--workspace",
+    "分布式训练空间",
+    "-p",
+    "公共科研项目",
+    "--group",
+    "开发区-H100-cuda12.8版本-183核",
+    "-q",
+    "1,20,200",
+    "-i",
+    "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "--nodes",
+    "1",
+    "--shm-size",
+    "32",
+    "--priority",
+    "4",
+    "--max-time",
+    "12",
+    "--no-auto-fault-tolerance",
+    "-c",
+    "bash -c 'cd /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_tiger_adamw_20261114_v1 && export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONPATH=/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_tiger_adamw_20261114_v1/ar_deps:/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_tiger_adamw_20261114_v1 && /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u delivery/worker_adamw.py AR-T1A > AR-T1A.log 2>&1'"
+  ],
+  "result": {
+    "success": true,
+    "data": {
+      "name": "nancy-tiger-adamw-t1a-1114-v1",
+      "status": "created"
+    }
+  }
+}

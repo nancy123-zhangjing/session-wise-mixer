@@ -1,0 +1,28 @@
+{
+  "status": "CPU_CHECKS_PASS",
+  "source_sha256": "1be05fec44b9dd59700bc972b3fa1e997b6e77f5885b746a2bd1321731124949",
+  "checks": [
+    {
+      "check": "automatic_prior",
+      "passed": true,
+      "exitcode": 0,
+      "stdout": "{\"status\": \"PARTIAL_ALLOCATION_ACCOUNTED\", \"allocated_seconds\": 11637.0, \"allocated_gpu_hours\": 3.2325, \"formal_job_accounted\": true, \"formal_jobs_accounted\": [\"nancy-stage07-item-local-formal-20261020-0045\"], \"all_goal_gpu_jobs_accounted\": false, \"remaining_gpu_hours_after_accounted_jobs\": 4.7675, \"within_limit_for_accounted_jobs\": true}\n",
+      "stderr": ""
+    },
+    {
+      "check": "joint_requires_scope",
+      "passed": true,
+      "exitcode": 2,
+      "stdout": "",
+      "stderr": "usage: audit_item_local_resources.py [-h] [--receipts-dir RECEIPTS_DIR]\n                                     [--formal-status FORMAL_STATUS]\n                                     [--formal-events FORMAL_EVENTS]\n                                     [--formal-start-events FORMAL_START_EVENTS]\n                                     [--all-goal-jobs-accounted]\n                                     [--approved-budget-receipt APPROVED_BUDGET_RECEIPT]\n                                     [--repair-status REPAIR_STATUS]\n                                     [--repair-events REPAIR_EVENTS]\n                                     [--repair-start-events REPAIR_START_EVENTS]\n                                     [--joint-scope-receipt JOINT_SCOPE_RECEIPT]\n                                     [--joint-status JOINT_STATUS]\n                                     [--joint-events JOINT_EVENTS]\n                                     [--joint-start-events JOINT_START_EVENTS]\n                                     --output OUTPUT\naudit_item_local_resources.py: error: Joint allocation requires the retained cumulative budget and direct joint scope correction\n"
+    },
+    {
+      "check": "duplicate_repair",
+      "passed": true,
+      "exitcode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\nancy\\Documents\\experiment1\\scripts\\analysis\\audit_item_local_resources.py\", line 272, in <module>\n    main()\n  File \"C:\\Users\\nancy\\Documents\\experiment1\\scripts\\analysis\\audit_item_local_resources.py\", line 195, in main\n    raise ValueError(f'Duplicate job would double count allocation: {name}')\nValueError: Duplicate job would double count allocation: nancy-stage07-ocn-repair-profile-20261020-r1\n"
+    }
+  ],
+  "gpu_started": false
+}

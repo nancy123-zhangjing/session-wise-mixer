@@ -1,0 +1,557 @@
+{
+  "status": "LOCAL_GRID_VERIFICATION_PASSED",
+  "count_per_cell": 22363,
+  "input_files": {
+    "results\\COMPLETE.json": "1840850b0fca58b019eca24cf70eac8a9d092bc03f9260822d30188cda047e16",
+    "results\\GRID_PLAN.json": "d5ef2b1a29ac5d89abaf9e630a730b60d8ef8fcde20b4c11b925c2855053a786",
+    "results\\GRID_PREFLIGHT.json": "e2468dceb350d968e0540d1ff3f84591cdce7299e7e5543015dfee7a94b65cb8"
+  },
+  "grid_identity_sha256": "8a144a5b848022f3f09a678e56c2637585a9020fd9321f672914a51f0ec00642",
+  "cells": {
+    "control_beam32": {
+      "cell": "control_beam32",
+      "variant": "control",
+      "beam_act": 32,
+      "beam_max": 32,
+      "return_count": 10,
+      "split": "val",
+      "count": 22363,
+      "metrics": {
+        "legal_ratio": 0.9999105865522174,
+        "duplicate_ratio": 0.4328966975020237,
+        "dup@10": 0.3553503601450467,
+        "duplicate@10": 0.3553503601450467,
+        "legal@10": 0.9999105665608371,
+        "ndcg@5": 0.046632220254880244,
+        "ndcg@10": 0.048331840190596186,
+        "recall@5": 0.06394490900147565,
+        "hit_rate@5": 0.06394490900147565,
+        "recall@10": 0.06904261503376112,
+        "hit_rate@10": 0.06904261503376112,
+        "weighted_score": 0.05247399556222619
+      },
+      "seconds": 161.98578108201036,
+      "warmup_seconds_excluded": 1.7217590999935055,
+      "timing_scope": "synchronized full validation loop including metric calculation and per-user JSONL writes; excludes model/data construction, warmup and final state hashing",
+      "mean_top10_unique_count": 6.446496445020793,
+      "mean_top10_unique_legal_count": 6.4464070115816305,
+      "inferred_repeat_fill_slots": 79467,
+      "no_legal_top10_fallback_users": 2,
+      "user_target_order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "validation_user_history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "original_val32_reproduction": {
+        "status": "matched",
+        "absolute_tolerance": 1e-09,
+        "metric_differences": {
+          "hit_rate@5": 0.0,
+          "hit_rate@10": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "legal@10": 0.0,
+          "duplicate@10": 0.0,
+          "weighted_score": 0.0
+        },
+        "scope": "Same selected best25 and val32 protocol; 1e-9 absolute aggregate allowance, not a performance significance threshold"
+      },
+      "model_state_before_sha256": "a1bb174217fb52f504c2a7ddd75cec462f4aee09d764e6f5bc955e23a93ed649",
+      "model_state_after_sha256": "a1bb174217fb52f504c2a7ddd75cec462f4aee09d764e6f5bc955e23a93ed649",
+      "model_state_unchanged": true,
+      "selected_SID_unchanged": true,
+      "gradients_created": false,
+      "test_data_evaluated": false,
+      "partial_diagnostic": false
+    },
+    "control_beam256": {
+      "cell": "control_beam256",
+      "variant": "control",
+      "beam_act": 256,
+      "beam_max": 256,
+      "return_count": 10,
+      "split": "val",
+      "count": 22363,
+      "metrics": {
+        "legal_ratio": 1.0,
+        "duplicate_ratio": 0.1702953623411231,
+        "dup@10": 0.002302911090761808,
+        "duplicate@10": 0.002302911090761808,
+        "legal@10": 1.0,
+        "ndcg@5": 0.05032139182042784,
+        "ndcg@10": 0.060456844059122335,
+        "recall@5": 0.0725752358806958,
+        "hit_rate@5": 0.0725752358806958,
+        "recall@10": 0.1040110897464562,
+        "hit_rate@10": 0.1040110897464562,
+        "weighted_score": 0.06916769405215817
+      },
+      "seconds": 281.9917442540027,
+      "warmup_seconds_excluded": 0.49750507601129357,
+      "timing_scope": "synchronized full validation loop including metric calculation and per-user JSONL writes; excludes model/data construction, warmup and final state hashing",
+      "mean_top10_unique_count": 9.976970889415552,
+      "mean_top10_unique_legal_count": 9.976970889415552,
+      "inferred_repeat_fill_slots": 515,
+      "no_legal_top10_fallback_users": 0,
+      "user_target_order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "validation_user_history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "original_val32_reproduction": null,
+      "model_state_before_sha256": "a1bb174217fb52f504c2a7ddd75cec462f4aee09d764e6f5bc955e23a93ed649",
+      "model_state_after_sha256": "a1bb174217fb52f504c2a7ddd75cec462f4aee09d764e6f5bc955e23a93ed649",
+      "model_state_unchanged": true,
+      "selected_SID_unchanged": true,
+      "gradients_created": false,
+      "test_data_evaluated": false,
+      "partial_diagnostic": false
+    },
+    "item_local_beam32": {
+      "cell": "item_local_beam32",
+      "variant": "item_local",
+      "beam_act": 32,
+      "beam_max": 32,
+      "return_count": 10,
+      "split": "val",
+      "count": 22363,
+      "metrics": {
+        "legal_ratio": 0.9998658798283262,
+        "duplicate_ratio": 0.43656413904118097,
+        "dup@10": 0.3605419712791912,
+        "duplicate@10": 0.3605419712791912,
+        "legal@10": 0.9998658498412556,
+        "ndcg@5": 0.048021688540943595,
+        "ndcg@10": 0.04991417263544923,
+        "recall@5": 0.06577829450431516,
+        "hit_rate@5": 0.06577829450431516,
+        "recall@10": 0.07150203461074095,
+        "hit_rate@10": 0.07150203461074095,
+        "weighted_score": 0.05423174543616992
+      },
+      "seconds": 163.80251423201116,
+      "warmup_seconds_excluded": 0.8547208569943905,
+      "timing_scope": "synchronized full validation loop including metric calculation and per-user JSONL writes; excludes model/data construction, warmup and final state hashing",
+      "mean_top10_unique_count": 6.394580333586728,
+      "mean_top10_unique_legal_count": 6.394446183427983,
+      "inferred_repeat_fill_slots": 80628,
+      "no_legal_top10_fallback_users": 3,
+      "user_target_order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "validation_user_history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "original_val32_reproduction": {
+        "status": "matched",
+        "absolute_tolerance": 1e-09,
+        "metric_differences": {
+          "hit_rate@5": 0.0,
+          "hit_rate@10": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "legal@10": 0.0,
+          "duplicate@10": 0.0,
+          "weighted_score": 0.0
+        },
+        "scope": "Same selected best25 and val32 protocol; 1e-9 absolute aggregate allowance, not a performance significance threshold"
+      },
+      "model_state_before_sha256": "168822d186ba4c68ebf09b6149330b9514d14872c131b37d79201ef89f16c266",
+      "model_state_after_sha256": "168822d186ba4c68ebf09b6149330b9514d14872c131b37d79201ef89f16c266",
+      "model_state_unchanged": true,
+      "selected_SID_unchanged": true,
+      "gradients_created": false,
+      "test_data_evaluated": false,
+      "partial_diagnostic": false
+    },
+    "item_local_beam256": {
+      "cell": "item_local_beam256",
+      "variant": "item_local",
+      "beam_act": 256,
+      "beam_max": 256,
+      "return_count": 10,
+      "split": "val",
+      "count": 22363,
+      "metrics": {
+        "legal_ratio": 1.0,
+        "duplicate_ratio": 0.17153522901793938,
+        "dup@10": 0.0021061575240037237,
+        "duplicate@10": 0.0021061575240037237,
+        "legal@10": 1.0,
+        "ndcg@5": 0.05153212819485152,
+        "ndcg@10": 0.06141739816762241,
+        "recall@5": 0.07436390466395386,
+        "hit_rate@5": 0.07436390466395386,
+        "recall@10": 0.10512900773599249,
+        "hit_rate@10": 0.10512900773599249,
+        "weighted_score": 0.07015972096565098
+      },
+      "seconds": 290.0290308269905,
+      "warmup_seconds_excluded": 0.3893767870031297,
+      "timing_scope": "synchronized full validation loop including metric calculation and per-user JSONL writes; excludes model/data construction, warmup and final state hashing",
+      "mean_top10_unique_count": 9.978938425077136,
+      "mean_top10_unique_legal_count": 9.978938425077136,
+      "inferred_repeat_fill_slots": 471,
+      "no_legal_top10_fallback_users": 0,
+      "user_target_order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "validation_user_history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "original_val32_reproduction": null,
+      "model_state_before_sha256": "168822d186ba4c68ebf09b6149330b9514d14872c131b37d79201ef89f16c266",
+      "model_state_after_sha256": "168822d186ba4c68ebf09b6149330b9514d14872c131b37d79201ef89f16c266",
+      "model_state_unchanged": true,
+      "selected_SID_unchanged": true,
+      "gradients_created": false,
+      "test_data_evaluated": false,
+      "partial_diagnostic": false
+    }
+  },
+  "B_minus_A_by_beam": {
+    "32": {
+      "metric_deltas_B_minus_A": {
+        "hit_rate@5": {
+          "absolute": 0.001833385502839513,
+          "relative_percent": 2.867132867132871
+        },
+        "hit_rate@10": {
+          "absolute": 0.0024594195769798294,
+          "relative_percent": 3.5621761658030993
+        },
+        "ndcg@5": {
+          "absolute": 0.0013894682860633514,
+          "relative_percent": 2.9796314189392215
+        },
+        "ndcg@10": {
+          "absolute": 0.001582332444853042,
+          "relative_percent": 3.273892404289036
+        },
+        "duplicate@10": {
+          "absolute": 0.005191611134144514,
+          "relative_percent": 1.4609837828855499
+        },
+        "legal@10": {
+          "absolute": -4.471671958150569e-05,
+          "relative_percent": -0.004472071910921471
+        },
+        "weighted_score": {
+          "absolute": 0.0017577498739437258,
+          "relative_percent": 3.349754207032518
+        }
+      },
+      "paired_users": {
+        "from": "control_beam32",
+        "to": "item_local_beam32",
+        "count": 22363,
+        "top5": {
+          "new_hits": 289,
+          "lost_hits": 248,
+          "both_hit": 1182,
+          "both_miss": 20644,
+          "net_hits": 41,
+          "absolute_hit_rate_change": 0.0018333855028395117
+        },
+        "top10": {
+          "new_hits": 322,
+          "lost_hits": 267,
+          "both_hit": 1277,
+          "both_miss": 20497,
+          "net_hits": 55,
+          "absolute_hit_rate_change": 0.002459419576979833
+        },
+        "rank_bucket_transition_counts": {
+          "miss": {
+            "miss": 20497,
+            "top5": 254,
+            "rank6_10": 68
+          },
+          "top5": {
+            "miss": 210,
+            "top5": 1182,
+            "rank6_10": 38
+          },
+          "rank6_10": {
+            "miss": 57,
+            "top5": 35,
+            "rank6_10": 22
+          }
+        },
+        "from_rank_counts": {
+          "miss": 20819,
+          "top5": 1430,
+          "rank6_10": 114
+        },
+        "to_rank_counts": {
+          "miss": 20764,
+          "top5": 1471,
+          "rank6_10": 128
+        }
+      }
+    },
+    "256": {
+      "metric_deltas_B_minus_A": {
+        "hit_rate@5": {
+          "absolute": 0.0017886687832580628,
+          "relative_percent": 2.464571780653113
+        },
+        "hit_rate@10": {
+          "absolute": 0.0011179179895362823,
+          "relative_percent": 1.0748065348237246
+        },
+        "ndcg@5": {
+          "absolute": 0.0012107363744236835,
+          "relative_percent": 2.4060073273493687
+        },
+        "ndcg@10": {
+          "absolute": 0.0009605541085000724,
+          "relative_percent": 1.588826084869277
+        },
+        "duplicate@10": {
+          "absolute": -0.0001967535667580845,
+          "relative_percent": -8.54368922653449
+        },
+        "legal@10": {
+          "absolute": 0.0,
+          "relative_percent": 0.0
+        },
+        "weighted_score": {
+          "absolute": 0.0009920269134928161,
+          "relative_percent": 1.434234474760343
+        }
+      },
+      "paired_users": {
+        "from": "control_beam256",
+        "to": "item_local_beam256",
+        "count": 22363,
+        "top5": {
+          "new_hits": 306,
+          "lost_hits": 266,
+          "both_hit": 1357,
+          "both_miss": 20434,
+          "net_hits": 40,
+          "absolute_hit_rate_change": 0.0017886687832580602
+        },
+        "top10": {
+          "new_hits": 356,
+          "lost_hits": 331,
+          "both_hit": 1995,
+          "both_miss": 19681,
+          "net_hits": 25,
+          "absolute_hit_rate_change": 0.0011179179895362877
+        },
+        "rank_bucket_transition_counts": {
+          "miss": {
+            "miss": 19681,
+            "top5": 102,
+            "rank6_10": 254
+          },
+          "top5": {
+            "miss": 83,
+            "top5": 1357,
+            "rank6_10": 183
+          },
+          "rank6_10": {
+            "miss": 248,
+            "top5": 204,
+            "rank6_10": 251
+          }
+        },
+        "from_rank_counts": {
+          "miss": 20037,
+          "top5": 1623,
+          "rank6_10": 703
+        },
+        "to_rank_counts": {
+          "miss": 20012,
+          "top5": 1663,
+          "rank6_10": 688
+        }
+      }
+    }
+  },
+  "within_model_beam_effect": {
+    "control": {
+      "metric_deltas_256_minus_32": {
+        "hit_rate@5": {
+          "absolute": 0.008630326879220149,
+          "relative_percent": 13.49650349650351
+        },
+        "hit_rate@10": {
+          "absolute": 0.03496847471269508,
+          "relative_percent": 50.64766839378238
+        },
+        "ndcg@5": {
+          "absolute": 0.003689171565547593,
+          "relative_percent": 7.911207198335157
+        },
+        "ndcg@10": {
+          "absolute": 0.012125003868526149,
+          "relative_percent": 25.086989902952794
+        },
+        "duplicate@10": {
+          "absolute": -0.35304744905428487,
+          "relative_percent": -99.35193224798708
+        },
+        "legal@10": {
+          "absolute": 8.943343916290036e-05,
+          "relative_percent": 0.008944143821842943
+        },
+        "weighted_score": {
+          "absolute": 0.016693698489931977,
+          "relative_percent": 31.8132787699305
+        }
+      },
+      "paired_users": {
+        "from": "control_beam32",
+        "to": "control_beam256",
+        "count": 22363,
+        "top5": {
+          "new_hits": 254,
+          "lost_hits": 61,
+          "both_hit": 1369,
+          "both_miss": 20679,
+          "net_hits": 193,
+          "absolute_hit_rate_change": 0.00863032687922014
+        },
+        "top10": {
+          "new_hits": 822,
+          "lost_hits": 40,
+          "both_hit": 1504,
+          "both_miss": 19997,
+          "net_hits": 782,
+          "absolute_hit_rate_change": 0.034968474712695076
+        },
+        "rank_bucket_transition_counts": {
+          "miss": {
+            "miss": 19997,
+            "top5": 249,
+            "rank6_10": 573
+          },
+          "top5": {
+            "miss": 8,
+            "top5": 1369,
+            "rank6_10": 53
+          },
+          "rank6_10": {
+            "miss": 32,
+            "top5": 5,
+            "rank6_10": 77
+          }
+        },
+        "from_rank_counts": {
+          "miss": 20819,
+          "top5": 1430,
+          "rank6_10": 114
+        },
+        "to_rank_counts": {
+          "miss": 20037,
+          "top5": 1623,
+          "rank6_10": 703
+        }
+      },
+      "full_validation_seconds_ratio_256_over_32": 1.7408425750111707
+    },
+    "item_local": {
+      "metric_deltas_256_minus_32": {
+        "hit_rate@5": {
+          "absolute": 0.008585610159638699,
+          "relative_percent": 13.052345343303884
+        },
+        "hit_rate@10": {
+          "absolute": 0.033626973125251536,
+          "relative_percent": 47.02939337085679
+        },
+        "ndcg@5": {
+          "absolute": 0.003510439653907925,
+          "relative_percent": 7.310112910575617
+        },
+        "ndcg@10": {
+          "absolute": 0.01150322553217318,
+          "relative_percent": 23.04601063146452
+        },
+        "duplicate@10": {
+          "absolute": -0.35843581375518746,
+          "relative_percent": -99.41583568855211
+        },
+        "legal@10": {
+          "absolute": 0.00013415015874440606,
+          "relative_percent": 0.013416815742406385
+        },
+        "weighted_score": {
+          "absolute": 0.015927975529481067,
+          "relative_percent": 29.370206327266544
+        }
+      },
+      "paired_users": {
+        "from": "item_local_beam32",
+        "to": "item_local_beam256",
+        "count": 22363,
+        "top5": {
+          "new_hits": 243,
+          "lost_hits": 51,
+          "both_hit": 1420,
+          "both_miss": 20649,
+          "net_hits": 192,
+          "absolute_hit_rate_change": 0.008585610159638688
+        },
+        "top10": {
+          "new_hits": 801,
+          "lost_hits": 49,
+          "both_hit": 1550,
+          "both_miss": 19963,
+          "net_hits": 752,
+          "absolute_hit_rate_change": 0.03362697312525153
+        },
+        "rank_bucket_transition_counts": {
+          "miss": {
+            "miss": 19963,
+            "top5": 241,
+            "rank6_10": 560
+          },
+          "top5": {
+            "miss": 10,
+            "top5": 1420,
+            "rank6_10": 41
+          },
+          "rank6_10": {
+            "miss": 39,
+            "top5": 2,
+            "rank6_10": 87
+          }
+        },
+        "from_rank_counts": {
+          "miss": 20764,
+          "top5": 1471,
+          "rank6_10": 128
+        },
+        "to_rank_counts": {
+          "miss": 20012,
+          "top5": 1663,
+          "rank6_10": 688
+        }
+      },
+      "full_validation_seconds_ratio_256_over_32": 1.770601826148963
+    }
+  },
+  "absolute_gain_change_delta256_minus_delta32": {
+    "hit_rate@5": -4.471671958145018e-05,
+    "hit_rate@10": -0.001341501587443547,
+    "ndcg@5": -0.00017873191163966795,
+    "ndcg@10": -0.0006217783363529697,
+    "duplicate@10": -0.005388364700902598,
+    "legal@10": 4.471671958150569e-05,
+    "weighted_score": -0.0007657229604509097
+  },
+  "checks": {
+    "four_complete_cells": true,
+    "all_bound_files_SHA_match": true,
+    "per_user_metrics_reconstructed": true,
+    "same_user_target_order": true,
+    "original_beam32_reproduced": true,
+    "original_model_SID_unchanged": true,
+    "source_and_original_bytes_unchanged_remote_receipt": true
+  },
+  "limitations": [
+    "Fixed best25 checkpoints selected on this validation set; one training seed.",
+    "SID-level hit metrics, not collision-resolved item-level metrics.",
+    "Timing includes metrics and per-user JSON writes; it is full validation time, not serving latency.",
+    "The beam comparison cannot by itself explain the entire previous validation/test gap or establish significance.",
+    "Local checks verify downloaded evidence; remote original-byte immutability is attested by the completion receipt."
+  ]
+}

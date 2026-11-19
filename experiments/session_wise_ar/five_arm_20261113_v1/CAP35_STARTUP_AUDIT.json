@@ -1,0 +1,82 @@
+{
+  "unix": 1794633122.673789,
+  "arms": {
+    "AR-D0": {
+      "handover": {
+        "unix": 1794632460.15435,
+        "step": 271600,
+        "best_step": 249426,
+        "checkpoint_sha256": "73013651da29632dd0363c7848f3b9a57ecd76afb74829318ac6dd9a0f2f114d",
+        "old_job_status": "CANCELLED",
+        "old_lock": "44499"
+      },
+      "resume_start": {
+        "checkpoint_sha256": "73013651da29632dd0363c7848f3b9a57ecd76afb74829318ac6dd9a0f2f114d",
+        "step": 271600,
+        "best_step": 249426,
+        "policy": {
+          "max_execution_epochs": 35,
+          "scheduler_epochs": 120,
+          "patience": 15,
+          "base_runtime_sha256": "6142f570ee9c257717349c7e0b4becbf77ee680f70564890949d2d82102ee269",
+          "wrapper_sha256": "796d6dca4a433c2ecec9f6c7e65afe803a0f91218ce6bc1b4a8c50c787a00063",
+          "original_function_sha256": "5138a474b63e9c8ad8f93e5f7558546c6ef106a07cb21d6474a25146f47fc797",
+          "capped_function_sha256": "83765683146a6381c1229574cb77f42f7307ba89c5180b37503dd2b327edcdaf",
+          "change": {
+            "old": "total = c['max_steps'] or c['max_epochs']*per_epoch",
+            "new": "total = min(c['max_steps'] or c['max_epochs']*per_epoch, 35*per_epoch)"
+          }
+        },
+        "scope": "pre-restore snapshot; success established by subsequent progress"
+      },
+      "current_step": 277140,
+      "progress_confirmed": true,
+      "handover_matches_resume": true,
+      "handover_step_difference": 0
+    },
+    "AR-D1": {
+      "handover": {
+        "unix": 1794632486.896244,
+        "step": 293800,
+        "best_step": 180141,
+        "checkpoint_sha256": "75ec04056a3b06293679cc631ced9e814c2825df53cd649f457b3168e87fb2fe",
+        "old_job_status": "CANCELLED",
+        "old_lock": "13837"
+      },
+      "resume_start": {
+        "checkpoint_sha256": "2c5339ce96396e5e64f7967dc506d57ee47d7da67f0642b3b505ab16f19e90bb",
+        "step": 294000,
+        "best_step": 180141,
+        "policy": {
+          "max_execution_epochs": 35,
+          "scheduler_epochs": 120,
+          "patience": 15,
+          "base_runtime_sha256": "6142f570ee9c257717349c7e0b4becbf77ee680f70564890949d2d82102ee269",
+          "wrapper_sha256": "796d6dca4a433c2ecec9f6c7e65afe803a0f91218ce6bc1b4a8c50c787a00063",
+          "original_function_sha256": "5138a474b63e9c8ad8f93e5f7558546c6ef106a07cb21d6474a25146f47fc797",
+          "capped_function_sha256": "83765683146a6381c1229574cb77f42f7307ba89c5180b37503dd2b327edcdaf",
+          "change": {
+            "old": "total = c['max_steps'] or c['max_epochs']*per_epoch",
+            "new": "total = min(c['max_steps'] or c['max_epochs']*per_epoch, 35*per_epoch)"
+          }
+        },
+        "scope": "pre-restore snapshot; success established by subsequent progress"
+      },
+      "current_step": 299600,
+      "progress_confirmed": true,
+      "handover_matches_resume": false,
+      "handover_step_difference": 200
+    }
+  },
+  "scope": "progress confirmed; D1 handover differs by 200 steps and needs shutdown-race audit; not acceptance",
+  "jobs": [
+    {
+      "name": "nancy-ar-d1-cap35-1114-v1",
+      "status": "RUNNING"
+    },
+    {
+      "name": "nancy-ar-d0-cap35-1114-v1",
+      "status": "RUNNING"
+    }
+  ]
+}

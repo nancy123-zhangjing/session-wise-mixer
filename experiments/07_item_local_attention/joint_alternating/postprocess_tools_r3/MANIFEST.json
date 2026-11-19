@@ -1,0 +1,41 @@
+{
+  "scope": "Offline artifact audit revision only; training code, checkpoints, SIDs and test results unchanged.",
+  "training_root_commit": "842ff2aa3b0ba95d0ba2a66dea74c485abaa11a1",
+  "training_engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "original_auditor_sha256": "8abad0a677aca870bfe8b496fe26d358a048990e0270a4d89b244cc6b9be35dc",
+  "original_failure_receipt": "JOINT_PAIR_AUDIT_20261020_2024.json",
+  "acceptance": "Require one common exact CPU FP32 or explicit TF32 operand-rounding mode for all four entire checkpoint catalogues; retain strict FP64 deviations. No tolerance expansion.",
+  "historical_CUDA_flags_independently_recorded": false,
+  "files": [
+    {
+      "path": "scripts/analysis/audit_item_local_joint_pair.py",
+      "source": "scripts\\analysis\\audit_item_local_joint_pair.py",
+      "size_bytes": 45010,
+      "sha256": "60fc621973140f6af71b1914505142ef566d611ee972fbbe10fc1050a06c6615"
+    },
+    {
+      "path": "tests/test_item_local_joint_pair_sid_precision.py",
+      "source": "tests\\test_item_local_joint_pair_sid_precision.py",
+      "size_bytes": 5366,
+      "sha256": "91221c6d04b7134527f6910a6236d59f29a70f780b363bc79f72f345765d3ba0"
+    },
+    {
+      "path": "diagnostics/diagnose_joint_sid_precision.py",
+      "source": ".runtime\\stage07\\diagnose_joint_sid_precision.py",
+      "size_bytes": 5695,
+      "sha256": "9540c62595e03639b4b152c28f8142af36b8f77079424042a98fbc93081b3deb"
+    },
+    {
+      "path": "diagnostics/diagnose_joint_sid_tf32.py",
+      "source": ".runtime\\stage07\\diagnose_joint_sid_tf32.py",
+      "size_bytes": 11408,
+      "sha256": "c8e8d2b03db30b95542064064a6f3e6c8bca3a114c8311eddab20c73b61d7f69"
+    },
+    {
+      "path": "diagnostics/diagnose_joint_sid_tf32_selfcheck_20261020.json",
+      "source": ".runtime\\stage07\\diagnose_joint_sid_tf32_selfcheck_20261020.json",
+      "size_bytes": 3001,
+      "sha256": "456aa3cbcd85c689abb0385b7a1e6192004037bc06370cc9885633c10cb925a3"
+    }
+  ]
+}

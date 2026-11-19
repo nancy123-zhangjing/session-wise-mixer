@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "mode": "final_locked_configuration",
+  "representative_seed": 3031,
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "raw_measurement_groups": 12,
+  "timed_samples": 2400,
+  "benchmark_files_sha256": {
+    "sasrec_fullce": "50bf3764054fc6094f4abb96924ed0673bf31d873beff4d4e99bb811c922726d",
+    "esasrec": "0bb382516aeaa5e600ad233864b3a29d940b932c7f8c7c3ae7d1bffd10af832c"
+  },
+  "independently_recomputed": [
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.8651840090751648,
+      "p95_ms": 0.8980720192193985,
+      "throughput_items_per_second": 1153.6128755506063
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.2847200036048889,
+      "p95_ms": 0.30285280197858816,
+      "throughput_items_per_second": 3436.773809525724
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 1.2516607530415058,
+      "p95_ms": 1.292126253247261,
+      "throughput_items_per_second": 797.1717918700791
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 0.9798240065574646,
+      "p95_ms": 1.0170223772525788,
+      "throughput_items_per_second": 130092.74437492705
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.31062400341033936,
+      "p95_ms": 0.3205360099673271,
+      "throughput_items_per_second": 410302.4888811299
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.4222455210983753,
+      "p95_ms": 1.4625093899667263,
+      "throughput_items_per_second": 89384.24750954544
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.8942080140113831,
+      "p95_ms": 0.9217632204294205,
+      "throughput_items_per_second": 1113.4270387358104
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.24855999648571014,
+      "p95_ms": 0.2569055899977684,
+      "throughput_items_per_second": 4006.7081920510686
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 1.2363046407699585,
+      "p95_ms": 1.2581366579979658,
+      "throughput_items_per_second": 808.5258573244265
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 1.1883040070533752,
+      "p95_ms": 1.2047200441360473,
+      "throughput_items_per_second": 107671.45656210193
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.30529600381851196,
+      "p95_ms": 0.31838239431381227,
+      "throughput_items_per_second": 414660.74453883537
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.5666000545024872,
+      "p95_ms": 1.584110176190734,
+      "throughput_items_per_second": 81140.53278422469
+    }
+  ],
+  "scope": "CPU arithmetic and checkpoint/selection binding only; exclusivity, GPU UUID and actual kernel execution need separate Job/window evidence",
+  "audit_script_sha256": "6b2c404b056a6683dca6f028625378ab7545b3a5b9482d1855cfb281b0642d4d"
+}

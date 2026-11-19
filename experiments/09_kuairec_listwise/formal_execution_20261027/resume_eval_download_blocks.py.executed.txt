@@ -1,0 +1,153 @@
+"""Hash-framed read-only CLI SSH blocks for owned Stage09 archive recovery."""
+import argparse
+import base64
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import time
+
+HERE = Path(__file__).absolute().parent
+REMOTE_ROOT = '/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1'
+REMOTE_PY = '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python'
+MARKER = 'STAGE09_ARCHIVE_PACKET '
+CHUNK = 8 * 1024 * 1024
+
+
+def require(test, message):
+    if not test:
+        raise RuntimeError(message)
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(4 * 1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def log(**value):
+    print(json.dumps(dict(utc=datetime.now(timezone.utc).isoformat(), **value)), flush=True)
+
+
+def request(source):
+    args = [shutil.which('inspire') or 'inspire', '--account', 'sii-shared', 'notebook',
+            'ssh', 'nancy-stage09-prep-20261027-r1', '--workspace', 'CPU资源空间',
+            '--command-timeout', '150', '--timeout', '60', '--', REMOTE_PY, '-B', '-c', source]
+    proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    try:
+        stdout, _ = proc.communicate(timeout=225)
+    except subprocess.TimeoutExpired:
+        subprocess.run(['taskkill', '/PID', str(proc.pid), '/T', '/F'], capture_output=True)
+        proc.communicate(timeout=20)
+        raise RuntimeError('Owned block reader timed out; no block appended')
+    require(proc.returncode == 0, 'CLI block read failed; private output withheld')
+    rows = [line[len(MARKER):] for line in stdout.decode('utf-8').splitlines() if line.startswith(MARKER)]
+    require(len(rows) == 1, 'Missing one complete framed packet')
+    return json.loads(rows[0])
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--run', choices=['evaluations'], required=True)
+    args = parser.parse_args()
+    os.environ['NO_PROXY'] = '.sii.edu.cn,<institution-host>'
+    run = args.run
+    receipt = json.loads((HERE / 'SIDECAR_EVALUATIONS_REMOTE_PASS_20261028.json').read_text(encoding='utf-8-sig'))
+    require(receipt['scope']=='evaluations' and receipt['stage']=='sidecars_backup_pass','Wrong scope')
+    name='stage09_evaluations_r1.tar'
+    manifest_path=HERE/'STAGE09_EVALUATIONS_R1.json'
+    require(sha(manifest_path)==receipt['manifest_sha256'],'Manifest SHA mismatch')
+    manifest=json.loads(manifest_path.read_text(encoding='utf-8'))
+    require(manifest['status']=='PASS' and manifest['root']==REMOTE_ROOT
+        and manifest['scope']=='evaluations' and manifest['archive']==receipt['archive']
+        and receipt['archive']['path']=='delivery/'+name,'Manifest binding mismatch')
+    receipt={**receipt,'archive_bytes':receipt['archive']['bytes'],
+        'archive_sha256':receipt['archive']['sha256']}
+    local = HERE / name
+    for path in (local, *local.parents):
+        require(not path.is_symlink() and not path.is_junction(), 'Refuse linked local path')
+    require(not local.exists() or local.is_file(), 'Refuse non-file local output')
+    offset = local.stat().st_size if local.exists() else 0
+    total = receipt['archive_bytes']
+    require(0 <= offset <= total, 'Local prefix exceeds source')
+    prefix_sha = sha(local) if offset else hashlib.sha256(b'').hexdigest()
+    remote = REMOTE_ROOT + '/delivery/' + name
+    common = f'''from pathlib import Path
+import hashlib,json,base64
+p=Path({remote!r})
+assert p.is_file() and not p.is_symlink() and str(p.resolve())=={remote!r}
+before=p.stat()
+assert before.st_size=={total}
+'''
+    source = common + f'''whole=hashlib.sha256(); prefix=hashlib.sha256(); count=0
+with p.open('rb') as stream:
+ for block in iter(lambda:stream.read(4194304),b''):
+  whole.update(block)
+  if count < {offset}: prefix.update(block[:max(0,{offset}-count)])
+  count+=len(block)
+after=p.stat()
+assert before.st_size==after.st_size and before.st_mtime_ns==after.st_mtime_ns
+assert whole.hexdigest()=={receipt['archive_sha256']!r} and prefix.hexdigest()=={prefix_sha!r}
+print({MARKER!r}+json.dumps(dict(status='prefix_verified',offset={offset},bytes=count,sha256=whole.hexdigest())))
+'''
+    proof = request(source)
+    require(proof == dict(status='prefix_verified', offset=offset, bytes=total,
+                          sha256=receipt['archive_sha256']), 'Prefix receipt differs')
+    require((local.stat().st_size if local.exists() else 0) == offset
+            and (sha(local) if offset else hashlib.sha256(b'').hexdigest()) == prefix_sha,
+            'Concurrent local prefix writer')
+    started, initial_offset = time.monotonic(), offset
+    log(run=run, stage='prefix_verified', offset=offset, total=total)
+    journal = HERE / (run + '_DOWNLOAD_BLOCKS_20261028.jsonl')
+    while offset < total:
+        size = min(CHUNK, total - offset)
+        code = common + f'''with p.open('rb') as stream:
+ stream.seek({offset}); data=stream.read({size})
+after=p.stat()
+assert len(data)=={size} and before.st_size==after.st_size and before.st_mtime_ns==after.st_mtime_ns
+print({MARKER!r}+json.dumps(dict(run={run!r},offset={offset},bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),data=base64.b64encode(data).decode())))
+'''
+        for attempt in range(3):
+            try:
+                packet = request(code)
+                data = base64.b64decode(packet.pop('data'), validate=True)
+                require(packet['run'] == run and packet['offset'] == offset and packet['bytes'] == size
+                        and len(data) == size and hashlib.sha256(data).hexdigest() == packet['sha256'],
+                        'Block hash or identity differs')
+                break
+            except Exception as error:
+                log(run=run, stage='read_failed', offset=offset, attempt=attempt + 1,
+                    error_type=type(error).__name__)
+                if attempt == 2:
+                    raise
+        require((local.stat().st_size if local.exists() else 0) == offset, 'Concurrent archive writer')
+        with local.open('ab') as stream:
+            stream.write(data)
+            stream.flush()
+            os.fsync(stream.fileno())
+        offset += size
+        require(local.stat().st_size == offset, 'Append byte count differs')
+        with journal.open('a', encoding='utf-8') as stream:
+            stream.write(json.dumps(packet) + '\n')
+        log(run=run, stage='block_verified', downloaded=offset, total=total,
+            elapsed_seconds=round(time.monotonic() - started, 2))
+    require(sha(local) == receipt['archive_sha256'], 'Final archive SHA mismatch')
+    result = dict(schema='stage09_verified_block_download_v1', status='PASS', run=run,
+                  archive=str(local), bytes=total, sha256=receipt['archive_sha256'],
+                  manifest_sha256=receipt['manifest_sha256'], resumed_from_bytes=initial_offset,
+                  prefix_sha256=prefix_sha, remote_source=remote, gpu_used=0,
+                  finished_at_utc=datetime.now(timezone.utc).isoformat(),
+                  limitation='Transport bytes verified; independent extraction still required')
+    with (HERE / (run + '_LOCAL_DOWNLOAD_PASS_20261028.json')).open('x', encoding='utf-8') as stream:
+        json.dump(result, stream, indent=2)
+        stream.write('\n')
+    log(**result)
+
+
+if __name__ == '__main__':
+    main()

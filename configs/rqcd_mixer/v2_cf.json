@@ -1,0 +1,146 @@
+{
+  "protocol_id": "kuairec_rqcd_target_cf_v2_20261113",
+  "design_sha256": "2635703cb16b7153b594519d35c2a27c18138bfcbd34e167176cfe6fe0ac270e",
+  "seed": 2024,
+  "catalog_size": 10728,
+  "history_max": 50,
+  "list_length": 5,
+  "split_counts": {
+    "train": 709443,
+    "validation": 71657,
+    "test": 53194
+  },
+  "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7",
+  "rq": {
+    "input_dim": 256,
+    "hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "latent_dim": 32,
+    "levels": 4,
+    "codes": 256,
+    "beta": 0.25,
+    "epochs": 10000,
+    "batch_size": 1024,
+    "warmup_epochs": 50,
+    "eval_interval": 50,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "kmeans_iterations": 100
+  },
+  "mixer": {
+    "heads": 4,
+    "norm_eps": 1e-05,
+    "reference_level": 0
+  },
+  "model": {
+    "width": 256,
+    "heads": 4,
+    "d_kv": 64,
+    "ffn": 1024,
+    "encoder_layers": 2,
+    "decoder_layers": 4,
+    "dropout": 0.1,
+    "norm_eps": 1e-06,
+    "relative_buckets": 32,
+    "relative_max_distance": 128,
+    "time_hidden": 128
+  },
+  "diffusion": {
+    "steps": 1000,
+    "sample_steps": 20,
+    "cosine_offset": 0.008,
+    "beta_max": 0.999
+  },
+  "quantization": {
+    "temperature": 0.1,
+    "softmax_temperature": 1.0,
+    "gumbel_start": 1.0,
+    "gumbel_end": 0.2
+  },
+  "loss": {
+    "mode": "rq_landing",
+    "landing": 0.1,
+    "latent": 1.0,
+    "vq": 1.0,
+    "bucket_temperature": 0.1
+  },
+  "training": {
+    "epochs": 35,
+    "preheat_epochs": 5,
+    "t_steps_per_cycle": 10,
+    "effective_batch": 1024,
+    "r_lr": 0.0003,
+    "base_lr": 1e-05,
+    "mixer_lr": 1e-05,
+    "r_weight_decay": 0.0,
+    "t_weight_decay": 0.0001,
+    "warmup_updates": 500,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "max_grad_norm": 1.0
+  },
+  "evaluation": {
+    "epochs": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "seed": 20241111,
+    "noise_version": "rqcd_mixer_noise_v1"
+  },
+  "target": {
+    "mode": "cf",
+    "selection": "objective",
+    "cf_weight": 0.0,
+    "cf_temperature": 0.1,
+    "teacher_dim": 256,
+    "comparison_arm": "B1"
+  },
+  "teacher": {
+    "width": 256,
+    "layers": 2,
+    "heads": 4,
+    "ffn": 1024,
+    "dropout": 0.2,
+    "batch_size": 256,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 200,
+    "patience": 10,
+    "validation_metric": "first_item_ndcg@5"
+  }
+}

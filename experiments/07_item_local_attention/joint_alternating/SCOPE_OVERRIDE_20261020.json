@@ -1,0 +1,15 @@
+{
+  "source": "Direct human correction in this conversation",
+  "instructions": ["我要的是联合训练", "请你按照之前码本交互跑联合训练的方式帮我修改代码，我要联合训练，交替优化那种方式"],
+  "supersedes": "The Stage07 fixed-SID protocol, including the fixed-SID repaired A/B deployment",
+  "required_training": "Alternating tokenizer/codebook optimization and recommender optimization, following the Stage05 full joint-training method",
+  "local_attention_location": "Retain the already specified recommender-side block after history hard/ST SID embeddings and before item_mlp",
+  "gradient_route": "During tokenizer phases recommendation loss flows through the frozen recommender/local-attention operations and DIGER-ST into trainable quantizer codebooks",
+  "not_training": "The text embedding model and fixed OPQ preprocessing remain fixed, as in Stage05",
+  "budget_policy": "Preserve the existing cumulative 28 GPU hour ceiling and account for every prior allocation; this correction does not reset consumed time",
+  "fixed_sid_profile_job": "nancy-stage07-ocn-repair-profile-20261020-r1",
+  "fixed_sid_profile_result": "Stopped for this human scope correction; incomplete, not a passed GPU repair or research result",
+  "fixed_sid_profile_allocated_gpu_seconds": 364,
+  "cumulative_allocated_gpu_seconds": 11637,
+  "goal_complete": false
+}

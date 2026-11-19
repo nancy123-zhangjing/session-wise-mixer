@@ -1,0 +1,533 @@
+{
+  "schema": "stage09_pair_r2_independent_resource_audit_v1",
+  "status": "PASS_FOR_RECORDED_EQUIVALENCE_AND_BUDGET_ARITHMETIC",
+  "created_utc": "2026-10-27T15:36:54.124258+00:00",
+  "sources": {
+    "r2_report": {
+      "path": "outputs/stage09_delivery/goal_20261027_r1/PAIR_R2_report.json",
+      "bytes": 145634,
+      "sha256": "7de861fb3828a56cceba28a0fb3f86c8dfd178dad28ee5ee8ac7bd9b28712986"
+    },
+    "r2_telemetry": {
+      "path": "outputs/stage09_delivery/goal_20261027_r1/PAIR_R2_telemetry.jsonl",
+      "bytes": 118882,
+      "sha256": "bdb66f78440338a2f0ac16a3a6a3b4b4f45d850faf86a162946e99aa629abe39"
+    },
+    "r1_report": {
+      "path": "experiments/09_kuairec_listwise/formal_execution_20261027/SHARED_GPU_PROBE_REPORT_R1.json",
+      "bytes": 260996,
+      "sha256": "2e0cc1d3cae3572e442f13fec7c98151ddb0ab8438ec1d145b94d8779158161f"
+    },
+    "events": {
+      "path": "experiments/09_kuairec_listwise/formal_execution_20261027/SHARED_GPU_PAIR_PROBE_R2_EVENTS_TERMINAL.json",
+      "bytes": 3182,
+      "sha256": "5c75c03601d2a7b4b9cdbfb436fd173751a5ab53708696903fcb9050b2ec2be3"
+    },
+    "ledger_snapshot": {
+      "path": "experiments/09_kuairec_listwise/preparation_20261027/GPU_USAGE_LEDGER.json",
+      "bytes": 12612,
+      "sha256": "0d67789f0c78744ba9c294eeb0b46925d31b2f592c682dc21b90295df8e92870"
+    }
+  },
+  "remaining_work": {
+    "R_updates_per_arm": 20790,
+    "T_updates_per_arm": 400,
+    "full_validations_per_arm": 10,
+    "validation_rows": 71657
+  },
+  "recorded_equivalence": [
+    {
+      "arm": "J0",
+      "phase": "R",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "8f9a0f82223dbf92d71957f65889e4f8066b7a71f412bb3d918ce1dbf3d72056",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H0",
+      "phase": "R",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "1e39dc7ff88d9ba9199dd66f778d3a87a10d3f552120b7ce10d2af7dd774e379",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "J0",
+      "phase": "T",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "a565b1a20e298dbb83ee6c5e887447fda9db01e1413439cba2c76f5e2fc41bec",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H0",
+      "phase": "T",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "f4cd0534109c166bee526366075b78011032d5fa29dd73f5f727fdc094e61052",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "J0",
+      "phase": "validation",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "prediction_hash": "abd19706e45b23d564d37009c244d38b87d159f47fbb97659ed7453362375da4",
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H0",
+      "phase": "validation",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "prediction_hash": "bbfd7a000d00a1f8168844b5df5fbf07cf5adcc8197c0a2be23d32a1fc87ec0c",
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "J1",
+      "phase": "R",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "8f9a0f82223dbf92d71957f65889e4f8066b7a71f412bb3d918ce1dbf3d72056",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H1",
+      "phase": "R",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "1e39dc7ff88d9ba9199dd66f778d3a87a10d3f552120b7ce10d2af7dd774e379",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "J1",
+      "phase": "T",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "be309b1fd9abdd607c7aaab0eb5c03313a738c5426b773de12fdbb5460b4f047",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H1",
+      "phase": "T",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "8e6e888a1454791000caf7e75d55907d4887b007debc89214972266f3531560e",
+      "prediction_hash": null,
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "J1",
+      "phase": "validation",
+      "initial_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "final_hash": "324878c5dce1ecb5bf11b0933d3e3b6097484d934237fd76493dcbce1d56b944",
+      "prediction_hash": "abd19706e45b23d564d37009c244d38b87d159f47fbb97659ed7453362375da4",
+      "matches_r1_solo": true
+    },
+    {
+      "arm": "H1",
+      "phase": "validation",
+      "initial_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "final_hash": "a0e6855bf878aa5659c21680a886503138295e2f3746d16b54f7758299534b62",
+      "prediction_hash": "bbfd7a000d00a1f8168844b5df5fbf07cf5adcc8197c0a2be23d32a1fc87ec0c",
+      "matches_r1_solo": true
+    }
+  ],
+  "real_worker_exit": {
+    "all_exit_zero": true,
+    "forced_termination": false,
+    "grace_cleanup_seconds": 3.522191141266376
+  },
+  "measurements": {
+    "J0": {
+      "R": {
+        "warm_median_update_seconds": 0.6246856050565839,
+        "full_stage_mean_update_seconds": 0.7643157262355089,
+        "full_stage_seconds": 15.286314524710178,
+        "sum_timed_updates_seconds": 15.279461238533258
+      },
+      "T": {
+        "warm_median_update_seconds": 0.6014422136358917,
+        "full_stage_mean_update_seconds": 0.6259135565487668,
+        "full_stage_seconds": 12.518271130975336,
+        "sum_timed_updates_seconds": 12.511556814424694
+      },
+      "validation": {
+        "full_stage_seconds": 32.94837518176064,
+        "requests": 512,
+        "requests_per_second": 15.539461268591777
+      }
+    },
+    "J1": {
+      "R": {
+        "warm_median_update_seconds": 0.613829409936443,
+        "full_stage_mean_update_seconds": 0.6384824736975133,
+        "full_stage_seconds": 12.769649473950267,
+        "sum_timed_updates_seconds": 12.763009240385145
+      },
+      "T": {
+        "warm_median_update_seconds": 0.6749727544374764,
+        "full_stage_mean_update_seconds": 0.6865845983382315,
+        "full_stage_seconds": 13.731691966764629,
+        "sum_timed_updates_seconds": 13.724317805841565
+      },
+      "validation": {
+        "full_stage_seconds": 32.87366506597027,
+        "requests": 512,
+        "requests_per_second": 15.57477692166443
+      }
+    },
+    "H0": {
+      "R": {
+        "warm_median_update_seconds": 1.2224207257386297,
+        "full_stage_mean_update_seconds": 1.358681280259043,
+        "full_stage_seconds": 27.17362560518086,
+        "sum_timed_updates_seconds": 27.165841148700565
+      },
+      "T": {
+        "warm_median_update_seconds": 1.1392850461415946,
+        "full_stage_mean_update_seconds": 1.1658219675067811,
+        "full_stage_seconds": 23.316439350135624,
+        "sum_timed_updates_seconds": 23.308054110966623
+      },
+      "validation": {
+        "full_stage_seconds": 27.117738771252334,
+        "requests": 512,
+        "requests_per_second": 18.880630288494928
+      }
+    },
+    "H1": {
+      "R": {
+        "warm_median_update_seconds": 1.2275139612611383,
+        "full_stage_mean_update_seconds": 1.262572271283716,
+        "full_stage_seconds": 25.25144542567432,
+        "sum_timed_updates_seconds": 25.24351172707975
+      },
+      "T": {
+        "warm_median_update_seconds": 1.1960958847776055,
+        "full_stage_mean_update_seconds": 1.2042496199486776,
+        "full_stage_seconds": 24.084992398973554,
+        "sum_timed_updates_seconds": 24.076643771957606
+      },
+      "validation": {
+        "full_stage_seconds": 27.05051031615585,
+        "requests": 512,
+        "requests_per_second": 18.92755419457685
+      }
+    }
+  },
+  "independently_recomputed_telemetry": [
+    {
+      "pair": [
+        "J0",
+        "H0"
+      ],
+      "phase": "R",
+      "full_span": {
+        "duration_seconds": 27.173687587026507,
+        "samples": 25,
+        "mean_gpu_utilization_percent": 32.88,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 9244.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 15.286252542864531,
+        "samples": 14,
+        "mean_gpu_utilization_percent": 41.785714285714285,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 9244.0
+      }
+    },
+    {
+      "pair": [
+        "J0",
+        "H0"
+      ],
+      "phase": "T",
+      "full_span": {
+        "duration_seconds": 23.316535538993776,
+        "samples": 21,
+        "mean_gpu_utilization_percent": 35.285714285714285,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 10852.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 12.518174942117184,
+        "samples": 11,
+        "mean_gpu_utilization_percent": 37.36363636363637,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 10852.0
+      }
+    },
+    {
+      "pair": [
+        "J0",
+        "H0"
+      ],
+      "phase": "validation",
+      "full_span": {
+        "duration_seconds": 32.94837518176064,
+        "samples": 31,
+        "mean_gpu_utilization_percent": 46.38709677419355,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 68.0,
+        "peak_used_memory_mib": 10856.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 27.117738771252334,
+        "samples": 25,
+        "mean_gpu_utilization_percent": 51.64,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 68.0,
+        "peak_used_memory_mib": 10856.0
+      }
+    },
+    {
+      "pair": [
+        "J1",
+        "H1"
+      ],
+      "phase": "R",
+      "full_span": {
+        "duration_seconds": 25.251459646970034,
+        "samples": 23,
+        "mean_gpu_utilization_percent": 38.65217391304348,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 17466.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 12.769635252654552,
+        "samples": 12,
+        "mean_gpu_utilization_percent": 49.166666666666664,
+        "min_gpu_utilization_percent": 8.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 17466.0
+      }
+    },
+    {
+      "pair": [
+        "J1",
+        "H1"
+      ],
+      "phase": "T",
+      "full_span": {
+        "duration_seconds": 24.085000125691295,
+        "samples": 22,
+        "mean_gpu_utilization_percent": 44.36363636363637,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 19080.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 13.731684240046889,
+        "samples": 13,
+        "mean_gpu_utilization_percent": 50.0,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 99.0,
+        "peak_used_memory_mib": 19080.0
+      }
+    },
+    {
+      "pair": [
+        "J1",
+        "H1"
+      ],
+      "phase": "validation",
+      "full_span": {
+        "duration_seconds": 32.87366506597027,
+        "samples": 30,
+        "mean_gpu_utilization_percent": 51.96666666666667,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 69.0,
+        "peak_used_memory_mib": 19082.0
+      },
+      "common_active_intersection": {
+        "duration_seconds": 27.05051031615585,
+        "samples": 25,
+        "mean_gpu_utilization_percent": 57.48,
+        "min_gpu_utilization_percent": 0.0,
+        "max_gpu_utilization_percent": 69.0,
+        "peak_used_memory_mib": 19082.0
+      }
+    }
+  ],
+  "projections": {
+    "steady": {
+      "two_gpu_per_arm": {
+        "J0": {
+          "R_hours": 3.607559369201772,
+          "T_hours": 0.06682691262621018,
+          "validation_hours": 12.809145618486449,
+          "total_hours": 16.483531900314432
+        },
+        "J1": {
+          "R_hours": 3.544864842382958,
+          "T_hours": 0.07499697271527515,
+          "validation_hours": 12.780101007119313,
+          "total_hours": 16.399962822217546
+        },
+        "H0": {
+          "R_hours": 7.059479691140586,
+          "T_hours": 0.12658722734906608,
+          "validation_hours": 10.542403467511006,
+          "total_hours": 17.72847038600066
+        },
+        "H1": {
+          "R_hours": 7.088893126283073,
+          "T_hours": 0.13289954275306728,
+          "validation_hours": 10.516267457274196,
+          "total_hours": 17.738060126310337
+        }
+      },
+      "two_gpu_per_pair_hours": {
+        "J0+H0": 17.72847038600066,
+        "J1+H1": 17.738060126310337
+      },
+      "two_gpu_whole_job_wall_hours": 17.738060126310337,
+      "two_gpu_whole_job_gpu_hours": 35.476120252620674,
+      "two_gpu_with_25pct_time_margin_hours": 22.17257515788792,
+      "one_gpu_four_arm_per_arm": {
+        "J0": {
+          "R_hours": 4.5737942856383595,
+          "T_hours": 0.08099871222172321,
+          "validation_hours": 20.293235971037802,
+          "total_hours": 24.948028968897884
+        },
+        "J1": {
+          "R_hours": 4.568560917090872,
+          "T_hours": 0.08450927399988156,
+          "validation_hours": 20.294848711114607,
+          "total_hours": 24.94791890220536
+        },
+        "H0": {
+          "R_hours": 7.510440387480594,
+          "T_hours": 0.1356110843892869,
+          "validation_hours": 17.82700137916441,
+          "total_hours": 25.473052851034293
+        },
+        "H1": {
+          "R_hours": 7.571212797219959,
+          "T_hours": 0.1425571411123706,
+          "validation_hours": 17.88721912986082,
+          "total_hours": 25.60098906819315
+        }
+      },
+      "one_gpu_four_arm_wall_hours": 25.60098906819315,
+      "estimated_wall_reduction_fraction": 0.30713379553182074,
+      "estimated_pair_tail_hours": {
+        "J0+H0": 1.2449384856862267,
+        "J1+H1": 1.3380973040927913
+      }
+    },
+    "full_stage_average": {
+      "two_gpu_per_arm": {
+        "J0": {
+          "R_hours": 4.413923319010064,
+          "T_hours": 0.06954595072764075,
+          "validation_hours": 12.809145618486449,
+          "total_hours": 17.292614888224154
+        },
+        "J1": {
+          "R_hours": 3.6872362856031398,
+          "T_hours": 0.07628717759313683,
+          "validation_hours": 12.780101007119313,
+          "total_hours": 16.54362447031559
+        },
+        "H0": {
+          "R_hours": 7.846384393495972,
+          "T_hours": 0.12953577416742013,
+          "validation_hours": 10.542403467511006,
+          "total_hours": 18.5183236351744
+        },
+        "H1": {
+          "R_hours": 7.291354866663459,
+          "T_hours": 0.13380551332763085,
+          "validation_hours": 10.516267457274196,
+          "total_hours": 17.941427837265287
+        }
+      },
+      "two_gpu_per_pair_hours": {
+        "J0+H0": 18.5183236351744,
+        "J1+H1": 17.941427837265287
+      },
+      "two_gpu_whole_job_wall_hours": 18.5183236351744,
+      "two_gpu_whole_job_gpu_hours": 37.0366472703488,
+      "two_gpu_with_25pct_time_margin_hours": 23.147904543968,
+      "one_gpu_four_arm_per_arm": {
+        "J0": {
+          "R_hours": 4.35519259155968,
+          "T_hours": 0.08239857311661278,
+          "validation_hours": 20.293235971037802,
+          "total_hours": 24.730827135714094
+        },
+        "J1": {
+          "R_hours": 4.355376659287503,
+          "T_hours": 0.08585258957779539,
+          "validation_hours": 20.294848711114607,
+          "total_hours": 24.736077959979905
+        },
+        "H0": {
+          "R_hours": 8.01778488790247,
+          "T_hours": 0.14211929425000563,
+          "validation_hours": 17.82700137916441,
+          "total_hours": 25.986905561316885
+        },
+        "H1": {
+          "R_hours": 8.074319380340368,
+          "T_hours": 0.14653811215555632,
+          "validation_hours": 17.88721912986082,
+          "total_hours": 26.108076622356744
+        }
+      },
+      "one_gpu_four_arm_wall_hours": 26.108076622356744,
+      "estimated_wall_reduction_fraction": 0.2907051751442741,
+      "estimated_pair_tail_hours": {
+        "J0+H0": 1.2257087469502466,
+        "J1+H1": 1.3978033669496988
+      }
+    }
+  },
+  "budget": {
+    "cumulative_used_gpu_seconds": 13535.0,
+    "cumulative_used_gpu_hours": 3.7597222222222224,
+    "formal_job_gpus": 2,
+    "formal_platform_cap_hours": 24,
+    "formal_reserved_gpu_hours": 48,
+    "final_evaluation_reserved_gpu_hours": 8,
+    "total_used_plus_caps_gpu_hours": 59.75972222222222,
+    "authorized_gpu_hours": 75,
+    "unreserved_recovery_headroom_gpu_hours": 15.240277777777777,
+    "r2_scheduled": "2026-10-27 23:22:09",
+    "r2_pod_deleted": "2026-10-27 23:26:35",
+    "r2_charged_gpu_seconds": 266.0,
+    "r2_process_seconds": 244.8371174968779,
+    "scope": "Allocation-to-release accounting. Future Job caps replace earlier unstarted branch/evaluation reservations; do not double reserve both layouts."
+  },
+  "assessment": {
+    "two_gpu_mixed_pairs_supported_for_launch": true,
+    "requires_current_ready_and_initial_pair_gates": true,
+    "long_run_utilization_compliance_proven": false,
+    "twenty_four_hour_cap_is_upper_bound_not_ETA": true,
+    "scientific_protocol_changed": false
+  },
+  "limitations": [
+    "Recorded state hashes independently compared; original tensors are not rehashed here because disposable probe states were not checkpointed.",
+    "R2 measured two active workers on one H100 with two blocked resident contexts; simultaneous two-card execution and mixed R/T/validation overlap were not profiled.",
+    "512 validation-prefix requests extrapolated to71657; later SID states, history distribution, cache growth and filesystem contention can change speed.",
+    "The H worker runs partly alone after J finishes each short synchronized training block; both median and full-stage averages may underestimate continuous formal overlap.",
+    "No GPU utilization guarantee from seconds-long windows. Full R utilization32.88-38.65pct, common-active R41.79-49.17pct; one T common-active window37.36pct also remains below40pct.",
+    "Expected final single-worker tails roughly1-1.5h are estimates, not a guarantee against continuous3h reclamation. Monitor real per-GPU long-run behavior and act before the policy window; never reset timers by gratuitous restarts.",
+    "24h platform cap and8GPUh final-evaluation reserve fit75GPUh, but final beam256 inference throughput in the chosen final evaluation layout must be separately reconciled.",
+    "R1 lifecycle remains FAILED; its fully measured computation/timing records are referenced without relabeling."
+  ],
+  "recommended_monitoring": [
+    "Observe actual first R/T cycle and first full validation per GPU, with rolling utilization and progress/ETA.",
+    "Use platform utilization evidence in addition to process samples; if approaching policy limits, preserve valid checkpoints and resolve resource/CPU bottlenecks rather than generating dummy work or cyclic restarts.",
+    "Recompute remaining wall time at each accepted full validation; retain total-cap reserve for shutdown, recovery and final evaluation."
+  ]
+}

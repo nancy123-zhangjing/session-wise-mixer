@@ -1,0 +1,71 @@
+{
+  "status": "interim_not_acceptance",
+  "observation_unix": 1794628264.188003,
+  "record": {
+    "step": 263283,
+    "session_epochs": 19.0,
+    "r_updates": 263283,
+    "t_updates": 263283,
+    "validation": {
+      "identity": {
+        "checkpoint_sha256": "b21dc34f7c07340523f779d215f708309a90553e50fc92fe56bc7eca6646697e",
+        "config_sha256": "0c685d0299848255f7c46c78739bb639228f1c0a87b24a0852b9eb9d70718162"
+      },
+      "count": 71657,
+      "split": "validation",
+      "metrics": {
+        "ndcg@5": 0.00105047218091592,
+        "recall@5": 0.0010159510038768654,
+        "hr@5": 0.005065799572965656,
+        "completion_rate": 1.0
+      },
+      "position_hit_rate": [
+        0.0011862064711749554,
+        0.0011443403782323003,
+        0.0007256792741827667,
+        0.0009908312931656837,
+        0.0010326973861083388
+      ],
+      "sid_legal_rate": 1.0,
+      "legality_scope": "catalog-constrained decoding, not unconstrained accuracy",
+      "seconds": 658.4492895230651,
+      "prediction_sha256": "6b6bae9bab23dcfe13fe268d8247d61de5d1c51984e39b9fe898e64f897d4ec8"
+    },
+    "encoding": {
+      "utilization": [
+        1.0,
+        1.0,
+        0.98828125
+      ],
+      "perplexity": [
+        247.28665161132812,
+        198.25076293945312,
+        179.19192504882812
+      ],
+      "collision_item_fraction": 0.7953951954841614,
+      "collision_redundancy": 0.6448545861297539,
+      "relative_correction_rms": [
+        4.208870887756348,
+        11.824904441833496,
+        16.25618553161621
+      ],
+      "semantic_sid_changed": 0.9463087320327759,
+      "suffix_changed": 0.7204511165618896,
+      "effective_relative_change": [
+        0.159555584192276,
+        0.46502426266670227,
+        0.33712923526763916
+      ]
+    },
+    "train_seconds": 24343.410711888224,
+    "loss": {
+      "total": 2.055923134499162,
+      "semantic": 1.7428926198274015,
+      "suffix": 0.22921714774622412,
+      "reconstruction": 0.0260288349381882,
+      "vq": 0.057784532803372285
+    },
+    "checkpoint": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/session_wise_ar_five_20261113_r2/runs/AR-D1/train/checkpoints/step_0263283.pt",
+    "checkpoint_sha256": "b21dc34f7c07340523f779d215f708309a90553e50fc92fe56bc7eca6646697e"
+  }
+}

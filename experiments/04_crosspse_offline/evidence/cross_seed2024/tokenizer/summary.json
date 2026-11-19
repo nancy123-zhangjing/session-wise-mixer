@@ -1,0 +1,260 @@
+{
+  "tokenizer_type": "cross_pse",
+  "run_id": "diff_formal_crosspse_4x256_v3_catalog_bf16",
+  "reproduction_protocol": "controlled_trainable_cross_codebook_pse_v3_catalog",
+  "seed": 2024,
+  "n_digit": 4,
+  "codebook_size": 256,
+  "code_dim": 64,
+  "base_codebooks_trainable": true,
+  "mixer_enabled": true,
+  "attention_scope": "full",
+  "attention_heads": 4,
+  "zero_init_attention_output": true,
+  "learn_residual_scale": false,
+  "mixed_precision": "bf16",
+  "max_steps": 3000,
+  "best_step": 2950,
+  "initial_validation_reconstruction": 0.6253016283436801,
+  "best_validation_reconstruction": 0.6250836810665575,
+  "validation_reconstruction_improvement": 0.00021794727712254325,
+  "best_improves_initial": true,
+  "catalog_reconstruction_mse_sum": 0.6253474277855394,
+  "catalog_reconstruction_cosine": 0.6084228754043579,
+  "base_catalog_reconstruction_mse_sum": 0.6255651116371155,
+  "base_catalog_reconstruction_cosine": 0.6082504391670227,
+  "digit_assignment_change_rate_from_base": 0.014688868688538137,
+  "item_sid_change_rate_from_base": 0.057433269977687794,
+  "residual_scale": 1.0,
+  "codebook_delta_rms": 0.00137320498470217,
+  "relative_codebook_delta_rms": 0.018016616279314147,
+  "base_parameter_delta_rms": 0.0013188387965783477,
+  "mixer_delta_rms": 0.00026541625265963376,
+  "codebook_lr": 1e-05,
+  "mixer_lr": 0.0001,
+  "train_items": 12061,
+  "validation_items": 12061,
+  "validation_fraction": 0.0,
+  "validation_split_seed": 2024,
+  "validation_source": "original_pse_fit_catalog_transductive_selection",
+  "selection_protocol": "fit_catalog_reconstruction",
+  "selection_items": 12061,
+  "selection_equals_training_catalog": true,
+  "initial_selection_reconstruction": 0.6253016283436801,
+  "best_selection_reconstruction": 0.6250836810665575,
+  "selection_reconstruction_improvement": 0.00021794727712254325,
+  "external_holdout_items": 40,
+  "initial_external_holdout_reconstruction_mse_sum": 0.7050192832946778,
+  "external_holdout_reconstruction_mse_sum": 0.704870080947876,
+  "attention_by_query_book_to_key_book": [
+    [
+      0.2544088661670685,
+      0.23221606016159058,
+      0.27821576595306396,
+      0.23515932261943817
+    ],
+    [
+      0.2521817684173584,
+      0.2372530996799469,
+      0.27179527282714844,
+      0.23876991868019104
+    ],
+    [
+      0.2521902620792389,
+      0.2306137979030609,
+      0.2766917943954468,
+      0.24050413072109222
+    ],
+    [
+      0.2525215148925781,
+      0.23098202049732208,
+      0.28338623046875,
+      0.2331102192401886
+    ]
+  ],
+  "mean_cross_book_attention_mass": 0.7496340163052082,
+  "base_pse": {
+    "items": 12101,
+    "unique_semantic_ids": 10656,
+    "collided_items": 2172,
+    "collision_rate": 0.17948929840509048,
+    "colliding_groups": 727,
+    "largest_collision_group": 40,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "colliding_groups": 254,
+        "largest_collision_group": 130
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6953,
+        "collided_items": 7287,
+        "collision_rate": 0.6021816378811669,
+        "colliding_groups": 2139,
+        "largest_collision_group": 57
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 9876,
+        "collided_items": 3280,
+        "collision_rate": 0.2710519791752748,
+        "colliding_groups": 1055,
+        "largest_collision_group": 43
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 10656,
+        "collided_items": 2172,
+        "collision_rate": 0.17948929840509048,
+        "colliding_groups": 727,
+        "largest_collision_group": 40
+      }
+    ],
+    "per_position": [
+      {
+        "position": 1,
+        "unique_codes": 256,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 5.358718603391127,
+        "normalized_entropy": 0.9663745943289763,
+        "effective_codes_perplexity": 212.45253599473443,
+        "largest_code_share": 0.010742913808776134
+      },
+      {
+        "position": 2,
+        "unique_codes": 256,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 5.31811547779753,
+        "normalized_entropy": 0.9590523533366672,
+        "effective_codes_perplexity": 203.99907872855627,
+        "largest_code_share": 0.013717874555821833
+      },
+      {
+        "position": 3,
+        "unique_codes": 256,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 5.317438178630096,
+        "normalized_entropy": 0.9589302113179101,
+        "effective_codes_perplexity": 203.86095710248728,
+        "largest_code_share": 0.01115610280142137
+      },
+      {
+        "position": 4,
+        "unique_codes": 256,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 5.329732948705884,
+        "normalized_entropy": 0.9611474117950615,
+        "effective_codes_perplexity": 206.38285198870588,
+        "largest_code_share": 0.01115610280142137
+      }
+    ]
+  },
+  "base_pse_semantic_ids_sha256": "20185be0021c069d6e70f5150c0249628c2267f7a79775ad6b18db9d26fe3530",
+  "base_pse_codebooks_sha256": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+  "base_pse_faiss_sha256": "00e15a980b99af372a9e1fbdc74c4c8baa489aed566502d220b25ebca9b8d7e8",
+  "items": 12101,
+  "unique_semantic_ids": 10652,
+  "collided_items": 2174,
+  "collision_rate": 0.17965457400214857,
+  "colliding_groups": 725,
+  "largest_collision_group": 40,
+  "per_prefix": [
+    {
+      "prefix_length": 1,
+      "items": 12101,
+      "unique_prefixes": 256,
+      "collided_items": 12099,
+      "collision_rate": 0.9998347244029419,
+      "colliding_groups": 254,
+      "largest_collision_group": 129
+    },
+    {
+      "prefix_length": 2,
+      "items": 12101,
+      "unique_prefixes": 6950,
+      "collided_items": 7282,
+      "collision_rate": 0.6017684488885217,
+      "colliding_groups": 2131,
+      "largest_collision_group": 57
+    },
+    {
+      "prefix_length": 3,
+      "items": 12101,
+      "unique_prefixes": 9857,
+      "collided_items": 3307,
+      "collision_rate": 0.27328319973555903,
+      "colliding_groups": 1063,
+      "largest_collision_group": 43
+    },
+    {
+      "prefix_length": 4,
+      "items": 12101,
+      "unique_prefixes": 10652,
+      "collided_items": 2174,
+      "collision_rate": 0.17965457400214857,
+      "colliding_groups": 725,
+      "largest_collision_group": 40
+    }
+  ],
+  "per_position": [
+    {
+      "position": 1,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.360762891864697,
+      "normalized_entropy": 0.9667432549343471,
+      "effective_codes_perplexity": 212.88729449974065,
+      "largest_code_share": 0.010660276010247088
+    },
+    {
+      "position": 2,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.319491442028724,
+      "normalized_entropy": 0.9593004904332652,
+      "effective_codes_perplexity": 204.2799673661257,
+      "largest_code_share": 0.013717874555821833
+    },
+    {
+      "position": 3,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.319833136547025,
+      "normalized_entropy": 0.9593621105566467,
+      "effective_codes_perplexity": 204.34978063790035,
+      "largest_code_share": 0.01115610280142137
+    },
+    {
+      "position": 4,
+      "unique_codes": 256,
+      "unused_codes": 0,
+      "utilization_rate": 1.0,
+      "entropy_nats": 5.3318040745541175,
+      "normalized_entropy": 0.9615209121688493,
+      "effective_codes_perplexity": 206.81073979989043,
+      "largest_code_share": 0.01115610280142137
+    }
+  ],
+  "elapsed_seconds": 15.836062025278807,
+  "peak_vram_mb": 616.64794921875,
+  "embedding_sha256": "a98f2b1b42ae6ddec1ad7781c4817f1c2554eafc9de426b3f4bae4014df5e3f0",
+  "items_sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+  "fit_mask_sha256": "4a8b77c1d638ea3c1888ac9aca27185c743d0b42f10410de4ae8d1a5c5641a74",
+  "best_checkpoint_sha256": "20830421ecc634344bfd1e17daf9f4e84427ee224d3ff8caa79113a7549da7d7",
+  "semantic_ids_sha256": "c74e87dbbe949b28f1b38fb53e10189acec421979a40cb81fca6ca441ade4e17"
+}

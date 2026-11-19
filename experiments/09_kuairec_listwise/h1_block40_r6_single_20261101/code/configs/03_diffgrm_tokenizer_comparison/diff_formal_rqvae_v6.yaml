@@ -1,0 +1,35 @@
+# Controlled learned-tokenizer swap against the PSE/RQ-KMeans DiffGRM v6 runs.
+run_id: diff_formal_rqvae_4x256_v6_bf16
+reproduction_protocol: controlled_tokenizer_swap_rqvae_v6
+protocol_note: v6 DiffGRM with frozen RQ-VAE 4x256 IDs trained on the shared sentence-T5-base PCA256 inputs
+
+sid_quantizer: rqvae
+semantic_n_digit: 4
+faiss_omp_num_threads: 16
+rqvae_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_rqvae/Beauty/seed2024/semantic_ids.json
+rqvae_summary_path: ../../outputs/tokenizers/diff_rqvae/Beauty/seed2024/summary.json
+
+# RQ-VAE tokenizer training; decoder training does not consume these options.
+rqvae_input_dim: 256
+rqvae_hidden_dims: [512, 256, 128, 64]
+rqvae_embed_dim: 32
+rqvae_commitment_weight: 0.25
+rqvae_codebook_normalize: false
+rqvae_batch_size: 1024
+rqvae_eval_batch_size: 1024
+rqvae_lr: 0.001
+rqvae_weight_decay: 0.0001
+rqvae_warmup_ratio: 0.01
+rqvae_max_steps: 60000
+rqvae_eval_interval: 1000
+rqvae_profile_steps: 50
+rqvae_mixed_precision: bf16
+rqvae_fp16: false
+rqvae_min_code_utilization: 0.25
+rqvae_min_unique_sid_ratio: 0.5
+tokenizer_neighbor_queries: 1000
+sid_fit_val_fraction: 0.1
+
+# The RQ-VAE mapping is immutable during downstream decoder runs.
+force_regenerate_opq: false

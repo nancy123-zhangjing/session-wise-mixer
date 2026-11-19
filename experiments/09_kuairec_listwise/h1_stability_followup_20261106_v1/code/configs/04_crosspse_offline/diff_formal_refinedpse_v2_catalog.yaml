@@ -1,0 +1,44 @@
+# Leakage-free transductive Refined-PSE control. Does not overwrite v1.
+run_id: diff_formal_refinedpse_4x256_v2_catalog_bf16
+reproduction_protocol: controlled_trainable_pse_catalog_selection_v2
+protocol_note: train and select on the exact original PSE fit catalog; the 40-item complement is diagnostic only; no cross-codebook mixer
+
+sid_quantizer: cross_pse
+semantic_n_digit: 4
+crosspse_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json
+crosspse_summary_path: ../../outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json
+
+crosspse_mixer_enabled: false
+crosspse_train_base_codebooks: true
+crosspse_attention_scope: full
+crosspse_heads: 4
+crosspse_dropout: 0.0
+crosspse_residual_scale_init: 1.0
+crosspse_learn_residual_scale: false
+crosspse_zero_init_attention_output: true
+
+# PSE is transductive: use the same 12061-item fit catalog throughout.
+crosspse_selection_protocol: fit_catalog_reconstruction
+crosspse_validation_fraction: 0.0
+crosspse_split_seed: 2024
+crosspse_batch_size: 2048
+crosspse_eval_batch_size: 2048
+
+# Gentler learning rates than the failed internal-split pilot.
+crosspse_codebook_lr: 0.00001
+crosspse_lr: 0.0001
+crosspse_weight_decay: 0.0001
+crosspse_warmup_ratio: 0.05
+crosspse_max_steps: 3000
+crosspse_eval_interval: 50
+crosspse_patience: 10
+crosspse_min_delta: 0.0000001
+crosspse_profile_steps: 50
+crosspse_mixed_precision: bf16
+crosspse_balance_weight: 0.01
+crosspse_balance_temperature: 0.1
+crosspse_anchor_weight: 0.01
+
+faiss_omp_num_threads: 16
+force_regenerate_opq: false

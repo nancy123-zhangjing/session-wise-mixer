@@ -1,0 +1,24 @@
+{
+  "status": "four_jobs_training_startup_accepted",
+  "source_matches_h100_accepted": true,
+  "acceptance": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\decoder_prefix_h100_checks_20261112_v1\\FINAL_ACCEPTANCE.json",
+  "seed": 2024,
+  "microbatch": 256,
+  "effective_batch": 1024,
+  "variants": [
+    "H0-A",
+    "H1-A",
+    "H0-B",
+    "H1-B"
+  ],
+  "gpus": "4 independent jobs, 1 H100 per variant",
+  "initialization": "fresh model-specific warmup; matching A H0/H1 and B H0/H1 R5 state checks; no old checkpoint or short-test weights reused",
+  "training_started": true,
+  "training_protocol": "seed2024 fresh warmup R5 then alternating to R20/T200; retain original R35/T400 scheduler",
+  "job_names": {
+    "H0-A": "nancy-prefix-h0-a-r20-1112-v1",
+    "H1-A": "nancy-prefix-h1-a-r20-1112-v1",
+    "H0-B": "nancy-prefix-h0-b-r20-1112-v1",
+    "H1-B": "nancy-prefix-h1-b-r20-1112-v1"
+  }
+}

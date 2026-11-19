@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-29T13:38:22.617296+00:00",
+  "scope": "Delivery integrity, population/partition arithmetic, comparison direction and saved endpoint receipt checks; no bootstrap or tensor comparison rerun",
+  "files": {
+    "analyze.py": "eeea399354185fe25846d2297b0ae49826a70184e3b109eb9898cbea5a1165d4",
+    "COMPLETE.json": "35af6d222835f0f985629cc2976a3fb5db03912bf4d301c6ddca319096876392",
+    "ENCODING_FIXED_CHECK.json": "e4caacd6598ade6d63720aa107f2e32baa4861c8cc1c3cf200ca65a4bb5e7010",
+    "encoding_fixed_check.py": "949bf639a9f82c00c032b7e8e8a4994a3153b8718f82e5f2a46984d6e5e5fb2c",
+    "METRICS.csv": "8a973d60cea65dcc4222a1e96db6355c4a89825bbc3f06d92fddb90449840951",
+    "PAIRED.csv": "8a59fd9af8f2d744a25618a63a7c67d1b38be549353be158509e086e1dab7678",
+    "REPORT.md": "0f5de8508d40375f11b25837e92c7961aff371a5cc69eb4f6bb0bd557195e449",
+    "REQUEST.json": "20ce1ae024ed3b8c9f0a07de69921e431e73f37e417f9c49cc9ed4ac88a61b91",
+    "RESULTS.json": "93fd50c015bbaa2c4a130a5a99fc64f2729ec14d1c7e4637b41de93ba5f2387a",
+    "SCRIPT_PROVENANCE.json": "76505bb45ad9b235681a0a958afa137b216ae2f5565ca4f3a203d5562311a42c"
+  },
+  "max_partition_error": 2.220446049250313e-16,
+  "models": 3,
+  "metrics": 37,
+  "paired_segment_comparisons": 6,
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 2024,
+    "confidence": 0.95,
+    "unit": "paired user clusters within each time segment",
+    "estimand": "sample mean"
+  },
+  "independent_review": "architecture_audit checked sources, old segment reproduction and weighted means; code_usage_review performed read-only CPU endpoint tensor comparison",
+  "final_goal_complete": false
+}

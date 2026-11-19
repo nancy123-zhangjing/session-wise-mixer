@@ -1,0 +1,54 @@
+{
+  "schema": "stage09_resource_observation_v1",
+  "observed_at": "2026-10-28T02:16:11+08:00",
+  "job": "nancy-stage09-four-arm-20261027-r1",
+  "source": "FORMAL_METRICS_20261027T181611Z.json",
+  "source_sha256": "2a54c5be75f0b3f933534d1f0f5781b48eaa61b633362db4a7214fd7ffb5e0a9",
+  "allocated_gpus": 2,
+  "window": {
+    "start": 1793115998,
+    "end": 1793124969,
+    "interval": "1m"
+  },
+  "series": [
+    {
+      "unit": "worker-0",
+      "metric": "gpu_usage_rate",
+      "samples": 148,
+      "average_recomputed": 0.5833952702702702,
+      "last": 0.5525,
+      "first_sample": 1793116080,
+      "last_sample": 1793124900
+    },
+    {
+      "unit": "worker-0",
+      "metric": "gpu_memory_usage_rate",
+      "samples": 148,
+      "average_recomputed": 0.12694185922089626,
+      "last": 0.128132708436,
+      "first_sample": 1793116080,
+      "last_sample": 1793124900
+    },
+    {
+      "unit": "worker-0",
+      "metric": "cpu_usage_rate",
+      "samples": 148,
+      "average_recomputed": 0.10031537412541057,
+      "last": 0.10159573690388,
+      "first_sample": 1793116080,
+      "last_sample": 1793124900
+    },
+    {
+      "unit": "worker-0",
+      "metric": "memory_usage_rate",
+      "samples": 148,
+      "average_recomputed": 0.02593201724258154,
+      "last": 0.02661407470703,
+      "first_sample": 1793116080,
+      "last_sample": 1793124900
+    }
+  ],
+  "raw_recompute_passed": true,
+  "full_three_hour_window": false,
+  "interpretation": "Worker aggregate resource observations only; no per-GPU or complete three-hour policy compliance claim. Training unchanged."
+}

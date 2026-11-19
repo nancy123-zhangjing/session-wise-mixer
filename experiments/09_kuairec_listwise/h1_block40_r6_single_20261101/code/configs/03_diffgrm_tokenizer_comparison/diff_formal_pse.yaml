@@ -1,0 +1,9 @@
+# Parallel Semantic Encoding (PSE) used by the DiffGRM paper.
+run_id: diff_formal_pse_4x256_schedfix_v2
+sid_quantizer: opq_pq
+disable_opq: false
+opq_use_gpu: false
+opq_gpu_id: 0
+faiss_omp_num_threads: 16
+# Generate only when the cache is absent. All model seeds share one tokenizer.
+force_regenerate_opq: false

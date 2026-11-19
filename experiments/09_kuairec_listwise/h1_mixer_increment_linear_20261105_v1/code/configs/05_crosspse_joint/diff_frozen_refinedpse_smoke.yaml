@@ -1,0 +1,31 @@
+# Minimal Frozen Refined-PSE plumbing test; never include in formal summaries.
+run_id: diff_smoke_refinedpse_frozen_decoder_continuation_4x256_seed2024
+epochs: 2
+warmup_steps: 0
+warmup_ratio: 0.0
+gradient_accumulation_steps: 1
+train_batch_size: 4
+eval_batch_size: 2
+eval_start_epoch: 1
+eval_interval: 1
+patience: 2
+max_train_batches_per_epoch: 2
+max_eval_batches: 2
+
+joint_frozen_tokenizer_control: true
+joint_recommender_warmup_epochs: 2
+joint_cycle_epochs: 2
+joint_tokenizer_epochs_per_cycle: 1
+joint_max_tokenizer_phases: 0
+joint_tokenizer_batches_per_phase: 2
+joint_evaluate_initial_state: true
+
+vectorized_beam_search:
+  top_k_final: 10
+  neg_inf_fp32: -1000000000.0
+  neg_inf_fp16: -65504.0
+  dedup_strategy: simple
+  val: {beam_act: 16, beam_max: 16}
+  test: {beam_act: 16, beam_max: 16}
+  beam_act: 16
+  beam_max: 16

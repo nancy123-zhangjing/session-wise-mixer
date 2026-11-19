@@ -1,0 +1,59 @@
+{
+  "status": "STATIC_PACK_COLLECTOR_REVIEW_NOT_FINAL_COLLECTION_OR_BACKUP",
+  "utc": "2026-10-20T07:07:22.476036+00:00",
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "source_trees": {
+    "code": {
+      "commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+      "tracked_files": 1456,
+      "size_bytes": 31372597,
+      "tracked_runtime_backups_formal": [],
+      "tracked_long_mixer_factorial": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/GOAL_COMMAND.txt",
+        "experiments/05_crosspse_joint/long_mixer_factorial/LOCAL_CPU_TESTS.log",
+        "experiments/05_crosspse_joint/long_mixer_factorial/LOCAL_OCN_TESTS.log",
+        "experiments/05_crosspse_joint/long_mixer_factorial/README.md"
+      ]
+    },
+    "engine": {
+      "commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "tracked_files": 37,
+      "size_bytes": 494034,
+      "tracked_runtime_backups_formal": [],
+      "tracked_long_mixer_factorial": []
+    }
+  },
+  "locked_inputs_manifest_sha256": "0fd451d95c3440e8cc70da82ffe591f0bd9d794039ae94f1fc52f94baca50b28",
+  "locked_input_count": 14,
+  "locked_input_size_bytes": 192880021,
+  "frozen_packer_analysis_commit": "4b40c90b56490868e5972e75bafbf8e50ca8a3de",
+  "packer_sha256": "0f14add826b616073fd13d97b48b57981c4acb6cec40c38099a5125f8b112e31",
+  "current_packer_matches_frozen_analysis_commit": true,
+  "formal_required_states_explicit_in_collector": 9,
+  "formal_actual_file_sizes_not_observed_here": true,
+  "forbidden_recursion_prefixes": [
+    "final_package",
+    "package_extract",
+    "restore_check",
+    "full_backup"
+  ],
+  "recursion_scope": "Only Git-tracked code/engine, fourteen explicit inputs, nine explicit formal states, smoke receipts/states, delivery/prep selected suffixes; current .runtime/backups are not tracked",
+  "helpers": {
+    "restore_git_from_final_backup.py": {
+      "sha256": "8ad022a9889d812b511588ad4d35f29691b210354b8079db0649406f131ff1c9",
+      "AST_syntax": "PASS",
+      "script_executed": false
+    },
+    "inspect_final_pack_plan.py": {
+      "sha256": "91ad7135d592d1577295997208efef3ec871a40b38d62a6f6e698ae4323f29f9",
+      "AST_syntax": "PASS",
+      "script_executed": false
+    }
+  },
+  "checklist_sha256": "7477d9c25658623b4aa50c67a5147e04f1d27a1faa5af2435c5d03730120a12e",
+  "final_collector_executed": false,
+  "final_downloaded_package_git_restored": false,
+  "full_cpu_consumer_restored": false,
+  "remote_operations_executed": false,
+  "goal_complete": false
+}

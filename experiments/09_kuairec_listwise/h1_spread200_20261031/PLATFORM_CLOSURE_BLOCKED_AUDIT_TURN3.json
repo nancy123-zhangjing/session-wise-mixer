@@ -1,0 +1,47 @@
+{
+  "observed_at_utc": "2026-10-31T10:33:06.706Z",
+  "status": "blocking_audit_passed",
+  "consecutive_goal_turns_with_same_network_condition": 3,
+  "checks": [
+    {
+      "kind": "platform",
+      "exit_code": 1,
+      "response": {
+        "success": false,
+        "error": {
+          "type": "APIError",
+          "code": 13,
+          "message": "APIRequestContext.post: read ECONNRESET\nCall log:\n  - → POST <redacted>\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/<ip> Safari/537.36\n    - accept: *<redacted>\n    - accept-encoding: gzip,deflate,br\n    - Referer: <redacted>\n    - Content-Type: application/json\n    - content-length: 55\n    - cookie: <redacted>\n"
+        }
+      }
+    },
+    {
+      "kind": "cached_connection",
+      "exit_code": 1,
+      "response": {
+        "success": false,
+        "error": {
+          "type": "TunnelError",
+          "code": 1,
+          "message": "Could not connect notebook."
+        }
+      }
+    }
+  ],
+  "previous_turn_evidence": [
+    "PLATFORM_CLOSURE_PENDING.json",
+    "PLATFORM_CLOSURE_RECHECK_TURN2.json"
+  ],
+  "remaining_requirements": [
+    "Upload and remotely verify the already sealed science-result companion bundle",
+    "Stop and verify the existing temporary CPU entrances",
+    "Record local facility closure and execute the final eight-requirement completion audit"
+  ],
+  "no_independent_necessary_work_remaining": true,
+  "science_and_local_delivery_verified": true,
+  "all_owned_GPUs_released": true,
+  "CPU_r2_current_state": "unavailable; shutdown not confirmed",
+  "goal_complete": false,
+  "next_goal_status_request": "blocked",
+  "resume_rule": "After restored access/user continuation, begin a fresh blocked audit; continue the existing closeout without retraining, inference, repeated statistics, new resources or old monitors"
+}

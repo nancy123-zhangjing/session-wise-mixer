@@ -1,0 +1,254 @@
+{
+  "campaign_id": "goal_20261024_session_codeword_v1",
+  "updated_unix": 1792788899.0057142,
+  "status": "DELIVERY_COMPONENTS_PASS_FINAL_BINDING_IS_AUTHORITY",
+  "source_freeze": {
+    "code": {
+      "working_head": "037876cbb3de339ad011e5abcf0e66169967ce3b",
+      "execution_commit": "152bea77d43284bb41f1887a8f43124be7e6db98",
+      "ref": "refs/heads/codex/stage08-session-codeword-execution-r1",
+      "bundle": "code_complete.bundle",
+      "bundle_sha256": "5e84db095f0ed1dd5d2aae7c7d5debe2ea16a0546fe9b0b5255cec3f0feaa3d5",
+      "selected_paths": [
+        "configs/08_session_codeword",
+        "experiments/08_session_codeword",
+        "docs/research/session_wise_codebook",
+        "scripts/train/run_session_codeword_joint.py",
+        "scripts/train/session_codeword_gpu_job.py",
+        "scripts/checks/session_codeword_h100_gate.py",
+        "scripts/checks/session_inference_diagnostics.py",
+        "scripts/checks/verify_session_codeword_cpu.py",
+        "scripts/analysis/report_session_codeword.py",
+        "tests/test_session_codeword.py",
+        "tests/test_session_codeword_integration.py",
+        "tests/test_session_codeword_context.py",
+        "tests/test_session_codeword_runner.py",
+        "tests/test_session_codeword_gpu_job.py",
+        "tests/test_session_codeword_h100_gate.py",
+        "tests/test_session_inference_diagnostics.py",
+        "tests/test_session_codeword_report.py",
+        "scripts/train/run_diger_mixer_long.py",
+        "scripts/train/mixer_long_gpu_job.py",
+        "scripts/checks/diger_mixer_long_protocol.py",
+        "configs/05_crosspse_joint/long",
+        "tests/test_diger_mixer_long.py",
+        "tests/fixtures/stage05_long_prefix"
+      ],
+      "previous_execution_commit": "d1e5995d3fc8cf6dd6dccf99358399b939a36c83",
+      "supplemental_paths": [
+        ".gitattributes",
+        "scripts/checks/verify_session_codeword_cpu.py",
+        "scripts/analysis/audit_mixer_long_campaign.py",
+        "scripts/analysis/pack_session_codeword.py",
+        "tests/test_item_local_attention.py",
+        "tests/fixtures/diffgrm_pre_item_local_model.py",
+        "tests/test_session_codeword_backup.py",
+        "experiments/08_session_codeword/execution_20261024/LOCAL_CPU_ACCEPTANCE_R2.json"
+      ]
+    },
+    "engine": {
+      "working_head": "1c879252f6395d6e64462511823c3929b9c42c00",
+      "execution_commit": "a28faf6a24c667aa4f49f208fb93d294ad5aab4f",
+      "ref": "refs/heads/codex/stage08-session-codeword-execution-r1",
+      "bundle": "engine_portable.bundle",
+      "bundle_sha256": "f10a9ec15389dea0a54b9aff4e14a056bf687f12684274fa65ad843f788b6152",
+      "selected_paths": [
+        "genrec/models/DIFF_GRM/model.py",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py",
+        "genrec/models/DIFF_GRM/session_codeword.py"
+      ],
+      "source_tree": "c724dfc0988686bcb3c5777fa485e5bf19a27a77",
+      "original_execution_commit": "b3ebf8a4f7ab96ba2f74c1b3c05bf9eaf8ca6cb1",
+      "portability_note": "Original engine repository has shallow parent history. Portable commit has identical full source tree and no parent; original worktree/HEAD/history are retained locally."
+    },
+    "worktree_and_main_index_preserved": true
+  },
+  "linux_acceptance_status": "CPU_REAL_BEAUTY_CONTEXT_AND_LINUX_CHECKS_PASS_NOT_H100",
+  "linux_cpu_tests": 107,
+  "source_freeze_local": "outputs/stage08_session_codeword/control/SOURCE_FREEZE.json",
+  "remote_goal": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_session_codeword/goal_20261024_session_codeword_v1",
+  "local_large_root": "outputs/stage08_session_codeword",
+  "smoke_job": "s08-session-smoke-20261024-r1",
+  "smoke_attempt": "smoke01",
+  "gpu_limits": {
+    "total_allocated_gpu_seconds": 57600,
+    "acceptance_allocated_gpu_seconds": 1800
+  },
+  "current_reservation_gpu_seconds": 0,
+  "settled_released_gpu_seconds": 28617.213710784912,
+  "formal_training_started": true,
+  "test_evaluated": false,
+  "next_action": "Use final_delivery_supplement.zip and verified FINAL_DELIVERY_BINDING.json with the base package for handoff. No GPU work or further evaluation authorized in this campaign.",
+  "formal_training_authorized": true,
+  "formal_jobs": [
+    {
+      "attempt": "baseline02",
+      "job_name": "s08-session-baseline-20261024-r2",
+      "mode": "train_arm",
+      "arm": "baseline",
+      "gpu_count": 1,
+      "platform_cap_seconds": 18000
+    },
+    {
+      "attempt": "no_context01",
+      "job_name": "s08-session-no-context-20261024-r1",
+      "mode": "train_arm",
+      "arm": "no_context",
+      "gpu_count": 1,
+      "platform_cap_seconds": 18000
+    },
+    {
+      "attempt": "axial01",
+      "job_name": "s08-session-axial-20261024-r1",
+      "mode": "train_arm",
+      "arm": "axial",
+      "gpu_count": 1,
+      "platform_cap_seconds": 18000
+    }
+  ],
+  "h100_gate_passed": true,
+  "short_test_released": true,
+  "allocation_accounting_is_conservative_upper_bound": true,
+  "formal_readiness_local": "outputs/stage08_session_codeword/control/FORMAL_READINESS.json",
+  "estimated_formal_gpu_hours": 9.222790398310055,
+  "current_allocation_ledger": "allocations/ledger_final_20261024_r1.json",
+  "reserved_total_gpu_hours": 0.0,
+  "baseline_retry": {
+    "job_name": "s08-session-baseline-20261024-r2",
+    "attempt": "baseline02",
+    "readiness": "delivery/FORMAL_READINESS_BASELINE02.json",
+    "source_unchanged": true,
+    "initial_complete_tensor_sha256": "d1a8d37ab940c3246b86b19a723ece8cc1322efca5426400f8d154735da8cc09",
+    "no_old_committed_state": true,
+    "reason": "first baseline failed at initial.pt.tmp concurrent publication; complete published common verified against H100 common"
+  },
+  "initialization_lock_limit": "Same-host Linux lock test passed; observed cross-node advisory lock did not serialize fresh common publication. Common now already published and verified; do not remove or reinitialize it. Verify platform resources and one live job per arm before recovery.",
+  "last_known": {
+    "baseline": {
+      "decoder_epochs": 35,
+      "tokenizer_updates": 60,
+      "train_complete": true,
+      "process_complete": true,
+      "resource_state": "verified_released_and_deleted",
+      "job_name": "s08-session-baseline-20261024-r2"
+    },
+    "no_context": {
+      "decoder_epochs": 35,
+      "tokenizer_updates": 60,
+      "train_complete": true,
+      "process_complete": true,
+      "resource_state": "verified_released_and_deleted",
+      "job_name": "s08-session-no-context-20261024-r1"
+    },
+    "axial": {
+      "decoder_epochs": 35,
+      "tokenizer_updates": 60,
+      "train_complete": true,
+      "process_complete": true,
+      "resource_state": "verified_released_and_deleted",
+      "job_name": "s08-session-axial-20261024-r1"
+    }
+  },
+  "formal_start_control": "experiments/08_session_codeword/execution_20261024/FORMAL_START_CONTROL.json",
+  "last_live_observation": "progress_snapshots\\20261023T202336Z_remaining_cd4ea7ee",
+  "local_restore_runtime": {
+    "python": ".runtime/stage08_restore_env/Scripts/python.exe",
+    "dependencies_actually_imported": 13,
+    "torch": "2.6.0+cpu",
+    "model_restore_completed": true
+  },
+  "postprocess_deployment": {
+    "remote": "delivery/postprocess_v1",
+    "zip_sha256": "5c5d93b5d9850caf12be71365df8b6e8b6db664d428326231542a6c790de1610",
+    "files_verified": 13,
+    "frozen_training_code_modified": false,
+    "actual_final_audit_performed": true
+  },
+  "local_read_only_observer": {
+    "tool": "outputs/stage08_session_codeword/control/watch_formal_jobs.py",
+    "exec_session_id": 73144,
+    "interval_seconds": 180,
+    "submits_or_stops_jobs": false,
+    "observation_timeout_is_not_job_terminal": true
+  },
+  "partial_alternating_audit": {
+    "receipt": "outputs/stage08_session_codeword/control/PARTIAL_ALTERNATING_AUDIT_20261024_0217.json",
+    "common_stages_paired": 6,
+    "first_formal_T_all_three_verified": true,
+    "new_F_core_learning_observed": true,
+    "final_acceptance": false
+  },
+  "partial_R10_audit": {
+    "receipt": "outputs/stage08_session_codeword/control/PARTIAL_R10_AUDIT_20261024_0238.json",
+    "common_stages_paired": 12,
+    "full_validation_nodes_verified": 9,
+    "validation_users_each": 22363,
+    "beam": 256,
+    "reserved_upper_gpu_hours": 15.1599002865288,
+    "final_acceptance": false
+  },
+  "reservation_scope": "Declared caps of unsettled owned Jobs only; not observed allocation or actual cost.",
+  "settled_releases": {
+    "no_context": {
+      "job_name": "s08-session-no-context-20261024-r1",
+      "release_row": "platform_jobs\\s08-session-no-context-20261024-r1\\settlements\\20261023T201146Z_41be6d4f\\RELEASE_ROW.json",
+      "release_row_sha256": "e1fb88eeccdafad18ae807c1bec33393548f0ee5393f0701cb7c9f809f02c087",
+      "after_delete_inventory_sha256": "89475ecd1893d405f9c7816469b479751642d68d6a0d644010461d68b4664c2f",
+      "after_delete_inventory_call_sha256": "7f18c3cf1d0ffdd15f3e533c7404dc9ecec6de506b6f7f4b2677432f0dfd0693",
+      "release_evidence_verified": true
+    },
+    "axial": {
+      "job_name": "s08-session-axial-20261024-r1",
+      "release_row": "platform_jobs\\s08-session-axial-20261024-r1\\settlements\\20261023T200803Z_61c413fa\\RELEASE_ROW.json",
+      "release_row_sha256": "f6ae6e976cecf250d06f805634305df72da421e51b73bd57175d14149bd0b172",
+      "after_delete_inventory_sha256": "42017a104d43fc146340b19987ae473ea69f6e7360f5d6b31198cb29170c03f5",
+      "after_delete_inventory_call_sha256": "fe39c87d1fcecfd1e09d91c9727f4fc30ad2ec189d09d36f1fc515593cb307d4",
+      "release_evidence_verified": true
+    }
+  },
+  "source_reservation_ledger_sha256": "7aff453cdb2ab02bc3ab5e498ecb9f3110c496b5d00c45127210b174a16c8953",
+  "observation_issues": [],
+  "automatic_restart_authorized": false,
+  "formal_training_complete": true,
+  "final_platform_inventory": "platform_final/20261024_r1/OWN_JOB_INVENTORY.json",
+  "final_release_local": "outputs/stage08_session_codeword/final_allocation_20261024_r1/delivery/PLATFORM_RELEASE.json",
+  "final_release_sha256": "b6a7cc3ee78af589a865d362cf333e37699ae01ef78bff217bad11fa52674129",
+  "final_allocation_ledger": "allocations/ledger_final_20261024_r1.json",
+  "retired_fixed_observer": {
+    "session_id": 73144,
+    "local_exit_code": 1,
+    "reason": "Retired after exact completed axial Job deletion; remaining Jobs were observed with monitor_remaining_jobs.py. No training was interrupted."
+  },
+  "goal_status_authority": "Codex Goal tool; static execution receipt does not change Goal lifecycle",
+  "final_delivery_root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1",
+  "final_delivery_binding": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1\\FINAL_DELIVERY_BINDING.json",
+  "final_binding_must_have_status": "STAGE08_FINAL_LOCAL_DELIVERY_PASS",
+  "local_component_audit": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1\\verification\\FINAL_COMPONENT_AUDIT.json",
+    "sha256": "ee1a2322b1974df80548cb16ece9ab8ed660a778ed3b150bcfc881b148818347",
+    "all_seven_components_passed": true,
+    "supplement_binding_is_separate": true
+  },
+  "backup_verification": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1\\restored\\goal_20261024_session_codeword_v1\\BACKUP_VERIFICATION.json",
+    "sha256": "1e6178b59a410528554a871fb9ba8f615a9870ef8490081d114a8702dbc71bfa",
+    "status": "STAGE08_FULL_BYTES_AND_MINIMAL_CPU_STATE_RESTORE_PASS"
+  },
+  "actual_model_restore": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1\\verification\\FULL_MODEL_RESTORE.json",
+    "sha256": "75c1297940f15f0f07c8e16dcfd7626551de9338db78a41401a224d2c1d6a233",
+    "status": "STAGE08_FULL_ACTUAL_MODEL_CPU_RESTORE_PASS",
+    "actual_networks": 6,
+    "GPU_step_replayed": false,
+    "test_evaluated": false,
+    "SID_refreshed": false
+  },
+  "final_worktree_observation": {
+    "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage08_session_codeword\\delivery_20261024_final_r1\\verification\\WORKTREE_CLOSEOUT.json",
+    "sha256": "9f98e920aa6c9ab6083d5c2e4af5929c3bea7ad0f9a6d8f67e4e2cef9dbf6939",
+    "original_HEADs_preserved": true,
+    "preexisting_document_snapshots": 7
+  },
+  "formal_start_reserved_upper_gpu_hours": 15.1599002865288,
+  "reserved_total_is_current_unsettled_reservation": true
+}

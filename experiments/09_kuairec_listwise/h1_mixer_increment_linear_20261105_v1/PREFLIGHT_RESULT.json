@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "preflight_only": true,
+  "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+  "protocol": {
+    "format": "stage09_h1_recovery_v1",
+    "policy": "increment_linear",
+    "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+    "start_phase": 25,
+    "stop_phase": 45,
+    "t_lr": "original_unchanged",
+    "source_proof": {
+      "relocations": {},
+      "extensions": {
+        "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+        "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+        "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+        "scripts/listwise_diffgrm/recovery_g01.py": "31ca00fe107ea128b98efe41c15b06b8f3683ecf5811aaae386c360a1d9d23b8",
+        "scripts/listwise_diffgrm/recovery_g01_check.py": "52fdbb79168f5c6bd1f483f23fd35c5dfae07b5cc47951a174889d1925590b8a",
+        "scripts/listwise_diffgrm/recovery_g01_run.py": "533d4b3a336c4c099fb48d9f38543b86b60d87cbb4ccaaac77fd71ec67d8dff9",
+        "scripts/listwise_diffgrm/recovery_increment.py": "e6c07afc1c91f52bfa9fb7a4dc282351db8e0f6ef652fbe005d14eedd036fd14",
+        "scripts/listwise_diffgrm/recovery_increment_check.py": "52f1373d8756210972e5b147416932b51c87e81f7d64f4fc906699fe7bff3e38",
+        "scripts/listwise_diffgrm/recovery_increment_run.py": "7304316012c517cdd10d8dabf23cf8effcf4c4a91f5eefdb03e1e37966589508",
+        "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+        "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0"
+      }
+    },
+    "name": "H1-MixerIncrement-Linear010to001-R35",
+    "t_block": 40,
+    "r_block": 3,
+    "mixer_gate": "M_eff[k]=M_eff[k-1]+alpha[k]*(M_raw[k]-M_raw[k-1])",
+    "increment_schedule": {
+      "kind": "linear_per_T_update",
+      "start": 0.1,
+      "end": 0.01,
+      "parent_t": 200,
+      "updates": 200
+    },
+    "gate_commit": "after_each_T_optimizer_step",
+    "gate_gradient": "local_alpha_times_raw_Mixer_derivative"
+  },
+  "start_codebook_exact": true,
+  "start_sid_exact": true,
+  "T_R_parameter_isolation": true,
+  "learning_rates_unchanged": true,
+  "disk_restore_next_step_exact": true,
+  "preflight_formal_resume_rejected": true,
+  "gate": {
+    "completed_increments": 2,
+    "last_alpha": 0.09954773869346734,
+    "next_alpha": 0.09909547738693468,
+    "raw_mixer_norm": 16.248109817504883,
+    "raw_increment_norm": 0.5799064636230469,
+    "last_raw_delta_norm": 0.27012938261032104,
+    "last_accepted_delta_norm": 0.02689077891409397,
+    "effective_mixer_increment_norm": 0.05786969140172005,
+    "base_codebook_displacement_from_R20_norm": 0.00486188568174839,
+    "effective_codebook_displacement_from_R20_norm": 0.0591045580804348,
+    "effective_codebook_norm": 26.054704666137695
+  }
+}

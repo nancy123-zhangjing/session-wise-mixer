@@ -1,0 +1,37 @@
+{
+  "schema": "stage09_observation_failure_v1",
+  "date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "observation_window": "00:12-00:18",
+  "job_name": "nancy-stage09-four-arm-20261027-r1",
+  "workspace": "分布式训练空间",
+  "account": "sii-shared",
+  "current_job_status_verified": false,
+  "job_terminal_or_missing_confirmed": false,
+  "last_successful_status_receipt": "FORMAL_LIVE_20261027_LATE_STATUS.json",
+  "last_successful_progress_receipt": "FORMAL_PROGRESS_LATE_20261027.log",
+  "observations": [
+    {"channel": "CLI job status, SII bypass", "error": "getaddrinfo ENOTFOUND <institution-host>"},
+    {"channel": "CLI job status, configured proxy", "error": "read ECONNRESET"},
+    {"channel": "CLI account check --details, configured proxy", "error": "read ECONNRESET"},
+    {"channel": "Existing CPU Notebook exec", "error": "Cached target unavailable; automatic tunnel rebuild failed with Playwright Sync API inside asyncio loop"},
+    {"channel": "In-app browser https://<institution-host>", "error": "net::ERR_CONNECTION_RESET"}
+  ],
+  "interpretation": "Local observation paths failed. This is not evidence that the GPU job stopped or failed. Do not create a replacement or resume until the existing job is authoritatively terminal and resource release has been checked.",
+  "job_restarted": false,
+  "new_gpu_requested": false,
+  "training_code_modified": false,
+  "user_question": "User confirmed the usual browser can still open the platform.",
+  "ongoing_independent_work": "Full warmup metric recompute accepted; prepare final analysis and supplemental recovery packages locally.",
+  "recovery": {
+    "platform_status_receipt": "FORMAL_LIVE_20261028_RECOVERY_STATUS.json",
+    "status": "RUNNING",
+    "training_job_restarted": false,
+    "system_dns_later_succeeded": true,
+    "root_cause_confirmed": false,
+    "progress_read_channel": "Official inspire job shell, rank 0",
+    "progress_receipt": "FORMAL_PROGRESS_20261028_R08.json",
+    "progress_remote_and_local_sha256": "b1b21ba7916e80236e81d5b799a345a4a3f8be9761f4f0c87df2b4e93642b119",
+    "cpu_notebook": "Official restart succeeded; subsequent SSH rebuild still fails with xterm surface not ready. This is separate from the running training Job."
+  }
+}

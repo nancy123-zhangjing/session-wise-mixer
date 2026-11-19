@@ -1,0 +1,87 @@
+{
+  "schema": "stage09_r08_observation_v1",
+  "observed_at_utc": "2026-10-27T17:32:49.053436+00:00",
+  "snapshot": "FORMAL_PROGRESS_20261027T173251Z.json",
+  "snapshot_sha256": "133f1f87d3e64b764f5b0d6a3cb6d3d4f92ec0513113981442f42fd135532e0f",
+  "four_summary_protocol_checks_passed": true,
+  "independent_per_sample_recompute": false,
+  "arms": {
+    "J0": {
+      "validation_seconds": 4768.2298239776865,
+      "metrics": {
+        "list/hr@5": 0.01572770280642505,
+        "list/recall@5": 0.0032069442402596652,
+        "list/ndcg@5": 0.0037280532630490026,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "aggregate/ndcg@50": 0.006099957741991093,
+        "aggregate/candidate_count": 14.406715324392593,
+        "aggregate/coverage@50": 0.28813429910500926
+      },
+      "current_training": {
+        "epoch": 9,
+        "r_updates": 5976,
+        "t_updates": 80
+      }
+    },
+    "J1": {
+      "validation_seconds": 4795.741572279483,
+      "metrics": {
+        "list/hr@5": 0.016620846532788145,
+        "list/recall@5": 0.0033799908398211096,
+        "list/ndcg@5": 0.0037181827650252922,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "aggregate/ndcg@50": 0.005833988437317271,
+        "aggregate/candidate_count": 12.542249884868191,
+        "aggregate/coverage@50": 0.25084499071432
+      },
+      "current_training": {
+        "epoch": 9,
+        "r_updates": 5939,
+        "t_updates": 80
+      }
+    },
+    "H0": {
+      "validation_seconds": 3642.1993586281314,
+      "metrics": {
+        "list/hr@5": 0.02990635946243912,
+        "list/recall@5": 0.006098497097447667,
+        "list/ndcg@5": 0.006381023411677129,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "aggregate/ndcg@50": 0.011431583076408118,
+        "aggregate/candidate_count": 21.183638723362687,
+        "aggregate/coverage@50": 0.4236727627207792
+      },
+      "current_training": {
+        "epoch": 9,
+        "r_updates": 5587,
+        "t_updates": 80
+      }
+    },
+    "H1": {
+      "validation_seconds": 3540.436364098452,
+      "metrics": {
+        "list/hr@5": 0.02992031483316354,
+        "list/recall@5": 0.006076168504163818,
+        "list/ndcg@5": 0.00651335913156577,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "aggregate/ndcg@50": 0.01151629263014718,
+        "aggregate/candidate_count": 20.312614259597805,
+        "aggregate/coverage@50": 0.40625227411387843
+      },
+      "current_training": {
+        "epoch": 9,
+        "r_updates": 5698,
+        "t_updates": 80
+      }
+    }
+  },
+  "interpretation": "Intermediate R8 validation only; no final selection, no test, no stable gain claim. Aggregate Top50 coverage is below one and must be reported separately from the complete single five-item list."
+}

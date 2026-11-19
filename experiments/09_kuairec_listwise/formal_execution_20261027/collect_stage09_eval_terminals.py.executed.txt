@@ -1,0 +1,57 @@
+"""Read existing final evaluations and record only verified terminal releases."""
+from datetime import datetime,timezone
+import hashlib,json,os
+from pathlib import Path
+import shutil,subprocess
+
+ROOT=Path(__file__).absolute().parents[3]
+F=ROOT/'experiments/09_kuairec_listwise/formal_execution_20261027'
+NAMES={a:'nancy-stage09-final-eval-'+a.lower()+'-20261027-'+('r2' if a=='H1' else 'r1') for a in ('J0','J1','H0','H1')}
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def invoke(args):
+    r=subprocess.run([shutil.which('inspire') or 'inspire','--json','--account','sii-shared',*args],capture_output=True,encoding='utf-8',errors='replace',timeout=120)
+    if r.returncode:raise RuntimeError('Native query failed; private output withheld')
+    v=json.loads(r.stdout)
+    if not v.get('success'):raise RuntimeError('Native response unsuccessful')
+    return v
+def save(p,v):
+    with p.open('x',encoding='utf-8') as f:json.dump(v,f,ensure_ascii=False,indent=2);f.write('\n')
+def main():
+    os.environ['NO_PROXY']='.sii.edu.cn,<institution-host>'
+    snapshot=invoke(['job','status',*NAMES.values(),'--workspace','分布式训练空间'])
+    stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+    save(F/('FINAL_EVAL_STATUS_'+stamp+'.json'),snapshot)
+    states={v['name']:v for v in snapshot['data']['items']}
+    released={}
+    for arm,name in NAMES.items():
+        st=states[name]
+        if st['status']!='SUCCEEDED':continue
+        sp=F/('FINAL_EVAL_'+arm+'_STATUS_TERMINAL_20261028.json');ep=F/('FINAL_EVAL_'+arm+'_EVENTS_TERMINAL_20261028.json')
+        if sp.exists() or ep.exists():
+            assert sp.exists() and ep.exists();status=read(sp);events=read(ep)
+        else:
+            status=invoke(['job','status',name,'--workspace','分布式训练空间'])
+            events=invoke(['job','events',name,'--workspace','分布式训练空间','--tail','100'])
+            if not any(v.get('reason')=='SuccessfulDeletePod' for v in events['data']['items']):continue
+            save(sp,status);save(ep,events)
+        assert status['data']['name']==name and status['data']['status']=='SUCCEEDED'
+        rows=events['data']['items'];starts={v['time'] for v in rows if v.get('reason')=='Scheduled'};ends={v['time'] for v in rows if v.get('reason')=='SuccessfulDeletePod'}
+        assert len(starts)==len(ends)==1
+        begin=datetime.fromisoformat(next(iter(starts))+'+08:00');end=datetime.fromisoformat(next(iter(ends))+'+08:00')
+        secs=(end-begin).total_seconds();assert secs>0
+        released[name]=dict(scheduled_at=begin.isoformat(),pod_deleted_at=end.isoformat(),allocated_gpu_seconds=secs,gpu_hours=secs/3600,estimated_points=secs/3600,status='SUCCEEDED',resource_released=True,source_receipts_sha256={'../formal_execution_20261027/'+p.name:sha(p) for p in (sp,ep)})
+    lp=ROOT/'experiments/09_kuairec_listwise/preparation_20261027/GPU_USAGE_LEDGER.json';ledger=read(lp)
+    for job in ledger['jobs']:
+        if job['name'] in released:
+            fresh=released[job['name']];job['source_receipts_sha256'].update(fresh.pop('source_receipts_sha256'));job.update(fresh)
+    complete=sum(j['allocated_gpu_seconds'] for j in ledger['jobs'] if j.get('resource_released'));active=[j for j in ledger['jobs'] if not j.get('resource_released')]
+    reserve=sum(j['platform_max_hours']*3600*j['gpus'] for j in active);assert complete+reserve<=270000
+    ledger.update(active_gpu_jobs=[j['name'] for j in active],cumulative_allocated_gpu_seconds=complete,completed_jobs_allocated_gpu_seconds=complete,completed_jobs_gpu_hours=complete/3600,remaining_total_gpu_seconds=270000-complete,remaining_total_gpu_seconds_before_active_jobs=270000-complete,active_jobs_reserved_gpu_seconds=reserve,cumulative_with_active_caps_gpu_seconds=complete+reserve,uncommitted_gpu_seconds=270000-complete-reserve,updated_at_utc=datetime.now(timezone.utc).isoformat(),status='all_gpu_jobs_released_analysis_and_delivery_pending' if not active else 'final_evaluations_running',accounting_note='Allocated time is native Scheduled to SuccessfulDeletePod, including failed attempts. Completed durations are final; active durations reserved at their full caps. Price estimate at verified 1 point per GPU-hour, settlement not verified.')
+    lp.write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    if not active:
+        p=F/'ALL_GPU_RELEASE_ACCOUNTING_20261028.json'
+        if not p.exists():save(p,dict(status='PASS',all_gpu_released=True,all_final_evaluations_succeeded=True,job_count=len(ledger['jobs']),allocated_gpu_seconds=complete,allocated_gpu_hours=complete/3600,points_per_gpu_hour=1,estimated_points=complete/3600,settlement_verified=False,ledger_sha256=sha(lp),ledger_path=str(lp),jobs=ledger['jobs'],checked_at_utc=datetime.now(timezone.utc).isoformat()))
+    print(json.dumps(dict(statuses={a:states[n]['status'] for a,n in NAMES.items()},successful_released_evaluations=len(released),active_jobs=len(active),completed_gpu_hours=complete/3600,worst_total_gpu_hours=(complete+reserve)/3600)),flush=True)
+
+if __name__=='__main__':main()

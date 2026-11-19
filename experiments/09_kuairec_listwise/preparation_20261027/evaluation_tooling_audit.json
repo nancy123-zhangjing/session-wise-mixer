@@ -1,0 +1,36 @@
+{
+  "status": "cpu_tooling_verified_no_formal_model_results",
+  "manifest_sha256": "c74343799024ea0ca0bdb806ab482f362ff227880a2676cf1541a3511a7942af",
+  "selected_rows_sha256": "18a470ada52d4ab659c1b31fe202dd3fdfa0d2b967a46990a10f52f2cc963835",
+  "population_count": 71657,
+  "selected_count": 1024,
+  "unique_sample_ids": 1024,
+  "selected_users": 822,
+  "minimum_source_index": 33,
+  "maximum_source_index": 71628,
+  "overlap_with_first_1024_rows": 14,
+  "source_file_sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4",
+  "cpu_checks": {
+    "subset_binding_evaluation_boundary_tests": 7,
+    "independent_replay_bootstrap_tests": 8,
+    "existing_real_backbone_runner_integration_test": 1,
+    "all_passed": true
+  },
+  "cpu_commands": [
+    "python -X utf8 -m unittest discover -s tests -p test_listwise_subset.py -v",
+    "python -X utf8 -m unittest discover -s tests -p test_listwise_analysis.py -v",
+    "python -X utf8 -m unittest discover -s tests -p test_listwise_runner.py -v"
+  ],
+  "bootstrap": {
+    "repeats": 10000,
+    "seed": 2024,
+    "confidence": 0.95,
+    "unit": "paired user clusters; keep all samples",
+    "primary": "sample average with resampled total sample count denominator",
+    "secondary": "equal-weight user average",
+    "cross_seed_stability_established": false
+  },
+  "gpu_used": false,
+  "remote_platform_used": false,
+  "git_commit_created": false
+}

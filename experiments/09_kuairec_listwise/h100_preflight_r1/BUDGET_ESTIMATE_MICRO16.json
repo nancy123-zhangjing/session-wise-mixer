@@ -1,0 +1,591 @@
+{
+  "format": "stage09_offline_budget_v2",
+  "status": "measurement_based_estimate_requiring_budget_approval",
+  "synthetic_fixture": false,
+  "workload": {
+    "train_rows": 709443,
+    "validation_rows": 71657,
+    "test_rows": 53194,
+    "effective_batch": 1024,
+    "last_train_batch_rows": 835,
+    "r_updates_per_epoch": 693,
+    "shared_warmups": 2,
+    "shared_warmup_r_epochs": 10,
+    "shared_warmup_r_updates": 6930,
+    "branches": 4,
+    "branch_r_epochs": 120,
+    "branch_r_updates": 83160,
+    "total_executed_r_epochs": 130,
+    "total_executed_r_updates": 90090,
+    "total_executed_t_updates": 1600,
+    "total_t_refresh_boundaries": 40,
+    "warmup_full_validations": 2,
+    "branch_full_validations": 40,
+    "total_full_validations": 42,
+    "final_tests": 4,
+    "sensitivity_evaluations": 8,
+    "sensitivity_rows_per_evaluation": 1024,
+    "logical_final_model_r_epochs": 35,
+    "note": "Two shared 5R warmups are executed once each; four branches add 30R each, so actual total is 130R, not 140R."
+  },
+  "measured_profiles": {
+    "J0": {
+      "training": {
+        "R": {
+          "median_end_to_end_seconds": 4.250522078000131,
+          "minimum": 3.991917803999968,
+          "maximum": 4.509126352000294,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        },
+        "T": {
+          "median_end_to_end_seconds": 3.7627872045002277,
+          "minimum": 3.742946156000471,
+          "maximum": 3.7826282529999844,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        }
+      },
+      "decoding": {
+        "32": {
+          "catalog_build_seconds": 0.054176567000013165,
+          "measured_overall_end_to_end_seconds": 1.5535418730000856,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 0.3748413265000181,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        },
+        "256": {
+          "catalog_build_seconds": 0.05427071899975999,
+          "measured_overall_end_to_end_seconds": 4.844037757000024,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 1.197441759500066,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        }
+      }
+    },
+    "J1": {
+      "training": {
+        "R": {
+          "median_end_to_end_seconds": 4.039265351500035,
+          "minimum": 3.99719502500011,
+          "maximum": 4.081335677999959,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        },
+        "T": {
+          "median_end_to_end_seconds": 4.306787214999986,
+          "minimum": 4.29236462200015,
+          "maximum": 4.321209807999821,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        }
+      },
+      "decoding": {
+        "32": {
+          "catalog_build_seconds": 0.05273674399995798,
+          "measured_overall_end_to_end_seconds": 1.526604371999838,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 0.36846690699997,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        },
+        "256": {
+          "catalog_build_seconds": 0.05524811999976009,
+          "measured_overall_end_to_end_seconds": 4.755259078999643,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 1.1750027397499707,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        }
+      }
+    },
+    "H0": {
+      "training": {
+        "R": {
+          "median_end_to_end_seconds": 12.981799897499968,
+          "minimum": 12.908301973000107,
+          "maximum": 13.05529782199983,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        },
+        "T": {
+          "median_end_to_end_seconds": 11.822007660999816,
+          "minimum": 11.809453030999975,
+          "maximum": 11.834562290999656,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        }
+      },
+      "decoding": {
+        "32": {
+          "catalog_build_seconds": 0.0532155360001525,
+          "measured_overall_end_to_end_seconds": 10.440571325000292,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 2.596838947250035,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        },
+        "256": {
+          "catalog_build_seconds": 0.05469081699993694,
+          "measured_overall_end_to_end_seconds": 3.3521275920002154,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 0.8243591937500696,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        }
+      }
+    },
+    "H1": {
+      "training": {
+        "R": {
+          "median_end_to_end_seconds": 13.270341081499737,
+          "minimum": 13.228220646999944,
+          "maximum": 13.31246151599953,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        },
+        "T": {
+          "median_end_to_end_seconds": 12.462094112999921,
+          "minimum": 12.420933940000396,
+          "maximum": 12.503254285999446,
+          "measured_updates": 2,
+          "lists_per_update": 1024
+        }
+      },
+      "decoding": {
+        "32": {
+          "catalog_build_seconds": 0.055783251999855565,
+          "measured_overall_end_to_end_seconds": 1.176315311000053,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 0.28013301475004937,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        },
+        "256": {
+          "catalog_build_seconds": 0.054112501999952656,
+          "measured_overall_end_to_end_seconds": 3.281268539999928,
+          "measured_requests": 16,
+          "measured_batches": 4,
+          "eval_batch_size": 4,
+          "variable_end_to_end_seconds_per_batch": 0.8067890094999939,
+          "sample_ids_sha256": "c6a1f8fc5938e1990510d1017a76efc8547a7d71b7231124422df52105249dde",
+          "precision": "fp32",
+          "cache_policy": "new SIDCatalog per beam; first batch cold, later distinct requests may warm partial-pattern caches",
+          "scope": "catalog + Arrow/collation + target-free generation + correctness checks + logging; excludes full metrics and prediction serialization"
+        }
+      }
+    }
+  },
+  "components": {
+    "J_shared_warmup": {
+      "r_updates": 3465,
+      "t_updates": 0,
+      "training_seconds": 14728.059000270454,
+      "full_validation_count": 1,
+      "validation_seconds": 6715.336540814824
+    },
+    "H_shared_warmup": {
+      "r_updates": 3465,
+      "t_updates": 0,
+      "training_seconds": 44981.93664483739,
+      "full_validation_count": 1,
+      "validation_seconds": 46522.42295552037
+    },
+    "J0": {
+      "r_updates": 20790,
+      "t_updates": 400,
+      "r_seconds": 88368.35400162272,
+      "t_seconds": 1505.114881800091,
+      "full_validation_count": 10,
+      "validation_seconds": 67153.36540814824,
+      "test_seconds": 4985.06897769074,
+      "sensitivity_beam32_seconds": 96.01355615100465,
+      "sensitivity_beam256_seconds": 306.59936115101664
+    },
+    "J1": {
+      "r_updates": 20790,
+      "t_updates": 400,
+      "r_seconds": 83976.32665768573,
+      "t_seconds": 1722.7148859999943,
+      "full_validation_count": 10,
+      "validation_seconds": 66011.37375648462,
+      "test_seconds": 4900.2941329366,
+      "sensitivity_beam32_seconds": 94.38026493599227,
+      "sensitivity_beam256_seconds": 300.85594949599226
+    },
+    "H0": {
+      "r_updates": 20790,
+      "t_updates": 400,
+      "r_seconds": 269891.6198690243,
+      "t_seconds": 4728.803064399926,
+      "full_validation_count": 10,
+      "validation_seconds": 465224.2295552037,
+      "test_seconds": 34535.41437501421,
+      "sensitivity_beam32_seconds": 664.8439860320091,
+      "sensitivity_beam256_seconds": 211.09064441701776
+    },
+    "H1": {
+      "r_updates": 20790,
+      "t_updates": 400,
+      "r_seconds": 275890.3910843795,
+      "t_seconds": 4984.837645199968,
+      "full_validation_count": 10,
+      "validation_seconds": 50186.38742499134,
+      "test_seconds": 3725.5447464129065,
+      "sensitivity_beam32_seconds": 71.7698350280125,
+      "sensitivity_beam256_seconds": 206.5920989339984
+    }
+  },
+  "accounting": {
+    "already_used_gpu_seconds": 401.0,
+    "measured_preflight_lower_bound_gpu_seconds": 164.72093505299972,
+    "supervised_preflight_allocation_gpu_seconds": 228.36140706300012,
+    "future_base_gpu_seconds": 1542689.7413045827,
+    "future_reserve_fraction": 0.25,
+    "future_reserve_gpu_seconds": 385672.43532614567,
+    "future_with_reserve_gpu_seconds": 1928362.1766307284,
+    "cumulative_with_reserve_gpu_seconds": 1928763.1766307284,
+    "already_used_gpu_hours": 0.11138888888888888,
+    "future_base_gpu_hours": 428.5249281401619,
+    "future_reserve_gpu_hours": 107.13123203504047,
+    "cumulative_with_reserve_gpu_hours": 535.7675490640912
+  },
+  "wall_time": {
+    "scope": "remaining formal work from simultaneous shared-warmup launch; excludes elapsed preparation and platform queue",
+    "future_base_hours": 240.76676697068024,
+    "future_with_reserve_hours": 300.9584587133503,
+    "cumulative_elapsed_hours": null,
+    "max_parallel_single_gpu_jobs": 4
+  },
+  "cost": {
+    "price_per_gpu_hour": 1.0,
+    "unit": "platform_points",
+    "already_used_estimate": 0.11138888888888888,
+    "future_with_reserve_estimate": 535.6561601752023,
+    "cumulative_with_reserve_estimate": 535.7675490640912,
+    "settlement_verified": false
+  },
+  "schedule_without_reserve": {
+    "wall_seconds": 866760.3610944488,
+    "peak_gpus": 4,
+    "gpu_seconds": 1542689.7413045827,
+    "jobs": [
+      {
+        "id": "H_shared_warmup",
+        "kind": "shared_warmup_and_R5_validation",
+        "depends_on": [],
+        "priority": 0,
+        "seconds": 91504.35960035777,
+        "gpu_slot": 0,
+        "start_seconds": 0.0,
+        "end_seconds": 91504.35960035777
+      },
+      {
+        "id": "J_shared_warmup",
+        "kind": "shared_warmup_and_R5_validation",
+        "depends_on": [],
+        "priority": 0,
+        "seconds": 21443.39554108528,
+        "gpu_slot": 1,
+        "start_seconds": 0.0,
+        "end_seconds": 21443.39554108528
+      },
+      {
+        "id": "J0_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "J_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 157026.83429157105,
+        "gpu_slot": 1,
+        "start_seconds": 21443.39554108528,
+        "end_seconds": 178470.22983265633
+      },
+      {
+        "id": "J1_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "J_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 151710.41530017034,
+        "gpu_slot": 2,
+        "start_seconds": 21443.39554108528,
+        "end_seconds": 173153.81084125562
+      },
+      {
+        "id": "H0_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "H_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 739844.6524886279,
+        "gpu_slot": 0,
+        "start_seconds": 91504.35960035777,
+        "end_seconds": 831349.0120889856
+      },
+      {
+        "id": "H1_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "H_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 331061.61615457083,
+        "gpu_slot": 3,
+        "start_seconds": 91504.35960035777,
+        "end_seconds": 422565.9757549286
+      },
+      {
+        "id": "H0_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 35411.349005463235,
+        "gpu_slot": 0,
+        "start_seconds": 831349.0120889856,
+        "end_seconds": 866760.3610944488
+      },
+      {
+        "id": "H1_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 4003.9066803749174,
+        "gpu_slot": 1,
+        "start_seconds": 831349.0120889856,
+        "end_seconds": 835352.9187693605
+      },
+      {
+        "id": "J0_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 5387.681894992762,
+        "gpu_slot": 2,
+        "start_seconds": 831349.0120889856,
+        "end_seconds": 836736.6939839784
+      },
+      {
+        "id": "J1_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 5295.530347368585,
+        "gpu_slot": 3,
+        "start_seconds": 831349.0120889856,
+        "end_seconds": 836644.5424363542
+      }
+    ]
+  },
+  "schedule_with_reserve": {
+    "wall_seconds": 1083450.4513680611,
+    "peak_gpus": 4,
+    "gpu_seconds": 1928362.1766307284,
+    "jobs": [
+      {
+        "id": "H_shared_warmup",
+        "kind": "shared_warmup_and_R5_validation",
+        "depends_on": [],
+        "priority": 0,
+        "seconds": 114380.44950044721,
+        "gpu_slot": 0,
+        "start_seconds": 0.0,
+        "end_seconds": 114380.44950044721
+      },
+      {
+        "id": "J_shared_warmup",
+        "kind": "shared_warmup_and_R5_validation",
+        "depends_on": [],
+        "priority": 0,
+        "seconds": 26804.2444263566,
+        "gpu_slot": 1,
+        "start_seconds": 0.0,
+        "end_seconds": 26804.2444263566
+      },
+      {
+        "id": "J0_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "J_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 196283.54286446382,
+        "gpu_slot": 1,
+        "start_seconds": 26804.2444263566,
+        "end_seconds": 223087.78729082042
+      },
+      {
+        "id": "J1_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "J_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 189638.01912521292,
+        "gpu_slot": 2,
+        "start_seconds": 26804.2444263566,
+        "end_seconds": 216442.26355156951
+      },
+      {
+        "id": "H0_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "H_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 924805.8156107849,
+        "gpu_slot": 0,
+        "start_seconds": 114380.44950044721,
+        "end_seconds": 1039186.2651112322
+      },
+      {
+        "id": "H1_train",
+        "kind": "branch_30R_400T_and_10_validations",
+        "depends_on": [
+          "H_shared_warmup"
+        ],
+        "priority": 1,
+        "seconds": 413827.02019321354,
+        "gpu_slot": 3,
+        "start_seconds": 114380.44950044721,
+        "end_seconds": 528207.4696936607
+      },
+      {
+        "id": "H0_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 44264.186256829045,
+        "gpu_slot": 0,
+        "start_seconds": 1039186.2651112322,
+        "end_seconds": 1083450.4513680611
+      },
+      {
+        "id": "H1_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 5004.883350468646,
+        "gpu_slot": 1,
+        "start_seconds": 1039186.2651112322,
+        "end_seconds": 1044191.1484617008
+      },
+      {
+        "id": "J0_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 6734.602368740952,
+        "gpu_slot": 2,
+        "start_seconds": 1039186.2651112322,
+        "end_seconds": 1045920.8674799731
+      },
+      {
+        "id": "J1_final_evaluation",
+        "kind": "test_and_fixed_best_beam32_256_sensitivity",
+        "depends_on": [
+          "J0_train",
+          "J1_train",
+          "H0_train",
+          "H1_train"
+        ],
+        "priority": 2,
+        "seconds": 6619.412934210732,
+        "gpu_slot": 3,
+        "start_seconds": 1039186.2651112322,
+        "end_seconds": 1045805.6780454429
+      }
+    ]
+  },
+  "assumptions": [
+    "Each active job occupies one H100; idle allocations are released immediately. Reserved-node idle GPUs and external queue time are not inferred.",
+    "J/H warmups run once each using the corresponding no-Mixer arm timing; branch jobs become ready after their own architecture warmup and R5 validation.",
+    "All four best checkpoints must be locked before final test evaluation; test and two subset passes are sequential within each arm and parallel across at most four arms.",
+    "R/T use median measured BF16 end-to-end effective-1024 update time. The short epoch tail is charged as a full update, conservatively.",
+    "FP32 decoding uses distinct validation requests, including a cold first batch and natural cache reuse; catalog construction is charged once per evaluation pass.",
+    "All 42 full validations and four 53194-example tests are counted; all four arms evaluate 1024 requests at each of beam32 and beam256.",
+    "The percentage reserve applies to future work only. Already-used GPU seconds must include encoding, preflight, retries, setup and idle allocations from the actual ledger."
+  ],
+  "limitations": [
+    "Gate fields, matching source/data hashes and the supervisor receipt establish delivered-bundle consistency; they are not cryptographic hardware attestation.",
+    "Short preflight timings are extrapolated, not full validation/test measurements. A trained model can change beam paths and legality-cache behavior.",
+    "The reported FP32 end-to-end profile excludes full metric computation and prediction serialization; checkpoint I/O, 40 SID refreshes, dataset startup, resource contention and recovery overhead are not separately measured.",
+    "The explicit reserve covers these unmeasured overheads as a planning allowance, not a demonstrated upper bound or statistical confidence interval.",
+    "Test throughput is extrapolated from validation requests without reading test labels. Different history lengths and distribution can change runtime.",
+    "No numerical expense is an actual settlement; the explicit unit price may differ from platform final billing."
+  ],
+  "input": {
+    "preflight_path": "experiments\\09_kuairec_listwise\\h100_preflight_r1\\report.json",
+    "preflight_sha256": "026eac062ac821f27b0fb095432c9b93e9ee98fddac54941928b14daa984ca66",
+    "supervisor_path": "experiments\\09_kuairec_listwise\\h100_preflight_r1\\supervisor.json",
+    "supervisor_sha256": "32295a4d0664351f454395192638755aec63e0a116c828c86096ed954b9f81e8"
+  }
+}

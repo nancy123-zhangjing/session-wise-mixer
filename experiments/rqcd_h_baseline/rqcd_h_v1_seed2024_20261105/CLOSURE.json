@@ -1,0 +1,73 @@
+{
+  "goal": "RQCD_H100_GOAL_20261105",
+  "protocol_id": "kuairec_rqcd_h_v1",
+  "seed": 2024,
+  "evaluation_seed": 20241104,
+  "status": "completed_with_negative_result",
+  "job": {
+    "name": "nancy-rqcd-h-train-20261105-r3",
+    "status": "SUCCEEDED",
+    "node": "qb-prod-gpu461",
+    "gpu": "1x NVIDIA H100 80GB HBM3",
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "python_torch": "2.6.0+cu118 (CUDA 11.8 runtime on CUDA12.8 image)",
+    "created_utc": "2026-11-05T03:29:31Z",
+    "finished_utc": "2026-11-05T05:34:54Z",
+    "gpu_hours_approx": 2.1,
+    "max_time_cap_hours": 4,
+    "prior_failed_attempts": [
+      {"job": "nancy-rqcd-h-train-20261105-r1", "cause": "nvidia-smi|head SIGPIPE exit 141", "gpu_minutes": "<1"},
+      {"job": "nancy-rqcd-h-train-20261105-r2", "cause": "pre-created output dir tripped output_lock FileExistsError", "gpu_minutes": "<1"}
+    ]
+  },
+  "run_root_remote": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_rqcd/rqcd_h_v1_seed2024_20261105",
+  "counts_verified": {
+    "rq_updates": 60000,
+    "rq_best_update": 1000,
+    "rq_healthy": true,
+    "recommender_updates": 24255,
+    "epochs_completed": 35,
+    "validation_checkpoints": [5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35],
+    "test_rows_best": 53194,
+    "test_rows_last": 53194,
+    "prediction_fields": ["diagnostics", "first_target_timestamp_us", "metrics", "prediction", "sample_id", "target", "user_id"]
+  },
+  "validation_ndcg_at_5_by_epoch": {
+    "R05": 0.0005992478223996007, "R08": 0.0006935046526563123,
+    "R11": 0.0006035075785484662, "R14": 0.0005564323232404064,
+    "R17": 0.000608527151263675, "R20": 0.0006313962168612158,
+    "R23": 0.0006275794005725706, "R26": 0.0006475888905614444,
+    "R29": 0.0006300445407371569, "R32": 0.0006548262259073038,
+    "R35": 0.0006262787970623253
+  },
+  "best_epoch": 8,
+  "test_metrics": {
+    "best": {"ndcg@5": 0.000579520357707508, "hr@5": 0.0029326615783735006,
+             "ci95_ndcg": [0.0004870918789060957, 0.0006767951832169234],
+             "raw_valid": 0.002496522164153852, "changed": 0.9975034778358461,
+             "completion_rate": 1.0, "invalid_rate": 0.0, "duplicate_rate": 0.0},
+    "last_R35": {"ndcg@5": 0.0005981981889885, "hr@5": 0.0030266571417829078,
+                 "raw_valid": 0.002496522164153852, "changed": 0.9975034778358461}
+  },
+  "reference_random_recall_at_5": 0.000466,
+  "interpretation": "Pipeline is mechanically correct (completion 1.0, no invalid/duplicate) but recommendation quality is near random. raw_valid ~0.25% means almost every unconstrained-quantized generated SID misses the catalog; catalog-constrained quantization rescues legality. Bottleneck is vector generation quality (MSE plateau ~0.438), not quantization legality.",
+  "backup": {
+    "local_path": "experiments/rqcd_h_baseline/rqcd_h_v1_seed2024_20261105/backup/rqcd_h_backup_20261105.tar.gz",
+    "size_bytes": 346229702,
+    "sha256": "e5237f715f88800cd462c0ea30759ea249c48b113574304b5c3f3d61315226e8",
+    "remote_manifest": "MANIFEST.sha256 (4106 files, whole run root incl. all 35 epoch checkpoints)",
+    "restore_check": "experiments/rqcd_h_baseline/rqcd_h_v1_seed2024_20261105/restore_check",
+    "restore_verified": "tar extracted clean; best.pt/test predictions/catalog.pt SHA256 match manifest; 53194 rows per split verified"
+  },
+  "notes": [
+    "analysis.py had an int64 JSON serialization bug on remote; fixed locally (commit pending), 19 rqcd tests pass, fixed file re-uploaded and analysis rerun. Analysis is post-hoc and not covered by sealed source binding.",
+    "Remote code tree analysis.py now differs from sealed source binding hash; all training/eval artifacts were produced before the fix.",
+    "No beam search, no reranking, single sample per history per protocol.",
+    "Negative result delivered as required; no rerun or hyperparameter search performed."
+  ],
+  "resources": {
+    "training_job": "SUCCEEDED, containers auto-released by platform",
+    "notebook_nancy_rqcd_h100_r1": "STOPPED (preflight only, ~0.1 GPUh)",
+    "env_zzl": "user CPU notebook left running (pre-existing, not created by this run)"
+  }
+}

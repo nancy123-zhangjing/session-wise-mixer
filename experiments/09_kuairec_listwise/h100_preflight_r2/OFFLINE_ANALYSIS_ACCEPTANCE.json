@@ -1,0 +1,32 @@
+{
+  "status": "CPU_ANALYSIS_TESTS_PASSED",
+  "test_count": 12,
+  "seconds": 2.09,
+  "exit_code": 0,
+  "command": "& .runtime/stage08_restore_env/Scripts/python.exe -B -m unittest discover -s tests -p test_listwise_analysis.py -v",
+  "tool_output_chunk": "c1c540",
+  "verification_source": "Completed collaborator tool execution; root reviewed patch and evidence, not a new run",
+  "files": {
+    "scripts/listwise_diffgrm/analysis.py": {
+      "sha256": "4e056eecfded4ff2c1e25ecc1c32a348f01004f31d1b649946ea544f2aa79bdd",
+      "bytes": 21814
+    },
+    "tests/test_listwise_analysis.py": {
+      "sha256": "17ef62d9fab8b95cbae7f0b948399ddd0cdebad1e02adf6d76cf86dd501818d9",
+      "bytes": 13559
+    }
+  },
+  "coverage": [
+    "Independent source split index/user/targets replay",
+    "Bound train_seen.json hash and distinct internal item IDs",
+    "Any-unseen-target cold classification from source targets",
+    "Reject simultaneous cold flag and summary tampering",
+    "Reject wrong target mapping and non-boolean saved flag",
+    "Existing item metrics, user-cluster bootstrap and protocol checks"
+  ],
+  "gpu_used": false,
+  "remote_training_source_changed": false,
+  "frozen_training_commit": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "scope": "Offline postprocessing only; training source binding includes analysis.py, so keep remote training and representative model restore at frozen source",
+  "formal_budget_approved": false
+}

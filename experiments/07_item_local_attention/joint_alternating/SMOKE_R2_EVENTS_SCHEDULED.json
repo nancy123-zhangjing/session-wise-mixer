@@ -1,0 +1,129 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-20 11:37:07",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-20 11:37:07",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 11:37:07",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 11:37:11",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod video-understanding/<redacted>-worker-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-20 11:37:13",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu183, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 11:37:17",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 127 Insufficient rdma/hca_shared_devices, 143 Insufficient nvidia.com/gpu, 25 node(s) had untolerated taint {node.kubernetes.io/unreachable: }, 292 Insufficient memory, 34 node(s) didn't match Pod's node affinity/selector, 69 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 11:37:23",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu183, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 11:37:27",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu183, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 11:37:29",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 22 Insufficient rdma/hca_shared_devices, 249 Insufficient nvidia.com/gpu, 26 node(s) had untolerated taint {node.kubernetes.io/unreachable: }, 291 Insufficient memory, 32 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 70 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 11:37:34",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 22 Insufficient rdma/hca_shared_devices, 248 Insufficient nvidia.com/gpu, 26 node(s) had untolerated taint {node.kubernetes.io/unreachable: }, 292 Insufficient memory, 32 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 70 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 11:37:40",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 118 Insufficient nvidia.com/gpu, 153 Insufficient rdma/hca_shared_devices, 26 node(s) had untolerated taint {node.kubernetes.io/unreachable: }, 290 Insufficient memory, 33 node(s) didn't match Pod's node affinity/selector, 7 node(s) were unschedulable, 70 Insufficient cpu."
+      },
+      {
+        "time": "2026-10-20 11:37:43",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu488"
+      },
+      {
+        "time": "2026-10-20 11:37:45",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-20 11:37:45",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/inspire-studio/pytorch:25.06-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 11:37:46",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-20 11:37:46",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 11:37:46",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 11:37:46",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      }
+    ]
+  }
+}

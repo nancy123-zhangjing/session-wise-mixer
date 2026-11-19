@@ -1,0 +1,669 @@
+{
+  "observed_date": "2026-10-16",
+  "job_name": "nancy-stage06-20261016-8h100-01",
+  "workspace": "分布式训练空间",
+  "project": "公共科研项目",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016",
+  "remote_python": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+  "execution_commit": "4d7c4662c077ca3aaa9d78363e1ee09d8bb34432",
+  "source_sha256": "7bff9f19bfef7ef8ec4ee9b058a6ff6cf7baeea3f469c5dc3f87c1cf25031ccc",
+  "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/remote_cpu_gate_20261016_01/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016 --job-name nancy-stage06-20261016-8h100-01 --points-per-node-hour 8",
+  "create_cli_arguments": "--name nancy-stage06-20261016-8h100-01 --workspace 分布式训练空间 --project 公共科研项目 --group '训练区-H100-cuda13.2版本-183核' --quota 8,160,1800 --image 'pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime' --nodes 1 --priority 4 --shm-size 64 --no-auto-fault-tolerance --no-enable-notification --env OMP_NUM_THREADS=2 --env MKL_NUM_THREADS=2 --env PYTHONUNBUFFERED=1 --env PYTHONDONTWRITEBYTECODE=1 --command '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/remote_cpu_gate_20261016_01/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016 --job-name nancy-stage06-20261016-8h100-01 --points-per-node-hour 8'",
+  "dry_run": {
+    "success": true,
+    "data": {
+      "dry_run": true,
+      "name": "nancy-stage06-20261016-8h100-01",
+      "workspace": "分布式训练空间",
+      "project": "公共科研项目",
+      "compute_group": "训练区-H100-cuda13.2版本-183核",
+      "resource": {
+        "gpu": 8,
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 4,
+      "nodes": 1,
+      "framework": "pytorch",
+      "enable_notification": false,
+      "auto_fault_tolerance": false,
+      "max_time_hours": null,
+      "image": "pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime",
+      "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/remote_cpu_gate_20261016_01/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016 --job-name nancy-stage06-20261016-8h100-01 --points-per-node-hour 8'",
+      "shared_memory_gib": 64,
+      "env": [
+        "OMP_NUM_THREADS",
+        "MKL_NUM_THREADS",
+        "PYTHONUNBUFFERED",
+        "PYTHONDONTWRITEBYTECODE"
+      ]
+    }
+  },
+  "submission": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-01",
+      "status": "created"
+    }
+  },
+  "first_status": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-01",
+      "status": "QUEUING",
+      "project": "公共科研项目",
+      "compute_group": "训练区-H100-cuda13.2版本-183核",
+      "resource": {
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu": 8,
+        "nodes": 1,
+        "shared_memory_gib": 64,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1792116942000"
+    }
+  },
+  "quota": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,10,200",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,20,400",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,55,900",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,110,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,10,200",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,20,400",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,55,900",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-119核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,110,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        }
+      ]
+    }
+  },
+  "availability": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-183核",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 1254,
+          "used_gpus": 1262,
+          "available_gpus": -8,
+          "high_priority_available_gpus": 369,
+          "low_priority_gpus": 377,
+          "total_nodes": 164,
+          "ready_nodes": 159,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 12,
+          "high_priority_free_nodes": 12,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 96,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 7,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 6,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 6,
+              "cpu_count": 183,
+              "memory_gib": 1887,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 5,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 4,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 0,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            }
+          ]
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-183核",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 384,
+          "used_gpus": 394,
+          "available_gpus": -10,
+          "high_priority_available_gpus": 143,
+          "low_priority_gpus": 153,
+          "total_nodes": 48,
+          "ready_nodes": 48,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 1,
+          "high_priority_free_nodes": 1,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 8,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            }
+          ]
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "训练区-H100-cuda13.2版本-183核",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 622,
+          "used_gpus": 619,
+          "available_gpus": 3,
+          "high_priority_available_gpus": 110,
+          "low_priority_gpus": 107,
+          "total_nodes": 79,
+          "ready_nodes": 79,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 11,
+          "high_priority_free_nodes": 11,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 88,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1878,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 4,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 2,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            }
+          ]
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda13.2版本-119核",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 152,
+          "used_gpus": 164,
+          "available_gpus": -12,
+          "high_priority_available_gpus": 79,
+          "low_priority_gpus": 91,
+          "total_nodes": 21,
+          "ready_nodes": 19,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 6,
+          "high_priority_free_nodes": 6,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 48,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 119,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "hpc_job",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "ray_job",
+                "tensorboard"
+              ]
+            }
+          ]
+        },
+        {
+          "workspace": "分布式训练空间",
+          "compute_group": "开发区-H100-cuda12.8版本-119核",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 40,
+          "used_gpus": 36,
+          "available_gpus": 4,
+          "high_priority_available_gpus": 14,
+          "low_priority_gpus": 10,
+          "total_nodes": 5,
+          "ready_nodes": 5,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 0,
+          "high_priority_free_nodes": 0,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 0,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 119,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "policy": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "分布式训练空间",
+          "workload": "notebook",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 15% for 3h OR runtime > 18h",
+          "auto_save": true
+        },
+        {
+          "workspace": "分布式训练空间",
+          "workload": "job",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 40% for 3h"
+        },
+        {
+          "workspace": "分布式训练空间",
+          "workload": "hpc",
+          "configured": false
+        },
+        {
+          "workspace": "分布式训练空间",
+          "workload": "ray",
+          "configured": true,
+          "auto_reclaim": false
+        },
+        {
+          "workspace": "分布式训练空间",
+          "workload": "serving",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 20% for 5h (8-16 GPU)",
+          "applies_to": "8-16 GPU"
+        }
+      ]
+    }
+  },
+  "images": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "name": "pytorch:25.06-py3:25.06",
+          "status": "SUCCESS",
+          "framework": "",
+          "visibility": "official"
+        },
+        {
+          "name": "ngc-pytorch:24.05-cuda12.4-py3",
+          "status": "SUCCESS",
+          "framework": "",
+          "visibility": "official"
+        },
+        {
+          "name": "ngc-pytorch:25.02-cuda12.8.0-py3",
+          "status": "SUCCESS",
+          "framework": "",
+          "visibility": "official"
+        },
+        {
+          "name": "pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime",
+          "status": "SUCCESS",
+          "framework": "",
+          "visibility": "official"
+        }
+      ]
+    }
+  },
+  "storage_note": "Initial project-personal HDD write failed with errno122 Disk quota exceeded. Partial files preserved at main project outputs/stage06_continuous/goal_20261016/delivery. New isolated Nancy global-user root passed 1MiB write, full bundle/input copy and 35-test remote CPU gate; filesystem free ~9751GiB. No historical data deleted.",
+  "cpu_gate": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/remote_cpu_gate_20261016_01/CPU_GATE.json",
+  "pipeline_output": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/code/outputs/stage06_continuous/pipeline_20261016",
+  "formal_training_runs_required": 89,
+  "submitted_nodes": 1,
+  "submitted_gpus": 8
+}

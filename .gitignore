@@ -19,9 +19,73 @@ saved/
 ckpt/
 position_loss_logs/
 archive/
+reproducibility/asset_locations.local.json
 
 # Editor / OS files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Existing local communication/personal drafts and authorization images.
+# Kept on disk; not experiment evidence and must not be committed accidentally.
+/draft_8246f16f_folder/
+/draft_8b7f2860_folder/
+/draft_97467961_folder/
+/draft_ca1b3e3c_folder/
+/feishu_docs_read_auth.png
+/lark_inspire_read_auth.png
+
+# Local drafts, credentials and generated experiment payloads (never delete here).
+/draft_*_folder/
+/.devin/
+.env
+.env.*
+!.env.example
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.parquet
+*.arrow
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.jsonl
+*.jsonl.gz
+*.log
+**/.mplconfig/
+
+# Retired eight-GPU attempt and redundant extraction/check-out copies.
+/experiments/09_kuairec_listwise/h1_block40_r6_8gpu_20261101/
+/experiments/09_kuairec_listwise/h1_block40_r6_single_20261101/code/experiments/
+/experiments/09_kuairec_listwise/h1_block40_r6_single_20261101/code/docs/
+/experiments/09_kuairec_listwise/h1_block40_r6_single_20261101/code/reproducibility/
+/experiments/rqcd_h_baseline/rqcd_h_v1_seed2024_20261105/backup/
+/experiments/rqcd_h_baseline/rqcd_h_v1_seed2024_20261105/restore_check/
+# G01 source from this nested Git checkout is preserved in source_snapshot/.
+/experiments/09_kuairec_listwise/h1_mixer_g01_20261104_r1/code/
+
+# Live observations and API polling are not immutable experiment acceptance.
+/experiments/**/raw/
+/experiments/**/snapshots/
+/experiments/**/LIVE*
+/experiments/**/LATEST.json
+/experiments/**/*_LATEST.json
+/experiments/**/STATUS*.json
+/experiments/**/*_STATUS.json
+/experiments/**/PROGRESS*.json
+/experiments/**/POLL*.json
+/experiments/**/MONITOR*.json
+/experiments/**/INSTANCES.json
+/experiments/**/NETWORK*.json
+/experiments/**/HEARTBEAT*.json
+
+# Large legacy transfer pieces stay local; exclusion is not deletion or backup proof.
+/experiments/09_kuairec_listwise/h1_spread200_20261031/delivery/chunks_r1/
+/experiments/09_kuairec_listwise/h1_block40_r6_single_20261101/delivery/transfer_chunks_r1/
+/experiments/09_kuairec_listwise/progress_report_20261029/temporal_hypotheses_append_20261030_r1/FEISHU_AUTH_QR.png

@@ -1,0 +1,32 @@
+# Author-repository-aligned DiffGRM Beauty reproduction with warmup-safe early stopping.
+# V6 keeps the V5 setup but defers patience counting until warmup completes.
+run_id: diff_formal_pse_4x256_repo_repro_v6_bf16
+reproduction_protocol: author_repository_beauty_warmup_safe_early_stop
+protocol_note: README Beauty overrides plus official DIFF_GRM defaults; early stopping activates after warmup
+
+mixed_precision: bf16
+train_batch_size: 64
+gradient_accumulation_steps: 16
+lr: 0.01
+warmup_steps: 10000
+warmup_ratio: 0.0
+epochs: 200
+label_smoothing: 0.2
+
+# Validation/checkpointing starts early. Warmup evaluations do not consume the
+# no-improvement budget.
+eval_start_epoch: 20
+eval_interval: 5
+patience: 5
+early_stop_after_warmup: true
+
+paper_repo_discrepancy:
+  paper_max_epochs: 100
+  repository_effective_epochs: 200
+  paper_label_smoothing: 0.1
+  repository_beauty_label_smoothing: 0.2
+  repository_default_eval_interval: 1
+  single_gpu_eval_interval: 5
+
+numerical_guard: true
+numerical_guard_parameter_interval: 100

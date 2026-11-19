@@ -1,0 +1,21 @@
+# Two-batch end-to-end check. This is not a result-bearing experiment.
+run_id: diff_smoke_pse_4x256
+epochs: 1
+warmup_steps: 0
+gradient_accumulation_steps: 1
+train_batch_size: 4
+eval_batch_size: 2
+eval_start_epoch: 1
+eval_interval: 1
+patience: 1
+max_train_batches_per_epoch: 2
+max_eval_batches: 2
+vectorized_beam_search:
+  top_k_final: 10
+  neg_inf_fp32: -1000000000.0
+  neg_inf_fp16: -65504.0
+  dedup_strategy: simple
+  val: {beam_act: 16, beam_max: 16}
+  test: {beam_act: 16, beam_max: 16}
+  beam_act: 16
+  beam_max: 16

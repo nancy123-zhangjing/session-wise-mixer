@@ -1,0 +1,59 @@
+{
+  "source": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1",
+  "training": false,
+  "checkpoint": "original validation-selected best",
+  "splits": {
+    "validation": 71657,
+    "test": 53194
+  },
+  "arms": [
+    "B0",
+    "B1",
+    "B2"
+  ],
+  "runtime": {
+    "micro_r": 256,
+    "micro_t": 256,
+    "evaluation_batch": 256,
+    "precision": "bf16",
+    "attention_backend": "auto",
+    "fused_adamw": true,
+    "data_device": "cuda",
+    "deterministic": true,
+    "checkpoint_every_updates": 200,
+    "evaluation_write_batches": 8
+  },
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.0",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "cuda": "11.8",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "runtime": {
+      "micro_r": 256,
+      "micro_t": 256,
+      "evaluation_batch": 256,
+      "precision": "bf16",
+      "attention_backend": "auto",
+      "fused_adamw": true,
+      "data_device": "cuda",
+      "deterministic": true,
+      "checkpoint_every_updates": 200,
+      "evaluation_write_batches": 8
+    },
+    "tf32": false
+  },
+  "script_sha256": "00a9682794b4af3511ca6be088d989b8aa69ed494085452887fc858064c32045",
+  "steps": 20,
+  "noise": "unchanged original full split noise table",
+  "readouts": [
+    "original catalog-constrained RQ",
+    "full-catalog squared L2 nearest prequantization z_i"
+  ],
+  "prefix": "original RQ prefixes shared; NN posthoc readout never fed back",
+  "exclusions": "each readout excludes its own previously selected items; history items allowed",
+  "selection": "No new checkpoint selection on either split"
+}

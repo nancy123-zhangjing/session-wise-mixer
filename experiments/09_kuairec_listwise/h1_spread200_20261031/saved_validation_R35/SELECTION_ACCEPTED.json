@@ -1,0 +1,65 @@
+{
+  "status": "passed_locked_validation_selection",
+  "selected_epoch": 23,
+  "selected_t_updates": 120,
+  "grid": [
+    20,
+    23,
+    26,
+    29,
+    32,
+    35
+  ],
+  "tie_rule": "earlier epoch",
+  "score_rule": "authenticated production FP32 summary; independent FP64 metrics do not reselect",
+  "selection_sha256": "01a7de08c5c9735c550eae81e345addd80f6432d4b11346c6df6a575c46451ec",
+  "training_complete_sha256": "50e295c755c15adadfee754ecf02f70955ab578a4f0e92db2340ffef94ccf174",
+  "validation_evidence": {
+    "8": {
+      "accepted_sha256": "d320114a11af7f39c64ce2499e4bb7c17b2bcd8e9609fdef82ebb21e5e5bee27",
+      "production_ndcg5": 0.006253655053148954
+    },
+    "11": {
+      "accepted_sha256": "082fd275b51e2d3b7c6c5bb856f6d77965b65696d6980c8d5bffa0ed9c62cd8b",
+      "production_ndcg5": 0.005798742923726657
+    },
+    "14": {
+      "accepted_sha256": "4e48943c70e49ad2a662ea8a41ed38796a4abbd5014ac729fe0e719555f2990d",
+      "production_ndcg5": 0.008268443309241147
+    },
+    "17": {
+      "accepted_sha256": "69eb4073c9431da103841b9991c7d2d69bdc1d2d39525b8809c3f680bcd5cd12",
+      "production_ndcg5": 0.007838806849805516
+    },
+    "20": {
+      "accepted_sha256": "24720c9fa6d48647f880ccb7a805b5775d68705c211b893300d53f3dc84ada34",
+      "production_ndcg5": 0.0077258419761044575
+    },
+    "23": {
+      "accepted_sha256": "c416a1110eac207fa26de0c10f4997631b250e585fe8f5c7b61119487129d4f8",
+      "production_ndcg5": 0.008791367655382213
+    },
+    "26": {
+      "accepted_sha256": "0d9213e1d15bcf75f68e9a29038d12440dba78ebc8d7b009f99ebc6f208d27a6",
+      "production_ndcg5": 0.008352733337596533
+    },
+    "29": {
+      "accepted_sha256": "a422ddd2902f108b96911465c2aed95f3489212a16cc0c243d60dfe4463eae69",
+      "production_ndcg5": 0.007069971973108773
+    },
+    "32": {
+      "accepted_sha256": "519e25d647a7277404cee502f8867057a9dffde68d6937c6892534a824cc3256",
+      "production_ndcg5": 0.008441040864534052
+    },
+    "35": {
+      "accepted_sha256": "45d79ed6f5143eed83acb83e6fe2af591dbf2f590eb845e5f87e65c7381b0fb7",
+      "production_ndcg5": 0.006243133519718186
+    }
+  },
+  "allowed_test_epochs": [
+    23,
+    35
+  ],
+  "auditor_sha256": "3b5eaf5dfae94c8b754181bb4769f2c3630aeefc9504245f17526ae33e80292e",
+  "limitation": "Validation selection and endpoint receipts only. Tests, full fresh extraction and final acceptance remain separate."
+}

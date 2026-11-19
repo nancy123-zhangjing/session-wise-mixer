@@ -1,0 +1,138 @@
+{
+  "status": "ANALYSIS_DEPLOY_AND_PARTIAL_PREFIX_CHECK_PASS_NOT_COMPLETION",
+  "utc": "2026-10-20T05:28:20.242332+00:00",
+  "archive_sha256": "364394ec6981d368999713063e397572223447cf7f04baf5e6116cdb6a8a0a6e",
+  "unit_tests": 13,
+  "common_initial_independently_verified_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+  "summaries": {
+    "no_mixer_frozen": {
+      "arm": "no_mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 10,
+      "recommender_updates": 1040,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.046117802811922716,
+        "ndcg@10": 0.0477573918575561,
+        "weighted_score": 0.05165670304319084
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06237982381612485,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.046117802811922716,
+        "ndcg@10": 0.0477573918575561,
+        "weighted_score": 0.05165670304319084
+      }
+    },
+    "no_mixer_joint": {
+      "arm": "no_mixer_joint",
+      "complete": false,
+      "recommender_epochs": 16,
+      "recommender_updates": 1664,
+      "tokenizer_updates": 24,
+      "noisy_calls": 768,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 12,
+      "best_validation": {
+        "hit_rate@5": 0.06273755757277646,
+        "hit_rate@10": 0.06725394625050306,
+        "ndcg@5": 0.04663113859436174,
+        "ndcg@10": 0.04814530879143168,
+        "weighted_score": 0.051967036679846194
+      },
+      "final_validation": {
+        "hit_rate@5": 0.061709073022403076,
+        "hit_rate@10": 0.06644904529803694,
+        "ndcg@5": 0.04611373192636164,
+        "ndcg@10": 0.04770369791032504,
+        "weighted_score": 0.051452767746086994
+      }
+    },
+    "mixer_frozen": {
+      "arm": "mixer_frozen",
+      "complete": false,
+      "recommender_epochs": 16,
+      "recommender_updates": 1664,
+      "tokenizer_updates": 0,
+      "noisy_calls": 0,
+      "best_epoch": 15,
+      "best_tokenizer_updates": 0,
+      "best_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      },
+      "final_validation": {
+        "hit_rate@5": 0.06300585789026517,
+        "hit_rate@10": 0.06756696328757322,
+        "ndcg@5": 0.04679090500794801,
+        "ndcg@10": 0.04832908594852984,
+        "weighted_score": 0.05217666183905893
+      }
+    },
+    "mixer_joint": {
+      "arm": "mixer_joint",
+      "complete": false,
+      "recommender_epochs": 13,
+      "recommender_updates": 1352,
+      "tokenizer_updates": 18,
+      "noisy_calls": 576,
+      "best_epoch": 10,
+      "best_tokenizer_updates": 12,
+      "best_validation": {
+        "hit_rate@5": 0.061619639583240175,
+        "hit_rate@10": 0.06631489513929258,
+        "ndcg@5": 0.04595067031917752,
+        "ndcg@10": 0.04751153671613017,
+        "weighted_score": 0.05127220878137095
+      },
+      "final_validation": {
+        "hit_rate@5": 0.061619639583240175,
+        "hit_rate@10": 0.06631489513929258,
+        "ndcg@5": 0.04595067031917752,
+        "ndcg@10": 0.04751153671613017,
+        "weighted_score": 0.05127220878137095
+      }
+    }
+  },
+  "controls": {
+    "common_recommender_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "frozen_loss_epochs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "common_tokenizer_cycles": [
+      0,
+      1,
+      2
+    ]
+  },
+  "matplotlib_available": true,
+  "goal_complete": false
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "stage09_resource_three_hour_observation_v1",
+  "job": "nancy-stage09-four-arm-20261027-r1",
+  "queried_at_utc": "2026-10-27T18:48:54+00:00",
+  "metrics_source": "FORMAL_METRICS_3H_20261027T184854Z.json",
+  "metrics_sha256": "92d4cace7dd0de4684adb5bc26331e142c2296929b3880e5285ea8d2aa0c9d38",
+  "policy_source": "FORMAL_POLICY_20261027T184854Z.json",
+  "policy_sha256": "6ab56d3ac1668ea22f233ed928234e2fd96a7a24d6eab59fd11881d1b044bd87",
+  "window": {
+    "start": 1793116136,
+    "end": 1793126936,
+    "interval": "1m"
+  },
+  "series": [
+    {
+      "unit": "worker-0",
+      "metric": "gpu_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.5893680555555554,
+      "min_recomputed": 0.0,
+      "max_recomputed": 0.83375,
+      "last": 0.58875,
+      "first_sample": 1793116080,
+      "last_sample": 1793126820,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "gpu_memory_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.12715356574802558,
+      "min_recomputed": 3.7000037E-05,
+      "max_recomputed": 0.128132708436,
+      "last": 0.128132708436,
+      "first_sample": 1793116080,
+      "last_sample": 1793126820,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "cpu_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.10051543053423288,
+      "min_recomputed": 0.02696190091232,
+      "max_recomputed": 0.101762249617,
+      "last": 0.10128079154,
+      "first_sample": 1793116080,
+      "last_sample": 1793126820,
+      "all_intervals_seconds": 60
+    },
+    {
+      "unit": "worker-0",
+      "metric": "memory_usage_rate",
+      "samples": 180,
+      "average_recomputed": 0.026055586430756877,
+      "min_recomputed": 0.01524091720581,
+      "max_recomputed": 0.02663298845291,
+      "last": 0.02663298845291,
+      "first_sample": 1793116080,
+      "last_sample": 1793126820,
+      "all_intervals_seconds": 60
+    }
+  ],
+  "gpu_below_40_percent_sample_count": 15,
+  "gpu_longest_consecutive_below_40_percent_samples": 2,
+  "raw_recompute_passed": true,
+  "sample_boundary_notes": {
+    "requested_window_seconds": 10800,
+    "returned_first_to_last_seconds": 10740,
+    "first_sample_offset_from_requested_start_seconds": -56,
+    "last_sample_lag_from_requested_end_seconds": 116,
+    "continuous_instantaneous_utilization_verified": false,
+    "low_run_note": "Two consecutive samples span 60 seconds between timestamps; this does not establish an exact two-minute continuous low-utilization duration."
+  },
+  "job_policy": [
+    {
+      "workspace": "分布式训练空间",
+      "workload": "job",
+      "configured": true,
+      "auto_reclaim": true,
+      "reclaim_rule": "gpu < 40% for 3h"
+    }
+  ],
+  "platform_reclaim_decision_verified": false,
+  "per_gpu_metrics_available": false,
+  "allocation_snapshot": {
+    "scheduled_at": "2026-10-27T23:46:38+08:00",
+    "as_of_unix": 1793126936,
+    "active_gpus": 2,
+    "active_allocated_gpu_seconds_to_query_end": 21876,
+    "previously_released_gpu_seconds": 13535,
+    "combined_allocated_gpu_hours_to_query_end": 9.836388888888889,
+    "final_allocated_gpu_seconds": null,
+    "settlement_verified": false
+  },
+  "interpretation": "The 3h query returned 180 regular one-minute worker-aggregate samples, with the timestamp offsets recorded above. No sampled pattern stays below 40 percent for three hours. This does not provide per-GPU history, continuous exact-window coverage, or the scheduler internal reclaim decision. No change to training or resource allocation."
+}

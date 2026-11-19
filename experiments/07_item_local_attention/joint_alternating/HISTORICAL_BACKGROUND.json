@@ -1,0 +1,81 @@
+{
+  "status": "HISTORICAL_CONTEXT_ONLY",
+  "source": "experiments/03_diffgrm_tokenizer_comparison/evidence/pse_seed2024/run_metadata.json",
+  "source_sha256": "3017b871aa1ee91347fd0c8baa4a53dfc94fda01b0c00014a841a8281d843716",
+  "run_id": "diff_formal_pse_4x256_repo_repro_v6_bf16",
+  "seed": 2024,
+  "best_epoch": 45,
+  "best_val_score": 0.050261585144079135,
+  "test_results": {
+    "legal_ratio": 1.0,
+    "duplicate_ratio": 0.29449809175977304,
+    "dup@10": 0.0007735992616193003,
+    "duplicate@10": 0.0007735992616193003,
+    "legal@10": 1.0,
+    "ndcg@5": 0.03656712724405234,
+    "ndcg@10": 0.04391882613008758,
+    "recall@5": 0.05205026159280955,
+    "hit_rate@5": 0.05205026159280955,
+    "recall@10": 0.07490050529893127,
+    "hit_rate@10": 0.07490050529893127,
+    "weighted_score": 0.050115162572083295
+  },
+  "sid_collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 10656,
+    "collided_items": 2172,
+    "collision_rate": 0.17948929840509048,
+    "colliding_groups": 727,
+    "largest_collision_group": 40,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "colliding_groups": 254,
+        "largest_collision_group": 130
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6953,
+        "collided_items": 7287,
+        "collision_rate": 0.6021816378811669,
+        "colliding_groups": 2139,
+        "largest_collision_group": 57
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 9876,
+        "collided_items": 3280,
+        "collision_rate": 0.2710519791752748,
+        "colliding_groups": 1055,
+        "largest_collision_group": 43
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 10656,
+        "collided_items": 2172,
+        "collision_rate": 0.17948929840509048,
+        "colliding_groups": 727,
+        "largest_collision_group": 40
+      }
+    ]
+  },
+  "primary_comparison": "Current joint control versus current joint item_local",
+  "signal_rule": {
+    "ndcg10_relative_improvement": 0.03,
+    "hr10_must_not_decrease": true
+  },
+  "limitations": [
+    "Stage03 used fixed PSE and a newly initialized recommender; current Stage07 uses Refined-PSE warm start and alternating tokenizer/recommender training.",
+    "Execution repair, learning rate and training schedule differ; Stage03 is not the causal control for local attention.",
+    "SID-level metrics, not strictly item-level retrieval; current arms may have different final SID collisions.",
+    "duplicate_ratio is cross-user batch duplication; duplicate@10 is within-user top10 duplication."
+  ],
+  "goal_complete": false
+}

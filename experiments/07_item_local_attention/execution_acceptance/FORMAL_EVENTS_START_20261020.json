@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-10-20 01:05:45",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-10-20 01:05:45",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 01:05:45",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-10-20 01:05:55",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod embodied-world-model/<redacted>-worker-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-10-20 01:05:58",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu476, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-10-20 01:06:04",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 135 Insufficient nvidia.com/gpu, 149 Insufficient rdma/hca_shared_devices, 3 node(s) didn't match Pod's node affinity/selector, 339 Insufficient memory, 64 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 01:06:06",
+        "type": "Warning",
+        "reason": "Unschedulable",
+        "message": "Error pod <redacted>-worker-0 condition message: 0/697 nodes are unavailable: 135 Insufficient nvidia.com/gpu, 149 Insufficient rdma/hca_shared_devices, 3 node(s) didn't match Pod's node affinity/selector, 339 Insufficient memory, 64 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 01:06:11",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 130 Insufficient rdma/hca_shared_devices, 154 Insufficient nvidia.com/gpu, 3 node(s) didn't match Pod's node affinity/selector, 339 Insufficient memory, 64 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 01:06:19",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 21 Insufficient rdma/hca_shared_devices, 263 Insufficient nvidia.com/gpu, 3 node(s) didn't match Pod's node affinity/selector, 339 Insufficient memory, 64 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 01:06:27",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "0/697 nodes are unavailable: 136 Insufficient rdma/hca_shared_devices, 148 Insufficient nvidia.com/gpu, 3 node(s) didn't match Pod's node affinity/selector, 339 Insufficient memory, 64 Insufficient cpu, 7 node(s) were unschedulable."
+      },
+      {
+        "time": "2026-10-20 01:06:29",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu476"
+      },
+      {
+        "time": "2026-10-20 01:06:31",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/inspire-studio/pytorch:25.06-py3\" already present on machine"
+      },
+      {
+        "time": "2026-10-20 01:06:31",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-10-20 01:06:32",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 01:06:32",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-10-20 01:06:32",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-10-20 01:06:32",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.11\" already present on machine"
+      }
+    ]
+  }
+}

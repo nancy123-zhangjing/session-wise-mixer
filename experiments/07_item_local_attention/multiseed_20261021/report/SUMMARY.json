@@ -1,0 +1,1723 @@
+{
+  "schema": "stage07_multiseed_offline_summary_v1",
+  "status": "ALL_RESULTS_VERIFIED",
+  "count_per_cell": 22363,
+  "cell_count": 12,
+  "new_training_seeds": [
+    2025,
+    2026
+  ],
+  "historical_seed": 2024,
+  "trainings": [
+    {
+      "seed": 2024,
+      "variant": "control",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1",
+      "best_epoch": 25,
+      "best_val_score": 0.05247399556222619,
+      "selected_validation": {
+        "legal_ratio": 0.9999105865522174,
+        "duplicate_ratio": 0.4328966975020237,
+        "dup@10": 0.3553503601450467,
+        "duplicate@10": 0.3553503601450467,
+        "legal@10": 0.9999105665608371,
+        "ndcg@5": 0.046632220254880244,
+        "ndcg@10": 0.048331840190596186,
+        "recall@5": 0.06394490900147565,
+        "hit_rate@5": 0.06394490900147565,
+        "recall@10": 0.06904261503376112,
+        "hit_rate@10": 0.06904261503376112,
+        "weighted_score": 0.05247399556222619
+      },
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "initial": {
+        "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1",
+      "best_epoch": 25,
+      "best_val_score": 0.05423174543616992,
+      "selected_validation": {
+        "legal_ratio": 0.9998658798283262,
+        "duplicate_ratio": 0.43656413904118097,
+        "dup@10": 0.3605419712791912,
+        "duplicate@10": 0.3605419712791912,
+        "legal@10": 0.9998658498412556,
+        "ndcg@5": 0.048021688540943595,
+        "ndcg@10": 0.04991417263544923,
+        "recall@5": 0.06577829450431516,
+        "hit_rate@5": 0.06577829450431516,
+        "recall@10": 0.07150203461074095,
+        "hit_rate@10": 0.07150203461074095,
+        "weighted_score": 0.05423174543616992
+      },
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "initial": {
+        "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    },
+    {
+      "seed": 2025,
+      "variant": "control",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1",
+      "best_epoch": 25,
+      "best_val_score": 0.051816050739678106,
+      "selected_validation": {
+        "legal_ratio": 0.9998211731044349,
+        "duplicate_ratio": 0.43141988488726946,
+        "dup@10": 0.35572150895008964,
+        "duplicate@10": 0.35572150895008964,
+        "legal@10": 0.9998211331216742,
+        "ndcg@5": 0.04571888115028307,
+        "ndcg@10": 0.04774417196420162,
+        "recall@5": 0.062022090059473234,
+        "hit_rate@5": 0.062022090059473234,
+        "recall@10": 0.06810356392255064,
+        "hit_rate@10": 0.06810356392255064,
+        "weighted_score": 0.051816050739678106
+      },
+      "checkpoint_sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+      "selected_SID_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+      "initial": {
+        "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1",
+      "best_epoch": 19,
+      "best_val_score": 0.05285468309343445,
+      "selected_validation": {
+        "legal_ratio": 1.0,
+        "duplicate_ratio": 0.44502414116510675,
+        "dup@10": 0.3557304522771478,
+        "duplicate@10": 0.3557304522771478,
+        "legal@10": 1.0,
+        "ndcg@5": 0.04687913849950503,
+        "ndcg@10": 0.04874062452723332,
+        "recall@5": 0.06376604212314985,
+        "hit_rate@5": 0.06376604212314985,
+        "recall@10": 0.06931091535124984,
+        "hit_rate@10": 0.06931091535124984,
+        "weighted_score": 0.05285468309343445
+      },
+      "checkpoint_sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+      "selected_SID_sha256": "edb58b81459a31ebca01310d1f50ce4bec0d55b2d3d6e2dcae6a55544ad1ada4",
+      "initial": {
+        "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1",
+      "best_epoch": 25,
+      "best_val_score": 0.053524971925172304,
+      "selected_validation": {
+        "legal_ratio": 0.9999105865522174,
+        "duplicate_ratio": 0.43362243622488134,
+        "dup@10": 0.3599472388579168,
+        "duplicate@10": 0.3599472388579168,
+        "legal@10": 0.9999105665608371,
+        "ndcg@5": 0.04754728446390368,
+        "ndcg@10": 0.049354901961668744,
+        "recall@5": 0.06483924339310468,
+        "hit_rate@5": 0.06483924339310468,
+        "recall@10": 0.07020524974287887,
+        "hit_rate@10": 0.07020524974287887,
+        "weighted_score": 0.053524971925172304
+      },
+      "checkpoint_sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+      "selected_SID_sha256": "d7f110282fc9465a62891c21f7d61199604e2e9b69ab74eac79bd8d5d52296e6",
+      "initial": {
+        "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "run": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1",
+      "best_epoch": 25,
+      "best_val_score": 0.05344247597304321,
+      "selected_validation": {
+        "legal_ratio": 0.9999552932761088,
+        "duplicate_ratio": 0.4307835593723688,
+        "dup@10": 0.35236775500513556,
+        "duplicate@10": 0.35236775500513556,
+        "legal@10": 0.9999552832804185,
+        "ndcg@5": 0.047293613545824155,
+        "ndcg@10": 0.0493300363167568,
+        "recall@5": 0.0638107588427313,
+        "hit_rate@5": 0.0638107588427313,
+        "recall@10": 0.0698922327058087,
+        "hit_rate@10": 0.0698922327058087,
+        "weighted_score": 0.05344247597304321
+      },
+      "checkpoint_sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+      "selected_SID_sha256": "2ae61eb4d054d3cd27c0908c101a46ad342ef01c47820bd9028b417bfa001903",
+      "initial": {
+        "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+        "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c"
+      },
+      "inputs": {
+        "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+        "data/diff_formal_embeddings/beauty_item_keys.json": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+        "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+        "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+        "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+        "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+        "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+        "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+      },
+      "engine_sources": {
+        "genrec/models/DIFF_GRM/model.py": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+        "genrec/models/DIFF_GRM/trainer.py": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+        "genrec/models/DIFF_GRM/training_state.py": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4",
+        "genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+        "genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+        "genrec/models/DIFF_GRM/item_local_attention.py": "7b86011710c00eed7aa0fa149d65f768aa8c59f214df591af478f86779f31ddc",
+        "genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+        "genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+        "genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+        "genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+        "genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+        "genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+        "genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+      },
+      "budget": {
+        "logical_epochs": 45,
+        "recommender_epochs": 35,
+        "tokenizer_phases": 10,
+        "recommender_updates": 3640,
+        "tokenizer_updates": 60
+      }
+    }
+  ],
+  "cells": [
+    {
+      "seed": 2024,
+      "variant": "control",
+      "beam": 32,
+      "best_epoch": 25,
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.06394490900147565,
+        "hit_rate@10": 0.06904261503376112,
+        "ndcg@5": 0.046632220254880244,
+        "ndcg@10": 0.048331840190596186,
+        "weighted_score": 0.05247399556222619,
+        "duplicate@10": 0.3553503601450467
+      },
+      "hits10": 1544,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "24f35a5e57dac7466bc3dade09f00d8468c0b3bf22cf878104230a7a06b364ac"
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "beam": 32,
+      "best_epoch": 25,
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.06577829450431516,
+        "hit_rate@10": 0.07150203461074095,
+        "ndcg@5": 0.048021688540943595,
+        "ndcg@10": 0.04991417263544923,
+        "weighted_score": 0.05423174543616992,
+        "duplicate@10": 0.3605419712791912
+      },
+      "hits10": 1599,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "3c260c2c6e15d5e7fb517a69e02069dd4bbe4867409cee85d037e84780ce640a"
+    },
+    {
+      "seed": 2024,
+      "variant": "control",
+      "beam": 256,
+      "best_epoch": 25,
+      "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.0725752358806958,
+        "hit_rate@10": 0.1040110897464562,
+        "ndcg@5": 0.05032139182042784,
+        "ndcg@10": 0.060456844059122335,
+        "weighted_score": 0.06916769405215817,
+        "duplicate@10": 0.002302911090761808
+      },
+      "hits10": 2326,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "24f35a5e57dac7466bc3dade09f00d8468c0b3bf22cf878104230a7a06b364ac"
+    },
+    {
+      "seed": 2024,
+      "variant": "item_local",
+      "beam": 256,
+      "best_epoch": 25,
+      "checkpoint_sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "selected_SID_sha256": "075bf705f54deaba794324193de95e6d7f0ae3f985166b39652f90d15859b6e2",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.07436390466395386,
+        "hit_rate@10": 0.10512900773599249,
+        "ndcg@5": 0.05153212819485152,
+        "ndcg@10": 0.06141739816762241,
+        "weighted_score": 0.07015972096565098,
+        "duplicate@10": 0.0021061575240037237
+      },
+      "hits10": 2351,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "3c260c2c6e15d5e7fb517a69e02069dd4bbe4867409cee85d037e84780ce640a"
+    },
+    {
+      "seed": 2025,
+      "variant": "control",
+      "beam": 32,
+      "best_epoch": 25,
+      "checkpoint_sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+      "selected_SID_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.062022090059473234,
+        "hit_rate@10": 0.06810356392255064,
+        "ndcg@5": 0.04571888115028307,
+        "ndcg@10": 0.04774417196420162,
+        "weighted_score": 0.051816050739678106,
+        "duplicate@10": 0.35572150895008964
+      },
+      "hits10": 1523,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "a506af80e7fc9d31cda10dfb0f1560e3dbc3ee3897f6c03580b4548df81657c5"
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "beam": 32,
+      "best_epoch": 19,
+      "checkpoint_sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+      "selected_SID_sha256": "edb58b81459a31ebca01310d1f50ce4bec0d55b2d3d6e2dcae6a55544ad1ada4",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.06376604212314985,
+        "hit_rate@10": 0.06931091535124984,
+        "ndcg@5": 0.04687913849950503,
+        "ndcg@10": 0.04874062452723332,
+        "weighted_score": 0.05285468309343445,
+        "duplicate@10": 0.3557304522771478
+      },
+      "hits10": 1550,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "c2429441fad2fffbe6cc27963e0fc5888b8e147ffd80b297bd843d1a5a44ce48"
+    },
+    {
+      "seed": 2025,
+      "variant": "control",
+      "beam": 256,
+      "best_epoch": 25,
+      "checkpoint_sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+      "selected_SID_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.0714573178911595,
+        "hit_rate@10": 0.10195412064570943,
+        "ndcg@5": 0.049920568711183125,
+        "ndcg@10": 0.05975385062282917,
+        "weighted_score": 0.06819390544565974,
+        "duplicate@10": 0.0028350400677074
+      },
+      "hits10": 2280,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "a506af80e7fc9d31cda10dfb0f1560e3dbc3ee3897f6c03580b4548df81657c5"
+    },
+    {
+      "seed": 2025,
+      "variant": "item_local",
+      "beam": 256,
+      "best_epoch": 19,
+      "checkpoint_sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+      "selected_SID_sha256": "edb58b81459a31ebca01310d1f50ce4bec0d55b2d3d6e2dcae6a55544ad1ada4",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.07177033492822966,
+        "hit_rate@10": 0.10302732191566427,
+        "ndcg@5": 0.05043641164947515,
+        "ndcg@10": 0.06052272516654546,
+        "weighted_score": 0.06902364532716083,
+        "duplicate@10": 0.0019943657310470746
+      },
+      "hits10": 2304,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "c2429441fad2fffbe6cc27963e0fc5888b8e147ffd80b297bd843d1a5a44ce48"
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "beam": 32,
+      "best_epoch": 25,
+      "checkpoint_sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+      "selected_SID_sha256": "d7f110282fc9465a62891c21f7d61199604e2e9b69ab74eac79bd8d5d52296e6",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.06483924339310468,
+        "hit_rate@10": 0.07020524974287887,
+        "ndcg@5": 0.04754728446390368,
+        "ndcg@10": 0.049354901961668744,
+        "weighted_score": 0.053524971925172304,
+        "duplicate@10": 0.3599472388579168
+      },
+      "hits10": 1570,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "377b6d32f87201b5972a745e2f6709c79aaf3aa0f92b2fa7f74a0602243cf310"
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "beam": 32,
+      "best_epoch": 25,
+      "checkpoint_sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+      "selected_SID_sha256": "2ae61eb4d054d3cd27c0908c101a46ad342ef01c47820bd9028b417bfa001903",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.0638107588427313,
+        "hit_rate@10": 0.0698922327058087,
+        "ndcg@5": 0.047293613545824155,
+        "ndcg@10": 0.0493300363167568,
+        "weighted_score": 0.05344247597304321,
+        "duplicate@10": 0.35236775500513556
+      },
+      "hits10": 1563,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "9e3244c7e19914cd3860811d46b05c65712837ef4f09902b44489ed644d0761c"
+    },
+    {
+      "seed": 2026,
+      "variant": "control",
+      "beam": 256,
+      "best_epoch": 25,
+      "checkpoint_sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+      "selected_SID_sha256": "d7f110282fc9465a62891c21f7d61199604e2e9b69ab74eac79bd8d5d52296e6",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.07288825291776595,
+        "hit_rate@10": 0.10181997048696508,
+        "ndcg@5": 0.05112663329471199,
+        "ndcg@10": 0.06047774073114145,
+        "weighted_score": 0.06874618744618809,
+        "duplicate@10": 0.003197245487055156
+      },
+      "hits10": 2277,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "377b6d32f87201b5972a745e2f6709c79aaf3aa0f92b2fa7f74a0602243cf310"
+    },
+    {
+      "seed": 2026,
+      "variant": "item_local",
+      "beam": 256,
+      "best_epoch": 25,
+      "checkpoint_sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+      "selected_SID_sha256": "2ae61eb4d054d3cd27c0908c101a46ad342ef01c47820bd9028b417bfa001903",
+      "history_sha256": "f68adfb739668878adc8d4540e76be250db9d3d81f10b3f4eff1cd1073292701",
+      "count": 22363,
+      "metrics": {
+        "hit_rate@5": 0.0724858024415329,
+        "hit_rate@10": 0.10181997048696508,
+        "ndcg@5": 0.05103639409339839,
+        "ndcg@10": 0.06047890605885148,
+        "weighted_score": 0.06874711978191905,
+        "duplicate@10": 0.0024102312326831072
+      },
+      "hits10": 2277,
+      "order_sha256": "a0b79a0c630539c65d406105bca1723f13c03b7ba2efb7511b8bb58abbc8c619",
+      "targets_sha256": "9e3244c7e19914cd3860811d46b05c65712837ef4f09902b44489ed644d0761c"
+    }
+  ],
+  "paired": [
+    {
+      "seed": 2024,
+      "beam": 32,
+      "delta": {
+        "hit_rate@5": 0.001833385502839513,
+        "hit_rate@10": 0.0024594195769798294,
+        "ndcg@5": 0.0013894682860633514,
+        "ndcg@10": 0.001582332444853042,
+        "weighted_score": 0.0017577498739437258,
+        "duplicate@10": 0.005191611134144514
+      },
+      "new_hit_users": 322,
+      "lost_hit_users": 267,
+      "net_hit_users": 55
+    },
+    {
+      "seed": 2024,
+      "beam": 256,
+      "delta": {
+        "hit_rate@5": 0.0017886687832580628,
+        "hit_rate@10": 0.0011179179895362823,
+        "ndcg@5": 0.0012107363744236835,
+        "ndcg@10": 0.0009605541085000724,
+        "weighted_score": 0.0009920269134928161,
+        "duplicate@10": -0.0001967535667580845
+      },
+      "new_hit_users": 356,
+      "lost_hit_users": 331,
+      "net_hit_users": 25
+    },
+    {
+      "seed": 2025,
+      "beam": 32,
+      "delta": {
+        "hit_rate@5": 0.0017439520636766126,
+        "hit_rate@10": 0.0012073514286991965,
+        "ndcg@5": 0.0011602573492219617,
+        "ndcg@10": 0.0009964525630316995,
+        "weighted_score": 0.0010386323537563413,
+        "duplicate@10": 8.943327058141826e-06
+      },
+      "new_hit_users": 389,
+      "lost_hit_users": 362,
+      "net_hit_users": 27
+    },
+    {
+      "seed": 2025,
+      "beam": 256,
+      "delta": {
+        "hit_rate@5": 0.00031301703707016515,
+        "hit_rate@10": 0.001073201269954846,
+        "ndcg@5": 0.0005158429382920229,
+        "ndcg@10": 0.00076887454371629,
+        "weighted_score": 0.0008297398815010903,
+        "duplicate@10": -0.0008406743366603255
+      },
+      "new_hit_users": 481,
+      "lost_hit_users": 457,
+      "net_hit_users": 24
+    },
+    {
+      "seed": 2026,
+      "beam": 32,
+      "delta": {
+        "hit_rate@5": -0.001028484550373382,
+        "hit_rate@10": -0.00031301703707016515,
+        "ndcg@5": -0.0002536709180795266,
+        "ndcg@10": -2.486564491194221e-05,
+        "weighted_score": -8.249595212909272e-05,
+        "duplicate@10": -0.0075794838527812325
+      },
+      "new_hit_users": 301,
+      "lost_hit_users": 308,
+      "net_hit_users": -7
+    },
+    {
+      "seed": 2026,
+      "beam": 256,
+      "delta": {
+        "hit_rate@5": -0.00040245047623305163,
+        "hit_rate@10": 0.0,
+        "ndcg@5": -9.023920131359664e-05,
+        "ndcg@10": 1.1653277100301396e-06,
+        "weighted_score": 9.323357309659608e-07,
+        "duplicate@10": -0.0007870142543720485
+      },
+      "new_hit_users": 330,
+      "lost_hit_users": 330,
+      "net_hit_users": 0
+    }
+  ],
+  "new_seeds_statistics": {
+    "32": {
+      "hit_rate@10": {
+        "seeds": [
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.06915440683271476,
+          "sample_sd": 0.001486116295477702
+        },
+        "item_local": {
+          "mean": 0.06960157402852926,
+          "sample_sd": 0.0004110534434299989
+        },
+        "paired_delta": {
+          "mean": 0.0004471671958145157,
+          "sample_sd": 0.001075062852047703,
+          "by_seed": {
+            "2025": 0.0012073514286991965,
+            "2026": -0.00031301703707016515
+          },
+          "positive_seeds": 1
+        }
+      },
+      "ndcg@10": {
+        "seeds": [
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.04854953696293518,
+          "sample_sd": 0.0011389581038695918
+        },
+        "item_local": {
+          "mean": 0.049035330421995066,
+          "sample_sd": 0.0004167770732833503
+        },
+        "paired_delta": {
+          "mean": 0.00048579345905987864,
+          "sample_sd": 0.0007221810305862415,
+          "by_seed": {
+            "2025": 0.0009964525630316995,
+            "2026": -2.486564491194221e-05
+          },
+          "positive_seeds": 1
+        }
+      }
+    },
+    "256": {
+      "hit_rate@10": {
+        "seeds": [
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.10188704556633725,
+          "sample_sd": 9.48584869453821e-05
+        },
+        "item_local": {
+          "mean": 0.10242364620131467,
+          "sample_sd": 0.0008537263825084683
+        },
+        "paired_delta": {
+          "mean": 0.000536600634977423,
+          "sample_sd": 0.0007588678955630862,
+          "by_seed": {
+            "2025": 0.001073201269954846,
+            "2026": 0.0
+          },
+          "positive_seeds": 1
+        }
+      },
+      "ndcg@10": {
+        "seeds": [
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.06011579567698531,
+          "sample_sd": 0.000511867604421478
+        },
+        "item_local": {
+          "mean": 0.06050081561269847,
+          "sample_sd": 3.098478819595633e-05
+        },
+        "paired_delta": {
+          "mean": 0.00038501993571316007,
+          "sample_sd": 0.0005428523926174344,
+          "by_seed": {
+            "2025": 0.00076887454371629,
+            "2026": 1.1653277100301396e-06
+          },
+          "positive_seeds": 2
+        }
+      }
+    }
+  },
+  "all_three_descriptive_statistics": {
+    "32": {
+      "hit_rate@10": {
+        "seeds": [
+          2024,
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.06911714289973021,
+          "sample_sd": 0.0010528231684127272
+        },
+        "item_local": {
+          "mean": 0.0702350608892665,
+          "sample_sd": 0.0011350767704688307
+        },
+        "paired_delta": {
+          "mean": 0.0011179179895362869,
+          "sample_sd": 0.00138838033325225,
+          "by_seed": {
+            "2024": 0.0024594195769798294,
+            "2025": 0.0012073514286991965,
+            "2026": -0.00031301703707016515
+          },
+          "positive_seeds": 2
+        }
+      },
+      "ndcg@10": {
+        "seeds": [
+          2024,
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.048476971372155515,
+          "sample_sd": 0.0008151135356996065
+        },
+        "item_local": {
+          "mean": 0.049328277826479784,
+          "sample_sd": 0.0005867760303474598
+        },
+        "paired_delta": {
+          "mean": 0.0008513064543242665,
+          "sample_sd": 0.0008133707454726511,
+          "by_seed": {
+            "2024": 0.001582332444853042,
+            "2025": 0.0009964525630316995,
+            "2026": -2.486564491194221e-05
+          },
+          "positive_seeds": 2
+        }
+      }
+    },
+    "256": {
+      "hit_rate@10": {
+        "seeds": [
+          2024,
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.10259506029304356,
+          "sample_sd": 0.0012281504899530223
+        },
+        "item_local": {
+          "mean": 0.10332543337954062,
+          "sample_sd": 0.0016745401495734862
+        },
+        "paired_delta": {
+          "mean": 0.0007303730864970428,
+          "sample_sd": 0.0006329166851663367,
+          "by_seed": {
+            "2024": 0.0011179179895362823,
+            "2025": 0.001073201269954846,
+            "2026": 0.0
+          },
+          "positive_seeds": 2
+        }
+      },
+      "ndcg@10": {
+        "seeds": [
+          2024,
+          2025,
+          2026
+        ],
+        "control": {
+          "mean": 0.06022947847103098,
+          "sample_sd": 0.00041203829338325567
+        },
+        "item_local": {
+          "mean": 0.06080634313100645,
+          "sample_sd": 0.0005296425416071417
+        },
+        "paired_delta": {
+          "mean": 0.0005768646599754642,
+          "sample_sd": 0.0005076982910814995,
+          "by_seed": {
+            "2024": 0.0009605541085000724,
+            "2025": 0.00076887454371629,
+            "2026": 1.1653277100301396e-06
+          },
+          "positive_seeds": 3
+        }
+      }
+    }
+  },
+  "verified_files": [
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\identity.json",
+      "sha256": "c4b527ea206a3735e5e82f1de1ce30b3db939d543178cd4e3181c06130ab1c66",
+      "size_bytes": 2674
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\resolved_config.json",
+      "sha256": "daf1b89709f8474a9d372c05a6676291873716936d0edd3a04271b53d643e830",
+      "size_bytes": 12934
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\results.json",
+      "sha256": "c09f58c88bc93e4345d4f6c035a01731436595ee39b30cfd07903b45c3e48d8b",
+      "size_bytes": 6664
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\COMPLETE.json",
+      "sha256": "cae3b5014554f629cc246d0df55d33387f78c67d1bb0da25cdb8abfaba98446f",
+      "size_bytes": 520
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\FIT_COMPLETE.json",
+      "sha256": "9838fe1e2aeeb7b8aebd3d2b245d7e450d2199297631ffc063a6e551b992e1cd",
+      "size_bytes": 807
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\initial_state_identity.json",
+      "sha256": "d8bd919430d33062b8eff66c75b087a587d6fbc4f61f71231473837720a89fce",
+      "size_bytes": 530
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\checkpoint_reload.json",
+      "sha256": "ef8b4405c20d96835d502e0d292b1ac19d803e7a76e8334e0811a63de07b3908",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\phase_integrity.json",
+      "sha256": "84bfe6f9ee1df763dffa6fca7cfe20401f3750cde93a74c026edb3db81c6b9c9",
+      "size_bytes": 296578
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\training_state\\best_model.bin",
+      "sha256": "6152a65d6101b27c18d6d964740cc1a83da636e627db5a9322ae839d1c552f54",
+      "size_bytes": 36147558
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_control_seed2025_20261021_r1_evaluation_metrics.csv",
+      "sha256": "eeab4298df92705ef3ff987353e7c7f2b99f4ebbfc11fe5d049ab6323cce0229",
+      "size_bytes": 3681
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\EVALUATION_PLAN.json",
+      "sha256": "c55aac95fe55622310a973dcdce4ebc9bc19bd86933acb6a9de37359687cbe83",
+      "size_bytes": 15403
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+      "sha256": "a66cc21b24687c046bf7a697ff3c6cb8de47076a91afb36ffe3ac5bf3de73ed6",
+      "size_bytes": 9240
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\code_identity.json",
+      "sha256": "5fb3a7496180417c8002a7251b20b99e2dde3dfd0a7018e593ff59705d898923",
+      "size_bytes": 3982
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\training_integrity.json",
+      "sha256": "b3e4dc0f3d4e3c2f9424a43aeb60aaec4c1b03d31995dcf5860f1f5e2a713180",
+      "size_bytes": 4080
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\CELL_COMPLETE.json",
+      "sha256": "79b267b42d633e39cea28517a5465bd053bd144713fc423f4d90ebd6a9f3dd6e",
+      "size_bytes": 2044
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\CELL_STARTED.json",
+      "sha256": "841043fc6b1478d0895b3fe13399a1f189c935c6ece41351007792a4b63ad9e4",
+      "size_bytes": 315
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T165043_291230Z\\metrics.json",
+      "sha256": "f2293fb07aa5b87f031ef8528c176fc6641b7694739532d94bacb73a3fa1b9ac",
+      "size_bytes": 1919
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T165043_291230Z\\per_user.jsonl",
+      "sha256": "de7cdfe46379409abd547da782ba2fb7edad26c12e3772de8fbd7de07eb64969",
+      "size_bytes": 15264001
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T165043_291230Z\\parsed_config.json",
+      "sha256": "a4e4391281526ffcc1e5a6a03161de36586cb3146acc04acfee8cf7d4f03995e",
+      "size_bytes": 13817
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T165043_291230Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\CELL_COMPLETE.json",
+      "sha256": "af6f949f0411a5b4ec578495901a44998a5cb9676b51bb9047900414430b1e93",
+      "size_bytes": 2050
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\CELL_STARTED.json",
+      "sha256": "eff508e7395121ba07e062032d86782f526718d46d6ba772366e22f558517c70",
+      "size_bytes": 315
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T165335_338188Z\\metrics.json",
+      "sha256": "1e7161b299e0efa6d008a6fffdc83308cc388bb18941a52a56b510c5c048337c",
+      "size_bytes": 1599
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T165335_338188Z\\per_user.jsonl",
+      "sha256": "d3b6dbaaa378d2f4f2d2dcc898d65305f2f322a00645cebb4c2813bb8a92da1e",
+      "size_bytes": 14870680
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T165335_338188Z\\parsed_config.json",
+      "sha256": "36814699b71aa83fc79a569c53c038657a64a57ef722ef79ba1207099e95d86f",
+      "size_bytes": 13828
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_control_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T165335_338188Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\identity.json",
+      "sha256": "5c848165ee31e7bfcaf32451242763746d08fcef47eca5afcb0afaa894ac217e",
+      "size_bytes": 2683
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\resolved_config.json",
+      "sha256": "124b8e2e8e7ca53caed38403053e4f9581ace5e07f8c8afed29a09bc1ffb1c41",
+      "size_bytes": 12984
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\results.json",
+      "sha256": "49b357054ecb1a71178076624ba177d9411c48f8d148229855077a93b3830786",
+      "size_bytes": 6981
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\COMPLETE.json",
+      "sha256": "cdb41aacb45bc7659000fd4222d1ef3aa5cb7f80bd52820a04f8ea53c95b977f",
+      "size_bytes": 526
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\FIT_COMPLETE.json",
+      "sha256": "052550fef9dfb2a257933208f82e26ff875026b1e26f4af1bdc5c8956334337d",
+      "size_bytes": 806
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\initial_state_identity.json",
+      "sha256": "db641157a6968aa83f9eb99729f2b32ea2d9d0354b41c52c86875bd9933eaddb",
+      "size_bytes": 533
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\checkpoint_reload.json",
+      "sha256": "5bcaf132bb15f6db4be722f67eb07ad976d4d2beb60c7eb66916b29ba3470cd1",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\phase_integrity.json",
+      "sha256": "2cd9e134b504d7f19c0899da5dbebfa36a54aef9b78df0b5ed1fad72cbd21ed0",
+      "size_bytes": 318851
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\training_state\\best_model.bin",
+      "sha256": "19b3385bcff2132565e9018dc5797ec26e6846247d2e6a9eac2cb497e8bca100",
+      "size_bytes": 37204442
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_item_local_seed2025_20261021_r1_evaluation_metrics.csv",
+      "sha256": "60fd5b4997e23b98d305411430db86b6248a035b634f866bbeff46f37919470e",
+      "size_bytes": 3639
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\EVALUATION_PLAN.json",
+      "sha256": "fb42d19c16c9991e81ef8e57b52712a09498bf5124aa92dffb07f0f663d15217",
+      "size_bytes": 15433
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+      "sha256": "a3392b3f6d6f1102eb93193010dc5d952f06237a421bc95bb3c654760759928e",
+      "size_bytes": 9248
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\code_identity.json",
+      "sha256": "5fb3a7496180417c8002a7251b20b99e2dde3dfd0a7018e593ff59705d898923",
+      "size_bytes": 3982
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\training_integrity.json",
+      "sha256": "0432de8f91f847347641317872bec9019dfcb600a355f79faacc95c433d0f307",
+      "size_bytes": 4380
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\CELL_COMPLETE.json",
+      "sha256": "f6e0af5bd03bbb779389d62fd0ec0533f03a7580393e893be7ce1e03399c4005",
+      "size_bytes": 2059
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\CELL_STARTED.json",
+      "sha256": "848aff7721225af80042306516ea613801d05c1aabb019b252ea65af0be15fb6",
+      "size_bytes": 315
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T171217_467590Z\\metrics.json",
+      "sha256": "932456652fac2eb10251a397ef5838c487a15b501a44ec1eb2136abd30cedc33",
+      "size_bytes": 1886
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T171217_467590Z\\per_user.jsonl",
+      "sha256": "bef5e97a8afffaaa59097e5db9d4b1ad2144cf5aec1bccde930d92ee6ea32c80",
+      "size_bytes": 15266342
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T171217_467590Z\\parsed_config.json",
+      "sha256": "961cd1fb583f402675baeff25d21cfd3700e01283bbaaf19cc237116abef1956",
+      "size_bytes": 13870
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam32\\attempts\\20261021T171217_467590Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\CELL_COMPLETE.json",
+      "sha256": "364fae3010ab45fa14272a77eed45698bae46aa53e6b71e5c1088566de8908f9",
+      "size_bytes": 2065
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\CELL_STARTED.json",
+      "sha256": "9775084f6300554be6d5f881e0ea91288796be5e2d1606fe2891ace94766d169",
+      "size_bytes": 316
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T171526_788821Z\\metrics.json",
+      "sha256": "24e3d43accd9526d834738aa5eb7fee98edc8f6d099e9380ebbcdecb788a3876",
+      "size_bytes": 1607
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T171526_788821Z\\per_user.jsonl",
+      "sha256": "5dc49ab55b96a03c90cb89981919c97851e0fe19d2cdfaea11fc47ea087e3672",
+      "size_bytes": 14867520
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T171526_788821Z\\parsed_config.json",
+      "sha256": "585698f851f06e683c560dcadaccacf03db7fc997a94681c0c16e73677cc294e",
+      "size_bytes": 13881
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2025\\runs\\stage07_item_local_joint_item_local_seed2025_20261021_r1\\validation\\beam256\\attempts\\20261021T171526_788821Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\identity.json",
+      "sha256": "fd8873ef2eafb05534d4eea4f8390a1fd74ede6f2d2b5bfb2a07cb2913a1d965",
+      "size_bytes": 2674
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\resolved_config.json",
+      "sha256": "a48a4d75c24fdd38c842754ce5cfe621403e761a6619bc6d04acb0b45c029fdc",
+      "size_bytes": 12934
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\results.json",
+      "sha256": "0a78608b5763b0c980c4ec1525ec8899580cc54ac9191259c5a74ef933b78526",
+      "size_bytes": 6664
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\COMPLETE.json",
+      "sha256": "4aa3c0897176d8c7a7c5a5bce193b6e31ca0142024332684eb49e8fd9e1d8a2c",
+      "size_bytes": 520
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\FIT_COMPLETE.json",
+      "sha256": "564ceb1c0a8459f81196df15baf1576d4b90c11f094ad536ce862e881e8195fe",
+      "size_bytes": 807
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\initial_state_identity.json",
+      "sha256": "2590ae9e9f608faf6ee3c869f4fbfbf0be6b68462417fcec2b73cd2397ca4284",
+      "size_bytes": 530
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\checkpoint_reload.json",
+      "sha256": "e386792ef1e9f910364db5226212f2492da972da0ec0c82eab32d4b80689c253",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\phase_integrity.json",
+      "sha256": "8f79329152192576bffa8814236ba7763ff141abb6b489af710a955701c6b09d",
+      "size_bytes": 296580
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\training_state\\best_model.bin",
+      "sha256": "8a51d0f0f5d57a52c79a54d2bcfae7ede003fbf2b46d9213c9e78cbcace65e01",
+      "size_bytes": 36147558
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_control_seed2026_20261021_r1_evaluation_metrics.csv",
+      "sha256": "2b5f0ac2c7004983ebcbb0f81e856df58bc5a90e043f68f133096fa498b25983",
+      "size_bytes": 3669
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\EVALUATION_PLAN.json",
+      "sha256": "883fdb989bdb1577547515fe262d9d4b1769e50bfd1658ee758bb298510d5b1a",
+      "size_bytes": 15402
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+      "sha256": "0b7e988c42bbfe1464e9f96af4882d476425f86630bac4f4d594c56b574d7c64",
+      "size_bytes": 9241
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\code_identity.json",
+      "sha256": "5fb3a7496180417c8002a7251b20b99e2dde3dfd0a7018e593ff59705d898923",
+      "size_bytes": 3982
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\training_integrity.json",
+      "sha256": "08d0c5c43282af08f036d03ea8465e32bb7227b35490256d45ece285a36fbe2a",
+      "size_bytes": 4080
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\CELL_COMPLETE.json",
+      "sha256": "38827f33863153c8d6ee7eea553f8514731c63e3b27db313a826f7d913d839d5",
+      "size_bytes": 2044
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\CELL_STARTED.json",
+      "sha256": "77486513cc420995f82d3713069e19fe57e835f1a4c552a4973d32ec4e1b4dbe",
+      "size_bytes": 315
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T171239_803935Z\\metrics.json",
+      "sha256": "971c6ee29bc8a2e4cb43625b1388d27460ddb411dc98ea10b0a80e9ba1cf1ab0",
+      "size_bytes": 1916
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T171239_803935Z\\per_user.jsonl",
+      "sha256": "38ec496cd0e28b3f9cb8220b3c81f283df2018235511239e388b97d53fe028a0",
+      "size_bytes": 15262975
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T171239_803935Z\\parsed_config.json",
+      "sha256": "5ba14ee7038330764519a8767da11f39e24197b8a0e98a3c60f7e08a9370bee9",
+      "size_bytes": 13817
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T171239_803935Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\CELL_COMPLETE.json",
+      "sha256": "7c526ffc13af000cfeac38c8c6f2a89bc0ba7be0e5d5ad5e4d2eeb2e13566add",
+      "size_bytes": 2050
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\CELL_STARTED.json",
+      "sha256": "2b1a6412a2ede564a1856c676ea8f25c21f96b9319953c571c9b555fd4325df1",
+      "size_bytes": 316
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171546_909417Z\\metrics.json",
+      "sha256": "5e5f868433b71cdf93cb6d2973d402e51357b1ee8609df633c59b96dbbfdd2d8",
+      "size_bytes": 1603
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171546_909417Z\\per_user.jsonl",
+      "sha256": "6e6712b0a6a1fbc5bef5a917fb88f391fe9843b102bf06b86375504ef4912d81",
+      "size_bytes": 14862556
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171546_909417Z\\parsed_config.json",
+      "sha256": "cb378c0496f435c2f36aee6220e49f907f5775148d825a25a4c02109c6d50043",
+      "size_bytes": 13828
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_control_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171546_909417Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\identity.json",
+      "sha256": "94c2d9aea75eee43baa594955bd7d412504ae149f9432c84ec2499692d03adc1",
+      "size_bytes": 2683
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\resolved_config.json",
+      "sha256": "9515925e779a5628bfcf2eb44d90d7b3f1c3ffb684461d1e849ee1b8760d71ce",
+      "size_bytes": 12984
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\results.json",
+      "sha256": "2780dfbc7e2649a1fef822b90f2d658f0af778942b6a053b94d32e6ed8346080",
+      "size_bytes": 6982
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\COMPLETE.json",
+      "sha256": "e6223069d29484a24389381abd3bea535d1119d8256300696d56cf37499ed432",
+      "size_bytes": 526
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\FIT_COMPLETE.json",
+      "sha256": "540e409025286e63676714f5e31f6b8795272c696e36729d90eee1e9193c0d78",
+      "size_bytes": 807
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\initial_state_identity.json",
+      "sha256": "c8c2b39042585897a31e739bd0effb468ecf5cd0b8ec534c61f37bb8d5fe3f12",
+      "size_bytes": 533
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\checkpoint_reload.json",
+      "sha256": "b1c056b41898e4718f9ab99aa12175915531b9c13c4d81fac6f8cb333631aada",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\phase_integrity.json",
+      "sha256": "c35aa697803a49d6c61fc522c032159402c943cfd2195f796a5913ebd2ae836e",
+      "size_bytes": 318850
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\training_state\\best_model.bin",
+      "sha256": "c70322b7bfef8c7ab44dcbe1b6c65185ddac073cb26d7981aeac3c2ed4963076",
+      "size_bytes": 37204442
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_item_local_seed2026_20261021_r1_evaluation_metrics.csv",
+      "sha256": "518c2b2c8ec5ba2110b344740ae3c28eff22b7d44ac9b72dbde618d975cca54b",
+      "size_bytes": 3561
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\EVALUATION_PLAN.json",
+      "sha256": "f80116c3976b765ad0b5f5729ea8df7f572eb7f1062385cf3dbbbbf14ff8ff4d",
+      "size_bytes": 15447
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\EVALUATION_COMPLETE.json",
+      "sha256": "0f352b7bf43ecd8be9e46011bcb9ff805e19b5df7efa249d79f1af762c69823b",
+      "size_bytes": 9274
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\code_identity.json",
+      "sha256": "5fb3a7496180417c8002a7251b20b99e2dde3dfd0a7018e593ff59705d898923",
+      "size_bytes": 3982
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\training_integrity.json",
+      "sha256": "4c03bd8ef27c29e43a88ef37fca2ecaa7af6d499175dff74a797fa1332633ff1",
+      "size_bytes": 4380
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\CELL_COMPLETE.json",
+      "sha256": "7f57934953d846884cf719917917bf26be878aaf135b95656225a2a01ca8c575",
+      "size_bytes": 2059
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\CELL_STARTED.json",
+      "sha256": "06ea9b05a262e4a8b70cd8e915b175236ca8cee17cd8496cf67f59c791bbbd6e",
+      "size_bytes": 315
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T170822_136576Z\\metrics.json",
+      "sha256": "1d92030e2cb385292cba2adcf3018553c0f7dc2bfc617bd5b8855ac04402bf63",
+      "size_bytes": 1914
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T170822_136576Z\\per_user.jsonl",
+      "sha256": "a5873fe9706153cd014a829da5bf440ccbd9a184aa523587442d0d1076f16645",
+      "size_bytes": 15256763
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T170822_136576Z\\parsed_config.json",
+      "sha256": "6fa77b5640c66caa2f4aae82b058595e0774dcbea1dbccde89570a8601022fd8",
+      "size_bytes": 13870
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam32\\attempts\\20261021T170822_136576Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\CELL_COMPLETE.json",
+      "sha256": "97b453b1a97f333f543c8fa07e0df7488f4f13c785c09ad099ce2084c0e1b1ad",
+      "size_bytes": 2065
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\CELL_STARTED.json",
+      "sha256": "45f87b2a9237714a0a005add75a769ca6d31515ae8c026cd14a6ea17cc4117c3",
+      "size_bytes": 316
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171236_761185Z\\metrics.json",
+      "sha256": "b540add8e9a7ba7d792f760509490209d19848be3ee4578b9f2007dce14f2c3b",
+      "size_bytes": 1605
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171236_761185Z\\per_user.jsonl",
+      "sha256": "5544dd8ef65f742c5b3a8ce6961dcf5e34f30f50ac733d301a0809a55095409e",
+      "size_bytes": 14862184
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171236_761185Z\\parsed_config.json",
+      "sha256": "4e6a6743232c96d8516bbcccf55422683d2c2cdab0e9ca49810ba737f3fb856f",
+      "size_bytes": 13881
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\multiseed_20261021\\verified\\seeds\\seed2026\\runs\\stage07_item_local_joint_item_local_seed2026_20261021_r1\\validation\\beam256\\attempts\\20261021T171236_761185Z\\environment.json",
+      "sha256": "1dd015359afade95f2e73694b6c68da4ab60551b306986ee1784430e10b0a4f8",
+      "size_bytes": 258
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\GRID_PLAN.json",
+      "sha256": "d5ef2b1a29ac5d89abaf9e630a730b60d8ef8fcde20b4c11b925c2855053a786",
+      "size_bytes": 18245
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\COMPLETE.json",
+      "sha256": "1840850b0fca58b019eca24cf70eac8a9d092bc03f9260822d30188cda047e16",
+      "size_bytes": 11119
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\identity.json",
+      "sha256": "39c6217e3fcfe0ebb953044de67fa46701698d82b2b9b9f08cfb651abe4b1581",
+      "size_bytes": 1970
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\resolved_config.json",
+      "sha256": "f0a12a89fdbbf3e4f8a7b1f1af1b0eee76d6d79245124a5a463d7358ba91a818",
+      "size_bytes": 12160
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\results.json",
+      "sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+      "size_bytes": 6820
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\COMPLETE.json",
+      "sha256": "fd2ae65c388001082e61bb3d00d3834af1c103abcc6d5b77efe0f58cd8fc9417",
+      "size_bytes": 492
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\FIT_COMPLETE.json",
+      "sha256": "a3e9516fcd8a5bfa84728cdfb682b7b7b59f448e3fb98947be1af2ce02c9e046",
+      "size_bytes": 807
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\initial_state_identity.json",
+      "sha256": "84a8f4b9a62c3a54aaa10d5d5e5769583be45713ce8ebefba8056987e3ec09ad",
+      "size_bytes": 530
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\checkpoint_reload.json",
+      "sha256": "ce962649ddc054dfcc9a4a81a9646439398f5bacf080a0894a07b5bd104a079b",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\phase_integrity.json",
+      "sha256": "75dee1286cc1ee4fcfca3876263a59ec0f1bd043b2f8b99b87545f9212271d82",
+      "size_bytes": 296581
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\training_state\\best_model.bin",
+      "sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+      "size_bytes": 36147558
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_control_seed2024_20261020_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv",
+      "sha256": "b62d246c832b91800d0cb13c81cd8ad079115b41097afde4dc9c038aa5c94eda",
+      "size_bytes": 4106
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam32\\CELL_COMPLETE.json",
+      "sha256": "9be4dd633edbf2aa0d38d4e80bc46c10a30ed15379f47926be3e14899de47999",
+      "size_bytes": 1443
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam32\\attempts\\20261021T044134_452232Z\\metrics.json",
+      "sha256": "8bac1df51fdb6f3edf1c17cd891384ed65008e07d3e8f5c846317514b4e6240e",
+      "size_bytes": 2248
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam32\\attempts\\20261021T044134_452232Z\\per_user.jsonl",
+      "sha256": "e43fafe27cecea7ff7e209e0e66352f989ec690f48ee6e83942eb4a6b9d44f1d",
+      "size_bytes": 15263523
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam32\\attempts\\20261021T044134_452232Z\\parsed_config.json",
+      "sha256": "8c8ab70196831891967a78cd93d498551969b740fbe96373987166c7d07a9ff6",
+      "size_bytes": 11991
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam32\\attempts\\20261021T044134_452232Z\\environment.json",
+      "sha256": "86c02144dde7cf037f0825a11c86f6ff628f6bd98ad8365f81e14f71ac71ad87",
+      "size_bytes": 425
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam256\\CELL_COMPLETE.json",
+      "sha256": "e0081743edd6947baeb98666982ae25b999ebc8b9c34a3168c959f44aa385e59",
+      "size_bytes": 1448
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam256\\attempts\\20261021T044538_520864Z\\metrics.json",
+      "sha256": "05647c2a37a38512036b9cd04ee6338478ab691af114af0b51cae03c827d0516",
+      "size_bytes": 1819
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam256\\attempts\\20261021T044538_520864Z\\per_user.jsonl",
+      "sha256": "c78ef1abe6ab14e5fd14077218c3206cdeddea82362c1e4c5ab91286213b90e5",
+      "size_bytes": 14864947
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam256\\attempts\\20261021T044538_520864Z\\parsed_config.json",
+      "sha256": "e6d55b19b839a443fad38955f66d65889143abe0497513c386f450af11bede60",
+      "size_bytes": 12002
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\control_beam256\\attempts\\20261021T044538_520864Z\\environment.json",
+      "sha256": "dd4f0e04c39b9a71cabba50df344082c852b4e2e231d06c63b1544b2d0f81d62",
+      "size_bytes": 425
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\identity.json",
+      "sha256": "8dc628f2004858675d9bbad97b754bffdbd94299b5b399022c062b10bb9eb057",
+      "size_bytes": 1979
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\resolved_config.json",
+      "sha256": "677dbc5c6dc4f6163fac0df752651e93f34a3ee0c96d4d88b57147d148488000",
+      "size_bytes": 12210
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\results.json",
+      "sha256": "3c488550ef61fa076d04a59e3ce63e56ca16acce0680a8c2c6ae77e713294311",
+      "size_bytes": 7140
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\COMPLETE.json",
+      "sha256": "5376fcdbc61f46f4f74617c4fcf91fe0a10786bc0a79728558a230cd7276dae3",
+      "size_bytes": 498
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\FIT_COMPLETE.json",
+      "sha256": "f1075f6b5c4a01f940cb8484e50c8112273a0219fd376c726dd4e4f40675c26f",
+      "size_bytes": 806
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\initial_state_identity.json",
+      "sha256": "90e07b00e45c49babe240fa11f85e69e986b9b07326a41827c1d68cebef0bb0f",
+      "size_bytes": 533
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\checkpoint_reload.json",
+      "sha256": "de2759a92aa35399752bc0665a0a69a365f7bab69de8b1d932bfd0a6f9bdb919",
+      "size_bytes": 307
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\phase_integrity.json",
+      "sha256": "e27b9240d6607ce1d8315f539fd2f4d378d764572bd72a6262a5ed5187fa64c1",
+      "size_bytes": 318848
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\input_identities.json",
+      "sha256": "4ac084cb48b8c99b0c84be26bbd2b2dae1b0d7c20544b878daa5f76920f927b8",
+      "size_bytes": 3084
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\training_state\\best_model.bin",
+      "sha256": "f093c22e4e0cb354870b467e41f4ebab96d90047daf9d0e3d33991e3108b348b",
+      "size_bytes": 37204442
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\delivery_20261020_final_r3\\verified\\runs\\stage07_item_local_joint_item_local_seed2024_20261020_r1\\diagnostics\\AmazonReviews2014\\DIFF_GRM\\AmazonReviews2014_stage07_item_local_joint_item_local_seed2024_20261020_r1_evaluation_metrics.csv",
+      "sha256": "1a677126ff5c5f9efa72da5aa014ee0f9bac82f6f0d96fed7b1af082430205a8",
+      "size_bytes": 4070
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam32\\CELL_COMPLETE.json",
+      "sha256": "1f8cc3e6e6c6e7fbd648708a4291a4b7957076476bbb62a71a3350a97c93553a",
+      "size_bytes": 1458
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam32\\attempts\\20261021T045035_477804Z\\metrics.json",
+      "sha256": "26d84d7dd31ec3d8b6f6a353fb208353979dd36cadf7431766c5572d0fc09d4d",
+      "size_bytes": 2253
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam32\\attempts\\20261021T045035_477804Z\\per_user.jsonl",
+      "sha256": "fbd6e4fc1bc7198b07865903991d6c6c81e64d3769882295b202b343f9d7b176",
+      "size_bytes": 15265291
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam32\\attempts\\20261021T045035_477804Z\\parsed_config.json",
+      "sha256": "f8fb8f0d0388231b07a0d74838ebe53273b6a12f184d90f57fd46822fe5f4eda",
+      "size_bytes": 12020
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam32\\attempts\\20261021T045035_477804Z\\environment.json",
+      "sha256": "a4590bc852872b4de716bb6249ab79fbb6cf91981ae5b58f48acdea130c2c6de",
+      "size_bytes": 424
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam256\\CELL_COMPLETE.json",
+      "sha256": "2202461cef0abb9102f6309c95cf0a0efad14b5413655402f861302c59c5a2fb",
+      "size_bytes": 1463
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam256\\attempts\\20261021T045336_675020Z\\metrics.json",
+      "sha256": "f6cf6540516dc2fd1d929e5d66e7b9ba651febf6043d0add8b36b36a33044456",
+      "size_bytes": 1830
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam256\\attempts\\20261021T045336_675020Z\\per_user.jsonl",
+      "sha256": "5c406ff30902e61f037666819f91a9bc59c95a0a149bcd377bafd6233717a13f",
+      "size_bytes": 14865190
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam256\\attempts\\20261021T045336_675020Z\\parsed_config.json",
+      "sha256": "35069fd98235ec3ca9a0c88382d2c62ca7215568a9378d39f4724ba7b7f5aa6d",
+      "size_bytes": 12031
+    },
+    {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage07_item_local_joint\\beam_validation_20261021_r1\\verified\\results\\item_local_beam256\\attempts\\20261021T045336_675020Z\\environment.json",
+      "sha256": "c978c67d8a5b484e8b0a8a3f6f64d33cb3567759fe2d196b03d6cfb05c4636dc",
+      "size_bytes": 424
+    }
+  ],
+  "limitations": [
+    "Same validation set and warm-start assets; not independently pretrained end-to-end seeds",
+    "New seeds fixed 45 epochs; historical seed patience5 also actually completed45",
+    "Cross-seed base hashes may differ because inactive SIA adapter is randomly initialized",
+    "SID-level metrics; no item-level, test generalization, serving latency or significance claim",
+    "Raw input contents and model tensors are not reloaded; local checkpoint bytes and saved receipts are SHA-verified"
+  ],
+  "metric_recomputation": "Recompute first matching SID rank, HR/NDCG/weighted-score/duplicates per user; float32 numeric tolerance 1e-7, aggregate stored-row mean tolerance1e-12"
+}

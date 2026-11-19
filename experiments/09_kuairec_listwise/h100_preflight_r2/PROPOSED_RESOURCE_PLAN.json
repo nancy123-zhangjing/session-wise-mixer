@@ -1,0 +1,127 @@
+{
+  "status": "PROPOSED_REQUIRES_USER_BUDGET_APPROVAL",
+  "requested_cumulative_gpu_hours": 75,
+  "already_used_gpu_seconds": 656,
+  "formal_training_started": false,
+  "execution_source": "1c423662d9a25a926328ee6466c30c0f2857b4f6",
+  "runtime_config": "../preparation_20261027/runtime_efficiency_r2.json",
+  "runtime_config_sha256": "d8e3a40f9c7ac446dbca6f4e8b01811ee4598c0d4d07e18310f524afda9bd2bb",
+  "budget_sha256": "5d4295c50f518a2e5891146fd9d266fcaacaaedc9537a44cad46aef455e1525b",
+  "max_parallel_warmups": 2,
+  "max_parallel_branch_jobs": 4,
+  "ddp": false,
+  "jobs": [
+    {
+      "id": "H_shared_warmup",
+      "gpus": 1,
+      "depends_on": [],
+      "estimate_with_25pct_hours": 2.21503324614136,
+      "proposed_platform_max_hours": 2.4
+    },
+    {
+      "id": "J_shared_warmup",
+      "gpus": 1,
+      "depends_on": [],
+      "estimate_with_25pct_hours": 1.9666017206720425,
+      "proposed_platform_max_hours": 2.15
+    },
+    {
+      "id": "J0_train",
+      "gpus": 1,
+      "depends_on": [
+        "J_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.366677284132393,
+      "proposed_platform_max_hours": 16.55
+    },
+    {
+      "id": "J1_train",
+      "gpus": 1,
+      "depends_on": [
+        "J_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 15.645057976611294,
+      "proposed_platform_max_hours": 15.8
+    },
+    {
+      "id": "H0_train",
+      "gpus": 1,
+      "depends_on": [
+        "H_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.67066986141112,
+      "proposed_platform_max_hours": 16.85
+    },
+    {
+      "id": "H1_train",
+      "gpus": 1,
+      "depends_on": [
+        "H_shared_warmup"
+      ],
+      "estimate_with_25pct_hours": 16.63089042968285,
+      "proposed_platform_max_hours": 16.8
+    },
+    {
+      "id": "H0_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.6709651401714332,
+      "proposed_platform_max_hours": 0.85
+    },
+    {
+      "id": "H1_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.6703596486666357,
+      "proposed_platform_max_hours": 0.85
+    },
+    {
+      "id": "J0_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.9460517865265299,
+      "proposed_platform_max_hours": 1.1
+    },
+    {
+      "id": "J1_final_evaluation",
+      "gpus": 1,
+      "depends_on": [
+        "J0_train",
+        "J1_train",
+        "H0_train",
+        "H1_train"
+      ],
+      "estimate_with_25pct_hours": 0.9495628221823103,
+      "proposed_platform_max_hours": 1.1
+    }
+  ],
+  "sum_proposed_job_caps_gpu_hours": 74.45,
+  "cumulative_including_prior_gpu_hours": 74.63222222222223,
+  "unassigned_shutdown_and_recovery_reserve_gpu_hours": 0.3677777777777749,
+  "rules": [
+    "Do not submit formal jobs before user approves cumulative budget.",
+    "Re-read live quotas and prevent duplicate job-name submission.",
+    "Each active job uses one H100; independent branches and final evaluations may run concurrently.",
+    "All four best checkpoints must be frozen before any final test.",
+    "Charge actual allocation through pod deletion, including startup/failures/idle.",
+    "Before any retry, recompute all used and currently reserved job-hours; never exceed cumulative 75 GPU hours.",
+    "Platform max-time is a hard fallback, not evidence that all work will finish; resume only from accepted checkpoints if needed.",
+    "Shared filesystem contention and trained-beam behavior can change timings."
+  ],
+  "settlement_verified": false
+}

@@ -1,0 +1,23 @@
+{
+  "status": "BUDGET_TOOL_PREPARED_NOT_EXECUTED",
+  "goal_complete": false,
+  "formal_item_local_started": false,
+  "local_tool": "prepare_joint_item_local_budget_v2.py",
+  "tool_sha256": "a553646d9738d14c969bda7f1c21b162b67e1148a3a1cd7ab451eeb2bf5d2725",
+  "remote_delivery_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery",
+  "remote_upload_hashes_verified": {
+    "prepare_joint_item_local_budget_v2.py": "a553646d9738d14c969bda7f1c21b162b67e1148a3a1cd7ab451eeb2bf5d2725",
+    "SECOND_FORMAL_TIMING_RULE.md": "ced907564eaeae1f70de3004d7db122036a8150f237bad570aa5ca9218d12eef",
+    "HISTORICAL_BEAM256_VALIDATION_PROBE.json": "292984609f6763c4c8b084694828e60c74dd6c43017f5d309eb871b43fc69645"
+  },
+  "independent_read_only_review": "No confirmed blocker found; complete control, once-only test, successful wrapper, release ledger, pinned source and complete-model timing gates precede writing a passed budget.",
+  "timer_nonoverlap_review": "Pinned engine 1c87925 records epoch_training_started and epoch_timing_records around the training loop, before scheduled validation; run_item_local_joint.py separately times evaluate. Wrapper remainder therefore includes untimed initialization, phase setup, SID refresh, serialization and cleanup.",
+  "remaining_parent_checks": [
+    "Actual control formal completion and test receipt",
+    "Successful platform terminal status and actual Pod deletion",
+    "Updated cumulative allocation ledger including every earlier Goal job",
+    "Explain actual phase maxima and untimed overhead",
+    "Execute real budget computation and independent CPU launch guard",
+    "Confirm latest platform inventory, policy, quota and image"
+  ]
+}

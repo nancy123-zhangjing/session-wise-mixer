@@ -1,0 +1,245 @@
+{
+  "analysis_protocol": "feedback_fixed_recommender_hard_compatibility_v1",
+  "status": "complete",
+  "inference_only": true,
+  "no_optimizer": true,
+  "no_backward": true,
+  "no_generation": true,
+  "no_test_evaluation": true,
+  "mask_context": "all four target positions masked; zero decoder input; use_cache=False",
+  "score_precision": "explicit FP32 logits input to cross_entropy; BF16 model forward",
+  "historical_loss_exact_replay": false,
+  "score_guard": "FP32 flatten vs FP32 per-digit; original-dtype per-digit vs original full-mask diagnostic; unlike input precisions only recorded",
+  "anchored_label_diagnostic": "same logits scored against common initial target SID; not official evaluation",
+  "interpretation": "instantaneous compatibility with the fixed initial recommender, not intrinsic encoding quality",
+  "input_run": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150",
+  "checkpoint_label": "post_tokenizer",
+  "fixed_recommender": "complete initial non-joint_alignment state, including encoder/decoder/SID embeddings/heads",
+  "initial_model_tensor_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+  "fixed_recommender_tensor_sha256": "e7b8aa0e816b9bc47d87e7c2ee4bf42c7326055b450795b2328b73671dd82130",
+  "smoke_not_for_research": false,
+  "label_smoothing": 0.2,
+  "batch_sizes": {
+    "train": 64,
+    "val": 8
+  },
+  "expected_counts": {
+    "train": 105668,
+    "val": 22363
+  },
+  "executed_script_sha256": "f6fbe65da5502cdb410ebb030b0a85e10a8d570449c93ba329b0a038a93d523f",
+  "executed_analysis_sha256": "8be1ea9611520dc6709f204dcbbf0380c54a23a428c772a6f9c8ee9f5df76bcb",
+  "executed_code_git_head": "9a2532b5c2cca711f724daf6b405e94ced0a1db4",
+  "source": {
+    "git": {
+      "project": {
+        "head": "ae52c08db88f713d8725e511e975dc78e4f33a7e",
+        "status": "",
+        "diff": ""
+      },
+      "diffgrm": {
+        "head": "39e94e6153c97e59877ba02d4ef1d9a202ed5384",
+        "status": "",
+        "diff": ""
+      }
+    },
+    "source_sha256": {
+      "configs/05_crosspse_joint/pilots/diger_feedback_pilot_seed2024.json": "b0017490048f8e240ecd3588a21dd421f48429c8f20d1303254682020a6cbfa4",
+      "external/DiffGRM/genrec/dataset.py": "89e5b7298c7dd32203a00d2be0ac5496afd681af31a334900a8ced5b865f4f48",
+      "external/DiffGRM/genrec/datasets/AmazonReviews2014/config.yaml": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e",
+      "external/DiffGRM/genrec/datasets/AmazonReviews2014/dataset.py": "a57c27f3f12a98005406ec04b76cea00815bfe2c30f9cb2770c2abe30e56a9b7",
+      "external/DiffGRM/genrec/datasets/__init__.py": "1ea34d36b0abcbc49790643f9c94fac0d727672d03f5bed0a6bd31200ead51d8",
+      "external/DiffGRM/genrec/default.yaml": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44",
+      "external/DiffGRM/genrec/evaluator.py": "d166bd7b141c770fb5ecae02191adcde949976f4e17931d9f004823198bb1bdf",
+      "external/DiffGRM/genrec/model.py": "8f715ab3f21935500ed063767191f378389b95e9cde0aa90bad1dbeea171a278",
+      "external/DiffGRM/genrec/models/AR_GRM/__init__.py": "f3a1a053342e18aa26586c3e4ed6ff03019f0ff7d65ca70b00ab58885c1b07d4",
+      "external/DiffGRM/genrec/models/AR_GRM/collate.py": "0d695c7a6e8dc7e338be6d3d8eb589360809d539c17f777db799f43cbb01fc4c",
+      "external/DiffGRM/genrec/models/AR_GRM/config.yaml": "bd0f7c79618e123583ab62da893ce63109aec9e0d85e4b77b26ec5c21bfde1fe",
+      "external/DiffGRM/genrec/models/AR_GRM/evaluator.py": "79c51736dd460c6afce29a388381f768dbd48590021c920876ab4a2854a4104a",
+      "external/DiffGRM/genrec/models/AR_GRM/model.py": "d59e8ab3ba4e85235d0f895ee3209876f1af355b57022496bbd8fde8aedacac8",
+      "external/DiffGRM/genrec/models/AR_GRM/tokenizer.py": "330452808caa75b67faf34b4d9372089cd6f162a394ef0f42fea1241bc770142",
+      "external/DiffGRM/genrec/models/AR_GRM/trainer.py": "d1bf43e781d951564e7f8162dd0e8dec43968fea75cf49ba6ba8c8643c96beef",
+      "external/DiffGRM/genrec/models/DIFF_GRM/__init__.py": "5147ee78f25faab67a1c4dbd977c35ca81d3c3195d71c272de9849c6ec937d5a",
+      "external/DiffGRM/genrec/models/DIFF_GRM/ablate_decode.py": "ade897a8d4fbe379c4e25c39322f6f391f0f9beb84722bcc059a615468e2fd05",
+      "external/DiffGRM/genrec/models/DIFF_GRM/beam.py": "ff0699d1dacd6a9c6f8b859d49ee6ba817119b10f8617d6f82bdd062e3cdf0b6",
+      "external/DiffGRM/genrec/models/DIFF_GRM/collate.py": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e",
+      "external/DiffGRM/genrec/models/DIFF_GRM/comb_topk.py": "207b5575afa5a884eebb98366908e05d2c2c5bcb62e08601e9e6342ab4a3bf3a",
+      "external/DiffGRM/genrec/models/DIFF_GRM/config.yaml": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30",
+      "external/DiffGRM/genrec/models/DIFF_GRM/cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "external/DiffGRM/genrec/models/DIFF_GRM/evaluator.py": "77683fc060f079e29396980529c7522bed3abb2cd04dac50cce05484061adbfa",
+      "external/DiffGRM/genrec/models/DIFF_GRM/joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "external/DiffGRM/genrec/models/DIFF_GRM/model.py": "624bd29e63f265949d96494b62ad126283552eac80b3fb79995a84bf406031d0",
+      "external/DiffGRM/genrec/models/DIFF_GRM/tokenizer.py": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c",
+      "external/DiffGRM/genrec/models/DIFF_GRM/trainer.py": "52c5ca8351da87bd0c4442f328bf8c5566d09e7a305f39370155c0667c474c45",
+      "external/DiffGRM/genrec/models/__init__.py": "1967fc252770fc8c8234b40f7bb4d4bffbc809d7cfed01bab47aa383f30d50ba",
+      "external/DiffGRM/genrec/pipeline.py": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56",
+      "external/DiffGRM/genrec/tokenizer.py": "ae59cf3b98a4d9a68929f2165cb9a9097c52c626186fd73c14bd94b735e2e060",
+      "external/DiffGRM/genrec/trainer.py": "e2bae211439a2d7f5cb013896be39a09b1b5ac3c149c7bf1bdffee488e733235",
+      "external/DiffGRM/genrec/utils.py": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802",
+      "scripts/checks/diger_feedback_pilot_protocol.py": "d2b14a8ecfb02c04a5089647b2ccea0d9cea06773cbcaae2f0b7f6148b7110dd",
+      "scripts/checks/diger_noise_pilot_protocol.py": "879716431edc4bc918e545b703d167b80d19172f0003f761381b4ccc77837336",
+      "scripts/train/run_diger_feedback_pilot.py": "931ea6c0f66346409fec50332c3d02d94f896e0a3840c9980cb74ac2bd67dfab",
+      "scripts/train/run_diger_noise_pilot.py": "12fcb1c19973495dd13237f750ced8ff9d96da781994cd5562fa67eef0d65d3b",
+      "tests/test_diger_feedback_protocol.py": "05db9721099fc6f91ee88e0095c22098fe8e94ea708353a8cee5dc447aa21fcf",
+      "tests/test_diger_feedback_runner.py": "ec4eb98d2ce8fb6ebb16439571835814c0797b2fdc070e2bbb45b8598358cb75"
+    }
+  },
+  "inputs": {
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/summary.json": "00be7ac8e402b3d164996c33a799802b033c5076f71f6e1c24d3e566916423b6",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/COMPLETE.json": "770a545a43aaac424325c1fa3c34fc687ec32f880f4218e968d3446ed772c1e3",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/protocol.json": "342f03afe240dfc92da81ddf936ada7541d36e331ec94f5a660b0dd014188c8e",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/provenance.json": "95f8c80e2b92f8a1ff1784f9451e4de90f6b220e872d35feefd3b5c428b3ebcd",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/initial/model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/initial/training_state.pt": "bd362479c4e23842d814e0acc5dcdef7a19292f65742267c2642216aaf8a2d93",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/initial/semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/initial/crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/post_tokenizer/model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/post_tokenizer/training_state.pt": "bd362479c4e23842d814e0acc5dcdef7a19292f65742267c2642216aaf8a2d93",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/post_tokenizer/semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/frozen/snapshots/post_tokenizer/crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/initial/model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/initial/training_state.pt": "6d2f751e3f71564cc4c7e243d73865541af2f70b6ce6faaee9404eb8548ce548",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/initial/semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/initial/crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/post_tokenizer/model.pt": "85a8a9b5d522a4fef779e5afcc6804f2d3f4623fa4197c4cd1fa3c4167c968c6",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/post_tokenizer/training_state.pt": "724ebf31286ea082d12c375ecbea66cdbb42a45c0c5a991f026e08dda6df8dcd",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/post_tokenizer/semantic_ids.npy": "5a42b323220ed3b925e25dc987cbf18c9cc618894e99322df434a5033d244ff8",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_recon/snapshots/post_tokenizer/crossed_codebooks.npy": "d46f3ca20dd14312095156793d577d0178382e41c69b9c915aca231dab5de8a9",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/initial/model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/initial/training_state.pt": "6d2f751e3f71564cc4c7e243d73865541af2f70b6ce6faaee9404eb8548ce548",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/initial/semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/initial/crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/post_tokenizer/model.pt": "8a54a941b2440b693ff77879804fa79fb4385409abc90b7f926d4f76036f63cd",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/post_tokenizer/training_state.pt": "00c7cce5b49e942612c39d443700b5935a6ae741c15eb83b1d13522742769ab8",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/post_tokenizer/semantic_ids.npy": "2fc7f7f03ba70bbf424dc3a089304ba45ad423f682b8b4cecae153fbbf9dffd4",
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_feedback/feedback_pilot_20261012_2150/cross_rec/snapshots/post_tokenizer/crossed_codebooks.npy": "d82cdf364e773ddee9f771f71adc1f25772c928d594d06c7c67b941b66e43116"
+  },
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch": "2.6.0+cu118",
+  "numpy": "2.2.6",
+  "isolated_cache": [
+    {
+      "source": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+      "destination": "/tmp/nancy_feedback_hard_compat__ww2fgrd/data_cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+      "method": "symlink_to_locked_source",
+      "sha256": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe"
+    },
+    {
+      "source": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+      "destination": "/tmp/nancy_feedback_hard_compat__ww2fgrd/data_cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+      "method": "symlink_to_locked_source",
+      "sha256": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0"
+    },
+    {
+      "source": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+      "destination": "/tmp/nancy_feedback_hard_compat__ww2fgrd/data_cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+      "method": "copy",
+      "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be"
+    },
+    {
+      "source": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+      "destination": "/tmp/nancy_feedback_hard_compat__ww2fgrd/data_cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+      "method": "copy",
+      "sha256": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1"
+    },
+    {
+      "source": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+      "destination": "/tmp/nancy_feedback_hard_compat__ww2fgrd/data_cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+      "method": "copy",
+      "sha256": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f"
+    }
+  ],
+  "arms": {
+    "frozen": {
+      "post_tokenizer_tensor_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+      "splits": {
+        "train": {
+          "examples": 105668,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.193023681640625,
+            "position_loss_sums": 0.15582275390625,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "a9e2beb23a17ef20fdc9dff81164c3c9ca9dfbf7f637f07175a16cc121a6a91f",
+          "elapsed_seconds": 83.47527830675244
+        },
+        "val": {
+          "examples": 22363,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.06768035888671875,
+            "position_loss_sums": 0.054866790771484375,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "9195f8f993bdc394e98e7220cc0ab0b712c27970f65d2068bbd2a24e14f4d4a3",
+          "elapsed_seconds": 32.0512356236577
+        }
+      },
+      "model_unchanged": true,
+      "fixed_recommender_unchanged": true
+    },
+    "cross_recon": {
+      "post_tokenizer_tensor_sha256": "a7802b06a3ba099756a5d4f2c445920fd2c9cf8b8eb32866555902ebeb142c35",
+      "splits": {
+        "train": {
+          "examples": 105668,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.193023681640625,
+            "position_loss_sums": 0.15582275390625,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "a049c964905f2fb7e6610f5739cd8ed8c96a5ac7531faec2c1ea5c4aeead8ed9",
+          "elapsed_seconds": 81.43537120521069
+        },
+        "val": {
+          "examples": 22363,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.06768035888671875,
+            "position_loss_sums": 0.054866790771484375,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "aa0d78fa87d862167ffafe4941ec7714f014650d2dad187869269ab68062589f",
+          "elapsed_seconds": 32.65367900021374
+        }
+      },
+      "model_unchanged": true,
+      "fixed_recommender_unchanged": true
+    },
+    "cross_rec": {
+      "post_tokenizer_tensor_sha256": "ee7ed36af9d589b6b35e0237568beab1b3126a05face3d353998825ac7b1a7f5",
+      "splits": {
+        "train": {
+          "examples": 105668,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.193023681640625,
+            "position_loss_sums": 0.15582275390625,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "36b776b5947ecb56dc16d096c38034b2b64582c502dd6fdea6474e7370ecadbe",
+          "elapsed_seconds": 81.09033126011491
+        },
+        "val": {
+          "examples": 22363,
+          "rng_unchanged": true,
+          "full_mask_reference_max_absolute_difference": {
+            "position_nll_sums": 0.06768035888671875,
+            "position_loss_sums": 0.054866790771484375,
+            "position_correct_counts": 0.0
+          },
+          "records_sha256": "812c36e4f479d8fa3c79df79b1576b3bf4a6ee91827e9b562ec001d324193410",
+          "elapsed_seconds": 32.05548235028982
+        }
+      },
+      "model_unchanged": true,
+      "fixed_recommender_unchanged": true
+    }
+  },
+  "elapsed_seconds": 422.938169779256,
+  "inputs_unchanged": true,
+  "all_fixed_recommender_states_unchanged": true,
+  "all_global_rng_states_unchanged": true
+}

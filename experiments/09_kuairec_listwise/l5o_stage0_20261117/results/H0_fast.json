@@ -1,0 +1,8114 @@
+{
+  "label": "H0_fast",
+  "initial": "a1be1b3e04b4f31c87ba773a85c2cdd69807b6a9782ba5a873af2b98c7a16942",
+  "config": {
+    "alignment": {
+      "crosspse_attention_scope": "full",
+      "crosspse_dropout": 0.0,
+      "crosspse_heads": 4,
+      "crosspse_learn_residual_scale": false,
+      "crosspse_residual_scale_init": 1.0,
+      "crosspse_train_base_codebooks": true,
+      "crosspse_zero_init_attention_output": true,
+      "joint_diger_assignment_temperature": 0.1,
+      "joint_diger_gumbel_noise_end": 0.2,
+      "joint_diger_gumbel_noise_start": 1.0,
+      "joint_diger_softmax_temperature_end": 1.0,
+      "joint_diger_softmax_temperature_start": 1.0,
+      "joint_diger_uncertainty_decay": "cosine",
+      "joint_gradient_mode": "diger_st"
+    },
+    "architecture": "H",
+    "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_stage0_20261117_v1/assets",
+    "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/l5o_stage0_20261117_v1/dataset",
+    "evaluation": {
+      "aggregate_ks": [
+        10,
+        20,
+        50
+      ],
+      "aggregation": "list_score_order_then_item_position_first_occurrence",
+      "batch_size": 256,
+      "candidate_lists": 32,
+      "collision_rule": "reconstruction_error_then_original_id",
+      "ev_min": 1.0,
+      "filter_history": false,
+      "protocol": "l5o",
+      "selection": "ev_ndcg@5",
+      "sensitivity_beam": 256,
+      "test_beam": 32,
+      "tie_break": "earlier",
+      "val_beam": 32
+    },
+    "execution": {
+      "batched_frontier": true,
+      "compile": false,
+      "device_resident_cache": true,
+      "fused_adamw": true,
+      "keep_validated_checkpoints": true,
+      "optimized_io": true,
+      "optimized_model_checks": true,
+      "vectorized_cache": true
+    },
+    "history_max": 128,
+    "list_length": 5,
+    "model": {
+      "attn_pdrop": 0.1,
+      "codebook_size": 256,
+      "current_split": "val",
+      "decoder_n_layer": 4,
+      "dedup_strategy": "simple",
+      "diffusion_loss_reduction": "per_view",
+      "dropout": 0.1,
+      "encoder_n_layer": 1,
+      "guided_conf_metric": "msp",
+      "guided_refresh_each_step": false,
+      "guided_select": "least",
+      "guided_steps": 4,
+      "item_local_attention": {
+        "enabled": false
+      },
+      "label_smoothing": 0.2,
+      "masking_strategy": "guided",
+      "n_digit": 4,
+      "n_embd": 256,
+      "n_head": 4,
+      "n_inner": 1024,
+      "norm_eps": 1e-05,
+      "norm_type": "layernorm",
+      "resid_pdrop": 0.1,
+      "share_decoder_output_embedding": true
+    },
+    "protocol_id": "kuairec_l5o_pse_diffgrm_v1",
+    "provenance": "docs/research/onerec_listwise/L5O_IMPLEMENTATION_20261117.md",
+    "seed": 2024,
+    "training": {
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_eps": 1e-08,
+      "anchor_weight": 0.01,
+      "balance_temperature": 0.1,
+      "balance_weight": 0.01,
+      "checkpoint_every_updates": 100,
+      "codebook_lr": 1e-05,
+      "cycles": 10,
+      "decoder_lr": 0.001,
+      "decoder_warmup_updates": 500,
+      "decoder_weight_decay": 0.0,
+      "deterministic_algorithms": true,
+      "effective_batch_size": 1024,
+      "max_grad_norm": 1.0,
+      "microbatch_size": 1024,
+      "mixer_lr": 0.0001,
+      "r_epochs_per_cycle": 3,
+      "r_updates_per_unit": 693,
+      "recommendation_weight": 1.0,
+      "reconstruction_weight": 1.0,
+      "sia_weight": 0.0,
+      "t_updates_per_cycle": 40,
+      "tokenizer_weight_decay": 0.0001,
+      "validate_every_r_unit": true,
+      "warmup_epochs": 5
+    }
+  },
+  "blocks": [
+    {
+      "kind": "R",
+      "rows": [
+        {
+          "update": 0,
+          "seconds": 0.45472968299873173,
+          "data_s": 0.002762910909950733,
+          "recommendation": 5.597485542297363,
+          "loss": 5.597485542297363,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5249463319778442,
+          "r_updates": 1,
+          "t_updates": 0
+        },
+        {
+          "update": 1,
+          "seconds": 0.39502631197683513,
+          "data_s": 0.00037238700315356255,
+          "recommendation": 5.592951774597168,
+          "loss": 5.592951774597168,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5278352499008179,
+          "r_updates": 2,
+          "t_updates": 0
+        },
+        {
+          "update": 2,
+          "seconds": 0.39157288102433085,
+          "data_s": 0.00036131287924945354,
+          "recommendation": 5.594600677490234,
+          "loss": 5.594600677490234,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5448663234710693,
+          "r_updates": 3,
+          "t_updates": 0
+        },
+        {
+          "update": 3,
+          "seconds": 0.38827646896243095,
+          "data_s": 0.00031814281828701496,
+          "recommendation": 5.588512420654297,
+          "loss": 5.588512420654297,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5695874691009521,
+          "r_updates": 4,
+          "t_updates": 0
+        },
+        {
+          "update": 4,
+          "seconds": 0.3921320370864123,
+          "data_s": 0.0003157760947942734,
+          "recommendation": 5.589406967163086,
+          "loss": 5.589406967163086,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.4300899505615234,
+          "r_updates": 5,
+          "t_updates": 0
+        },
+        {
+          "update": 5,
+          "seconds": 0.3905276379082352,
+          "data_s": 0.00039080693386495113,
+          "recommendation": 5.586138725280762,
+          "loss": 5.586138725280762,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.4031463861465454,
+          "r_updates": 6,
+          "t_updates": 0
+        },
+        {
+          "update": 6,
+          "seconds": 0.39109207317233086,
+          "data_s": 0.0003290441818535328,
+          "recommendation": 5.575253009796143,
+          "loss": 5.575253009796143,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.2035627365112305,
+          "r_updates": 7,
+          "t_updates": 0
+        },
+        {
+          "update": 7,
+          "seconds": 0.38791110599413514,
+          "data_s": 0.0003141891211271286,
+          "recommendation": 5.569682598114014,
+          "loss": 5.569682598114014,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.1894618272781372,
+          "r_updates": 8,
+          "t_updates": 0
+        },
+        {
+          "update": 8,
+          "seconds": 0.3876454350538552,
+          "data_s": 0.0003207349218428135,
+          "recommendation": 5.558710098266602,
+          "loss": 5.558710098266602,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0241786241531372,
+          "r_updates": 9,
+          "t_updates": 0
+        },
+        {
+          "update": 9,
+          "seconds": 0.3877715771086514,
+          "data_s": 0.000313278054818511,
+          "recommendation": 5.552692890167236,
+          "loss": 5.552692890167236,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9972660541534424,
+          "r_updates": 10,
+          "t_updates": 0
+        },
+        {
+          "update": 10,
+          "seconds": 0.3885196701157838,
+          "data_s": 0.00031255208887159824,
+          "recommendation": 5.546421051025391,
+          "loss": 5.546421051025391,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0622577667236328,
+          "r_updates": 11,
+          "t_updates": 0
+        },
+        {
+          "update": 11,
+          "seconds": 0.38823578995652497,
+          "data_s": 0.0003220289945602417,
+          "recommendation": 5.5423264503479,
+          "loss": 5.5423264503479,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9849042892456055,
+          "r_updates": 12,
+          "t_updates": 0
+        },
+        {
+          "update": 12,
+          "seconds": 0.38795342901721597,
+          "data_s": 0.00031527900137007236,
+          "recommendation": 5.5361738204956055,
+          "loss": 5.5361738204956055,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9827788472175598,
+          "r_updates": 13,
+          "t_updates": 0
+        },
+        {
+          "update": 13,
+          "seconds": 0.38818049104884267,
+          "data_s": 0.00032300991006195545,
+          "recommendation": 5.520473480224609,
+          "loss": 5.520473480224609,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8584596514701843,
+          "r_updates": 14,
+          "t_updates": 0
+        },
+        {
+          "update": 14,
+          "seconds": 0.3886055941693485,
+          "data_s": 0.00031491718254983425,
+          "recommendation": 5.513544082641602,
+          "loss": 5.513544082641602,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7215666174888611,
+          "r_updates": 15,
+          "t_updates": 0
+        },
+        {
+          "update": 15,
+          "seconds": 0.3884567921049893,
+          "data_s": 0.00032046297565102577,
+          "recommendation": 5.511245250701904,
+          "loss": 5.511245250701904,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.6411359906196594,
+          "r_updates": 16,
+          "t_updates": 0
+        },
+        {
+          "update": 16,
+          "seconds": 0.38984481897205114,
+          "data_s": 0.00031467597000300884,
+          "recommendation": 5.499964714050293,
+          "loss": 5.499964714050293,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.542489767074585,
+          "r_updates": 17,
+          "t_updates": 0
+        },
+        {
+          "update": 17,
+          "seconds": 0.39141741511411965,
+          "data_s": 0.00031528505496680737,
+          "recommendation": 5.49468994140625,
+          "loss": 5.49468994140625,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.5030818581581116,
+          "r_updates": 18,
+          "t_updates": 0
+        },
+        {
+          "update": 18,
+          "seconds": 0.38842159300111234,
+          "data_s": 0.000310682924464345,
+          "recommendation": 5.4938459396362305,
+          "loss": 5.4938459396362305,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.44857388734817505,
+          "r_updates": 19,
+          "t_updates": 0
+        },
+        {
+          "update": 19,
+          "seconds": 0.3938270080834627,
+          "data_s": 0.0003271801397204399,
+          "recommendation": 5.487659454345703,
+          "loss": 5.487659454345703,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.4547038972377777,
+          "r_updates": 20,
+          "t_updates": 0
+        },
+        {
+          "update": 20,
+          "seconds": 0.3882346791215241,
+          "data_s": 0.00031808018684387207,
+          "recommendation": 5.48103141784668,
+          "loss": 5.48103141784668,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.43866562843322754,
+          "r_updates": 21,
+          "t_updates": 0
+        },
+        {
+          "update": 21,
+          "seconds": 0.38812187989242375,
+          "data_s": 0.0003231298178434372,
+          "recommendation": 5.478876113891602,
+          "loss": 5.478876113891602,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.3804522454738617,
+          "r_updates": 22,
+          "t_updates": 0
+        },
+        {
+          "update": 22,
+          "seconds": 0.39351175795309246,
+          "data_s": 0.0003213728778064251,
+          "recommendation": 5.472038745880127,
+          "loss": 5.472038745880127,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.3931277096271515,
+          "r_updates": 23,
+          "t_updates": 0
+        },
+        {
+          "update": 23,
+          "seconds": 0.38859029207378626,
+          "data_s": 0.000339999096468091,
+          "recommendation": 5.466804504394531,
+          "loss": 5.466804504394531,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.35603955388069153,
+          "r_updates": 24,
+          "t_updates": 0
+        },
+        {
+          "update": 24,
+          "seconds": 0.3882119820918888,
+          "data_s": 0.00031945202499628067,
+          "recommendation": 5.467684745788574,
+          "loss": 5.467684745788574,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.33604079484939575,
+          "r_updates": 25,
+          "t_updates": 0
+        },
+        {
+          "update": 25,
+          "seconds": 0.39574856497347355,
+          "data_s": 0.000331551069393754,
+          "recommendation": 5.462196350097656,
+          "loss": 5.462196350097656,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.3371706008911133,
+          "r_updates": 26,
+          "t_updates": 0
+        },
+        {
+          "update": 26,
+          "seconds": 0.3883022910449654,
+          "data_s": 0.0003287710715085268,
+          "recommendation": 5.461381435394287,
+          "loss": 5.461381435394287,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.31498268246650696,
+          "r_updates": 27,
+          "t_updates": 0
+        },
+        {
+          "update": 27,
+          "seconds": 0.39054418983869255,
+          "data_s": 0.00032451795414090157,
+          "recommendation": 5.458676815032959,
+          "loss": 5.458676815032959,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.32147735357284546,
+          "r_updates": 28,
+          "t_updates": 0
+        },
+        {
+          "update": 28,
+          "seconds": 0.39167384803295135,
+          "data_s": 0.00031331321224570274,
+          "recommendation": 5.452532768249512,
+          "loss": 5.452532768249512,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.3007904887199402,
+          "r_updates": 29,
+          "t_updates": 0
+        },
+        {
+          "update": 29,
+          "seconds": 0.39008490601554513,
+          "data_s": 0.0003172769211232662,
+          "recommendation": 5.457721710205078,
+          "loss": 5.457721710205078,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2974817752838135,
+          "r_updates": 30,
+          "t_updates": 0
+        },
+        {
+          "update": 30,
+          "seconds": 0.3888515231665224,
+          "data_s": 0.0003151840064674616,
+          "recommendation": 5.4542107582092285,
+          "loss": 5.4542107582092285,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2812569737434387,
+          "r_updates": 31,
+          "t_updates": 0
+        },
+        {
+          "update": 31,
+          "seconds": 0.38991572917439044,
+          "data_s": 0.0003181200008839369,
+          "recommendation": 5.452030658721924,
+          "loss": 5.452030658721924,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2932109534740448,
+          "r_updates": 32,
+          "t_updates": 0
+        },
+        {
+          "update": 32,
+          "seconds": 0.38828094489872456,
+          "data_s": 0.00031414302065968513,
+          "recommendation": 5.443688869476318,
+          "loss": 5.443688869476318,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.26664969325065613,
+          "r_updates": 33,
+          "t_updates": 0
+        },
+        {
+          "update": 33,
+          "seconds": 0.3886966968420893,
+          "data_s": 0.0003202478401362896,
+          "recommendation": 5.446759223937988,
+          "loss": 5.446759223937988,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.26005789637565613,
+          "r_updates": 34,
+          "t_updates": 0
+        },
+        {
+          "update": 34,
+          "seconds": 0.3896349649876356,
+          "data_s": 0.00031530088745057583,
+          "recommendation": 5.435783863067627,
+          "loss": 5.435783863067627,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.25111326575279236,
+          "r_updates": 35,
+          "t_updates": 0
+        },
+        {
+          "update": 35,
+          "seconds": 0.3875747190322727,
+          "data_s": 0.00030965404585003853,
+          "recommendation": 5.432788848876953,
+          "loss": 5.432788848876953,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2535371482372284,
+          "r_updates": 36,
+          "t_updates": 0
+        },
+        {
+          "update": 36,
+          "seconds": 0.38789346604608,
+          "data_s": 0.00031563802622258663,
+          "recommendation": 5.427327632904053,
+          "loss": 5.427327632904053,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.25670933723449707,
+          "r_updates": 37,
+          "t_updates": 0
+        },
+        {
+          "update": 37,
+          "seconds": 0.3923183411825448,
+          "data_s": 0.0003193882293999195,
+          "recommendation": 5.427220344543457,
+          "loss": 5.427220344543457,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.22921207547187805,
+          "r_updates": 38,
+          "t_updates": 0
+        },
+        {
+          "update": 38,
+          "seconds": 0.3878031929489225,
+          "data_s": 0.00031671300530433655,
+          "recommendation": 5.423088550567627,
+          "loss": 5.423088550567627,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2351914644241333,
+          "r_updates": 39,
+          "t_updates": 0
+        },
+        {
+          "update": 39,
+          "seconds": 0.3880976571235806,
+          "data_s": 0.00031378003768622875,
+          "recommendation": 5.421621799468994,
+          "loss": 5.421621799468994,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.22577251493930817,
+          "r_updates": 40,
+          "t_updates": 0
+        },
+        {
+          "update": 40,
+          "seconds": 0.3883702768944204,
+          "data_s": 0.0003234290052205324,
+          "recommendation": 5.412659645080566,
+          "loss": 5.412659645080566,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.23630304634571075,
+          "r_updates": 41,
+          "t_updates": 0
+        },
+        {
+          "update": 41,
+          "seconds": 0.3880890179425478,
+          "data_s": 0.0003275328781455755,
+          "recommendation": 5.409985542297363,
+          "loss": 5.409985542297363,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.21986600756645203,
+          "r_updates": 42,
+          "t_updates": 0
+        },
+        {
+          "update": 42,
+          "seconds": 0.3884628638625145,
+          "data_s": 0.0003141239285469055,
+          "recommendation": 5.410059928894043,
+          "loss": 5.410059928894043,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.21015791594982147,
+          "r_updates": 43,
+          "t_updates": 0
+        },
+        {
+          "update": 43,
+          "seconds": 0.3887028410099447,
+          "data_s": 0.00032461807131767273,
+          "recommendation": 5.407718658447266,
+          "loss": 5.407718658447266,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.20933720469474792,
+          "r_updates": 44,
+          "t_updates": 0
+        },
+        {
+          "update": 44,
+          "seconds": 0.38810287485830486,
+          "data_s": 0.00035374192520976067,
+          "recommendation": 5.411401748657227,
+          "loss": 5.411401748657227,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2085467129945755,
+          "r_updates": 45,
+          "t_updates": 0
+        },
+        {
+          "update": 45,
+          "seconds": 0.387636347906664,
+          "data_s": 0.00031562987715005875,
+          "recommendation": 5.413156509399414,
+          "loss": 5.413156509399414,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2018546462059021,
+          "r_updates": 46,
+          "t_updates": 0
+        },
+        {
+          "update": 46,
+          "seconds": 0.3876790718641132,
+          "data_s": 0.0003115348517894745,
+          "recommendation": 5.41637659072876,
+          "loss": 5.41637659072876,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.21995189785957336,
+          "r_updates": 47,
+          "t_updates": 0
+        },
+        {
+          "update": 47,
+          "seconds": 0.38765315618366003,
+          "data_s": 0.0003251270391047001,
+          "recommendation": 5.411975860595703,
+          "loss": 5.411975860595703,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2059660702943802,
+          "r_updates": 48,
+          "t_updates": 0
+        },
+        {
+          "update": 48,
+          "seconds": 0.3877818069886416,
+          "data_s": 0.00031121401116251945,
+          "recommendation": 5.410436153411865,
+          "loss": 5.410436153411865,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2081199586391449,
+          "r_updates": 49,
+          "t_updates": 0
+        },
+        {
+          "update": 49,
+          "seconds": 0.38865088392049074,
+          "data_s": 0.00031275791116058826,
+          "recommendation": 5.410630226135254,
+          "loss": 5.410630226135254,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.19683972001075745,
+          "r_updates": 50,
+          "t_updates": 0
+        },
+        {
+          "update": 50,
+          "seconds": 0.3877475617919117,
+          "data_s": 0.00032408395782113075,
+          "recommendation": 5.405978202819824,
+          "loss": 5.405978202819824,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1784522533416748,
+          "r_updates": 51,
+          "t_updates": 0
+        },
+        {
+          "update": 51,
+          "seconds": 0.3880441121291369,
+          "data_s": 0.00032693007960915565,
+          "recommendation": 5.403463840484619,
+          "loss": 5.403463840484619,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.17163677513599396,
+          "r_updates": 52,
+          "t_updates": 0
+        },
+        {
+          "update": 52,
+          "seconds": 0.3888852298259735,
+          "data_s": 0.00032958504743874073,
+          "recommendation": 5.4060893058776855,
+          "loss": 5.4060893058776855,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.17233870923519135,
+          "r_updates": 53,
+          "t_updates": 0
+        },
+        {
+          "update": 53,
+          "seconds": 0.3904130638111383,
+          "data_s": 0.00031852303072810173,
+          "recommendation": 5.399537563323975,
+          "loss": 5.399537563323975,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.16395631432533264,
+          "r_updates": 54,
+          "t_updates": 0
+        },
+        {
+          "update": 54,
+          "seconds": 0.3896404430270195,
+          "data_s": 0.00030991388484835625,
+          "recommendation": 5.39829683303833,
+          "loss": 5.39829683303833,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1614023894071579,
+          "r_updates": 55,
+          "t_updates": 0
+        },
+        {
+          "update": 55,
+          "seconds": 0.391682495130226,
+          "data_s": 0.0003123630303889513,
+          "recommendation": 5.400775909423828,
+          "loss": 5.400775909423828,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1670590192079544,
+          "r_updates": 56,
+          "t_updates": 0
+        },
+        {
+          "update": 56,
+          "seconds": 0.38977444800548255,
+          "data_s": 0.00031448109075427055,
+          "recommendation": 5.391016006469727,
+          "loss": 5.391016006469727,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14987024664878845,
+          "r_updates": 57,
+          "t_updates": 0
+        },
+        {
+          "update": 57,
+          "seconds": 0.38829213101416826,
+          "data_s": 0.0003253358881920576,
+          "recommendation": 5.394542694091797,
+          "loss": 5.394542694091797,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1543859988451004,
+          "r_updates": 58,
+          "t_updates": 0
+        },
+        {
+          "update": 58,
+          "seconds": 0.38846583804115653,
+          "data_s": 0.00031747412867844105,
+          "recommendation": 5.393606185913086,
+          "loss": 5.393606185913086,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15422554314136505,
+          "r_updates": 59,
+          "t_updates": 0
+        },
+        {
+          "update": 59,
+          "seconds": 0.3927165870554745,
+          "data_s": 0.00031854212284088135,
+          "recommendation": 5.394261360168457,
+          "loss": 5.394261360168457,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15345193445682526,
+          "r_updates": 60,
+          "t_updates": 0
+        },
+        {
+          "update": 60,
+          "seconds": 0.3920221549924463,
+          "data_s": 0.00031949300318956375,
+          "recommendation": 5.398204803466797,
+          "loss": 5.398204803466797,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15174472332000732,
+          "r_updates": 61,
+          "t_updates": 0
+        },
+        {
+          "update": 61,
+          "seconds": 0.3873060930054635,
+          "data_s": 0.0003195281606167555,
+          "recommendation": 5.384880065917969,
+          "loss": 5.384880065917969,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1498008817434311,
+          "r_updates": 62,
+          "t_updates": 0
+        },
+        {
+          "update": 62,
+          "seconds": 0.3871639701537788,
+          "data_s": 0.00032046600244939327,
+          "recommendation": 5.385051727294922,
+          "loss": 5.385051727294922,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15049099922180176,
+          "r_updates": 63,
+          "t_updates": 0
+        },
+        {
+          "update": 63,
+          "seconds": 0.3871811041608453,
+          "data_s": 0.00030662515200674534,
+          "recommendation": 5.386214256286621,
+          "loss": 5.386214256286621,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1504325121641159,
+          "r_updates": 64,
+          "t_updates": 0
+        },
+        {
+          "update": 64,
+          "seconds": 0.38715616799890995,
+          "data_s": 0.00030863191932439804,
+          "recommendation": 5.388575077056885,
+          "loss": 5.388575077056885,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15372639894485474,
+          "r_updates": 65,
+          "t_updates": 0
+        },
+        {
+          "update": 65,
+          "seconds": 0.38752618595026433,
+          "data_s": 0.0003120510373264551,
+          "recommendation": 5.383928298950195,
+          "loss": 5.383928298950195,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14601203799247742,
+          "r_updates": 66,
+          "t_updates": 0
+        },
+        {
+          "update": 66,
+          "seconds": 0.387210096931085,
+          "data_s": 0.0003121080808341503,
+          "recommendation": 5.384571075439453,
+          "loss": 5.384571075439453,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14551521837711334,
+          "r_updates": 67,
+          "t_updates": 0
+        },
+        {
+          "update": 67,
+          "seconds": 0.3897276381030679,
+          "data_s": 0.0003259819932281971,
+          "recommendation": 5.388673305511475,
+          "loss": 5.388673305511475,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14838145673274994,
+          "r_updates": 68,
+          "t_updates": 0
+        },
+        {
+          "update": 68,
+          "seconds": 0.3905034519266337,
+          "data_s": 0.0003118410240858793,
+          "recommendation": 5.393511772155762,
+          "loss": 5.393511772155762,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15711691975593567,
+          "r_updates": 69,
+          "t_updates": 0
+        },
+        {
+          "update": 69,
+          "seconds": 0.3875490471255034,
+          "data_s": 0.00031133415177464485,
+          "recommendation": 5.384392738342285,
+          "loss": 5.384392738342285,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.13334882259368896,
+          "r_updates": 70,
+          "t_updates": 0
+        },
+        {
+          "update": 70,
+          "seconds": 0.38760787597857416,
+          "data_s": 0.00031902710907161236,
+          "recommendation": 5.380495071411133,
+          "loss": 5.380495071411133,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14453957974910736,
+          "r_updates": 71,
+          "t_updates": 0
+        },
+        {
+          "update": 71,
+          "seconds": 0.38956310390494764,
+          "data_s": 0.0003076579887419939,
+          "recommendation": 5.381922721862793,
+          "loss": 5.381922721862793,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15124496817588806,
+          "r_updates": 72,
+          "t_updates": 0
+        },
+        {
+          "update": 72,
+          "seconds": 0.3875977639108896,
+          "data_s": 0.00030906801111996174,
+          "recommendation": 5.375769138336182,
+          "loss": 5.375769138336182,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14171577990055084,
+          "r_updates": 73,
+          "t_updates": 0
+        },
+        {
+          "update": 73,
+          "seconds": 0.38796617509797215,
+          "data_s": 0.00031794095411896706,
+          "recommendation": 5.379227161407471,
+          "loss": 5.379227161407471,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1397382766008377,
+          "r_updates": 74,
+          "t_updates": 0
+        },
+        {
+          "update": 74,
+          "seconds": 0.38984885020181537,
+          "data_s": 0.00031796819530427456,
+          "recommendation": 5.387055397033691,
+          "loss": 5.387055397033691,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1453293114900589,
+          "r_updates": 75,
+          "t_updates": 0
+        },
+        {
+          "update": 75,
+          "seconds": 0.38789496291428804,
+          "data_s": 0.00031093391589820385,
+          "recommendation": 5.376603603363037,
+          "loss": 5.376603603363037,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14208510518074036,
+          "r_updates": 76,
+          "t_updates": 0
+        },
+        {
+          "update": 76,
+          "seconds": 0.387761051999405,
+          "data_s": 0.0003329669125378132,
+          "recommendation": 5.376258850097656,
+          "loss": 5.376258850097656,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15130965411663055,
+          "r_updates": 77,
+          "t_updates": 0
+        },
+        {
+          "update": 77,
+          "seconds": 0.3908279228489846,
+          "data_s": 0.0003111849073320627,
+          "recommendation": 5.377162933349609,
+          "loss": 5.377162933349609,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.13880224525928497,
+          "r_updates": 78,
+          "t_updates": 0
+        },
+        {
+          "update": 78,
+          "seconds": 0.38789790007285774,
+          "data_s": 0.0003149670083075762,
+          "recommendation": 5.377884864807129,
+          "loss": 5.377884864807129,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14899304509162903,
+          "r_updates": 79,
+          "t_updates": 0
+        },
+        {
+          "update": 79,
+          "seconds": 0.38771045696921647,
+          "data_s": 0.0003172119613736868,
+          "recommendation": 5.375796794891357,
+          "loss": 5.375796794891357,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.14656610786914825,
+          "r_updates": 80,
+          "t_updates": 0
+        }
+      ],
+      "start_unix": 1794852310.8300462,
+      "end_unix": 1794852342.0303733,
+      "mean_seconds": 0.3890042011036227,
+      "peak_allocated_gib": 34.28670930862427,
+      "peak_reserved_gib": 35.20703125
+    },
+    {
+      "kind": "T",
+      "rows": [
+        {
+          "update": 0,
+          "seconds": 0.3815626921132207,
+          "data_s": 0.00048698694445192814,
+          "recommendation": 5.546142101287842,
+          "loss": 6.264071047306061,
+          "reconstruction": 0.716603696346283,
+          "balance": 0.13252238929271698,
+          "anchor": 0.0,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07753361761569977,
+          "r_updates": 80,
+          "t_updates": 1
+        },
+        {
+          "update": 1,
+          "seconds": 0.3818257851526141,
+          "data_s": 0.0003146419767290354,
+          "recommendation": 5.553395748138428,
+          "loss": 6.267252326011658,
+          "reconstruction": 0.7125389575958252,
+          "balance": 0.1317615509033203,
+          "anchor": 9.988070093225332e-11,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07749009877443314,
+          "r_updates": 80,
+          "t_updates": 2
+        },
+        {
+          "update": 2,
+          "seconds": 0.3812497719191015,
+          "data_s": 0.00031105009838938713,
+          "recommendation": 5.551749229431152,
+          "loss": 6.2685195207595825,
+          "reconstruction": 0.7154428958892822,
+          "balance": 0.13274142146110535,
+          "anchor": 3.250334168480862e-10,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07740431278944016,
+          "r_updates": 80,
+          "t_updates": 3
+        },
+        {
+          "update": 3,
+          "seconds": 0.38501559593714774,
+          "data_s": 0.00029923790134489536,
+          "recommendation": 5.548023223876953,
+          "loss": 6.261523485183716,
+          "reconstruction": 0.7121785879135132,
+          "balance": 0.13216827809810638,
+          "anchor": 6.671606600505697e-10,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07799023389816284,
+          "r_updates": 80,
+          "t_updates": 4
+        },
+        {
+          "update": 4,
+          "seconds": 0.3805973120033741,
+          "data_s": 0.00029326905496418476,
+          "recommendation": 5.546342849731445,
+          "loss": 6.260712563991547,
+          "reconstruction": 0.713045597076416,
+          "balance": 0.13240939378738403,
+          "anchor": 1.1242240471887044e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07638560980558395,
+          "r_updates": 80,
+          "t_updates": 5
+        },
+        {
+          "update": 5,
+          "seconds": 0.3814511960372329,
+          "data_s": 0.00029706512577831745,
+          "recommendation": 5.555646896362305,
+          "loss": 6.270979642868042,
+          "reconstruction": 0.714002788066864,
+          "balance": 0.1329963654279709,
+          "anchor": 1.695882101415691e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07710987329483032,
+          "r_updates": 80,
+          "t_updates": 6
+        },
+        {
+          "update": 6,
+          "seconds": 0.3815478798933327,
+          "data_s": 0.0003010800573974848,
+          "recommendation": 5.541555881500244,
+          "loss": 6.256459891796112,
+          "reconstruction": 0.7135741710662842,
+          "balance": 0.1329827606678009,
+          "anchor": 2.3818704786293665e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.0765901729464531,
+          "r_updates": 80,
+          "t_updates": 7
+        },
+        {
+          "update": 7,
+          "seconds": 0.3811910110525787,
+          "data_s": 0.0002970730420202017,
+          "recommendation": 5.549949645996094,
+          "loss": 6.268895268440247,
+          "reconstruction": 0.7176117300987244,
+          "balance": 0.13338972628116608,
+          "anchor": 3.1825926338768795e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07708725333213806,
+          "r_updates": 80,
+          "t_updates": 8
+        },
+        {
+          "update": 8,
+          "seconds": 0.3814901930745691,
+          "data_s": 0.0002957929391413927,
+          "recommendation": 5.546536922454834,
+          "loss": 6.26010924577713,
+          "reconstruction": 0.7122530341148376,
+          "balance": 0.13193094730377197,
+          "anchor": 4.098087202919487e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.0768212080001831,
+          "r_updates": 80,
+          "t_updates": 9
+        },
+        {
+          "update": 9,
+          "seconds": 0.3810908240266144,
+          "data_s": 0.00030263583175837994,
+          "recommendation": 5.542042255401611,
+          "loss": 6.2601593136787415,
+          "reconstruction": 0.7167815566062927,
+          "balance": 0.13355042040348053,
+          "anchor": 5.128295121892279e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07667257636785507,
+          "r_updates": 80,
+          "t_updates": 10
+        },
+        {
+          "update": 10,
+          "seconds": 0.38098826888017356,
+          "data_s": 0.0002999498974531889,
+          "recommendation": 5.550655364990234,
+          "loss": 6.264274716377258,
+          "reconstruction": 0.712293803691864,
+          "balance": 0.13255730271339417,
+          "anchor": 6.272237396132141e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07718924432992935,
+          "r_updates": 80,
+          "t_updates": 11
+        },
+        {
+          "update": 11,
+          "seconds": 0.3813902500551194,
+          "data_s": 0.00031643500551581383,
+          "recommendation": 5.548803329467773,
+          "loss": 6.264979541301727,
+          "reconstruction": 0.7148445844650269,
+          "balance": 0.13316355645656586,
+          "anchor": 7.528749179641636e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07684675604104996,
+          "r_updates": 80,
+          "t_updates": 12
+        },
+        {
+          "update": 12,
+          "seconds": 0.3811068460345268,
+          "data_s": 0.00031005311757326126,
+          "recommendation": 5.552513122558594,
+          "loss": 6.2690465450286865,
+          "reconstruction": 0.7152045965194702,
+          "balance": 0.13288438320159912,
+          "anchor": 8.899229797521002e-09,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07747437804937363,
+          "r_updates": 80,
+          "t_updates": 13
+        },
+        {
+          "update": 13,
+          "seconds": 0.38078689109534025,
+          "data_s": 0.0003067140933126211,
+          "recommendation": 5.5326032638549805,
+          "loss": 6.246482074260712,
+          "reconstruction": 0.7125504016876221,
+          "balance": 0.1328412890434265,
+          "anchor": 1.038317076762496e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.0765266865491867,
+          "r_updates": 80,
+          "t_updates": 14
+        },
+        {
+          "update": 14,
+          "seconds": 0.3841220571193844,
+          "data_s": 0.00031745899468660355,
+          "recommendation": 5.550143718719482,
+          "loss": 6.26275247335434,
+          "reconstruction": 0.7112793326377869,
+          "balance": 0.13294047117233276,
+          "anchor": 1.1980837655301002e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07727015763521194,
+          "r_updates": 80,
+          "t_updates": 15
+        },
+        {
+          "update": 15,
+          "seconds": 0.38153744698502123,
+          "data_s": 0.0002930841874331236,
+          "recommendation": 5.538887023925781,
+          "loss": 6.255557298660278,
+          "reconstruction": 0.7153270840644836,
+          "balance": 0.1343184858560562,
+          "anchor": 1.3691849432007075e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07702402770519257,
+          "r_updates": 80,
+          "t_updates": 16
+        },
+        {
+          "update": 16,
+          "seconds": 0.38127228803932667,
+          "data_s": 0.0003104920033365488,
+          "recommendation": 5.539532661437988,
+          "loss": 6.255768418312073,
+          "reconstruction": 0.7148988246917725,
+          "balance": 0.13369515538215637,
+          "anchor": 1.5514775242309042e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07591133564710617,
+          "r_updates": 80,
+          "t_updates": 17
+        },
+        {
+          "update": 17,
+          "seconds": 0.3806082638911903,
+          "data_s": 0.00030323700048029423,
+          "recommendation": 5.545806884765625,
+          "loss": 6.2602028250694275,
+          "reconstruction": 0.7130694389343262,
+          "balance": 0.13264793157577515,
+          "anchor": 1.7450643596816917e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.0771261528134346,
+          "r_updates": 80,
+          "t_updates": 18
+        },
+        {
+          "update": 18,
+          "seconds": 0.3887388021685183,
+          "data_s": 0.00029390212148427963,
+          "recommendation": 5.535438060760498,
+          "loss": 6.250413954257965,
+          "reconstruction": 0.7136393189430237,
+          "balance": 0.1336582899093628,
+          "anchor": 1.9498525460903693e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07684244960546494,
+          "r_updates": 80,
+          "t_updates": 19
+        },
+        {
+          "update": 19,
+          "seconds": 0.3812410070095211,
+          "data_s": 0.0003004660829901695,
+          "recommendation": 5.555843353271484,
+          "loss": 6.271929621696472,
+          "reconstruction": 0.7147477865219116,
+          "balance": 0.13384801149368286,
+          "anchor": 2.1661001881057018e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07727310061454773,
+          "r_updates": 80,
+          "t_updates": 20
+        },
+        {
+          "update": 20,
+          "seconds": 0.3807085130829364,
+          "data_s": 0.00031107314862310886,
+          "recommendation": 5.5449113845825195,
+          "loss": 6.261629819869995,
+          "reconstruction": 0.7153770923614502,
+          "balance": 0.13413438200950623,
+          "anchor": 2.393654163768133e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07699460536241531,
+          "r_updates": 80,
+          "t_updates": 21
+        },
+        {
+          "update": 21,
+          "seconds": 0.3810006820131093,
+          "data_s": 0.00031522498466074467,
+          "recommendation": 5.5473408699035645,
+          "loss": 6.265658617019653,
+          "reconstruction": 0.7169759273529053,
+          "balance": 0.13418114185333252,
+          "anchor": 2.632475215591512e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07732702791690826,
+          "r_updates": 80,
+          "t_updates": 22
+        },
+        {
+          "update": 22,
+          "seconds": 0.3814645051024854,
+          "data_s": 0.00031001889146864414,
+          "recommendation": 5.540013313293457,
+          "loss": 6.253431260585785,
+          "reconstruction": 0.7120829820632935,
+          "balance": 0.13349945843219757,
+          "anchor": 2.8824059583598682e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07720077037811279,
+          "r_updates": 80,
+          "t_updates": 23
+        },
+        {
+          "update": 23,
+          "seconds": 0.3818432940170169,
+          "data_s": 0.0003226350527256727,
+          "recommendation": 5.543194770812988,
+          "loss": 6.257649481296539,
+          "reconstruction": 0.7131206393241882,
+          "balance": 0.1334090530872345,
+          "anchor": 3.143649252024261e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07686075568199158,
+          "r_updates": 80,
+          "t_updates": 24
+        },
+        {
+          "update": 24,
+          "seconds": 0.3907096730545163,
+          "data_s": 0.0003129031974822283,
+          "recommendation": 5.553200721740723,
+          "loss": 6.26942777633667,
+          "reconstruction": 0.7148798108100891,
+          "balance": 0.1347220093011856,
+          "anchor": 3.416096916453171e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07754936069250107,
+          "r_updates": 80,
+          "t_updates": 25
+        },
+        {
+          "update": 25,
+          "seconds": 0.38548414898104966,
+          "data_s": 0.00031815608963370323,
+          "recommendation": 5.5448408126831055,
+          "loss": 6.263269245624542,
+          "reconstruction": 0.7170827388763428,
+          "balance": 0.13456793129444122,
+          "anchor": 3.699741313312188e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07661620527505875,
+          "r_updates": 80,
+          "t_updates": 26
+        },
+        {
+          "update": 26,
+          "seconds": 0.3803117689676583,
+          "data_s": 0.00031273579224944115,
+          "recommendation": 5.544281959533691,
+          "loss": 6.259572863578796,
+          "reconstruction": 0.7139488458633423,
+          "balance": 0.1342053860425949,
+          "anchor": 3.99446236087897e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07728369534015656,
+          "r_updates": 80,
+          "t_updates": 27
+        },
+        {
+          "update": 27,
+          "seconds": 0.3820168920792639,
+          "data_s": 0.0002950991038233042,
+          "recommendation": 5.542606353759766,
+          "loss": 6.257286310195923,
+          "reconstruction": 0.7133443355560303,
+          "balance": 0.13355925679206848,
+          "anchor": 4.300363087850201e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07647287100553513,
+          "r_updates": 80,
+          "t_updates": 28
+        },
+        {
+          "update": 28,
+          "seconds": 0.38243220606818795,
+          "data_s": 0.00029864395037293434,
+          "recommendation": 5.545368194580078,
+          "loss": 6.260498642921448,
+          "reconstruction": 0.7137872576713562,
+          "balance": 0.13432127237319946,
+          "anchor": 4.6176054979696346e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07668235898017883,
+          "r_updates": 80,
+          "t_updates": 29
+        },
+        {
+          "update": 29,
+          "seconds": 0.3817128799855709,
+          "data_s": 0.00029720691964030266,
+          "recommendation": 5.546879291534424,
+          "loss": 6.260962963104248,
+          "reconstruction": 0.7127459049224854,
+          "balance": 0.13377657532691956,
+          "anchor": 4.946168985497934e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07634442299604416,
+          "r_updates": 80,
+          "t_updates": 30
+        },
+        {
+          "update": 30,
+          "seconds": 0.3806139579974115,
+          "data_s": 0.00031708087772130966,
+          "recommendation": 5.543387413024902,
+          "loss": 6.257813811302185,
+          "reconstruction": 0.7130832076072693,
+          "balance": 0.13432049751281738,
+          "anchor": 5.285899717932807e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07721466571092606,
+          "r_updates": 80,
+          "t_updates": 31
+        },
+        {
+          "update": 31,
+          "seconds": 0.38090526801533997,
+          "data_s": 0.0002975908573716879,
+          "recommendation": 5.545391082763672,
+          "loss": 6.261048913002014,
+          "reconstruction": 0.71431565284729,
+          "balance": 0.13421592116355896,
+          "anchor": 5.636814393028544e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.0771389976143837,
+          "r_updates": 80,
+          "t_updates": 32
+        },
+        {
+          "update": 32,
+          "seconds": 0.38267779210582376,
+          "data_s": 0.0002972399815917015,
+          "recommendation": 5.544702053070068,
+          "loss": 6.264609694480896,
+          "reconstruction": 0.7185554504394531,
+          "balance": 0.13522019982337952,
+          "anchor": 5.99892047148387e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07588578015565872,
+          "r_updates": 80,
+          "t_updates": 33
+        },
+        {
+          "update": 33,
+          "seconds": 0.38156673102639616,
+          "data_s": 0.0002970860805362463,
+          "recommendation": 5.5418901443481445,
+          "loss": 6.258518993854523,
+          "reconstruction": 0.7152860164642334,
+          "balance": 0.1342841535806656,
+          "anchor": 6.372322047809575e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07718994468450546,
+          "r_updates": 80,
+          "t_updates": 34
+        },
+        {
+          "update": 34,
+          "seconds": 0.38096995814703405,
+          "data_s": 0.00031522102653980255,
+          "recommendation": 5.551752090454102,
+          "loss": 6.267452657222748,
+          "reconstruction": 0.7143584489822388,
+          "balance": 0.13421311974525452,
+          "anchor": 6.757053938599711e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07742033153772354,
+          "r_updates": 80,
+          "t_updates": 35
+        },
+        {
+          "update": 35,
+          "seconds": 0.3815736318938434,
+          "data_s": 0.00030923192389309406,
+          "recommendation": 5.534237861633301,
+          "loss": 6.248498618602753,
+          "reconstruction": 0.7129135727882385,
+          "balance": 0.134719580411911,
+          "anchor": 7.152800662879599e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07593085616827011,
+          "r_updates": 80,
+          "t_updates": 36
+        },
+        {
+          "update": 36,
+          "seconds": 0.3811671710573137,
+          "data_s": 0.00032014399766921997,
+          "recommendation": 5.547918319702148,
+          "loss": 6.261386156082153,
+          "reconstruction": 0.7121264934539795,
+          "balance": 0.1341354250907898,
+          "anchor": 7.559629011666402e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07614851742982864,
+          "r_updates": 80,
+          "t_updates": 37
+        },
+        {
+          "update": 37,
+          "seconds": 0.3806381500326097,
+          "data_s": 0.0003017850685864687,
+          "recommendation": 5.54094123840332,
+          "loss": 6.252945125102997,
+          "reconstruction": 0.7106630206108093,
+          "balance": 0.13408386707305908,
+          "anchor": 7.977747173981697e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07674803584814072,
+          "r_updates": 80,
+          "t_updates": 38
+        },
+        {
+          "update": 38,
+          "seconds": 0.38387734605930746,
+          "data_s": 0.0002979410346597433,
+          "recommendation": 5.532467365264893,
+          "loss": 6.248272776603699,
+          "reconstruction": 0.7144553065299988,
+          "balance": 0.13500866293907166,
+          "anchor": 8.407181439906708e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07704640179872513,
+          "r_updates": 80,
+          "t_updates": 39
+        },
+        {
+          "update": 39,
+          "seconds": 0.3806513110175729,
+          "data_s": 0.0002979929558932781,
+          "recommendation": 5.549323081970215,
+          "loss": 6.269017815589905,
+          "reconstruction": 0.7183395624160767,
+          "balance": 0.13551965355873108,
+          "anchor": 8.847879939821723e-08,
+          "lists": 1024,
+          "phase": "T",
+          "gradient_norm": 0.07684600353240967,
+          "r_updates": 80,
+          "t_updates": 40
+        }
+      ],
+      "start_unix": 1794852342.0898657,
+      "end_unix": 1794852357.374698,
+      "mean_seconds": 0.38202540303048277,
+      "peak_allocated_gib": 24.59357786178589,
+      "peak_reserved_gib": 35.251953125
+    },
+    {
+      "kind": "R",
+      "rows": [
+        {
+          "update": 0,
+          "seconds": 0.3862479829695076,
+          "data_s": 0.0003297331277281046,
+          "recommendation": 5.378134727478027,
+          "loss": 5.378134727478027,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15821076929569244,
+          "r_updates": 81,
+          "t_updates": 40
+        },
+        {
+          "update": 1,
+          "seconds": 0.3872150538954884,
+          "data_s": 0.00031302589923143387,
+          "recommendation": 5.378501892089844,
+          "loss": 5.378501892089844,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1597728431224823,
+          "r_updates": 82,
+          "t_updates": 40
+        },
+        {
+          "update": 2,
+          "seconds": 0.38686169986613095,
+          "data_s": 0.0003023629542440176,
+          "recommendation": 5.375850200653076,
+          "loss": 5.375850200653076,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.15401341021060944,
+          "r_updates": 83,
+          "t_updates": 40
+        },
+        {
+          "update": 3,
+          "seconds": 0.3865963760763407,
+          "data_s": 0.0003050810191780329,
+          "recommendation": 5.3717193603515625,
+          "loss": 5.3717193603515625,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.18609212338924408,
+          "r_updates": 84,
+          "t_updates": 40
+        },
+        {
+          "update": 4,
+          "seconds": 0.3883931818418205,
+          "data_s": 0.00030209985561668873,
+          "recommendation": 5.3779706954956055,
+          "loss": 5.3779706954956055,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.16850128769874573,
+          "r_updates": 85,
+          "t_updates": 40
+        },
+        {
+          "update": 5,
+          "seconds": 0.3898339008446783,
+          "data_s": 0.000304599991068244,
+          "recommendation": 5.382375240325928,
+          "loss": 5.382375240325928,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.1776355504989624,
+          "r_updates": 86,
+          "t_updates": 40
+        },
+        {
+          "update": 6,
+          "seconds": 0.3877252300735563,
+          "data_s": 0.0003056589048355818,
+          "recommendation": 5.3762526512146,
+          "loss": 5.3762526512146,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.20626848936080933,
+          "r_updates": 87,
+          "t_updates": 40
+        },
+        {
+          "update": 7,
+          "seconds": 0.3919621459208429,
+          "data_s": 0.00036831991747021675,
+          "recommendation": 5.373935699462891,
+          "loss": 5.373935699462891,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.23640690743923187,
+          "r_updates": 88,
+          "t_updates": 40
+        },
+        {
+          "update": 8,
+          "seconds": 0.39158961991779506,
+          "data_s": 0.00032201805151998997,
+          "recommendation": 5.372344017028809,
+          "loss": 5.372344017028809,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.2611779272556305,
+          "r_updates": 89,
+          "t_updates": 40
+        },
+        {
+          "update": 9,
+          "seconds": 0.3877201830036938,
+          "data_s": 0.00030297995544970036,
+          "recommendation": 5.376509189605713,
+          "loss": 5.376509189605713,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.9868379831314087,
+          "r_updates": 90,
+          "t_updates": 40
+        },
+        {
+          "update": 10,
+          "seconds": 0.3887584051117301,
+          "data_s": 0.00030816509388387203,
+          "recommendation": 5.366944313049316,
+          "loss": 5.366944313049316,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.3940703868865967,
+          "r_updates": 91,
+          "t_updates": 40
+        },
+        {
+          "update": 11,
+          "seconds": 0.3895483079832047,
+          "data_s": 0.00034155999310314655,
+          "recommendation": 5.3672637939453125,
+          "loss": 5.3672637939453125,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.42930731177330017,
+          "r_updates": 92,
+          "t_updates": 40
+        },
+        {
+          "update": 12,
+          "seconds": 0.3880029870197177,
+          "data_s": 0.00031025102362036705,
+          "recommendation": 5.364304542541504,
+          "loss": 5.364304542541504,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.5336456298828125,
+          "r_updates": 93,
+          "t_updates": 40
+        },
+        {
+          "update": 13,
+          "seconds": 0.3878102949820459,
+          "data_s": 0.0003086489159613848,
+          "recommendation": 5.355752944946289,
+          "loss": 5.355752944946289,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.5462635159492493,
+          "r_updates": 94,
+          "t_updates": 40
+        },
+        {
+          "update": 14,
+          "seconds": 0.38812110805884004,
+          "data_s": 0.0003168520051985979,
+          "recommendation": 5.378949165344238,
+          "loss": 5.378949165344238,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 13.016396522521973,
+          "r_updates": 95,
+          "t_updates": 40
+        },
+        {
+          "update": 15,
+          "seconds": 0.3881073819939047,
+          "data_s": 0.0003231808077543974,
+          "recommendation": 5.349152565002441,
+          "loss": 5.349152565002441,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.704412043094635,
+          "r_updates": 96,
+          "t_updates": 40
+        },
+        {
+          "update": 16,
+          "seconds": 0.38843069202266634,
+          "data_s": 0.00032456102780997753,
+          "recommendation": 5.343530178070068,
+          "loss": 5.343530178070068,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8540228605270386,
+          "r_updates": 97,
+          "t_updates": 40
+        },
+        {
+          "update": 17,
+          "seconds": 0.3917534211650491,
+          "data_s": 0.0003158021718263626,
+          "recommendation": 5.330510139465332,
+          "loss": 5.330510139465332,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 2.737335681915283,
+          "r_updates": 98,
+          "t_updates": 40
+        },
+        {
+          "update": 18,
+          "seconds": 0.3888117221649736,
+          "data_s": 0.00031288014724850655,
+          "recommendation": 5.3277692794799805,
+          "loss": 5.3277692794799805,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.6016545295715332,
+          "r_updates": 99,
+          "t_updates": 40
+        },
+        {
+          "update": 19,
+          "seconds": 0.39190320996567607,
+          "data_s": 0.0003160920459777117,
+          "recommendation": 5.321746826171875,
+          "loss": 5.321746826171875,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 3.4735403060913086,
+          "r_updates": 100,
+          "t_updates": 40
+        },
+        {
+          "update": 20,
+          "seconds": 0.3924739670474082,
+          "data_s": 0.00031854608096182346,
+          "recommendation": 5.324539661407471,
+          "loss": 5.324539661407471,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.6964188814163208,
+          "r_updates": 101,
+          "t_updates": 40
+        },
+        {
+          "update": 21,
+          "seconds": 0.38841164810582995,
+          "data_s": 0.00031875399872660637,
+          "recommendation": 5.311712265014648,
+          "loss": 5.311712265014648,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 5.797957420349121,
+          "r_updates": 102,
+          "t_updates": 40
+        },
+        {
+          "update": 22,
+          "seconds": 0.3875994689296931,
+          "data_s": 0.000340247992426157,
+          "recommendation": 5.305132865905762,
+          "loss": 5.305132865905762,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 4.608205318450928,
+          "r_updates": 103,
+          "t_updates": 40
+        },
+        {
+          "update": 23,
+          "seconds": 0.3913146930281073,
+          "data_s": 0.000311288982629776,
+          "recommendation": 5.295912265777588,
+          "loss": 5.295912265777588,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 3.087996006011963,
+          "r_updates": 104,
+          "t_updates": 40
+        },
+        {
+          "update": 24,
+          "seconds": 0.38780639809556305,
+          "data_s": 0.0003181041684001684,
+          "recommendation": 5.291398048400879,
+          "loss": 5.291398048400879,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.4179511070251465,
+          "r_updates": 105,
+          "t_updates": 40
+        },
+        {
+          "update": 25,
+          "seconds": 0.387499829987064,
+          "data_s": 0.000315031036734581,
+          "recommendation": 5.305468559265137,
+          "loss": 5.305468559265137,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5643435716629028,
+          "r_updates": 106,
+          "t_updates": 40
+        },
+        {
+          "update": 26,
+          "seconds": 0.38808880699798465,
+          "data_s": 0.0003103991039097309,
+          "recommendation": 5.31208610534668,
+          "loss": 5.31208610534668,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0377099514007568,
+          "r_updates": 107,
+          "t_updates": 40
+        },
+        {
+          "update": 27,
+          "seconds": 0.38765951804816723,
+          "data_s": 0.00031380890868604183,
+          "recommendation": 5.292057037353516,
+          "loss": 5.292057037353516,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.2732282876968384,
+          "r_updates": 108,
+          "t_updates": 40
+        },
+        {
+          "update": 28,
+          "seconds": 0.3874094388447702,
+          "data_s": 0.0003104479983448982,
+          "recommendation": 5.2716217041015625,
+          "loss": 5.2716217041015625,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.646719217300415,
+          "r_updates": 109,
+          "t_updates": 40
+        },
+        {
+          "update": 29,
+          "seconds": 0.38861394114792347,
+          "data_s": 0.000307559035718441,
+          "recommendation": 5.2752838134765625,
+          "loss": 5.2752838134765625,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7852839827537537,
+          "r_updates": 110,
+          "t_updates": 40
+        },
+        {
+          "update": 30,
+          "seconds": 0.3875191619154066,
+          "data_s": 0.0003204578533768654,
+          "recommendation": 5.279573440551758,
+          "loss": 5.279573440551758,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9774912595748901,
+          "r_updates": 111,
+          "t_updates": 40
+        },
+        {
+          "update": 31,
+          "seconds": 0.38779914495535195,
+          "data_s": 0.0003127360250800848,
+          "recommendation": 5.263843059539795,
+          "loss": 5.263843059539795,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9246848225593567,
+          "r_updates": 112,
+          "t_updates": 40
+        },
+        {
+          "update": 32,
+          "seconds": 0.38797924597747624,
+          "data_s": 0.00032711890526115894,
+          "recommendation": 5.251893520355225,
+          "loss": 5.251893520355225,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0440618991851807,
+          "r_updates": 113,
+          "t_updates": 40
+        },
+        {
+          "update": 33,
+          "seconds": 0.3874238079879433,
+          "data_s": 0.00031888694502413273,
+          "recommendation": 5.264355659484863,
+          "loss": 5.264355659484863,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9939587116241455,
+          "r_updates": 114,
+          "t_updates": 40
+        },
+        {
+          "update": 34,
+          "seconds": 0.3933923039585352,
+          "data_s": 0.0003164149820804596,
+          "recommendation": 5.266775608062744,
+          "loss": 5.266775608062744,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8203380703926086,
+          "r_updates": 115,
+          "t_updates": 40
+        },
+        {
+          "update": 35,
+          "seconds": 0.39097618288360536,
+          "data_s": 0.00032670400105416775,
+          "recommendation": 5.249141693115234,
+          "loss": 5.249141693115234,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.79872727394104,
+          "r_updates": 116,
+          "t_updates": 40
+        },
+        {
+          "update": 36,
+          "seconds": 0.38842595205642283,
+          "data_s": 0.000319500919431448,
+          "recommendation": 5.259332656860352,
+          "loss": 5.259332656860352,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9761139750480652,
+          "r_updates": 117,
+          "t_updates": 40
+        },
+        {
+          "update": 37,
+          "seconds": 0.3900225970428437,
+          "data_s": 0.00031367293559014797,
+          "recommendation": 5.240704536437988,
+          "loss": 5.240704536437988,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7967169880867004,
+          "r_updates": 118,
+          "t_updates": 40
+        },
+        {
+          "update": 38,
+          "seconds": 0.39173525501973927,
+          "data_s": 0.0003274991177022457,
+          "recommendation": 5.254656791687012,
+          "loss": 5.254656791687012,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0204943418502808,
+          "r_updates": 119,
+          "t_updates": 40
+        },
+        {
+          "update": 39,
+          "seconds": 0.3926112330518663,
+          "data_s": 0.00032350001856684685,
+          "recommendation": 5.261868953704834,
+          "loss": 5.261868953704834,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.6890523433685303,
+          "r_updates": 120,
+          "t_updates": 40
+        },
+        {
+          "update": 40,
+          "seconds": 0.38830784102901816,
+          "data_s": 0.0003340640105307102,
+          "recommendation": 5.232696533203125,
+          "loss": 5.232696533203125,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9026880860328674,
+          "r_updates": 121,
+          "t_updates": 40
+        },
+        {
+          "update": 41,
+          "seconds": 0.39187659602612257,
+          "data_s": 0.00033529289066791534,
+          "recommendation": 5.198138236999512,
+          "loss": 5.198138236999512,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7006254196166992,
+          "r_updates": 122,
+          "t_updates": 40
+        },
+        {
+          "update": 42,
+          "seconds": 0.3883191691711545,
+          "data_s": 0.000328178983181715,
+          "recommendation": 5.17374324798584,
+          "loss": 5.17374324798584,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.5469753742218018,
+          "r_updates": 123,
+          "t_updates": 40
+        },
+        {
+          "update": 43,
+          "seconds": 0.3887577629648149,
+          "data_s": 0.0003276560455560684,
+          "recommendation": 5.153024673461914,
+          "loss": 5.153024673461914,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.411341667175293,
+          "r_updates": 124,
+          "t_updates": 40
+        },
+        {
+          "update": 44,
+          "seconds": 0.39116568793542683,
+          "data_s": 0.00032097799703478813,
+          "recommendation": 5.161866188049316,
+          "loss": 5.161866188049316,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9677855372428894,
+          "r_updates": 125,
+          "t_updates": 40
+        },
+        {
+          "update": 45,
+          "seconds": 0.3923550150357187,
+          "data_s": 0.00031634606420993805,
+          "recommendation": 5.155060291290283,
+          "loss": 5.155060291290283,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9453884363174438,
+          "r_updates": 126,
+          "t_updates": 40
+        },
+        {
+          "update": 46,
+          "seconds": 0.38817562302574515,
+          "data_s": 0.00032973894849419594,
+          "recommendation": 5.13967227935791,
+          "loss": 5.13967227935791,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.4472682476043701,
+          "r_updates": 127,
+          "t_updates": 40
+        },
+        {
+          "update": 47,
+          "seconds": 0.3900207548867911,
+          "data_s": 0.000312283867970109,
+          "recommendation": 5.14409065246582,
+          "loss": 5.14409065246582,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8040168285369873,
+          "r_updates": 128,
+          "t_updates": 40
+        },
+        {
+          "update": 48,
+          "seconds": 0.389455946162343,
+          "data_s": 0.00031324708834290504,
+          "recommendation": 5.162600517272949,
+          "loss": 5.162600517272949,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.049957513809204,
+          "r_updates": 129,
+          "t_updates": 40
+        },
+        {
+          "update": 49,
+          "seconds": 0.38801997411064804,
+          "data_s": 0.0003104470670223236,
+          "recommendation": 5.171405792236328,
+          "loss": 5.171405792236328,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9848579168319702,
+          "r_updates": 130,
+          "t_updates": 40
+        },
+        {
+          "update": 50,
+          "seconds": 0.39092274801805615,
+          "data_s": 0.00031439890153706074,
+          "recommendation": 5.157794952392578,
+          "loss": 5.157794952392578,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7468460202217102,
+          "r_updates": 131,
+          "t_updates": 40
+        },
+        {
+          "update": 51,
+          "seconds": 0.38823827006854117,
+          "data_s": 0.0003204250242561102,
+          "recommendation": 5.158596038818359,
+          "loss": 5.158596038818359,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0291111469268799,
+          "r_updates": 132,
+          "t_updates": 40
+        },
+        {
+          "update": 52,
+          "seconds": 0.3879177439957857,
+          "data_s": 0.0003258960787206888,
+          "recommendation": 5.13318395614624,
+          "loss": 5.13318395614624,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.3055710792541504,
+          "r_updates": 133,
+          "t_updates": 40
+        },
+        {
+          "update": 53,
+          "seconds": 0.3887387129943818,
+          "data_s": 0.00031674792990088463,
+          "recommendation": 5.111776351928711,
+          "loss": 5.111776351928711,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8948766589164734,
+          "r_updates": 134,
+          "t_updates": 40
+        },
+        {
+          "update": 54,
+          "seconds": 0.38824392296373844,
+          "data_s": 0.0003326321020722389,
+          "recommendation": 5.118315696716309,
+          "loss": 5.118315696716309,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.3260551691055298,
+          "r_updates": 135,
+          "t_updates": 40
+        },
+        {
+          "update": 55,
+          "seconds": 0.3889959519729018,
+          "data_s": 0.0003250229638069868,
+          "recommendation": 5.130966663360596,
+          "loss": 5.130966663360596,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.1653717756271362,
+          "r_updates": 136,
+          "t_updates": 40
+        },
+        {
+          "update": 56,
+          "seconds": 0.38923014886677265,
+          "data_s": 0.0003532217815518379,
+          "recommendation": 5.134538650512695,
+          "loss": 5.134538650512695,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8909873962402344,
+          "r_updates": 137,
+          "t_updates": 40
+        },
+        {
+          "update": 57,
+          "seconds": 0.3878714458551258,
+          "data_s": 0.00031055393628776073,
+          "recommendation": 5.118279457092285,
+          "loss": 5.118279457092285,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9950178265571594,
+          "r_updates": 138,
+          "t_updates": 40
+        },
+        {
+          "update": 58,
+          "seconds": 0.3877564549911767,
+          "data_s": 0.00031472090631723404,
+          "recommendation": 5.097905158996582,
+          "loss": 5.097905158996582,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0031228065490723,
+          "r_updates": 139,
+          "t_updates": 40
+        },
+        {
+          "update": 59,
+          "seconds": 0.3920069329906255,
+          "data_s": 0.0003075909335166216,
+          "recommendation": 5.075626373291016,
+          "loss": 5.075626373291016,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.141142725944519,
+          "r_updates": 140,
+          "t_updates": 40
+        },
+        {
+          "update": 60,
+          "seconds": 0.38825193606317043,
+          "data_s": 0.00033096387051045895,
+          "recommendation": 5.119076728820801,
+          "loss": 5.119076728820801,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7476566433906555,
+          "r_updates": 141,
+          "t_updates": 40
+        },
+        {
+          "update": 61,
+          "seconds": 0.38719187397509813,
+          "data_s": 0.0003096689470112324,
+          "recommendation": 5.154822826385498,
+          "loss": 5.154822826385498,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9443725347518921,
+          "r_updates": 142,
+          "t_updates": 40
+        },
+        {
+          "update": 62,
+          "seconds": 0.3924742459785193,
+          "data_s": 0.0003164170775562525,
+          "recommendation": 5.1121907234191895,
+          "loss": 5.1121907234191895,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7910460829734802,
+          "r_updates": 143,
+          "t_updates": 40
+        },
+        {
+          "update": 63,
+          "seconds": 0.38736119284294546,
+          "data_s": 0.00030387798324227333,
+          "recommendation": 5.095489025115967,
+          "loss": 5.095489025115967,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9078688621520996,
+          "r_updates": 144,
+          "t_updates": 40
+        },
+        {
+          "update": 64,
+          "seconds": 0.389440996106714,
+          "data_s": 0.00030935206450521946,
+          "recommendation": 5.067216873168945,
+          "loss": 5.067216873168945,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.1976428031921387,
+          "r_updates": 145,
+          "t_updates": 40
+        },
+        {
+          "update": 65,
+          "seconds": 0.39009408885613084,
+          "data_s": 0.0003036188427358866,
+          "recommendation": 5.0771589279174805,
+          "loss": 5.0771589279174805,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7695054411888123,
+          "r_updates": 146,
+          "t_updates": 40
+        },
+        {
+          "update": 66,
+          "seconds": 0.3879062868654728,
+          "data_s": 0.00030990387313067913,
+          "recommendation": 5.0822553634643555,
+          "loss": 5.0822553634643555,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8317375779151917,
+          "r_updates": 147,
+          "t_updates": 40
+        },
+        {
+          "update": 67,
+          "seconds": 0.388400322990492,
+          "data_s": 0.00030446494929492474,
+          "recommendation": 5.070528507232666,
+          "loss": 5.070528507232666,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8768957257270813,
+          "r_updates": 148,
+          "t_updates": 40
+        },
+        {
+          "update": 68,
+          "seconds": 0.38799486798234284,
+          "data_s": 0.0003137560561299324,
+          "recommendation": 5.034836769104004,
+          "loss": 5.034836769104004,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.897115170955658,
+          "r_updates": 149,
+          "t_updates": 40
+        },
+        {
+          "update": 69,
+          "seconds": 0.38775674998760223,
+          "data_s": 0.0003154489677399397,
+          "recommendation": 5.039318084716797,
+          "loss": 5.039318084716797,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.1739932298660278,
+          "r_updates": 150,
+          "t_updates": 40
+        },
+        {
+          "update": 70,
+          "seconds": 0.38957368209958076,
+          "data_s": 0.0003212869632989168,
+          "recommendation": 5.026664733886719,
+          "loss": 5.026664733886719,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.7322824001312256,
+          "r_updates": 151,
+          "t_updates": 40
+        },
+        {
+          "update": 71,
+          "seconds": 0.3878207930829376,
+          "data_s": 0.0003235330805182457,
+          "recommendation": 5.010960578918457,
+          "loss": 5.010960578918457,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.6276298761367798,
+          "r_updates": 152,
+          "t_updates": 40
+        },
+        {
+          "update": 72,
+          "seconds": 0.38766060303896666,
+          "data_s": 0.00032446603290736675,
+          "recommendation": 4.999190330505371,
+          "loss": 4.999190330505371,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8386890292167664,
+          "r_updates": 153,
+          "t_updates": 40
+        },
+        {
+          "update": 73,
+          "seconds": 0.3877352059353143,
+          "data_s": 0.00031349901109933853,
+          "recommendation": 4.964359283447266,
+          "loss": 4.964359283447266,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9619221091270447,
+          "r_updates": 154,
+          "t_updates": 40
+        },
+        {
+          "update": 74,
+          "seconds": 0.3879490979015827,
+          "data_s": 0.0003105779178440571,
+          "recommendation": 4.95426082611084,
+          "loss": 4.95426082611084,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.3493925333023071,
+          "r_updates": 155,
+          "t_updates": 40
+        },
+        {
+          "update": 75,
+          "seconds": 0.3878014509100467,
+          "data_s": 0.00030839000828564167,
+          "recommendation": 4.947320938110352,
+          "loss": 4.947320938110352,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 1.0061218738555908,
+          "r_updates": 156,
+          "t_updates": 40
+        },
+        {
+          "update": 76,
+          "seconds": 0.39053861098363996,
+          "data_s": 0.0003127011004835367,
+          "recommendation": 4.933351993560791,
+          "loss": 4.933351993560791,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9411438703536987,
+          "r_updates": 157,
+          "t_updates": 40
+        },
+        {
+          "update": 77,
+          "seconds": 0.38809137302450836,
+          "data_s": 0.00032244203612208366,
+          "recommendation": 4.925581932067871,
+          "loss": 4.925581932067871,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8949090242385864,
+          "r_updates": 158,
+          "t_updates": 40
+        },
+        {
+          "update": 78,
+          "seconds": 0.38766608689911664,
+          "data_s": 0.0003265049308538437,
+          "recommendation": 4.9484381675720215,
+          "loss": 4.9484381675720215,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.8298959136009216,
+          "r_updates": 159,
+          "t_updates": 40
+        },
+        {
+          "update": 79,
+          "seconds": 0.39032778493128717,
+          "data_s": 0.00031680287793278694,
+          "recommendation": 4.953456878662109,
+          "loss": 4.953456878662109,
+          "lists": 1024,
+          "phase": "R",
+          "gradient_norm": 0.9340061545372009,
+          "r_updates": 160,
+          "t_updates": 40
+        }
+      ],
+      "start_unix": 1794852357.4282496,
+      "end_unix": 1794852388.5495083,
+      "mean_seconds": 0.3891100687844058,
+      "peak_allocated_gib": 34.287198066711426,
+      "peak_reserved_gib": 35.251953125
+    }
+  ],
+  "restore": {
+    "exact_next_update": true,
+    "checkpoint_bytes": 79860068,
+    "checkpoint_sha256": "fa6ba7281dcf85695ffddc5ec3b3ec758fd59e6857b0d67e4cc994a73bc408c1"
+  },
+  "evaluations": [
+    {
+      "batch": 4,
+      "seconds": 17.667280424153432,
+      "metrics": {
+        "imp_hit@5": 0.01171875,
+        "imp_recall@5": 0.0023437500000000003,
+        "imp_ndcg@5": 0.0026732482325018962,
+        "legacy_fixed5_ndcg@5": 0.0026732482325018962,
+        "ev_hit@5": 0.004975124378109453,
+        "ev_recall@5": 0.0016583747927031507,
+        "ev_ndcg@5": 0.000903192997698272,
+        "samples": 256,
+        "ev_samples": 201,
+        "ev_min": 1.0
+      },
+      "predictions": [
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ]
+      ],
+      "peak_allocated_gib": 1.8622956275939941
+    },
+    {
+      "batch": 128,
+      "seconds": 9.52797165303491,
+      "metrics": {
+        "imp_hit@5": 0.01171875,
+        "imp_recall@5": 0.0023437500000000003,
+        "imp_ndcg@5": 0.0026732482325018962,
+        "legacy_fixed5_ndcg@5": 0.0026732482325018962,
+        "ev_hit@5": 0.004975124378109453,
+        "ev_recall@5": 0.0016583747927031507,
+        "ev_ndcg@5": 0.000903192997698272,
+        "samples": 256,
+        "ev_samples": 201,
+        "ev_min": 1.0
+      },
+      "predictions": [
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ]
+      ],
+      "peak_allocated_gib": 10.88686227798462,
+      "identical_lists_fraction": 1.0
+    },
+    {
+      "batch": 256,
+      "seconds": 9.727131547871977,
+      "metrics": {
+        "imp_hit@5": 0.01171875,
+        "imp_recall@5": 0.0023437500000000003,
+        "imp_ndcg@5": 0.0026732482325018962,
+        "legacy_fixed5_ndcg@5": 0.0026732482325018962,
+        "ev_hit@5": 0.004975124378109453,
+        "ev_recall@5": 0.0016583747927031507,
+        "ev_ndcg@5": 0.000903192997698272,
+        "samples": 256,
+        "ev_samples": 201,
+        "ev_min": 1.0
+      },
+      "predictions": [
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ],
+        [
+          1097,
+          1305,
+          2322,
+          5724,
+          7712
+        ]
+      ],
+      "peak_allocated_gib": 20.20466184616089,
+      "identical_lists_fraction": 1.0
+    }
+  ],
+  "counts": {
+    "r": 160,
+    "t": 40
+  }
+}

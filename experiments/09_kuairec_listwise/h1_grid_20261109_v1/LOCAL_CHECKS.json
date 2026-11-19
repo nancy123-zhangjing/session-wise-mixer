@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "local_cpu_only",
+  "formal_training_started": false,
+  "gpu_allocated": false,
+  "test_command": ".runtime/stage08_restore_env/Scripts/python.exe -B -X utf8 experiments/09_kuairec_listwise/h1_grid_20261109_v1/test_grid.py -v",
+  "tests_passed": 7,
+  "tests_seconds": 16.331,
+  "tests": [
+    "axis_order_shared_parameters_and_padding_after_learning",
+    "exact_formal_config_and_R35_T200_schedule",
+    "exact_next_R_T_resume_and_corrupt_clock_rejection",
+    "full_toy_freeze_schedule",
+    "identity_initialization_and_first_gradient",
+    "parent_logits_Adam_LR_RNG_and_BC_shared_row",
+    "T_gradient_and_prefix_only_beam_generation"
+  ],
+  "real_parent_check": "PARENT_CPU_CHECK.json",
+  "syntax_parse": "all_python_files_passed",
+  "limitations": [
+    "CUDA and GPU memory not tested",
+    "No formal dataset training or evaluation",
+    "CPU parent check intentionally does not restore CUDA RNG"
+  ],
+  "sha256": {
+    "config_B.json": "3acf5d2582f40263e5aa45df913f022e3c60b5e0da57ca6f115bb46f4dc59c63",
+    "config_C.json": "d2d18b60edcd5d398fd7bf8519158d0cb87a015cfacb50a7d403d96e595b02b7",
+    "experiment.py": "1c67035f911d5657fba32423d286d122224e184d753037cb1ce3bdecb19e8d5e",
+    "grid.py": "302a666f855e233cd98b7818cc4f5c88badbf6c52f6951ebd5f593d6a43fe824",
+    "PARENT_CPU_CHECK.json": "16470a9ed616eba3da2c1620cf5b6ab2d20943b587d82ccca3788b03a89ba2bb",
+    "protocol.py": "5bdbff0c0c5c37ada5fb9d33b2fee49aeba9409715618fdbb8e6adaf11ce5b95",
+    "test_grid.py": "632da2ed0ceeaf8a34c452e52f3d429e5f4625d100144e41d6733eec9dedb707",
+    "verify_parent_cpu.py": "9ca5890e2e1ce3fb69ac9aa1ff6e8779f28f91533c5154764b2943f37f44c19d"
+  }
+}

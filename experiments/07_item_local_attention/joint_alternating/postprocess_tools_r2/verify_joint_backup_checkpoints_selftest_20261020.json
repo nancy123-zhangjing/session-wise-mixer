@@ -1,0 +1,17 @@
+{
+  "status": "CPU_BACKUP_READBACK_SELFTEST_PASS",
+  "tool_sha256": "e653c2c89c5dc0288f68cb0292677490e57bbe22ac1302ff323f072fa0efde5c",
+  "selftest_sha256": "5936d1fc078a9011518fb71a374053e41f11e3f0f8cb4742e43c246b89f3c04c",
+  "checks": [
+    "actual_CPU_joint_model_boundary_14_checkpoint_pack_verify_load_roundtrip",
+    "nonfinite_nested_Adam_tensor_rejected",
+    "nonterminal_formal_last_rejected",
+    "missing_RNG_key_rejected",
+    "embedded_best_corruption_rejected",
+    "missing_necessary_checkpoint_rejected",
+    "post_extraction_checkpoint_byte_change_rejected"
+  ],
+  "real_formal_artifacts_validated": false,
+  "GPU_or_platform_used": false,
+  "fixture_scope": "Temporary actual small CPU joint Trainer/model boundaries; bundle/result wrappers and CUDA RNG byte slot are synthetic schema fixtures. No real campaign PASS or CUDA restore is claimed."
+}

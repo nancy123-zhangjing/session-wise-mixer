@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "independent_receipt_recheck": true,
+  "scope": "GPU gate receipts, not 89-run completion or full checkpoint payload audit",
+  "distinct_h100s": 8,
+  "parallel_tasks": 10,
+  "actual_resume_updates": [
+    20,
+    21
+  ],
+  "gradient_checks": [
+    {
+      "model": "sasrec_fullce",
+      "dim": 64,
+      "heads": 1,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.0026898375598361705,
+      "gradient_cosine": 0.9999964212184121,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 9.45421028137207,
+      "bf16_loss": 9.454681396484375
+    },
+    {
+      "model": "esasrec",
+      "dim": 64,
+      "heads": 1,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.003562903007607701,
+      "gradient_cosine": 0.9999948249163936,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 5.503158092498779,
+      "bf16_loss": 5.503139019012451
+    },
+    {
+      "model": "sasrec_fullce",
+      "dim": 512,
+      "heads": 2,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.004229486024020971,
+      "gradient_cosine": 0.9999910611979358,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 9.404308319091797,
+      "bf16_loss": 9.404239654541016
+    },
+    {
+      "model": "esasrec",
+      "dim": 512,
+      "heads": 2,
+      "training_mode": true,
+      "dropout_disabled": true,
+      "fixed_negatives": true,
+      "relative_gradient_l2": 0.005159048786328214,
+      "gradient_cosine": 0.9999872934912413,
+      "relative_l2_max": 0.05,
+      "cosine_min": 0.999,
+      "fp32_loss": 5.5475311279296875,
+      "bf16_loss": 5.54758882522583
+    }
+  ],
+  "stress_full_epochs": 35,
+  "stress_updates": 17990,
+  "stress_max_gradient_norm": 6.677355766296387,
+  "actual_source_matches_candidate_all_35_loss_and_norm_rows": true,
+  "gate_sha256": "b4af043692d9609ee370411ed9f9519b209e8457fa0a9d1817f4a6a9f6cd9d3b",
+  "audit_script_sha256": "b2100c1a3ab75f9b83df30ec1aa48c9ecd76c7911fa44a70690d8bc86653aa5d"
+}

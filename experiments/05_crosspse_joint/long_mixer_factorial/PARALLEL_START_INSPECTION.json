@@ -1,0 +1,155 @@
+{
+  "utc": "2026-10-20T04:27:49.119705+00:00",
+  "arms": {
+    "no_mixer_frozen": {
+      "STARTED.json": {
+        "campaign_id": "goal_20261020_long_mixer_v1",
+        "mode": "train_arm",
+        "attempt": "train_no_mixer_frozen_r1",
+        "started_utc": "2026-10-20T04:24:28.986871+00:00",
+        "process_deadline_unix": 1792479508.9868257,
+        "declared_platform_cap_seconds": 9420.0,
+        "binding": {
+          "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+          "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+          "wrapper_sha256": "de0240f281cd69d79fbe3ff36166efe8b5ee49d2ec737882111eee7dd0e4f78d",
+          "runner_sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+          "protocol_sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+        },
+        "prior_allocation_ledger_sha256": "41cb743153f3ec90f6632fa5c9ee436d2a5e74e7f06e6cc4c487cb7b6d1567e9",
+        "formal_readiness_sha256": "99781aacd8f001f5a9f89e6858b4ea4941c4c47b8e5bf6877c198846814a7558",
+        "process_time_is_not_platform_allocation": true
+      },
+      "PROCESS_FAILED.json": {
+        "campaign_id": "goal_20261020_long_mixer_v1",
+        "mode": "train_arm",
+        "attempt": "train_no_mixer_frozen_r1",
+        "started_utc": "2026-10-20T04:24:28.986871+00:00",
+        "process_deadline_unix": 1792479508.9868257,
+        "declared_platform_cap_seconds": 9420.0,
+        "binding": {
+          "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+          "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+          "wrapper_sha256": "de0240f281cd69d79fbe3ff36166efe8b5ee49d2ec737882111eee7dd0e4f78d",
+          "runner_sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+          "protocol_sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+        },
+        "prior_allocation_ledger_sha256": "41cb743153f3ec90f6632fa5c9ee436d2a5e74e7f06e6cc4c487cb7b6d1567e9",
+        "formal_readiness_sha256": "99781aacd8f001f5a9f89e6858b4ea4941c4c47b8e5bf6877c198846814a7558",
+        "process_time_is_not_platform_allocation": true,
+        "ended_utc": "2026-10-20T04:24:44.006399+00:00",
+        "process_seconds": 15.019606351852417,
+        "error": "ValueError",
+        "message": "Child failed; see /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/train_no_mixer_frozen_r1/train.log",
+        "platform_release_verified": false
+      },
+      "log_tail": "ment1_training/goal_20261020_long_mixer_v1/code/scripts/train/run_diger_mixer_long.py\", line 710, in <module>\n    main()\n  File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/code/scripts/train/run_diger_mixer_long.py\", line 687, in main\n    context = context_for(args)\n  File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/code/scripts/train/run_diger_mixer_long.py\", line 298, in context_for\n    write(output / \"identity.json\", identity)\n  File \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/code/scripts/checks/diger_mixer_long_protocol.py\", line 60, in write\n    temporary.replace(path)\n  File \"/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/lib/python3.10/pathlib.py\", line 1247, in replace\n    self._accessor.replace(self, target)\nFileNotFoundError: [Errno 2] No such file or directory: '/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/formal/identity.json.tmp' -> '/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/formal/identity.json'\n"
+    },
+    "no_mixer_joint": {
+      "STARTED.json": {
+        "campaign_id": "goal_20261020_long_mixer_v1",
+        "mode": "train_arm",
+        "attempt": "train_no_mixer_joint_r1",
+        "started_utc": "2026-10-20T04:24:29.002553+00:00",
+        "process_deadline_unix": 1792479569.002531,
+        "declared_platform_cap_seconds": 9480.0,
+        "binding": {
+          "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+          "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+          "wrapper_sha256": "de0240f281cd69d79fbe3ff36166efe8b5ee49d2ec737882111eee7dd0e4f78d",
+          "runner_sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+          "protocol_sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+        },
+        "prior_allocation_ledger_sha256": "41cb743153f3ec90f6632fa5c9ee436d2a5e74e7f06e6cc4c487cb7b6d1567e9",
+        "formal_readiness_sha256": "99781aacd8f001f5a9f89e6858b4ea4941c4c47b8e5bf6877c198846814a7558",
+        "process_time_is_not_platform_allocation": true
+      },
+      "log_tail": " val:  34%|███▍      | 956/2796 [01:41<03:11,  9.60it/s]\rEval - val:  34%|███▍      | 957/2796 [01:41<03:12,  9.55it/s]\rEval - val:  34%|███▍      | 958/2796 [01:41<03:11,  9.58it/s]\rEval - val:  34%|███▍      | 959/2796 [01:41<03:10,  9.63it/s]\rEval - val:  34%|███▍      | 960/2796 [01:42<03:11,  9.58it/s]\rEval - val:  34%|███▍      | 961/2796 [01:42<03:11,  9.57it/s]\rEval - val:  34%|███▍      | 962/2796 [01:42<03:12,  9.51it/s]\rEval - val:  34%|███▍      | 963/2796 [01:42<03:11,  9.55it/s]\rEval - val:  34%|███▍      | 964/2796 [01:42<03:12,  9.53it/s]\rEval - val:  35%|███▍      | 965/2796 [01:42<03:10,  9.62it/s]\rEval - val:  35%|███▍      | 966/2796 [01:42<03:11,  9.54it/s]\rEval - val:  35%|███▍      | 967/2796 [01:42<03:12,  9.48it/s]\rEval - val:  35%|███▍      | 968/2796 [01:42<03:12,  9.50it/s]\rEval - val:  35%|███▍      | 969/2796 [01:43<03:12,  9.49it/s]\rEval - val:  35%|███▍      | 970/2796 [01:43<03:11,  9.55it/s]\rEval - val:  35%|███▍      | 971/2796 [01:43<03:11,  9.55it/s]\rEval - val:  35%|███▍      | 972/2796 [01:43<03:10,  9.57it/s]",
+      "environment": {
+        "utc": "2026-10-20T04:26:06.271806+00:00",
+        "python": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+        "torch": "2.6.0+cu118",
+        "numpy": "2.2.6",
+        "cuda_runtime": "11.8",
+        "device": "cuda:0",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+        "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+        "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+        "initial_offline_recommender_sha256": "a1d517d4a183268d70297b94797dce9d4de45318f7f3d77135861f67af4d41bd"
+      }
+    },
+    "mixer_frozen": {
+      "STARTED.json": {
+        "campaign_id": "goal_20261020_long_mixer_v1",
+        "mode": "train_arm",
+        "attempt": "train_mixer_frozen_r1",
+        "started_utc": "2026-10-20T04:24:27.694610+00:00",
+        "process_deadline_unix": 1792479507.694585,
+        "declared_platform_cap_seconds": 9420.0,
+        "binding": {
+          "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+          "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+          "wrapper_sha256": "de0240f281cd69d79fbe3ff36166efe8b5ee49d2ec737882111eee7dd0e4f78d",
+          "runner_sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+          "protocol_sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+        },
+        "prior_allocation_ledger_sha256": "41cb743153f3ec90f6632fa5c9ee436d2a5e74e7f06e6cc4c487cb7b6d1567e9",
+        "formal_readiness_sha256": "99781aacd8f001f5a9f89e6858b4ea4941c4c47b8e5bf6877c198846814a7558",
+        "process_time_is_not_platform_allocation": true
+      },
+      "log_tail": " val:  33%|███▎      | 916/2796 [01:41<03:24,  9.19it/s]\rEval - val:  33%|███▎      | 917/2796 [01:41<03:27,  9.06it/s]\rEval - val:  33%|███▎      | 918/2796 [01:41<03:25,  9.14it/s]\rEval - val:  33%|███▎      | 919/2796 [01:41<03:25,  9.14it/s]\rEval - val:  33%|███▎      | 920/2796 [01:41<03:25,  9.13it/s]\rEval - val:  33%|███▎      | 921/2796 [01:41<03:24,  9.15it/s]\rEval - val:  33%|███▎      | 922/2796 [01:41<03:25,  9.13it/s]\rEval - val:  33%|███▎      | 923/2796 [01:41<03:25,  9.10it/s]\rEval - val:  33%|███▎      | 924/2796 [01:42<03:27,  9.00it/s]\rEval - val:  33%|███▎      | 925/2796 [01:42<03:27,  9.01it/s]\rEval - val:  33%|███▎      | 926/2796 [01:42<03:26,  9.04it/s]\rEval - val:  33%|███▎      | 927/2796 [01:42<03:28,  8.94it/s]\rEval - val:  33%|███▎      | 928/2796 [01:42<03:27,  8.99it/s]\rEval - val:  33%|███▎      | 929/2796 [01:42<03:27,  8.99it/s]\rEval - val:  33%|███▎      | 930/2796 [01:42<03:29,  8.92it/s]\rEval - val:  33%|███▎      | 931/2796 [01:42<03:27,  9.01it/s]\rEval - val:  33%|███▎      | 932/2796 [01:42<03:24,  9.10it/s]",
+      "environment": {
+        "utc": "2026-10-20T04:26:06.603861+00:00",
+        "python": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+        "torch": "2.6.0+cu118",
+        "numpy": "2.2.6",
+        "cuda_runtime": "11.8",
+        "device": "cuda:0",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+        "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+        "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+        "initial_offline_recommender_sha256": "a1d517d4a183268d70297b94797dce9d4de45318f7f3d77135861f67af4d41bd"
+      }
+    },
+    "mixer_joint": {
+      "STARTED.json": {
+        "campaign_id": "goal_20261020_long_mixer_v1",
+        "mode": "train_arm",
+        "attempt": "train_mixer_joint_r1",
+        "started_utc": "2026-10-20T04:24:29.009556+00:00",
+        "process_deadline_unix": 1792479569.0095298,
+        "declared_platform_cap_seconds": 9480.0,
+        "binding": {
+          "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+          "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+          "wrapper_sha256": "de0240f281cd69d79fbe3ff36166efe8b5ee49d2ec737882111eee7dd0e4f78d",
+          "runner_sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+          "protocol_sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+        },
+        "prior_allocation_ledger_sha256": "41cb743153f3ec90f6632fa5c9ee436d2a5e74e7f06e6cc4c487cb7b6d1567e9",
+        "formal_readiness_sha256": "99781aacd8f001f5a9f89e6858b4ea4941c4c47b8e5bf6877c198846814a7558",
+        "process_time_is_not_platform_allocation": true
+      },
+      "log_tail": " val:  32%|███▏      | 908/2796 [01:40<03:31,  8.94it/s]\rEval - val:  33%|███▎      | 909/2796 [01:40<03:29,  9.02it/s]\rEval - val:  33%|███▎      | 910/2796 [01:40<03:28,  9.03it/s]\rEval - val:  33%|███▎      | 911/2796 [01:40<03:27,  9.07it/s]\rEval - val:  33%|███▎      | 912/2796 [01:40<03:29,  8.98it/s]\rEval - val:  33%|███▎      | 913/2796 [01:40<03:29,  8.99it/s]\rEval - val:  33%|███▎      | 914/2796 [01:40<03:29,  8.98it/s]\rEval - val:  33%|███▎      | 915/2796 [01:41<03:28,  9.04it/s]\rEval - val:  33%|███▎      | 916/2796 [01:41<03:28,  9.03it/s]\rEval - val:  33%|███▎      | 917/2796 [01:41<03:29,  8.99it/s]\rEval - val:  33%|███▎      | 918/2796 [01:41<03:26,  9.07it/s]\rEval - val:  33%|███▎      | 919/2796 [01:41<03:27,  9.03it/s]\rEval - val:  33%|███▎      | 920/2796 [01:41<03:29,  8.97it/s]\rEval - val:  33%|███▎      | 921/2796 [01:41<03:28,  9.01it/s]\rEval - val:  33%|███▎      | 922/2796 [01:41<03:29,  8.94it/s]\rEval - val:  33%|███▎      | 923/2796 [01:41<03:31,  8.87it/s]\rEval - val:  33%|███▎      | 924/2796 [01:42<03:34,  8.74it/s]",
+      "environment": {
+        "utc": "2026-10-20T04:26:07.581626+00:00",
+        "python": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+        "torch": "2.6.0+cu118",
+        "numpy": "2.2.6",
+        "cuda_runtime": "11.8",
+        "device": "cuda:0",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "code_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+        "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+        "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+        "initial_offline_recommender_sha256": "a1d517d4a183268d70297b94797dce9d4de45318f7f3d77135861f67af4d41bd"
+      }
+    }
+  },
+  "common_initial_exists": true,
+  "common_initial_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+  "common_initial_file_sha256": "6e73204c7555af111847b254f70c34e4c4efa0582fdab50fc4310d3302b95929",
+  "shared_identity_and_canonical_initial_state_verified": true
+}

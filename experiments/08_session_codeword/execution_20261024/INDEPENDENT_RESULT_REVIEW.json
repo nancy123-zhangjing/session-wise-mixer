@@ -1,0 +1,251 @@
+{
+  "schema": "stage08_independent_result_review_v1",
+  "status": "INDEPENDENT_RESULT_REVIEW_PASS_NOT_GOAL_DELIVERY",
+  "campaign_id": "goal_20261024_session_codeword_v1",
+  "reviewed_utc": "2026-10-23T20:39:18.100060+00:00",
+  "scope": "Local cross-review of sealed actual final results and CPU control receipt against last original PROGRESS metrics; no training, GPU, platform query, or checkpoint model forward.",
+  "checks_passed": 242,
+  "issues": [],
+  "artifacts": {
+    "summary_sha256": "79d1fa62735bf18cae18930cbca4a0c43d758cf36ff8ea77607ad834f92cecf5",
+    "actual_cpu_controls_sha256": "a2f6060df516c61c5d27ca64d32ce4afc47d41a2d6c04bd2c4a60559b00eafcc",
+    "report_binding_sha256": "d322e46ff38fbbe8327dc68c8c27a0ddc6975cd1dc08bae58d27524bb12d29dd",
+    "last_original_progress": {
+      "path": "experiments/08_session_codeword/execution_20261024/progress_snapshots/20261023T202336Z_remaining_cd4ea7ee/PROGRESS.json",
+      "sha256": "7e5c21af73c5ffab06cf92728a04ba024dcdd03d3672ab38309aad264a8fd483"
+    },
+    "official_inputs": {
+      "path": "outputs/stage08_session_codeword/control/OFFICIAL_INPUTS.json",
+      "sha256": "6386be010907cf563753e448f24b3c465c830aa543e50a08f246a420c6f94abd",
+      "records": 14,
+      "manifest_raw_bytes_verified": true,
+      "asset_payloads_independently_read_in_this_review": false
+    },
+    "report_files_byte_verified": [
+      {
+        "path": "REPORT.md",
+        "sha256": "0267da72082070c9e1766c5ab3684b51e153b53d5537cf54d130059319b7e6ad"
+      },
+      {
+        "path": "axial_differences_at_R35.csv",
+        "sha256": "058b2c8cb8b8de58896660274d114e9bbc7454d982558b2b48487536ac43922c"
+      },
+      {
+        "path": "best_validation_weighted_including_R0.csv",
+        "sha256": "9949e07a8b19547cb0d98518c898ba0b20a5e26de98e4619d9444e0c3c525dc8"
+      },
+      {
+        "path": "fixed_R35.csv",
+        "sha256": "466dd236aa58ccf1d986e3303d6bc5cac2aaea4df424689db9814232f7571d48"
+      },
+      {
+        "path": "loss_residual_sid.png",
+        "sha256": "af3b4cb477bbdf45c699d8384814e450b9bb6e48ad9791cec208d3aca60c3b0c"
+      },
+      {
+        "path": "phase_curve.csv",
+        "sha256": "c3ba873e832eec5dd220f48771c379fb902abfaf10c67bf166cd394a0b799488"
+      },
+      {
+        "path": "summary.json",
+        "sha256": "79d1fa62735bf18cae18930cbca4a0c43d758cf36ff8ea77607ad834f92cecf5"
+      },
+      {
+        "path": "validation_curve.csv",
+        "sha256": "1f4ee07a5ae384f5c5b3b264ca3cbe9cdd6e7fbec6995bc9fd67dd18eaee91ca"
+      },
+      {
+        "path": "validation_curves.png",
+        "sha256": "cdb434393d97c50d78e302e02e4d1663c0f944118da82d89ec3e97806e1685ca"
+      },
+      {
+        "path": "wechat_draft.md",
+        "sha256": "fd2b6acddeb0d1d2a24f5dfe617f4ec71eac98b002165a98015225170adf696f"
+      }
+    ]
+  },
+  "results": {
+    "fixed_R35": [
+      {
+        "arm": "baseline",
+        "decoder_epoch": 35,
+        "tokenizer_updates": 60,
+        "hit_rate@5": 0.07199391852613692,
+        "hit_rate@10": 0.09904753387291508,
+        "ndcg@5": 0.05048450614505903,
+        "ndcg@10": 0.05920779118143222,
+        "weighted_score": 0.06717574057209946,
+        "evaluation_wall_seconds": 474.7035322570009
+      },
+      {
+        "arm": "no_context",
+        "decoder_epoch": 35,
+        "tokenizer_updates": 60,
+        "hit_rate@5": 0.07083128381701918,
+        "hit_rate@10": 0.09851093323793766,
+        "ndcg@5": 0.05030061217479777,
+        "ndcg@10": 0.05920227857937365,
+        "weighted_score": 0.06706401031814661,
+        "evaluation_wall_seconds": 435.32920335792005
+      },
+      {
+        "arm": "axial",
+        "decoder_epoch": 35,
+        "tokenizer_updates": 60,
+        "hit_rate@5": 0.07105486741492643,
+        "hit_rate@10": 0.09967356794705541,
+        "ndcg@5": 0.05064204061883712,
+        "ndcg@10": 0.059859507944952456,
+        "weighted_score": 0.06782232079614453,
+        "evaluation_wall_seconds": 438.10679001399694
+      }
+    ],
+    "best_epochs_including_R0": {
+      "baseline": 15,
+      "no_context": 30,
+      "axial": 35
+    },
+    "axial_differences_at_R35": [
+      {
+        "comparison": "axial - baseline",
+        "metric": "hit_rate@10",
+        "absolute_difference": 0.0006260340741403303,
+        "relative_percent": 0.6320541760722387,
+        "relative_unavailable_reason": null
+      },
+      {
+        "comparison": "axial - baseline",
+        "metric": "ndcg@10",
+        "absolute_difference": 0.0006517167635202367,
+        "relative_percent": 1.1007280469611969,
+        "relative_unavailable_reason": null
+      },
+      {
+        "comparison": "axial - no_context",
+        "metric": "hit_rate@10",
+        "absolute_difference": 0.0011626347091177464,
+        "relative_percent": 1.1802088061733995,
+        "relative_unavailable_reason": null
+      },
+      {
+        "comparison": "axial - no_context",
+        "metric": "ndcg@10",
+        "absolute_difference": 0.0006572293655788056,
+        "relative_percent": 1.110142010324222,
+        "relative_unavailable_reason": null
+      }
+    ],
+    "full_validation_nodes": 24,
+    "users_per_node": 22363,
+    "validation_beam": 256,
+    "stages_per_arm": 45,
+    "total_phase_rows": 135,
+    "saved_checkpoint_buffer_bindings": [
+      {
+        "arm": "baseline",
+        "checkpoint": "best.pt",
+        "R_epoch": 15,
+        "T_updates": 24,
+        "SID_sha256": "6785bdc47aafe233e0e5cf99452024519d588e63b203bd8752a19194b30ebe55",
+        "file_sha256": "9fe23ca91533be29de998147c925308d571cc13656bda30212c844851ff6914e"
+      },
+      {
+        "arm": "baseline",
+        "checkpoint": "last.pt",
+        "R_epoch": 35,
+        "T_updates": 60,
+        "SID_sha256": "e9d3b3bc01e331bd3bceaf33ad3becf5ed8865bc635c7984c9d3d0c8a3711995",
+        "file_sha256": "46bf611d91f41f25eaf8ac1c4333cfbc895aecf180f4f61ade4bc95272aa19a8"
+      },
+      {
+        "arm": "no_context",
+        "checkpoint": "best.pt",
+        "R_epoch": 30,
+        "T_updates": 54,
+        "SID_sha256": "401707675caf8ad557bf5286e5651bf276d4290c787f3ba26053fcc91b5cb0f6",
+        "file_sha256": "d03c2d143531f23d887119a0406db7cba4a9a5bf8c8586049121640aaf468c3b"
+      },
+      {
+        "arm": "no_context",
+        "checkpoint": "last.pt",
+        "R_epoch": 35,
+        "T_updates": 60,
+        "SID_sha256": "f6f72aa7b0f7b47a93b49e47d65902547211f0b9925c0a53e7e0285126dc6369",
+        "file_sha256": "cb720b4e3ccc0867e133b96d3c5b692e783a2130a979dff8481d2a75ba174bb5"
+      },
+      {
+        "arm": "axial",
+        "checkpoint": "best.pt",
+        "R_epoch": 35,
+        "T_updates": 60,
+        "SID_sha256": "6f406ad1fe89d012c5695cf57564e554a378989a752a606d8f3059f41fe8ed21",
+        "file_sha256": "5344f6247c11b28c5ec50e528dc6da64121891d990ec6e0f7f996bed6c0a0259"
+      },
+      {
+        "arm": "axial",
+        "checkpoint": "last.pt",
+        "R_epoch": 35,
+        "T_updates": 60,
+        "SID_sha256": "6f406ad1fe89d012c5695cf57564e554a378989a752a606d8f3059f41fe8ed21",
+        "file_sha256": "5344f6247c11b28c5ec50e528dc6da64121891d990ec6e0f7f996bed6c0a0259"
+      }
+    ]
+  },
+  "source_review": {
+    "code_commit": "152bea77d43284bb41f1887a8f43124be7e6db98",
+    "engine_commit": "a28faf6a24c667aa4f49f208fb93d294ad5aab4f",
+    "source_content_checks": 20,
+    "windows_worktree_CRLF_only_paths": [
+      "engine/genrec/models/DIFF_GRM/tokenizer.py",
+      "engine/genrec/models/DIFF_GRM/collate.py",
+      "engine/genrec/models/DIFF_GRM/config.yaml",
+      "engine/genrec/default.yaml",
+      "engine/genrec/datasets/AmazonReviews2014/config.yaml",
+      "engine/genrec/datasets/AmazonReviews2014/dataset.py",
+      "engine/genrec/pipeline.py",
+      "engine/genrec/utils.py"
+    ],
+    "actual_report_and_helper_source_bytes_verified": true,
+    "actual_CPU_auditor_bytes_verified": true,
+    "shared_report_audit_source_bindings_compared": 9,
+    "report_binding_covers_FINAL_CONTROLS": false,
+    "FINAL_CONTROLS_independently_hash_bound_here": true,
+    "configuration": {
+      "path": "configs/08_session_codeword/session_codeword_seed2024.json",
+      "local_raw_sha256": "afe01cb84dfd9afa4e9af3a2313e1f43a795d986006c9a79cf28674a0eb58c0f",
+      "LF_portable_sha256": "6f78332764c9357bfc602063c9cb21d06fdab187297b2884bb8375914d73f7c7",
+      "parsed_value_equals_official_protocol": true,
+      "difference_is_only_Windows_CRLF": true,
+      "note": "The frozen remote protocol SHA is the LF byte stream; local Windows checkout uses CRLF. Exact original OFFICIAL_INPUTS bytes were checked separately without normalization."
+    }
+  },
+  "release_receipt": {
+    "path": "outputs/stage08_session_codeword/final_allocation_20261024_r1/delivery/PLATFORM_RELEASE.json",
+    "sha256": "b6a7cc3ee78af589a865d362cf333e37699ae01ef78bff217bad11fa52674129",
+    "bound_local_evidence_files_verified": 38,
+    "five_jobs_released_attested": true,
+    "independent_live_platform_query": false
+  },
+  "checkpoint_audit_boundary": {
+    "sealed_CPU_audit_actually_deserialized_all_six": true,
+    "SID_shape_checked_by_sealed_auditor": [
+      12102,
+      4
+    ],
+    "SID_non_PAD_range_checked_by_sealed_auditor": [
+      0,
+      255
+    ],
+    "this_reviewer_reread_six_tensor_payloads": false,
+    "actual_six_network_optimizer_restoration_verified": false
+  },
+  "interpretation": "At fixed R35 axial is higher on HR@10/NDCG@10 than both controls, but baseline has the higher validation-selected best score. This is one seed, SID-level validation evidence; no stable-gain, test, item-level, or Full-Mixer-benefit claim.",
+  "goal_complete": false,
+  "complete_local_backup_verified": false,
+  "boundaries": [
+    "Fourteen input-manifest records and its exact original bytes are verified; input asset payload bytes await the complete local archive audit.",
+    "Actual CPU final-controls receipt checks saved tensors/SID buffers and selected prefixes; it does not instantiate and restore six actual networks and optimizers.",
+    "Complete local backup extraction and independent actual-network CPU restoration remain separate delivery acceptance.",
+    "No GPU/platform call or training/evaluation rerun was made by this review."
+  ]
+}

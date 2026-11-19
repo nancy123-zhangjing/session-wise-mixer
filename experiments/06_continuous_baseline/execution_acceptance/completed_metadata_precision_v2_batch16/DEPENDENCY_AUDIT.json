@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "families": {
+    "sasrec_fullce": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "sasrec_fullce_13",
+        "sasrec_fullce_16",
+        "sasrec_fullce_01"
+      ],
+      "completed_confirmations": 0
+    },
+    "esasrec": {
+      "completed_searches": 32,
+      "independent_top3": [
+        "esasrec_16",
+        "esasrec_19",
+        "esasrec_08"
+      ],
+      "completed_confirmations": 6,
+      "independent_selected_trial": "esasrec_19",
+      "three_seed_validation_candidates": [
+        {
+          "trial_id": "esasrec_16",
+          "metrics": {
+            "NDCG@10": 0.048664382157769345,
+            "HR@10": 0.08503629507072695
+          }
+        },
+        {
+          "trial_id": "esasrec_19",
+          "metrics": {
+            "NDCG@10": 0.05204478027884104,
+            "HR@10": 0.0853493121077971
+          }
+        },
+        {
+          "trial_id": "esasrec_08",
+          "metrics": {
+            "NDCG@10": 0.050685007392038926,
+            "HR@10": 0.08539402882737855
+          }
+        }
+      ],
+      "formal_config_and_seed_bindings": "PASS",
+      "formal_trials": 5
+    }
+  },
+  "queue_sha256": "ad0d2797d35993a9b5155cd681d5342af4fa6e81df22b895a4a26333ea0e7c3f",
+  "test_metrics_read": false,
+  "scope": "All 64 searches and both Top-3 populations; first configuration lock; no final family selection or test results",
+  "audit_script_sha256": "bb04b0f746957f3aa0b0b7e8aee926bc5b15497a8d70491eeca8689874c0729d"
+}

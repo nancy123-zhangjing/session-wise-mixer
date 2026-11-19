@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "raw_measurement_groups": 12,
+  "timed_samples": 2400,
+  "independently_recomputed": [
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.8153440058231354,
+      "p95_ms": 0.849510395526886,
+      "throughput_items_per_second": 1214.6313899272193
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.25548800826072693,
+      "p95_ms": 0.2613536074757576,
+      "throughput_items_per_second": 3906.330556516471
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 1.1754066217690706,
+      "p95_ms": 1.210441580042243,
+      "throughput_items_per_second": 849.366340199269
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 0.898688018321991,
+      "p95_ms": 0.9339456111192703,
+      "throughput_items_per_second": 141617.93523436275
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.31137600541114807,
+      "p95_ms": 0.3204448029398918,
+      "throughput_items_per_second": 409166.7676976494
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.3325575273483992,
+      "p95_ms": 1.3669452397152781,
+      "throughput_items_per_second": 95883.02691758754
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.9541279971599579,
+      "p95_ms": 0.9860719829797745,
+      "throughput_items_per_second": 1046.459800592476
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.25651198625564575,
+      "p95_ms": 0.2646399885416031,
+      "throughput_items_per_second": 3854.2156983470586
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 1.3078053016215563,
+      "p95_ms": 1.3404527679085732,
+      "throughput_items_per_second": 763.3307883862866
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 1.0333760380744934,
+      "p95_ms": 1.0599360466003418,
+      "throughput_items_per_second": 123666.7370569465
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.3134239912033081,
+      "p95_ms": 0.32067199796438217,
+      "throughput_items_per_second": 407402.5023514322
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.4729162212461233,
+      "p95_ms": 1.5009901719167829,
+      "throughput_items_per_second": 86875.37446295863
+    }
+  ],
+  "scope": "Initial 64d smoke checkpoints; final selected-model timing still required",
+  "audit_script_sha256": "b2100c1a3ab75f9b83df30ec1aa48c9ecd76c7911fa44a70690d8bc86653aa5d"
+}

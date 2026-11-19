@@ -1,0 +1,40 @@
+{
+  "status": "FULL_EPOCH_POINT_FORECAST_FITS_WITH_REDUCED_MARGIN",
+  "observations": {
+    "recommender_epoch1_batches": 1652,
+    "recommender_epoch1_seconds": 147.37257973600026,
+    "initial_full_validation_batches": 2796,
+    "initial_full_validation_seconds": 240.88734285899955
+  },
+  "forecast": {
+    "max_recommender_epochs": 35,
+    "max_tokenizer_phases": 10,
+    "max_full_validations": 8,
+    "tokenizer_total_seconds_from_smoke": 77.1540411002934,
+    "full_train_val_point_seconds": 7162.293074732299,
+    "other_margin_seconds": 500,
+    "point_with_other_margin_seconds": 7662.293074732299,
+    "original_25pct_formula_seconds": 9452.866343415373,
+    "training_window_seconds": 9150,
+    "maximum_uniform_slowdown_fraction_after_500s_margin": 0.20771377403085478,
+    "test_reserve_seconds": 1200
+  },
+  "decision": "Continue the same bounded Job and reassess after five full recommender epochs and the first real tokenizer phase; do not change protocol, cutoff, or submit a replacement based on this estimate.",
+  "limitations": [
+    "The first full-epoch mean and initial full validation are slower than short-smoke extrapolation.",
+    "Reusing the original 25 percent multiplier gives a training bound above the 9150-second window; this is not a renewed conservative PASS.",
+    "Point estimate remains below the window, with approximately 20 percent remaining uniform-time margin after the fixed 500-second allowance.",
+    "Actual deadline remains unchanged and incomplete training must not be presented as success."
+  ],
+  "goal_complete": false,
+  "sources": {
+    "epoch_timings.json": {
+      "sha256": "be4039697215701b3ff2d77c59239c0b1ec2fd467cc2c86bd03eb0d539f93246",
+      "size_bytes": 161
+    },
+    "evaluation_timings.json": {
+      "sha256": "e51e7a83d1a0b85209364f44f7a399b5afcfc7bd64d989f66d472f0f9bc1f32f",
+      "size_bytes": 124
+    }
+  }
+}

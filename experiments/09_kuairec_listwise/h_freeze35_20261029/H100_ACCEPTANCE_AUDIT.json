@@ -1,0 +1,906 @@
+{
+  "format": "freeze35_h100_acceptance_independent_audit_v1",
+  "created_utc": "2026-10-29T06:04:00.991835+00:00",
+  "status": "passed",
+  "gpu_started_by_this_audit": false,
+  "local_evidence": {
+    "archive_sha256": "8b1355cb27a266b6b3e5f90b39fca716974c997203dc0b93bb357ae05d344924",
+    "bytes": 116633,
+    "members_verified": 15
+  },
+  "execution": {
+    "gpu": {
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "1be70eb2-d75f-e723-ad1e-2726a5767fd8",
+      "total_memory_bytes": 85029158912,
+      "visible_gpu_count": 1,
+      "mig_mode": "disabled",
+      "nvidia_smi_row": [
+        "GPU-1be70eb2-d75f-e723-ad1e-2726a5767fd8",
+        "NVIDIA H100 80GB HBM3",
+        "81559",
+        "Disabled"
+      ]
+    },
+    "torch_version": "2.6.0+cu118",
+    "cuda_version": "11.8",
+    "supervised_seconds": 143.27158529683948,
+    "max_seconds": 1500.0
+  },
+  "branches": {
+    "A": {
+      "status": "passed",
+      "parent_sha256": "1e39813b34709e4c5741fe5ac64f2e7f2778fbc321669985aad908726c58a3a9",
+      "initial_state_sha256": "b944977c0f1e6421169aad31bd97756d17bf13243392017ec83c0b5974052162",
+      "initial_counts": {
+        "R": 18018,
+        "T": 200,
+        "phase": 33
+      },
+      "short_endpoint": {
+        "phase": 34,
+        "update": 4,
+        "r_updates": 18022,
+        "t_updates": 200
+      },
+      "logical_R_updates": 4,
+      "logical_T_updates": 0,
+      "physical_extra_discarded_updates": 1,
+      "source_files_verified": 50,
+      "source_components_match_parent_asserted_in_job": true,
+      "exact_disk_next_update_replay": true,
+      "frozen_module_optimizer_hard_sid_isolation": true,
+      "BF16_R_decoder_four_layers_gradient_and_weight_updates": true,
+      "FP32_decode_same_output_and_no_training_state_side_effects": true,
+      "ends_at_exact_input_state": true,
+      "initial_bundle": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/A/initial.preflight.bundle.pt",
+        "bytes": 79916980,
+        "sha256": "05b668c5c30209b436eb1de7ff6814c78b5e198744a2a3c632c377387c9fbaa7",
+        "seconds": 0.28076788410544395,
+        "state_materialization_seconds": 0.041244134306907654,
+        "payload_fingerprint_seconds": 0.06949981302022934,
+        "file_sha256_seconds": 0.07528850063681602,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "R_replay": {
+        "kind": "R",
+        "save": {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/A/before_replay_R.preflight.bundle.pt",
+          "bytes": 79917108,
+          "sha256": "58ed93db9d21ef728f54d625e4acb5db8aa6f8c1afd2489c1505f59adf505c18",
+          "seconds": 0.27326223254203796,
+          "state_materialization_seconds": 0.053303930908441544,
+          "payload_fingerprint_seconds": 0.07197732478380203,
+          "file_sha256_seconds": 0.07423725351691246,
+          "preflight_only": true,
+          "formal_restore_rejected": true,
+          "fsync_completed": true
+        },
+        "load": {
+          "seconds": 0.09248708188533783,
+          "peak_allocated_bytes": 169648640,
+          "peak_reserved_bytes": 4510973952,
+          "payload_fingerprint_seconds": 0.07128915563225746
+        },
+        "restore": {
+          "seconds": 0.07036939263343811,
+          "peak_allocated_bytes": 214483456,
+          "peak_reserved_bytes": 4510973952
+        },
+        "exact_loaded_state": true,
+        "exact_next_update": true,
+        "reusable_snapshot_unchanged": true,
+        "extra_discarded_update_seconds": 0.8742148689925671,
+        "extra_discarded_updates": 1,
+        "formal_restore_rejected": true
+      },
+      "R_warm_median_seconds": 0.8658761642873287,
+      "FP32_median_batch_seconds": 1.154089206829667
+    },
+    "B": {
+      "status": "passed",
+      "parent_sha256": "8914c253a679e4ad18c213d4092733a8a6ce995a9b290d8bfedd6507a403b84e",
+      "initial_state_sha256": "6c266aba7d4536675f6f2687243d2fc92aa75be6a8e121df7de735878d9f149f",
+      "initial_counts": {
+        "R": 22176,
+        "T": 360,
+        "phase": 41
+      },
+      "short_endpoint": {
+        "phase": 42,
+        "update": 4,
+        "r_updates": 22180,
+        "t_updates": 360
+      },
+      "logical_R_updates": 4,
+      "logical_T_updates": 0,
+      "physical_extra_discarded_updates": 1,
+      "source_files_verified": 50,
+      "source_components_match_parent_asserted_in_job": true,
+      "exact_disk_next_update_replay": true,
+      "frozen_module_optimizer_hard_sid_isolation": true,
+      "BF16_R_decoder_four_layers_gradient_and_weight_updates": true,
+      "FP32_decode_same_output_and_no_training_state_side_effects": true,
+      "ends_at_exact_input_state": true,
+      "initial_bundle": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/B/initial.preflight.bundle.pt",
+        "bytes": 79642404,
+        "sha256": "1dbd68499a7a975655dac9110158cb12b5fda2863b1e9cb83c5088fafedf8628",
+        "seconds": 0.3182187043130398,
+        "state_materialization_seconds": 0.04137098044157028,
+        "payload_fingerprint_seconds": 0.07251022756099701,
+        "file_sha256_seconds": 0.07686057314276695,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "R_replay": {
+        "kind": "R",
+        "save": {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/B/before_replay_R.preflight.bundle.pt",
+          "bytes": 79642340,
+          "sha256": "d2fceb4ac019c67d6df103b20a77f809d25f2a44f7c6d66a83623eb511254585",
+          "seconds": 0.14951582998037338,
+          "state_materialization_seconds": 0.041377775371074677,
+          "payload_fingerprint_seconds": 0.07276807725429535,
+          "file_sha256_seconds": 0.0743165910243988,
+          "preflight_only": true,
+          "formal_restore_rejected": true,
+          "fsync_completed": true
+        },
+        "load": {
+          "seconds": 0.0865582562983036,
+          "peak_allocated_bytes": 169404928,
+          "peak_reserved_bytes": 4546625536,
+          "payload_fingerprint_seconds": 0.06972980499267578
+        },
+        "restore": {
+          "seconds": 0.0714084580540657,
+          "peak_allocated_bytes": 214239744,
+          "peak_reserved_bytes": 4546625536
+        },
+        "exact_loaded_state": true,
+        "exact_next_update": true,
+        "reusable_snapshot_unchanged": true,
+        "extra_discarded_update_seconds": 0.8684077858924866,
+        "extra_discarded_updates": 1,
+        "formal_restore_rejected": true
+      },
+      "R_warm_median_seconds": 0.8566924482584,
+      "FP32_median_batch_seconds": 1.1149996351450682
+    },
+    "C": {
+      "status": "passed",
+      "parent_sha256": "b1adf68c7c5b3f1818773c1ef34adaeac4df49be57a867c6b11bcaf38cdf9166",
+      "initial_state_sha256": "05c5953b7abe5a46a8a25d769c81cbe2fefdb1fd71db8b0b63625f0fdf9e3e40",
+      "initial_counts": {
+        "R": 3465,
+        "T": 0,
+        "phase": 5
+      },
+      "short_endpoint": {
+        "phase": 6,
+        "update": 4,
+        "r_updates": 3469,
+        "t_updates": 40
+      },
+      "logical_R_updates": 4,
+      "logical_T_updates": 40,
+      "physical_extra_discarded_updates": 2,
+      "source_files_verified": 50,
+      "source_components_match_parent_asserted_in_job": true,
+      "exact_disk_next_update_replay": true,
+      "frozen_module_optimizer_hard_sid_isolation": true,
+      "BF16_R_decoder_four_layers_gradient_and_weight_updates": true,
+      "FP32_decode_same_output_and_no_training_state_side_effects": true,
+      "ends_at_exact_input_state": true,
+      "initial_bundle": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/initial.preflight.bundle.pt",
+        "bytes": 79117226,
+        "sha256": "12d4a5e76c0abaeeaab265c29157609f8086b37b2f68670cbfdfd6e146962e9f",
+        "seconds": 0.21314077451825142,
+        "state_materialization_seconds": 0.02745649218559265,
+        "payload_fingerprint_seconds": 0.07096206769347191,
+        "file_sha256_seconds": 0.07396295666694641,
+        "preflight_only": true,
+        "formal_restore_rejected": true,
+        "fsync_completed": true
+      },
+      "R_replay": {
+        "kind": "R",
+        "save": {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/before_replay_R.preflight.bundle.pt",
+          "bytes": 79642340,
+          "sha256": "f1c9aae616156854cffac0a9d98fdf264af2779f47365d3e9a65c77ef5785429",
+          "seconds": 0.1541849859058857,
+          "state_materialization_seconds": 0.04446269944310188,
+          "payload_fingerprint_seconds": 0.0717165432870388,
+          "file_sha256_seconds": 0.0758189857006073,
+          "preflight_only": true,
+          "formal_restore_rejected": true,
+          "fsync_completed": true
+        },
+        "load": {
+          "seconds": 0.08348432555794716,
+          "peak_allocated_bytes": 169314816,
+          "peak_reserved_bytes": 5381292032,
+          "payload_fingerprint_seconds": 0.07023356482386589
+        },
+        "restore": {
+          "seconds": 0.05076684057712555,
+          "peak_allocated_bytes": 214149632,
+          "peak_reserved_bytes": 5381292032
+        },
+        "exact_loaded_state": true,
+        "exact_next_update": true,
+        "reusable_snapshot_unchanged": true,
+        "extra_discarded_update_seconds": 0.8390751481056213,
+        "extra_discarded_updates": 1,
+        "formal_restore_rejected": true
+      },
+      "R_warm_median_seconds": 0.8421659264713526,
+      "FP32_median_batch_seconds": 1.0797953102737665,
+      "T_replay": {
+        "kind": "T",
+        "save": {
+          "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_r1/preflight_r1/C/before_replay_T.preflight.bundle.pt",
+          "bytes": 79642340,
+          "sha256": "bc630144129605d7f502b81b9d5a978237d230413d8649d5591c817943adf70c",
+          "seconds": 0.1896231286227703,
+          "state_materialization_seconds": 0.03141345828771591,
+          "payload_fingerprint_seconds": 0.07314621284604073,
+          "file_sha256_seconds": 0.0750538595020771,
+          "preflight_only": true,
+          "formal_restore_rejected": true,
+          "fsync_completed": true
+        },
+        "load": {
+          "seconds": 0.08583585172891617,
+          "peak_allocated_bytes": 147138048,
+          "peak_reserved_bytes": 4643094528,
+          "payload_fingerprint_seconds": 0.06956382468342781
+        },
+        "restore": {
+          "seconds": 0.05640431120991707,
+          "peak_allocated_bytes": 191972864,
+          "peak_reserved_bytes": 4643094528
+        },
+        "exact_loaded_state": true,
+        "exact_next_update": true,
+        "reusable_snapshot_unchanged": true,
+        "extra_discarded_update_seconds": 0.8211609683930874,
+        "extra_discarded_updates": 1,
+        "formal_restore_rejected": true
+      },
+      "T_warm_median_seconds": 0.775946594774723
+    }
+  },
+  "C_original_prefix": {
+    "status": "passed",
+    "original_log": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H0\\training.jsonl",
+    "original_log_sha256": "cacc662296711898aa105d6aab25042e45c2d4583273ab3dcfc945d4ad848dcd",
+    "original_T_updates_compared": 40,
+    "original_R6_updates_compared": 4,
+    "all_integer_fields_exact": true,
+    "rules": {
+      "loss_atol": 1e-06,
+      "loss_rtol": 0.0001,
+      "gradient_norm_atol": 1e-06,
+      "gradient_norm_rtol": 0.001
+    },
+    "max_absolute_differences": {
+      "recommendation": 0,
+      "loss": 0,
+      "reconstruction": 0,
+      "balance": 0,
+      "anchor": 0,
+      "gradient_norm": 0
+    },
+    "all_saved_scientific_numeric_values_exact": true,
+    "phase_order_checks": [
+      {
+        "phase": 5,
+        "phase_seed_from_bound_code_and_config": 602042,
+        "phase_seed_matches_preregistered": true,
+        "runtime_seed_scalar_separately_emitted": false,
+        "full_order_count": 40960,
+        "full_order_sha256_int64_le": "9594224be94e29d212be9e114979addfea99f44d5f9d373b57fd7809c29fe390",
+        "observed_batches_verified": 40,
+        "each_observed_batch_index_fingerprint_and_first_sample_ids_match": true
+      },
+      {
+        "phase": 6,
+        "phase_seed_from_bound_code_and_config": 702045,
+        "phase_seed_matches_preregistered": true,
+        "runtime_seed_scalar_separately_emitted": false,
+        "full_order_count": 709443,
+        "full_order_sha256_int64_le": "c87db1dc3fffb226b32d1229d0f12fe0773180db9b1645a2db331100436d8dd3",
+        "observed_batches_verified": 4,
+        "each_observed_batch_index_fingerprint_and_first_sample_ids_match": true
+      }
+    ],
+    "per_update": [
+      {
+        "phase": 5,
+        "update": 1,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 2,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 3,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 4,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 5,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 6,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 7,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 8,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 9,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 10,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 11,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 12,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 13,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 14,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 15,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 16,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 17,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 18,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 19,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 20,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 21,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 22,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 23,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 24,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 25,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 26,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 27,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 28,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 29,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 30,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 31,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 32,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 33,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 34,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 35,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 36,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 37,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 38,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 39,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 5,
+        "update": 40,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "reconstruction": 0.0,
+          "balance": 0.0,
+          "anchor": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 6,
+        "update": 1,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 6,
+        "update": 2,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 6,
+        "update": 3,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "gradient_norm": 0.0
+        }
+      },
+      {
+        "phase": 6,
+        "update": 4,
+        "max_abs_difference": 0.0,
+        "differences": {
+          "recommendation": 0.0,
+          "loss": 0.0,
+          "gradient_norm": 0.0
+        }
+      }
+    ],
+    "full_phase6_gate_performed": false
+  },
+  "resource_evidence": {
+    "ledger_sha256": "51b5af7044350e72bf1a7a162c8616a056e19d405d13697e3fef6861101056f4",
+    "allocated_gpu_seconds": 219,
+    "released_jobs": [
+      "SUCCEEDED_RELEASED"
+    ],
+    "source": "Previously retrieved platform events and ledger, not a fresh platform query by this audit"
+  },
+  "limits": [
+    "Only the first complete 40-T block and first 4 of 693 R6 updates were compared with the old H0 log; this is not the full R6 or R20 replay gate.",
+    "In-job source-bound assertions establish exact CUDA disk restore/next update and inactive-state invariants. This local review authenticates the receipts; binary CUDA bundles were not downloaded or independently reloaded here.",
+    "No separate runtime phase-seed scalar was emitted. Seeds 602042/702045 are derived from authenticated code/config and match the preregistration; all observed batch-index hashes and initial sample IDs match independently regenerated order.",
+    "The 128 fixed validation rows only measure throughput and decoding invariants; they are not recommendation-quality validation or model selection.",
+    "Matching recorded floating values does not prove bitwise reconstruction of the unavailable old H0 R20 checkpoint.",
+    "Formal training still requires separate budget approval."
+  ],
+  "local_cpu_audit_seconds": 2.6128808001521975
+}

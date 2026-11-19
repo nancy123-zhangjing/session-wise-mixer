@@ -1,0 +1,735 @@
+{
+  "format": "stage09_h_freeze35_local_input_audit_v1",
+  "status": "passed",
+  "created_utc": "2026-10-29T05:24:41.729889+00:00",
+  "scope": "Read-only CPU deserialization and exact input/state/clock/binding checks. No model/optimizer instantiation, update, CUDA restore or decoding performed; not a new full training restore acceptance.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "inputs": {
+    "A": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\h1_recovery_20261028_r2\\runs\\H1-freeze\\last.pt",
+      "bytes": 80521392,
+      "sha256": "1e39813b34709e4c5741fe5ac64f2e7f2778fbc321669985aad908726c58a3a9",
+      "checkpoint_format": "stage09_h1_recovery_v1",
+      "inner_format": "kuairec_listwise_v1",
+      "arm": "H1-freeze",
+      "precision": "bf16",
+      "r_updates": 18018,
+      "t_updates": 200,
+      "progress": {
+        "phase": 33,
+        "update": 0,
+        "boundary_prepared": false
+      },
+      "state_fields": [
+        "format",
+        "binding",
+        "arm",
+        "model",
+        "alignment",
+        "r_optimizer",
+        "t_optimizer",
+        "scheduler",
+        "r_updates",
+        "t_updates",
+        "precision",
+        "progress",
+        "rng"
+      ],
+      "component_sha256": {
+        "model": "916bef8021dda89a2484dc73ed1c3965bd345705335e793f4d186d425dfe9d74",
+        "alignment": "d37bd09e69f5798258c09d018c75330383f201c3abf71044a2fa694954ce15b6",
+        "r_optimizer": "2b2b78f69a6c47b1be2e948c7085c927468901f250d0f50fe164cb1b81a0bf2f",
+        "t_optimizer": "643d9996007b5d811255517ecacde0928b2cfd8f9c7cd0b910d5bc38a4e72c06",
+        "scheduler": "c1b29d18ed4e593b123520363fdcea34134c1037e68b02675d150552ab26cc24",
+        "rng": "e9379e63c425e0b8ba376ac3c870bcc874de0f8d2d3a167f19c6cdb01db92453",
+        "binding": "63a2da0b379c964fa5dfad77876b9e72ed71bf388b7754b0dce7ce2465fb5622"
+      },
+      "optimizers": {
+        "R": [
+          {
+            "name": "recommender",
+            "parameter_slots": 85,
+            "populated_states": 85,
+            "step_values": [
+              18018
+            ],
+            "lr": 0.00016066336338464165,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0
+          }
+        ],
+        "T": [
+          {
+            "name": "codebook",
+            "parameter_slots": 1,
+            "populated_states": 1,
+            "step_values": [
+              200
+            ],
+            "lr": 1e-05,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          },
+          {
+            "name": "mixer",
+            "parameter_slots": 8,
+            "populated_states": 8,
+            "step_values": [
+              200
+            ],
+            "lr": 0.0001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          }
+        ]
+      },
+      "scheduler": {
+        "base_lrs": [
+          0.001
+        ],
+        "last_epoch": 18018,
+        "verbose": false,
+        "_step_count": 18019,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          0.00016066336338464165
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      },
+      "rng_keys": [
+        "python",
+        "numpy",
+        "torch",
+        "cuda"
+      ],
+      "cuda_rng_records": 1,
+      "tensor_dtypes": [
+        "torch.float32",
+        "torch.int64"
+      ],
+      "sid_shape": [
+        10729,
+        4
+      ],
+      "sid_sha256": "1a2df7e97f6f585a9745998aef949eaa87b8e9b89f72dd0dc4abf159cb1b4ee9",
+      "codebook_shape": [
+        4,
+        256,
+        64
+      ],
+      "code_files": 25,
+      "engine_files": 20,
+      "all_floating_model_alignment_finite": true
+    },
+    "H1_R20_parent": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H1\\best.pt",
+      "bytes": 79900596,
+      "sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+      "checkpoint_format": "kuairec_listwise_v1",
+      "inner_format": "kuairec_listwise_v1",
+      "arm": "H1",
+      "precision": "bf16",
+      "r_updates": 13860,
+      "t_updates": 200,
+      "progress": {
+        "phase": 25,
+        "update": 0,
+        "best_score": 0.00937205572248708,
+        "best_epoch": 20,
+        "validations": [
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R08",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R11",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R14",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R17",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R20"
+        ]
+      },
+      "state_fields": [
+        "format",
+        "binding",
+        "arm",
+        "model",
+        "alignment",
+        "r_optimizer",
+        "t_optimizer",
+        "scheduler",
+        "r_updates",
+        "t_updates",
+        "precision",
+        "progress",
+        "rng"
+      ],
+      "component_sha256": {
+        "model": "8e5b2dd514705c8b2df9cc933ac5835db009bdc20098a4ec735b7680092c22c7",
+        "alignment": "d37bd09e69f5798258c09d018c75330383f201c3abf71044a2fa694954ce15b6",
+        "r_optimizer": "4f3542898994e5fb72e201cdabdd09e471f25ef533697e7faa0ca1a2790b8bca",
+        "t_optimizer": "643d9996007b5d811255517ecacde0928b2cfd8f9c7cd0b910d5bc38a4e72c06",
+        "scheduler": "dd13fc0f621dee94178d99c88043551738f47f4cb03b6a5b71f71cffbe27b6a7",
+        "rng": "607d84bfc6607c535044376e5f07ff9838f34cdc3d4502b1028d1e77af6ec6b7",
+        "binding": "5c1f6f0c18f61e26671627abf3c8310f291d34281228b5b2f437321a93f3f367"
+      },
+      "optimizers": {
+        "R": [
+          {
+            "name": "recommender",
+            "parameter_slots": 85,
+            "populated_states": 85,
+            "step_values": [
+              13860
+            ],
+            "lr": 0.0004025967118548794,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0
+          }
+        ],
+        "T": [
+          {
+            "name": "codebook",
+            "parameter_slots": 1,
+            "populated_states": 1,
+            "step_values": [
+              200
+            ],
+            "lr": 1e-05,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          },
+          {
+            "name": "mixer",
+            "parameter_slots": 8,
+            "populated_states": 8,
+            "step_values": [
+              200
+            ],
+            "lr": 0.0001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          }
+        ]
+      },
+      "scheduler": {
+        "base_lrs": [
+          0.001
+        ],
+        "last_epoch": 13860,
+        "verbose": false,
+        "_step_count": 13861,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          0.0004025967118548794
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      },
+      "rng_keys": [
+        "python",
+        "numpy",
+        "torch",
+        "cuda"
+      ],
+      "cuda_rng_records": 1,
+      "tensor_dtypes": [
+        "torch.float32",
+        "torch.int64"
+      ],
+      "sid_shape": [
+        10729,
+        4
+      ],
+      "sid_sha256": "1a2df7e97f6f585a9745998aef949eaa87b8e9b89f72dd0dc4abf159cb1b4ee9",
+      "codebook_shape": [
+        4,
+        256,
+        64
+      ],
+      "code_files": 20,
+      "engine_files": 20,
+      "all_floating_model_alignment_finite": true
+    },
+    "B": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H0\\best.pt",
+      "bytes": 79627364,
+      "sha256": "8914c253a679e4ad18c213d4092733a8a6ce995a9b290d8bfedd6507a403b84e",
+      "checkpoint_format": "kuairec_listwise_v1",
+      "inner_format": "kuairec_listwise_v1",
+      "arm": "H0",
+      "precision": "bf16",
+      "r_updates": 22176,
+      "t_updates": 360,
+      "progress": {
+        "phase": 41,
+        "update": 0,
+        "best_score": 0.00891980794717923,
+        "best_epoch": 32,
+        "validations": [
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R08",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R11",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R14",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R17",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R20",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R23",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R26",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R29",
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R32"
+        ]
+      },
+      "state_fields": [
+        "format",
+        "binding",
+        "arm",
+        "model",
+        "alignment",
+        "r_optimizer",
+        "t_optimizer",
+        "scheduler",
+        "r_updates",
+        "t_updates",
+        "precision",
+        "progress",
+        "rng"
+      ],
+      "component_sha256": {
+        "model": "ff36a44f86705cb60541c2e1497cb6126915b55de53f44e77415a672c91965ce",
+        "alignment": "9f6888de36f2236c3a0ad268b93442ee58dbf6c369f5b24e6be4746bdc1e2e75",
+        "r_optimizer": "ed059a593f10c5319a0e0b3ec492414122a12896c93b54d8db1126c1dfa73927",
+        "t_optimizer": "1e3a9c5bc07ea5ad0d16b2f1f175665efd90dae76b438b23d9e81472733425a4",
+        "scheduler": "b450e3bd099e0c571ab3139b5139d0629ec7d09fe8af510729336735eb757046",
+        "rng": "1fac5c8618f3744438d36de9abc243d3c4e9dc3137f809e9fbb34352cc9206d8",
+        "binding": "5c1f6f0c18f61e26671627abf3c8310f291d34281228b5b2f437321a93f3f367"
+      },
+      "optimizers": {
+        "R": [
+          {
+            "name": "recommender",
+            "parameter_slots": 85,
+            "populated_states": 85,
+            "step_values": [
+              22176
+            ],
+            "lr": 1.8780235250824395e-05,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0
+          }
+        ],
+        "T": [
+          {
+            "name": "codebook",
+            "parameter_slots": 1,
+            "populated_states": 1,
+            "step_values": [
+              360
+            ],
+            "lr": 1e-05,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          },
+          {
+            "name": "mixer",
+            "parameter_slots": 8,
+            "populated_states": 0,
+            "step_values": [],
+            "lr": 0.0001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          }
+        ]
+      },
+      "scheduler": {
+        "base_lrs": [
+          0.001
+        ],
+        "last_epoch": 22176,
+        "verbose": false,
+        "_step_count": 22177,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          1.8780235250824395e-05
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      },
+      "rng_keys": [
+        "python",
+        "numpy",
+        "torch",
+        "cuda"
+      ],
+      "cuda_rng_records": 1,
+      "tensor_dtypes": [
+        "torch.float32",
+        "torch.int64"
+      ],
+      "sid_shape": [
+        10729,
+        4
+      ],
+      "sid_sha256": "3828cb615ac119d85c634af17963fef304941d13b3077d6f6c6e056f2d706a7f",
+      "codebook_shape": [
+        4,
+        256,
+        64
+      ],
+      "code_files": 20,
+      "engine_files": 20,
+      "all_floating_model_alignment_finite": true
+    },
+    "C": {
+      "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\H0\\initial.pt",
+      "bytes": 79101226,
+      "sha256": "b1adf68c7c5b3f1818773c1ef34adaeac4df49be57a867c6b11bcaf38cdf9166",
+      "checkpoint_format": "kuairec_listwise_v1",
+      "inner_format": "kuairec_listwise_v1",
+      "arm": "H0",
+      "precision": "bf16",
+      "r_updates": 3465,
+      "t_updates": 0,
+      "progress": {
+        "phase": 5,
+        "update": 0,
+        "best_score": 0.00375275301065217,
+        "best_epoch": 5,
+        "validations": [
+          "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/warmup_H/validation_R05"
+        ]
+      },
+      "state_fields": [
+        "format",
+        "binding",
+        "arm",
+        "model",
+        "alignment",
+        "r_optimizer",
+        "t_optimizer",
+        "scheduler",
+        "r_updates",
+        "t_updates",
+        "precision",
+        "progress",
+        "rng"
+      ],
+      "component_sha256": {
+        "model": "981a759bfe93e05f801853747da7a87386ff5080871c08c0fb1e9c7b1bc19936",
+        "alignment": "4a4f86ca98028f490dfef677c0b32596c3ecc5edd0628da9a2436c24e15df60c",
+        "r_optimizer": "9182150b22de3542d93525e2fd404bd77a95ee33fd841c719c2aac7fc92c131c",
+        "t_optimizer": "09c0e31470d4c78623617b9595493c3ddc7b683d5928aa7af7279eb6ca28b410",
+        "scheduler": "16cdd55cc5ab2ab3668088214f245d8989f832dde2cee5308f4508529f39fd93",
+        "rng": "c7488af11cbc1940484478de1d2de8b6e0ac7b0a0aa00af028287b50da4ef52d",
+        "binding": "5c1f6f0c18f61e26671627abf3c8310f291d34281228b5b2f437321a93f3f367"
+      },
+      "optimizers": {
+        "R": [
+          {
+            "name": "recommender",
+            "parameter_slots": 85,
+            "populated_states": 85,
+            "step_values": [
+              3465
+            ],
+            "lr": 0.0009620503978340745,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0
+          }
+        ],
+        "T": [
+          {
+            "name": "codebook",
+            "parameter_slots": 1,
+            "populated_states": 0,
+            "step_values": [],
+            "lr": 1e-05,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          },
+          {
+            "name": "mixer",
+            "parameter_slots": 8,
+            "populated_states": 0,
+            "step_values": [],
+            "lr": 0.0001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001
+          }
+        ]
+      },
+      "scheduler": {
+        "base_lrs": [
+          0.001
+        ],
+        "last_epoch": 3465,
+        "verbose": false,
+        "_step_count": 3466,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          0.0009620503978340745
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      },
+      "rng_keys": [
+        "python",
+        "numpy",
+        "torch",
+        "cuda"
+      ],
+      "cuda_rng_records": 1,
+      "tensor_dtypes": [
+        "torch.float32",
+        "torch.int64"
+      ],
+      "sid_shape": [
+        10729,
+        4
+      ],
+      "sid_sha256": "eb41b925b53edd471106fdbef8a170bc499e06399a8684cd562426789deeaaa7",
+      "codebook_shape": [
+        4,
+        256,
+        64
+      ],
+      "code_files": 20,
+      "engine_files": 20,
+      "all_floating_model_alignment_finite": true
+    }
+  },
+  "comparisons": {
+    "A_parent_binding_matches_R20": true,
+    "A_parent_hashes_match_R20": true,
+    "A_alignment_equal_R20": true,
+    "A_T_optimizer_equal_R20": true,
+    "A_model_changed_since_R20": true,
+    "B_C_binding_identical": true,
+    "all_scientific_configs_identical": true,
+    "all_data_assets_engine_identical": true,
+    "H0_disabled_mixer_tensors_B_equal_C": true
+  },
+  "source_proof": {
+    "A": {
+      "root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\h1_recovery_20261028_r2\\code",
+      "bound_files": 45,
+      "all_bound_hashes_match": true
+    },
+    "H1_R20_parent": {
+      "root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code",
+      "bound_files": 40,
+      "all_bound_hashes_match": true
+    },
+    "B": {
+      "root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code",
+      "bound_files": 40,
+      "all_bound_hashes_match": true
+    },
+    "C": {
+      "root": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\code",
+      "bound_files": 40,
+      "all_bound_hashes_match": true
+    }
+  },
+  "actual_data": {
+    "config.json": {
+      "bytes": 1746,
+      "sha256": "78231b6e3581476eb3044e652283df947813f7c4197c68a60ec829f8a4a68c54"
+    },
+    "item_map.json": {
+      "bytes": 653690,
+      "sha256": "caff566cb8428b006190271b00a273bec57ae8681d77f00bd70aab7fca448bea"
+    },
+    "item_catalog.parquet": {
+      "bytes": 799712,
+      "sha256": "e8562e8ca7df94fa3734781cfab6f3c041ab9dfe4389a975a11b3b6de9aec6b2"
+    },
+    "item_text.jsonl": {
+      "bytes": 7724679,
+      "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+    },
+    "train_seen.json": {
+      "bytes": 159883,
+      "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+    },
+    "train.parquet": {
+      "bytes": 531624261,
+      "sha256": "7c80a1ec8332cfb761d7c04ee372b83cf3361248de54e1a6b1701aa945192a31"
+    },
+    "validation.parquet": {
+      "bytes": 61527190,
+      "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+    },
+    "test.parquet": {
+      "bytes": 45918501,
+      "sha256": "f1946e99dfcb1bd1603164a6481fdc3ce7ceacb37bedcd755a025bbf14aa9cee"
+    }
+  },
+  "asset_manifest_path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\assets\\pse_v1\\manifest.json",
+  "scientific_config": {
+    "protocol_id": "kuairec_five_item_diffgrm_full_mixer_v1",
+    "architecture": "H",
+    "seed": 2024,
+    "list_length": 5,
+    "history_max": 50,
+    "dataset": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+    "assets": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+    "model": {
+      "n_digit": 4,
+      "codebook_size": 256,
+      "encoder_n_layer": 1,
+      "decoder_n_layer": 4,
+      "n_embd": 256,
+      "n_head": 4,
+      "n_inner": 1024,
+      "dropout": 0.1,
+      "attn_pdrop": 0.1,
+      "resid_pdrop": 0.1,
+      "norm_type": "layernorm",
+      "norm_eps": 1e-05,
+      "share_decoder_output_embedding": true,
+      "masking_strategy": "guided",
+      "guided_steps": 4,
+      "guided_conf_metric": "msp",
+      "guided_select": "least",
+      "guided_refresh_each_step": false,
+      "diffusion_loss_reduction": "per_view",
+      "label_smoothing": 0.2,
+      "item_local_attention": {
+        "enabled": false
+      },
+      "dedup_strategy": "simple",
+      "current_split": "val"
+    },
+    "alignment": {
+      "crosspse_heads": 4,
+      "crosspse_dropout": 0.0,
+      "crosspse_attention_scope": "full",
+      "crosspse_residual_scale_init": 1.0,
+      "crosspse_learn_residual_scale": false,
+      "crosspse_zero_init_attention_output": true,
+      "crosspse_train_base_codebooks": true,
+      "joint_gradient_mode": "diger_st",
+      "joint_diger_assignment_temperature": 0.1,
+      "joint_diger_softmax_temperature_start": 1.0,
+      "joint_diger_softmax_temperature_end": 1.0,
+      "joint_diger_gumbel_noise_start": 1.0,
+      "joint_diger_gumbel_noise_end": 0.2,
+      "joint_diger_uncertainty_decay": "cosine"
+    },
+    "training": {
+      "deterministic_algorithms": true,
+      "effective_batch_size": 1024,
+      "microbatch_size": 256,
+      "warmup_epochs": 5,
+      "cycles": 10,
+      "r_epochs_per_cycle": 3,
+      "t_updates_per_cycle": 40,
+      "checkpoint_every_updates": 100,
+      "decoder_lr": 0.001,
+      "decoder_warmup_updates": 500,
+      "decoder_weight_decay": 0.0,
+      "codebook_lr": 1e-05,
+      "mixer_lr": 0.0001,
+      "tokenizer_weight_decay": 0.0001,
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_eps": 1e-08,
+      "recommendation_weight": 1.0,
+      "reconstruction_weight": 1.0,
+      "balance_weight": 0.01,
+      "anchor_weight": 0.01,
+      "balance_temperature": 0.1,
+      "sia_weight": 0.0,
+      "max_grad_norm": 1.0
+    },
+    "evaluation": {
+      "val_beam": 32,
+      "test_beam": 32,
+      "candidate_lists": 32,
+      "batch_size": 32,
+      "selection": "ndcg@5",
+      "tie_break": "earlier",
+      "aggregate_ks": [
+        10,
+        20,
+        50
+      ],
+      "sensitivity_beam": 256,
+      "filter_history": false,
+      "collision_rule": "reconstruction_error_then_original_id",
+      "aggregation": "list_score_order_then_item_position_first_occurrence"
+    },
+    "provenance": "docs/research/onerec_listwise/IMPLEMENTATION_REFERENCES.md"
+  },
+  "checks": {
+    "all_checkpoint_sha_match": true,
+    "all_input_bytes_unchanged": true,
+    "all_original_source_binding_files_match": true,
+    "data_files_verified": 8,
+    "asset_manifest_verified": true,
+    "cuda_initialized": false
+  },
+  "fingerprint_function_source_sha256": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+  "known_risks": [
+    "H0 contains inactive mixer tensors and an empty mixer Adam group; mixer_enabled must be False explicitly.",
+    "A is a recovery wrapper and frozen T200 at phase33 differs from original unmodified trainer expected counts.",
+    "RNG states are retained but CPU does not prove CUDA next-update continuity.",
+    "C has no historical R20 checkpoint; prediction/trajectory agreement does not establish bitwise old-state recovery."
+  ]
+}

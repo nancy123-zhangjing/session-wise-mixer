@@ -1,0 +1,268 @@
+{
+  "observed_date": "2026-10-16",
+  "job_name": "nancy-stage06-20261016-8h100-precision-v2",
+  "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+  "project": "\u516c\u5171\u79d1\u7814\u9879\u76ee",
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2",
+  "execution_commit": "bbaa45b515a15912a04665721e0a5c43d64dc9e9",
+  "source_sha256": "b240275a547d36537282f318099241abf9b0be9a197489b040f8b41b6ae6c907",
+  "bundle_sha256": "172fdf1d100bb09b54e2da96fe92a0b07d9343f7d3b0bd64c683521eb8a9e051",
+  "command": "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/remote_cpu_gate_20261016_precision_v2/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2 --job-name nancy-stage06-20261016-8h100-precision-v2 --points-per-node-hour 8",
+  "create_cli_arguments": "--name nancy-stage06-20261016-8h100-precision-v2 --workspace \u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4 --project \u516c\u5171\u79d1\u7814\u9879\u76ee --group '\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838' --quota 8,160,1800 --image 'pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime' --nodes 1 --priority 4 --shm-size 64 --no-auto-fault-tolerance --no-enable-notification --env OMP_NUM_THREADS=2 --env MKL_NUM_THREADS=2 --env PYTHONUNBUFFERED=1 --env PYTHONDONTWRITEBYTECODE=1 --command '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/remote_cpu_gate_20261016_precision_v2/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2 --job-name nancy-stage06-20261016-8h100-precision-v2 --points-per-node-hour 8'",
+  "dry_run": {
+    "success": true,
+    "data": {
+      "dry_run": true,
+      "name": "nancy-stage06-20261016-8h100-precision-v2",
+      "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+      "project": "\u516c\u5171\u79d1\u7814\u9879\u76ee",
+      "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+      "resource": {
+        "gpu": 8,
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 4,
+      "nodes": 1,
+      "framework": "pytorch",
+      "enable_notification": false,
+      "auto_fault_tolerance": false,
+      "max_time_hours": null,
+      "image": "pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime",
+      "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B -u /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/scripts/train/run_continuous_campaign.py --pipeline --cache /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016/inputs/cache --cpu-gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/remote_cpu_gate_20261016_precision_v2/CPU_GATE.json --output /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage06/goal_20261016_precision_v2/code/outputs/stage06_continuous/pipeline_20261016_precision_v2 --job-name nancy-stage06-20261016-8h100-precision-v2 --points-per-node-hour 8'",
+      "shared_memory_gib": 64,
+      "env": [
+        "OMP_NUM_THREADS",
+        "MKL_NUM_THREADS",
+        "PYTHONUNBUFFERED",
+        "PYTHONDONTWRITEBYTECODE"
+      ]
+    }
+  },
+  "submission": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-precision-v2",
+      "status": "created"
+    }
+  },
+  "first_status": {
+    "success": true,
+    "data": {
+      "name": "nancy-stage06-20261016-8h100-precision-v2",
+      "status": "QUEUING",
+      "project": "\u516c\u5171\u79d1\u7814\u9879\u76ee",
+      "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+      "resource": {
+        "cpu": 160,
+        "memory_gib": 1800,
+        "gpu": 8,
+        "nodes": 1,
+        "shared_memory_gib": 64,
+        "gpu_type": "NVIDIA H100 (80GB)"
+      },
+      "priority": 20,
+      "priority_level": "NORMAL",
+      "created_at": "1792122092000"
+    }
+  },
+  "quota": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "1,20,200",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 1
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "2,40,400",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 2
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "4,80,900",
+          "priority": "low",
+          "allowed_priority_levels": [
+            "low"
+          ],
+          "points_per_hour": 4
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "quota": "8,160,1800",
+          "priority": "any",
+          "allowed_priority_levels": [],
+          "points_per_hour": 8
+        }
+      ]
+    }
+  },
+  "availability": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "compute_group": "\u8bad\u7ec3\u533a-H100-cuda13.2\u7248\u672c-183\u6838",
+          "kind": "gpu",
+          "gpu_type": "NVIDIA H100 (80GB)",
+          "total_gpus": 622,
+          "used_gpus": 622,
+          "available_gpus": 0,
+          "high_priority_available_gpus": 110,
+          "low_priority_gpus": 110,
+          "total_nodes": 79,
+          "ready_nodes": 79,
+          "free_nodes": 0,
+          "gpus_per_node": 8,
+          "full_free_nodes": 0,
+          "reclaimable_nodes": 13,
+          "high_priority_free_nodes": 13,
+          "full_free_gpus": 0,
+          "high_priority_free_gpus": 104,
+          "node_specs": [
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 8,
+              "cpu_count": 183,
+              "memory_gib": 1878,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 4,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            },
+            {
+              "node_type": "gpu",
+              "gpu_type": "H100",
+              "gpu_count": 2,
+              "cpu_count": 183,
+              "memory_gib": 1888,
+              "job_types": [
+                "distributed_training",
+                "inference_serving_customize",
+                "inference_serving_exclusive",
+                "interactive_modeling",
+                "tensorboard"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "policy": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "workload": "notebook",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 15% for 3h OR runtime > 18h",
+          "auto_save": true
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "workload": "job",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 40% for 3h"
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "workload": "hpc",
+          "configured": false
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "workload": "ray",
+          "configured": true,
+          "auto_reclaim": false
+        },
+        {
+          "workspace": "\u5206\u5e03\u5f0f\u8bad\u7ec3\u7a7a\u95f4",
+          "workload": "serving",
+          "configured": true,
+          "auto_reclaim": true,
+          "reclaim_rule": "gpu < 20% for 5h (8-16 GPU)",
+          "applies_to": "8-16 GPU"
+        }
+      ]
+    }
+  },
+  "images": {
+    "success": true,
+    "data": {
+      "items": [
+        {
+          "name": "pytorch-inspire-base:2.4.0-cuda12.4-cudnn9-runtime",
+          "status": "SUCCESS",
+          "framework": "",
+          "visibility": "official"
+        }
+      ]
+    }
+  },
+  "formal_training_runs_required": 89,
+  "submitted_nodes": 1,
+  "submitted_gpus": 8,
+  "precision_change": "Both models use FP32 Math attention; outer BF16 unchanged",
+  "old_results_used_for_selection": false,
+  "old_completed_attempts_preserved": 28,
+  "old_interrupted_attempts_preserved": 7,
+  "old_failed_attempts_preserved": 1,
+  "old_business_gpu_hours": 6.791073632240296,
+  "cost_scope": "Old work plus diagnostics and corrected campaign accounted separately; not platform billing confirmation"
+}

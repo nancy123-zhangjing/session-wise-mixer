@@ -1,0 +1,63 @@
+{
+  "sampling_seed": 20241011,
+  "sampling_pairs": 16,
+  "batch_size": 256,
+  "cpu_threads": 4,
+  "expected_items": 12101,
+  "expected_validation_examples": 22363,
+  "max_history_len": 50,
+  "asset_lock": "experiments/05_crosspse_joint/reproducibility/assets.lock.json",
+  "item_keys": "data/diff_formal_embeddings/beauty_item_keys.json",
+  "id_mapping": "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+  "sequences": "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+  "families": {
+    "cross": {
+      "slots": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/opq_residual_embeddings.npy",
+      "initial_codes": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.npy"
+    },
+    "refined": {
+      "slots": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy",
+      "initial_codes": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy"
+    }
+  },
+  "snapshots": [
+    {
+      "name": "cross_initial_frozen",
+      "family": "cross",
+      "baseline": true,
+      "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_run_metadata.json",
+      "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_crossed_codebooks.npy",
+      "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_semantic_ids.npy"
+    },
+    {
+      "name": "cross_joint_v1_best",
+      "family": "cross",
+      "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_run_metadata.json",
+      "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_crossed_codebooks.npy",
+      "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_semantic_ids.npy"
+    },
+    {
+      "name": "cross_joint_v2_best",
+      "family": "cross",
+      "additional_noise_scales": [0.2],
+      "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_run_metadata.json",
+      "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_crossed_codebooks.npy",
+      "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_semantic_ids.npy"
+    },
+    {
+      "name": "refined_initial_frozen",
+      "family": "refined",
+      "baseline": true,
+      "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_run_metadata.json",
+      "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_crossed_codebooks.npy",
+      "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_semantic_ids.npy"
+    },
+    {
+      "name": "refined_joint_best",
+      "family": "refined",
+      "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_run_metadata.json",
+      "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_crossed_codebooks.npy",
+      "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_semantic_ids.npy"
+    }
+  ]
+}

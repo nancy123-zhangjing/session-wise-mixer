@@ -1,0 +1,92 @@
+{
+  "scope": "synthetic CPU prototype, not production integration or recommendation quality",
+  "torch": "2.6.0+cpu",
+  "device": "cpu",
+  "threads": 1,
+  "optimizer_steps": 0,
+  "gpu_calls": 0,
+  "source_sha256": {
+    "cross_pse.py": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+    "joint_cross_pse.py": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33"
+  },
+  "checks": [
+    {
+      "name": "actual_stage05_st",
+      "pass": true,
+      "detail": "actual Stage05 custom autograd: exact hard forward, soft-input backward",
+      "seconds": 0.03451220004353672
+    },
+    {
+      "name": "shapes_and_zero_identity",
+      "pass": true,
+      "detail": "4 patterns x 2 depths x 3 phases: exact initial identity",
+      "seconds": 0.20979140000417829
+    },
+    {
+      "name": "genuine_context_vs_item_only",
+      "pass": true,
+      "detail": {
+        "full": 0.0002590380609035492,
+        "axial": 0.0005993247032165527,
+        "item": 0.0,
+        "no_context": 0.0
+      },
+      "seconds": 0.02720240002963692
+    },
+    {
+      "name": "padding_empty_and_finite_backward",
+      "pass": true,
+      "detail": {
+        "full": "masked IDs ignored, empty forward/backward finite, original PAD preserved",
+        "axial": "masked IDs ignored, empty forward/backward finite, original PAD preserved",
+        "item": "masked IDs ignored, empty forward/backward finite, original PAD preserved",
+        "no_context": "masked IDs ignored, empty forward/backward finite, original PAD preserved"
+      },
+      "seconds": 0.0751907000085339
+    },
+    {
+      "name": "causality_and_cross_sample_isolation",
+      "pass": true,
+      "detail": "later visible history cannot change earlier representations; batch rows isolated",
+      "seconds": 0.01296389999333769
+    },
+    {
+      "name": "R_T_parameter_and_input_gradients",
+      "pass": true,
+      "detail": {
+        "R_first_core_grad": 0.0,
+        "R_activated_core_grad": 0.006451404064137023,
+        "T_total_codebook_grad_norm": 0.029484575614333153,
+        "T_residual_only_codebook_grad_norm": 0.0006912522949278355,
+        "CPU_BF16_R": "finite backward; probabilities/difference/readout kept FP32",
+        "note": "diagnostic backward only; no optimizer constructed or stepped"
+      },
+      "seconds": 0.029641299974173307
+    },
+    {
+      "name": "loop_shared_parameters_and_state",
+      "pass": true,
+      "detail": "one core called twice; state is propagated; no extra loop parameters",
+      "seconds": 0.005391500075347722
+    },
+    {
+      "name": "canonical_catalog_collision_and_roundtrip",
+      "pass": true,
+      "detail": {
+        "unique_synthetic_sids": 79,
+        "retrieval": "exhaustive synthetic SID catalog only",
+        "collision": "SID -> list of item IDs preserved",
+        "forward_state_mutation": false
+      },
+      "seconds": 0.02088750002440065
+    },
+    {
+      "name": "continuous_router_numerical_gradient",
+      "pass": true,
+      "detail": "continuous router only; deliberately NOT numerical gradcheck of surrogate hard ST",
+      "seconds": 0.4412622000090778
+    }
+  ],
+  "passed": 9,
+  "total": 9
+}

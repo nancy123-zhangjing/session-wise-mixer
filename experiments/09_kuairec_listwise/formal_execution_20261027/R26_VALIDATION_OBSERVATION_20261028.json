@@ -1,0 +1,271 @@
+{
+  "schema": "stage09_r26_observation_v1",
+  "observed_at_utc": "2026-10-28T04:00:37.008490+00:00",
+  "snapshot": "FORMAL_VALIDATION_R26_20261028T040037008544Z.json",
+  "snapshot_sha256": "960db628197acfb47b34121b5fe3eec0cd43791d330eaa17f262b7fbe27fa116",
+  "four_summary_protocol_checks_passed": true,
+  "independent_summary_protocol_and_arithmetic_audit_passed": true,
+  "independent_per_sample_recompute": false,
+  "completed_full_validations_through_r26": 30,
+  "arms": {
+    "J0": {
+      "summary_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J0/validation_R26/summary.json",
+      "summary_sha256_remote_reported": "b66059f69c1db20466bbc8c95ab7149faf5a402bd078f6b59e9a3ae4639bf7f6",
+      "summary_bytes": 9351,
+      "r_updates": 18018,
+      "t_updates": 280,
+      "validation_seconds": 4775.857199870981,
+      "metrics": {
+        "list/recall@5": 0.005043471054960153,
+        "list/hr@5": 0.02470100618222923,
+        "list/hit_rate@5": 0.02470100618222923,
+        "list/ndcg@5": 0.005079023780931487,
+        "list/precision@5": 0.005043471054960153,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/missing_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "list/distinct_valid_items": 5.0,
+        "list/position_accuracy": 0.000962920594333842,
+        "list/exact_match": 0.0,
+        "aggregate/recall@10": 0.00820017595986327,
+        "aggregate/hr@10": 0.03977280656460639,
+        "aggregate/hit_rate@10": 0.03977280656460639,
+        "aggregate/ndcg@10": 0.006818019623395871,
+        "aggregate/precision@10": 0.004100087979931635,
+        "aggregate/recall@20": 0.010181838632676354,
+        "aggregate/hr@20": 0.04902521735489903,
+        "aggregate/hit_rate@20": 0.04902521735489903,
+        "aggregate/ndcg@20": 0.007683369829170017,
+        "aggregate/precision@20": 0.0025454596581690886,
+        "aggregate/recall@50": 0.010449781754577945,
+        "aggregate/hr@50": 0.05030911146154598,
+        "aggregate/hit_rate@50": 0.05030911146154598,
+        "aggregate/ndcg@50": 0.007780733610697771,
+        "aggregate/precision@50": 0.0010449781364877343,
+        "aggregate/completion_rate": 0.0,
+        "aggregate/duplicate_rate": 0.0,
+        "aggregate/missing_rate": 0.6894594921584386,
+        "aggregate/invalid_rate": 0.0,
+        "aggregate/distinct_valid_items": 15.527024575407845,
+        "aggregate/candidate_count": 15.527024575407845,
+        "aggregate/lists_used": 23.519209567802168,
+        "aggregate/coverage@10": 0.9836484936745076,
+        "aggregate/coverage@20": 0.7328474639441334,
+        "aggregate/coverage@50": 0.3105404834461789
+      },
+      "current_training": {
+        "epoch": 29,
+        "r_updates": 20097,
+        "t_updates": 320
+      },
+      "change_from_r23": {
+        "list/hr@5": -0.00350279805183025,
+        "list/ndcg@5": -0.001103986370068916,
+        "aggregate/ndcg@50": -0.001980269223030305
+      }
+    },
+    "J1": {
+      "summary_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/J1/validation_R26/summary.json",
+      "summary_sha256_remote_reported": "8e810a08ec0e690a50d1950119e71a1fbf508b3a4695dfc5b5bf283135eb0143",
+      "summary_bytes": 9368,
+      "r_updates": 18018,
+      "t_updates": 280,
+      "validation_seconds": 4607.682267243043,
+      "metrics": {
+        "list/recall@5": 0.0033967372849399587,
+        "list/hr@5": 0.016872043205827764,
+        "list/hit_rate@5": 0.016872043205827764,
+        "list/ndcg@5": 0.00290270006491783,
+        "list/precision@5": 0.0033967372849399587,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/missing_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "list/distinct_valid_items": 5.0,
+        "list/position_accuracy": 0.0006531113596351277,
+        "list/exact_match": 0.0,
+        "aggregate/recall@10": 0.0053504892154723925,
+        "aggregate/hr@10": 0.02647333826423099,
+        "aggregate/hit_rate@10": 0.02647333826423099,
+        "aggregate/ndcg@10": 0.003952056518660001,
+        "aggregate/precision@10": 0.0026752446077361962,
+        "aggregate/recall@20": 0.007273539329953602,
+        "aggregate/hr@20": 0.03583739202031902,
+        "aggregate/hit_rate@20": 0.03583739202031902,
+        "aggregate/ndcg@20": 0.004792544603728745,
+        "aggregate/precision@20": 0.0018183848324884004,
+        "aggregate/recall@50": 0.007594512861398215,
+        "aggregate/hr@50": 0.03735852742928116,
+        "aggregate/hit_rate@50": 0.03735852742928116,
+        "aggregate/ndcg@50": 0.004907257830608213,
+        "aggregate/precision@50": 0.0007594512578480569,
+        "aggregate/completion_rate": 0.0,
+        "aggregate/duplicate_rate": 0.0,
+        "aggregate/missing_rate": 0.6861021091248968,
+        "aggregate/invalid_rate": 0.0,
+        "aggregate/distinct_valid_items": 15.694893729851934,
+        "aggregate/candidate_count": 15.694893729851934,
+        "aggregate/lists_used": 31.966451288778487,
+        "aggregate/coverage@10": 0.9884282082108398,
+        "aggregate/coverage@20": 0.7317282428694973,
+        "aggregate/coverage@50": 0.31389786614959814
+      },
+      "current_training": {
+        "epoch": 29,
+        "r_updates": 20097,
+        "t_updates": 320
+      },
+      "change_from_r23": {
+        "list/hr@5": -0.008791883556386673,
+        "list/ndcg@5": -0.00211747773180373,
+        "aggregate/ndcg@50": -0.004366809331697994
+      }
+    },
+    "H0": {
+      "summary_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H0/validation_R26/summary.json",
+      "summary_sha256_remote_reported": "9768dba5e66cbd6893b7b246ccaaeacbea02a03c33ec39e93b13305d5d8e8a04",
+      "summary_bytes": 9342,
+      "r_updates": 18018,
+      "t_updates": 280,
+      "validation_seconds": 3583.1142953867093,
+      "metrics": {
+        "list/recall@5": 0.008401133301497414,
+        "list/hr@5": 0.04100087918835564,
+        "list/hit_rate@5": 0.04100087918835564,
+        "list/ndcg@5": 0.008763027141129044,
+        "list/precision@5": 0.008401133301497414,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/missing_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "list/distinct_valid_items": 5.0,
+        "list/position_accuracy": 0.0016746445118849427,
+        "list/exact_match": 0.0,
+        "aggregate/recall@10": 0.013799070779387588,
+        "aggregate/hr@10": 0.06606472500941987,
+        "aggregate/hit_rate@10": 0.06606472500941987,
+        "aggregate/ndcg@10": 0.011741080665933745,
+        "aggregate/precision@10": 0.006899535389693794,
+        "aggregate/recall@20": 0.01748607978013684,
+        "aggregate/hr@20": 0.08275534839583014,
+        "aggregate/hit_rate@20": 0.08275534839583014,
+        "aggregate/ndcg@20": 0.0133427426165751,
+        "aggregate/precision@20": 0.00437151994503421,
+        "aggregate/recall@50": 0.018334566333241112,
+        "aggregate/hr@50": 0.08642561089635346,
+        "aggregate/hit_rate@50": 0.08642561089635346,
+        "aggregate/ndcg@50": 0.013652323740837118,
+        "aggregate/precision@50": 0.0018334565647937838,
+        "aggregate/completion_rate": 0.0,
+        "aggregate/duplicate_rate": 0.0,
+        "aggregate/missing_rate": 0.612075009789585,
+        "aggregate/invalid_rate": 0.0,
+        "aggregate/distinct_valid_items": 19.396248796349276,
+        "aggregate/candidate_count": 19.396248796349276,
+        "aggregate/lists_used": 28.031092565974014,
+        "aggregate/coverage@10": 0.9977057375157211,
+        "aggregate/coverage@20": 0.8638465257563842,
+        "aggregate/coverage@50": 0.3879249655217174
+      },
+      "current_training": {
+        "epoch": 27,
+        "r_updates": 18321,
+        "t_updates": 320
+      },
+      "change_from_r23": {
+        "list/hr@5": -8.373222434653743e-05,
+        "list/ndcg@5": -7.118927562729457e-05,
+        "aggregate/ndcg@50": -0.00020921091404741375
+      }
+    },
+    "H1": {
+      "summary_path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/runs/H1/validation_R26/summary.json",
+      "summary_sha256_remote_reported": "b1b22c86b9b653fc74c7df198e9d87e4334065e81135a4cc8d7b5cfe90b1c99e",
+      "summary_bytes": 9351,
+      "r_updates": 18018,
+      "t_updates": 280,
+      "validation_seconds": 3531.4204972637817,
+      "metrics": {
+        "list/recall@5": 0.005919868350137127,
+        "list/hr@5": 0.028399179424201403,
+        "list/hit_rate@5": 0.028399179424201403,
+        "list/ndcg@5": 0.006438442413344798,
+        "list/precision@5": 0.005919868350137127,
+        "list/completion_rate": 1.0,
+        "list/duplicate_rate": 0.0,
+        "list/missing_rate": 0.0,
+        "list/invalid_rate": 0.0,
+        "list/distinct_valid_items": 5.0,
+        "list/position_accuracy": 0.0012169083453030583,
+        "list/exact_match": 0.0,
+        "aggregate/recall@10": 0.011158714600022082,
+        "aggregate/hr@10": 0.053114140977155055,
+        "aggregate/hit_rate@10": 0.053114140977155055,
+        "aggregate/ndcg@10": 0.009294903918258351,
+        "aggregate/precision@10": 0.005579357300011041,
+        "aggregate/recall@20": 0.0160347212048335,
+        "aggregate/hr@20": 0.07593117211158715,
+        "aggregate/hit_rate@20": 0.07593117211158715,
+        "aggregate/ndcg@20": 0.01141921175233332,
+        "aggregate/precision@20": 0.004008680301208375,
+        "aggregate/recall@50": 0.01659851819091733,
+        "aggregate/hr@50": 0.0783035851347391,
+        "aggregate/hit_rate@50": 0.0783035851347391,
+        "aggregate/ndcg@50": 0.01162531390499822,
+        "aggregate/precision@50": 0.001659851756862328,
+        "aggregate/completion_rate": 0.0,
+        "aggregate/duplicate_rate": 0.0,
+        "aggregate/missing_rate": 0.6451863603708821,
+        "aggregate/invalid_rate": 0.0,
+        "aggregate/distinct_valid_items": 17.740681301198766,
+        "aggregate/candidate_count": 17.740681301198766,
+        "aggregate/lists_used": 26.549450856161993,
+        "aggregate/coverage@10": 0.9993147914285233,
+        "aggregate/coverage@20": 0.8343874379279836,
+        "aggregate/coverage@50": 0.3548136166761891
+      },
+      "current_training": {
+        "epoch": 28,
+        "r_updates": 18824,
+        "t_updates": 320
+      },
+      "change_from_r23": {
+        "list/hr@5": 0.0006977685362211626,
+        "list/ndcg@5": 0.0004224001846410367,
+        "aggregate/ndcg@50": 0.00023920762997151242
+      }
+    }
+  },
+  "paired_deltas": {
+    "J1-J0": {
+      "list/hr@5": {
+        "absolute": -0.007828962976401465,
+        "relative_percent": -31.694915254237277
+      },
+      "list/ndcg@5": {
+        "absolute": -0.002176323716013657,
+        "relative_percent": -42.84925233436339
+      },
+      "aggregate/ndcg@50": {
+        "absolute": -0.0028734757800895575,
+        "relative_percent": -36.93065363578057
+      }
+    },
+    "H1-H0": {
+      "list/hr@5": {
+        "absolute": -0.012601699764154237,
+        "relative_percent": -30.735194009530296
+      },
+      "list/ndcg@5": {
+        "absolute": -0.0023245847277842463,
+        "relative_percent": -26.52718849715605
+      },
+      "aggregate/ndcg@50": {
+        "absolute": -0.002027009835838898,
+        "relative_percent": -14.84736133069906
+      }
+    }
+  },
+  "interpretation": "Intermediate R26 validation only. Both paired differences are negative; J1 declined from R23 while H1 partly recovered. No cause, training-defect or stable-effect claim follows from summary metrics alone. No final best selection, test, bootstrap or per-sample recompute. Aggregated Top50 candidate coverage remains separate from single five-item list completeness."
+}

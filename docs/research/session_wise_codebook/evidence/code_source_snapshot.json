@@ -1,0 +1,110 @@
+{
+  "status": "READ_ONLY_SOURCE_AUDIT",
+  "scope": "05 codebook lineage; no production edits, training, GPU, or package installation",
+  "audit_client_date": "2026-10-23",
+  "captured_utc": "2026-10-22T16:59:42.9366463+00:00",
+  "root_head": "037876cbb3de339ad011e5abcf0e66169967ce3b",
+  "engine_head": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "engine_status": [],
+  "sources": [
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/cross_pse.py",
+      "sha256": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170",
+      "bytes": 8016,
+      "lines": 188
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/joint_cross_pse.py",
+      "sha256": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33",
+      "bytes": 18046,
+      "lines": 420
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/model.py",
+      "sha256": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967",
+      "bytes": 82157,
+      "lines": 1734
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/tokenizer.py",
+      "sha256": "e7eab2444e652adf04c9888191f96e8e1aa6e0e0c9f6a9adf08d75599810e35a",
+      "bytes": 44208,
+      "lines": 981
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/trainer.py",
+      "sha256": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502",
+      "bytes": 77978,
+      "lines": 1618
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/beam.py",
+      "sha256": "d7bfb5758627e69a93efec9020a7d63637f7e53400e70f6617e20b4fc28b5f9e",
+      "bytes": 32118,
+      "lines": 640
+    },
+    {
+      "path": "external/DiffGRM/genrec/models/DIFF_GRM/evaluator.py",
+      "sha256": "f69d352b52f3cfa7bdafcc66ceffacf289f8e85061ce5d272fa259c32216111a",
+      "bytes": 15319,
+      "lines": 348
+    },
+    {
+      "path": "scripts/train/run_diger_mixer_long.py",
+      "sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2",
+      "bytes": 43408,
+      "lines": 713
+    },
+    {
+      "path": "scripts/train/run_diger_noise_pilot.py",
+      "sha256": "12fcb1c19973495dd13237f750ced8ff9d96da781994cd5562fa67eef0d65d3b",
+      "bytes": 49851,
+      "lines": 862
+    },
+    {
+      "path": "configs/shared/diff_formal_common.yaml",
+      "sha256": "e36001a04ce41023727ef4e38cceda9f2280ecd716b96dc02f132735779ae1c2",
+      "bytes": 2774,
+      "lines": 102
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/REPORT.md",
+      "sha256": "2b25e30de3c5b361bab0e966869154ec7724b427f777b708a45adea9aebb3147",
+      "bytes": 39038,
+      "lines": 267
+    },
+    {
+      "path": "experiments/07_item_local_attention/joint_alternating/REPORT.md",
+      "sha256": "9ad0f0925bc8b472c1a3082f7abcdb5181e36ffef77ceb5d99742a649ca8635d",
+      "bytes": 7625,
+      "lines": 54
+    },
+    {
+      "path": "experiments/07_item_local_attention/multiseed_20261021/report/REPORT.md",
+      "sha256": "9c0bfeb5784ac46e95042d1640f30caec8f10fac030cb9f3c6e73862a0f08bac",
+      "bytes": 2958,
+      "lines": 33
+    },
+    {
+      "path": "experiments/07_item_local_attention/multiseed_20261021/report/FINDINGS.md",
+      "sha256": "6ace97393d777b9072b4266ce19d5642483d55e9ca4654e6c9a4d8ef9ff04676",
+      "bytes": 2956,
+      "lines": 34
+    }
+  ],
+  "cpu_interpreter": {
+    "path": "C:/Users/nancy/Documents/experiment1/.runtime/continuous_env/Scripts/python.exe",
+    "exists": true,
+    "pyvenv_python": "3.12.14",
+    "evidence": "experiments/07_item_local_attention/joint_alternating/cpu_acceptance_20261020/ACCEPTANCE.json",
+    "import_or_cuda_not_executed_in_this_audit": true,
+    "full_pipeline_dependencies_not_claimed": true
+  },
+  "findings": [
+    "05 codebooks are global 64-dimensional quantizer centroids, distinct from learned 256-dimensional SID embedding table",
+    "ST distributions are only attached by differentiable tokenizer preparation; raw soft tensor is not returned",
+    "R/eval use current hard snapshot by default; new routing branch must explicitly run in every path",
+    "No active trie/prefix-mask found in confidence path; graph flag is inert for current native decoder, legality filtering is after generation",
+    "@50 requires topk/top_k_final/beam and duplicate coverage changes; historical @10 cannot be compared directly"
+  ]
+}

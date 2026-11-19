@@ -1,0 +1,345 @@
+{
+  "original_job_status": "FAILED",
+  "original_report_status": "failed",
+  "error": "A worker failed to exit cleanly",
+  "recorded_work_equivalence_verified": true,
+  "clean_shutdown_verified": false,
+  "long_run_utilization_compliance_verified": false,
+  "source_hashes": {
+    "report": "2e0cc1d3cae3572e442f13fec7c98151ddb0ab8438ec1d145b94d8779158161f",
+    "telemetry": "16024c0d2f69d65072898cabf9f310b258791d2f9f3dbb52b66a452534447e26"
+  },
+  "telemetry": [
+    {
+      "mode": "solo",
+      "phase": "R",
+      "arms": [
+        "J0"
+      ],
+      "samples": 13,
+      "gpu_mean": 21.0,
+      "all_overlap_gpu_mean": 21.0,
+      "peak_memory_mib": 4916.0
+    },
+    {
+      "mode": "solo",
+      "phase": "R",
+      "arms": [
+        "J1"
+      ],
+      "samples": 12,
+      "gpu_mean": 17.333333333333332,
+      "all_overlap_gpu_mean": 17.333333333333332,
+      "peak_memory_mib": 7198.0
+    },
+    {
+      "mode": "solo",
+      "phase": "R",
+      "arms": [
+        "H0"
+      ],
+      "samples": 23,
+      "gpu_mean": 23.17391304347826,
+      "all_overlap_gpu_mean": 23.17391304347826,
+      "peak_memory_mib": 11526.0
+    },
+    {
+      "mode": "solo",
+      "phase": "R",
+      "arms": [
+        "H1"
+      ],
+      "samples": 23,
+      "gpu_mean": 26.304347826086957,
+      "all_overlap_gpu_mean": 26.304347826086957,
+      "peak_memory_mib": 15854.0
+    },
+    {
+      "mode": "solo",
+      "phase": "T",
+      "arms": [
+        "J0"
+      ],
+      "samples": 12,
+      "gpu_mean": 19.25,
+      "all_overlap_gpu_mean": 19.25,
+      "peak_memory_mib": 16658.0
+    },
+    {
+      "mode": "solo",
+      "phase": "T",
+      "arms": [
+        "J1"
+      ],
+      "samples": 12,
+      "gpu_mean": 18.666666666666668,
+      "all_overlap_gpu_mean": 18.666666666666668,
+      "peak_memory_mib": 17464.0
+    },
+    {
+      "mode": "solo",
+      "phase": "T",
+      "arms": [
+        "H0"
+      ],
+      "samples": 20,
+      "gpu_mean": 17.25,
+      "all_overlap_gpu_mean": 17.25,
+      "peak_memory_mib": 18268.0
+    },
+    {
+      "mode": "solo",
+      "phase": "T",
+      "arms": [
+        "H1"
+      ],
+      "samples": 21,
+      "gpu_mean": 26.142857142857142,
+      "all_overlap_gpu_mean": 26.142857142857142,
+      "peak_memory_mib": 19076.0
+    },
+    {
+      "mode": "solo",
+      "phase": "validation",
+      "arms": [
+        "J0"
+      ],
+      "samples": 24,
+      "gpu_mean": 21.75,
+      "all_overlap_gpu_mean": 21.75,
+      "peak_memory_mib": 19078.0
+    },
+    {
+      "mode": "solo",
+      "phase": "validation",
+      "arms": [
+        "J1"
+      ],
+      "samples": 24,
+      "gpu_mean": 21.666666666666668,
+      "all_overlap_gpu_mean": 21.666666666666668,
+      "peak_memory_mib": 19080.0
+    },
+    {
+      "mode": "solo",
+      "phase": "validation",
+      "arms": [
+        "H0"
+      ],
+      "samples": 17,
+      "gpu_mean": 21.823529411764707,
+      "all_overlap_gpu_mean": 21.823529411764707,
+      "peak_memory_mib": 19082.0
+    },
+    {
+      "mode": "solo",
+      "phase": "validation",
+      "arms": [
+        "H1"
+      ],
+      "samples": 17,
+      "gpu_mean": 20.941176470588236,
+      "all_overlap_gpu_mean": 20.941176470588236,
+      "peak_memory_mib": 19082.0
+    },
+    {
+      "mode": "concurrent",
+      "phase": "R",
+      "arms": [
+        "J0",
+        "J1",
+        "H0",
+        "H1"
+      ],
+      "samples": 26,
+      "gpu_mean": 74.73076923076923,
+      "all_overlap_gpu_mean": 85.35714285714286,
+      "peak_memory_mib": 19084.0
+    },
+    {
+      "mode": "concurrent",
+      "phase": "T",
+      "arms": [
+        "J0",
+        "J1",
+        "H0",
+        "H1"
+      ],
+      "samples": 25,
+      "gpu_mean": 82.96,
+      "all_overlap_gpu_mean": 88.42857142857143,
+      "peak_memory_mib": 19084.0
+    },
+    {
+      "mode": "concurrent",
+      "phase": "validation",
+      "arms": [
+        "J0",
+        "J1",
+        "H0",
+        "H1"
+      ],
+      "samples": 49,
+      "gpu_mean": 88.46938775510205,
+      "all_overlap_gpu_mean": 91.69767441860465,
+      "peak_memory_mib": 19084.0
+    }
+  ],
+  "comparison": {
+    "R": {
+      "arms": {
+        "J0": {
+          "solo_seconds": 14.10069001300144,
+          "concurrent_seconds": 15.08291806600755,
+          "slowdown": 1.0696581551754172,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 0.5768871635009418,
+            "concurrent_median_seconds": 0.7919990105001489,
+            "slowdown": 1.3728837467863952,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "J1": {
+          "solo_seconds": 12.339883460008423,
+          "concurrent_seconds": 15.083555530000012,
+          "slowdown": 1.222341813752406,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 0.5919171170025948,
+            "concurrent_median_seconds": 0.7910927994962549,
+            "slowdown": 1.3364925202742313,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "H0": {
+          "solo_seconds": 24.02963843100588,
+          "concurrent_seconds": 27.76722039100423,
+          "slowdown": 1.1555404993183618,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 1.1737276499989093,
+            "concurrent_median_seconds": 1.3005091580052976,
+            "slowdown": 1.1080161211218855,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "H1": {
+          "solo_seconds": 24.108654486000887,
+          "concurrent_seconds": 27.963010841005598,
+          "slowdown": 1.1598743869029609,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 1.18219526699977,
+            "concurrent_median_seconds": 1.3110325189991272,
+            "slowdown": 1.1089813633972045,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        }
+      },
+      "solo_sequential_seconds": 74.57886639001663,
+      "concurrent_seconds": 27.963091651006835,
+      "aggregate_speedup_over_one_gpu_sequential": 2.667046524068141,
+      "estimated_slowdown_vs_four_independent_gpus": 1.1598777388113506,
+      "four_gpu_estimate_scope": "NOT a measured four-GPU comparison: solo has one active worker and three blocked resident CUDA contexts on the same GPU",
+      "order_limitation": "Solo runs before concurrent; kernel/allocator and host file caches can be warmer in concurrent mode. Report steady R/T ratios beside total wall time; do not infer speedup from total time alone."
+    },
+    "T": {
+      "arms": {
+        "J0": {
+          "solo_seconds": 12.19628598401323,
+          "concurrent_seconds": 14.8317431609903,
+          "slowdown": 1.2160868628721564,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 0.5743358814943349,
+            "concurrent_median_seconds": 0.7289884099955088,
+            "slowdown": 1.269271925164751,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "J1": {
+          "solo_seconds": 12.60685135400854,
+          "concurrent_seconds": 15.453466124003171,
+          "slowdown": 1.2257990270575774,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 0.6165282544970978,
+            "concurrent_median_seconds": 0.7605834659989341,
+            "slowdown": 1.2336554901597205,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "H0": {
+          "solo_seconds": 21.973104245000286,
+          "concurrent_seconds": 25.581472965001012,
+          "slowdown": 1.1642175215557795,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 1.0929322845040588,
+            "concurrent_median_seconds": 1.220499759503582,
+            "slowdown": 1.1167203831456125,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        },
+        "H1": {
+          "solo_seconds": 22.974614961000043,
+          "concurrent_seconds": 26.376860188000137,
+          "slowdown": 1.1480871489152478,
+          "fingerprints_equal": true,
+          "steady_updates_3_to_20": {
+            "solo_median_seconds": 1.1411997655013693,
+            "concurrent_median_seconds": 1.2830142700113356,
+            "slowdown": 1.124267905407133,
+            "scope": "Same real CPU batch construction and update timing; discard first two updates of each mode"
+          }
+        }
+      },
+      "solo_sequential_seconds": 69.7508565440221,
+      "concurrent_seconds": 26.376881514996057,
+      "aggregate_speedup_over_one_gpu_sequential": 2.644393595367467,
+      "estimated_slowdown_vs_four_independent_gpus": 1.148088077200486,
+      "four_gpu_estimate_scope": "NOT a measured four-GPU comparison: solo has one active worker and three blocked resident CUDA contexts on the same GPU",
+      "order_limitation": "Solo runs before concurrent; kernel/allocator and host file caches can be warmer in concurrent mode. Report steady R/T ratios beside total wall time; do not infer speedup from total time alone."
+    },
+    "validation": {
+      "arms": {
+        "J0": {
+          "solo_seconds": 25.144088863002253,
+          "concurrent_seconds": 52.19935601799807,
+          "slowdown": 2.076009049379623,
+          "fingerprints_equal": true
+        },
+        "J1": {
+          "solo_seconds": 25.285546537998016,
+          "concurrent_seconds": 52.2035043950018,
+          "slowdown": 2.06455906802539,
+          "fingerprints_equal": true
+        },
+        "H0": {
+          "solo_seconds": 18.111231178991147,
+          "concurrent_seconds": 45.85557439200056,
+          "slowdown": 2.5318860953634443,
+          "fingerprints_equal": true
+        },
+        "H1": {
+          "solo_seconds": 18.123444766999455,
+          "concurrent_seconds": 46.01046973800112,
+          "slowdown": 2.5387265130622674,
+          "fingerprints_equal": true
+        }
+      },
+      "solo_sequential_seconds": 86.66431134699087,
+      "concurrent_seconds": 52.203558187989984,
+      "aggregate_speedup_over_one_gpu_sequential": 1.6601226880915747,
+      "estimated_slowdown_vs_four_independent_gpus": 2.0645611954458154,
+      "four_gpu_estimate_scope": "NOT a measured four-GPU comparison: solo has one active worker and three blocked resident CUDA contexts on the same GPU",
+      "order_limitation": "Solo runs before concurrent; kernel/allocator and host file caches can be warmer in concurrent mode. Report steady R/T ratios beside total wall time; do not infer speedup from total time alone."
+    }
+  },
+  "limitations": [
+    "Readback and independent CPU comparison of recorded fingerprints; no claim that failed wrapper passed.",
+    "Short spans, ordered solo then concurrent and persistent contexts; not a four-card walltime measurement.",
+    "Four concurrent validation processes are roughly 2.1-2.5 times slower per arm."
+  ]
+}

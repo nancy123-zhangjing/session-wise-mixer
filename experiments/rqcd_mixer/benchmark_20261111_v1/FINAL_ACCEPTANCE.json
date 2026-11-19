@@ -1,0 +1,62 @@
+{
+  "status": "GPU_BENCHMARK_PASS",
+  "job": "nancy-rqcd-mixer-bench-1111-v1",
+  "remote": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_benchmark_20261111_v1",
+  "source_matches_local": true,
+  "gpu_terminal": "SUCCEEDED",
+  "gpu_instance": "instance_success",
+  "temporary_cpu": "STOPPED",
+  "formal_training_started": false,
+  "runtime": {
+    "micro_r": 256,
+    "micro_t": 256,
+    "evaluation_batch": 256
+  },
+  "numerical": {
+    "relative_l2_errors": {
+      "prediction": 0.00634512584656477,
+      "loss": 0.001612381893210113,
+      "gradient": 0.027004409581422806,
+      "cache": 0.007227036636322737
+    },
+    "limits": {
+      "prediction": 0.05,
+      "loss": 0.03,
+      "gradient": 0.1,
+      "cache": 0.05
+    },
+    "passed": true,
+    "scope": "small fixed batch; eval/dropout off; not training bitwise equivalence"
+  },
+  "recovery": {
+    "passed": true,
+    "scope": "one next R update; weights, optimizer, stream and CUDA RNG",
+    "checkpoint_sha256": "2339caa8435ff014b5fa697c2d663691894e8265900bf0d995f603d2c62c59e8"
+  },
+  "measurements": [
+    {
+      "arm": "B0",
+      "R_seconds": 0.22388328767071167,
+      "T_seconds": 0.19405819506694874,
+      "peak_GiB": 4.81998872756958,
+      "training_hours": 1.524585166936999
+    },
+    {
+      "arm": "B1",
+      "R_seconds": 0.2245714816575249,
+      "T_seconds": 0.2053200158601006,
+      "peak_GiB": 4.82098388671875,
+      "training_hours": 1.5301603589892492
+    },
+    {
+      "arm": "B2",
+      "R_seconds": 0.22155438953389725,
+      "T_seconds": 0.2056754551207026,
+      "peak_GiB": 4.82098388671875,
+      "training_hours": 1.5098623207446913
+    }
+  ],
+  "evaluation_hours_estimate": 0.9558165682682557,
+  "pretraining_hours_estimate": null,
+  "timing_limitations": "Initial-state throughput; excludes RQ pretraining, serialization, disk I/O and scheduling; no full-runtime claim"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "parent_sha256": "991352d4b48998427d44397411eb4178678487de21f1e08e5cd9d39240a06fc1",
+  "inspection_only": true,
+  "train_examples": 709443,
+  "items": 10728,
+  "r_updates": 3465,
+  "t_updates": 0,
+  "noise": {
+    "optimizer_step": 0,
+    "total_optimizer_steps": 400,
+    "softmax_temperature": 1.0,
+    "gumbel_noise_scale": 1.0
+  },
+  "protocol": {
+    "format": "stage09_h1_spread200_v1",
+    "name": "H1-Spread200-R35",
+    "parent_sha256": "991352d4b48998427d44397411eb4178678487de21f1e08e5cd9d39240a06fc1",
+    "source_proof": {
+      "paths": {
+        "dataset": {
+          "parent": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+          "execution": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\kuairec_listwise_v1\\run1"
+        },
+        "assets": {
+          "parent": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+          "execution": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\assets\\pse_v1"
+        }
+      },
+      "original_t_block": 40,
+      "new_t_block": 20,
+      "extensions": {
+        "scripts/listwise_diffgrm/recovery.py": "979edd8b1aa8a21fa15c08fc6c3d7af3b98afd2d3caecb4799360a7b21efc56e",
+        "scripts/listwise_diffgrm/recovery35.py": "500d272dc1f7bbc9e2eb920433ded137c80359e1dd4ac5d63283738ac65256a7",
+        "scripts/listwise_diffgrm/recovery35_artifacts.py": "3fc27b24e58bd314356c216fa8c5d28d2f69f8c158dcb1e224759c61a060fcf0",
+        "scripts/listwise_diffgrm/recovery35_preflight.py": "fbaf56bad6860f394d82a92258957032d845bfa89267bc8567337c083bede230",
+        "scripts/listwise_diffgrm/recovery35_run.py": "3e403b575e27ba95712e2dacd52255f54117509d6b8601b04e46bce5175bd40e",
+        "scripts/listwise_diffgrm/recovery35_trajectory.py": "476d73ad6fe35ac639be619b10846fa6b697bce6f2f641c5f1a15a09cda7c9f8",
+        "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+        "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+        "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+        "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0",
+        "scripts/listwise_diffgrm/spread200.py": "dd6d73fbde357af55e6d69be0fbd3c9d7e44757a8e7896b34a05aed1bd43f9cb",
+        "scripts/listwise_diffgrm/spread200_preflight.py": "ed298f4455bf096edc8511f198aa8d6db5a89d0f81d685858c047e12c083334f",
+        "scripts/listwise_diffgrm/spread200_run.py": "f98d25c1259bc54029878d3c9fce0ac1b0f21a017c30bd4256d0883e10c142c2"
+      }
+    },
+    "t_updates": 200,
+    "noise_total": 400,
+    "paired_t_batches": "original_first_half_then_second_half",
+    "paired_t_rng": "original_40T_stream_saved_across_inserted_R",
+    "original_r_phase_ids": true,
+    "best_epochs": [
+      20,
+      23,
+      26,
+      29,
+      32,
+      35
+    ]
+  },
+  "parent_state_preserved": true
+}

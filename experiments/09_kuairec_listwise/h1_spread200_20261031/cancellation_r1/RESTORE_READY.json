@@ -1,0 +1,49 @@
+{
+  "status": "passed_CPU_restore_and_journal_alignment",
+  "checkpoint_sha256": "bd28ba74e82a776a38e567d91c742dfccd1ca4591881151635a9da7efa5267fe",
+  "source_hashes": {
+    "last.pt": "bd28ba74e82a776a38e567d91c742dfccd1ca4591881151635a9da7efa5267fe",
+    "training.jsonl": "348e7a914323ae4fa7e587d0578406c35357ab67c3c005e212a7c7eb65186b1e",
+    "train.log": "2923823989eb6cbf665490a401b363a2a62e6f1afafb196fd2f53b231d7d42fb",
+    "status.json": "05a57936efe04b10096b2dc50d246a0059ac737da9e8afdbf5bd34f441d4411c"
+  },
+  "r_updates": 16339,
+  "t_updates": 140,
+  "progress": {
+    "phase": 30,
+    "update": 400,
+    "boundary_prepared": false,
+    "rng_prepared": true
+  },
+  "journal_rows": 13014,
+  "cached_prefix_rows": 10495,
+  "new_tail_rows_verified": 2519,
+  "journal_exactly_matches_checkpoint": true,
+  "replayed_rows_required": 0,
+  "restored_equal": {
+    "model": true,
+    "alignment": true,
+    "r_optimizer": true,
+    "t_optimizer": true,
+    "scheduler": true,
+    "r_updates": true,
+    "t_updates": true,
+    "progress": true
+  },
+  "source_fingerprint": "0d4c41550cc185f4a7089ffed0702a5b4c9a034b2b90c8ac13040bf3bfa528f0",
+  "dependency_path_relocation": {
+    "dataset": {
+      "saved": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+      "local": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\kuairec_listwise_v1\\run1"
+    },
+    "assets": {
+      "saved": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+      "local": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\assets\\pse_v1"
+    }
+  },
+  "cuda_rng_preserved_but_not_applied_on_CPU": true,
+  "paired_T_rng_present": true,
+  "script_sha256": "c065e10b100b0833af5bc9f607ea01ef54ba9df09b54adbcdac1d1c9c86052f0",
+  "GPU_resume_not_performed": true,
+  "limitation": "Preserved checkpoint CPU restoration; final fresh-archive cold restore and new CUDA continuation remain separate requirements."
+}

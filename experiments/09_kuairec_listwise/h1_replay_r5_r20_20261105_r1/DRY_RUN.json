@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-s09-replay-r5-r20-1105-r1",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda12.8版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 12.0,
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1/job.py --root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_replay_r5_r20_20261105_r1 --python /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python'",
+    "shared_memory_gib": 32
+  }
+}

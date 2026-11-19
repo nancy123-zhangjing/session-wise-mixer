@@ -1,0 +1,121 @@
+{
+  "status": "ALL_REQUIREMENTS_VERIFIED",
+  "created_at": "2026-11-11T19:34:13.189777+00:00",
+  "scope": "B0/B1/B2 seed2024, one H100 each, R35/T300, 31 full validation nodes, best/final tests",
+  "resources": {
+    "B0": {
+      "job": "nancy-rqcd-b0-1111-v1",
+      "status": "SUCCEEDED",
+      "instances": [
+        {
+          "status": "instance_success",
+          "type": "instance_type_worker",
+          "node": "qb-prod-gpu520",
+          "rank": 0
+        }
+      ],
+      "finished_at": "1794424969000"
+    },
+    "B1": {
+      "job": "nancy-rqcd-b1-1111-v1",
+      "status": "SUCCEEDED",
+      "instances": [
+        {
+          "status": "instance_success",
+          "type": "instance_type_worker",
+          "node": "qb-prod-gpu517",
+          "rank": 0
+        }
+      ],
+      "finished_at": "1794425011000"
+    },
+    "B2": {
+      "job": "nancy-rqcd-b2-1111-v1",
+      "status": "SUCCEEDED",
+      "instances": [
+        {
+          "status": "instance_success",
+          "type": "instance_type_worker",
+          "node": "qb-prod-gpu482",
+          "rank": 0
+        }
+      ],
+      "finished_at": "1794425073000"
+    }
+  },
+  "temporary_cpu": {
+    "name": "nancy-rqcd-mixer-prep-1111-v1",
+    "status": "STOPPED"
+  },
+  "checkpoint_nodes_verified": 93,
+  "pretrain_diagnostics_verified": 600,
+  "figure_review": "19 standalone plots visually inspected; distinct solid colors; identical utilization curves overlap",
+  "local_report_verified_files": 24,
+  "remote_asset_files": 509,
+  "remote_root": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/rqcd_mixer_formal_20261111_v1",
+  "evidence_sha256": {
+    "checkpoint_audit.json": "e56e3fcf7c806a58a99f6f6e7a5e6c4adbeefe88564872ced6aed05bb90bac31",
+    "pretrain_recovery_audit.json": "cdb9989b3fb6564966da8967e0b8696b2aad8ed8e41ac103c762ba9c7d81d4e3",
+    "ASSET_MANIFEST.json": "5f959a5ad316f67b05032f6b63f6c10f55b12e58e714df9d48d2b3e9866aa9b3",
+    "LOCAL_REPORT_VERIFICATION.json": "42c7e9a2531b1c0ea0e820e8db99d0ceaeef0cf0a425088229a14b32b9bd7f92",
+    "cpu_final_status.json": "393c25286d9c40f80f9a2040523c899d0ef0ea096b28ad7336d7c617c51d121e",
+    "report/REPORT.md": "66f210c9b3a80e6ba9bb66f29a579498d40d447bc229ef9897058d2084aaf1c5"
+  },
+  "results": [
+    {
+      "arm": "B0",
+      "best_R": 25,
+      "test_best": {
+        "ndcg@5": 0.000868858802521162,
+        "recall@5": 0.0008835583092144711,
+        "hr@5": 0.004417791480242132,
+        "completion_rate": 1.0
+      },
+      "test_final": {
+        "ndcg@5": 0.000802421029904339,
+        "recall@5": 0.000815881502551235,
+        "hr@5": 0.004079407451968267,
+        "completion_rate": 1.0
+      }
+    },
+    {
+      "arm": "B1",
+      "best_R": 28,
+      "test_best": {
+        "ndcg@5": 0.0009234718294611065,
+        "recall@5": 0.0009173967125460891,
+        "hr@5": 0.004568184381697184,
+        "completion_rate": 1.0
+      },
+      "test_final": {
+        "ndcg@5": 0.00093235195929087,
+        "recall@5": 0.0009286761803232952,
+        "hr@5": 0.004624581719742828,
+        "completion_rate": 1.0
+      }
+    },
+    {
+      "arm": "B2",
+      "best_R": 24,
+      "test_best": {
+        "ndcg@5": 0.0009165864612758843,
+        "recall@5": 0.0009061172447688831,
+        "hr@5": 0.00451178704365154,
+        "completion_rate": 1.0
+      },
+      "test_final": {
+        "ndcg@5": 0.0008283701264177421,
+        "recall@5": 0.000812121679958833,
+        "hr@5": 0.004041809226604504,
+        "completion_rate": 1.0
+      }
+    }
+  ],
+  "recovery_boundary": "All saved states readable/finite with optimizer clocks/RNG/data streams audited. Exact next-R GPU recovery reuses accepted benchmark, not rerun.",
+  "limits": [
+    "single seed; no significance claim",
+    "low absolute recommendation scores",
+    "pretrain VQ loss rises while reconstruction falls"
+  ],
+  "closure_receipt_location": "Local; remote report, checkpoints, manifest and state audits were synced before stopping CPU."
+}

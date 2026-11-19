@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-21T14:20:44.368447+00:00",
+  "code_commit": "037876cbb3de339ad011e5abcf0e66169967ce3b",
+  "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+  "bundle_sha256": "cb1934273d5312fe7b60432e0d60a38e50dcdaa9f53eac9d4af4fb7a91c852b8",
+  "bootstrap_sha256": "90f65c32a3c925341fc4f61b32a6f2c6acff776947a5a69633ec1ab7548f67ae",
+  "steps": [
+    {
+      "label": "clone_code",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_clone_code.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "clone_engine",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_clone_engine.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "verify_bundle",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_verify_bundle.log",
+      "sha256": "90701fd69ba700e91053d47271ea67e6416b8b7566ce839d11781307d900fbec"
+    },
+    {
+      "label": "fetch",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_fetch.log",
+      "sha256": "4f0f81b9f92f7be17c826b39457edd1d68e6f9ad28a8e51ba870cecf710c1db0"
+    },
+    {
+      "label": "checkout_code",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_checkout_code.log",
+      "sha256": "1a10f586b7a25f93b2a7e6f8d9247988e8f0cead4949c741fe5fa2d05616abcf"
+    },
+    {
+      "label": "checkout_engine",
+      "returncode": 0,
+      "log": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/bootstrap_checkout_engine.log",
+      "sha256": "4bc4e4688d775f40d22c4d0c92a932ea002bb832cbb10dedfda26028432b5878"
+    }
+  ],
+  "gpu_started": false,
+  "cpu_prepare_command": [
+    "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+    "-B",
+    "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/experiments/07_item_local_attention/multiseed_20261021/prepare_cpu.py",
+    "--goal-root",
+    "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1"
+  ],
+  "ended_utc": "2026-10-21T14:20:46.015730+00:00"
+}

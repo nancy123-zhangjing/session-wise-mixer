@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "e1b870cbdb1c8ff82d2a5a6760183ffca0f3d2c8a791ab54d586591a720341f8",
+  "checks": [
+    "reject:../x",
+    "reject:/x",
+    "reject:a/../x",
+    "reject:a\\x",
+    "reject:a//x",
+    "reject:C:/x",
+    "reject:a./x",
+    "reject output:.",
+    "reject output:outputs\\stage09_restore\\goal_20261027_r1\\must_not_write",
+    "reject output:outputs\\stage09_restore\\h1_recovery_20261028_r2",
+    "reject output:.git\\new",
+    "synthetic deterministic gzip/tar identical across distinct directories"
+  ],
+  "fixture_directory": "C:\\Users\\nancy\\Documents\\experiment1\\tmp\\freeze35_pack_smoke_hmuz2_g3",
+  "scope": "synthetic path rejection and deterministic archive serialization; no model/training",
+  "status": "passed"
+}

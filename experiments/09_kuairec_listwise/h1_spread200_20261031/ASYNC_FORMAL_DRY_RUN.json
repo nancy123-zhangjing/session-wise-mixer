@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "dry_run": true,
+    "name": "nancy-s09-d-async-1031-r2",
+    "workspace": "分布式训练空间",
+    "project": "公共科研项目",
+    "compute_group": "开发区-H100-cuda12.8版本-183核",
+    "resource": {
+      "gpu": 1,
+      "cpu": 20,
+      "memory_gib": 200,
+      "gpu_type": "NVIDIA H100 (80GB)"
+    },
+    "priority": 4,
+    "nodes": 1,
+    "framework": "pytorch",
+    "enable_notification": false,
+    "auto_fault_tolerance": false,
+    "max_time_hours": 13.8,
+    "image": "ngc-pytorch:25.02-cuda12.8.0-py3",
+    "command": "bash -c '/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python -B /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_spread200_20261031_r1/job_async_r2.py --root /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_spread200_20261031_r1 --python /inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python --self-sha 4a728d4574d94ab9fba2b60d7ae9c7e56c93bbc14897a6b042308f9780bf9917 --gate /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h1_spread200_20261031_r1/ASYNC_RESUME_GATE.json --gate-sha 4a1520ca21f76bcbfa0ac1e6926abef9ec9681a1d2f59619b543dfa9644fb3f7'",
+    "shared_memory_gib": 32,
+    "description": "Unique Stage09 D continuation from R24u400; frozen science, readonly evaluation overlap; cumulative <=24 GPUh; one H100; no retry; save-stop low utilization."
+  }
+}

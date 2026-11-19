@@ -1,0 +1,143 @@
+{
+  "schema": "stage09_final_delivery_acceptance_v1",
+  "status": "PASS",
+  "created_at_utc": "2026-10-28T10:44:45.376619+00:00",
+  "requirements": [
+    {
+      "requirement": "scope_and_sources",
+      "status": "PASS",
+      "detail": "Four seed2024 arms only; scientific versions frozen; no tuning added",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/FORMAL_BRANCH_BINDING.json",
+          "sha256": "871e480d2a77d7e22bfed091d02065f0cdc42eb1db42cf20d43519634959e80a"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/LOCAL_SOURCE_RESTORE_ACCEPTANCE.json",
+          "sha256": "888ef3ab483dbece30556e73cc989285a493ff5a4f3ab4239c5baf1811fbfbe5"
+        }
+      ]
+    },
+    {
+      "requirement": "real_assets_and_h100",
+      "status": "PASS",
+      "detail": "Real BGE/PSE and four-arm BF16 gradients, update isolation, restore and generation accepted",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/assets_preparation_20261027/PSE_ASSET_AUDIT.json",
+          "sha256": "99682cd22567b8959b1aa703fc993753688f9cf32587d5ed9e189ebf8ff9caaa"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/h100_preflight_r2/report.json",
+          "sha256": "7daa69ba2bf9d7005b98bafb20d5a10fee34e6cd51bb3d1e615c8455c7674329"
+        }
+      ]
+    },
+    {
+      "requirement": "authorized_budget",
+      "status": "PASS",
+      "detail": "75 GPU-hour approval; actual148316seconds; all attempts counted",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/preparation_20261027/BUDGET_APPROVAL.json",
+          "sha256": "872967518ffab973e773f929099b803717fab86a96441ad9734ccde4078935e9"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/ALL_GPU_RELEASE_ACCOUNTING_20261028.json",
+          "sha256": "1ec1094f3e30d61118bdc4922ad07a9f0a0da160eb12263019efc8f93e56470a"
+        }
+      ]
+    },
+    {
+      "requirement": "shared_start_and_training",
+      "status": "PASS",
+      "detail": "Actual5R warmup shared per architecture; four35R/400T,42full validations",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/FOUR_BEST_FREEZE_20261028.json",
+          "sha256": "4d0a0a17be2fd087db30c3dbbfe815a1d9243983619e7c8d47f1ca6fcd681ae2"
+        }
+      ]
+    },
+    {
+      "requirement": "final_test_and_selection",
+      "status": "PASS",
+      "detail": "Best frozen before test; 4full test and8fixed-subset beam runs independently replayed",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/SUMMARY.json",
+          "sha256": "33b6a214c88e0a3228151e52b2507fd264bd4ae356c3caeec2d5249a8452ea71"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/final_analysis_20261027/full_validation_selected_audits.json",
+          "sha256": "caeaf04a2893c0bbc4087876c3eda7105bd7577e812b806bfb1d1c4eb0c744e5"
+        }
+      ]
+    },
+    {
+      "requirement": "statistics_and_interpretation",
+      "status": "PASS",
+      "detail": "Six paired-user bootstraps, cold/user means, fixedR35, beam sensitivity and curves; single-seed limit",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/REPORT.md",
+          "sha256": "3b625738afa7b2b5db3d4d7fcb3c9c9e4699e0da4c16c5f341a08fdad587494a"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/final_analysis_20261027/beam_sensitivity.csv",
+          "sha256": "b4e2bf6b803dcb2d1994f48a67cd3531c06dbc29a1ee4098711fce10efd82c23"
+        }
+      ]
+    },
+    {
+      "requirement": "recoverable_local_assets",
+      "status": "PASS",
+      "detail": "Nine archives plus3source bundles and existing inputs verified; fresh restore and representativeCPUforward",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/FINAL_LOCAL_ASSET_VERIFICATION_20261028.json",
+          "sha256": "3266306e7f7149d2bfe46e6ca4bd95376a05e2ae3da7fb10ab523e5bc7a8a715"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/H1_CPU_RESTORE_20261028.json",
+          "sha256": "85f94e43fc5d3f7bb34c97241af7b03c2ccde431d04a5d72da39846d88ddf169"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/J1_CPU_RESTORE_20261028.json",
+          "sha256": "e851af66078366a83b747c458d4b74607c1a21ee351f321bdc781b9ea3396c1d"
+        }
+      ]
+    },
+    {
+      "requirement": "release_and_handoff",
+      "status": "PASS",
+      "detail": "All13Jobs released; ownCPUtransferNotebook stopped; report/summary/handoff and project entry updated",
+      "evidence": [
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/ALL_GPU_RELEASE_ACCOUNTING_20261028.json",
+          "sha256": "1ec1094f3e30d61118bdc4922ad07a9f0a0da160eb12263019efc8f93e56470a"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/formal_execution_20261027/CPU_NOTEBOOK_CLOSE_20261028.json",
+          "sha256": "dbf2f761cbd4cb53d5119327658c3c07bff55fdf75625c9028b90906fcc407c9"
+        },
+        {
+          "path": "experiments/09_kuairec_listwise/HANDOFF.md",
+          "sha256": "989e64544566ae01f44736ab07a455039e63594810bebc018004985e5e881176"
+        },
+        {
+          "path": "docs/guides/PROJECT_HANDOFF.md",
+          "sha256": "5fbc1a50f33f353e68ca5bc42421b0324341260cb77a11dbdc3da3d72d7d99b2"
+        }
+      ]
+    }
+  ],
+  "remaining_scientific_experiments_required_for_this_goal": [],
+  "unresolved_delivery_blockers": [],
+  "limitations": [
+    "No stable positive Mixer effect demonstrated; this was not a success criterion.",
+    "Single seed and proxy consumption lists.",
+    "Allocated GPU cost estimate only; settlement unverified."
+  ],
+  "git_delivery": "Files are to be included in the scoped final commit; commit identity is recorded in the local post-commit receipt, not self-embedded."
+}

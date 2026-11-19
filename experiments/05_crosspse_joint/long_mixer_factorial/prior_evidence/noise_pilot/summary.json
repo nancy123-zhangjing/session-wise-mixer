@@ -1,0 +1,2550 @@
+{
+  "protocol_id": "stage05_diger_noise_once_freeze_recover_v1",
+  "mode": "pilot",
+  "status": "complete",
+  "arms": [
+    {
+      "arm": "A",
+      "settings": {
+        "arm": "A",
+        "tokenizer_batches": 0,
+        "decoder_epochs": 3,
+        "decoder_batch_limit": 0,
+        "eval_batch_limit": 0,
+        "noise_start": 0.0,
+        "noise_end": 0.0,
+        "noise_total_steps": 60,
+        "decoder_lr": 0.0001,
+        "gradient_accumulation_steps": 16
+      },
+      "training": [
+        {
+          "phase": "recommender",
+          "logical_index": 1,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 403226966,
+          "data_seed": 1049626200,
+          "data_order_sha256": "cc58355c1ce3ef424f165b235d2d17cf56415fba31b5aff8b1a50cd1e371c488",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3559248940996627,
+            "recommendation_loss": 3.3559248940996627
+          },
+          "last_gradient_sides": {
+            "recommender": 0.7301241020712316,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 109.26172358728945,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 2,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 2302009359,
+          "data_seed": 1499670597,
+          "data_order_sha256": "da8693d9ee4623e31471cd3227c902d9c4a55e3338906e203f7f39f21b733966",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3523993684073625,
+            "recommendation_loss": 3.3523993684073625
+          },
+          "last_gradient_sides": {
+            "recommender": 1.0652934299616852,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 108.79907517880201,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 3,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 951663977,
+          "data_seed": 3980956629,
+          "data_order_sha256": "6de4ffe9c9f71b4c4049b289b9a2a53cde978f5f51128e5e0489d9da5e172659",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.350632066299494,
+            "recommendation_loss": 3.350632066299494
+          },
+          "last_gradient_sides": {
+            "recommender": 0.9975710422824692,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 108.92142460122705,
+          "accumulation": 16,
+          "final_window_batches": 4
+        }
+      ],
+      "snapshots": [
+        {
+          "label": "initial",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+            "training_state.pt": "bd362479c4e23842d814e0acc5dcdef7a19292f65742267c2642216aaf8a2d93",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "post_tokenizer",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+            "training_state.pt": "bd362479c4e23842d814e0acc5dcdef7a19292f65742267c2642216aaf8a2d93",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "decoder_1",
+          "recommender_epochs": 1,
+          "recommender_updates": 104,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "a844ce6a49db5d592d40de5a5b488e6ce81fbf00f6a9d349d1dd3506b495a801",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "46ace0759d97310ca47790fa746d275c611f0fd8aae96b0138cdfdff094ca9b3",
+            "training_state.pt": "5429af4898b8b1c9eb81566644836784e3d7cba45b1a2c3cdc156bfc7f1acae2",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "decoder_2",
+          "recommender_epochs": 2,
+          "recommender_updates": 208,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "1232eb46407c718b798afb180543541f90ba12cc00d9e1ed84709e306ffa2376",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "571b90a63618fac68e132002776a918c2b5cc0e2ec4705e08429615f4d6c4900",
+            "training_state.pt": "03c6ad7e7d24e76665002dfb28f8807d733ddbf188baee4bf3a0ae45e6ea35d1",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "decoder_3",
+          "recommender_epochs": 3,
+          "recommender_updates": 312,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "6494dde98cd23b3f5f3a853956573527194ed29829668d3d956adac413087b41",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "b056d00bbf602b0b90f9162e1bc81d9da391ccc6f7d0c802ada2a6d1cd376d43",
+            "training_state.pt": "180507a02c1d9e41092dd8b91573e852add91b6378826710a4c20505234c7e35",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        }
+      ],
+      "validation": [
+        {
+          "label": "initial",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4717095849105558,
+            "dup@10": 0.39265751966619644,
+            "duplicate@10": 0.39265751966619644,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04539635554252549,
+            "ndcg@10": 0.046840827993218016,
+            "recall@5": 0.06112775566784421,
+            "hit_rate@5": 0.06112775566784421,
+            "recall@10": 0.06542056074766354,
+            "hit_rate@10": 0.06542056074766354,
+            "weighted_score": 0.05055677489646298
+          },
+          "elapsed_seconds": 209.98748924396932
+        },
+        {
+          "label": "post_tokenizer",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4717095849105558,
+            "dup@10": 0.39265751966619644,
+            "duplicate@10": 0.39265751966619644,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04539635554252549,
+            "ndcg@10": 0.046840827993218016,
+            "recall@5": 0.06112775566784421,
+            "hit_rate@5": 0.06112775566784421,
+            "recall@10": 0.06542056074766354,
+            "hit_rate@10": 0.06542056074766354,
+            "weighted_score": 0.05055677489646298
+          },
+          "unchanged_control_reuses_initial_evaluation": true
+        },
+        {
+          "label": "decoder_1",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4717513108586037,
+            "dup@10": 0.394566923494507,
+            "duplicate@10": 0.394566923494507,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.0459377366549874,
+            "ndcg@10": 0.04729587077689353,
+            "recall@5": 0.06184322318114743,
+            "hit_rate@5": 0.06184322318114743,
+            "recall@10": 0.06586772794347806,
+            "hit_rate@10": 0.06586772794347806,
+            "weighted_score": 0.051010242529516275
+          },
+          "elapsed_seconds": 209.8927440289408
+        },
+        {
+          "label": "decoder_2",
+          "metrics": {
+            "legal_ratio": 0.9997317596566524,
+            "duplicate_ratio": 0.47128189083332667,
+            "dup@10": 0.3947860354090619,
+            "duplicate@10": 0.3947860354090619,
+            "legal@10": 0.9997316996825113,
+            "ndcg@5": 0.04568810730923354,
+            "ndcg@10": 0.04711416400364333,
+            "recall@5": 0.06144077270491437,
+            "hit_rate@5": 0.06144077270491437,
+            "recall@10": 0.06564414434557081,
+            "hit_rate@10": 0.06564414434557081,
+            "weighted_score": 0.050820160388136276
+          },
+          "elapsed_seconds": 210.17048355564475
+        },
+        {
+          "label": "decoder_3",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4696143299330543,
+            "dup@10": 0.39411528465831847,
+            "duplicate@10": 0.39411528465831847,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04615692545315055,
+            "ndcg@10": 0.04749793233510255,
+            "recall@5": 0.061977373339891784,
+            "hit_rate@5": 0.061977373339891784,
+            "recall@10": 0.06595716138264097,
+            "hit_rate@10": 0.06595716138264097,
+            "weighted_score": 0.05118977846018462
+          },
+          "elapsed_seconds": 209.5344932153821
+        }
+      ],
+      "final_snapshot": "snapshots/decoder_3"
+    },
+    {
+      "arm": "B",
+      "settings": {
+        "arm": "B",
+        "tokenizer_batches": 96,
+        "decoder_epochs": 3,
+        "decoder_batch_limit": 0,
+        "eval_batch_limit": 0,
+        "noise_start": 0.0,
+        "noise_end": 0.0,
+        "noise_total_steps": 60,
+        "decoder_lr": 0.0001,
+        "gradient_accumulation_steps": 16
+      },
+      "training": [
+        {
+          "phase": "tokenizer",
+          "logical_index": 0,
+          "batches": 96,
+          "optimizer_updates": 6,
+          "phase_seed": 1574161832,
+          "data_seed": 2050167525,
+          "data_order_sha256": "b9194535d2673f4e36b53144166c2037da46f4cc4bbe66618443a4dc8ec7c944",
+          "gumbel_calls": 192,
+          "assignment_training_enabled_calls": 192,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.7512465566396713,
+            "recommendation_loss": 3.1503910372654595,
+            "reconstruction_loss": 0.5994427738090357,
+            "balance_loss": 0.14127514697611332,
+            "anchor_loss": 1.9039478047488956e-06,
+            "direct_gradient_norm": 0.269988089799881,
+            "assignment_entropy": 5.251454169551532,
+            "max_probability": 0.03636441038300594,
+            "softmax_temperature": 1.0,
+            "noise_scale": 0.0
+          },
+          "last_gradient_sides": {
+            "recommender": 0.0,
+            "tokenizer": 0.14750688235882692
+          },
+          "elapsed_seconds": 7.085177201777697,
+          "accumulation": 16,
+          "final_window_batches": 16
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 1,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 403226966,
+          "data_seed": 1049626200,
+          "data_order_sha256": "cc58355c1ce3ef424f165b235d2d17cf56415fba31b5aff8b1a50cd1e371c488",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3579613139207947,
+            "recommendation_loss": 3.3579613139207947
+          },
+          "last_gradient_sides": {
+            "recommender": 0.7323029449285146,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 108.7876699063927,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 2,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 2302009359,
+          "data_seed": 1499670597,
+          "data_order_sha256": "da8693d9ee4623e31471cd3227c902d9c4a55e3338906e203f7f39f21b733966",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.354190525362047,
+            "recommendation_loss": 3.354190525362047
+          },
+          "last_gradient_sides": {
+            "recommender": 1.0659091846721866,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 108.80649232119322,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 3,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 951663977,
+          "data_seed": 3980956629,
+          "data_order_sha256": "6de4ffe9c9f71b4c4049b289b9a2a53cde978f5f51128e5e0489d9da5e172659",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3521775147239463,
+            "recommendation_loss": 3.3521775147239463
+          },
+          "last_gradient_sides": {
+            "recommender": 1.0194539080475515,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 109.00847537256777,
+          "accumulation": 16,
+          "final_window_batches": 4
+        }
+      ],
+      "snapshots": [
+        {
+          "label": "initial",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+            "training_state.pt": "6d2f751e3f71564cc4c7e243d73865541af2f70b6ce6faaee9404eb8548ce548",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "post_tokenizer",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "6f5ae23525dd64d9ae398a497ca4674615382c398024ea458352cbe2501fe45b",
+          "semantic_ids_array_sha256": "84097c09a3c28572e65cf494ea49e70b32e371e06e6f4cce43a8c8c00a429c31",
+          "deterministic_sid_change": {
+            "changed_items": 22,
+            "item_change_rate": 0.001818031567639038,
+            "changed_digits": 22,
+            "digit_change_rate": 0.0004545078919097595,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0003305511941161887
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 24,
+            "history_changed_examples": 248,
+            "either_changed_examples": 271,
+            "target_changed_rate": 0.001073201269954836,
+            "history_changed_rate": 0.011089746456199973,
+            "either_changed_rate": 0.012118231006573358
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2173,
+            "collision_rate": 0.17957193620361953,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6952,
+                "collided_items": 7279,
+                "collision_rate": 0.6015205354929345,
+                "colliding_groups": 2130,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2173,
+                "collision_rate": 0.17957193620361953,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360655101293522,
+                "effective_codes_perplexity": 212.8643484933745,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667238163190361
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319239485954494,
+                "effective_codes_perplexity": 204.22850427099627,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592550534609134
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.3196931333325,
+                "effective_codes_perplexity": 204.3211730143498,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593368628137336
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331866623459598,
+                "effective_codes_perplexity": 206.82367598987463,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615321920433181
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "87f5ea5a57623ef8d4e590729c8b5c720ce4445fb5c2941ae4ed96d7399a9fa9",
+            "training_state.pt": "2166c76258f3de222ae6f1588d709664ac44d5007fe62f5b42cf86b8d48e0cff",
+            "semantic_ids.npy": "c2182247f2cef9f916810aa11e5c3ab8fed43537493a8629a52c257231ef40bb",
+            "crossed_codebooks.npy": "f65d53863fd2aed59e29b2bf57d0ff6dc8babce013de0e54f2f6ce678ceb856a"
+          }
+        },
+        {
+          "label": "decoder_1",
+          "recommender_epochs": 1,
+          "recommender_updates": 104,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "e7c4ef549fe77c498c6769066965c537516851a7f96dce51bc585833c4397d5c",
+          "semantic_ids_array_sha256": "84097c09a3c28572e65cf494ea49e70b32e371e06e6f4cce43a8c8c00a429c31",
+          "deterministic_sid_change": {
+            "changed_items": 22,
+            "item_change_rate": 0.001818031567639038,
+            "changed_digits": 22,
+            "digit_change_rate": 0.0004545078919097595,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0003305511941161887
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 24,
+            "history_changed_examples": 248,
+            "either_changed_examples": 271,
+            "target_changed_rate": 0.001073201269954836,
+            "history_changed_rate": 0.011089746456199973,
+            "either_changed_rate": 0.012118231006573358
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2173,
+            "collision_rate": 0.17957193620361953,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6952,
+                "collided_items": 7279,
+                "collision_rate": 0.6015205354929345,
+                "colliding_groups": 2130,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2173,
+                "collision_rate": 0.17957193620361953,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360655101293522,
+                "effective_codes_perplexity": 212.8643484933745,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667238163190361
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319239485954494,
+                "effective_codes_perplexity": 204.22850427099627,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592550534609134
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.3196931333325,
+                "effective_codes_perplexity": 204.3211730143498,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593368628137336
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331866623459598,
+                "effective_codes_perplexity": 206.82367598987463,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615321920433181
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "e95e25a5e90d0c339a1a9b0c277e3e55b239bfe70bd9566142dc72c446caaaad",
+            "training_state.pt": "635e7d9a24c50008fe2e339e35f2cee1276f246806022858aadd806fe5d0ccf0",
+            "semantic_ids.npy": "c2182247f2cef9f916810aa11e5c3ab8fed43537493a8629a52c257231ef40bb",
+            "crossed_codebooks.npy": "f65d53863fd2aed59e29b2bf57d0ff6dc8babce013de0e54f2f6ce678ceb856a"
+          }
+        },
+        {
+          "label": "decoder_2",
+          "recommender_epochs": 2,
+          "recommender_updates": 208,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "104a24be78544195739b75b58e041a4963718b03f6c6d30c3311af2e5737ac3d",
+          "semantic_ids_array_sha256": "84097c09a3c28572e65cf494ea49e70b32e371e06e6f4cce43a8c8c00a429c31",
+          "deterministic_sid_change": {
+            "changed_items": 22,
+            "item_change_rate": 0.001818031567639038,
+            "changed_digits": 22,
+            "digit_change_rate": 0.0004545078919097595,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0003305511941161887
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 24,
+            "history_changed_examples": 248,
+            "either_changed_examples": 271,
+            "target_changed_rate": 0.001073201269954836,
+            "history_changed_rate": 0.011089746456199973,
+            "either_changed_rate": 0.012118231006573358
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2173,
+            "collision_rate": 0.17957193620361953,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6952,
+                "collided_items": 7279,
+                "collision_rate": 0.6015205354929345,
+                "colliding_groups": 2130,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2173,
+                "collision_rate": 0.17957193620361953,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360655101293522,
+                "effective_codes_perplexity": 212.8643484933745,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667238163190361
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319239485954494,
+                "effective_codes_perplexity": 204.22850427099627,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592550534609134
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.3196931333325,
+                "effective_codes_perplexity": 204.3211730143498,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593368628137336
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331866623459598,
+                "effective_codes_perplexity": 206.82367598987463,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615321920433181
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "45fe587916b1eb9968c660a6807d80eb0256ee98995bba5bcaa46de83d9d4e95",
+            "training_state.pt": "b441729f83f7b905af08125fe683784251b99228b80852a64e0e59a9e4d2268b",
+            "semantic_ids.npy": "c2182247f2cef9f916810aa11e5c3ab8fed43537493a8629a52c257231ef40bb",
+            "crossed_codebooks.npy": "f65d53863fd2aed59e29b2bf57d0ff6dc8babce013de0e54f2f6ce678ceb856a"
+          }
+        },
+        {
+          "label": "decoder_3",
+          "recommender_epochs": 3,
+          "recommender_updates": 312,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "e310060aba03d6c0f460382b394b8e74694217d2de9c5ee6a516757d1688b71c",
+          "semantic_ids_array_sha256": "84097c09a3c28572e65cf494ea49e70b32e371e06e6f4cce43a8c8c00a429c31",
+          "deterministic_sid_change": {
+            "changed_items": 22,
+            "item_change_rate": 0.001818031567639038,
+            "changed_digits": 22,
+            "digit_change_rate": 0.0004545078919097595,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0003305511941161887
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 24,
+            "history_changed_examples": 248,
+            "either_changed_examples": 271,
+            "target_changed_rate": 0.001073201269954836,
+            "history_changed_rate": 0.011089746456199973,
+            "either_changed_rate": 0.012118231006573358
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2173,
+            "collision_rate": 0.17957193620361953,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6952,
+                "collided_items": 7279,
+                "collision_rate": 0.6015205354929345,
+                "colliding_groups": 2130,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2173,
+                "collision_rate": 0.17957193620361953,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360655101293522,
+                "effective_codes_perplexity": 212.8643484933745,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667238163190361
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319239485954494,
+                "effective_codes_perplexity": 204.22850427099627,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592550534609134
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.3196931333325,
+                "effective_codes_perplexity": 204.3211730143498,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593368628137336
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331866623459598,
+                "effective_codes_perplexity": 206.82367598987463,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615321920433181
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.0
+          },
+          "files": {
+            "model.pt": "d9846af1e5b492fae59656a73f75a384f07d8ab609fff60a38dab6c2345a38a3",
+            "training_state.pt": "24c5f3e054ba3b98b04a09f7f3a760349c8673b48f3b2c393159056b1e1d03b8",
+            "semantic_ids.npy": "c2182247f2cef9f916810aa11e5c3ab8fed43537493a8629a52c257231ef40bb",
+            "crossed_codebooks.npy": "f65d53863fd2aed59e29b2bf57d0ff6dc8babce013de0e54f2f6ce678ceb856a"
+          }
+        }
+      ],
+      "validation": [
+        {
+          "label": "initial",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4717095849105558,
+            "dup@10": 0.39265751966619644,
+            "duplicate@10": 0.39265751966619644,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04539635554252549,
+            "ndcg@10": 0.046840827993218016,
+            "recall@5": 0.06112775566784421,
+            "hit_rate@5": 0.06112775566784421,
+            "recall@10": 0.06542056074766354,
+            "hit_rate@10": 0.06542056074766354,
+            "weighted_score": 0.05055677489646298
+          },
+          "elapsed_seconds": 208.24207177199423
+        },
+        {
+          "label": "post_tokenizer",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.47239359775198375,
+            "dup@10": 0.39343111889982985,
+            "duplicate@10": 0.39343111889982985,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.045412859152591876,
+            "ndcg@10": 0.04687223717692243,
+            "recall@5": 0.06108303894826275,
+            "hit_rate@5": 0.06108303894826275,
+            "recall@10": 0.06542056074766354,
+            "hit_rate@10": 0.06542056074766354,
+            "weighted_score": 0.05058190224289345
+          },
+          "elapsed_seconds": 208.28899607993662
+        },
+        {
+          "label": "decoder_1",
+          "metrics": {
+            "legal_ratio": 0.9998658798283262,
+            "duplicate_ratio": 0.4721357886798051,
+            "dup@10": 0.39508116576369673,
+            "duplicate@10": 0.39508116576369673,
+            "legal@10": 0.9998658498412556,
+            "ndcg@5": 0.04588231449556208,
+            "ndcg@10": 0.047271048768669166,
+            "recall@5": 0.061664356302821625,
+            "hit_rate@5": 0.061664356302821625,
+            "recall@10": 0.06577829450431516,
+            "hit_rate@10": 0.06577829450431516,
+            "weighted_score": 0.05097249822337677
+          },
+          "elapsed_seconds": 208.82373101264238
+        },
+        {
+          "label": "decoder_2",
+          "metrics": {
+            "legal_ratio": 0.9997764663805436,
+            "duplicate_ratio": 0.47224755583328326,
+            "dup@10": 0.396002330210796,
+            "duplicate@10": 0.396002330210796,
+            "legal@10": 0.9997764164020927,
+            "ndcg@5": 0.045772802041872604,
+            "ndcg@10": 0.04717910706221309,
+            "recall@5": 0.06153020614407727,
+            "hit_rate@5": 0.06153020614407727,
+            "recall@10": 0.06568886106515226,
+            "hit_rate@10": 0.06568886106515226,
+            "weighted_score": 0.05088105818157369
+          },
+          "elapsed_seconds": 208.98713187128305
+        },
+        {
+          "label": "decoder_3",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.47053528835567965,
+            "dup@10": 0.39506327914656186,
+            "duplicate@10": 0.39506327914656186,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04616540001131994,
+            "ndcg@10": 0.047521425855131506,
+            "recall@5": 0.061932656620310333,
+            "hit_rate@5": 0.061932656620310333,
+            "recall@10": 0.06595716138264097,
+            "hit_rate@10": 0.06595716138264097,
+            "weighted_score": 0.05120857326554649
+          },
+          "elapsed_seconds": 209.38674834556878
+        }
+      ],
+      "final_snapshot": "snapshots/decoder_3"
+    },
+    {
+      "arm": "C",
+      "settings": {
+        "arm": "C",
+        "tokenizer_batches": 96,
+        "decoder_epochs": 3,
+        "decoder_batch_limit": 0,
+        "eval_batch_limit": 0,
+        "noise_start": 1.0,
+        "noise_end": 0.2,
+        "noise_total_steps": 60,
+        "decoder_lr": 0.0001,
+        "gradient_accumulation_steps": 16
+      },
+      "training": [
+        {
+          "phase": "tokenizer",
+          "logical_index": 0,
+          "batches": 96,
+          "optimizer_updates": 6,
+          "phase_seed": 1574161832,
+          "data_seed": 2050167525,
+          "data_order_sha256": "b9194535d2673f4e36b53144166c2037da46f4cc4bbe66618443a4dc8ec7c944",
+          "gumbel_calls": 192,
+          "assignment_training_enabled_calls": 192,
+          "noise_applied_calls": 192,
+          "loss_means": {
+            "total_loss": 7.356913462281227,
+            "recommendation_loss": 6.756068145235379,
+            "reconstruction_loss": 0.5994333463410536,
+            "balance_loss": 0.14119912156214318,
+            "anchor_loss": 1.9241384923892233e-06,
+            "direct_gradient_norm": 0.5194002985954285,
+            "assignment_entropy": 3.4153547435998917,
+            "max_probability": 0.29107494341830414,
+            "softmax_temperature": 1.0,
+            "noise_scale": 0.9949942131827237
+          },
+          "last_gradient_sides": {
+            "recommender": 0.0,
+            "tokenizer": 0.16561200201950732
+          },
+          "elapsed_seconds": 7.004630176350474,
+          "accumulation": 16,
+          "final_window_batches": 16
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 1,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 403226966,
+          "data_seed": 1049626200,
+          "data_order_sha256": "cc58355c1ce3ef424f165b235d2d17cf56415fba31b5aff8b1a50cd1e371c488",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.358050572814433,
+            "recommendation_loss": 3.358050572814433
+          },
+          "last_gradient_sides": {
+            "recommender": 0.7321497747323963,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 109.54137568362057,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 2,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 2302009359,
+          "data_seed": 1499670597,
+          "data_order_sha256": "da8693d9ee4623e31471cd3227c902d9c4a55e3338906e203f7f39f21b733966",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3543410692318876,
+            "recommendation_loss": 3.3543410692318876
+          },
+          "last_gradient_sides": {
+            "recommender": 1.0879232411917537,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 109.26378354430199,
+          "accumulation": 16,
+          "final_window_batches": 4
+        },
+        {
+          "phase": "recommender",
+          "logical_index": 3,
+          "batches": 1652,
+          "optimizer_updates": 104,
+          "phase_seed": 951663977,
+          "data_seed": 3980956629,
+          "data_order_sha256": "6de4ffe9c9f71b4c4049b289b9a2a53cde978f5f51128e5e0489d9da5e172659",
+          "gumbel_calls": 0,
+          "assignment_training_enabled_calls": 0,
+          "noise_applied_calls": 0,
+          "loss_means": {
+            "total_loss": 3.3524613964932883,
+            "recommendation_loss": 3.3524613964932883
+          },
+          "last_gradient_sides": {
+            "recommender": 0.998074801406878,
+            "tokenizer": 0.0
+          },
+          "elapsed_seconds": 109.05328916199505,
+          "accumulation": 16,
+          "final_window_batches": 4
+        }
+      ],
+      "snapshots": [
+        {
+          "label": "initial",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 0,
+          "model_tensor_state_sha256": "dcdd5ecbe41f5356494d8efb4f082edf440db0200120cfdb99603e64d22e51a5",
+          "semantic_ids_array_sha256": "ee955d3b79e69e4c9c96fce6b7f4f8f46aad17eeedd0f55d04298078b24967ea",
+          "deterministic_sid_change": {
+            "changed_items": 0,
+            "item_change_rate": 0.0,
+            "changed_digits": 0,
+            "digit_change_rate": 0.0,
+            "per_position_change_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 0,
+            "history_changed_examples": 0,
+            "either_changed_examples": 0,
+            "target_changed_rate": 0.0,
+            "history_changed_rate": 0.0,
+            "either_changed_rate": 0.0
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10652,
+            "collided_items": 2174,
+            "collision_rate": 0.17965457400214857,
+            "colliding_groups": 725,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6950,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2131,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9857,
+                "collided_items": 3307,
+                "collision_rate": 0.27328319973555903,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10652,
+                "collided_items": 2174,
+                "collision_rate": 0.17965457400214857,
+                "colliding_groups": 725,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360762891864697,
+                "effective_codes_perplexity": 212.88729449974065,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667432549343471
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.319491442028724,
+                "effective_codes_perplexity": 204.2799673661257,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593004904332652
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319833136547025,
+                "effective_codes_perplexity": 204.34978063790035,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9593621105566467
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.3318040745541175,
+                "effective_codes_perplexity": 206.81073979989043,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615209121688493
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 0,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 1.0
+          },
+          "files": {
+            "model.pt": "f72d268f70f1e3192a1a943fc463de4e85b066325000a54bbb1fc5e55eb2de7d",
+            "training_state.pt": "6d2f751e3f71564cc4c7e243d73865541af2f70b6ce6faaee9404eb8548ce548",
+            "semantic_ids.npy": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+            "crossed_codebooks.npy": "ce4f0747875640f8b1c0e4046feb328a904d7beb96f3940f871f923f5f79b17c"
+          }
+        },
+        {
+          "label": "post_tokenizer",
+          "recommender_epochs": 0,
+          "recommender_updates": 0,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "1e01a54dd181359567cd0c4eb14b9444bccbb8fdf8588e82816aa28756bc0684",
+          "semantic_ids_array_sha256": "7dddaf1e5fa3707f99460275eab164d1f9d22020113ab47313f7163dd33942c4",
+          "deterministic_sid_change": {
+            "changed_items": 23,
+            "item_change_rate": 0.0019006693661680852,
+            "changed_digits": 24,
+            "digit_change_rate": 0.0004958267911742831,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0004958267911742831
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 28,
+            "history_changed_examples": 179,
+            "either_changed_examples": 207,
+            "target_changed_rate": 0.0012520681482806422,
+            "history_changed_rate": 0.00800429280507982,
+            "either_changed_rate": 0.009256360953360462
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10653,
+            "collided_items": 2172,
+            "collision_rate": 0.17948929840509048,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6951,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2132,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9858,
+                "collided_items": 3306,
+                "collision_rate": 0.27320056193703,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10653,
+                "collided_items": 2172,
+                "collision_rate": 0.17948929840509048,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360595256527359,
+                "effective_codes_perplexity": 212.85161005738263,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667130241006153
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.31938798794122,
+                "effective_codes_perplexity": 204.25883486164736,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592818338458899
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319704798357009,
+                "effective_codes_perplexity": 204.32355643974205,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.95933896644786
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331914249961114,
+                "effective_codes_perplexity": 206.8335265125638,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615407808580121
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.9804226065180615
+          },
+          "files": {
+            "model.pt": "4cc9056486ed6eac7070de9441791b161aac0be93cdc561b0812e734c9765af8",
+            "training_state.pt": "776b7eda61faf026308b54cd62c06633d3936dd3d2d2dc98175756c38801b06d",
+            "semantic_ids.npy": "76a3a25ce93191ecdf75eea87fb44815d909c64bf78c7387adcbea7a9661f686",
+            "crossed_codebooks.npy": "23a92cb75ed906710c11fd5d92ae61669534314eeddf8dbe02fc40ec84f51070"
+          }
+        },
+        {
+          "label": "decoder_1",
+          "recommender_epochs": 1,
+          "recommender_updates": 104,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "03c6da33caa6acae2b901a1e19152d18c8b96a79fa5abe8a2751d513b83ed899",
+          "semantic_ids_array_sha256": "7dddaf1e5fa3707f99460275eab164d1f9d22020113ab47313f7163dd33942c4",
+          "deterministic_sid_change": {
+            "changed_items": 23,
+            "item_change_rate": 0.0019006693661680852,
+            "changed_digits": 24,
+            "digit_change_rate": 0.0004958267911742831,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0004958267911742831
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 28,
+            "history_changed_examples": 179,
+            "either_changed_examples": 207,
+            "target_changed_rate": 0.0012520681482806422,
+            "history_changed_rate": 0.00800429280507982,
+            "either_changed_rate": 0.009256360953360462
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10653,
+            "collided_items": 2172,
+            "collision_rate": 0.17948929840509048,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6951,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2132,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9858,
+                "collided_items": 3306,
+                "collision_rate": 0.27320056193703,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10653,
+                "collided_items": 2172,
+                "collision_rate": 0.17948929840509048,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360595256527359,
+                "effective_codes_perplexity": 212.85161005738263,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667130241006153
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.31938798794122,
+                "effective_codes_perplexity": 204.25883486164736,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592818338458899
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319704798357009,
+                "effective_codes_perplexity": 204.32355643974205,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.95933896644786
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331914249961114,
+                "effective_codes_perplexity": 206.8335265125638,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615407808580121
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.9804226065180615
+          },
+          "files": {
+            "model.pt": "26004fd1ffbf4a748ff71c071aea1765704c71cc86816269829b6dc2b04911ba",
+            "training_state.pt": "d334ae37aa80cee16a9cfcaf28094092cd1e02a4d71bbe4592c7c55dc13b2144",
+            "semantic_ids.npy": "76a3a25ce93191ecdf75eea87fb44815d909c64bf78c7387adcbea7a9661f686",
+            "crossed_codebooks.npy": "23a92cb75ed906710c11fd5d92ae61669534314eeddf8dbe02fc40ec84f51070"
+          }
+        },
+        {
+          "label": "decoder_2",
+          "recommender_epochs": 2,
+          "recommender_updates": 208,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "1a24cda72c48f8101446764f19c234c04995f2bb7f0fc659c4bae7880638d62a",
+          "semantic_ids_array_sha256": "7dddaf1e5fa3707f99460275eab164d1f9d22020113ab47313f7163dd33942c4",
+          "deterministic_sid_change": {
+            "changed_items": 23,
+            "item_change_rate": 0.0019006693661680852,
+            "changed_digits": 24,
+            "digit_change_rate": 0.0004958267911742831,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0004958267911742831
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 28,
+            "history_changed_examples": 179,
+            "either_changed_examples": 207,
+            "target_changed_rate": 0.0012520681482806422,
+            "history_changed_rate": 0.00800429280507982,
+            "either_changed_rate": 0.009256360953360462
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10653,
+            "collided_items": 2172,
+            "collision_rate": 0.17948929840509048,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6951,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2132,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9858,
+                "collided_items": 3306,
+                "collision_rate": 0.27320056193703,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10653,
+                "collided_items": 2172,
+                "collision_rate": 0.17948929840509048,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360595256527359,
+                "effective_codes_perplexity": 212.85161005738263,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667130241006153
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.31938798794122,
+                "effective_codes_perplexity": 204.25883486164736,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592818338458899
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319704798357009,
+                "effective_codes_perplexity": 204.32355643974205,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.95933896644786
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331914249961114,
+                "effective_codes_perplexity": 206.8335265125638,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615407808580121
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.9804226065180615
+          },
+          "files": {
+            "model.pt": "bf1d89e1c702251f008d7de34653c07d5c5e65baa353760bbc20735a23a2f554",
+            "training_state.pt": "eccbe7fb7c49d67bf6deffd3e732147f18d712a476d0b022e63951652d5786ae",
+            "semantic_ids.npy": "76a3a25ce93191ecdf75eea87fb44815d909c64bf78c7387adcbea7a9661f686",
+            "crossed_codebooks.npy": "23a92cb75ed906710c11fd5d92ae61669534314eeddf8dbe02fc40ec84f51070"
+          }
+        },
+        {
+          "label": "decoder_3",
+          "recommender_epochs": 3,
+          "recommender_updates": 312,
+          "tokenizer_updates": 6,
+          "model_tensor_state_sha256": "1763e8db3ad19666ef45bfd935d0f60ad3f0005c3fba6e985e9e3413e6f3c421",
+          "semantic_ids_array_sha256": "7dddaf1e5fa3707f99460275eab164d1f9d22020113ab47313f7163dd33942c4",
+          "deterministic_sid_change": {
+            "changed_items": 23,
+            "item_change_rate": 0.0019006693661680852,
+            "changed_digits": 24,
+            "digit_change_rate": 0.0004958267911742831,
+            "per_position_change_rate": [
+              0.0004131889926452359,
+              0.0004131889926452359,
+              0.0006611023882323775,
+              0.0004958267911742831
+            ]
+          },
+          "validation_coverage": {
+            "examples": 22363,
+            "target_changed_examples": 28,
+            "history_changed_examples": 179,
+            "either_changed_examples": 207,
+            "target_changed_rate": 0.0012520681482806422,
+            "history_changed_rate": 0.00800429280507982,
+            "either_changed_rate": 0.009256360953360462
+          },
+          "collision_stats": {
+            "items": 12101,
+            "unique_semantic_ids": 10653,
+            "collided_items": 2172,
+            "collision_rate": 0.17948929840509048,
+            "colliding_groups": 724,
+            "largest_collision_group": 40,
+            "per_prefix": [
+              {
+                "prefix_length": 1,
+                "items": 12101,
+                "unique_prefixes": 256,
+                "collided_items": 12099,
+                "collision_rate": 0.9998347244029419,
+                "colliding_groups": 254,
+                "largest_collision_group": 129
+              },
+              {
+                "prefix_length": 2,
+                "items": 12101,
+                "unique_prefixes": 6951,
+                "collided_items": 7282,
+                "collision_rate": 0.6017684488885217,
+                "colliding_groups": 2132,
+                "largest_collision_group": 57
+              },
+              {
+                "prefix_length": 3,
+                "items": 12101,
+                "unique_prefixes": 9858,
+                "collided_items": 3306,
+                "collision_rate": 0.27320056193703,
+                "colliding_groups": 1063,
+                "largest_collision_group": 43
+              },
+              {
+                "prefix_length": 4,
+                "items": 12101,
+                "unique_prefixes": 10653,
+                "collided_items": 2172,
+                "collision_rate": 0.17948929840509048,
+                "colliding_groups": 724,
+                "largest_collision_group": 40
+              }
+            ],
+            "per_position": [
+              {
+                "position": 0,
+                "unique_codes": 256,
+                "entropy_nats": 5.360595256527359,
+                "effective_codes_perplexity": 212.85161005738263,
+                "largest_code_share": 0.010660276010247088,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9667130241006153
+              },
+              {
+                "position": 1,
+                "unique_codes": 256,
+                "entropy_nats": 5.31938798794122,
+                "effective_codes_perplexity": 204.25883486164736,
+                "largest_code_share": 0.013717874555821833,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9592818338458899
+              },
+              {
+                "position": 2,
+                "unique_codes": 256,
+                "entropy_nats": 5.319704798357009,
+                "effective_codes_perplexity": 204.32355643974205,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.95933896644786
+              },
+              {
+                "position": 3,
+                "unique_codes": 256,
+                "entropy_nats": 5.331914249961114,
+                "effective_codes_perplexity": 206.8335265125638,
+                "largest_code_share": 0.01115610280142137,
+                "unused_codes": 0,
+                "utilization_rate": 1.0,
+                "normalized_entropy": 0.9615407808580121
+              }
+            ]
+          },
+          "schedule": {
+            "optimizer_step": 6,
+            "total_optimizer_steps": 60,
+            "softmax_temperature": 1.0,
+            "gumbel_noise_scale": 0.9804226065180615
+          },
+          "files": {
+            "model.pt": "4f1e0d4833be6bea2826ecb51cf2973aff8dbdcba4eef4af3f87bdffa4ed7a32",
+            "training_state.pt": "b33cce6fc03a7fd00a44a5043b08ddb95d7646e52fb51e380794029c1fa95e7d",
+            "semantic_ids.npy": "76a3a25ce93191ecdf75eea87fb44815d909c64bf78c7387adcbea7a9661f686",
+            "crossed_codebooks.npy": "23a92cb75ed906710c11fd5d92ae61669534314eeddf8dbe02fc40ec84f51070"
+          }
+        }
+      ],
+      "validation": [
+        {
+          "label": "initial",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4717095849105558,
+            "dup@10": 0.39265751966619644,
+            "duplicate@10": 0.39265751966619644,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04539635554252549,
+            "ndcg@10": 0.046840827993218016,
+            "recall@5": 0.06112775566784421,
+            "hit_rate@5": 0.06112775566784421,
+            "recall@10": 0.06542056074766354,
+            "hit_rate@10": 0.06542056074766354,
+            "weighted_score": 0.05055677489646298
+          },
+          "elapsed_seconds": 209.26512906700373
+        },
+        {
+          "label": "post_tokenizer",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4721790053302126,
+            "dup@10": 0.3931941202771859,
+            "duplicate@10": 0.3931941202771859,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.0454665305378537,
+            "ndcg@10": 0.04691100298854622,
+            "recall@5": 0.06117247238742566,
+            "hit_rate@5": 0.06117247238742566,
+            "recall@10": 0.06546527746724501,
+            "hit_rate@10": 0.06546527746724501,
+            "weighted_score": 0.05062185823504264
+          },
+          "elapsed_seconds": 209.48990928381681
+        },
+        {
+          "label": "decoder_1",
+          "metrics": {
+            "legal_ratio": 0.9997764663805436,
+            "duplicate_ratio": 0.4719480206291904,
+            "dup@10": 0.3948888838702961,
+            "duplicate@10": 0.3948888838702961,
+            "legal@10": 0.9997764164020927,
+            "ndcg@5": 0.046063888948793055,
+            "ndcg@10": 0.047409056889554,
+            "recall@5": 0.06206680677905469,
+            "hit_rate@5": 0.06206680677905469,
+            "recall@10": 0.06604659482180388,
+            "hit_rate@10": 0.06604659482180388,
+            "weighted_score": 0.051136564783049315
+          },
+          "elapsed_seconds": 210.0094245504588
+        },
+        {
+          "label": "decoder_2",
+          "metrics": {
+            "legal_ratio": 0.9998658798283262,
+            "duplicate_ratio": 0.47157248461323237,
+            "dup@10": 0.395201900872717,
+            "duplicate@10": 0.395201900872717,
+            "legal@10": 0.9998658498412556,
+            "ndcg@5": 0.04584379522775818,
+            "ndcg@10": 0.04724095023014739,
+            "recall@5": 0.061709073022403076,
+            "hit_rate@5": 0.061709073022403076,
+            "recall@10": 0.06582301122389661,
+            "hit_rate@10": 0.06582301122389661,
+            "weighted_score": 0.05095736275619905
+          },
+          "elapsed_seconds": 209.74938016943634
+        },
+        {
+          "label": "decoder_3",
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.4704995231012759,
+            "dup@10": 0.3950230340546942,
+            "duplicate@10": 0.3950230340546942,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04636919424347591,
+            "ndcg@10": 0.047666023590268024,
+            "recall@5": 0.06229039037696195,
+            "hit_rate@5": 0.06229039037696195,
+            "recall@10": 0.06613602826096678,
+            "hit_rate@10": 0.06613602826096678,
+            "weighted_score": 0.0513600248378499
+          },
+          "elapsed_seconds": 210.31264282390475
+        }
+      ],
+      "final_snapshot": "snapshots/decoder_3"
+    }
+  ],
+  "elapsed_seconds": 3960.8987114001065,
+  "no_test_evaluation": true,
+  "no_historical_artifact_changes": true
+}

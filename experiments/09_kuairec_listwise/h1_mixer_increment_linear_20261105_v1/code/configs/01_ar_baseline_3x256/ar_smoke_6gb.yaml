@@ -1,0 +1,68 @@
+# Fast pipeline check for a 6 GB RTX 3060 Laptop GPU.
+# This is NOT the paper-reproduction configuration.
+run_id: ar_smoke_6gb
+rand_seed: 2024
+reproducibility: true
+
+cache_dir: ../../data/cache/
+log_dir: ../../outputs/logs/
+tensorboard_log_dir: ../../outputs/tensorboard/
+ckpt_dir: ../../outputs/checkpoints/
+position_loss_log_dir: ../../outputs/position_loss_logs/
+
+category: Beauty
+metadata: sentence
+split: leave_one_out
+train_sliding: false
+min_hist_len: 2
+max_hist_len: 20
+max_history_len: 20
+
+n_digit: 4
+codebook_size: 256
+sid_quantizer: rq_kmeans
+rq_kmeans_niters: 10
+rq_kmeans_seed: 2024
+force_regenerate_opq: false
+
+sent_emb_model: sentence-transformers/all-MiniLM-L6-v2
+sent_emb_dim: 384
+sent_emb_pca: 128
+sent_emb_batch_size: 64
+normalize_after_pca: true
+
+encoder_n_layer: 1
+decoder_n_layer: 2
+n_head: 4
+n_embd: 128
+n_inner: 512
+dropout: 0.1
+attn_pdrop: 0.1
+resid_pdrop: 0.1
+share_embeddings: true
+share_decoder_output_embedding: true
+
+train_batch_size: 64
+eval_batch_size: 16
+lr: 0.003
+weight_decay: 0.0
+warmup_steps: 50
+epochs: 2
+max_grad_norm: 1.0
+label_smoothing: 0.1
+
+eval_start_epoch: 1
+eval_interval: 1
+patience: 2
+topk: [5, 10]
+metrics: [ndcg, recall]
+val_metric: ndcg@10
+
+ar_beam_search:
+  pre_cut_num: [32, 32, 32, 32]
+  beam_search_num: [32, 32, 32, 32]
+  top_k_final: 10
+  self_kv_cache: true
+  cross_kv_cache: true
+  seed: 42
+

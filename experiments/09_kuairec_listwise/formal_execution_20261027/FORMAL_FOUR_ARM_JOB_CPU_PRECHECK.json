@@ -1,0 +1,52 @@
+{
+  "schema": "stage09_four_arm_wrapper_cpu_precheck_v1",
+  "status": "CPU_SIMULATION_PASSED",
+  "recorded_at_utc": "2026-10-27T15:24:55.452194+00:00",
+  "artifacts": {
+    "formal_four_arm_job.py": {
+      "bytes": 18616,
+      "sha256": "52b9837a1fa970577d43fba53fe84e71062c472f6ad428c8d0c3a76359327dfe"
+    },
+    "test_formal_four_arm_job_cpu.py": {
+      "bytes": 8341,
+      "sha256": "ca0ed7c194f594d8f32001954d5af05bf3aea95aeb16403a9b361005c91500fc"
+    }
+  },
+  "command": "& .runtime/stage08_restore_env/Scripts/python.exe -B outputs/stage09_delivery/goal_20261027_r1/test_formal_four_arm_job_cpu.py",
+  "terminal_chunk_id": "d1cd5d",
+  "exit_code": 0,
+  "unittest_summary": "Ran 8 tests in 0.045s\n\nOK",
+  "cases": [
+    "normal completion waits for actual exit0 beyond one second",
+    "one child failure cleans all owned groups with TERM then KILL when needed",
+    "total deadline leaves TERM/KILL reserve",
+    "completion marker allows 60 seconds but not indefinite exit",
+    "exited leader cannot hide lingering owned group",
+    "pair helper failure stops four training groups",
+    "GPU inventory subprocess has a separate 120-second limit",
+    "exact frozen four train argv, two layouts and GPU visibility scope"
+  ],
+  "additional_checks": [
+    "--help exits0",
+    "all four argv equal existing BRANCH_JOB_TEMPLATES.json commands",
+    "remote argv/environment paths use POSIX formatting"
+  ],
+  "test_backend": "Pure CPU fake process objects and fake monotonic clock; no actual Popen invocation.",
+  "gpu_started": false,
+  "platform_accessed": false,
+  "formal_source_modified": false,
+  "formal_run_directories_written": false,
+  "independent_new_wrapper_static_review": {
+    "status": "passed_read_only",
+    "reviewer": "/root/listwise_joint_plan",
+    "reviewed_helper_sha256": "52b9837a1fa970577d43fba53fe84e71062c472f6ad428c8d0c3a76359327dfe",
+    "boundary": "Static source review only; no Linux process-group or GPU execution."
+  },
+  "limitations": [
+    "Linux setsid/killpg OS behavior has not been exercised locally.",
+    "Actual container H100 inventory/torch UUID mapping is unverified until deployment precheck.",
+    "Layout and max/platform deadlines require root approval using measured evidence and remaining Goal budget.",
+    "CPU pair inspection follows immutable initial.pt creation while frozen run may already be updating T.",
+    "No training results or final model acceptance are claimed."
+  ]
+}

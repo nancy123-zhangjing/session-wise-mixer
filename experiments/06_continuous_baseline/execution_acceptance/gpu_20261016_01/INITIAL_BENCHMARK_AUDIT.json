@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "Independent saved latency-sample summary recalculation and archive hashes; initial smoke checkpoints only, not final quality or selected-model latency",
+  "measurements": [
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.7782240211963654,
+      "p95_ms": 0.8059071898460388
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.2624799907207489,
+      "p95_ms": 0.2693616077303886
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 1.1311713606119156,
+      "p95_ms": 1.1980139184743166
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 0.8393279910087585,
+      "p95_ms": 0.8665312260389327
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.31913599371910095,
+      "p95_ms": 0.33200800865888597
+    },
+    {
+      "model": "esasrec",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.277257688343525,
+      "p95_ms": 1.3140068855136633
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "query_forward",
+      "p50_ms": 0.6277439892292023,
+      "p95_ms": 0.6860832154750823
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "catalog_top20",
+      "p50_ms": 0.28484800457954407,
+      "p95_ms": 0.29367840737104417
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 1,
+      "component": "end_to_end",
+      "p50_ms": 0.9997282177209854,
+      "p95_ms": 1.0414585005491972
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "query_forward",
+      "p50_ms": 0.6872960031032562,
+      "p95_ms": 0.716943997144699
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "catalog_top20",
+      "p50_ms": 0.30793601274490356,
+      "p95_ms": 0.3158271908760071
+    },
+    {
+      "model": "sasrec_fullce",
+      "batch_size": 128,
+      "component": "end_to_end",
+      "p50_ms": 1.1276095174252987,
+      "p95_ms": 1.1643937323242426
+    }
+  ]
+}

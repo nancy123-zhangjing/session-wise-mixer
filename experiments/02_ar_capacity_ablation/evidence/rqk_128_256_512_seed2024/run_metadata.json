@@ -1,0 +1,115 @@
+{
+  "run_id": "ar_formal_rqkmeans_128x256x512",
+  "seed": 2024,
+  "sid_quantizer": "rq_kmeans",
+  "semantic_n_digit": 3,
+  "total_n_digit": 4,
+  "codebook_size": 256,
+  "semantic_codebook_sizes": [
+    128,
+    256,
+    512
+  ],
+  "codebook_sizes": [
+    128,
+    256,
+    512,
+    256
+  ],
+  "sid_collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 11734,
+    "collided_items": 673,
+    "colliding_groups": 306,
+    "collision_rate": 0.055615238410048756,
+    "largest_collision_group": 9,
+    "semantic_codebook_sizes": [
+      128,
+      256,
+      512
+    ],
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "unique_prefixes": 128,
+        "collided_items": 12101,
+        "collision_rate": 1.0,
+        "largest_collision_group": 243
+      },
+      {
+        "prefix_length": 2,
+        "unique_prefixes": 8436,
+        "collided_items": 5957,
+        "collision_rate": 0.49227336583753406,
+        "largest_collision_group": 28
+      },
+      {
+        "prefix_length": 3,
+        "unique_prefixes": 11734,
+        "collided_items": 673,
+        "collision_rate": 0.055615238410048756,
+        "largest_collision_group": 9
+      }
+    ],
+    "per_position": [
+      {
+        "position": 0,
+        "codebook_size": 128,
+        "unique_codes": 128,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 4.7901131847223075,
+        "normalized_entropy": 0.9872389338422447,
+        "effective_codes_perplexity": 120.31498571082716,
+        "largest_code_share": 0.020080985042558466
+      },
+      {
+        "position": 1,
+        "codebook_size": 256,
+        "unique_codes": 256,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 5.460734171498334,
+        "normalized_entropy": 0.9847717636041936,
+        "effective_codes_perplexity": 235.27008956871921,
+        "largest_code_share": 0.009751260226427567
+      },
+      {
+        "position": 2,
+        "codebook_size": 512,
+        "unique_codes": 512,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "entropy_nats": 6.001394796893816,
+        "normalized_entropy": 0.962020279099504,
+        "effective_codes_perplexity": 403.9918873302529,
+        "largest_code_share": 0.00528881910585902
+      }
+    ]
+  },
+  "full_sid_collision_stats": {
+    "items": 12101,
+    "unique_full_ids": 12101,
+    "collided_items": 0,
+    "collision_rate": 0.0,
+    "largest_collision_group": 1
+  },
+  "semantic_ids_path": "/home/jingzhang/experiment1/data/cache/AmazonReviews2014/Beauty/processed/sentence-t5-xl_pca32_RQKMEANS_128x256x512_seed2024_it20_inputpca32.sem_ids",
+  "best_epoch": 55,
+  "best_val_score": 0.04172787273905121,
+  "fit_elapsed_seconds": 9791.720901211724,
+  "peak_vram_mb": 569.357421875,
+  "test_results": {
+    "legal@10": 1.0,
+    "duplicate@10": 0.0,
+    "hit_rate@5": 0.03510262487143943,
+    "recall@5": 0.03510262487143943,
+    "ndcg@5": 0.023271535964055432,
+    "hit_rate@10": 0.056208916513884544,
+    "recall@10": 0.056208916513884544,
+    "ndcg@10": 0.0300342372879276,
+    "weighted_score": 0.03526917366085318
+  },
+  "position_metrics_csv": "../../outputs/position_loss_logs/AmazonReviews2014/AR_GRM/AmazonReviews2014_Aug-14-2026_07-34-19_position_loss.csv",
+  "checkpoint": "saved/AmazonReviews2014_Aug-14-2026_07-34-19/pytorch_model.bin"
+}

@@ -1,0 +1,222 @@
+{
+  "schema": "stage09_warmup_independent_metric_recompute_receipt_v1",
+  "status": "PASS",
+  "scope": "Only the two completed shared warmups at R05; not final four-arm results or a J-vs-H comparison.",
+  "source_files_unchanged": true,
+  "source_files": {
+    "scripts/listwise_diffgrm/analysis.py": {
+      "sha256": "4e056eecfded4ff2c1e25ecc1c32a348f01004f31d1b649946ea544f2aa79bdd",
+      "bytes": 21814
+    },
+    "scripts/listwise_diffgrm/subset.py": {
+      "sha256": "33f6fb79033ba31d2ec454c19e7b4c2cad38abaf3c926f263c6f6ff2e23aee2a",
+      "bytes": 5272
+    }
+  },
+  "inputs": {
+    "J": {
+      "files": {
+        "per_sample.jsonl.gz": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\warmup_J\\validation_R05\\per_sample.jsonl.gz",
+          "sha256": "4ebf4710ffaf8d8766f1c979efec1f45eb489388d1e567d26404f3238141fa7e",
+          "bytes": 25904735
+        },
+        "summary.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\warmup_J\\validation_R05\\summary.json",
+          "sha256": "5970d77fe255f7107c6c9968e07cf8d11e919df2a248edfa37ac3ba2b01800cc",
+          "bytes": 9358
+        }
+      },
+      "restore_receipt": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\formal_execution_20261027\\J_WARMUP_LOCAL_RESTORE.json",
+        "sha256": "5e6a3af22d7383452f2b9bf677b83f3d8b3e2e7c242f630ea28569c7ca14ee15"
+      },
+      "backup_manifest": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_delivery\\goal_20261027_r1\\STAGE09_RUN_warmup_J_R1.json",
+        "sha256": "3d54f92c670f6491450f6b8408b46b166ca62bddb33bc79a8a503a03b0b9bcf1"
+      },
+      "protocol": {
+        "architecture": "J",
+        "split": "validation",
+        "seed": 2024,
+        "beam": 32,
+        "examples": 71657,
+        "full_split": true,
+        "subset": null
+      }
+    },
+    "H": {
+      "files": {
+        "per_sample.jsonl.gz": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\warmup_H\\validation_R05\\per_sample.jsonl.gz",
+          "sha256": "11011cbbdfbbe72bf52eaf6f2f6a34187d81bcd2ce4d5d75d3e056c3bfe31cf5",
+          "bytes": 28076222
+        },
+        "summary.json": {
+          "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_restore\\goal_20261027_r1\\runs\\warmup_H\\validation_R05\\summary.json",
+          "sha256": "7619dc0a6040a1845b6ec4c3d4f2a186341d1f7f958347ff0c7075d6db045e53",
+          "bytes": 9390
+        }
+      },
+      "restore_receipt": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\formal_execution_20261027\\H_WARMUP_LOCAL_RESTORE.json",
+        "sha256": "5df2547fd6c2af4c0aa293d17d3ba0394bf91d67c5e3b01670a69af80b9d275f"
+      },
+      "backup_manifest": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\stage09_delivery\\goal_20261027_r1\\STAGE09_RUN_warmup_H_R1.json",
+        "sha256": "0f8db52a3b374e507695f0c6705ec69bcaffcbc17fa278c2d36c7a0cc9fdc351"
+      },
+      "protocol": {
+        "architecture": "H",
+        "split": "validation",
+        "seed": 2024,
+        "beam": 32,
+        "examples": 71657,
+        "full_split": true,
+        "subset": null
+      }
+    }
+  },
+  "dataset": "C:\\Users\\nancy\\Documents\\experiment1\\outputs\\kuairec_listwise_v1\\run1",
+  "dataset_files": {
+    "manifest.json": {
+      "bytes": 10323,
+      "sha256": "8fe1506fbbe3361048ad9b2862415a793ecefe538a8478cc3ab0d7e2a3b9b649"
+    },
+    "validation.parquet": {
+      "bytes": 61527190,
+      "sha256": "9303e01107e4182a5fb33577cb96d9f256cbc85f737f62f349d8b78a61eaa3d4"
+    },
+    "train_seen.json": {
+      "bytes": 159883,
+      "sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb"
+    }
+  },
+  "output_directory": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027",
+  "source_files_after": {
+    "scripts/listwise_diffgrm/analysis.py": "4e056eecfded4ff2c1e25ecc1c32a348f01004f31d1b649946ea544f2aa79bdd",
+    "scripts/listwise_diffgrm/subset.py": "33f6fb79033ba31d2ec454c19e7b4c2cad38abaf3c926f263c6f6ff2e23aee2a"
+  },
+  "results": {
+    "J": {
+      "passed": true,
+      "examples": 71657,
+      "users": 4733,
+      "source_labels_verified": true,
+      "source_cold_groups_verified": true,
+      "train_seen_sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb",
+      "predictions_sha256": "4ebf4710ffaf8d8766f1c979efec1f45eb489388d1e567d26404f3238141fa7e",
+      "summary_sha256": "5970d77fe255f7107c6c9968e07cf8d11e919df2a248edfa37ac3ba2b01800cc",
+      "tolerance": 0.000002,
+      "mismatches": 0,
+      "max_absolute_error": 4.809881137823879e-8,
+      "nonfinite_saved_metric": false,
+      "output": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\J_R05_RECOMPUTE.json",
+        "bytes": 8084,
+        "sha256": "94948289d6834a7d06042b06586b2c1a7e4d1d19e9384b4936231c0cc5e8f5fc"
+      },
+      "group_counts": {
+        "cold_target": 8269,
+        "seen_targets": 63388
+      },
+      "metric_count": 37,
+      "selected_metrics": {
+        "list/ndcg@5": 0.0056074672613945315,
+        "list/recall@5": 0.005721701997013347,
+        "list/hr@5": 0.028245670346232748,
+        "aggregate/ndcg@50": 0.008771169527989838,
+        "aggregate/recall@50": 0.01223886012532001,
+        "aggregate/hr@50": 0.05900330742286169
+      },
+      "execution": {
+        "arm": "J",
+        "command": [
+          "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "scripts.listwise_diffgrm.analysis",
+          "recompute",
+          "--predictions",
+          "outputs/stage09_restore/goal_20261027_r1/runs/warmup_J/validation_R05/per_sample.jsonl.gz",
+          "--dataset",
+          "outputs/kuairec_listwise_v1/run1",
+          "--output",
+          "experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\J_R05_RECOMPUTE.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 14.309724600054324,
+        "stdout": "{\"output\": \"experiments\\\\09_kuairec_listwise\\\\warmup_metric_recompute_20261027\\\\J_R05_RECOMPUTE.json\", \"examples\": 71657, \"users\": 4733, \"passed\": true}\n",
+        "stderr": "",
+        "output": "experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\J_R05_RECOMPUTE.json"
+      }
+    },
+    "H": {
+      "passed": true,
+      "examples": 71657,
+      "users": 4733,
+      "source_labels_verified": true,
+      "source_cold_groups_verified": true,
+      "train_seen_sha256": "f8a0205149fc22d418bf4c28f43037c44c8d7539d1aa9b837f636f6df636efdb",
+      "predictions_sha256": "11011cbbdfbbe72bf52eaf6f2f6a34187d81bcd2ce4d5d75d3e056c3bfe31cf5",
+      "summary_sha256": "7619dc0a6040a1845b6ec4c3d4f2a186341d1f7f958347ff0c7075d6db045e53",
+      "tolerance": 0.000002,
+      "mismatches": 0,
+      "max_absolute_error": 4.809881137823879e-8,
+      "nonfinite_saved_metric": false,
+      "output": {
+        "path": "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\H_R05_RECOMPUTE.json",
+        "bytes": 8097,
+        "sha256": "c525efad96e90e44bb2a3b089a049719b9bcc8d59d8dd0a660f6c7ca21595046"
+      },
+      "group_counts": {
+        "cold_target": 8269,
+        "seen_targets": 63388
+      },
+      "metric_count": 37,
+      "selected_metrics": {
+        "list/ndcg@5": 0.0037527530227343888,
+        "list/recall@5": 0.0035223355708443624,
+        "list/hr@5": 0.017374436551907003,
+        "aggregate/ndcg@50": 0.007549746935129544,
+        "aggregate/recall@50": 0.011482479032056087,
+        "aggregate/hr@50": 0.055263268068716245
+      },
+      "execution": {
+        "arm": "H",
+        "command": [
+          "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage08_restore_env\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "scripts.listwise_diffgrm.analysis",
+          "recompute",
+          "--predictions",
+          "outputs/stage09_restore/goal_20261027_r1/runs/warmup_H/validation_R05/per_sample.jsonl.gz",
+          "--dataset",
+          "outputs/kuairec_listwise_v1/run1",
+          "--output",
+          "experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\H_R05_RECOMPUTE.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 14.443309299997054,
+        "stdout": "{\"output\": \"experiments\\\\09_kuairec_listwise\\\\warmup_metric_recompute_20261027\\\\H_R05_RECOMPUTE.json\", \"examples\": 71657, \"users\": 4733, \"passed\": true}\n",
+        "stderr": "",
+        "output": "experiments\\09_kuairec_listwise\\warmup_metric_recompute_20261027\\H_R05_RECOMPUTE.json"
+      }
+    }
+  },
+  "gpu_used": false,
+  "model_loaded": false,
+  "dataset_or_models_modified": false,
+  "compare_executed": false,
+  "verification": "All 71,657 real validation rows checked against source sample IDs, row indices, users and true item targets; cold target labels independently derived from bound train_seen.json. Independent item metrics, sample means, user means and cold/seen subgroup means matched saved summary within tolerance.",
+  "parallel_execution": true,
+  "elapsed_seconds_per_process": {
+    "J": 14.309724600054324,
+    "H": 14.443309299997054
+  },
+  "limitations": [
+    "Saved predictions were replayed; generation/model forward was not rerun.",
+    "These are R05 shared-warmup validation checks, not final best/R35/test/beam-sensitivity or multi-seed acceptance."
+  ]
+}

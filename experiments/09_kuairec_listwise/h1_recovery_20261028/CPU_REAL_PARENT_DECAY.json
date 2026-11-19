@@ -1,0 +1,40 @@
+{
+  "protocol": {
+    "format": "stage09_h1_recovery_v1",
+    "policy": "decay",
+    "parent_sha256": "a672ea4d31be5281c2c24c1c7e774bc27eb7e679ec732181a197b703da890bf1",
+    "start_phase": 25,
+    "stop_phase": 33,
+    "t_lr": "peak_times_half_one_plus_cos_pi_completed_T_over_original_total",
+    "source_proof": {
+      "relocations": {
+        "dataset": {
+          "parent": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/inputs/dataset",
+          "execution": "C:/Users/nancy/Documents/experiment1/outputs/kuairec_listwise_v1/run1"
+        },
+        "assets": {
+          "parent": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/assets/pse_v1",
+          "execution": "C:/Users/nancy/Documents/experiment1/outputs/stage09_restore/goal_20261027_r1/assets/pse_v1"
+        }
+      },
+      "extensions": {
+        "scripts/listwise_diffgrm/recovery.py": "60e20a50804377bba8096c260baf24d1f7c0e5c334b67f43e20383d4cb212acb",
+        "scripts/listwise_diffgrm/recovery_diagnostics.py": "968559500b14153b42cba6019afd294c4c4449ce277d55f68cf87dff06f4b219",
+        "scripts/listwise_diffgrm/recovery_evaluation.py": "2786b1824ab42553019410c0d7a9a7a167136c7156738c5a3550408877c7f06e",
+        "scripts/listwise_diffgrm/recovery_preflight.py": "2a6ea4e88d999530b964b8ad6193ba3d28fdb33a702b1a21797d68a774349c96",
+        "scripts/listwise_diffgrm/recovery_run.py": "193efb63f5f81e8c07b08d1e17cce5e7caa399f99ec99a59ecb8e014da07c7f0"
+      }
+    }
+  },
+  "parent_hashes": {
+    "model": "8e5b2dd514705c8b2df9cc933ac5835db009bdc20098a4ec735b7680092c22c7",
+    "alignment": "d37bd09e69f5798258c09d018c75330383f201c3abf71044a2fa694954ce15b6",
+    "r_optimizer": "4f3542898994e5fb72e201cdabdd09e471f25ef533697e7faa0ca1a2790b8bca",
+    "t_optimizer": "643d9996007b5d811255517ecacde0928b2cfd8f9c7cd0b910d5bc38a4e72c06",
+    "scheduler": "dd13fc0f621dee94178d99c88043551738f47f4cb03b6a5b71f71cffbe27b6a7"
+  },
+  "examples": 709443,
+  "r_updates": 13860,
+  "t_updates": 200,
+  "cuda_exact_resume_verified": false
+}

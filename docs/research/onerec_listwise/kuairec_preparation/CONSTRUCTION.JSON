@@ -1,0 +1,53 @@
+{
+  "counts": {
+    "crossing_session_blocks": 14386,
+    "crossing_sessions": 1738,
+    "excess_span_blocks": 921861,
+    "full_blocks": 1979443,
+    "nonplayed_blocks": 67144,
+    "quarantined_blocks": 16,
+    "repeated_target_item_blocks": 140630,
+    "retained_blocks": 834294,
+    "retained_test": 53194,
+    "retained_train": 709443,
+    "retained_validation": 71657,
+    "sessions": 887482,
+    "short_history_blocks": 1112,
+    "tail_blocks": 786706,
+    "tail_events": 1665587
+  },
+  "hash_method": "fixed schema Arrow IPC streams of consecutive 512 rows, concatenated into SHA256",
+  "normalized_sample_hashes": {
+    "test": "3e4b9c8d9e3d916f43a5e93546b0e08b417b5407874c12d0f266d615a542c024",
+    "train": "a548c8f3eefd83d563ff650f3390f9106ba894aebfcf4f6ebfd3e033197364c5",
+    "validation": "40fa5651374310088c9ffc33b21ffffba90a27f4fd1d47daf1c76e604293e5f2"
+  },
+  "text": {
+    "caption_missing_items": 1356,
+    "catalog_assumption": "Released full static catalog; publication-time metadata is not proven to be an event-time snapshot.",
+    "items": 10728,
+    "outputs": {
+      "item_text.jsonl": {
+        "bytes": 7724679,
+        "sha256": "efac9ff23c58ca4ffc920adfbaf3b425e028d3c967fa626e797b4472daeeb60d"
+      },
+      "text_repairs.jsonl": {
+        "bytes": 3102,
+        "sha256": "6b3e57e6cf4bc77a056e22bc83b306e71d6a72973de242a85279a6dbbebb1e60"
+      }
+    },
+    "physical_source_lines": 10733,
+    "repair_rule": "join_known_unquoted_caption_3_plus_8_fields_preserving_newline_v1",
+    "repaired_items": 4,
+    "repaired_video_ids": [
+      1378,
+      1613,
+      5910,
+      6331
+    ],
+    "schema_version": 1,
+    "source_sha256": "08f6ec40059c5a7ecdcebf615d080d9cf8f59f9497f6d66e8d5ccabdc7cab2d9",
+    "text_missing_items": 4,
+    "text_policy": "Static caption, cover text, topic and category names only; raw fields retained. No behavior statistics."
+  }
+}

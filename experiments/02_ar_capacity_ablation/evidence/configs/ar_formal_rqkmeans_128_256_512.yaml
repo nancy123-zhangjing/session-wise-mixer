@@ -1,0 +1,11 @@
+# RQ-KMeans information-allocation study: 7 + 8 + 9 = 24 nominal bits.
+run_id: ar_formal_rqkmeans_128x256x512
+sid_quantizer: rq_kmeans
+semantic_codebook_sizes: [128, 256, 512]
+rq_kmeans_use_pca: true
+rq_kmeans_niters: 20
+rq_kmeans_seed: 2024
+tokenizer_artifact_dir: ../../outputs/tokenizers/rqkmeans_128x256x512/Beauty/seed2024
+force_regenerate_pca: false
+force_regenerate_codes: false
+force_regenerate_opq: false

@@ -1,0 +1,376 @@
+{
+  "schema": "stage07_multiseed_gpu_job_v1",
+  "campaign_id": "stage07_item_local_joint_multiseed_20261021_r1",
+  "mode": "smoke",
+  "seed": 2025,
+  "variant": null,
+  "attempt": 1,
+  "status": "smoke_completed",
+  "pid": 55,
+  "started_utc": "2026-10-21T15:11:56.050339+00:00",
+  "started_unix": 1792595516.0503068,
+  "deadline_unix": 1792596176.0503068,
+  "allocated_gpu_count": 1,
+  "max_process_seconds": 750,
+  "platform_max_seconds": 900,
+  "budget": {
+    "reserved_and_spent_gpu_seconds": 44280.0,
+    "selected": {
+      "key": "smoke_seed2025_attempt1",
+      "mode": "smoke",
+      "seed": 2025,
+      "variant": null,
+      "attempt": 1,
+      "gpu_count": 1,
+      "max_process_seconds": 750,
+      "platform_max_seconds": 900
+    },
+    "budget_receipt": {
+      "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/BUDGET_RESERVATION.json",
+      "sha256": "9ea3c6ecf15f9ac9a628bab60905d50e1405d19b240983c7fb4c7226c3846160",
+      "size_bytes": 1835
+    }
+  },
+  "source_lock": {
+    "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/DEPLOYMENT_LOCK.json",
+    "sha256": "bfbee49ca692adee60f075b22a1cbad8e20bbb449a4220f18ee029928f04eed8",
+    "size_bytes": 7698
+  },
+  "cpu_gate": {
+    "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/delivery/CPU_GATE.json",
+    "sha256": "038e6c82332dfbc681a48153426850f318abb5f26587a07965ae8529125e55ad",
+    "size_bytes": 23876
+  },
+  "children": [
+    {
+      "label": "train_control",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-u",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/run_item_local_joint_multiseed.py",
+        "--seed",
+        "2025",
+        "--mode",
+        "smoke",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/configs/07_item_local_attention/multiseed_20261021.json",
+        "--variant",
+        "control",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_control_seed2025_20261021_r1",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00",
+        "--deadline-unix",
+        "1792596176.0503068",
+        "--training-deadline-reserve-seconds",
+        "60"
+      ],
+      "pid": 144,
+      "console": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/delivery/smoke_seed2025_attempt1/train_control.log",
+      "started_unix": 1792595529.9731147,
+      "status": "completed",
+      "returncode": 0,
+      "ended_unix": 1792595648.593223
+    },
+    {
+      "label": "train_item_local",
+      "argv": [
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/conda-envs/grm-exp/bin/python",
+        "-u",
+        "-B",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/scripts/train/run_item_local_joint_multiseed.py",
+        "--seed",
+        "2025",
+        "--mode",
+        "smoke",
+        "--config",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/code/configs/07_item_local_attention/multiseed_20261021.json",
+        "--variant",
+        "item_local",
+        "--output",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_item_local_seed2025_20261021_r1",
+        "--project-root",
+        "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+        "--engine-root",
+        "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/engine",
+        "--expected-engine-commit",
+        "1c879252f6395d6e64462511823c3929b9c42c00",
+        "--deadline-unix",
+        "1792596176.0503068",
+        "--training-deadline-reserve-seconds",
+        "60"
+      ],
+      "pid": 969,
+      "console": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/delivery/smoke_seed2025_attempt1/train_item_local.log",
+      "started_unix": 1792595648.9306312,
+      "status": "completed",
+      "returncode": 0,
+      "ended_unix": 1792595707.991371
+    }
+  ],
+  "test_evaluation_authorized": false,
+  "automatic_retry": false,
+  "gpu_release_verified": false,
+  "release_scope": "Owned process groups are checked here; actual GPU release requires platform Pod-deletion evidence",
+  "normalized_single_process_variables": {
+    "WORLD_SIZE": "1",
+    "RANK": "0"
+  },
+  "gpu_sampling": {
+    "status": "passed",
+    "interval_seconds": 5,
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=timestamp,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits",
+      "--id",
+      "GPU-d6923bd9-9891-633e-03a7-edb2957edaa9"
+    ],
+    "valid_samples": 36,
+    "failed_samples": 0,
+    "csv": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/delivery/smoke_seed2025_attempt1/gpu_samples.csv",
+    "scope": "Read-only instantaneous five-second samples during the short profile; does not establish three-hour utilisation or actual allocation/billing",
+    "mean_utilization_gpu_percent": 1.8055555555555556,
+    "minimum_utilization_gpu_percent": 0.0,
+    "maximum_utilization_gpu_percent": 15.0,
+    "fraction_samples_below_40_percent": 1.0,
+    "csv_sha256": "9b7de303e20c301459039b9b9306551832d1cc7f0649d876b2275acf74ef47f0"
+  },
+  "paired_smoke": {
+    "control": {
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_control_seed2025_20261021_r1/smoke/COMPLETE.json",
+        "sha256": "69a8de62d4960f085739e088e313c3fe8b0ce457162d2ab523d0634fa72236b1",
+        "size_bytes": 510
+      },
+      "result": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_control_seed2025_20261021_r1/smoke/smoke_results.json",
+        "sha256": "1aaff6f5e47ca70bfb35bf893af04ee7b2a437d36d7a9af3ff7aead85ef9c9d5",
+        "size_bytes": 32509
+      },
+      "checkpoint": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_control_seed2025_20261021_r1/smoke/training_state/best_model.bin",
+        "sha256": "08a375cc61119fefd30af9275c20c9d5abde5618133e160d21070b03ccb7ed30",
+        "size_bytes": 36147558
+      },
+      "selected_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+      "fit": {
+        "best_epoch": 0,
+        "best_val_score": 0.02500000037252903,
+        "completed_epochs": 3,
+        "training_stop_reason": "max_epochs",
+        "joint_progress": {
+          "boundary_phase": "recommender",
+          "last_committed_phase": "recommender",
+          "next_phase": "recommender",
+          "next_phase_index": 1,
+          "tokenizer_epochs_completed": 1,
+          "tokenizer_optimizer_updates": 2,
+          "sid_refresh_count": 1,
+          "last_refresh_stats": {
+            "digit_change_rate": 0.00010329725046176463,
+            "item_change_rate": 0.00041318900184705853,
+            "unique_semantic_ids": 10651,
+            "collision_rate": 0.17957193620361953
+          },
+          "initial_validation_complete": true
+        },
+        "cumulative_recommender_optimizer_updates": 4,
+        "training_state_sha256": "f06a3d417a3da5c6eff964aa1cae9f0541c1ce56116db98434910b2f2a0787ee"
+      },
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+      "input_artifacts": [
+        {
+          "path": "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin",
+          "sha256": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+          "size_bytes": 22440554
+        },
+        {
+          "path": "data/diff_formal_embeddings/beauty_item_keys.json",
+          "sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+          "size_bytes": 169415
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt",
+          "sha256": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+          "size_bytes": 402958
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy",
+          "sha256": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+          "size_bytes": 262272
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy",
+          "sha256": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+          "size_bytes": 12391552
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy",
+          "sha256": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+          "size_bytes": 387360
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json",
+          "sha256": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+          "size_bytes": 412858
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json",
+          "sha256": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+          "size_bytes": 7899
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+          "sha256": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+          "size_bytes": 3220678
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+          "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+          "size_bytes": 1351806
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+          "sha256": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+          "size_bytes": 7594411
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+          "sha256": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+          "size_bytes": 99156148
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+          "sha256": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe",
+          "size_bytes": 44819276
+        }
+      ],
+      "phase_checks_passed": true
+    },
+    "item_local": {
+      "complete": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_item_local_seed2025_20261021_r1/smoke/COMPLETE.json",
+        "sha256": "25ffc010dc73279517acf2f1d3a74983ff1c796a1016fa3bf73696cfc780dcb0",
+        "size_bytes": 516
+      },
+      "result": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_item_local_seed2025_20261021_r1/smoke/smoke_results.json",
+        "sha256": "6491f24cfa0c46655957943625e7672358ae6e5335fb3eeb6ca7110fcc58f11a",
+        "size_bytes": 34734
+      },
+      "checkpoint": {
+        "path": "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2025/runs/stage07_item_local_joint_item_local_seed2025_20261021_r1/smoke/training_state/best_model.bin",
+        "sha256": "13bb94fa44b2c0b503158b759289b753819ac51894eb58d83b4be3967a949b60",
+        "size_bytes": 37204442
+      },
+      "selected_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+      "fit": {
+        "best_epoch": 0,
+        "best_val_score": 0.02500000037252903,
+        "completed_epochs": 3,
+        "training_stop_reason": "max_epochs",
+        "joint_progress": {
+          "boundary_phase": "recommender",
+          "last_committed_phase": "recommender",
+          "next_phase": "recommender",
+          "next_phase_index": 1,
+          "tokenizer_epochs_completed": 1,
+          "tokenizer_optimizer_updates": 2,
+          "sid_refresh_count": 1,
+          "last_refresh_stats": {
+            "digit_change_rate": 0.00010329725046176463,
+            "item_change_rate": 0.00041318900184705853,
+            "unique_semantic_ids": 10651,
+            "collision_rate": 0.17957193620361953
+          },
+          "initial_validation_complete": true
+        },
+        "cumulative_recommender_optimizer_updates": 4,
+        "training_state_sha256": "aa15f48b038662376ae2476260f67138f95e01f245b89f59fc8976d6f32573e4"
+      },
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+      "input_artifacts": [
+        {
+          "path": "external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin",
+          "sha256": "06d58ada9601b9656367e0c4fbf705cd0f8475f969fd356b7ea49ca23c02405b",
+          "size_bytes": 22440554
+        },
+        {
+          "path": "data/diff_formal_embeddings/beauty_item_keys.json",
+          "sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+          "size_bytes": 169415
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/best.pt",
+          "sha256": "da05a58ef72eb3d7f472f05aa8354c1018ced719ac92ad41ea33eca3ba5f7484",
+          "size_bytes": 402958
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/base_pse_codebooks.npy",
+          "sha256": "b4fdbac9439e73d281489977b64b20a91a7890b942bcf4f9a45f5f7ccc8cadea",
+          "size_bytes": 262272
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy",
+          "sha256": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+          "size_bytes": 12391552
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy",
+          "sha256": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+          "size_bytes": 387360
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json",
+          "sha256": "206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622",
+          "size_bytes": 412858
+        },
+        {
+          "path": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/summary.json",
+          "sha256": "641c506de4d4afc2252dc33f6dfa040446b72a590041ce3b63032b26ee64d2d6",
+          "size_bytes": 7899
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+          "sha256": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+          "size_bytes": 3220678
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+          "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+          "size_bytes": 1351806
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/processed/metadata.sentence.json",
+          "sha256": "40fe4bba48eda9f6913fa2bedf1a2fe396672cd5141ac0787f785edab8365f0f",
+          "size_bytes": 7594411
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/raw/meta_Beauty.json.gz",
+          "sha256": "c7977dc0e0ead14ac7df8c1c6de74da00e4bebfad87a0f0c5763d4c5bc9b53a0",
+          "size_bytes": 99156148
+        },
+        {
+          "path": "data/cache/AmazonReviews2014/Beauty/raw/reviews_Beauty_5.json.gz",
+          "sha256": "e5925ec99023f1dc9c7d3dff7ef34cfeacd40d1b981b5525e1e4ba9c8abc18fe",
+          "size_bytes": 44819276
+        }
+      ],
+      "phase_checks_passed": true
+    }
+  },
+  "owned_process_groups_alive_after_cleanup": [],
+  "ended_utc": "2026-10-21T15:15:08.303528+00:00",
+  "ended_unix": 1792595708.3035443,
+  "process_wall_seconds": 192.25323181319982
+}

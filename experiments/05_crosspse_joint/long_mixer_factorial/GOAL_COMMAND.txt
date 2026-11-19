@@ -1,0 +1,54 @@
+/goal 在 C:/Users/nancy/Documents/experiment1 中实施并完成阶段05“共享起点、带Gumbel噪声的Full Mixer长期四组对照”。研究码本内部及码本之间的整体交互作用。授权在以下范围和预算内自主完成代码准备、远程资源申请、验收、正式训练、评估与交付，无需重复确认已明确的步骤。完成标准是四组可信、可追溯的对照结果，不要求Mixer必须涨点。
+
+一、先核对项目与资产
+阅读项目的 INSPIRE.md、docs/guides/PROJECT_HANDOFF.md、experiments/05_crosspse_joint/README.md、pilots/mixer_factorial/README.md、原长期v2配置、复现配方及资产锁，并读取最新短四组和噪声A/B/C原始结果及完成收据。以本命令确定的新协议为准，不沿用此前“每阶段24次更新”或“从第5轮后追加30轮”的草案。新实验使用独立协议、入口、run_id和输出目录，保留全部历史证据。
+
+二、固定四组
+no_mixer_frozen：禁用Mixer，Tokenizer始终冻结。
+no_mixer_joint：禁用Mixer，更新基础码本。
+mixer_frozen：启用Full Mixer，Tokenizer及Mixer始终冻结。
+mixer_joint：启用Full Mixer，更新基础码本及Mixer。
+不替换成within_only，不增加噪声消融、其他模型、超参数搜索或额外seed。
+
+三、统一05训练前起点
+四组使用原05 Cross长期实验开始前的同一离线DiffGRM完整权重，按cross_joint_v2复现配方核验；对应checkpoint目录名为AmazonReviews2014_Aug-28-2026_19-01-02。不得误用已经完成旧05前5轮的Sep-01 checkpoint作为训练前起点。
+沿用短四组的有效码本E0重基方法：四组基础码本相同；新Mixer的attention输出投影置零，残差系数固定1，保证初始有效码本和正式SID完全一致。统一商品顺序、OPQ/item slots、推荐器完整权重和固定参考E0的anchor；不继续训练旧Mixer权重。核验输入哈希及目录映射后创建新优化器。这是新的共享起点实验，不称为历史精确续训。
+
+四、完整训练节奏与预算
+两个Joint先冻结Tokenizer训练推荐器5个完整epoch，再执行10个周期，每周期为96个Tokenizer batch、梯度累积16、6次Tokenizer更新，随后刷新全目录确定性SID及解码映射，再冻结Tokenizer训练推荐器3个完整epoch。累计35个推荐器epoch、60次Tokenizer更新、45个阶段。
+两个Frozen各完成35个推荐器epoch，不进行Tokenizer更新。四组按原数据每轮1652个batch、104次推荐器更新核验，共3640次推荐器更新。关闭独立性能早停，保存验证最佳模型但完整跑满预算；不得给Frozen额外训练到45轮。
+优化器和调度状态跨阶段保留，不每周期重置。若共享前5轮计算，分叉时必须复制完整模型、优化器、调度器和随机数状态。
+
+五、固定参数
+数据为原Beauty leave-one-out滑窗协议，min_hist_len=2、max_hist_len=50，核验105668条训练样本、22363条验证及22363条测试、12101件商品；保持原编号和输入，不采用06的新前缀协议。
+SID为4×256、量化码字维度64；推荐器保持原DiffGRM结构及256维SID embedding，关闭07等额外模块。
+训练batch64、验证batch8、梯度累积16、label smoothing0.2、max_grad_norm1.0。
+推荐器AdamW，weight decay0，峰值LR1e-3，500次推荐器更新warmup后余弦衰减，总调度跨度3640次推荐器更新；Tokenizer阶段不推进推荐器调度。
+基础码本LR1e-5，Mixer LR1e-4，Tokenizer weight decay1e-4；其余AdamW设置沿用并显式记录。
+推荐反馈权重1、重构权重1、均衡与anchor权重均0.01；距离温度和均衡温度均0.1；反向softmax温度固定1；两侧SIA均0。
+Mixer使用4 heads、full attention、dropout0、残差系数固定1、输出投影零初始化；基础码本可训练。
+Tokenizer前向及更新采用FP32，推荐器阶段采用BF16。
+
+六、实际噪声与控制检查
+两个Joint都采用Gumbel强度1.0到0.2、跨累计60次Tokenizer更新的余弦退火，不每周期重置，不压缩到首次6次更新。推理及正式SID刷新均为确定性编码。
+按逻辑推荐器epoch和Tokenizer周期配对数据顺序、训练随机数及Gumbel扰动；Gumbel使用独立随机流，不改变推荐器后续随机性。
+保留当前OCN teacher的autocast缓存及混合train/eval模式修复，逐批检查实际模式和加噪调用，不以noise_scale日志代替执行证据。按现有history/target两次分配规则，每个Joint全程应有1920次实际加噪调用。
+检查推荐器预期参数的有限梯度、实际更新与完整优化器状态；Tokenizer阶段推荐器不更新，推荐器阶段Tokenizer不更新。两个Frozen在同一确定性后端的有效编码、模型轨迹及验证结果应一致，差异先作为控制问题排查。
+
+七、远程资源与执行授权
+使用Inspire技能和当前CLI Help，按INSPIRE.md核验账号、公共科研项目、分布式训练空间及实时可用quota、image和平台策略。每次提交显式指定workspace、project、group、quota、image。
+优先复用已有自有CPU桥接和grm-exp环境完成准备，不升级共享环境。先申请单节点、单张H100的后台GPU Job完成验收和测速。用户已补充授权多张H100：验收通过且累计预算可容纳后，允许四组分别用一张H100独立并行，最多同时4张；依据实时配额安排2至4个单卡Job，不使用DDP，不改变每组batch、学习率、随机数控制或更新预算。并行前在统一账本预留所有作业的分配上限；四组训练全部完成后才统一封存选模及执行正式测试。不影响06、07或他人的作业。
+本Goal累计GPU分配预算上限12 GPU小时，按所有卡的分配时间求和，包含验收、正式训练、验证、测试、重试及GPU保留时间；例如四卡各运行2小时合计8 GPU小时。其中H100验收和测速累计最多0.5 GPU小时。先依据实测速度估计完整开销并锁定预算，并预留四组最终测试的开销。预计超限或累计接近上限时保存可恢复状态，报告预算缺口，不自行增加总预算、加时或缩减实验后冒称完成。
+CPU与源码/输入检查通过后，执行四组GPU smoke、完整梯度检查、实际加噪检查及中断恢复检查；全部通过且预算可容纳后，自主提交正式作业。提交前查重，未知提交结果先查询，不重复创建。
+根仓库与DiffGRM独立引擎分别锁定实际版本及哈希；执行代码冻结并同步到个人全局存储experiment1_training下的新独立子目录。旧数据和权重只读加载或校验复制；新缓存、代码、权重及收据写本轮目录，不覆盖原code或历史产物。
+
+八、评估与结果解释
+记录初始状态，按逻辑推荐器第5、10、15、20、25、30、35轮统一验证。主要比较固定第35轮的HR/NDCG@5、@10和weighted score，并计算：
+(mixer_joint−mixer_frozen)−(no_mixer_joint−no_mixer_frozen)。
+另以验证集0.8×NDCG@10＋0.2×HR@10选择各组最佳checkpoint，封存选择后每组做一次正式测试；val/test beam分别32/256，保持SID-level。测试不参与调参，固定预算结果与最佳模型结果分开报告。
+记录每阶段损失、真实更新次数、学习率、噪声、正式SID变化及碰撞统计；注明最佳模型是否已经历Tokenizer更新。结论限定于seed2024和该共同预训练起点，区分Full Mixer整体效果与尚未排除的额外参数化、优化路径解释。
+
+九、恢复、交付和完成条件
+支持在完整阶段或epoch边界保存并恢复模型、优化器、调度器、Python/NumPy/CPU/CUDA RNG、SID、数据身份和累计计数；恢复不得重复计入已完成更新。保留共同初始状态、各组最佳与最终完整状态及可恢复last。
+训练和评估结束后及时释放本Goal GPU，核实平台终态及Pod/实例释放；在CPU上完成下载和整理。交付四组原始指标、曲线、固定预算对照、最佳模型测试、Mixer增量、运行与费用记录、源码/配置/输入哈希、完整可恢复权重和经核验的本地备份，并执行代表状态恢复检查。
+更新05实验入口和项目交接。只有四组完成、控制检查、指标核对、备份恢复检查及资源释放核验通过后才标记完成。若资产、环境或预算阻碍继续，报告已完成内容、证据、恢复状态和所需条件，不将部分结果标为完整交付。

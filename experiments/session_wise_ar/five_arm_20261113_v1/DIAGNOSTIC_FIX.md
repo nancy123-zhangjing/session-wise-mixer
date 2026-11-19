@@ -1,0 +1,7 @@
+# Intermediate pretraining collision diagnostics
+
+The first formal attempt stopped AR-T0 and AR-D1 because an intermediate RQ validation checkpoint contained a semantic collision bucket larger than the final suffix vocabulary of 256. This check belongs to construction of the deployable recommendation catalog, not to intermediate RQ training diagnostics. AR-T1 and AR-D0 were stopped to apply the same correction to all four arms.
+
+Pretraining now computes the same semantic utilization/perplexity/collision statistics directly from the three semantic digits. It also records maximum collision bucket size and whether suffix capacity is sufficient. Final recommendation catalog construction still rejects overflow. Optimizers, losses, updates, model, initialization and checkpoint selection are unchanged. Large early TIGER losses remain an observed concern, not a resolved quality issue.
+
+Targeted tests cover continued pretraining with deliberately overflowing intermediate codes, and continued rejection of overflowing final catalog codes. Deployment uses a new isolated `session_wise_ar_five_20261113_r2` source/output root. The old root remains untouched; CF continues there. A stopped-run migration copies parent and pretraining checkpoints, updates only source/parent identity metadata, verifies all other serialized state after writing, and records both source and destination SHA256. No stale running lock is copied. No training is restarted from scratch when a valid checkpoint exists.

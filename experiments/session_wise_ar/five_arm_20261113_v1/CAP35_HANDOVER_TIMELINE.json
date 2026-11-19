@@ -1,0 +1,172 @@
+{
+  "nancy-five-ar-d1-1113-r2": {
+    "instances": [
+      {
+        "status": "instance_failed",
+        "type": "instance_type_worker",
+        "node": "qb-prod-gpu515",
+        "rank": 0
+      }
+    ],
+    "events": [
+      {
+        "time": "2026-11-14 13:01:15",
+        "reason": "StopJob",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "PyTorchJobSuspended",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "SuccessfulDeletePod",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "SuccessfulDeleteService",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "JobTerminated",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "SuccessfulDeletePodGroup",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "Killing",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:16",
+        "reason": "Killing",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:19",
+        "reason": "JobTerminated",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:19",
+        "reason": "SuccessfulDeletePodGroup",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:19",
+        "reason": "PyTorchJobSuspended",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:23",
+        "reason": "SuccessfulDeletePodGroup",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:23",
+        "reason": "PyTorchJobSuspended",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:23",
+        "reason": "JobTerminated",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:49",
+        "reason": "JobTerminated",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:49",
+        "reason": "SuccessfulDeletePodGroup",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:49",
+        "reason": "PyTorchJobSuspended",
+        "type": "Normal"
+      }
+    ]
+  },
+  "nancy-ar-d1-cap35-1114-v1": {
+    "instances": [
+      {
+        "status": "instance_running",
+        "type": "instance_type_worker",
+        "node": "qb-prod-gpu515",
+        "rank": 0
+      }
+    ],
+    "events": [
+      {
+        "time": "2026-11-14 13:01:39",
+        "reason": "SetPodTemplateSchedulerName",
+        "type": "Warning"
+      },
+      {
+        "time": "2026-11-14 13:01:39",
+        "reason": "SuccessfulCreatePod",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:39",
+        "reason": "SuccessfulCreateService",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:01:42",
+        "reason": "Unschedulable",
+        "type": "Warning"
+      },
+      {
+        "time": "2026-11-14 13:01:42",
+        "reason": "FailedScheduling",
+        "type": "Warning"
+      },
+      {
+        "time": "2026-11-14 13:01:50",
+        "reason": "Scheduled",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:00",
+        "reason": "Pulled",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:00",
+        "reason": "Created",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:01",
+        "reason": "Created",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:01",
+        "reason": "Started",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:01",
+        "reason": "Started",
+        "type": "Normal"
+      },
+      {
+        "time": "2026-11-14 13:02:01",
+        "reason": "Pulled",
+        "type": "Normal"
+      }
+    ]
+  },
+  "conclusion": "Old container stop event 13:01:16; new same-node job waited for resource release, scheduled 13:01:50, container started 13:02:01. Consistent with final old-job checkpoint write during shutdown; exact write timestamp unavailable. Resume restored later 294000-step snapshot and subsequent updates advanced. Do not claim handover SHA equality."
+}
