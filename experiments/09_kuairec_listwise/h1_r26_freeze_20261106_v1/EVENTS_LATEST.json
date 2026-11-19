@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "time": "2026-11-06 11:27:44",
+        "type": "Warning",
+        "reason": "SetPodTemplateSchedulerName",
+        "message": "Another scheduler is specified when gang-scheduling is enabled and it will not be overwritten"
+      },
+      {
+        "time": "2026-11-06 11:27:44",
+        "type": "Normal",
+        "reason": "SuccessfulCreatePod",
+        "message": "Created pod: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-11-06 11:27:44",
+        "type": "Normal",
+        "reason": "SuccessfulCreateService",
+        "message": "Created service: <redacted>-worker-0"
+      },
+      {
+        "time": "2026-11-06 11:27:49",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Preempted",
+        "message": "This pod will preempt pod embodied-world-model/<redacted>-0 to release resource in session <redacted>"
+      },
+      {
+        "time": "2026-11-06 11:27:52",
+        "instance": "rank=0",
+        "type": "Warning",
+        "reason": "FailedScheduling",
+        "message": "Pod project-public/<redacted>-worker-0 can possibly be assigned to qb-prod-gpu541, once resource is released and minAvailable is satisfied"
+      },
+      {
+        "time": "2026-11-06 11:28:01",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Scheduled",
+        "message": "Successfully assigned project-public/<redacted>-worker-0 to qb-prod-gpu541"
+      },
+      {
+        "time": "2026-11-06 11:28:09",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container pytorch"
+      },
+      {
+        "time": "2026-11-06 11:28:09",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/base/ngc-pytorch:25.02-cuda12.8.0-py3\" already present on machine"
+      },
+      {
+        "time": "2026-11-06 11:28:10",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Created",
+        "message": "Created container exit-code-server"
+      },
+      {
+        "time": "2026-11-06 11:28:10",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container exit-code-server"
+      },
+      {
+        "time": "2026-11-06 11:28:10",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Started",
+        "message": "Started container pytorch"
+      },
+      {
+        "time": "2026-11-06 11:28:10",
+        "instance": "rank=0",
+        "type": "Normal",
+        "reason": "Pulled",
+        "message": "Container image \"docker.sii.shaipower.online/infly-dev/exit-code-server:1.0.12\" already present on machine"
+      }
+    ]
+  }
+}

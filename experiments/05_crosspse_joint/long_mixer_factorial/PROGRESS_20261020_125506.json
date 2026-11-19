@@ -1,0 +1,235 @@
+{
+  "utc": "2026-10-20T04:55:06.294033+00:00",
+  "status": "monitoring_not_completion",
+  "platform_liveness_requires_separate_live_query": true,
+  "arms": {
+    "no_mixer_frozen": {
+      "attempt": "train_no_mixer_frozen_r2",
+      "process_seconds_remaining": 8392.327580451965,
+      "declared_platform_cap_seconds": 9420.0,
+      "recommender_epochs": 2,
+      "recommender_updates": 208,
+      "tokenizer_updates": 0,
+      "actual_noise_calls": 0,
+      "best_epoch": 0,
+      "best_score": 0.04968613294733555,
+      "validation": [
+        {
+          "epoch": 0,
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.45011027617771737,
+            "dup@10": 0.34057148444831403,
+            "duplicate@10": 0.34057148444831403,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04342854727424919,
+            "ndcg@10": 0.04545068760834658,
+            "recall@5": 0.060680588472029694,
+            "hit_rate@5": 0.060680588472029694,
+            "recall@10": 0.06662791217636274,
+            "hit_rate@10": 0.06662791217636274,
+            "weighted_score": 0.04968613294733555
+          },
+          "seconds": 356.1880932150002
+        }
+      ],
+      "last_committed_stage": "recommender",
+      "mean_recommender_epoch_seconds": 159.46184622350006,
+      "mean_validation_seconds": 356.1880932150002,
+      "preliminary_remaining_compute_seconds": 7755.557577880503,
+      "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+      "gpu": "NVIDIA H100 80GB HBM3"
+    },
+    "no_mixer_joint": {
+      "attempt": "train_no_mixer_joint_r1",
+      "process_seconds_remaining": 7462.6989278793335,
+      "declared_platform_cap_seconds": 9480.0,
+      "recommender_epochs": 8,
+      "recommender_updates": 832,
+      "tokenizer_updates": 12,
+      "actual_noise_calls": 384,
+      "best_epoch": 0,
+      "best_score": 0.04968613294733555,
+      "validation": [
+        {
+          "epoch": 0,
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.45011027617771737,
+            "dup@10": 0.34057148444831403,
+            "duplicate@10": 0.34057148444831403,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04342854727424919,
+            "ndcg@10": 0.04545068760834658,
+            "recall@5": 0.060680588472029694,
+            "hit_rate@5": 0.060680588472029694,
+            "recall@10": 0.06662791217636274,
+            "hit_rate@10": 0.06662791217636274,
+            "weighted_score": 0.04968613294733555
+          },
+          "seconds": 294.7230266669999
+        },
+        {
+          "epoch": 5,
+          "metrics": {
+            "legal_ratio": 0.9988823319027181,
+            "duplicate_ratio": 0.4773664755562856,
+            "dup@10": 0.39507222235734524,
+            "duplicate@10": 0.39507222235734524,
+            "legal@10": 0.9988820820104637,
+            "ndcg@5": 0.04321258343306092,
+            "ndcg@10": 0.04485328630301243,
+            "recall@5": 0.0578187184188168,
+            "hit_rate@5": 0.0578187184188168,
+            "recall@10": 0.06264812413361356,
+            "hit_rate@10": 0.06264812413361356,
+            "weighted_score": 0.04841225415272315
+          },
+          "seconds": 302.5893565450001
+        }
+      ],
+      "last_committed_stage": "tokenizer",
+      "mean_recommender_epoch_seconds": 139.34208662974999,
+      "mean_validation_seconds": 298.656191606,
+      "preliminary_remaining_compute_seconds": 5650.17348863925,
+      "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+      "gpu": "NVIDIA H100 80GB HBM3"
+    },
+    "mixer_frozen": {
+      "attempt": "train_mixer_frozen_r1",
+      "process_seconds_remaining": 7401.3811275959015,
+      "declared_platform_cap_seconds": 9420.0,
+      "recommender_epochs": 7,
+      "recommender_updates": 728,
+      "tokenizer_updates": 0,
+      "actual_noise_calls": 0,
+      "best_epoch": 0,
+      "best_score": 0.04968613294733555,
+      "validation": [
+        {
+          "epoch": 0,
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.45011027617771737,
+            "dup@10": 0.34057148444831403,
+            "duplicate@10": 0.34057148444831403,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04342854727424919,
+            "ndcg@10": 0.04545068760834658,
+            "recall@5": 0.060680588472029694,
+            "hit_rate@5": 0.060680588472029694,
+            "recall@10": 0.06662791217636274,
+            "hit_rate@10": 0.06662791217636274,
+            "weighted_score": 0.04968613294733555
+          },
+          "seconds": 307.70803312864155
+        },
+        {
+          "epoch": 5,
+          "metrics": {
+            "legal_ratio": 0.9988823319027181,
+            "duplicate_ratio": 0.4773664755562856,
+            "dup@10": 0.39507222235734524,
+            "duplicate@10": 0.39507222235734524,
+            "legal@10": 0.9988820820104637,
+            "ndcg@5": 0.04321258343306092,
+            "ndcg@10": 0.04485328630301243,
+            "recall@5": 0.0578187184188168,
+            "hit_rate@5": 0.0578187184188168,
+            "recall@10": 0.06264812413361356,
+            "hit_rate@10": 0.06264812413361356,
+            "weighted_score": 0.04841225415272315
+          },
+          "seconds": 306.22509906068444
+        }
+      ],
+      "last_committed_stage": "recommender",
+      "mean_recommender_epoch_seconds": 149.09197343180753,
+      "mean_validation_seconds": 306.966566094663,
+      "preliminary_remaining_compute_seconds": 6016.374652658589,
+      "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+      "gpu": "NVIDIA H100 80GB HBM3"
+    },
+    "mixer_joint": {
+      "attempt": "train_mixer_joint_r1",
+      "process_seconds_remaining": 7462.688073158264,
+      "declared_platform_cap_seconds": 9480.0,
+      "recommender_epochs": 5,
+      "recommender_updates": 520,
+      "tokenizer_updates": 6,
+      "actual_noise_calls": 192,
+      "best_epoch": 0,
+      "best_score": 0.04968613294733555,
+      "validation": [
+        {
+          "epoch": 0,
+          "metrics": {
+            "legal_ratio": 0.9998211731044349,
+            "duplicate_ratio": 0.45011027617771737,
+            "dup@10": 0.34057148444831403,
+            "duplicate@10": 0.34057148444831403,
+            "legal@10": 0.9998211331216742,
+            "ndcg@5": 0.04342854727424919,
+            "ndcg@10": 0.04545068760834658,
+            "recall@5": 0.060680588472029694,
+            "hit_rate@5": 0.060680588472029694,
+            "recall@10": 0.06662791217636274,
+            "hit_rate@10": 0.06662791217636274,
+            "weighted_score": 0.04968613294733555
+          },
+          "seconds": 321.6289963250001
+        },
+        {
+          "epoch": 5,
+          "metrics": {
+            "legal_ratio": 0.9988823319027181,
+            "duplicate_ratio": 0.4773664755562856,
+            "dup@10": 0.39507222235734524,
+            "duplicate@10": 0.39507222235734524,
+            "legal@10": 0.9988820820104637,
+            "ndcg@5": 0.04321258343306092,
+            "ndcg@10": 0.04485328630301243,
+            "recall@5": 0.0578187184188168,
+            "hit_rate@5": 0.0578187184188168,
+            "recall@10": 0.06264812413361356,
+            "hit_rate@10": 0.06264812413361356,
+            "weighted_score": 0.04841225415272315
+          },
+          "seconds": 360.0882212470001
+        }
+      ],
+      "last_committed_stage": "tokenizer",
+      "mean_recommender_epoch_seconds": 205.53740719739994,
+      "mean_validation_seconds": 340.8586087860001,
+      "preliminary_remaining_compute_seconds": 8319.273868637998,
+      "initial_model_tensor_sha256": "e6d3379d57a65a4bd0c5b3e2f4656e69b74596920f349c18671b5a2b296645c4",
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  },
+  "controls": {
+    "available_arms": [
+      "no_mixer_frozen",
+      "no_mixer_joint",
+      "mixer_frozen",
+      "mixer_joint"
+    ],
+    "common_completed_epochs": [
+      1,
+      2
+    ],
+    "paired_RNG_data_LR_update_budgets": true,
+    "common_warmup_losses_exact": true,
+    "frozen_common_completed_epochs": [
+      1,
+      2
+    ],
+    "frozen_losses_exact": true,
+    "available_initial_models_identical": true,
+    "available_initial_metrics_identical": true,
+    "all_available_phase_invariants_pass": true,
+    "phase_checks": 87,
+    "all_four_arms_have_committed_progress": true
+  },
+  "checks_pass_so_far": true,
+  "formal_test_started_count": 0
+}

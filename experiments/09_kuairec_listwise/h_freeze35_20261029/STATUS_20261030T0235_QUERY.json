@@ -1,0 +1,16 @@
+{
+  "query_start_utc": "2026-10-29T18:34:17.1948972+00:00",
+  "query_end_utc": "2026-10-29T18:34:20.4024392+00:00",
+  "exit_code": 13,
+  "command": "inspire --json job status original A B C --workspace 分布式训练空间 --account sii-shared",
+  "status": {
+    "success": false,
+    "error": {
+      "type": "APIError",
+      "code": 13,
+      "message": "APIRequestContext.post: read ECONNRESET\nCall log:\n  - → POST <redacted>\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36\n    - accept: *<redacted>\n    - accept-encoding: gzip,deflate,br\n    - Referer: <redacted>\n    - Content-Type: application/json\n    - content-length: 204\n    - cookie: <redacted>\n"
+    }
+  },
+  "gpu_submitted": false,
+  "gpu_restarted": false
+}

@@ -1,0 +1,814 @@
+{
+  "schema_version": 1,
+  "diagnostic": "diger_sid_consistency_cpu",
+  "created_at_utc": "2026-10-11T13:29:36.903164+00:00",
+  "items": 12101,
+  "sid_positions": 4,
+  "codes_per_position": 256,
+  "config": {
+    "sampling_seed": 20241011,
+    "sampling_pairs": 16,
+    "batch_size": 256,
+    "cpu_threads": 4,
+    "expected_items": 12101,
+    "expected_validation_examples": 22363,
+    "max_history_len": 50,
+    "asset_lock": "experiments/05_crosspse_joint/reproducibility/assets.lock.json",
+    "item_keys": "data/diff_formal_embeddings/beauty_item_keys.json",
+    "id_mapping": "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json",
+    "sequences": "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json",
+    "families": {
+      "cross": {
+        "slots": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/opq_residual_embeddings.npy",
+        "initial_codes": "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.npy"
+      },
+      "refined": {
+        "slots": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy",
+        "initial_codes": "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy"
+      }
+    },
+    "snapshots": [
+      {
+        "name": "cross_initial_frozen",
+        "family": "cross",
+        "baseline": true,
+        "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_run_metadata.json",
+        "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_crossed_codebooks.npy",
+        "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_semantic_ids.npy"
+      },
+      {
+        "name": "cross_joint_v1_best",
+        "family": "cross",
+        "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_run_metadata.json",
+        "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_crossed_codebooks.npy",
+        "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_semantic_ids.npy"
+      },
+      {
+        "name": "cross_joint_v2_best",
+        "family": "cross",
+        "additional_noise_scales": [
+          0.2
+        ],
+        "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_run_metadata.json",
+        "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_crossed_codebooks.npy",
+        "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_semantic_ids.npy"
+      },
+      {
+        "name": "refined_initial_frozen",
+        "family": "refined",
+        "baseline": true,
+        "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_run_metadata.json",
+        "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_crossed_codebooks.npy",
+        "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_semantic_ids.npy"
+      },
+      {
+        "name": "refined_joint_best",
+        "family": "refined",
+        "metadata": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_run_metadata.json",
+        "codebooks": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_crossed_codebooks.npy",
+        "saved_codes": "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_semantic_ids.npy"
+      }
+    ]
+  },
+  "input_files": {
+    "data/diff_formal_embeddings/beauty_item_keys.json": {
+      "sha256": "fa44d55240a229631731a393c5df6cdd0592d4b01330b313f2a045fc55d616f6",
+      "size_bytes": 169415,
+      "historical_lock_match": true
+    },
+    "data/cache/AmazonReviews2014/Beauty/processed/id_mapping.json": {
+      "sha256": "4d88fede709699e3415962419728b07dc8600140ebc000484dd371c81f66a0be",
+      "size_bytes": 1351806,
+      "historical_lock_match": true
+    },
+    "data/cache/AmazonReviews2014/Beauty/processed/all_item_seqs.json": {
+      "sha256": "43476d3f941f103d32ae58eb87da79c8894d76e3fb64da57f8e2d18c0c51d1b1",
+      "size_bytes": 3220678,
+      "historical_lock_match": true
+    },
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/opq_residual_embeddings.npy": {
+      "sha256": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+      "size_bytes": 12391552,
+      "historical_lock_match": true
+    },
+    "outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.npy": {
+      "sha256": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/opq_residual_embeddings.npy": {
+      "sha256": "45970f9f0275b71f2f9f0174b4cdca6e4487034c8d3d344b0398c727176a4dfc",
+      "size_bytes": 12391552,
+      "historical_lock_match": true
+    },
+    "outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.npy": {
+      "sha256": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_run_metadata.json": {
+      "sha256": "9fb5f9e155a9009aadad83e76f5288458bf5f650ca0122d589a01143c9da55d8",
+      "size_bytes": 20152,
+      "historical_lock_match": null
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_crossed_codebooks.npy": {
+      "sha256": "7b512adf3c5c1361b6e46971c2894f586e0255c9cd614c711d1628f7459de919",
+      "size_bytes": 262272,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-06-2026_13-38-21_joint_semantic_ids.npy": {
+      "sha256": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_run_metadata.json": {
+      "sha256": "c80292fd911815611b7abd50bcf3519e860db1308492bb50b9e77199f7d045ce",
+      "size_bytes": 19993,
+      "historical_lock_match": null
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_crossed_codebooks.npy": {
+      "sha256": "b9973981388a1a147e7f37b154d8b642ce472469c009079adedc9bb40150f07e",
+      "size_bytes": 262272,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_11-50-23_joint_semantic_ids.npy": {
+      "sha256": "26a885ad1914eb63944530c9dc00886a34a85882a1aac45ba828b66ea80bd0a7",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_run_metadata.json": {
+      "sha256": "b4d2fa4293dfe0012a64e2f71bc722a4f00d14f13e0daea936f50df3d23ea0f0",
+      "size_bytes": 19944,
+      "historical_lock_match": null
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_crossed_codebooks.npy": {
+      "sha256": "7b512adf3c5c1361b6e46971c2894f586e0255c9cd614c711d1628f7459de919",
+      "size_bytes": 262272,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-01-2026_14-24-52_joint_semantic_ids.npy": {
+      "sha256": "58e6dcc2dd80b77ea830dfe844b0cc6e2a728ff6962da1f9c89883bf76242938",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_run_metadata.json": {
+      "sha256": "60ce2d670b9f585f180a6a3e00236fa5165e4f3b2dc4283216bc87c16d1d64c4",
+      "size_bytes": 19666,
+      "historical_lock_match": null
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_crossed_codebooks.npy": {
+      "sha256": "063300fc22a6d6e08378b4dfe5fb2755ce2f8e578320b5eadbc66fc8ed8adf2c",
+      "size_bytes": 262272,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-08-2026_11-08-39_joint_semantic_ids.npy": {
+      "sha256": "e1de0e16fb6e13ff42207642d990d855797f56cf2b84168d994c9f122e0691e7",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_run_metadata.json": {
+      "sha256": "e22864e67b6fc4fc4bf74371b84c4c59438ff4908c11f239ae91237311a68905",
+      "size_bytes": 19612,
+      "historical_lock_match": null
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_crossed_codebooks.npy": {
+      "sha256": "93ebb5c0bf717db847c194fa93a56653dc268287abc6fd068bb6cd9713d97973",
+      "size_bytes": 262272,
+      "historical_lock_match": true
+    },
+    "outputs/run_metadata/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_Sep-07-2026_07-34-08_joint_semantic_ids.npy": {
+      "sha256": "44e52834c213ceaebb8f7025d308a0b483c1aef99fc0d228af54b6390b585528",
+      "size_bytes": 387360,
+      "historical_lock_match": true
+    }
+  },
+  "provenance": {
+    "project_root": "/inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized",
+    "config_sha256": "8be65fea9b66048577458fa1759615a90daa4a68a18da9c4eced0d141c88ff68",
+    "script_sha256": "32abb409099e57f713342321882ce22fe043e52afa6492e5f9212c17f20c4d5e",
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "cpu_threads": 4,
+    "root_git": {
+      "commit": "594b6add85c0a72731890fa45fa67d414fa358a2",
+      "status": "M INSPIRE.md"
+    },
+    "engine_git": {
+      "commit": "39e94e6153c97e59877ba02d4ef1d9a202ed5384",
+      "status": ""
+    },
+    "source_delivery": "standalone_diagnostic_copy_not_full_repository_sync"
+  },
+  "sampling_scope": "catalogue_uniform_not_training_occurrence_weighted; independent calls sampled independently",
+  "analytic_reference_limit": "ideal unclipped Gumbel; actual training clips Uniform and empirical sampler follows that clipping",
+  "limitations": [
+    "No reconstruction of unsaved post-best training codebooks",
+    "Fixed-snapshot simulation, not replay of historical RNG or training batches",
+    "No recommender forward pass or new HR/NDCG evaluation",
+    "Monte Carlo error is sampling error, not across-training-seed uncertainty",
+    "Validation coverage excludes reverse-map/legal-graph effects on otherwise unchanged examples"
+  ],
+  "elapsed_seconds": 13.97924558352679,
+  "snapshots": [
+    {
+      "name": "cross_initial_frozen",
+      "family": "cross",
+      "run_id": "diff_formal_crosspse_frozen_decoder_continuation_4x256_seed2024",
+      "best_epoch": 15,
+      "schedule_at_best_export": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 1,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "export_semantics": "validation_selected_best_not_last_training_state",
+      "saved_sid_recompute_check": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "deterministic_change_vs_offline_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "relative_effective_codebook_delta_rms": 0.0,
+      "validation_coverage": {
+        "examples": 22363,
+        "target_changed_examples": 0,
+        "history_changed_examples": 0,
+        "either_changed_examples": 0,
+        "target_changed_rate": 0.0,
+        "history_changed_rate": 0.0,
+        "either_changed_rate": 0.0
+      },
+      "normalized_nearest_second_margin": {
+        "p05": 0.048764318227767944,
+        "median": 0.3073880076408386,
+        "p95": 1.5377784967422485,
+        "per_position_median": [
+          0.29330670833587646,
+          0.3107285499572754,
+          0.3048640489578247,
+          0.32346606254577637
+        ]
+      },
+      "noise_statistics": [
+        {
+          "noise_scale": 0.0,
+          "role": "no_noise_control",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.0,
+            "per_position_disagreement_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "item_disagreement_rate": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.0,
+            "independent_pair_item_disagreement_rate": 0.0
+          },
+          "zero_noise_exact_match": true
+        }
+      ],
+      "changed_item_keys": []
+    },
+    {
+      "name": "cross_joint_v1_best",
+      "family": "cross",
+      "run_id": "diff_formal_crosspse_joint_diger_st_4x256_seed2024",
+      "best_epoch": 12,
+      "schedule_at_best_export": {
+        "optimizer_step": 12,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 0.923606797749979,
+        "gumbel_noise_scale": 0.9045084971874737
+      },
+      "export_semantics": "validation_selected_best_not_last_training_state",
+      "saved_sid_recompute_check": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "deterministic_change_vs_offline_initial": {
+        "changed_items": 43,
+        "item_change_rate": 0.003553425336749029,
+        "changed_digits": 43,
+        "digit_change_rate": 0.0008883563341872573,
+        "per_position_change_rate": [
+          0.0007437401867614247,
+          0.0010742913808776135,
+          0.0008263779852904718,
+          0.000909015783819519
+        ]
+      },
+      "relative_effective_codebook_delta_rms": 0.014754671159383776,
+      "validation_coverage": {
+        "examples": 22363,
+        "target_changed_examples": 49,
+        "history_changed_examples": 382,
+        "either_changed_examples": 430,
+        "target_changed_rate": 0.0021911192594911235,
+        "history_changed_rate": 0.017081786880114476,
+        "either_changed_rate": 0.019228189420024147
+      },
+      "normalized_nearest_second_margin": {
+        "p05": 0.04832008481025696,
+        "median": 0.3081056475639343,
+        "p95": 1.5446020364761353,
+        "per_position_median": [
+          0.29329895973205566,
+          0.31119465827941895,
+          0.3047969937324524,
+          0.3241610527038574
+        ]
+      },
+      "noise_statistics": [
+        {
+          "noise_scale": 0.0,
+          "role": "no_noise_control",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 0.923606797749979,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.0,
+            "per_position_disagreement_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "item_disagreement_rate": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.0,
+            "independent_pair_item_disagreement_rate": 0.0
+          },
+          "zero_noise_exact_match": true
+        },
+        {
+          "noise_scale": 0.9045084971874737,
+          "role": "best_snapshot_conditional_noise_probe",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 0.923606797749979,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.958276679977429,
+            "per_position_disagreement_rate": [
+              0.9585784155764053,
+              0.955739401058961,
+              0.9589467228541212,
+              0.9598421804202285
+            ],
+            "item_disagreement_rate": 0.999998522274388,
+            "independent_pair_digit_disagreement_rate": 0.9893435585033539,
+            "independent_pair_item_disagreement_rate": 0.9999999933052348
+          },
+          "empirical_clipped_gumbel": {
+            "seed": 20241112,
+            "draws_per_item": 32,
+            "independent_pairs": 16,
+            "digit_disagreement_rate": 0.958338282993141,
+            "per_position_disagreement_rate": [
+              0.9585493967440707,
+              0.9553626766382943,
+              0.9593370382613007,
+              0.9601040203288984
+            ],
+            "item_disagreement_rate": 1.0,
+            "digit_rate_monte_carlo_standard_error": 0.00015371882775097598,
+            "item_rate_monte_carlo_standard_error": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.9894765928435666,
+            "independent_pair_item_disagreement_rate": 1.0
+          }
+        }
+      ],
+      "changed_item_keys": [
+        "B003Q3SLEK",
+        "B005BQWP74",
+        "B004WPWOS0",
+        "B001ECQ4YO",
+        "B009ZFMJVE",
+        "B001126XOI",
+        "B000BPQG6Q",
+        "B004OEO0E0",
+        "B004JZT328",
+        "B00AMOLHSS",
+        "B000066CKS",
+        "B000XVDNCI",
+        "B003JT8PKQ",
+        "B0000Y3FRG",
+        "B00HEBIDDO",
+        "B001T8OW4M",
+        "B001P71PF6",
+        "B0072F80DK",
+        "B002QBBMVM",
+        "B0030H0MK8",
+        "B00BKHN67Q",
+        "B005GDAZBK",
+        "B000P250NK",
+        "B000K5E83K",
+        "B00011QUKW",
+        "B001U2DIYC",
+        "B003I5XHHM",
+        "B00AQZUO28",
+        "B002FRIY1S",
+        "B002XITZJY",
+        "B0045K1N8E",
+        "B003M5UOBK",
+        "B004SPLCJQ",
+        "B006GDJM40",
+        "B001G7R3JW",
+        "B001B2RX10",
+        "B000WNLH66",
+        "B000VUZVQM",
+        "B004U3XOHY",
+        "B002D48QMK",
+        "B0014Y2VYO",
+        "B00381A7OC",
+        "B00JTUOVAM"
+      ]
+    },
+    {
+      "name": "cross_joint_v2_best",
+      "family": "cross",
+      "run_id": "diff_formal_crosspse_joint_diger_st_v2_slowanneal_4x256_seed2024",
+      "best_epoch": 5,
+      "schedule_at_best_export": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "export_semantics": "validation_selected_best_not_last_training_state",
+      "saved_sid_recompute_check": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "deterministic_change_vs_offline_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "relative_effective_codebook_delta_rms": 0.0,
+      "validation_coverage": {
+        "examples": 22363,
+        "target_changed_examples": 0,
+        "history_changed_examples": 0,
+        "either_changed_examples": 0,
+        "target_changed_rate": 0.0,
+        "history_changed_rate": 0.0,
+        "either_changed_rate": 0.0
+      },
+      "normalized_nearest_second_margin": {
+        "p05": 0.048764318227767944,
+        "median": 0.3073880076408386,
+        "p95": 1.5377784967422485,
+        "per_position_median": [
+          0.29330670833587646,
+          0.3107285499572754,
+          0.3048640489578247,
+          0.32346606254577637
+        ]
+      },
+      "noise_statistics": [
+        {
+          "noise_scale": 0.0,
+          "role": "no_noise_control",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.0,
+            "per_position_disagreement_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "item_disagreement_rate": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.0,
+            "independent_pair_item_disagreement_rate": 0.0
+          },
+          "zero_noise_exact_match": true
+        },
+        {
+          "noise_scale": 1.0,
+          "role": "hypothetical_first_tokenizer_phase",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.9666100123287582,
+            "per_position_disagreement_rate": [
+              0.9668334863177979,
+              0.9646596168089088,
+              0.9671065882229243,
+              0.9678403579654019
+            ],
+            "item_disagreement_rate": 0.999999332209448,
+            "independent_pair_digit_disagreement_rate": 0.9916751255572145,
+            "independent_pair_item_disagreement_rate": 0.9999999966865029
+          },
+          "empirical_clipped_gumbel": {
+            "seed": 20241212,
+            "draws_per_item": 32,
+            "independent_pairs": 16,
+            "digit_disagreement_rate": 0.9666905111147839,
+            "per_position_disagreement_rate": [
+              0.9669035616891166,
+              0.9652249814064954,
+              0.9666892198991819,
+              0.9679442814643417
+            ],
+            "item_disagreement_rate": 1.0,
+            "digit_rate_monte_carlo_standard_error": 0.00011620824717248437,
+            "item_rate_monte_carlo_standard_error": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.991707813403851,
+            "independent_pair_item_disagreement_rate": 1.0
+          }
+        },
+        {
+          "noise_scale": 0.2,
+          "role": "fixed_snapshot_counterfactual_not_new_training",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.4749805882840572,
+            "per_position_disagreement_rate": [
+              0.47840585766045396,
+              0.4699099538086223,
+              0.47693982976985294,
+              0.47466671189729914
+            ],
+            "item_disagreement_rate": 0.9319418247528602,
+            "independent_pair_digit_disagreement_rate": 0.593950901629201,
+            "independent_pair_item_disagreement_rate": 0.9767225261724385
+          },
+          "empirical_clipped_gumbel": {
+            "seed": 20241213,
+            "draws_per_item": 32,
+            "independent_pairs": 16,
+            "digit_disagreement_rate": 0.4752409408313363,
+            "per_position_disagreement_rate": [
+              0.4797924758284439,
+              0.4705112180811503,
+              0.47652570035534253,
+              0.47413436906040823
+            ],
+            "item_disagreement_rate": 0.932286071399058,
+            "digit_rate_monte_carlo_standard_error": 0.00028548451898909846,
+            "item_rate_monte_carlo_standard_error": 0.0003938751757350659,
+            "independent_pair_digit_disagreement_rate": 0.5937951925460706,
+            "independent_pair_item_disagreement_rate": 0.9767787786133377
+          }
+        }
+      ],
+      "changed_item_keys": []
+    },
+    {
+      "name": "refined_initial_frozen",
+      "family": "refined",
+      "run_id": "diff_formal_refinedpse_frozen_decoder_continuation_4x256_seed2024",
+      "best_epoch": 15,
+      "schedule_at_best_export": {
+        "optimizer_step": 0,
+        "total_optimizer_steps": 1,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 1.0
+      },
+      "export_semantics": "validation_selected_best_not_last_training_state",
+      "saved_sid_recompute_check": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "deterministic_change_vs_offline_initial": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "relative_effective_codebook_delta_rms": 0.0,
+      "validation_coverage": {
+        "examples": 22363,
+        "target_changed_examples": 0,
+        "history_changed_examples": 0,
+        "either_changed_examples": 0,
+        "target_changed_rate": 0.0,
+        "history_changed_rate": 0.0,
+        "either_changed_rate": 0.0
+      },
+      "normalized_nearest_second_margin": {
+        "p05": 0.048367395997047424,
+        "median": 0.30739009380340576,
+        "p95": 1.5388141870498657,
+        "per_position_median": [
+          0.2919119596481323,
+          0.31089961528778076,
+          0.3051978349685669,
+          0.32418906688690186
+        ]
+      },
+      "noise_statistics": [
+        {
+          "noise_scale": 0.0,
+          "role": "no_noise_control",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.0,
+            "per_position_disagreement_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "item_disagreement_rate": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.0,
+            "independent_pair_item_disagreement_rate": 0.0
+          },
+          "zero_noise_exact_match": true
+        }
+      ],
+      "changed_item_keys": []
+    },
+    {
+      "name": "refined_joint_best",
+      "family": "refined",
+      "run_id": "diff_formal_refinedpse_joint_diger_st_v1_slowanneal_4x256_seed2024",
+      "best_epoch": 19,
+      "schedule_at_best_export": {
+        "optimizer_step": 24,
+        "total_optimizer_steps": 60,
+        "softmax_temperature": 1.0,
+        "gumbel_noise_scale": 0.7236067977499789
+      },
+      "export_semantics": "validation_selected_best_not_last_training_state",
+      "saved_sid_recompute_check": {
+        "changed_items": 0,
+        "item_change_rate": 0.0,
+        "changed_digits": 0,
+        "digit_change_rate": 0.0,
+        "per_position_change_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "deterministic_change_vs_offline_initial": {
+        "changed_items": 13,
+        "item_change_rate": 0.0010742913808776135,
+        "changed_digits": 13,
+        "digit_change_rate": 0.0002685728452194034,
+        "per_position_change_rate": [
+          0.0004131889926452359,
+          0.0004131889926452359,
+          8.263779852904718e-05,
+          0.00016527559705809436
+        ]
+      },
+      "relative_effective_codebook_delta_rms": 0.001996251343532228,
+      "validation_coverage": {
+        "examples": 22363,
+        "target_changed_examples": 20,
+        "history_changed_examples": 87,
+        "either_changed_examples": 107,
+        "target_changed_rate": 0.0008943343916290301,
+        "history_changed_rate": 0.0038903546035862807,
+        "either_changed_rate": 0.004784688995215311
+      },
+      "normalized_nearest_second_margin": {
+        "p05": 0.04829314351081848,
+        "median": 0.30730679631233215,
+        "p95": 1.5408397912979126,
+        "per_position_median": [
+          0.2922457456588745,
+          0.3103148937225342,
+          0.30477315187454224,
+          0.3246951103210449
+        ]
+      },
+      "noise_statistics": [
+        {
+          "noise_scale": 0.0,
+          "role": "no_noise_control",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.0,
+            "per_position_disagreement_rate": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "item_disagreement_rate": 0.0,
+            "independent_pair_digit_disagreement_rate": 0.0,
+            "independent_pair_item_disagreement_rate": 0.0
+          },
+          "zero_noise_exact_match": true
+        },
+        {
+          "noise_scale": 0.7236067977499789,
+          "role": "best_snapshot_conditional_noise_probe",
+          "assignment_temperature": 0.1,
+          "softmax_temperature": 1.0,
+          "ideal_gumbel_reference": {
+            "digit_disagreement_rate": 0.9311489118314109,
+            "per_position_disagreement_rate": [
+              0.9318419247132488,
+              0.927190542457689,
+              0.9321216043809741,
+              0.9334415757737318
+            ],
+            "item_disagreement_rate": 0.9999905841230476,
+            "independent_pair_digit_disagreement_rate": 0.9789354817308084,
+            "independent_pair_item_disagreement_rate": 0.9999999539385303
+          },
+          "empirical_clipped_gumbel": {
+            "seed": 20241412,
+            "draws_per_item": 32,
+            "independent_pairs": 16,
+            "digit_disagreement_rate": 0.9308973690190894,
+            "per_position_disagreement_rate": [
+              0.9319555202049418,
+              0.9266331294934302,
+              0.9322421700685893,
+              0.9327586563093959
+            ],
+            "item_disagreement_rate": 0.999997417568796,
+            "digit_rate_monte_carlo_standard_error": 0.00017410707258088873,
+            "item_rate_monte_carlo_standard_error": 2.582431204031787e-06,
+            "independent_pair_digit_disagreement_rate": 0.978772415502851,
+            "independent_pair_item_disagreement_rate": 1.0
+          }
+        }
+      ],
+      "changed_item_keys": [
+        "B001126XOI",
+        "B0014ZR30K",
+        "B004Q8PE1C",
+        "B0075GXW0W",
+        "B001ET788I",
+        "B0030HTXTY",
+        "B000ALBJ40",
+        "B00AQZUO28",
+        "B0013M50DG",
+        "B002D48R3I",
+        "B003IIJJ9Y",
+        "B00G8WB8MI",
+        "B001B2RX10"
+      ]
+    }
+  ]
+}

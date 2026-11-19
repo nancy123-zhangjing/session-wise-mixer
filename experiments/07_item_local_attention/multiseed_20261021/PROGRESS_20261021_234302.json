@@ -1,0 +1,207 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 12,
+    "last_phase": "recommender",
+    "recommender_updates": 1040,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3565230667591095,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "31032cc3f5718a2dec7d74ddecdfedbad215004be84cf33e2225b57e759640ec",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.354249507188797,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "3bb210c9c3dd987d1eb1ee79a9ba34e0383a6935fb4c98224a3f48bbbc642fce",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:   6%|▌         | 172/2796 [00:11<03:03, 14.27it/s]",
+      "Eval - val:   6%|▌         | 174/2796 [00:12<03:06, 14.05it/s]",
+      "Eval - val:   6%|▋         | 176/2796 [00:12<03:13, 13.52it/s]"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 7,
+    "last_phase": "recommender",
+    "recommender_updates": 624,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.32965925335884094,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "6f5652d360b6fd2d030bd2981a76c89c5241d24a27be485f6dddb766360f064f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 8]:  34%|███▎      | 555/1652 [00:49<01:47, 10.21it/s]",
+      "Training recommender - [Epoch 8]:  34%|███▎      | 557/1652 [00:49<01:47, 10.19it/s]",
+      "Training recommender - [Epoch 8]:  34%|███▍      | 559/1652 [00:49<01:47, 10.16it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 7,
+    "last_phase": "recommender",
+    "recommender_updates": 624,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3588983118534088,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a5723f91121a2d23aa174887f20af37cb92ddd1327b190e5273cf59bf987a965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 8]:  97%|█████████▋| 1601/1652 [02:16<00:04, 11.53it/s]",
+      "Training recommender - [Epoch 8]:  97%|█████████▋| 1603/1652 [02:16<00:04, 11.68it/s]",
+      "Training recommender - [Epoch 8]:  97%|█████████▋| 1605/1652 [02:17<00:04, 11.73it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 8,
+    "last_phase": "recommender",
+    "recommender_updates": 728,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.36437803506851196,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a74ff8d5843ee0afcf38cd5268ce08f875dc35fc33c6a9fa7ca9c5527baaf226",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 9]:  84%|████████▍ | 1393/1652 [01:53<00:21, 12.22it/s]",
+      "Training recommender - [Epoch 9]:  84%|████████▍ | 1395/1652 [01:53<00:20, 12.34it/s]",
+      "Training recommender - [Epoch 9]:  85%|████████▍ | 1397/1652 [01:53<00:20, 12.40it/s]"
+    ]
+  }
+]

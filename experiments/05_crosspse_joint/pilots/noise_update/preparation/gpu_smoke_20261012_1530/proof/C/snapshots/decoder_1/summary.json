@@ -1,0 +1,129 @@
+{
+  "label": "decoder_1",
+  "recommender_epochs": 1,
+  "recommender_updates": 1,
+  "tokenizer_updates": 1,
+  "model_tensor_state_sha256": "98150b54b139b7563a917810840e1b702f07f31b191d0c0e92335b655302ee58",
+  "semantic_ids_array_sha256": "41fdcc947a2f8b2eb2c86d8c72ff432d7e4c02153234091a8a22863105f770f4",
+  "deterministic_sid_change": {
+    "changed_items": 9,
+    "item_change_rate": 0.0007437401867614247,
+    "changed_digits": 9,
+    "digit_change_rate": 0.00018593504669035617,
+    "per_position_change_rate": [
+      0.00024791339558714154,
+      8.263779852904718e-05,
+      0.00016527559705809436,
+      0.00024791339558714154
+    ]
+  },
+  "validation_coverage": {
+    "examples": 22363,
+    "target_changed_examples": 22,
+    "history_changed_examples": 193,
+    "either_changed_examples": 215,
+    "target_changed_rate": 0.000983767830791933,
+    "history_changed_rate": 0.00863032687922014,
+    "either_changed_rate": 0.009614094710012074
+  },
+  "collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 10650,
+    "collided_items": 2176,
+    "collision_rate": 0.1798198495992067,
+    "colliding_groups": 725,
+    "largest_collision_group": 40,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "colliding_groups": 254,
+        "largest_collision_group": 129
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6950,
+        "collided_items": 7281,
+        "collision_rate": 0.6016858110899925,
+        "colliding_groups": 2130,
+        "largest_collision_group": 57
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 9855,
+        "collided_items": 3309,
+        "collision_rate": 0.2734484753326171,
+        "colliding_groups": 1063,
+        "largest_collision_group": 43
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 10650,
+        "collided_items": 2176,
+        "collision_rate": 0.1798198495992067,
+        "colliding_groups": 725,
+        "largest_collision_group": 40
+      }
+    ],
+    "per_position": [
+      {
+        "position": 0,
+        "unique_codes": 256,
+        "entropy_nats": 5.360850883231992,
+        "effective_codes_perplexity": 212.9060275680254,
+        "largest_code_share": 0.010660276010247088,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9667591230230017
+      },
+      {
+        "position": 1,
+        "unique_codes": 256,
+        "entropy_nats": 5.31952701285797,
+        "effective_codes_perplexity": 204.28723390320081,
+        "largest_code_share": 0.013717874555821833,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9593069051656343
+      },
+      {
+        "position": 2,
+        "unique_codes": 256,
+        "entropy_nats": 5.319767833389832,
+        "effective_codes_perplexity": 204.3364363877686,
+        "largest_code_share": 0.01115610280142137,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9593503339890171
+      },
+      {
+        "position": 3,
+        "unique_codes": 256,
+        "entropy_nats": 5.331825062757799,
+        "effective_codes_perplexity": 206.81508043137177,
+        "largest_code_share": 0.01115610280142137,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9615246971160204
+      }
+    ]
+  },
+  "schedule": {
+    "optimizer_step": 1,
+    "total_optimizer_steps": 60,
+    "softmax_temperature": 1.0,
+    "gumbel_noise_scale": 0.9994518139018296
+  },
+  "files": {
+    "model.pt": "3df4fe9e38c89505cd919e106391fdecab90134a1b37247f66f43ca63dc929e2",
+    "training_state.pt": "a9b427a68f98c37ea206203b80e289258743365c54e4d30602255e1505ff2075",
+    "semantic_ids.npy": "8e48c488acd2908688e7d20c1bda59000bf1ef8b4037752dfe660ffa0aac729b",
+    "crossed_codebooks.npy": "b6e09ba49725a647b632e6abc612cdd1639b2778cc003f79c5ab39e141530505"
+  }
+}

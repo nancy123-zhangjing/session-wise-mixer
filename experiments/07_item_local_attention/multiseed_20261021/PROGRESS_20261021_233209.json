@@ -1,0 +1,134 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 5,
+    "last_phase": "recommender",
+    "recommender_updates": 520,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  46%|████▋     | 1300/2796 [01:28<01:42, 14.64it/s]",
+      "Eval - val:  47%|████▋     | 1302/2796 [01:28<01:42, 14.58it/s]",
+      "Eval - val:  47%|████▋     | 1304/2796 [01:29<01:41, 14.71it/s]"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 3,
+    "last_phase": "recommender",
+    "recommender_updates": 312,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 4]:  62%|██████▏   | 1021/1652 [01:32<00:57, 11.03it/s]",
+      "Training recommender - [Epoch 4]:  62%|██████▏   | 1023/1652 [01:32<00:56, 11.16it/s]",
+      "Training recommender - [Epoch 4]:  62%|██████▏   | 1025/1652 [01:33<00:56, 11.13it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 4,
+    "last_phase": "recommender",
+    "recommender_updates": 416,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 5]:   8%|▊         | 135/1652 [00:11<02:05, 12.05it/s]",
+      "Training recommender - [Epoch 5]:   8%|▊         | 137/1652 [00:11<02:04, 12.14it/s]",
+      "Training recommender - [Epoch 5]:   8%|▊         | 139/1652 [00:11<02:04, 12.17it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 4,
+    "last_phase": "recommender",
+    "recommender_updates": 416,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 5]:  65%|██████▌   | 1079/1652 [01:23<00:44, 13.01it/s]",
+      "Training recommender - [Epoch 5]:  65%|██████▌   | 1081/1652 [01:24<00:43, 13.02it/s]",
+      "Training recommender - [Epoch 5]:  66%|██████▌   | 1083/1652 [01:24<00:43, 13.04it/s]"
+    ]
+  }
+]

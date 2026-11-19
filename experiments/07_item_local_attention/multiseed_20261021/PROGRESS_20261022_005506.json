@@ -1,0 +1,670 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "completed",
+        "returncode": 0
+      },
+      {
+        "label": "validation_beam32_256",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 45,
+    "last_phase": "recommender",
+    "recommender_updates": 3640,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3565230667591095,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "31032cc3f5718a2dec7d74ddecdfedbad215004be84cf33e2225b57e759640ec",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.354249507188797,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "3bb210c9c3dd987d1eb1ee79a9ba34e0383a6935fb4c98224a3f48bbbc642fce",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3845632076263428,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "f90358b0121524e62e72c1bd4d588d6600e4c2e3fe9ae9f6fb98378c2249f8fc",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.33007103204727173,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "0ae105a490e20c931b754d467c128ca1e6ede979f1cbf72d2c07ce3e9345049d",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 22,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3239707350730896,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 26,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.29708829522132874,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "b3b2dd8136e105d01da64c50bb8024fcb50aac2ae619f6b32d16db6f5e6e1c0b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 30,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.2362186312675476,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "32365c473663b878dc7032e9085fb1c922cadc52f055685d7371e7d83c9def5b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 34,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.21472494304180145,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "de4abc5ab15de2827ad498feece712a8ab60822a4b38f3f722e2ddbabd57b72b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 38,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.19325415790081024,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "5448fcbb4a64649181a9bbe4c377f1314b698203c842cb91ed06aec9d858007d",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 42,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.19271788001060486,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a4947e70f79c9e771facf8c73b755f388ea3abfa43c4ca654f4d3ca9b45ba144",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12,
+      19,
+      25,
+      32,
+      39,
+      45
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": "formal_training_completed_validation_pending",
+    "best_epoch": 25,
+    "validation_complete": false,
+    "validation_cells": [
+      {
+        "beam": 32,
+        "status": "cell_completed",
+        "log_tail": [
+          "{\"beam\": 32, \"users\": 20000, \"batches\": 2500}",
+          "{\"beam\": 32, \"users\": 20800, \"batches\": 2600}",
+          "{\"beam\": 32, \"users\": 21600, \"batches\": 2700}"
+        ]
+      },
+      {
+        "beam": 256,
+        "status": "pending_or_running",
+        "log_tail": [
+          "{\"beam\": 256, \"users\": 5600, \"batches\": 700}",
+          "{\"beam\": 256, \"users\": 6400, \"batches\": 800}",
+          "{\"beam\": 256, \"users\": 7200, \"batches\": 900}"
+        ]
+      }
+    ],
+    "error": null,
+    "log_tail": [
+      "  \"phase_integrity_sha256\": \"84bfe6f9ee1df763dffa6fca7cfe20401f3750cde93a74c026edb3db81c6b9c9\",",
+      "  \"process_wall_seconds\": 5515.090882699005",
+      "}"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 39,
+    "last_phase": "recommender",
+    "recommender_updates": 3120,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.32965925335884094,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "6f5652d360b6fd2d030bd2981a76c89c5241d24a27be485f6dddb766360f064f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.31836557388305664,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "27c809357317938da673da7448305e120fdbe32fce23c5fb3de36cc1f3b7a50b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.34200990200042725,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "bba110dadf4df84d57edd05722cbb1cafbe933a4ac173e9e812b006bb71e3c4f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.33566024899482727,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "edb58b81459a31ebca01310d1f50ce4bec0d55b2d3d6e2dcae6a55544ad1ada4",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 22,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3191651999950409,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "5932560c034029d79194ce078f2a7d4945e2e3b92a4bd62ee67ea6f44d3c6648",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 26,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.26710590720176697,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "728ac8b2aca82c28ffc1a2637ae0db9585af3df81d9fb303262cf20612a02ef1",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 30,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.24820201098918915,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "c452fa41eb90d85d3fb6b4d996b636a2cfebd9b92713edf73297640c6d4b1d7b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 34,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.21116453409194946,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "ea3cf13f3acf085d83b00d66d5ef3ac09a7c354af75499d8aa2c4a0627c14d4b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 38,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.1989307999610901,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "ca3cdbeac714b08f77fe70f4ec5eda763b7fdd9fccfcb59684ce92957c984ac2",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12,
+      19,
+      25,
+      32
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "validation_cells": [],
+    "error": null,
+    "log_tail": [
+      "Eval - val:  26%|██▋       | 735/2796 [00:56<02:39, 12.88it/s]",
+      "Eval - val:  26%|██▋       | 737/2796 [00:56<02:40, 12.85it/s]",
+      "Eval - val:  26%|██▋       | 739/2796 [00:57<02:39, 12.91it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 39,
+    "last_phase": "recommender",
+    "recommender_updates": 3120,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3588983118534088,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a5723f91121a2d23aa174887f20af37cb92ddd1327b190e5273cf59bf987a965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.38175854086875916,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "15cce01964fa236b40fbba46759ea2746ccd6e40ad53081f6c6a98db1c49e965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.37656691670417786,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "100476af5a28e4b101d74e88e24f70c28bb7ccdb81a411fd732a0e4e8c399d92",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.35427236557006836,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "d56957c8f09877bf9f72c459e9b458408b49be9630f654f1e7b6d653d72729d4",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 22,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.32346275448799133,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "d7f110282fc9465a62891c21f7d61199604e2e9b69ab74eac79bd8d5d52296e6",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 26,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.29448461532592773,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "fa8a7ed05e095125a61c67dc2f331e0fcaf63ac7e507e304635c15c630dac29b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 30,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.2334679514169693,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "223b197a7d8a6808abfb4c3f4751ae834ca8b6396e9ffce581de9ee4a30c4519",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 34,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.21227453649044037,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "faa072de0eade3285e6be7c34b96fe4f6cfaee63dd7e63a32008aa57187ab96b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 38,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.1997278332710266,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "95dfe3a93bf52debd30074607abac706abfb8e12bfe8d8363bf8ac714c2c17e6",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12,
+      19,
+      25,
+      32
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "validation_cells": [],
+    "error": null,
+    "log_tail": [
+      "Eval - val:  50%|████▉     | 1385/2796 [01:50<01:49, 12.89it/s]",
+      "Eval - val:  50%|████▉     | 1387/2796 [01:51<01:49, 12.89it/s]",
+      "Eval - val:  50%|████▉     | 1389/2796 [01:51<01:49, 12.83it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 40,
+    "last_phase": "recommender",
+    "recommender_updates": 3224,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.36437803506851196,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a74ff8d5843ee0afcf38cd5268ce08f875dc35fc33c6a9fa7ca9c5527baaf226",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3582686483860016,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "38d2736ca045202b8e3a0d1850efb40ee2b82ad68446e9770d52dd9259af58ca",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.35798266530036926,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "bf1f6c629d3d1355787188d82e74fefe2148fbe68249213bf9f13c10e83931a7",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3461560904979706,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "0ea3a99911233cf9d9cf4f85eb5cc0e4e9f7d9fbe77d7e5f5bd786c219dfac1a",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 22,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.31777331233024597,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "2ae61eb4d054d3cd27c0908c101a46ad342ef01c47820bd9028b417bfa001903",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 26,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.2824643552303314,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "920e3d41ec7986444a9b944a3ed04ad173858cddecdc1a0e451a4ff585cf050c",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 30,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.24011589586734772,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "8106ae26d1a01c5645958f1f5bcea6d73ea6c97eed9aea6a0f3038f18c0f47a0",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 34,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.2014141082763672,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "e68259567eb58e368d0e9886e7d84990cd148ec45c76af4f9ed0a0657c10e7bf",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 38,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.19425690174102783,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "b2b7c2081e573804314f86a5aa98bc099eebe1d729712be630882fe4971429bd",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12,
+      19,
+      25,
+      32,
+      39
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "validation_cells": [],
+    "error": null,
+    "log_tail": [
+      "[Epoch 40] train ocn_masked_views position diagnostics: SID0:nll=2.1413,acc=0.5368,mask=0.653, SID1:nll=2.3339,acc=0.4959,mask=0.629, SID2:nll=2.3171,acc=0.5011,mask=0.670, SID3:nll=2.5955,acc=0.4458,mask=0.548",
+      "[Epoch 40] train ocn_noising_hard_to_easy mean rank: SID0=2.386, SID1=2.486, SID2=2.319, SID3=2.809",
+      "[JOINT] components: recommendation=2.922721"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[DIFF_GRM] Using RPG_ED-style encoder: MLP compression + fixed 50-length sequence
+[DIFF_GRM] vocab_size: 35, codebook_size: 8
+[DIFF_GRM] masking_strategy: guided
+
+test_disabled_path_matches_prechange_model_and_enabled_preserves_base_rng (__main__.DiffGRMIntegrationTests.test_disabled_path_matches_prechange_model_and_enabled_preserves_base_rng) ... ok
+test_recommendation_loss_trains_new_module_and_checkpoint_reloads (__main__.DiffGRMIntegrationTests.test_recommendation_loss_trains_new_module_and_checkpoint_reloads) ... ok
+test_training_and_real_generation_use_module_before_item_mlp (__main__.DiffGRMIntegrationTests.test_training_and_real_generation_use_module_before_item_mlp) ... ok
+test_attention_stays_inside_each_item_but_mixes_its_slots (__main__.ItemLocalBlockTests.test_attention_stays_inside_each_item_but_mixes_its_slots) ... ok
+test_bfloat16_autocast_padding_forward_and_backward_are_finite (__main__.ItemLocalBlockTests.test_bfloat16_autocast_padding_forward_and_backward_are_finite) ... ok
+test_padding_is_finite_after_activation_and_does_not_leak (__main__.ItemLocalBlockTests.test_padding_is_finite_after_activation_and_does_not_leak) ... ok
+test_zero_initialization_is_exact_identity_and_correct_parameter_count (__main__.ItemLocalBlockTests.test_zero_initialization_is_exact_identity_and_correct_parameter_count) ... ok
+test_zero_output_projection_can_learn_then_routes_qkv_gradients (__main__.ItemLocalBlockTests.test_zero_output_projection_can_learn_then_routes_qkv_gradients) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.109s
+
+OK

@@ -1,0 +1,917 @@
+{
+  "status": "ALL_REQUIRED_DELIVERY_CHECKS_PASS",
+  "all_required_delivery_checks_passed": true,
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "utc": "2026-10-20T08:54:12.889551+00:00",
+  "auditor_sha256": "4eaff18bab6b7249cc8766505bd9eddcfc3f24e446576ccdd921dad7cc98c8c5",
+  "requirements": [
+    {
+      "requirement": "Complete final local archive, all 14 inputs, nine states and real Git recovery",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/FINAL_BACKUP_BINDING_AUDIT.json",
+        "outputs/stage05_long/package_r1/PACKAGE.json",
+        "outputs/stage05_long/extract_r1/goal_20261020_long_mixer_v1/MANIFEST.json",
+        "outputs/stage05_long/extract_r1/goal_20261020_long_mixer_v1/BYTE_VERIFICATION.json",
+        "outputs/stage05_long/git_restore_r1/FINAL_GIT_RESTORE_PASS.json"
+      ],
+      "details": {
+        "archive_sha256": "c2ad35b0c87b219e6435a970dfd62bf5677cf7e7c2924b34c53e48c6fec47af7",
+        "manifest_records": 1871,
+        "manifest_itself_additional": true,
+        "archive_size_bytes": 1536215400,
+        "restored_tracked_sources": 1493,
+        "verification_scope": "Payload rehash/restore reused from the bound successful verifier; aggregate rehashes evidence and source inputs."
+      }
+    },
+    {
+      "requirement": "Full 5R plus ten alternating cycles, actual noise, gradients, optimizer/freeze and paired controls",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/AUDIT.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/INDEPENDENT_SCIENTIFIC_DELIVERY_REVIEW.json"
+      ],
+      "details": {
+        "per_arm_R_epochs": 35,
+        "per_arm_R_updates": 3640,
+        "joint_T_updates": 60,
+        "joint_actual_noise_calls": 1920,
+        "frozen_tokenizer_updates": 0,
+        "frozen_identity_negative_control": true
+      }
+    },
+    {
+      "requirement": "Fixed-R35 primary DID and separate validation-selected one-time complete formal tests",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/AUDIT.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/INDEPENDENT_SCIENTIFIC_DELIVERY_REVIEW.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/SELECTION_SEALED.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/TEST_COVERAGE_AUDIT.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/COMPUTE_COMPLETE.json"
+      ],
+      "details": {
+        "fixed_R35_Mixer_increment": {
+          "hit_rate@5": 0.0005813173545588732,
+          "hit_rate@10": -0.0002235835979072509,
+          "ndcg@5": 0.00040880834587740666,
+          "ndcg@10": 0.00014110565537370223,
+          "weighted_score": 6.816782230864571e-05
+        },
+        "test_models": {
+          "no_mixer_frozen": {
+            "R": 15,
+            "T": 0
+          },
+          "no_mixer_joint": {
+            "R": 10,
+            "T": 12
+          },
+          "mixer_frozen": {
+            "R": 15,
+            "T": 0
+          },
+          "mixer_joint": {
+            "R": 15,
+            "T": 24
+          }
+        },
+        "complete_batches_per_test": 2796,
+        "dataset_samples": 22363,
+        "boundary": "Coverage is full execution-path/log evidence, not per-sample-ID prediction replay."
+      }
+    },
+    {
+      "requirement": "Raw results and six audit-bound plot files",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/FIGURES.json"
+      ],
+      "details": {
+        "raw_CSV_files": [
+          "fixed_epoch35_validation.csv",
+          "best_selected_test.csv",
+          "phases.csv",
+          "validation.csv"
+        ],
+        "raw_CSV_hashes_equal_verified_archive": true,
+        "files": [
+          {
+            "file": "validation_curves.png",
+            "sha256": "3932fb00d494d14278bde4af917bff13f7eeff56212fec5bbc689c11d41149ac"
+          },
+          {
+            "file": "validation_curves.pdf",
+            "sha256": "80281ae046ae54b9e07d91b5ef523d21dd97d120f4f00a9832be101b7092d343"
+          },
+          {
+            "file": "loss_and_sid_curves.png",
+            "sha256": "617a69780e5d847286f48ad2628614a9977088fdd46ff624d3a1bc438d54bb10"
+          },
+          {
+            "file": "loss_and_sid_curves.pdf",
+            "sha256": "150cbfb48ace3ded338e488c9d6f0163012a27a06cd315f6137cc27e5aa9ed40"
+          },
+          {
+            "file": "update_schedules.png",
+            "sha256": "e1a1f229df53e9f0aa87f965d96ac81cdf72371d765d57f00b633aae6c678075"
+          },
+          {
+            "file": "update_schedules.pdf",
+            "sha256": "65a0c29accb55134df26150c0f3afc0fdbee8d451580d37ed80791f644b5d4b1"
+          }
+        ],
+        "visual_inspection": "Three PNGs actually viewed in prior formal review; aggregate checks their unchanged hashes."
+      }
+    },
+    {
+      "requirement": "All seven Goal GPU allocations released within total and acceptance budgets",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/RESOURCE_RELEASE_FINAL.json"
+      ],
+      "details": {
+        "actual_allocated_gpu_seconds": 35549,
+        "total_budget_seconds": 43200,
+        "acceptance_seconds": 636,
+        "acceptance_budget_seconds": 1800,
+        "estimated_points": 9.874722222222223,
+        "actual_invoice_verified": false
+      }
+    },
+    {
+      "requirement": "Actual eight-state final-backup CPU recovery and both H100 boundary replay proofs",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/FINAL_BACKUP_BINDING_AUDIT.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/RESTORE_PASS.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/restore_check_execution_r1/REMOTE_RESTORE_SUMMARY.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/h100_preflight_r1/smoke/no_mixer_joint/RECOVERY_PASS.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/h100_preflight_r1/smoke/mixer_joint/RECOVERY_PASS.json"
+      ],
+      "details": {
+        "common_initial_reconstructed": true,
+        "final_complete_R35_is_last_pt": true,
+        "CPU_restore_executes_CUDA": false,
+        "local_Pipeline_restore_executed": false,
+        "remote_same_downloaded_bytes_CPU_restore": true
+      }
+    },
+    {
+      "requirement": "Frozen training versions, actual analysis sources and common Aug-28/E0 protocol identity",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/ANALYSIS_SOURCE_LOCK_R3.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/ANALYSIS_TOOLING_V3R2.json",
+        "configs/05_crosspse_joint/long/mixer_long_seed2024.json"
+      ],
+      "details": {
+        "training_commit": "69682698c15ba796b98e6329c950061a2f68a05b",
+        "engine_commit": "1c879252f6395d6e64462511823c3929b9c42c00",
+        "analysis_commit": "4b40c90b56490868e5972e75bafbf8e50ca8a3de",
+        "actual_execution_source_hashes": 19,
+        "analysis_tool_and_fixture_hashes": 21
+      }
+    },
+    {
+      "requirement": "Final report, experiment entries, project handoff and usable local evidence links",
+      "passed": true,
+      "evidence": [
+        "experiments/05_crosspse_joint/long_mixer_factorial/REPORT.md",
+        "experiments/05_crosspse_joint/long_mixer_factorial/README.md",
+        "experiments/05_crosspse_joint/README.md",
+        "docs/guides/PROJECT_HANDOFF.md",
+        "experiments/05_crosspse_joint/long_mixer_factorial/EXECUTION_STATUS.json",
+        "experiments/05_crosspse_joint/long_mixer_factorial/RESTORE_GUIDE.md",
+        "experiments/05_crosspse_joint/long_mixer_factorial/ACCEPTANCE_MATRIX.md"
+      ],
+      "details": {
+        "checked_current_section_links": {
+          "experiments\\05_crosspse_joint\\long_mixer_factorial\\REPORT.md": [
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_audit_r1\\AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\TRAINING_AUDIT_FINAL_R1.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESOURCE_RELEASE_FINAL.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\configs\\05_crosspse_joint\\long\\mixer_long_seed2024.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\PRIOR_EVIDENCE_CONTEXT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\configs\\05_crosspse_joint\\long\\mixer_long_seed2024.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\formal\\resolved_config_evaluate_all.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\ANALYSIS_SOURCE_LOCK_R3.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\ANALYSIS_TOOLING_V3R2.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\formal\\environment_evaluate_all.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_audit_r1\\best_selected_test.csv",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\formal\\COMPUTE_COMPLETE.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\TEST_COVERAGE_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\scripts\\train\\run_diger_mixer_long.py",
+            "C:\\Users\\nancy\\Documents\\experiment1\\scripts\\train\\run_diger_mixer_long.py",
+            "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine\\genrec\\models\\DIFF_GRM\\trainer.py",
+            "C:\\Users\\nancy\\Documents\\experiment1\\.runtime\\stage05_long\\git_restore_recipe_probe_20261020T053859459026Z\\engine\\genrec\\models\\DIFF_GRM\\beam.py",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\evaluate_all_r1\\evaluate.log",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_figures_r1\\FIGURES.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_figures_r1\\validation_curves.png",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_figures_r1\\loss_and_sid_curves.png",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_figures_r1\\update_schedules.png",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\PRIOR_EVIDENCE_CONTEXT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESOURCE_RELEASE_FINAL.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\backup_evidence_remote_r1\\REMOTE_RESTORE_EVIDENCE_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_BACKUP_BINDING_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESTORE_GUIDE.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\backup_evidence_local_r1\\INDEX.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_BACKUP_BINDING_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\INDEPENDENT_SCIENTIFIC_DELIVERY_REVIEW.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\ACCEPTANCE_MATRIX.md"
+          ],
+          "experiments\\05_crosspse_joint\\long_mixer_factorial\\README.md": [
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\EXECUTION_NOTES.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\REPORT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_audit_r1\\AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_audit_r1\\fixed_epoch35_validation.csv",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_audit_r1\\best_selected_test.csv",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\final_results_r1\\delivery\\final_figures_r1\\FIGURES.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\TEST_COVERAGE_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESOURCE_RELEASE_FINAL.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESTORE_GUIDE.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\backup_evidence_remote_r1\\REMOTE_RESTORE_EVIDENCE_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\PRIOR_EVIDENCE_CONTEXT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_BACKUP_BINDING_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json"
+          ],
+          "experiments\\05_crosspse_joint\\README.md": [
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\README.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\REPORT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\ACCEPTANCE_MATRIX.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESOURCE_RELEASE_FINAL.json"
+          ],
+          "docs\\guides\\PROJECT_HANDOFF.md": [
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\FINAL_DELIVERY_AUDIT.json",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\README.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\REPORT.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\ACCEPTANCE_MATRIX.md",
+            "C:\\Users\\nancy\\Documents\\experiment1\\experiments\\05_crosspse_joint\\long_mixer_factorial\\RESOURCE_RELEASE_FINAL.json"
+          ]
+        },
+        "current_source_branch_not_used_as_training_identity": true
+      }
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": ".runtime/stage05_long/git_restore_recipe_probe_20261020T053859459026Z/engine/genrec/models/DIFF_GRM/cross_pse.py",
+      "size_bytes": 8016,
+      "sha256": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170"
+    },
+    {
+      "path": "configs/05_crosspse_joint/long/mixer_long_seed2024.json",
+      "size_bytes": 2767,
+      "sha256": "bf671c9e6ffcd5eeeb428e55720300f6d0b29d49d3a21b076680442881d5bff2"
+    },
+    {
+      "path": "docs/guides/PROJECT_HANDOFF.md",
+      "size_bytes": 62965,
+      "sha256": "45ab4fae2acc5345fbbd3a0666e8041608a783b5565c7ed3989ceaeb52bcffd4"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/README.md",
+      "size_bytes": 12651,
+      "sha256": "4bb399de9a4852bfde6ed977d4e112bb36b95bef121afc185f4edd0e10901840"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/ACCEPTANCE_MATRIX.md",
+      "size_bytes": 3424,
+      "sha256": "5305f5015c1102964681a074e2a767209cd75404fbffc585c2a4de6ba235a36f"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/ANALYSIS_SOURCE_LOCK_R3.json",
+      "size_bytes": 790,
+      "sha256": "c16116592374b095f5bd0284573776af1ce8d541afaad364f7c88da381183837"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/ANALYSIS_TOOLING_V3R2.json",
+      "size_bytes": 3165,
+      "sha256": "e56f4610ee91c67c96e5a2fef6bf49111a9d91b504103eca65d2176f1377180e"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/EVALUATE_R1_TERMINAL_EVENTS.json",
+      "size_bytes": 4256,
+      "sha256": "421e62ac053d5dc3a1e5fc585195537e846f32bf6553de9512108329ab045544"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/EVALUATE_R1_TERMINAL_STATUS.json",
+      "size_bytes": 533,
+      "sha256": "68a3702d064c1f6fa50563b47054ab75fde210c00cef7ac76f1a1db667c80a24"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/EXECUTION_STATUS.json",
+      "size_bytes": 2677,
+      "sha256": "75ab2b2172abb3d971070e84410edc7058e4c0e037159006feeda2aaac0e8fd4"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/FINAL_BACKUP_BINDING_AUDIT.json",
+      "size_bytes": 10628,
+      "sha256": "04cf6839fedd4e96ca520e40429acaf23d6c186503b55ea2085c5ee1fd220e8d"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/FINAL_JOB_LIST_R1.json",
+      "size_bytes": 1590,
+      "sha256": "f4b58f476d2f436287ae27856433abcd01d209cb55c2ad6bfebebeb6537e6133"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/GOAL_COMMAND.txt",
+      "size_bytes": 8529,
+      "sha256": "8c1a526808d62d2efccb208561208cddbde765d25d863ca3a55e919ace53b335"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/INDEPENDENT_SCIENTIFIC_DELIVERY_REVIEW.json",
+      "size_bytes": 24435,
+      "sha256": "79cb2d2bde2395a7d8ab8e4298581f59f463d047561c875424dea8e15818d885"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/MIXER_FROZEN_R1_TERMINAL_EVENTS.json",
+      "size_bytes": 6689,
+      "sha256": "ccf0de726edcb6b9c31c35ba93151321f91cf4be100b0c00949da4e5616047a6"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/MIXER_FROZEN_R1_TERMINAL_STATUS.json",
+      "size_bytes": 398,
+      "sha256": "d8c4ca492938db3d474101d6f3bcc4fa5d0c09d7df255fe7c7c811d033a1c3d6"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/MIXER_JOINT_R1_TERMINAL_EVENTS.json",
+      "size_bytes": 8588,
+      "sha256": "2f9061aa6812c75cb17dc4eaf95f6faf991147c527408f98fb89d071eb0eba44"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/MIXER_JOINT_R1_TERMINAL_STATUS.json",
+      "size_bytes": 536,
+      "sha256": "e93725fc2e7c2e2bf9203439833979d754fced535fcadf30ea0e8d7bb6351397"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_FROZEN_R1_EVENTS.json",
+      "size_bytes": 4654,
+      "sha256": "ddb011da9307d22433406808180cdd859d22da524ac5ee9f6a4cdb4bc5704de0"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_FROZEN_R1_TERMINAL_STATUS.json",
+      "size_bytes": 398,
+      "sha256": "d77d9875ed1c4cbc3e233960520d248f3137663b8c1e84827893654e7511ae21"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_FROZEN_R2_TERMINAL_EVENTS.json",
+      "size_bytes": 8175,
+      "sha256": "977cb2a374817709d888d675629c7aee160f02e13eb4a4507d3cbefe8012a514"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_FROZEN_R2_TERMINAL_STATUS.json",
+      "size_bytes": 540,
+      "sha256": "bcd6db84d53b080430b0b553b3a001046fa73ff273205053631a11ce3c24564b"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_JOINT_R1_TERMINAL_EVENTS.json",
+      "size_bytes": 6406,
+      "sha256": "203e6904f455757a6b01ee24f7f3bec49d6c12e5de14200d2310ae1353f74ca4"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/NO_MIXER_JOINT_R1_TERMINAL_STATUS.json",
+      "size_bytes": 400,
+      "sha256": "34c730507257a25f4a511157d6a1fc5a445ee2fda7152de6a8b1c365f299dd75"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/PRE_GPU_QUOTA.json",
+      "size_bytes": 887,
+      "sha256": "9f83a1f733271dcad493db127e79af40c409be7bec3cf513ff339f4a32b5b44d"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/README.md",
+      "size_bytes": 5159,
+      "sha256": "629af2c8980cb723baa92db975f14f0cdc30234425eaad7b823c9161cb56849f"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/REPORT.md",
+      "size_bytes": 39038,
+      "sha256": "2b25e30de3c5b361bab0e966869154ec7724b427f777b708a45adea9aebb3147"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/RESOURCE_RELEASE_FINAL.json",
+      "size_bytes": 5837,
+      "sha256": "ec238b545ac0903f2e649a387db5397fe0aa6650de2f01e983211f6067f810c5"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/RESTORE_GUIDE.md",
+      "size_bytes": 10502,
+      "sha256": "ae283a77f6d01bfb55c6c7f8216637150c282404678ca42bb30884dc862ef889"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/SMOKE_EVENTS_AFTER_EXIT.json",
+      "size_bytes": 4706,
+      "sha256": "3ec54ed0be23aa16ff46036b090e73eac5fae4c1c7381d3246e3fb3afb595457"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/SMOKE_RELEASE_EVENTS.json",
+      "size_bytes": 1761,
+      "sha256": "b3fe4293a8504646db2e6f2eda81cf4cb71d743b09eda0854981d5d388c2fd3c"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/SMOKE_STATUS_AFTER_EXIT.json",
+      "size_bytes": 391,
+      "sha256": "02bae180c7ee7524659d8fb6678bae0f8e8ed8bbe14a1241ea5681f950d49dea"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/TEST_COVERAGE_AUDIT.json",
+      "size_bytes": 9236,
+      "sha256": "946473b443dec56ea2550eb0050b41f0e16349a2742a295657cb01958cc03b58"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/REMOTE_RESTORE_EVIDENCE_AUDIT.json",
+      "size_bytes": 10485,
+      "sha256": "5e9ca1253a00ec4c86ea180f929e8b15dd9df79f6fa915fc06d0c9cd8664d7d8"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/final_package_r1/PACKAGE.json",
+      "size_bytes": 1000,
+      "sha256": "23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/package_extract_r1/goal_20261020_long_mixer_v1/BYTE_VERIFICATION.json",
+      "size_bytes": 446,
+      "sha256": "cdc76fa608e3dcbdf85a4389301b3679857d8bf5db6192cb9466272065125044"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/package_extract_r1/goal_20261020_long_mixer_v1/MANIFEST.json",
+      "size_bytes": 420545,
+      "sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/RESTORE_PASS.json",
+      "size_bytes": 5833,
+      "sha256": "c882878f5f2f4f92ac73cde8a03e03bfd5fd11061daa75567073b9cd5290dfc1"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/backup_evidence_remote_r1/delivery/restore_check_execution_r1/REMOTE_RESTORE_SUMMARY.json",
+      "size_bytes": 727,
+      "sha256": "fddd5b1db0df608b59d54cd4cd623657830f3f004b964aabda5610d588cd1aa9"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/delivery_tools/audit_final_mixer_long_delivery.py",
+      "size_bytes": 28577,
+      "sha256": "4eaff18bab6b7249cc8766505bd9eddcfc3f24e446576ccdd921dad7cc98c8c5"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/delivery_tools/bind_final_backup_receipts.py",
+      "size_bytes": 26092,
+      "sha256": "2f5d37ee7349d106aa47685272d5dbb8c44956676097b15dce543591fb55e81e"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/evaluate_all_r1/evaluate.log",
+      "size_bytes": 876623,
+      "sha256": "3c6a3184571c6def97341b5dfb9075aab70cb9f33fa1749bcef3ca6945f83520"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/AUDIT.json",
+      "size_bytes": 33230,
+      "sha256": "f7aa255e9716c4be60641c689504e059b63fbd38c410fd12ce550b541a9c788e"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/best_selected_test.csv",
+      "size_bytes": 599,
+      "sha256": "e7f86ae594f17a2efad529978259cb4bacdafc0fa7f7b8bbff16d2f1a3fbb55c"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/fixed_epoch35_validation.csv",
+      "size_bytes": 525,
+      "sha256": "794826ec03ffcff4e7ec8ec340169c68cc244e28c192f04abf5de90f24c6974a"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/phases.csv",
+      "size_bytes": 42814,
+      "sha256": "52c1475488d61e0fbf643dd78f80025bf2aadae51e0dda756d391fd9840b4794"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_audit_r1/validation.csv",
+      "size_bytes": 3867,
+      "sha256": "c3b02d5ee75e502511dcfed10f171b22ab601e4bda744f0dba00ee6a4bc91a87"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/FIGURES.json",
+      "size_bytes": 1189,
+      "sha256": "dda61f3dff8c4659111867f264f8cc0699e05f214c894447526ec5a03ee423c5"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/loss_and_sid_curves.pdf",
+      "size_bytes": 39811,
+      "sha256": "150cbfb48ace3ded338e488c9d6f0163012a27a06cd315f6137cc27e5aa9ed40"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/loss_and_sid_curves.png",
+      "size_bytes": 180673,
+      "sha256": "617a69780e5d847286f48ad2628614a9977088fdd46ff624d3a1bc438d54bb10"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/update_schedules.pdf",
+      "size_bytes": 15540,
+      "sha256": "65a0c29accb55134df26150c0f3afc0fdbee8d451580d37ed80791f644b5d4b1"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/update_schedules.png",
+      "size_bytes": 120400,
+      "sha256": "e1a1f229df53e9f0aa87f965d96ac81cdf72371d765d57f00b633aae6c678075"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/validation_curves.pdf",
+      "size_bytes": 21273,
+      "sha256": "80281ae046ae54b9e07d91b5ef523d21dd97d120f4f00a9832be101b7092d343"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/delivery/final_figures_r1/validation_curves.png",
+      "size_bytes": 231617,
+      "sha256": "3932fb00d494d14278bde4af917bff13f7eeff56212fec5bbc689c11d41149ac"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/COMPUTE_COMPLETE.json",
+      "size_bytes": 6951,
+      "sha256": "202f5f5f6bfabed5b41e5750ea3f008552d6af0683453a2050fbb31ba2d4e80e"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/CONTROL_PASS.json",
+      "size_bytes": 2514,
+      "sha256": "ee40e091add71164b5ab532e68acf925a4b0de530d3905c2d492f7b8331da3aa"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/SELECTION_SEALED.json",
+      "size_bytes": 3489,
+      "sha256": "a9f7a5a738fcbe70c3027733dd08315345a96529f466f65f678cb237a87d04cf"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/environment_evaluate_all.json",
+      "size_bytes": 603,
+      "sha256": "9b7c14a7be97f65d397638eebc9ba016b06855ca90faaad86fbc2a4732df6988"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/environment_train_mixer_frozen.json",
+      "size_bytes": 603,
+      "sha256": "938656357ed9040afaa0255d60f87fefd0ddef782cfdf4ffa90e9d22edeae7f8"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/environment_train_mixer_joint.json",
+      "size_bytes": 603,
+      "sha256": "5ccb8ef07ec0926187c30d8d75f76b0f67ee4fa3f57082d45257de80e4238131"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/environment_train_no_mixer_frozen.json",
+      "size_bytes": 603,
+      "sha256": "f94f209d08836ed148c8aa9322353184644e9c21262e02a9a655fbad4bb6c8c2"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/environment_train_no_mixer_joint.json",
+      "size_bytes": 603,
+      "sha256": "7147301de5b4a59a059906ded74c7d01946437a8a846a781beed91b93a10f769"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_frozen/TEST_RESULT.json",
+      "size_bytes": 923,
+      "sha256": "4264f2c4d133e228826f6316970b5f71a4fb2ac1ded007dc4d3ece407e54fcdd"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_frozen/TEST_STARTED.json",
+      "size_bytes": 2771,
+      "sha256": "82f3fbd9d598710991957d8a84364bc9a3b2a2931c4e7e73286b8f365317db33"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_frozen/TRAIN_COMPLETE.json",
+      "size_bytes": 286610,
+      "sha256": "0746b301baa60c074554e0d90a8afaa67c0ad1b6e884b5d8f63465567644620f"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_frozen/progress.json",
+      "size_bytes": 268278,
+      "sha256": "238952a44c904ec24adf2c468652e1e2e0fd5a770f075f152ded75af9d0a5d60"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_joint/TEST_RESULT.json",
+      "size_bytes": 924,
+      "sha256": "5b310dcb01c4f5eb714c3bddfe13c51747fb1e4c8ec4fb2b95e9ab8ea1040412"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_joint/TEST_STARTED.json",
+      "size_bytes": 2770,
+      "sha256": "52c6bc4f9ba6ce79ab121c7b36a404e7866c274f10d155ea4087fe4e9a88b79c"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_joint/TRAIN_COMPLETE.json",
+      "size_bytes": 344077,
+      "sha256": "c9c8701aee11958cba4bbec6117e5107dd9b0d17ddded617f96ce154739a000d"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/mixer_joint/progress.json",
+      "size_bytes": 322634,
+      "sha256": "c57786f8c32bad941684a8df38000a0c7927c888f59aa0643c636a06c2c6194a"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_frozen/TEST_RESULT.json",
+      "size_bytes": 926,
+      "sha256": "5ba249569f49c35b1e0781f06fdc45d4cd2c4199a7ea18e1eac08a9b04c63aff"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_frozen/TEST_STARTED.json",
+      "size_bytes": 2774,
+      "sha256": "c87e6f8c692c47005e9df443b6918621cd8545b90469fb7113600c21469717c3"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_frozen/TRAIN_COMPLETE.json",
+      "size_bytes": 286628,
+      "sha256": "6e73faa59091bdbc80935760e477df4ba61242fd40decba92c04cf1a109fbcb0"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_frozen/progress.json",
+      "size_bytes": 268293,
+      "sha256": "06934419badef9247081639bf67d2332864afde2ed6aa178ced70fbe95e542a7"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_joint/TEST_RESULT.json",
+      "size_bytes": 926,
+      "sha256": "737939391495c437959761e70cbc6eac1161db259348e035ad35ad3e9ba16b0d"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_joint/TEST_STARTED.json",
+      "size_bytes": 2773,
+      "sha256": "c36d7fb9294e5d1a445d79af936082ef248b7fcadc9eda8f64de96bcf960acf8"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_joint/TRAIN_COMPLETE.json",
+      "size_bytes": 339801,
+      "sha256": "a7c7a51e2d6862de3666c45ab50f27b32ab719918d1bfdf312491fbf81f2bbdd"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/no_mixer_joint/progress.json",
+      "size_bytes": 318496,
+      "sha256": "d9c49384555781fba8bade588fed07c4da0a1bf284fc664ce98205234ee217f2"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/final_results_r1/formal/resolved_config_evaluate_all.json",
+      "size_bytes": 6926,
+      "sha256": "b423de72c9626fa8c890cc028c3a8ba75c8e161a640ea6bf2768744afc5e096e"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/h100_preflight_r1/smoke/mixer_joint/RECOVERY_PASS.json",
+      "size_bytes": 296,
+      "sha256": "a37b3d1c49bc3a08df6410df7c1f7a85bff37a3fdcb505b038cdc82cab3abbe7"
+    },
+    {
+      "path": "experiments/05_crosspse_joint/long_mixer_factorial/h100_preflight_r1/smoke/no_mixer_joint/RECOVERY_PASS.json",
+      "size_bytes": 299,
+      "sha256": "24f01e1d8be9bdb5324d8d2f9d054d8fe95dac8c1498a097f78f2c6188732d42"
+    },
+    {
+      "path": "outputs/stage05_long/extract_r1/goal_20261020_long_mixer_v1/BYTE_VERIFICATION.json",
+      "size_bytes": 457,
+      "sha256": "f865ea8b3da76f582458b52edc3aaa842e55783d97283775c34365e2ea2eb5a7"
+    },
+    {
+      "path": "outputs/stage05_long/extract_r1/goal_20261020_long_mixer_v1/MANIFEST.json",
+      "size_bytes": 420545,
+      "sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8"
+    },
+    {
+      "path": "outputs/stage05_long/extract_r1/goal_20261020_long_mixer_v1/delivery/final_audit_r1/AUDIT.json",
+      "size_bytes": 33230,
+      "sha256": "f7aa255e9716c4be60641c689504e059b63fbd38c410fd12ce550b541a9c788e"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/FINAL_GIT_RESTORE_PASS.json",
+      "size_bytes": 19144,
+      "sha256": "671539314e381ee56fba7129d381ec6969bed51b41806d46ff3110058e0d0099"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/checks/diger_mixer_factorial_protocol.py",
+      "size_bytes": 10838,
+      "sha256": "64a1e468d788e26ae8285622947d1ffe49c5f8ce72eea5466cf201878a3dbacd"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/checks/diger_mixer_long_protocol.py",
+      "size_bytes": 11295,
+      "sha256": "6d7feff7af9ab146ad299e06219f839ae74dcc6f3f051d54ad9217f3b8ab2919"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/checks/diger_noise_pilot_protocol.py",
+      "size_bytes": 11240,
+      "sha256": "879716431edc4bc918e545b703d167b80d19172f0003f761381b4ccc77837336"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/train/run_diger_mixer_factorial.py",
+      "size_bytes": 30148,
+      "sha256": "8347fd4c06608742c4af1c55cd3e9780e431d0fe8148443ae827992b73dcd179"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/train/run_diger_mixer_long.py",
+      "size_bytes": 43408,
+      "sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/code/scripts/train/run_diger_noise_pilot.py",
+      "size_bytes": 49851,
+      "sha256": "12fcb1c19973495dd13237f750ced8ff9d96da781994cd5562fa67eef0d65d3b"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/datasets/AmazonReviews2014/config.yaml",
+      "size_bytes": 108,
+      "sha256": "7f9cbcc540f92239c1ed88fd66984c4f508a57a59beaa381a3a2910a047dc90e"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/datasets/AmazonReviews2014/dataset.py",
+      "size_bytes": 16437,
+      "sha256": "a57c27f3f12a98005406ec04b76cea00815bfe2c30f9cb2770c2abe30e56a9b7"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/default.yaml",
+      "size_bytes": 642,
+      "sha256": "46f17ab68f2d771ae7143b13897463c75a958ceaa7f5bdfd0da01e7ea5e3af44"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/collate.py",
+      "size_bytes": 2679,
+      "sha256": "5ab1f9c096c6164594f02d5640cee87bfc8f53d9ab1bd0cf0fba13cad6d4632e"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/config.yaml",
+      "size_bytes": 6463,
+      "sha256": "3541ba5640ca1f179413db392752c3389d281ea5f9326d96499b741f09de7b30"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/cross_pse.py",
+      "size_bytes": 8016,
+      "sha256": "31e16716ca10ba96f231a55a7fcd7d6d565fa6189dc3235e443608806fa3f170"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/joint_cross_pse.py",
+      "size_bytes": 18046,
+      "sha256": "961ffee063e176eb253c026c27d7c08e81eda5cb2ee7b69dbbd3e213f4224e33"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/model.py",
+      "size_bytes": 82157,
+      "sha256": "db5d46932d8ea51ccf5c6b4a0c870e988daed2a6dae596d6770de597aba12967"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/tokenizer.py",
+      "size_bytes": 43589,
+      "sha256": "2a4bba2bd61720c8ba98c0a4063484afe685dc29b3683889a54b922b7d87887c"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/trainer.py",
+      "size_bytes": 77978,
+      "sha256": "f34655108b07545a5c22e1b8a26c3628e33417617516d114c041bda7fdcaf502"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/models/DIFF_GRM/training_state.py",
+      "size_bytes": 14577,
+      "sha256": "31c3eb76300ae70d2665f29c0098d313d3b01ce1d6ed7a4f16fc7768263ff5d4"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/pipeline.py",
+      "size_bytes": 5387,
+      "sha256": "8e727d5b6a8a0de026a26c2aebcd1665c62dd36d3691d91593d09dcc3eb2fe56"
+    },
+    {
+      "path": "outputs/stage05_long/git_restore_r1/engine/genrec/utils.py",
+      "size_bytes": 16971,
+      "sha256": "fefda1aaafda0f304e09f33db269a10f030f714ca2af3b2ea1b2471cbcb93802"
+    },
+    {
+      "path": "outputs/stage05_long/package_r1/PACKAGE.json",
+      "size_bytes": 1000,
+      "sha256": "23ca79aa50e980c8f85be4447715c665a965e5a79aabecc3e361d0f58683e300"
+    },
+    {
+      "path": "scripts/analysis/audit_mixer_long_campaign.py",
+      "size_bytes": 38122,
+      "sha256": "51d2b6f31e380f451a5e08c810eb23c48556fb180e1b55ad3a4a0a006bb71e6f"
+    },
+    {
+      "path": "scripts/analysis/audit_mixer_long_resources.py",
+      "size_bytes": 5939,
+      "sha256": "29be744cf1defec3fe0140aea24a1d3f1d7fadffce40b1d93d36dceea5fcd7a2"
+    },
+    {
+      "path": "scripts/analysis/pack_mixer_long_delivery.py",
+      "size_bytes": 14362,
+      "sha256": "0f14add826b616073fd13d97b48b57981c4acb6cec40c38099a5125f8b112e31"
+    },
+    {
+      "path": "scripts/analysis/plot_mixer_long_campaign.py",
+      "size_bytes": 6432,
+      "sha256": "b7b0755a992c929391ac742c0d9eb8f98c7a0dd0800551807cd0211aa844d2ae"
+    },
+    {
+      "path": "scripts/analysis/restore_mixer_long_backup.py",
+      "size_bytes": 6684,
+      "sha256": "f2d90ce373e6051dfaee8b8d89e0f795513668ae2551310fa60101a59ef659b5"
+    },
+    {
+      "path": "scripts/train/run_diger_mixer_factorial.py",
+      "size_bytes": 30148,
+      "sha256": "8347fd4c06608742c4af1c55cd3e9780e431d0fe8148443ae827992b73dcd179"
+    },
+    {
+      "path": "scripts/train/run_diger_mixer_long.py",
+      "size_bytes": 43408,
+      "sha256": "901b3464ea58290a44fa4d87c54a72c3332639f103113187495d6c6a01e497a2"
+    },
+    {
+      "path": "tests/fixtures/stage05_long_prefix/PROVENANCE.json",
+      "size_bytes": 716,
+      "sha256": "10befc2efb2fde2050ac5fdc2832a23c3dae813266f8a128a3c21c27dbb1d8af"
+    },
+    {
+      "path": "tests/fixtures/stage05_long_prefix/mixer_frozen.json",
+      "size_bytes": 69013,
+      "sha256": "42b539309f593d3f23f989f6e46159ed650f550caffe1f1cfb7946c0ce56988d"
+    },
+    {
+      "path": "tests/fixtures/stage05_long_prefix/mixer_joint.json",
+      "size_bytes": 71696,
+      "sha256": "6287abe436a8b288924fb47676df27aaf25374878148bdc305c3f9b815f527ac"
+    },
+    {
+      "path": "tests/fixtures/stage05_long_prefix/no_mixer_frozen.json",
+      "size_bytes": 30826,
+      "sha256": "bbceee1c7ed7d17b50dc5c140545ebab440f745c9a421cc223970a6016e5b997"
+    },
+    {
+      "path": "tests/fixtures/stage05_long_prefix/no_mixer_joint.json",
+      "size_bytes": 78604,
+      "sha256": "1080af4dad1a76d0741026f3a1fbd8413f703b4a6703fe1bac8c6d8d0e03a521"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/NO_MIXER_FROZEN_R1_EVENTS.json",
+      "size_bytes": 4654,
+      "sha256": "ddb011da9307d22433406808180cdd859d22da524ac5ee9f6a4cdb4bc5704de0"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/NO_MIXER_FROZEN_R1_TERMINAL_STATUS.json",
+      "size_bytes": 398,
+      "sha256": "d77d9875ed1c4cbc3e233960520d248f3137663b8c1e84827893654e7511ae21"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/PRE_GPU_QUOTA.json",
+      "size_bytes": 887,
+      "sha256": "9f83a1f733271dcad493db127e79af40c409be7bec3cf513ff339f4a32b5b44d"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/PROVENANCE.json",
+      "size_bytes": 789,
+      "sha256": "e758f14373dc2ec4ce43fd1fda3c1cc729c5e05b416ccbc23a430cdbdb5935e9"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/SMOKE_EVENTS_AFTER_EXIT.json",
+      "size_bytes": 4706,
+      "sha256": "3ec54ed0be23aa16ff46036b090e73eac5fae4c1c7381d3246e3fb3afb595457"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/SMOKE_RELEASE_EVENTS.json",
+      "size_bytes": 1761,
+      "sha256": "b3fe4293a8504646db2e6f2eda81cf4cb71d743b09eda0854981d5d388c2fd3c"
+    },
+    {
+      "path": "tests/fixtures/stage05_resources/SMOKE_STATUS_AFTER_EXIT.json",
+      "size_bytes": 391,
+      "sha256": "02bae180c7ee7524659d8fb6678bae0f8e8ed8bbe14a1241ea5681f950d49dea"
+    },
+    {
+      "path": "tests/test_mixer_long_audit.py",
+      "size_bytes": 11497,
+      "sha256": "3d2d6b8d9e52b88f9ddd738f0ad4bad6b461d89ceef1b230a300eb62357e4f3f"
+    },
+    {
+      "path": "tests/test_mixer_long_backup.py",
+      "size_bytes": 5268,
+      "sha256": "be9ffeef1876e730b0e081d618fdd1ec40b1196d8f72a6a0e974029bbbb49df2"
+    },
+    {
+      "path": "tests/test_mixer_long_resources.py",
+      "size_bytes": 4399,
+      "sha256": "2ef5fcca1fb1ff158e60622bebeb3870ab9584b8df134a0fd5fe43116ee7eb6d"
+    }
+  ],
+  "local_full_backup_verified": true,
+  "actual_final_archive_model_recovery_bound": true,
+  "scientific_model_and_test_audit_passed": true,
+  "all_goal_GPU_allocations_released": true,
+  "limitations": {
+    "actual_invoice_settlement_verified": false,
+    "CPU_restore_executed_CUDA": false,
+    "local_full_Pipeline_model_restore_executed": false,
+    "remote_same_archive_CPU_restore_executed": true,
+    "seed_count": 1,
+    "seed": 2024,
+    "scope": "Full Mixer overall effect, including within/between interaction",
+    "additional_parameters_and_optimization_path_not_isolated": true,
+    "test_best_models_have_different_R_T_budgets": true,
+    "SID_level_not_item_level": true,
+    "per_sample_ID_prediction_replay_executed": false
+  },
+  "goal_tool_state_changed_here": false,
+  "goal_complete": false,
+  "goal_state_note": "All required delivery evidence passes. The root agent must separately update Goal tool state."
+}

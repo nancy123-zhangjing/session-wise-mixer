@@ -1,0 +1,198 @@
+INFO:root:Device: cuda
+INFO:root:[DATASET] Amazon Reviews 2014 for category: Beauty
+INFO:root:[DATASET] Reviews have been processed...
+INFO:root:[DATASET] Metadata has been processed...
+INFO:root:[Dataset] AmazonReviews2014
+	Number of users: 22364
+	Number of items: 12102
+	Number of interactions: 198502
+	Average item sequence length: 8.875961366481846
+INFO:root:[TOKENIZER] Index factory: CROSSPSE4x8
+INFO:root:[TOKENIZER] cross_pse preprocessing: frozen precomputed IDs
+INFO:root:[TOKENIZER] Using existing quantization results from /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json
+INFO:root:[TOKENIZER] Semantic ID SHA256: c74e87dbbe949b28f1b38fb53e10189acec421979a40cb81fca6ca441ade4e17
+INFO:root:[TOKENIZER] Loading semantic IDs from /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json...
+INFO:root:[TOKENIZER] No existing mappings found for 4-digit, will generate new ones
+INFO:root:[TOKENIZER] Saved mappings with tag: sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d to /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_noise/gpu_smoke_20261012_1530/runtime/data_cache/AmazonReviews2014/Beauty/processed
+INFO:root:[TOKENIZER] Files: item_id2tokens_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d.npy, tokens2item_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d.pkl
+INFO:root:[SID_COLLISION] unique=10652/12101, collided_items=2174 (17.9655%), groups=725, largest_group=40
+INFO:root:[SID_PREFIX_COLLISION] prefix=1, unique=256/12101, collided_items=12099 (99.9835%), groups=254, largest_group=129
+INFO:root:[SID_PREFIX_COLLISION] prefix=2, unique=6950/12101, collided_items=7282 (60.1768%), groups=2131, largest_group=57
+INFO:root:[SID_PREFIX_COLLISION] prefix=3, unique=9857/12101, collided_items=3307 (27.3283%), groups=1063, largest_group=43
+INFO:root:[SID_PREFIX_COLLISION] prefix=4, unique=10652/12101, collided_items=2174 (17.9655%), groups=725, largest_group=40
+INFO:root:[SID_CODEBOOK_STATS] position=0, used=256/256, utilization=100.0000%, normalized_entropy=0.9667, largest_code_share=1.0660%
+INFO:root:[SID_CODEBOOK_STATS] position=1, used=256/256, utilization=100.0000%, normalized_entropy=0.9593, largest_code_share=1.3718%
+INFO:root:[SID_CODEBOOK_STATS] position=2, used=256/256, utilization=100.0000%, normalized_entropy=0.9594, largest_code_share=1.1156%
+INFO:root:[SID_CODEBOOK_STATS] position=3, used=256/256, utilization=100.0000%, normalized_entropy=0.9615, largest_code_share=1.1156%
+Tokenizing train set:   0%|          | 0/105668 [00:00<?, ? examples/s]Tokenizing train set:   0%|          | 303/105668 [00:00<00:50, 2089.63 examples/s]Tokenizing train set:   1%|          | 1052/105668 [00:00<00:21, 4768.05 examples/s]Tokenizing train set:   2%|▏         | 2000/105668 [00:00<00:16, 6454.03 examples/s]Tokenizing train set:   3%|▎         | 3000/105668 [00:00<00:18, 5667.94 examples/s]Tokenizing train set:   4%|▍         | 4000/105668 [00:00<00:15, 6524.90 examples/s]Tokenizing train set:   4%|▍         | 4753/105668 [00:00<00:17, 5881.63 examples/s]Tokenizing train set:   5%|▌         | 5694/105668 [00:00<00:15, 6644.15 examples/s]Tokenizing train set:   6%|▋         | 6687/105668 [00:01<00:13, 7293.74 examples/s]Tokenizing train set:   8%|▊         | 7931/105668 [00:01<00:15, 6501.32 examples/s]Tokenizing train set:   8%|▊         | 8669/105668 [00:01<00:14, 6695.47 examples/s]Tokenizing train set:   9%|▉         | 9384/105668 [00:01<00:16, 5690.15 examples/s]Tokenizing train set:  10%|█         | 10673/105668 [00:01<00:13, 6789.52 examples/s]Tokenizing train set:  11%|█         | 11537/105668 [00:01<00:15, 6010.86 examples/s]Tokenizing train set:  12%|█▏        | 12645/105668 [00:01<00:13, 6807.67 examples/s]Tokenizing train set:  13%|█▎        | 13774/105668 [00:02<00:12, 7619.70 examples/s]Tokenizing train set:  14%|█▍        | 14721/105668 [00:02<00:14, 6189.37 examples/s]Tokenizing train set:  15%|█▍        | 15721/105668 [00:02<00:13, 6674.13 examples/s]Tokenizing train set:  16%|█▌        | 16888/105668 [00:02<00:14, 6211.55 examples/s]Tokenizing train set:  17%|█▋        | 17766/105668 [00:02<00:13, 6728.12 examples/s]Tokenizing train set:  18%|█▊        | 19000/105668 [00:03<00:14, 6015.88 examples/s]Tokenizing train set:  19%|█▉        | 20000/105668 [00:03<00:12, 6671.38 examples/s]Tokenizing train set:  20%|█▉        | 21000/105668 [00:03<00:13, 6270.07 examples/s]Tokenizing train set:  21%|██        | 22000/105668 [00:03<00:12, 6951.48 examples/s]Tokenizing train set:  22%|██▏       | 23000/105668 [00:03<00:13, 5994.87 examples/s]Tokenizing train set:  23%|██▎       | 24000/105668 [00:03<00:12, 6677.37 examples/s]Tokenizing train set:  24%|██▎       | 24932/105668 [00:03<00:11, 6739.44 examples/s]Tokenizing train set:  24%|██▍       | 25702/105668 [00:03<00:11, 6949.10 examples/s]Tokenizing train set:  25%|██▌       | 26732/105668 [00:04<00:10, 7627.20 examples/s]Tokenizing train set:  26%|██▋       | 28000/105668 [00:04<00:11, 6564.19 examples/s]Tokenizing train set:  27%|██▋       | 29000/105668 [00:04<00:10, 7179.12 examples/s]Tokenizing train set:  28%|██▊       | 30000/105668 [00:04<00:11, 6340.57 examples/s]Tokenizing train set:  29%|██▉       | 31000/105668 [00:04<00:10, 6980.95 examples/s]Tokenizing train set:  30%|███       | 32000/105668 [00:04<00:09, 7622.20 examples/s]Tokenizing train set:  31%|███       | 32955/105668 [00:05<00:10, 6903.37 examples/s]Tokenizing train set:  32%|███▏      | 33840/105668 [00:05<00:09, 7348.44 examples/s]Tokenizing train set:  33%|███▎      | 35000/105668 [00:05<00:11, 6216.92 examples/s]Tokenizing train set:  34%|███▍      | 36000/105668 [00:05<00:10, 6890.06 examples/s]Tokenizing train set:  35%|███▍      | 36805/105668 [00:05<00:10, 6685.17 examples/s]Tokenizing train set:  36%|███▌      | 37786/105668 [00:05<00:09, 7364.90 examples/s]Tokenizing train set:  37%|███▋      | 38747/105668 [00:05<00:08, 7838.66 examples/s]Tokenizing train set:  38%|███▊      | 40000/105668 [00:06<00:09, 6723.29 examples/s]Tokenizing train set:  39%|███▉      | 41000/105668 [00:06<00:08, 7330.53 examples/s]Tokenizing train set:  40%|███▉      | 42000/105668 [00:06<00:09, 6647.37 examples/s]Tokenizing train set:  41%|████      | 43000/105668 [00:06<00:08, 7291.39 examples/s]Tokenizing train set:  42%|████▏     | 43894/105668 [00:06<00:08, 7041.62 examples/s]Tokenizing train set:  42%|████▏     | 44747/105668 [00:06<00:08, 7390.94 examples/s]Tokenizing train set:  43%|████▎     | 45764/105668 [00:06<00:07, 7987.09 examples/s]Tokenizing train set:  44%|████▍     | 47000/105668 [00:07<00:09, 6496.85 examples/s]Tokenizing train set:  45%|████▌     | 48000/105668 [00:07<00:08, 7125.39 examples/s]Tokenizing train set:  46%|████▋     | 49000/105668 [00:07<00:08, 6466.37 examples/s]Tokenizing train set:  47%|████▋     | 50000/105668 [00:07<00:07, 7113.50 examples/s]Tokenizing train set:  48%|████▊     | 50996/105668 [00:07<00:07, 7016.69 examples/s]Tokenizing train set:  49%|████▉     | 51963/105668 [00:07<00:07, 7625.34 examples/s]Tokenizing train set:  50%|█████     | 52896/105668 [00:07<00:06, 8044.58 examples/s]Tokenizing train set:  51%|█████     | 53965/105668 [00:07<00:07, 6812.62 examples/s]Tokenizing train set:  52%|█████▏    | 54801/105668 [00:08<00:07, 7159.23 examples/s]Tokenizing train set:  53%|█████▎    | 56000/105668 [00:08<00:08, 6204.82 examples/s]Tokenizing train set:  54%|█████▍    | 57000/105668 [00:08<00:07, 6894.72 examples/s]Tokenizing train set:  55%|█████▍    | 58000/105668 [00:08<00:07, 6147.71 examples/s]Tokenizing train set:  56%|█████▌    | 59000/105668 [00:08<00:07, 6138.66 examples/s]Tokenizing train set:  57%|█████▋    | 59932/105668 [00:08<00:07, 5869.51 examples/s]Tokenizing train set:  58%|█████▊    | 60945/105668 [00:09<00:06, 6734.43 examples/s]Tokenizing train set:  58%|█████▊    | 61813/105668 [00:09<00:06, 7169.88 examples/s]Tokenizing train set:  60%|█████▉    | 63000/105668 [00:09<00:06, 6109.37 examples/s]Tokenizing train set:  61%|██████    | 64000/105668 [00:09<00:06, 6850.78 examples/s]Tokenizing train set:  62%|██████▏   | 65000/105668 [00:09<00:06, 6237.02 examples/s]Tokenizing train set:  62%|██████▏   | 66000/105668 [00:09<00:05, 7000.85 examples/s]Tokenizing train set:  63%|██████▎   | 67000/105668 [00:09<00:05, 7571.51 examples/s]Tokenizing train set:  64%|██████▍   | 68000/105668 [00:10<00:05, 6684.18 examples/s]Tokenizing train set:  65%|██████▌   | 69000/105668 [00:10<00:04, 7387.90 examples/s]Tokenizing train set:  66%|██████▌   | 70000/105668 [00:10<00:05, 6580.74 examples/s]Tokenizing train set:  67%|██████▋   | 71000/105668 [00:10<00:04, 7304.57 examples/s]Tokenizing train set:  68%|██████▊   | 71805/105668 [00:10<00:04, 6791.66 examples/s]Tokenizing train set:  69%|██████▊   | 72638/105668 [00:10<00:04, 7062.45 examples/s]Tokenizing train set:  70%|██████▉   | 73726/105668 [00:10<00:04, 7671.34 examples/s]Tokenizing train set:  71%|███████   | 75000/105668 [00:11<00:04, 6494.75 examples/s]Tokenizing train set:  72%|███████▏  | 76000/105668 [00:11<00:04, 7128.85 examples/s]Tokenizing train set:  73%|███████▎  | 77000/105668 [00:11<00:04, 6320.56 examples/s]Tokenizing train set:  74%|███████▍  | 78000/105668 [00:11<00:03, 7007.88 examples/s]Tokenizing train set:  75%|███████▍  | 78894/105668 [00:11<00:03, 6805.76 examples/s]Tokenizing train set:  76%|███████▌  | 79823/105668 [00:11<00:03, 7373.84 examples/s]Tokenizing train set:  76%|███████▋  | 80805/105668 [00:11<00:03, 7927.58 examples/s]Tokenizing train set:  78%|███████▊  | 82000/105668 [00:12<00:03, 6339.60 examples/s]Tokenizing train set:  79%|███████▊  | 83000/105668 [00:12<00:03, 6901.80 examples/s]Tokenizing train set:  79%|███████▉  | 84000/105668 [00:12<00:03, 5783.82 examples/s]Tokenizing train set:  80%|████████  | 85000/105668 [00:12<00:03, 6570.01 examples/s]Tokenizing train set:  81%|████████▏ | 85983/105668 [00:12<00:03, 6437.86 examples/s]Tokenizing train set:  82%|████████▏ | 86986/105668 [00:12<00:02, 7211.22 examples/s]Tokenizing train set:  83%|████████▎ | 87983/105668 [00:12<00:02, 7857.02 examples/s]Tokenizing train set:  84%|████████▍ | 89000/105668 [00:13<00:02, 6162.92 examples/s]Tokenizing train set:  85%|████████▌ | 90007/105668 [00:13<00:02, 6969.40 examples/s]Tokenizing train set:  86%|████████▌ | 91000/105668 [00:13<00:02, 6365.22 examples/s]Tokenizing train set:  87%|████████▋ | 92000/105668 [00:13<00:01, 7107.24 examples/s]Tokenizing train set:  88%|████████▊ | 93000/105668 [00:13<00:01, 6418.80 examples/s]Tokenizing train set:  89%|████████▉ | 94000/105668 [00:13<00:01, 7178.11 examples/s]Tokenizing train set:  90%|████████▉ | 94919/105668 [00:14<00:01, 6771.12 examples/s]Tokenizing train set:  91%|█████████ | 95843/105668 [00:14<00:01, 7332.75 examples/s]Tokenizing train set:  92%|█████████▏| 96830/105668 [00:14<00:01, 7957.26 examples/s]Tokenizing train set:  93%|█████████▎| 98000/105668 [00:14<00:01, 6234.66 examples/s]Tokenizing train set:  94%|█████████▎| 99015/105668 [00:14<00:00, 7040.66 examples/s]Tokenizing train set:  95%|█████████▍| 100000/105668 [00:14<00:00, 6524.55 examples/s]Tokenizing train set:  96%|█████████▌| 101024/105668 [00:14<00:00, 7327.45 examples/s]Tokenizing train set:  97%|█████████▋| 102000/105668 [00:15<00:00, 6298.33 examples/s]Tokenizing train set:  98%|█████████▊| 103038/105668 [00:15<00:00, 7162.02 examples/s]Tokenizing train set:  98%|█████████▊| 104000/105668 [00:15<00:00, 6203.21 examples/s]Tokenizing train set:  99%|█████████▉| 105000/105668 [00:15<00:00, 6877.58 examples/s]Tokenizing train set: 100%|██████████| 105668/105668 [00:15<00:00, 6770.96 examples/s]
+Tokenizing val set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing val set:   4%|▍         | 1000/22363 [00:00<00:02, 8872.25 examples/s]Tokenizing val set:   9%|▊         | 1944/22363 [00:00<00:03, 6508.21 examples/s]Tokenizing val set:  13%|█▎        | 2832/22363 [00:00<00:02, 7363.29 examples/s]Tokenizing val set:  17%|█▋        | 3758/22363 [00:00<00:02, 8007.43 examples/s]Tokenizing val set:  22%|██▏       | 5000/22363 [00:00<00:02, 6507.11 examples/s]Tokenizing val set:  27%|██▋       | 6000/22363 [00:00<00:02, 7251.11 examples/s]Tokenizing val set:  31%|███▏      | 7000/22363 [00:01<00:02, 6572.07 examples/s]Tokenizing val set:  36%|███▌      | 8000/22363 [00:01<00:01, 7235.62 examples/s]Tokenizing val set:  40%|████      | 9000/22363 [00:01<00:01, 7849.45 examples/s]Tokenizing val set:  45%|████▍     | 9952/22363 [00:01<00:01, 7539.61 examples/s]Tokenizing val set:  49%|████▊     | 10878/22363 [00:01<00:01, 7970.84 examples/s]Tokenizing val set:  54%|█████▎    | 12000/22363 [00:01<00:01, 6646.84 examples/s]Tokenizing val set:  58%|█████▊    | 13000/22363 [00:01<00:01, 7350.21 examples/s]Tokenizing val set:  63%|██████▎   | 14000/22363 [00:01<00:01, 6701.31 examples/s]Tokenizing val set:  67%|██████▋   | 15000/22363 [00:02<00:01, 7228.38 examples/s]Tokenizing val set:  71%|███████▏  | 15970/22363 [00:02<00:00, 6887.77 examples/s]Tokenizing val set:  76%|███████▌  | 16938/22363 [00:02<00:00, 7525.73 examples/s]Tokenizing val set:  80%|████████  | 17933/22363 [00:02<00:00, 8122.95 examples/s]Tokenizing val set:  85%|████████▍ | 19000/22363 [00:02<00:00, 6541.26 examples/s]Tokenizing val set:  89%|████████▉ | 20000/22363 [00:02<00:00, 7288.10 examples/s]Tokenizing val set:  94%|█████████▍| 21000/22363 [00:02<00:00, 6561.88 examples/s]Tokenizing val set:  98%|█████████▊| 22016/22363 [00:03<00:00, 7347.33 examples/s]Tokenizing val set: 100%|██████████| 22363/22363 [00:03<00:00, 7216.38 examples/s]
+Tokenizing test set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing test set:   4%|▍         | 1000/22363 [00:00<00:02, 8313.45 examples/s]Tokenizing test set:   9%|▉         | 2000/22363 [00:00<00:02, 8738.87 examples/s]Tokenizing test set:  14%|█▎        | 3025/22363 [00:00<00:03, 5857.64 examples/s]Tokenizing test set:  18%|█▊        | 4000/22363 [00:00<00:02, 6765.86 examples/s]Tokenizing test set:  22%|██▏       | 5000/22363 [00:00<00:02, 6122.15 examples/s]Tokenizing test set:  27%|██▋       | 6000/22363 [00:00<00:02, 6941.28 examples/s]Tokenizing test set:  31%|███▏      | 7000/22363 [00:01<00:02, 6287.40 examples/s]Tokenizing test set:  36%|███▌      | 8000/22363 [00:01<00:02, 6963.19 examples/s]Tokenizing test set:  40%|████      | 9000/22363 [00:01<00:02, 6354.56 examples/s]Tokenizing test set:  45%|████▍     | 10000/22363 [00:01<00:01, 7052.17 examples/s]Tokenizing test set:  49%|████▉     | 10919/22363 [00:01<00:01, 6880.92 examples/s]Tokenizing test set:  53%|█████▎    | 11854/22363 [00:01<00:01, 7461.66 examples/s]Tokenizing test set:  57%|█████▋    | 12793/22363 [00:01<00:01, 7946.05 examples/s]Tokenizing test set:  63%|██████▎   | 14000/22363 [00:02<00:01, 6679.15 examples/s]Tokenizing test set:  67%|██████▋   | 15000/22363 [00:02<00:01, 7181.43 examples/s]Tokenizing test set:  72%|███████▏  | 16000/22363 [00:02<00:01, 6209.98 examples/s]Tokenizing test set:  76%|███████▌  | 17000/22363 [00:02<00:00, 6960.72 examples/s]Tokenizing test set:  80%|████████  | 18000/22363 [00:02<00:00, 6385.35 examples/s]Tokenizing test set:  85%|████████▍ | 19000/22363 [00:02<00:00, 7119.30 examples/s]Tokenizing test set:  89%|████████▉ | 20000/22363 [00:02<00:00, 7759.28 examples/s]Tokenizing test set:  94%|█████████▎| 20960/22363 [00:03<00:00, 7552.53 examples/s]Tokenizing test set:  98%|█████████▊| 21936/22363 [00:03<00:00, 8095.59 examples/s]Tokenizing test set: 100%|██████████| 22363/22363 [00:03<00:00, 7013.34 examples/s]
+[MODEL] ▶ GUIDED: steps=4, metric=msp, select=least, augment_factor=4
+[DIFF_GRM] Using shared embedding dot-product output layer
+[JOINT] Cross-PSE DIGER-ST enabled: hard forward, soft backward, alternating parameter updates; assignment_temperature=0.1
+INFO:root:Loaded model checkpoint from /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/external/DiffGRM/saved/AmazonReviews2014_Sep-01-2026_14-24-52/pytorch_model.bin
+INFO:root:DIFF_GRM(
+  (embedding): Embedding(1027, 256)
+  (item_mlp): Sequential(
+    (0): Linear(in_features=1024, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mask_emb_table): Embedding(4, 256)
+  (pos_emb_enc): Embedding(50, 256)
+  (encoder_blocks): ModuleList(
+    (0): EncoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (decoder_blocks): ModuleList(
+    (0-3): 4 x DecoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (self_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (cross_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_3): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (output_adapter): Identity()
+  (drop): Dropout(p=0.1, inplace=False)
+  (joint_alignment): JointCrossPSEAlignment(
+    (mixer): CrossPSECodebookMixer(
+      (input_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (attention): MultiheadAttention(
+        (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+      )
+    )
+  )
+  (joint_sequence_adapter): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+)
+INFO:root:5,832,576
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+[DIFF_GRM] Using RPG_ED-style encoder: MLP compression + fixed 50-length sequence
+[DIFF_GRM] vocab_size: 1027, codebook_size: 256
+[DIFF_GRM] masking_strategy: guided
+Eval - val:  50%|█████     | 1/2 [00:01<00:01,  1.18s/it]Eval - val: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.625
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.625
+[Epoch 0] val fully_masked position diagnostics: SID0:nll=7.7891,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.0938,acc=0.0000,mask=1.000, SID3:nll=5.6445,acc=0.0000,mask=1.000
+[Epoch 0] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] initial val={"dup@10": 0.6250000149011612, "duplicate@10": 0.6250000149011612, "duplicate_ratio": 0.625, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[PILOT] recommender index=1 batch=16/16 updates=1
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 19.03it/s]Eval - val: 100%|██████████| 2/2 [00:00<00:00, 18.65it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.650
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.650
+[Epoch 2] val fully_masked position diagnostics: SID0:nll=7.7812,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.1172,acc=0.0000,mask=1.000, SID3:nll=5.6367,acc=0.0000,mask=1.000
+[Epoch 2] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] decoder_1 val={"dup@10": 0.6500000059604645, "duplicate@10": 0.6500000059604645, "duplicate_ratio": 0.6499999761581421, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 17.25it/s]Eval - val: 100%|██████████| 2/2 [00:00<00:00, 16.94it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.625
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.625
+[Epoch 0] val fully_masked position diagnostics: SID0:nll=7.7891,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.0938,acc=0.0000,mask=1.000, SID3:nll=5.6445,acc=0.0000,mask=1.000
+[Epoch 0] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] initial val={"dup@10": 0.6250000149011612, "duplicate@10": 0.6250000149011612, "duplicate_ratio": 0.625, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[PILOT] tokenizer index=0 batch=16/16 updates=1
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 17.37it/s]Eval - val: 100%|██████████| 2/2 [00:00<00:00, 17.04it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.625
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.625
+[Epoch 1] val fully_masked position diagnostics: SID0:nll=7.7891,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.0938,acc=0.0000,mask=1.000, SID3:nll=5.6445,acc=0.0000,mask=1.000
+[Epoch 1] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] post_tokenizer val={"dup@10": 0.6250000149011612, "duplicate@10": 0.6250000149011612, "duplicate_ratio": 0.625, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[PILOT] recommender index=1 batch=16/16 updates=1
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 20.55it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.650
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.650
+[Epoch 2] val fully_masked position diagnostics: SID0:nll=7.7812,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.1172,acc=0.0000,mask=1.000, SID3:nll=5.6367,acc=0.0000,mask=1.000
+[Epoch 2] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] decoder_1 val={"dup@10": 0.6500000059604645, "duplicate@10": 0.6500000059604645, "duplicate_ratio": 0.6499999761581421, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 15.41it/s]Eval - val: 100%|██████████| 2/2 [00:00<00:00, 15.16it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.625
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.625
+[Epoch 0] val fully_masked position diagnostics: SID0:nll=7.7891,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.0938,acc=0.0000,mask=1.000, SID3:nll=5.6445,acc=0.0000,mask=1.000
+[Epoch 0] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] initial val={"dup@10": 0.6250000149011612, "duplicate@10": 0.6250000149011612, "duplicate_ratio": 0.625, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[PILOT] tokenizer index=0 batch=16/16 updates=1
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 16.91it/s]Eval - val: 100%|██████████| 2/2 [00:00<00:00, 16.61it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.625
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.625
+[Epoch 1] val fully_masked position diagnostics: SID0:nll=7.7891,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.0938,acc=0.0000,mask=1.000, SID3:nll=5.6445,acc=0.0000,mask=1.000
+[Epoch 1] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] post_tokenizer val={"dup@10": 0.6250000149011612, "duplicate@10": 0.6250000149011612, "duplicate_ratio": 0.625, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[PILOT] recommender index=1 batch=16/16 updates=1
+Eval - val:   0%|          | 0/2 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val: 100%|██████████| 2/2 [00:00<00:00, 20.61it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.650
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.650
+[Epoch 2] val fully_masked position diagnostics: SID0:nll=7.7812,acc=0.0000,mask=1.000, SID1:nll=7.6719,acc=0.0000,mask=1.000, SID2:nll=6.1172,acc=0.0000,mask=1.000, SID3:nll=5.6367,acc=0.0000,mask=1.000
+[Epoch 2] val cpd_greedy_decode_easy_to_hard mean rank: SID0=1.750, SID1=2.750, SID2=3.000, SID3=2.500
+[PILOT] decoder_1 val={"dup@10": 0.6500000059604645, "duplicate@10": 0.6500000059604645, "duplicate_ratio": 0.6499999761581421, "hit_rate@10": 0.0, "hit_rate@5": 0.0, "legal@10": 1.0, "legal_ratio": 1.0, "ndcg@10": 0.0, "ndcg@5": 0.0, "recall@10": 0.0, "recall@5": 0.0, "weighted_score": 0.0}
+[DONE] /inspire/hdd/project/project-public/<inspire-account>/nancy/experiment1_reorganized/outputs/pilots/stage05_noise/gpu_smoke_20261012_1530

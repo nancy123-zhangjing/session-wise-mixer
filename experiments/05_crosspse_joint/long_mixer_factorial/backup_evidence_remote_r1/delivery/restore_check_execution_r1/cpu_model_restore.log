@@ -1,0 +1,230 @@
+INFO:root:Device: cpu
+INFO:root:[DATASET] Amazon Reviews 2014 for category: Beauty
+INFO:root:[DATASET] Reviews have been processed...
+INFO:root:[DATASET] Metadata has been processed...
+INFO:root:[Dataset] AmazonReviews2014
+	Number of users: 22364
+	Number of items: 12102
+	Number of interactions: 198502
+	Average item sequence length: 8.875961366481846
+INFO:root:[TOKENIZER] Index factory: CROSSPSE4x8
+INFO:root:[TOKENIZER] cross_pse preprocessing: frozen precomputed IDs
+INFO:root:[TOKENIZER] Using existing quantization results from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/inputs/outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json
+INFO:root:[TOKENIZER] Semantic ID SHA256: c74e87dbbe949b28f1b38fb53e10189acec421979a40cb81fca6ca441ade4e17
+INFO:root:[TOKENIZER] Loading semantic IDs from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/inputs/outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json...
+INFO:root:[TOKENIZER] No existing mappings found for 4-digit, will generate new ones
+INFO:root:[TOKENIZER] Saved mappings with tag: sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d to /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/cpu_smoke/runtime/e8f7c05726544dcab24e559a34d6e124/data_cache/AmazonReviews2014/Beauty/processed
+INFO:root:[TOKENIZER] Files: item_id2tokens_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d.npy, tokens2item_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_shac74e87dbbe94_4d.pkl
+INFO:root:[SID_COLLISION] unique=10652/12101, collided_items=2174 (17.9655%), groups=725, largest_group=40
+INFO:root:[SID_PREFIX_COLLISION] prefix=1, unique=256/12101, collided_items=12099 (99.9835%), groups=254, largest_group=129
+INFO:root:[SID_PREFIX_COLLISION] prefix=2, unique=6950/12101, collided_items=7282 (60.1768%), groups=2131, largest_group=57
+INFO:root:[SID_PREFIX_COLLISION] prefix=3, unique=9857/12101, collided_items=3307 (27.3283%), groups=1063, largest_group=43
+INFO:root:[SID_PREFIX_COLLISION] prefix=4, unique=10652/12101, collided_items=2174 (17.9655%), groups=725, largest_group=40
+INFO:root:[SID_CODEBOOK_STATS] position=0, used=256/256, utilization=100.0000%, normalized_entropy=0.9667, largest_code_share=1.0660%
+INFO:root:[SID_CODEBOOK_STATS] position=1, used=256/256, utilization=100.0000%, normalized_entropy=0.9593, largest_code_share=1.3718%
+INFO:root:[SID_CODEBOOK_STATS] position=2, used=256/256, utilization=100.0000%, normalized_entropy=0.9594, largest_code_share=1.1156%
+INFO:root:[SID_CODEBOOK_STATS] position=3, used=256/256, utilization=100.0000%, normalized_entropy=0.9615, largest_code_share=1.1156%
+Tokenizing train set:   0%|          | 0/105668 [00:00<?, ? examples/s]Tokenizing train set:   1%|          | 888/105668 [00:00<00:30, 3450.14 examples/s]Tokenizing train set:   2%|▏         | 1807/105668 [00:00<00:19, 5461.90 examples/s]Tokenizing train set:   3%|▎         | 2845/105668 [00:00<00:14, 7019.02 examples/s]Tokenizing train set:   4%|▍         | 4000/105668 [00:00<00:20, 4914.10 examples/s]Tokenizing train set:   5%|▍         | 5000/105668 [00:00<00:16, 5930.31 examples/s]Tokenizing train set:   6%|▌         | 6000/105668 [00:01<00:20, 4884.60 examples/s]Tokenizing train set:   7%|▋         | 7000/105668 [00:01<00:17, 5795.95 examples/s]Tokenizing train set:   8%|▊         | 7970/105668 [00:01<00:18, 5171.45 examples/s]Tokenizing train set:   8%|▊         | 8772/105668 [00:01<00:17, 5694.65 examples/s]Tokenizing train set:   9%|▉         | 9848/105668 [00:01<00:14, 6649.98 examples/s]Tokenizing train set:  10%|█         | 11000/105668 [00:02<00:18, 5099.30 examples/s]Tokenizing train set:  11%|█▏        | 12000/105668 [00:02<00:15, 5945.55 examples/s]Tokenizing train set:  12%|█▏        | 12753/105668 [00:02<00:18, 5046.89 examples/s]Tokenizing train set:  13%|█▎        | 13883/105668 [00:02<00:14, 6159.85 examples/s]Tokenizing train set:  14%|█▍        | 14865/105668 [00:02<00:13, 6928.79 examples/s]Tokenizing train set:  15%|█▌        | 15916/105668 [00:02<00:16, 5358.46 examples/s]Tokenizing train set:  16%|█▌        | 16904/105668 [00:02<00:14, 6197.38 examples/s]Tokenizing train set:  17%|█▋        | 18000/105668 [00:03<00:17, 4956.93 examples/s]Tokenizing train set:  18%|█▊        | 19000/105668 [00:03<00:14, 5796.91 examples/s]Tokenizing train set:  19%|█▉        | 20000/105668 [00:03<00:17, 4972.78 examples/s]Tokenizing train set:  20%|█▉        | 21000/105668 [00:03<00:14, 5830.20 examples/s]Tokenizing train set:  21%|██        | 22000/105668 [00:04<00:16, 4956.01 examples/s]Tokenizing train set:  22%|██▏       | 23000/105668 [00:04<00:14, 5779.07 examples/s]Tokenizing train set:  23%|██▎       | 23843/105668 [00:04<00:17, 4798.53 examples/s]Tokenizing train set:  24%|██▎       | 24914/105668 [00:04<00:13, 5813.40 examples/s]Tokenizing train set:  24%|██▍       | 25787/105668 [00:04<00:12, 6398.89 examples/s]Tokenizing train set:  26%|██▌       | 27000/105668 [00:04<00:15, 5103.27 examples/s]Tokenizing train set:  26%|██▋       | 28000/105668 [00:05<00:13, 5928.62 examples/s]Tokenizing train set:  27%|██▋       | 29000/105668 [00:05<00:15, 5015.89 examples/s]Tokenizing train set:  28%|██▊       | 30000/105668 [00:05<00:13, 5628.22 examples/s]Tokenizing train set:  29%|██▉       | 31000/105668 [00:05<00:15, 4852.31 examples/s]Tokenizing train set:  30%|███       | 32010/105668 [00:05<00:12, 5749.77 examples/s]Tokenizing train set:  31%|███       | 33000/105668 [00:06<00:14, 4882.50 examples/s]Tokenizing train set:  32%|███▏      | 34000/105668 [00:06<00:12, 5741.01 examples/s]Tokenizing train set:  33%|███▎      | 34932/105668 [00:06<00:13, 5064.06 examples/s]Tokenizing train set:  34%|███▍      | 35863/105668 [00:06<00:11, 5832.64 examples/s]Tokenizing train set:  35%|███▍      | 36862/105668 [00:06<00:10, 6657.82 examples/s]Tokenizing train set:  36%|███▌      | 38000/105668 [00:06<00:13, 5190.68 examples/s]Tokenizing train set:  37%|███▋      | 39000/105668 [00:07<00:11, 6048.13 examples/s]Tokenizing train set:  38%|███▊      | 40000/105668 [00:07<00:13, 5040.74 examples/s]Tokenizing train set:  39%|███▉      | 41000/105668 [00:07<00:10, 5906.37 examples/s]Tokenizing train set:  40%|███▉      | 42000/105668 [00:07<00:09, 6712.49 examples/s]Tokenizing train set:  41%|████      | 43000/105668 [00:07<00:11, 5413.53 examples/s]Tokenizing train set:  42%|████▏     | 44000/105668 [00:07<00:09, 6268.39 examples/s]Tokenizing train set:  43%|████▎     | 45000/105668 [00:08<00:11, 5130.82 examples/s]Tokenizing train set:  44%|████▎     | 46003/105668 [00:08<00:09, 6008.60 examples/s]Tokenizing train set:  44%|████▍     | 46805/105668 [00:08<00:11, 5159.18 examples/s]Tokenizing train set:  45%|████▌     | 47815/105668 [00:08<00:09, 6040.00 examples/s]Tokenizing train set:  46%|████▋     | 48873/105668 [00:08<00:08, 6951.60 examples/s]Tokenizing train set:  47%|████▋     | 50000/105668 [00:09<00:10, 5288.42 examples/s]Tokenizing train set:  48%|████▊     | 51069/105668 [00:09<00:08, 6260.43 examples/s]Tokenizing train set:  49%|████▉     | 52000/105668 [00:09<00:10, 5085.18 examples/s]Tokenizing train set:  50%|█████     | 53000/105668 [00:09<00:08, 5927.92 examples/s]Tokenizing train set:  51%|█████     | 53893/105668 [00:09<00:10, 5084.77 examples/s]Tokenizing train set:  52%|█████▏    | 54786/105668 [00:09<00:08, 5787.94 examples/s]Tokenizing train set:  53%|█████▎    | 55848/105668 [00:09<00:07, 6718.52 examples/s]Tokenizing train set:  54%|█████▍    | 57000/105668 [00:10<00:09, 5158.62 examples/s]Tokenizing train set:  55%|█████▍    | 58000/105668 [00:10<00:07, 5981.43 examples/s]Tokenizing train set:  56%|█████▌    | 59000/105668 [00:10<00:10, 4598.94 examples/s]Tokenizing train set:  57%|█████▋    | 60024/105668 [00:10<00:08, 5514.94 examples/s]Tokenizing train set:  58%|█████▊    | 60983/105668 [00:11<00:08, 5069.10 examples/s]Tokenizing train set:  59%|█████▊    | 61906/105668 [00:11<00:07, 5810.71 examples/s]Tokenizing train set:  59%|█████▉    | 62864/105668 [00:11<00:06, 6574.81 examples/s]Tokenizing train set:  61%|██████    | 64000/105668 [00:11<00:08, 5152.78 examples/s]Tokenizing train set:  62%|██████▏   | 65000/105668 [00:11<00:06, 6005.44 examples/s]Tokenizing train set:  62%|██████▏   | 66000/105668 [00:11<00:08, 4845.63 examples/s]Tokenizing train set:  63%|██████▎   | 67000/105668 [00:12<00:06, 5714.16 examples/s]Tokenizing train set:  64%|██████▍   | 68000/105668 [00:12<00:07, 4905.90 examples/s]Tokenizing train set:  65%|██████▌   | 69018/105668 [00:12<00:06, 5817.71 examples/s]Tokenizing train set:  66%|██████▌   | 69919/105668 [00:12<00:06, 5170.90 examples/s]Tokenizing train set:  67%|██████▋   | 70970/105668 [00:12<00:05, 6157.64 examples/s]Tokenizing train set:  68%|██████▊   | 71904/105668 [00:12<00:04, 6821.61 examples/s]Tokenizing train set:  69%|██████▉   | 72991/105668 [00:13<00:05, 5516.14 examples/s]Tokenizing train set:  70%|███████   | 74000/105668 [00:13<00:05, 5929.56 examples/s]Tokenizing train set:  71%|███████   | 75000/105668 [00:13<00:06, 5028.55 examples/s]Tokenizing train set:  72%|███████▏  | 76000/105668 [00:13<00:05, 5891.00 examples/s]Tokenizing train set:  73%|███████▎  | 77000/105668 [00:13<00:05, 4976.72 examples/s]Tokenizing train set:  74%|███████▍  | 78000/105668 [00:13<00:04, 5854.53 examples/s]Tokenizing train set:  75%|███████▍  | 79000/105668 [00:14<00:05, 4986.59 examples/s]Tokenizing train set:  76%|███████▌  | 80000/105668 [00:14<00:04, 5861.98 examples/s]Tokenizing train set:  77%|███████▋  | 81054/105668 [00:14<00:03, 6799.31 examples/s]Tokenizing train set:  78%|███████▊  | 82000/105668 [00:14<00:04, 5409.34 examples/s]Tokenizing train set:  79%|███████▊  | 83014/105668 [00:14<00:03, 6301.06 examples/s]Tokenizing train set:  79%|███████▉  | 84000/105668 [00:15<00:04, 5109.77 examples/s]Tokenizing train set:  80%|████████  | 85012/105668 [00:15<00:03, 6011.72 examples/s]Tokenizing train set:  81%|████████  | 85792/105668 [00:15<00:03, 5169.14 examples/s]Tokenizing train set:  82%|████████▏ | 86935/105668 [00:15<00:02, 6364.34 examples/s]Tokenizing train set:  83%|████████▎ | 87990/105668 [00:15<00:02, 7262.42 examples/s]Tokenizing train set:  84%|████████▍ | 89000/105668 [00:15<00:03, 5328.71 examples/s]Tokenizing train set:  85%|████████▌ | 90105/105668 [00:16<00:02, 6379.20 examples/s]Tokenizing train set:  86%|████████▌ | 91000/105668 [00:16<00:02, 5123.63 examples/s]Tokenizing train set:  87%|████████▋ | 92020/105668 [00:16<00:02, 6039.12 examples/s]Tokenizing train set:  88%|████████▊ | 92881/105668 [00:16<00:02, 5241.93 examples/s]Tokenizing train set:  89%|████████▉ | 93930/105668 [00:16<00:01, 6235.96 examples/s]Tokenizing train set:  90%|████████▉ | 94973/105668 [00:16<00:01, 7128.83 examples/s]Tokenizing train set:  91%|█████████ | 96000/105668 [00:17<00:01, 5298.24 examples/s]Tokenizing train set:  92%|█████████▏| 97140/105668 [00:17<00:01, 6417.00 examples/s]Tokenizing train set:  93%|█████████▎| 98000/105668 [00:17<00:01, 5122.53 examples/s]Tokenizing train set:  95%|█████████▍| 99970/105668 [00:17<00:01, 5505.28 examples/s]Tokenizing train set:  96%|█████████▌| 100994/105668 [00:17<00:00, 6239.21 examples/s]Tokenizing train set:  97%|█████████▋| 102000/105668 [00:18<00:00, 6455.48 examples/s]Tokenizing train set:  97%|█████████▋| 103000/105668 [00:18<00:00, 5422.27 examples/s]Tokenizing train set:  98%|█████████▊| 104000/105668 [00:18<00:00, 6208.12 examples/s]Tokenizing train set:  99%|█████████▉| 104754/105668 [00:18<00:00, 5218.69 examples/s]Tokenizing train set: 100%|██████████| 105668/105668 [00:18<00:00, 5656.80 examples/s]Tokenizing train set: 100%|██████████| 105668/105668 [00:18<00:00, 5626.28 examples/s]
+Tokenizing val set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing val set:   3%|▎         | 686/22363 [00:00<00:06, 3133.37 examples/s]Tokenizing val set:   8%|▊         | 1754/22363 [00:00<00:03, 5741.22 examples/s]Tokenizing val set:  12%|█▏        | 2758/22363 [00:00<00:02, 6991.43 examples/s]Tokenizing val set:  17%|█▋        | 3889/22363 [00:00<00:03, 5182.27 examples/s]Tokenizing val set:  21%|██▏       | 4786/22363 [00:00<00:02, 5947.90 examples/s]Tokenizing val set:  27%|██▋       | 6000/22363 [00:01<00:03, 4761.21 examples/s]Tokenizing val set:  31%|███▏      | 7000/22363 [00:01<00:02, 5643.88 examples/s]Tokenizing val set:  36%|███▌      | 8000/22363 [00:01<00:03, 4748.10 examples/s]Tokenizing val set:  40%|████      | 9000/22363 [00:01<00:02, 5614.51 examples/s]Tokenizing val set:  45%|████▍     | 10000/22363 [00:01<00:02, 4852.23 examples/s]Tokenizing val set:  49%|████▉     | 11000/22363 [00:02<00:01, 5698.77 examples/s]Tokenizing val set:  53%|█████▎    | 11932/22363 [00:02<00:02, 5089.76 examples/s]Tokenizing val set:  58%|█████▊    | 12882/22363 [00:02<00:01, 5897.31 examples/s]Tokenizing val set:  62%|██████▏   | 13820/22363 [00:02<00:01, 6619.41 examples/s]Tokenizing val set:  67%|██████▋   | 15000/22363 [00:02<00:01, 5170.02 examples/s]Tokenizing val set:  72%|███████▏  | 16013/22363 [00:02<00:01, 6052.21 examples/s]Tokenizing val set:  76%|███████▌  | 17000/22363 [00:03<00:01, 5170.42 examples/s]Tokenizing val set:  81%|████████  | 18075/22363 [00:03<00:00, 6173.42 examples/s]Tokenizing val set:  86%|████████▌ | 19137/22363 [00:03<00:00, 7081.73 examples/s]Tokenizing val set:  89%|████████▉ | 20000/22363 [00:03<00:00, 5577.45 examples/s]Tokenizing val set:  94%|█████████▍| 21108/22363 [00:03<00:00, 6650.16 examples/s]Tokenizing val set:  98%|█████████▊| 22000/22363 [00:03<00:00, 5423.59 examples/s]Tokenizing val set: 100%|██████████| 22363/22363 [00:03<00:00, 5607.23 examples/s]
+Tokenizing test set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing test set:   3%|▎         | 572/22363 [00:00<00:08, 2503.50 examples/s]Tokenizing test set:   8%|▊         | 1781/22363 [00:00<00:03, 5752.77 examples/s]Tokenizing test set:  12%|█▏        | 2793/22363 [00:00<00:02, 7111.60 examples/s]Tokenizing test set:  17%|█▋        | 3838/22363 [00:00<00:03, 5278.15 examples/s]Tokenizing test set:  21%|██▏       | 4793/22363 [00:00<00:02, 6207.68 examples/s]Tokenizing test set:  27%|██▋       | 6000/22363 [00:01<00:03, 5052.19 examples/s]Tokenizing test set:  31%|███▏      | 7000/22363 [00:01<00:02, 5980.26 examples/s]Tokenizing test set:  36%|███▌      | 8000/22363 [00:01<00:02, 5006.47 examples/s]Tokenizing test set:  40%|████      | 9002/22363 [00:01<00:02, 5914.37 examples/s]Tokenizing test set:  45%|████▍     | 9970/22363 [00:01<00:02, 5307.95 examples/s]Tokenizing test set:  49%|████▉     | 10949/22363 [00:01<00:01, 6154.49 examples/s]Tokenizing test set:  53%|█████▎    | 11951/22363 [00:02<00:01, 6974.83 examples/s]Tokenizing test set:  58%|█████▊    | 13000/22363 [00:02<00:01, 5223.84 examples/s]Tokenizing test set:  63%|██████▎   | 14015/22363 [00:02<00:01, 6119.82 examples/s]Tokenizing test set:  67%|██████▋   | 15000/22363 [00:02<00:01, 5046.57 examples/s]Tokenizing test set:  72%|███████▏  | 16000/22363 [00:02<00:01, 5912.67 examples/s]Tokenizing test set:  76%|███████▌  | 17000/22363 [00:02<00:00, 6734.96 examples/s]Tokenizing test set:  80%|████████  | 17943/22363 [00:03<00:00, 5834.38 examples/s]Tokenizing test set:  85%|████████▍ | 18956/22363 [00:03<00:00, 6704.58 examples/s]Tokenizing test set:  89%|████████▉ | 20000/22363 [00:03<00:00, 5189.99 examples/s]Tokenizing test set:  94%|█████████▍| 21004/22363 [00:03<00:00, 6066.26 examples/s]Tokenizing test set:  98%|█████████▊| 22000/22363 [00:03<00:00, 5013.74 examples/s]Tokenizing test set: 100%|██████████| 22363/22363 [00:03<00:00, 5643.58 examples/s]
+INFO:root:DIFF_GRM(
+  (embedding): Embedding(1027, 256)
+  (item_mlp): Sequential(
+    (0): Linear(in_features=1024, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mask_emb_table): Embedding(4, 256)
+  (pos_emb_enc): Embedding(50, 256)
+  (encoder_blocks): ModuleList(
+    (0): EncoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (decoder_blocks): ModuleList(
+    (0-3): 4 x DecoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (self_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (cross_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_3): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (output_adapter): Identity()
+  (drop): Dropout(p=0.1, inplace=False)
+  (joint_alignment): JointCrossPSEAlignment(
+    (mixer): CrossPSECodebookMixer(
+      (input_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (attention): MultiheadAttention(
+        (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+      )
+    )
+  )
+  (joint_sequence_adapter): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+)
+INFO:root:5,832,576
+[MODEL] ▶ GUIDED: steps=4, metric=msp, select=least, augment_factor=4
+[DIFF_GRM] Using shared embedding dot-product output layer
+[JOINT] Loaded pretrained Cross-PSE recommender from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_training/goal_20261020_long_mixer_v1/delivery/restore_check_cpu_r1/goal_20261020_long_mixer_v1/inputs/external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_19-01-02/pytorch_model.bin
+[JOINT] Cross-PSE DIGER-ST enabled: hard forward, soft backward, alternating parameter updates; assignment_temperature=0.1
+{
+  "status": "FORMAL_FULL_BACKUP_CPU_RESTORE_PASS",
+  "campaign_id": "goal_20261020_long_mixer_v1",
+  "utc": "2026-10-20T07:52:56.904280+00:00",
+  "byte_verification_sha256": "cdc76fa608e3dcbdf85a4389301b3679857d8bf5db6192cb9466272065125044",
+  "manifest_sha256": "14bc3502ee5a207dd64ccf29657099080e982650418d1f9016e9ca633c4b1ce8",
+  "restorer_sha256": "f2d90ce373e6051dfaee8b8d89e0f795513668ae2551310fa60101a59ef659b5",
+  "model_source": "verified_backup/code",
+  "engine_source": "verified_backup/engine",
+  "all_14_inputs_copied_from_verified_backup": true,
+  "checkpoints": [
+    {
+      "arm": "no_mixer_frozen",
+      "checkpoint": "last.pt",
+      "sha256": "985a89a147b64310bc095907acd245150cbb4fdfef6fd0bfca4b903bfce5ba37",
+      "model_tensor_sha256": "a2a0752d33372fd35a2fd13aa919a292e28333e961f0ccd31ae5a00105d62e68",
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "no_mixer_frozen",
+      "checkpoint": "best.pt",
+      "sha256": "7a7f68b902a2b8fc6b6f5724065efcd69be1f4fa4122d9c277868ec7ca486a83",
+      "model_tensor_sha256": "49cfc08c327bf643f0ced4e10f4f952824e62fe6e741ca189192c233ae9e183e",
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "no_mixer_joint",
+      "checkpoint": "last.pt",
+      "sha256": "c155399a5c8d4343aaf070ba667784af1590a7324cc2882cf49277564c17bfa1",
+      "model_tensor_sha256": "44e3fc7c3533cce6084779777c249b2a330f7cfcf57fa938fa5c4369e33a5964",
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 60,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "no_mixer_joint",
+      "checkpoint": "best.pt",
+      "sha256": "3e2f4038b20b5ae21e3290e8096cd96acd96a58a9b1aba4031d9da42e154b95b",
+      "model_tensor_sha256": "d58eab26e853e84557b1a22b2f60a947c59de7635f14291702f1478d558bdca6",
+      "decoder_epochs": 10,
+      "decoder_updates": 1040,
+      "tokenizer_updates": 12,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "f46145842ebc36a9ea8179a1afcd85f3e2881d703e853f822f596c5ab4347a09",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "mixer_frozen",
+      "checkpoint": "last.pt",
+      "sha256": "f653b74d315c857c6d871f9ae741f5964c56464d693b32d2ec38cf8f22143fb4",
+      "model_tensor_sha256": "a2a0752d33372fd35a2fd13aa919a292e28333e961f0ccd31ae5a00105d62e68",
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "mixer_frozen",
+      "checkpoint": "best.pt",
+      "sha256": "0ba48df58e3eb6786afe8221877752512328c9898c18ca1668e1773531943a69",
+      "model_tensor_sha256": "49cfc08c327bf643f0ced4e10f4f952824e62fe6e741ca189192c233ae9e183e",
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 0,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "mixer_joint",
+      "checkpoint": "last.pt",
+      "sha256": "a715d0c6d767366711e6f5da1071beb570db33c72509e6fcdb346b0934215fe3",
+      "model_tensor_sha256": "849230c1e7e920863310d4a918f7f48ab6d4ea8fd88cddc9766f03db1d199dc2",
+      "decoder_epochs": 35,
+      "decoder_updates": 3640,
+      "tokenizer_updates": 60,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "5db12915790db7ae30ecdf10480f169980fc80627389fc7fb6d2b3b6295bc5f1",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    },
+    {
+      "arm": "mixer_joint",
+      "checkpoint": "best.pt",
+      "sha256": "07757b55a958af5ee59b9c84523e76848f0c4f297f01c865abbb646d59c688b8",
+      "model_tensor_sha256": "190d8ab93ac166c2fe82ef2d95723b52b326b6c92288b21251ac2820d06f49f4",
+      "decoder_epochs": 15,
+      "decoder_updates": 1560,
+      "tokenizer_updates": 24,
+      "strict_model_optimizer_scheduler_restore": true,
+      "python_numpy_cpu_rng_restored": true,
+      "cuda_rng_bytes_preserved_sha256": "79e276fe245a4a914c5770e4527fe13f23fc27ef0fb6e6f24b822a5c081df8de",
+      "official_SID_restored": true,
+      "nonpersistent_E0_anchor_restored": true
+    }
+  ],
+  "original_checkpoints_unchanged": true,
+  "execution_backend": "cpu",
+  "cuda_execution_verified_here": false,
+  "goal_complete": false
+}

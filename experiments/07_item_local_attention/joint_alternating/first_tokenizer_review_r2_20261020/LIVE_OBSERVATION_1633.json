@@ -1,0 +1,131 @@
+{
+  "observed_utc": "2026-10-20T08:33:00.018987+00:00",
+  "control/initial_state_identity.json": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "resume_requested": false,
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+    "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+  },
+  "control/evaluation_timings.json": [
+    {
+      "split": "val",
+      "epoch": 0,
+      "seconds": 240.88734285899955,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 5,
+      "seconds": 247.05411133300004,
+      "attempt": "20261020T080638_175231Z"
+    }
+  ],
+  "control/phase_integrity.json": {
+    "phase_count": 7,
+    "last_phase": {
+      "epoch": 7,
+      "phase": "recommender",
+      "optimizer_updates": 104,
+      "direct_recommendation_gradient_norm": null,
+      "active_parameter_tensors": 84,
+      "changed_parameter_tensors": 84,
+      "frozen_parameter_tensors": 13,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d160284af7b7b952f1403e7569b655d151ec09c3926915cce29644f293b029ae",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": false,
+        "SID_change_required": false
+      }
+    },
+    "last_tokenizer_phase": {
+      "epoch": 6,
+      "phase": "tokenizer",
+      "optimizer_updates": 6,
+      "direct_recommendation_gradient_norm": 0.3288477063179016,
+      "active_parameter_tensors": 1,
+      "changed_parameter_tensors": 1,
+      "frozen_parameter_tensors": 96,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d160284af7b7b952f1403e7569b655d151ec09c3926915cce29644f293b029ae",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": true,
+        "SID_change_required": false
+      }
+    }
+  },
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_order_metrics.csv": [
+    "7,train,ocn_noising_hard_to_easy,4,1,23895,0.22613279327705643,,,",
+    "7,train,ocn_noising_hard_to_easy,4,2,34978,0.3310179051368437,,,",
+    "7,train,ocn_noising_hard_to_easy,4,3,33137,0.31359541204527386,,,"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_training_metrics.csv": [
+    "5,3.4761856084297125,0.000832,0.0009998999018714263,104,520",
+    "6,7.194391732414563,0.0009998999018714263,0.0009998999018714263,6,520",
+    "7,3.4445274509760138,0.0009998999018714263,0.0009961570324603618,104,624"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_position_metrics.csv": [
+    "7,train,ocn_masked_views,1,3.772429223108668,3.002862686081546,0.5415268882100448,0.3685395838812317,269971,422672,0.6387245902259908",
+    "7,train,ocn_masked_views,2,3.9534910520504956,3.2533108685914214,0.5866919320733762,0.3181198649767531,235515,422672,0.557205114131052",
+    "7,train,ocn_masked_views,3,3.871102692478243,3.142160424362025,0.5666474077380818,0.3408643774672066,235337,422672,0.5567839837983117"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv": [
+    "5,val,recall@10,0.06582301122389661",
+    "5,val,hit_rate@10,0.06582301122389661",
+    "5,val,weighted_score,0.049091010690081906"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_joint_metrics.csv": [
+    "5,recommender,3.4761856084297125,3.4761856084297125,,,,,0.5713526010513306,104,0.5713526606559753,0.0,,,,,,,,,",
+    "6,tokenizer,7.194391732414563,6.591661791006724,0.0,0.6013181662807862,0.14117807351673642,1.714235603837248e-06,0.1135111153125763,6,0.0,0.1135111153125763,0.3288477063179016,3.4122013797362647,0.2917309844245513,1.0,0.9949942131827237,0.00016527560364920646,0.0006611024145968258,10650,0.17965457400214857",
+    "7,recommender,3.4445274509760138,3.4445274509760138,,,,,0.4878855049610138,104,0.487885445356369,0.0,,,,,,,,,"
+  ],
+  "control/training_state/epoch_timings.json": [
+    {
+      "epoch": 6,
+      "batches": 96,
+      "seconds": 9.476241348998883
+    },
+    {
+      "epoch": 7,
+      "batches": 1652,
+      "seconds": 166.56700743699912
+    }
+  ],
+  "delivery/formal_control_attempt1/receipt.json": {
+    "mode": "formal",
+    "variant": "control",
+    "status": "running",
+    "started_utc": "2026-10-20T08:06:23.504150+00:00",
+    "deadline_unix": 1792493933.5040815,
+    "error": null,
+    "stop_reason": null,
+    "children": [
+      {
+        "variant": "control",
+        "status": "running",
+        "returncode": null,
+        "started_utc": "2026-10-20T08:06:33.776747+00:00"
+      }
+    ]
+  },
+  "delivery/formal_control_attempt1/console_tail": [
+    "[control] Training recommender - [Epoch 8]:   0%|          | 7/1652 [00:00<03:06,  8.82it/s]",
+    "[control] Training recommender - [Epoch 8]:   0%|          | 8/1652 [00:00<03:00,  9.09it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 10/1652 [00:01<02:46,  9.88it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 11/1652 [00:01<02:47,  9.78it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 13/1652 [00:01<02:41, 10.17it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 14/1652 [00:01<02:42, 10.09it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 16/1652 [00:01<02:43,  9.99it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 18/1652 [00:01<02:39, 10.21it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|          | 20/1652 [00:02<02:36, 10.42it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|▏         | 22/1652 [00:02<02:35, 10.45it/s]",
+    "[control] Training recommender - [Epoch 8]:   1%|▏         | 24/1652 [00:02<02:40, 10.17it/s]",
+    "[control] Training recommender - [Epoch 8]:   2%|▏         | 26/1652 [00:02<02:41, 10.09it/s]"
+  ]
+}

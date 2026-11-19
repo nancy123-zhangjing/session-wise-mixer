@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/early_a_test_audit.py", line 240, in <module>
+    main()
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/early_a_test_audit.py", line 165, in main
+    validation, tests, best = helper.verify_runtime(ctx, 'A')
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/experiments/09_kuairec_listwise/h_freeze35_20261029/analyze_results.py", line 261, in verify_runtime
+    for epoch in (20, 23, 26): validation[epoch] = ctx.reference(branch, epoch, 'validation')
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/early_a_test_audit.py", line 153, in reference
+    return self.point(branch, epoch, split, record, reference=True)
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/early_a_test_audit.py", line 158, in point
+    value = super().point(branch, epoch, split, record, **kwargs)
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/experiments/09_kuairec_listwise/h_freeze35_20261029/analyze_results.py", line 191, in point
+    meta = read(paths['summary']); validate_metadata(meta, branch, epoch, split)
+  File "/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/h_freeze35_20261029_cpu_analysis_code_r1/experiments/09_kuairec_listwise/h_freeze35_20261029/analyze_results.py", line 116, in validate_metadata
+    raise ValueError('Wrong item-ranking/aggregation or source-group protocol')
+ValueError: Wrong item-ranking/aggregation or source-group protocol

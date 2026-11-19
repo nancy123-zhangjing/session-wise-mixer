@@ -1,0 +1,21 @@
+2c255470cdd58b2c13dd50fb130aa750f1609306720081ab0e3cd33050cb2831  /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/delivery/formal_branch_acceptance.py
+871e480d2a77d7e22bfed091d02065f0cdc42eb1db42cf20d43519634959e80a  /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage09/goal_20261027_r1/delivery/FORMAL_BRANCH_BINDING.json
+usage: formal_branch_acceptance.py [-h] --architecture {J,H} --manifest-sha256
+                                   MANIFEST_SHA256 [--arm {J0,J1,H0,H1}]
+                                   [--accepted-warmup-sha256 ACCEPTED_WARMUP_SHA256]
+                                   {warmup,ready,pair}
+
+CPU-only, read-only Stage09 warmup / branch-initial acceptance. Print receipts
+to stdout; the caller may save them. No platform calls or model forward
+passes. Only trusted checkpoints under the owned Goal root are loaded.
+
+positional arguments:
+  {warmup,ready,pair}
+
+options:
+  -h, --help            show this help message and exit
+  --architecture {J,H}
+  --manifest-sha256 MANIFEST_SHA256
+  --arm {J0,J1,H0,H1}
+  --accepted-warmup-sha256 ACCEPTED_WARMUP_SHA256
+OK

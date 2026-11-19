@@ -1,0 +1,149 @@
+{
+  "observed_utc": "2026-10-20T09:21:31.819545+00:00",
+  "control/initial_state_identity.json": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "resume_requested": false,
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+    "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+  },
+  "control/evaluation_timings.json": [
+    {
+      "split": "val",
+      "epoch": 0,
+      "seconds": 240.88734285899955,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 5,
+      "seconds": 247.05411133300004,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 12,
+      "seconds": 244.54038810699785,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 19,
+      "seconds": 214.75883692999923,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 25,
+      "seconds": 250.53571753000142,
+      "attempt": "20261020T080638_175231Z"
+    }
+  ],
+  "control/phase_integrity.json": {
+    "phase_count": 26,
+    "last_phase": {
+      "epoch": 26,
+      "phase": "tokenizer",
+      "optimizer_updates": 6,
+      "direct_recommendation_gradient_norm": 0.2938753068447113,
+      "active_parameter_tensors": 1,
+      "changed_parameter_tensors": 1,
+      "frozen_parameter_tensors": 96,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d8bc2f5fd5594683f1c5a8877ec06d007035feb456ad99e5082177dbd052d76c",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": true,
+        "SID_change_required": false
+      }
+    },
+    "last_tokenizer_phase": {
+      "epoch": 26,
+      "phase": "tokenizer",
+      "optimizer_updates": 6,
+      "direct_recommendation_gradient_norm": 0.2938753068447113,
+      "active_parameter_tensors": 1,
+      "changed_parameter_tensors": 1,
+      "frozen_parameter_tensors": 96,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d8bc2f5fd5594683f1c5a8877ec06d007035feb456ad99e5082177dbd052d76c",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": true,
+        "SID_change_required": false
+      }
+    }
+  },
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_order_metrics.csv": [
+    "25,val,cpd_greedy_decode_easy_to_hard,4,1,5642,0.25229173187854936,0.5866391298231378,0.007089684509039348,7.402841282912716",
+    "25,val,cpd_greedy_decode_easy_to_hard,4,2,6544,0.29262621294101865,0.5409854142084116,0.008099022004889975,7.280036146845896",
+    "25,val,cpd_greedy_decode_easy_to_hard,4,3,5868,0.26239771050395744,0.44513318874513264,0.008861622358554875,7.195422154658899"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_training_metrics.csv": [
+    "24,3.098214159000295,0.0005984036334571353,0.0005469545490250753,104,1976",
+    "25,3.0777807114487987,0.0005469545490250753,0.0004949975473871884,104,2080",
+    "26,7.258904755115509,0.0004949975473871884,0.0004949975473871884,6,2080"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_position_metrics.csv": [
+    "25,val,fully_masked,1,5.5735170132134195,5.508352265078432,0.9933590620372678,0.011447480212851585,22363,22363,1.0",
+    "25,val,fully_masked,2,5.564329562319181,5.493799610118323,0.9907346816444281,0.011671063810758843,22363,22363,1.0",
+    "25,val,fully_masked,3,5.553585826756249,5.48078033467053,0.9883868261288657,0.011939364128247552,22363,22363,1.0"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv": [
+    "25,val,recall@10,0.06904261503376112",
+    "25,val,hit_rate@10,0.06904261503376112",
+    "25,val,weighted_score,0.05247399556222619"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_joint_metrics.csv": [
+    "24,recommender,3.098214159000295,3.098214159000295,,,,,0.5301411747932434,104,0.5301411151885986,0.0,,,,,,,,,",
+    "25,recommender,3.0777807114487987,3.0777807114487987,,,,,0.47360751032829285,104,0.47360745072364807,0.0,,,,,,,,,",
+    "26,tokenizer,7.258904755115509,6.656055053075154,0.0,0.6014255204548439,0.14241673812891045,1.6448223997637494e-06,0.09052640944719315,6,0.0,0.09052640944719315,0.2938753068447113,4.791839674115181,0.09347600753729542,1.0,0.5479980253019258,6.197835318744183e-05,0.0002479134127497673,10650,0.17957193620361953"
+  ],
+  "control/training_state/epoch_timings.json": [
+    {
+      "epoch": 25,
+      "batches": 1652,
+      "seconds": 157.77707339600238
+    },
+    {
+      "epoch": 26,
+      "batches": 96,
+      "seconds": 7.75782557400089
+    }
+  ],
+  "delivery/formal_control_attempt1/receipt.json": {
+    "mode": "formal",
+    "variant": "control",
+    "status": "running",
+    "started_utc": "2026-10-20T08:06:23.504150+00:00",
+    "deadline_unix": 1792493933.5040815,
+    "error": null,
+    "stop_reason": null,
+    "children": [
+      {
+        "variant": "control",
+        "status": "running",
+        "returncode": null,
+        "started_utc": "2026-10-20T08:06:33.776747+00:00"
+      }
+    ]
+  },
+  "delivery/formal_control_attempt1/console_tail": [
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 229/1652 [00:20<02:02, 11.63it/s]",
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 231/1652 [00:20<02:01, 11.67it/s]",
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 233/1652 [00:20<01:58, 11.93it/s]",
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 235/1652 [00:20<01:58, 11.94it/s]",
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 237/1652 [00:20<01:58, 11.98it/s]",
+    "[control] Training recommender - [Epoch 27]:  14%|█▍        | 239/1652 [00:21<01:58, 11.89it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▍        | 241/1652 [00:21<01:59, 11.77it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▍        | 243/1652 [00:21<02:04, 11.27it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▍        | 245/1652 [00:21<02:06, 11.12it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▍        | 247/1652 [00:21<02:02, 11.50it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▌        | 249/1652 [00:22<02:04, 11.26it/s]",
+    "[control] Training recommender - [Epoch 27]:  15%|█▌        | 251/1652 [00:22<02:04, 11.29it/s]"
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "observed_utc": "2026-10-20T10:18:17.041264+00:00",
+  "control/initial_state_identity.json": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "resume_requested": false,
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+    "scope": "fresh shared warm-start state before fit; excludes only optional recommender-side local parameters"
+  },
+  "control/FIT_COMPLETE.json": {
+    "best_epoch": 25,
+    "best_val_score": 0.05247399556222619,
+    "completed_epochs": 45,
+    "training_stop_reason": "max_epochs",
+    "joint_progress": {
+      "boundary_phase": "recommender",
+      "last_committed_phase": "recommender",
+      "next_phase": "recommender",
+      "next_phase_index": 10,
+      "tokenizer_epochs_completed": 10,
+      "tokenizer_optimizer_updates": 60,
+      "sid_refresh_count": 10,
+      "last_refresh_stats": {
+        "digit_change_rate": 0.00010329725046176463,
+        "item_change_rate": 0.00041318900184705853,
+        "unique_semantic_ids": 10652,
+        "collision_rate": 0.17924138500950335
+      },
+      "initial_validation_complete": true
+    },
+    "cumulative_recommender_optimizer_updates": 3640,
+    "training_state_sha256": "4b20f1e9399043583b140f71496ee09c644e88dba52a3b673464e8ea637ec156"
+  },
+  "control/COMPLETE.json": {
+    "mode": "formal",
+    "status": "formal_completed",
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "run_id": "stage07_item_local_joint_control_seed2024_20261020_r1",
+    "completed_utc": "2026-10-20T10:17:12.212993+00:00",
+    "result_file": "results.json",
+    "result_sha256": "3b90d6877aed1c05e92f5cc9f2c5161ba93419e5aca46d3ae190208c4153c2bf",
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f"
+  },
+  "control/TEST_STARTED.json": {
+    "utc": "2026-10-20T10:11:28.462787+00:00",
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+    "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1"
+  },
+  "control/TEST_RESULT.json": {
+    "test_results": {
+      "legal_ratio": 1,
+      "duplicate_ratio": 0.1688185503928841,
+      "dup@10": 0.0020882708452332455,
+      "duplicate@10": 0.0020882708452332455,
+      "legal@10": 1,
+      "ndcg@5": 0.03809946608054043,
+      "ndcg@10": 0.04636611616718627,
+      "recall@5": 0.05446496445020793,
+      "hit_rate@5": 0.05446496445020793,
+      "recall@10": 0.0801323614899611,
+      "hit_rate@10": 0.0801323614899611,
+      "weighted_score": 0.053119365875683555
+    },
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+    "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+    "diagnostic_snapshots": [
+      {
+        "attribute": "position_metrics_csv",
+        "original_relative_path": "diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_position_metrics.csv",
+        "snapshot_relative_path": "post_test_diagnostics/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_position_metrics.csv",
+        "sha256": "5e05e1c5b5917037be17e10f4e207b2eb577f79892f133cdbb27012a543c172c",
+        "size_bytes": 23403
+      },
+      {
+        "attribute": "order_metrics_csv",
+        "original_relative_path": "diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_order_metrics.csv",
+        "snapshot_relative_path": "post_test_diagnostics/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_order_metrics.csv",
+        "sha256": "85f217610e78e785453a13d3d85bfeb3f4a1fd45e1488cb647471eb8c6924e30",
+        "size_bytes": 55885
+      },
+      {
+        "attribute": "training_metrics_csv",
+        "original_relative_path": "diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_training_metrics.csv",
+        "snapshot_relative_path": "post_test_diagnostics/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_training_metrics.csv",
+        "sha256": "8324947ba21d084df44fbcd8f4633895f04c606c6ebad9238a3645f95893a0df",
+        "size_bytes": 3302
+      },
+      {
+        "attribute": "evaluation_metrics_csv",
+        "original_relative_path": "diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv",
+        "snapshot_relative_path": "post_test_diagnostics/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv",
+        "sha256": "b62d246c832b91800d0cb13c81cd8ad079115b41097afde4dc9c038aa5c94eda",
+        "size_bytes": 4106
+      },
+      {
+        "attribute": "joint_metrics_csv",
+        "original_relative_path": "diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_joint_metrics.csv",
+        "snapshot_relative_path": "post_test_diagnostics/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_joint_metrics.csv",
+        "sha256": "0df5dc043cf32bd8af4de7239f7558b050fe25bf4b621a54afec9200d6f038c7",
+        "size_bytes": 7424
+      }
+    ],
+    "started_receipt_sha256": "db6ac28682ca3f4533ce66a72b8de1dd0daded1db9aca156e02a9d396ceea845",
+    "completed_utc": "2026-10-20T10:17:10.954929+00:00"
+  },
+  "control/results.json": {
+    "campaign_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "protocol_id": "stage07_item_local_alternating_joint_seed2024_20261020_r1",
+    "variant": "control",
+    "run_id": "stage07_item_local_joint_control_seed2024_20261020_r1",
+    "evaluation_level": "sid",
+    "checkpoint_sha256": "55960f52906b0c4972a90b0ad06c078ef12fceac10fa4400b113e41d9a5c1f5f",
+    "selected_SID_sha256": "a5483ad7d06a0076e035e5746f5c5d85ecc92eac511fa05e87ab91c257c1d0c1",
+    "initial_base_state_sha256": "80480740a6050c4d34a09aa4ff426da7b215b48afe20ddc6bae88d20a542da88",
+    "initial_rng_sha256": "c918c8f300c1d9e8e5157a2a6dc7b3c336fe9d2e19ce4e30306037362d89206f",
+    "fit": {
+      "best_epoch": 25,
+      "best_val_score": 0.05247399556222619,
+      "completed_epochs": 45,
+      "training_stop_reason": "max_epochs",
+      "joint_progress": {
+        "boundary_phase": "recommender",
+        "last_committed_phase": "recommender",
+        "next_phase": "recommender",
+        "next_phase_index": 10,
+        "tokenizer_epochs_completed": 10,
+        "tokenizer_optimizer_updates": 60,
+        "sid_refresh_count": 10,
+        "last_refresh_stats": {
+          "digit_change_rate": 0.00010329725046176463,
+          "item_change_rate": 0.00041318900184705853,
+          "unique_semantic_ids": 10652,
+          "collision_rate": 0.17924138500950335
+        },
+        "initial_validation_complete": true
+      },
+      "cumulative_recommender_optimizer_updates": 3640,
+      "training_state_sha256": "4b20f1e9399043583b140f71496ee09c644e88dba52a3b673464e8ea637ec156"
+    },
+    "training_integrity": {
+      "status": "passed",
+      "phase_records_sha256": "75dee1286cc1ee4fcfca3876263a59ec0f1bd043b2f8b99b87545f9212271d82",
+      "optimizer": {
+        "status": "passed",
+        "recommender_optimizer_updates": 3640,
+        "tokenizer_optimizer_updates": 60,
+        "covered_parameter_names": [
+          "embedding.weight",
+          "item_mlp.0.weight",
+          "item_mlp.0.bias",
+          "item_mlp.2.weight",
+          "item_mlp.2.bias",
+          "mask_emb_table.weight",
+          "pos_emb_enc.weight",
+          "encoder_blocks.0.ln_1.weight",
+          "encoder_blocks.0.ln_1.bias",
+          "encoder_blocks.0.attn.qkv.weight",
+          "encoder_blocks.0.attn.proj.weight",
+          "encoder_blocks.0.attn.proj.bias",
+          "encoder_blocks.0.ln_2.weight",
+          "encoder_blocks.0.ln_2.bias",
+          "encoder_blocks.0.mlp.c_fc.weight",
+          "encoder_blocks.0.mlp.c_fc.bias",
+          "encoder_blocks.0.mlp.c_proj.weight",
+          "encoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.0.ln_1.weight",
+          "decoder_blocks.0.ln_1.bias",
+          "decoder_blocks.0.self_attn.qkv.weight",
+          "decoder_blocks.0.self_attn.proj.weight",
+          "decoder_blocks.0.self_attn.proj.bias",
+          "decoder_blocks.0.ln_2.weight",
+          "decoder_blocks.0.ln_2.bias",
+          "decoder_blocks.0.cross_attn.qkv.weight",
+          "decoder_blocks.0.cross_attn.proj.weight",
+          "decoder_blocks.0.cross_attn.proj.bias",
+          "decoder_blocks.0.ln_3.weight",
+          "decoder_blocks.0.ln_3.bias",
+          "decoder_blocks.0.mlp.c_fc.weight",
+          "decoder_blocks.0.mlp.c_fc.bias",
+          "decoder_blocks.0.mlp.c_proj.weight",
+          "decoder_blocks.0.mlp.c_proj.bias",
+          "decoder_blocks.1.ln_1.weight",
+          "decoder_blocks.1.ln_1.bias",
+          "decoder_blocks.1.self_attn.qkv.weight",
+          "decoder_blocks.1.self_attn.proj.weight",
+          "decoder_blocks.1.self_attn.proj.bias",
+          "decoder_blocks.1.ln_2.weight",
+          "decoder_blocks.1.ln_2.bias",
+          "decoder_blocks.1.cross_attn.qkv.weight",
+          "decoder_blocks.1.cross_attn.proj.weight",
+          "decoder_blocks.1.cross_attn.proj.bias",
+          "decoder_blocks.1.ln_3.weight",
+          "decoder_blocks.1.ln_3.bias",
+          "decoder_blocks.1.mlp.c_fc.weight",
+          "decoder_blocks.1.mlp.c_fc.bias",
+          "decoder_blocks.1.mlp.c_proj.weight",
+          "decoder_blocks.1.mlp.c_proj.bias",
+          "decoder_blocks.2.ln_1.weight",
+          "decoder_blocks.2.ln_1.bias",
+          "decoder_blocks.2.self_attn.qkv.weight",
+          "decoder_blocks.2.self_attn.proj.weight",
+          "decoder_blocks.2.self_attn.proj.bias",
+          "decoder_blocks.2.ln_2.weight",
+          "decoder_blocks.2.ln_2.bias",
+          "decoder_blocks.2.cross_attn.qkv.weight",
+          "decoder_blocks.2.cross_attn.proj.weight",
+          "decoder_blocks.2.cross_attn.proj.bias",
+          "decoder_blocks.2.ln_3.weight",
+          "decoder_blocks.2.ln_3.bias",
+          "decoder_blocks.2.mlp.c_fc.weight",
+          "decoder_blocks.2.mlp.c_fc.bias",
+          "decoder_blocks.2.mlp.c_proj.weight",
+          "decoder_blocks.2.mlp.c_proj.bias",
+          "decoder_blocks.3.ln_1.weight",
+          "decoder_blocks.3.ln_1.bias",
+          "decoder_blocks.3.self_attn.qkv.weight",
+          "decoder_blocks.3.self_attn.proj.weight",
+          "decoder_blocks.3.self_attn.proj.bias",
+          "decoder_blocks.3.ln_2.weight",
+          "decoder_blocks.3.ln_2.bias",
+          "decoder_blocks.3.cross_attn.qkv.weight",
+          "decoder_blocks.3.cross_attn.proj.weight",
+          "decoder_blocks.3.cross_attn.proj.bias",
+          "decoder_blocks.3.ln_3.weight",
+          "decoder_blocks.3.ln_3.bias",
+          "decoder_blocks.3.mlp.c_fc.weight",
+          "decoder_blocks.3.mlp.c_fc.bias",
+          "decoder_blocks.3.mlp.c_proj.weight",
+          "decoder_blocks.3.mlp.c_proj.bias",
+          "ln_f.weight",
+          "ln_f.bias",
+          "joint_alignment.mixer.base_codebooks"
+        ],
+        "legitimate_inactive_SIA_parameters": [
+          "joint_sequence_adapter.0.weight",
+          "joint_sequence_adapter.0.bias",
+          "joint_sequence_adapter.2.weight",
+          "joint_sequence_adapter.2.bias"
+        ],
+        "optimizer_state_count": 85,
+        "all_active_optimizer_steps_match": true
+      },
+      "global_codebook_mixer_enabled": false,
+      "local_block_parameter_side": "recommender"
+    },
+    "primary_comparison": "Current joint control versus current joint item_local; campaign layer compares the two",
+    "historical_comparison_role": "Stage03/05 results are background only",
+    "limitations": "Single seed; SID-level evaluation; no significance claim; alternating updates, not simultaneous optimizer updates",
+    "status": "formal_completed",
+    "test_results": {
+      "legal_ratio": 1,
+      "duplicate_ratio": 0.1688185503928841,
+      "dup@10": 0.0020882708452332455,
+      "duplicate@10": 0.0020882708452332455,
+      "legal@10": 1,
+      "ndcg@5": 0.03809946608054043,
+      "ndcg@10": 0.04636611616718627,
+      "recall@5": 0.05446496445020793,
+      "hit_rate@5": 0.05446496445020793,
+      "recall@10": 0.0801323614899611,
+      "hit_rate@10": 0.0801323614899611,
+      "weighted_score": 0.053119365875683555
+    },
+    "test_data_evaluated": true,
+    "phase_integrity_sha256": "75dee1286cc1ee4fcfca3876263a59ec0f1bd043b2f8b99b87545f9212271d82",
+    "process_wall_seconds": 7685.0353137329985
+  },
+  "control/evaluation_timings.json": [
+    {
+      "split": "val",
+      "epoch": 0,
+      "seconds": 240.88734285899955,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 5,
+      "seconds": 247.05411133300004,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 12,
+      "seconds": 244.54038810699785,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 19,
+      "seconds": 214.75883692999923,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 25,
+      "seconds": 250.53571753000142,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 32,
+      "seconds": 218.16813612800252,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 39,
+      "seconds": 239.05132563400184,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "val",
+      "epoch": 45,
+      "seconds": 231.29775361200154,
+      "attempt": "20261020T080638_175231Z"
+    },
+    {
+      "split": "test",
+      "epoch": null,
+      "seconds": 342.18329784800153,
+      "attempt": "20261020T080638_175231Z"
+    }
+  ],
+  "control/phase_integrity.json": {
+    "phase_count": 45,
+    "last_phase": {
+      "epoch": 45,
+      "phase": "recommender",
+      "optimizer_updates": 104,
+      "direct_recommendation_gradient_norm": null,
+      "active_parameter_tensors": 84,
+      "changed_parameter_tensors": 84,
+      "frozen_parameter_tensors": 13,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d5b96c1c4d7c8de07bf4009b80762cccc3292c2502a0d8b67692d626aed2dd39",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": false,
+        "SID_change_required": false
+      }
+    },
+    "last_tokenizer_phase": {
+      "epoch": 42,
+      "phase": "tokenizer",
+      "optimizer_updates": 6,
+      "direct_recommendation_gradient_norm": 0.18683739006519318,
+      "active_parameter_tensors": 1,
+      "changed_parameter_tensors": 1,
+      "frozen_parameter_tensors": 96,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "SID_integrity": {
+        "hard_codes_sha256": "d5b96c1c4d7c8de07bf4009b80762cccc3292c2502a0d8b67692d626aed2dd39",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": true,
+        "SID_change_required": false
+      }
+    }
+  },
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_order_metrics.csv": [
+    "0,test,cpd_greedy_decode_easy_to_hard,4,1,5535,0.24750704288333408,0.573576077382739,0.006684733514001806,7.3892956886497725",
+    "0,test,cpd_greedy_decode_easy_to_hard,4,2,6251,0.27952421410365336,0.5316855036260996,0.007678771396576548,7.255382370598849",
+    "0,test,cpd_greedy_decode_easy_to_hard,4,3,6008,0.26865805124536063,0.4308254462933433,0.007989347536617843,7.1431836119137415"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_training_metrics.csv": [
+    "43,2.914463376450481,2.416352034768965e-05,1.0787956749784e-05,104,3432",
+    "44,2.912138830951571,1.0787956749784e-05,2.704302439128281e-06,104,3536",
+    "45,2.9104053190487638,2.704302439128281e-06,0.0,104,3640"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_position_metrics.csv": [
+    "0,test,fully_masked,1,5.590694354737545,5.526541594374091,0.9966392689337608,0.010597862540804007,22363,22363,1.0",
+    "0,test,fully_masked,2,5.58319556168845,5.514701415871655,0.9945040480826727,0.008675043598801592,22363,22363,1.0",
+    "0,test,fully_masked,3,5.573020127955785,5.502222507225882,0.9922536406303024,0.011849930689084649,22363,22363,1.0"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_evaluation_metrics.csv": [
+    "0,test,recall@10,0.0801323614899611",
+    "0,test,hit_rate@10,0.0801323614899611",
+    "0,test,weighted_score,0.053119365875683555"
+  ],
+  "control/diagnostics/AmazonReviews2014/DIFF_GRM/AmazonReviews2014_stage07_item_local_joint_control_seed2024_20261020_r1_joint_metrics.csv": [
+    "43,recommender,2.914463376450481,2.914463376450481,,,,,0.3683280348777771,104,0.3683280050754547,0.0,,,,,,,,,",
+    "44,recommender,2.912138830951571,2.912138830951571,,,,,0.5326618552207947,104,0.5326618552207947,0.0,,,,,,,,,",
+    "45,recommender,2.9104053190487638,2.9104053190487638,,,,,0.4119513928890228,104,0.41195136308670044,0.0,,,,,,,,,"
+  ],
+  "control/training_state/epoch_timings.json": [
+    {
+      "epoch": 44,
+      "batches": 1652,
+      "seconds": 158.62810305099993
+    },
+    {
+      "epoch": 45,
+      "batches": 1652,
+      "seconds": 155.41924165399905
+    }
+  ],
+  "delivery/formal_control_attempt1/receipt.json": {
+    "mode": "formal",
+    "variant": "control",
+    "status": "formal_completed",
+    "started_utc": "2026-10-20T08:06:23.504150+00:00",
+    "deadline_unix": 1792493933.5040815,
+    "error": null,
+    "stop_reason": null,
+    "children": [
+      {
+        "variant": "control",
+        "status": "completed",
+        "returncode": 0,
+        "started_utc": "2026-10-20T08:06:33.776747+00:00"
+      }
+    ]
+  },
+  "delivery/formal_control_attempt1/console_tail": [
+    "[control]     \"ndcg@10\": 0.04636611616718627,",
+    "[control]     \"recall@5\": 0.05446496445020793,",
+    "[control]     \"hit_rate@5\": 0.05446496445020793,",
+    "[control]     \"recall@10\": 0.0801323614899611,",
+    "[control]     \"hit_rate@10\": 0.0801323614899611,",
+    "[control]     \"weighted_score\": 0.053119365875683555",
+    "[control]   },",
+    "[control]   \"test_data_evaluated\": true,",
+    "[control]   \"phase_integrity_sha256\": \"75dee1286cc1ee4fcfca3876263a59ec0f1bd043b2f8b99b87545f9212271d82\",",
+    "[control]   \"process_wall_seconds\": 7685.0353137329985",
+    "[control] }",
+    "[wrapper] {\"status\": \"formal_completed\", \"receipt\": \"/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261020_item_local_joint_r2/delivery/formal_control_attempt1/receipt.json\"}"
+  ]
+}

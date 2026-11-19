@@ -1,0 +1,134 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 5,
+    "last_phase": "recommender",
+    "recommender_updates": 520,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  90%|█████████ | 2528/2796 [02:50<00:17, 15.18it/s]",
+      "Eval - val:  90%|█████████ | 2530/2796 [02:50<00:17, 15.32it/s]",
+      "Eval - val:  91%|█████████ | 2532/2796 [02:50<00:17, 15.38it/s]"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 4,
+    "last_phase": "recommender",
+    "recommender_updates": 416,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 5]:  15%|█▌        | 251/1652 [00:22<02:10, 10.77it/s]",
+      "Training recommender - [Epoch 5]:  15%|█▌        | 253/1652 [00:23<02:10, 10.74it/s]",
+      "Training recommender - [Epoch 5]:  15%|█▌        | 255/1652 [00:23<02:09, 10.82it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 4,
+    "last_phase": "recommender",
+    "recommender_updates": 416,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 5]:  66%|██████▋   | 1095/1652 [01:33<00:45, 12.15it/s]",
+      "Training recommender - [Epoch 5]:  66%|██████▋   | 1097/1652 [01:33<00:45, 12.12it/s]",
+      "Training recommender - [Epoch 5]:  67%|██████▋   | 1099/1652 [01:33<00:45, 12.20it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 5,
+    "last_phase": "recommender",
+    "recommender_updates": 520,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  17%|█▋        | 482/2796 [00:37<02:57, 13.04it/s]",
+      "Eval - val:  17%|█▋        | 484/2796 [00:37<02:55, 13.17it/s]",
+      "Eval - val:  17%|█▋        | 486/2796 [00:37<02:55, 13.18it/s]"
+    ]
+  }
+]

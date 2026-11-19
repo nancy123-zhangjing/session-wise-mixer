@@ -1,0 +1,129 @@
+{
+  "label": "post_tokenizer",
+  "recommender_epochs": 0,
+  "recommender_updates": 0,
+  "tokenizer_updates": 1,
+  "model_tensor_state_sha256": "9e3f780f5960553ea42d9b2ec6a4e8973f323eacd6e04d6efc357a59b575d295",
+  "semantic_ids_array_sha256": "ed2c54d7eb765891b859d4a078220daf65ed4fc0409cddd9e71d94322de2ef88",
+  "deterministic_sid_change": {
+    "changed_items": 4,
+    "item_change_rate": 0.0003305511941161887,
+    "changed_digits": 4,
+    "digit_change_rate": 8.263779852904718e-05,
+    "per_position_change_rate": [
+      0.0,
+      0.0,
+      8.263779852904718e-05,
+      0.00024791339558714154
+    ]
+  },
+  "validation_coverage": {
+    "examples": 22363,
+    "target_changed_examples": 17,
+    "history_changed_examples": 117,
+    "either_changed_examples": 134,
+    "target_changed_rate": 0.0007601842328846755,
+    "history_changed_rate": 0.005231856191029826,
+    "either_changed_rate": 0.005992040423914501
+  },
+  "collision_stats": {
+    "items": 12101,
+    "unique_semantic_ids": 10652,
+    "collided_items": 2174,
+    "collision_rate": 0.17965457400214857,
+    "colliding_groups": 725,
+    "largest_collision_group": 40,
+    "per_prefix": [
+      {
+        "prefix_length": 1,
+        "items": 12101,
+        "unique_prefixes": 256,
+        "collided_items": 12099,
+        "collision_rate": 0.9998347244029419,
+        "colliding_groups": 254,
+        "largest_collision_group": 129
+      },
+      {
+        "prefix_length": 2,
+        "items": 12101,
+        "unique_prefixes": 6950,
+        "collided_items": 7282,
+        "collision_rate": 0.6017684488885217,
+        "colliding_groups": 2131,
+        "largest_collision_group": 57
+      },
+      {
+        "prefix_length": 3,
+        "items": 12101,
+        "unique_prefixes": 9857,
+        "collided_items": 3307,
+        "collision_rate": 0.27328319973555903,
+        "colliding_groups": 1063,
+        "largest_collision_group": 43
+      },
+      {
+        "prefix_length": 4,
+        "items": 12101,
+        "unique_prefixes": 10652,
+        "collided_items": 2174,
+        "collision_rate": 0.17965457400214857,
+        "colliding_groups": 725,
+        "largest_collision_group": 40
+      }
+    ],
+    "per_position": [
+      {
+        "position": 0,
+        "unique_codes": 256,
+        "entropy_nats": 5.360762891864697,
+        "effective_codes_perplexity": 212.88729449974065,
+        "largest_code_share": 0.010660276010247088,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9667432549343471
+      },
+      {
+        "position": 1,
+        "unique_codes": 256,
+        "entropy_nats": 5.319491442028724,
+        "effective_codes_perplexity": 204.2799673661257,
+        "largest_code_share": 0.013717874555821833,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9593004904332652
+      },
+      {
+        "position": 2,
+        "unique_codes": 256,
+        "entropy_nats": 5.319795894800331,
+        "effective_codes_perplexity": 204.34217043684222,
+        "largest_code_share": 0.01115610280142137,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.9593553944962379
+      },
+      {
+        "position": 3,
+        "unique_codes": 256,
+        "entropy_nats": 5.331848918001208,
+        "effective_codes_perplexity": 206.820014114303,
+        "largest_code_share": 0.01115610280142137,
+        "unused_codes": 0,
+        "utilization_rate": 1.0,
+        "normalized_entropy": 0.961528999096191
+      }
+    ]
+  },
+  "schedule": {
+    "optimizer_step": 1,
+    "total_optimizer_steps": 60,
+    "softmax_temperature": 1.0,
+    "gumbel_noise_scale": 0.0
+  },
+  "files": {
+    "model.pt": "92a15e55761f6349fbab9954ee7d1c6c0c73393d37702fafe01a6417649dc915",
+    "training_state.pt": "fd36c98daac2eb71459410d50781a009e448916c2e233141c936f3c93e8b4b2d",
+    "semantic_ids.npy": "703fb7c58d75a13fb7bd56a231e98fe333b1231d2be2437b7c132e250309c015",
+    "crossed_codebooks.npy": "460a01c439c12270bae7f602747ae4a4eab64289afd06277873351cca164ad78"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format": "freeze35_platform_status_query_failure_v1",
+  "recorded_utc": "2026-10-29T14:29:50.918649+00:00",
+  "checked_begin_utc": "2026-10-29T14:29:05.600800+00:00",
+  "checked_end_utc": "2026-10-29T14:29:10.354679+00:00",
+  "platform": {
+    "success": false,
+    "job_name": "nancy-stage09-freeze35-c-20261029-r1",
+    "status": "UNKNOWN",
+    "cli_exit_code": 13,
+    "error_classes": [
+      "ECONNRESET"
+    ]
+  },
+  "cpu_notebook_summary": {
+    "name": "nancy-stage09-prep-20261027-r1",
+    "query_success": false,
+    "status": "UNKNOWN",
+    "node": null,
+    "note": "The subsequent CPU status query also failed; its specific error detail/timestamps were not retained in tool output. No live CPU state can be inferred."
+  },
+  "execution": {
+    "account": "sii-shared",
+    "permission": "require_escalated",
+    "job_command": "inspire --json --account sii-shared job status nancy-stage09-freeze35-c-20261029-r1 --workspace 分布式训练空间",
+    "cpu_command": "inspire --json --account sii-shared notebook status nancy-stage09-prep-20261027-r1 --workspace CPU资源空间",
+    "tool_result_chunk_id": "2f1e20"
+  },
+  "ledger_modified": false,
+  "ledger_sha256": "c91e2c3bc26d8ae39fded6846fa240611643157003a0a868f4ef37af1793d402",
+  "resource_or_connection_or_proxy_modified": false,
+  "interpretation": "Live status could not be retrieved. This is evidence of query failure, not a stopped/running resource observation. Earlier successful snapshots remain historical only."
+}

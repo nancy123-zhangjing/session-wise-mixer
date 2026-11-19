@@ -1,0 +1,46 @@
+{
+  "goal": "rqcd_h_seed2024_h100",
+  "status": "blocked_platform_unreachable",
+  "date": "2026-11-05",
+  "verified": {
+    "source_matches_tested_receipt": true,
+    "source": {
+      "scripts/listwise_diffgrm/assets.py": "1c4f497124414d9b1f0db9476d8e73ae53a6f8572e6524b7754b3c8e29fa774f",
+      "scripts/listwise_diffgrm/decoding.py": "0eb50c5c3da3d17718d3de40019441e6573cdebdf67453586b16988916523afe",
+      "scripts/listwise_diffgrm/metrics.py": "2f2223d8966d3bb0ebe153e71f421bf2fa97862c50161fd74821af04142f16bb",
+      "scripts/listwise_diffgrm/training.py": "2da7cc318fc35c576a5144489c5ea2db43e4e534a3664c041ebcd5bf141cddd8",
+      "scripts/rqcd/__init__.py": "2c7ed88adccfe5d9f4a353f1ad086c08f8680bc102680f8a29f34af7ce25d825",
+      "scripts/rqcd/analysis.py": "88bb782907f2de98bfd32e6589bda0911404888938e2fa833b61382382d45bbf",
+      "scripts/rqcd/catalog.py": "f484648cc99d482e47712f683c686a3fcf89fc00a4938f99b84f79f5ceba6c48",
+      "scripts/rqcd/common.py": "84c043a012688344c995d3e2ecf1f67e0d5cd325b12df1f9aadecbd4949eaef5",
+      "scripts/rqcd/data.py": "0980105e92b45dd5e60e2a4cfeb4ccdeb1960d212351626407dd99213f4f99cc",
+      "scripts/rqcd/evaluation.py": "ff90aa313c2881066cb36e269db05c794bbe6bc0fc72dc0b2db41cfce1a613f3",
+      "scripts/rqcd/model.py": "44f0aa8201a006f0e00c8ce86cccb3ed6512c6594d45a03936632e14cc70b606",
+      "scripts/rqcd/preflight.py": "2fffa612d72bd0cd3194bae44101c6750706680601bcea447c1016780fe6cdf4",
+      "scripts/rqcd/run.py": "34a3efc1202843f59379efffc000fee0c27dcda3f6a6b0341b11657a924c310c",
+      "scripts/rqcd/tokenizer.py": "ddce11bbe7e4b17ba6eb458e03b198e3a99c2e8e4732033fe369b8353261fd31",
+      "scripts/rqcd/training.py": "1a9ae1a82e62335e34aad412f1fe6156e65a983ed1778586472d259bb9ad95f5"
+    },
+    "local_tests": "19+7+15=41 passed (outputs/rqcd_verification_20261105_r1/VERIFIED.json)",
+    "dataset_binding": "outputs/kuairec_listwise_v1/run1 verified, catalog=10728",
+    "content_sha256": "3eaee85a60aba7e232e600585f7c5f428c318fb8475db0ebb24ac74e94b570c7",
+    "probe_manifest_present": true
+  },
+  "blocker": {
+    "endpoint": "<institution-host>",
+    "curl_via_clash_proxy_7890": "000 (connection reset), direct: 000",
+    "inspire_calls": "APIError code 13 (notebook list), ECONNRESET (account check, resources availability)",
+    "general_internet_via_proxy": "reachable (baidu 200); Clash running on 7890"
+  },
+  "needed_from_user": "???????????SII Proxy????/???/VPN?????????H100???????????????H100????????GPU?",
+  "gpu_hours_used": 0.0,
+  "remaining": [
+    "H100???????",
+    "??/??????",
+    "???????",
+    "RQ????",
+    "35R??",
+    "??????",
+    "?????????"
+  ]
+}

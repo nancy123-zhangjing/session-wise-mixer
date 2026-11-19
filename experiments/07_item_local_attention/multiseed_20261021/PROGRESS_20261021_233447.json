@@ -1,0 +1,149 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 6,
+    "last_phase": "tokenizer",
+    "recommender_updates": 520,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3565230667591095,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "31032cc3f5718a2dec7d74ddecdfedbad215004be84cf33e2225b57e759640ec",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 7]:  46%|████▋     | 767/1652 [00:48<00:56, 15.74it/s]",
+      "Training recommender - [Epoch 7]:  47%|████▋     | 769/1652 [00:48<00:56, 15.57it/s]",
+      "Training recommender - [Epoch 7]:  47%|████▋     | 771/1652 [00:48<00:56, 15.53it/s]"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 4,
+    "last_phase": "recommender",
+    "recommender_updates": 416,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 5]:  64%|██████▍   | 1058/1652 [01:37<00:54, 10.83it/s]",
+      "Training recommender - [Epoch 5]:  64%|██████▍   | 1060/1652 [01:37<00:55, 10.69it/s]",
+      "Training recommender - [Epoch 5]:  64%|██████▍   | 1062/1652 [01:37<00:56, 10.47it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 5,
+    "last_phase": "recommender",
+    "recommender_updates": 520,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  12%|█▏        | 342/2796 [00:28<03:26, 11.90it/s]",
+      "Eval - val:  12%|█▏        | 344/2796 [00:28<03:26, 11.89it/s]",
+      "Eval - val:  12%|█▏        | 346/2796 [00:28<03:34, 11.43it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 5,
+    "last_phase": "recommender",
+    "recommender_updates": 520,
+    "tokenizer_checks": [],
+    "evaluation_epochs": [
+      0
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  52%|█████▏    | 1446/2796 [01:51<01:41, 13.31it/s]",
+      "Eval - val:  52%|█████▏    | 1448/2796 [01:52<01:42, 13.15it/s]",
+      "Eval - val:  52%|█████▏    | 1450/2796 [01:52<01:43, 13.01it/s]"
+    ]
+  }
+]

@@ -1,0 +1,949 @@
+INFO:root:Device: cuda
+INFO:root:[DATASET] Amazon Reviews 2014 for category: Beauty
+INFO:root:[DATASET] Reviews have been processed...
+INFO:root:[DATASET] Metadata has been processed...
+INFO:root:[Dataset] AmazonReviews2014
+	Number of users: 22364
+	Number of items: 12102
+	Number of interactions: 198502
+	Average item sequence length: 8.875961366481846
+INFO:root:[TOKENIZER] Index factory: CROSSPSE4x8
+INFO:root:[TOKENIZER] cross_pse preprocessing: frozen precomputed IDs
+INFO:root:[TOKENIZER] Using existing quantization results from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/workspace/outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json
+INFO:root:[TOKENIZER] Semantic ID SHA256: 206a2223e03991c0c1d63932e3322c59ceb24d22fb752b27b50ac2f828dad622
+INFO:root:[TOKENIZER] Loading semantic IDs from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/workspace/outputs/tokenizers/diff_refinedpse/Beauty/v2_catalog_seed2024/semantic_ids.json...
+INFO:root:[TOKENIZER] Force regenerate enabled, ignoring existing mapping files
+INFO:root:[TOKENIZER] Force regenerate enabled, generating new mappings
+INFO:root:[TOKENIZER] Saved mappings with tag: sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_sha206a2223e039_4d to /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/workspace/data/cache/AmazonReviews2014/Beauty/processed
+INFO:root:[TOKENIZER] Files: item_id2tokens_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_sha206a2223e039_4d.npy, tokens2item_sentence-t5-base_pca256_CROSSPSE4x8_seed2024_scopefull_stepsunknown_PCA256_sha206a2223e039_4d.pkl
+INFO:root:[SID_COLLISION] unique=10650/12101, collided_items=2174 (17.9655%), groups=723, largest_group=40
+INFO:root:[SID_PREFIX_COLLISION] prefix=1, unique=256/12101, collided_items=12099 (99.9835%), groups=254, largest_group=129
+INFO:root:[SID_PREFIX_COLLISION] prefix=2, unique=6949/12101, collided_items=7275 (60.1190%), groups=2123, largest_group=57
+INFO:root:[SID_PREFIX_COLLISION] prefix=3, unique=9860/12101, collided_items=3298 (27.2539%), groups=1057, largest_group=43
+INFO:root:[SID_PREFIX_COLLISION] prefix=4, unique=10650/12101, collided_items=2174 (17.9655%), groups=723, largest_group=40
+INFO:root:[SID_CODEBOOK_STATS] position=0, used=256/256, utilization=100.0000%, normalized_entropy=0.9667, largest_code_share=1.0660%
+INFO:root:[SID_CODEBOOK_STATS] position=1, used=256/256, utilization=100.0000%, normalized_entropy=0.9594, largest_code_share=1.3718%
+INFO:root:[SID_CODEBOOK_STATS] position=2, used=256/256, utilization=100.0000%, normalized_entropy=0.9591, largest_code_share=1.1156%
+INFO:root:[SID_CODEBOOK_STATS] position=3, used=256/256, utilization=100.0000%, normalized_entropy=0.9614, largest_code_share=1.1156%
+Tokenizing train set:   0%|          | 0/105668 [00:00<?, ? examples/s]Tokenizing train set:   1%|          | 1000/105668 [00:00<00:13, 7702.32 examples/s]Tokenizing train set:   2%|▏         | 2000/105668 [00:00<00:27, 3738.07 examples/s]Tokenizing train set:   3%|▎         | 3000/105668 [00:00<00:20, 4995.30 examples/s]Tokenizing train set:   4%|▍         | 3995/105668 [00:00<00:25, 3944.59 examples/s]Tokenizing train set:   4%|▍         | 4614/105668 [00:01<00:23, 4348.17 examples/s]Tokenizing train set:   5%|▌         | 5589/105668 [00:01<00:19, 5162.68 examples/s]Tokenizing train set:   6%|▌         | 6321/105668 [00:01<00:25, 3861.28 examples/s]Tokenizing train set:   7%|▋         | 7000/105668 [00:01<00:22, 4374.43 examples/s]Tokenizing train set:   8%|▊         | 8000/105668 [00:01<00:19, 5122.61 examples/s]Tokenizing train set:   9%|▊         | 9000/105668 [00:02<00:23, 4042.65 examples/s]Tokenizing train set:   9%|▉         | 10000/105668 [00:02<00:19, 4809.97 examples/s]Tokenizing train set:  10%|█         | 10626/105668 [00:02<00:24, 3850.80 examples/s]Tokenizing train set:  11%|█         | 11638/105668 [00:02<00:20, 4683.01 examples/s]Tokenizing train set:  12%|█▏        | 12571/105668 [00:02<00:17, 5308.27 examples/s]Tokenizing train set:  13%|█▎        | 13691/105668 [00:03<00:21, 4337.35 examples/s]Tokenizing train set:  14%|█▍        | 14652/105668 [00:03<00:18, 5006.78 examples/s]Tokenizing train set:  15%|█▍        | 15410/105668 [00:03<00:23, 3830.41 examples/s]Tokenizing train set:  16%|█▌        | 16638/105668 [00:03<00:18, 4767.46 examples/s]Tokenizing train set:  17%|█▋        | 17655/105668 [00:03<00:16, 5437.19 examples/s]Tokenizing train set:  18%|█▊        | 18646/105668 [00:04<00:20, 4226.97 examples/s]Tokenizing train set:  19%|█▊        | 19642/105668 [00:04<00:17, 4898.01 examples/s]Tokenizing train set:  20%|█▉        | 20876/105668 [00:04<00:19, 4317.11 examples/s]Tokenizing train set:  21%|██        | 21676/105668 [00:04<00:17, 4801.59 examples/s]Tokenizing train set:  21%|██▏       | 22499/105668 [00:05<00:21, 3805.21 examples/s]Tokenizing train set:  22%|██▏       | 23636/105668 [00:05<00:17, 4663.47 examples/s]Tokenizing train set:  23%|██▎       | 24668/105668 [00:05<00:15, 5348.23 examples/s]Tokenizing train set:  24%|██▍       | 25623/105668 [00:05<00:19, 4086.11 examples/s]Tokenizing train set:  25%|██▌       | 26656/105668 [00:05<00:16, 4835.13 examples/s]Tokenizing train set:  26%|██▌       | 27283/105668 [00:06<00:20, 3757.75 examples/s]Tokenizing train set:  27%|██▋       | 28023/105668 [00:06<00:17, 4314.89 examples/s]Tokenizing train set:  27%|██▋       | 29000/105668 [00:06<00:15, 5104.17 examples/s]Tokenizing train set:  28%|██▊       | 30000/105668 [00:06<00:18, 3986.51 examples/s]Tokenizing train set:  29%|██▉       | 31000/105668 [00:06<00:15, 4712.90 examples/s]Tokenizing train set:  30%|███       | 31894/105668 [00:07<00:18, 4077.27 examples/s]Tokenizing train set:  31%|███       | 32676/105668 [00:07<00:15, 4569.42 examples/s]Tokenizing train set:  32%|███▏      | 33620/105668 [00:07<00:13, 5224.80 examples/s]Tokenizing train set:  33%|███▎      | 34372/105668 [00:07<00:18, 3925.09 examples/s]Tokenizing train set:  33%|███▎      | 35000/105668 [00:07<00:17, 4149.34 examples/s]Tokenizing train set:  34%|███▍      | 35942/105668 [00:07<00:13, 5109.41 examples/s]Tokenizing train set:  35%|███▍      | 36677/105668 [00:08<00:19, 3499.53 examples/s]Tokenizing train set:  35%|███▌      | 37501/105668 [00:08<00:17, 3955.44 examples/s]Tokenizing train set:  36%|███▋      | 38494/105668 [00:08<00:15, 4467.63 examples/s]Tokenizing train set:  37%|███▋      | 39511/105668 [00:09<00:19, 3471.15 examples/s]Tokenizing train set:  38%|███▊      | 40000/105668 [00:09<00:18, 3555.72 examples/s]Tokenizing train set:  39%|███▉      | 40967/105668 [00:09<00:14, 4549.33 examples/s]Tokenizing train set:  40%|███▉      | 42000/105668 [00:09<00:18, 3488.83 examples/s]Tokenizing train set:  41%|████      | 43000/105668 [00:09<00:14, 4295.50 examples/s]Tokenizing train set:  42%|████▏     | 44000/105668 [00:10<00:16, 3840.49 examples/s]Tokenizing train set:  43%|████▎     | 45000/105668 [00:10<00:13, 4565.22 examples/s]Tokenizing train set:  43%|████▎     | 45626/105668 [00:10<00:15, 3801.09 examples/s]Tokenizing train set:  44%|████▍     | 46663/105668 [00:10<00:12, 4661.31 examples/s]Tokenizing train set:  45%|████▌     | 47613/105668 [00:10<00:10, 5282.39 examples/s]Tokenizing train set:  46%|████▌     | 48685/105668 [00:11<00:13, 4193.44 examples/s]Tokenizing train set:  47%|████▋     | 49585/105668 [00:11<00:11, 4791.06 examples/s]Tokenizing train set:  48%|████▊     | 50410/105668 [00:11<00:14, 3919.82 examples/s]Tokenizing train set:  49%|████▉     | 51727/105668 [00:11<00:10, 5012.44 examples/s]Tokenizing train set:  50%|████▉     | 52702/105668 [00:11<00:09, 5601.85 examples/s]Tokenizing train set:  51%|█████     | 53486/105668 [00:12<00:12, 4169.24 examples/s]Tokenizing train set:  52%|█████▏    | 54575/105668 [00:12<00:10, 4921.15 examples/s]Tokenizing train set:  52%|█████▏    | 55194/105668 [00:12<00:13, 3632.88 examples/s]Tokenizing train set:  53%|█████▎    | 56000/105668 [00:12<00:11, 4252.93 examples/s]Tokenizing train set:  54%|█████▍    | 57000/105668 [00:12<00:09, 5006.77 examples/s]Tokenizing train set:  55%|█████▍    | 58000/105668 [00:13<00:11, 4092.84 examples/s]Tokenizing train set:  56%|█████▌    | 59000/105668 [00:13<00:10, 4406.96 examples/s]Tokenizing train set:  57%|█████▋    | 59804/105668 [00:13<00:11, 3876.78 examples/s]Tokenizing train set:  57%|█████▋    | 60724/105668 [00:13<00:09, 4617.49 examples/s]Tokenizing train set:  58%|█████▊    | 61641/105668 [00:13<00:08, 5240.45 examples/s]Tokenizing train set:  59%|█████▉    | 62283/105668 [00:14<00:11, 3873.64 examples/s]Tokenizing train set:  60%|█████▉    | 63000/105668 [00:14<00:09, 4391.58 examples/s]Tokenizing train set:  61%|██████    | 64000/105668 [00:14<00:07, 5301.13 examples/s]Tokenizing train set:  62%|██████▏   | 65000/105668 [00:14<00:09, 4280.04 examples/s]Tokenizing train set:  62%|██████▏   | 66000/105668 [00:14<00:07, 5099.67 examples/s]Tokenizing train set:  63%|██████▎   | 66894/105668 [00:15<00:09, 4291.09 examples/s]Tokenizing train set:  64%|██████▍   | 67652/105668 [00:15<00:07, 4794.05 examples/s]Tokenizing train set:  65%|██████▌   | 68709/105668 [00:15<00:06, 5658.73 examples/s]Tokenizing train set:  66%|██████▌   | 70000/105668 [00:15<00:08, 4411.23 examples/s]Tokenizing train set:  67%|██████▋   | 71000/105668 [00:15<00:06, 5171.38 examples/s]Tokenizing train set:  68%|██████▊   | 71677/105668 [00:16<00:08, 4241.67 examples/s]Tokenizing train set:  69%|██████▊   | 72619/105668 [00:16<00:06, 4896.32 examples/s]Tokenizing train set:  70%|██████▉   | 73651/105668 [00:16<00:05, 5586.05 examples/s]Tokenizing train set:  71%|███████   | 74702/105668 [00:16<00:07, 4399.85 examples/s]Tokenizing train set:  72%|███████▏  | 75677/105668 [00:16<00:05, 5089.41 examples/s]Tokenizing train set:  72%|███████▏  | 76321/105668 [00:17<00:07, 3822.58 examples/s]Tokenizing train set:  73%|███████▎  | 77060/105668 [00:17<00:06, 4381.49 examples/s]Tokenizing train set:  74%|███████▍  | 78000/105668 [00:17<00:05, 5170.39 examples/s]Tokenizing train set:  75%|███████▍  | 79000/105668 [00:17<00:06, 4216.50 examples/s]Tokenizing train set:  76%|███████▌  | 80000/105668 [00:17<00:05, 4981.98 examples/s]Tokenizing train set:  76%|███████▋  | 80626/105668 [00:18<00:06, 4037.06 examples/s]Tokenizing train set:  77%|███████▋  | 81672/105668 [00:18<00:04, 4960.30 examples/s]Tokenizing train set:  78%|███████▊  | 82727/105668 [00:18<00:03, 5811.76 examples/s]Tokenizing train set:  79%|███████▉  | 83602/105668 [00:18<00:05, 4334.29 examples/s]Tokenizing train set:  80%|████████  | 84720/105668 [00:18<00:04, 5210.33 examples/s]Tokenizing train set:  81%|████████  | 85410/105668 [00:19<00:05, 3974.26 examples/s]Tokenizing train set:  82%|████████▏ | 86753/105668 [00:19<00:03, 5175.00 examples/s]Tokenizing train set:  83%|████████▎ | 87716/105668 [00:19<00:04, 4182.14 examples/s]Tokenizing train set:  84%|████████▍ | 88765/105668 [00:19<00:03, 5043.78 examples/s]Tokenizing train set:  85%|████████▍ | 89752/105668 [00:19<00:02, 5799.16 examples/s]Tokenizing train set:  86%|████████▌ | 90893/105668 [00:20<00:03, 4741.26 examples/s]Tokenizing train set:  87%|████████▋ | 91728/105668 [00:20<00:02, 5233.23 examples/s]Tokenizing train set:  88%|████████▊ | 92499/105668 [00:20<00:03, 4069.51 examples/s]Tokenizing train set:  89%|████████▊ | 93726/105668 [00:20<00:02, 5124.24 examples/s]Tokenizing train set:  90%|████████▉ | 94662/105668 [00:20<00:01, 5722.75 examples/s]Tokenizing train set:  91%|█████████ | 95724/105668 [00:21<00:02, 4565.00 examples/s]Tokenizing train set:  92%|█████████▏| 96741/105668 [00:21<00:01, 5330.63 examples/s]Tokenizing train set:  93%|█████████▎| 98000/105668 [00:21<00:01, 4316.64 examples/s]Tokenizing train set:  94%|█████████▎| 99000/105668 [00:21<00:01, 5048.49 examples/s]Tokenizing train set:  95%|█████████▍| 100000/105668 [00:22<00:01, 4224.17 examples/s]Tokenizing train set:  96%|█████████▌| 101000/105668 [00:22<00:00, 4907.35 examples/s]Tokenizing train set:  96%|█████████▋| 101894/105668 [00:22<00:00, 4140.29 examples/s]Tokenizing train set:  97%|█████████▋| 102758/105668 [00:22<00:00, 4782.07 examples/s]Tokenizing train set:  98%|█████████▊| 103702/105668 [00:22<00:00, 5474.49 examples/s]Tokenizing train set:  99%|█████████▉| 105000/105668 [00:23<00:00, 4257.52 examples/s]Tokenizing train set: 100%|██████████| 105668/105668 [00:23<00:00, 4526.83 examples/s]
+Tokenizing val set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing val set:   1%|          | 139/22363 [00:00<00:39, 564.54 examples/s]Tokenizing val set:   4%|▍         | 1000/22363 [00:00<00:06, 3114.20 examples/s]Tokenizing val set:   8%|▊         | 1891/22363 [00:00<00:04, 4949.92 examples/s]Tokenizing val set:  12%|█▏        | 2733/22363 [00:00<00:06, 3172.67 examples/s]Tokenizing val set:  15%|█▌        | 3460/22363 [00:01<00:05, 3665.01 examples/s]Tokenizing val set:  18%|█▊        | 4000/22363 [00:01<00:04, 3783.71 examples/s]Tokenizing val set:  21%|██        | 4588/22363 [00:01<00:06, 2956.16 examples/s]Tokenizing val set:  22%|██▏       | 5000/22363 [00:01<00:05, 3136.35 examples/s]Tokenizing val set:  27%|██▋       | 5928/22363 [00:01<00:03, 4358.58 examples/s]Tokenizing val set:  31%|███       | 6894/22363 [00:02<00:04, 3407.15 examples/s]Tokenizing val set:  34%|███▍      | 7603/22363 [00:02<00:03, 3960.63 examples/s]Tokenizing val set:  38%|███▊      | 8558/22363 [00:02<00:02, 4678.58 examples/s]Tokenizing val set:  42%|████▏     | 9372/22363 [00:02<00:03, 3712.16 examples/s]Tokenizing val set:  47%|████▋     | 10596/22363 [00:02<00:02, 4736.52 examples/s]Tokenizing val set:  52%|█████▏    | 11665/22363 [00:02<00:01, 5495.22 examples/s]Tokenizing val set:  57%|█████▋    | 12678/22363 [00:03<00:02, 4382.89 examples/s]Tokenizing val set:  61%|██████    | 13664/22363 [00:03<00:01, 5050.12 examples/s]Tokenizing val set:  66%|██████▌   | 14654/22363 [00:03<00:01, 4049.80 examples/s]Tokenizing val set:  70%|███████   | 15683/22363 [00:03<00:01, 4718.75 examples/s]Tokenizing val set:  73%|███████▎  | 16308/22363 [00:04<00:01, 3687.40 examples/s]Tokenizing val set:  76%|███████▌  | 17025/22363 [00:04<00:01, 4213.55 examples/s]Tokenizing val set:  80%|████████  | 18000/22363 [00:04<00:00, 5046.88 examples/s]Tokenizing val set:  85%|████████▍ | 19000/22363 [00:04<00:00, 4142.51 examples/s]Tokenizing val set:  89%|████████▉ | 20000/22363 [00:04<00:00, 4932.50 examples/s]Tokenizing val set:  94%|█████████▍| 21000/22363 [00:05<00:00, 4028.24 examples/s]Tokenizing val set:  98%|█████████▊| 22000/22363 [00:05<00:00, 4780.40 examples/s]Tokenizing val set: 100%|██████████| 22363/22363 [00:05<00:00, 4200.71 examples/s]
+Tokenizing test set:   0%|          | 0/22363 [00:00<?, ? examples/s]Tokenizing test set:   4%|▍         | 869/22363 [00:00<00:02, 8612.86 examples/s]Tokenizing test set:   9%|▉         | 1995/22363 [00:00<00:05, 3877.72 examples/s]Tokenizing test set:  12%|█▏        | 2613/22363 [00:00<00:04, 4430.06 examples/s]Tokenizing test set:  16%|█▌        | 3599/22363 [00:00<00:03, 5416.10 examples/s]Tokenizing test set:  19%|█▉        | 4321/22363 [00:01<00:04, 3765.95 examples/s]Tokenizing test set:  22%|██▏       | 5000/22363 [00:01<00:04, 4298.25 examples/s]Tokenizing test set:  27%|██▋       | 6000/22363 [00:01<00:03, 5160.18 examples/s]Tokenizing test set:  31%|███▏      | 7000/22363 [00:01<00:03, 4047.51 examples/s]Tokenizing test set:  36%|███▌      | 8000/22363 [00:01<00:02, 4823.92 examples/s]Tokenizing test set:  39%|███▊      | 8626/22363 [00:02<00:03, 3873.64 examples/s]Tokenizing test set:  43%|████▎     | 9545/22363 [00:02<00:02, 4568.90 examples/s]Tokenizing test set:  47%|████▋     | 10579/22363 [00:02<00:02, 5280.42 examples/s]Tokenizing test set:  52%|█████▏    | 11628/22363 [00:02<00:02, 4115.54 examples/s]Tokenizing test set:  56%|█████▋    | 12580/22363 [00:02<00:02, 4733.96 examples/s]Tokenizing test set:  60%|█████▉    | 13410/22363 [00:03<00:02, 3776.92 examples/s]Tokenizing test set:  66%|██████▌   | 14656/22363 [00:03<00:01, 4756.54 examples/s]Tokenizing test set:  70%|███████   | 15660/22363 [00:03<00:01, 5288.20 examples/s]Tokenizing test set:  75%|███████▍  | 16671/22363 [00:03<00:01, 4225.18 examples/s]Tokenizing test set:  79%|███████▉  | 17685/22363 [00:03<00:00, 4953.09 examples/s]Tokenizing test set:  84%|████████▍ | 18779/22363 [00:04<00:00, 4201.94 examples/s]Tokenizing test set:  88%|████████▊ | 19699/22363 [00:04<00:00, 4847.31 examples/s]Tokenizing test set:  92%|█████████▏| 20499/22363 [00:04<00:00, 3938.47 examples/s]Tokenizing test set:  97%|█████████▋| 21716/22363 [00:04<00:00, 4934.15 examples/s]Tokenizing test set: 100%|██████████| 22363/22363 [00:04<00:00, 5101.90 examples/s]Tokenizing test set: 100%|██████████| 22363/22363 [00:04<00:00, 4577.61 examples/s]
+[MODEL] ▶ GUIDED: steps=4, metric=msp, select=least, augment_factor=4
+[DIFF_GRM] Using shared embedding dot-product output layer
+[JOINT] Loaded pretrained Refined-PSE recommender from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/workspace/external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin
+[JOINT] Refined-PSE DIGER-ST enabled: hard forward, soft backward, alternating parameter updates; assignment_temperature=0.1
+INFO:root:DIFF_GRM(
+  (embedding): Embedding(1027, 256)
+  (item_mlp): Sequential(
+    (0): Linear(in_features=1024, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mask_emb_table): Embedding(4, 256)
+  (pos_emb_enc): Embedding(50, 256)
+  (encoder_blocks): ModuleList(
+    (0): EncoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (decoder_blocks): ModuleList(
+    (0-3): 4 x DecoderBlock(
+      (ln_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (self_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (cross_attn): MultiHeadAttention(
+        (qkv): Linear(in_features=256, out_features=768, bias=False)
+        (proj): Linear(in_features=256, out_features=256, bias=True)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_3): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      (mlp): FeedForward(
+        (c_fc): Linear(in_features=256, out_features=1024, bias=True)
+        (c_proj): Linear(in_features=1024, out_features=256, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (output_adapter): Identity()
+  (drop): Dropout(p=0.1, inplace=False)
+  (joint_alignment): JointCrossPSEAlignment(
+    (mixer): CrossPSECodebookMixer(
+      (input_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (attention): MultiheadAttention(
+        (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+      )
+    )
+  )
+  (joint_sequence_adapter): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+)
+INFO:root:5,832,576
+[TRAINING] physical_batch=64, accumulation=16, effective_batch=1024, base_batches/epoch=32, updates/epoch=2
+[JOINT] alternating Cross-PSE enabled: warmup_decoder_epochs=1, cycle=2, tokenizer_epochs_per_cycle=1, max_tokenizer_phases=1, decoder_epochs=2
+[DIGER] direct recommendation-gradient bridge: hard-forward/soft-backward, SIA disabled, tokenizer_updates=2, temperature=1, gumbel_noise=1
+[NUMERICS] mixed_precision=bf16, base_lr=0.001, max_grad_norm=1.0, finite_guard=True, parameter_check_interval=100
+[TRAINING] Evaluation config: start from epoch 1, interval: 1
+Eval - val:   0%|          | 0/8 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+[DIFF_GRM] Using RPG_ED-style encoder: MLP compression + fixed 50-length sequence
+[DIFF_GRM] vocab_size: 1027, codebook_size: 256
+[DIFF_GRM] masking_strategy: guided
+Eval - val:  12%|█▎        | 1/8 [00:00<00:05,  1.38it/s]Eval - val:  38%|███▊      | 3/8 [00:00<00:01,  3.98it/s]Eval - val:  62%|██████▎   | 5/8 [00:01<00:00,  6.06it/s]Eval - val:  88%|████████▊ | 7/8 [00:01<00:00,  7.56it/s]Eval - val: 100%|██████████| 8/8 [00:01<00:00,  6.01it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.453
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.314
+[Epoch 0] val fully_masked position diagnostics: SID0:nll=6.3028,acc=0.0000,mask=1.000, SID1:nll=6.2179,acc=0.0156,mask=1.000, SID2:nll=6.4139,acc=0.0000,mask=1.000, SID3:nll=6.1168,acc=0.0156,mask=1.000
+[Epoch 0] val cpd_greedy_decode_easy_to_hard mean rank: SID0=2.578, SID1=2.656, SID2=2.391, SID3=2.375
+[JOINT] Initial pretrained validation: weighted_score=0.025000; saved as the epoch-0 candidate
+Training recommender - [Epoch 1]:   0%|          | 0/32 [00:00<?, ?it/s]Training recommender - [Epoch 1]:   3%|▎         | 1/32 [00:00<00:14,  2.13it/s]Training recommender - [Epoch 1]:   6%|▋         | 2/32 [00:00<00:08,  3.56it/s]Training recommender - [Epoch 1]:  12%|█▎        | 4/32 [00:00<00:04,  6.45it/s]Training recommender - [Epoch 1]:  19%|█▉        | 6/32 [00:00<00:03,  8.24it/s]Training recommender - [Epoch 1]:  25%|██▌       | 8/32 [00:01<00:02,  9.40it/s]Training recommender - [Epoch 1]:  31%|███▏      | 10/32 [00:01<00:02, 10.12it/s]Training recommender - [Epoch 1]:  38%|███▊      | 12/32 [00:01<00:01, 10.70it/s]Training recommender - [Epoch 1]:  44%|████▍     | 14/32 [00:01<00:01, 11.25it/s]Training recommender - [Epoch 1]:  50%|█████     | 16/32 [00:02<00:02,  5.93it/s]Training recommender - [Epoch 1]:  56%|█████▋    | 18/32 [00:02<00:01,  7.08it/s]Training recommender - [Epoch 1]:  62%|██████▎   | 20/32 [00:02<00:01,  8.22it/s]Training recommender - [Epoch 1]:  69%|██████▉   | 22/32 [00:02<00:01,  9.11it/s]Training recommender - [Epoch 1]:  75%|███████▌  | 24/32 [00:02<00:00,  9.84it/s]Training recommender - [Epoch 1]:  81%|████████▏ | 26/32 [00:03<00:00, 10.42it/s]Training recommender - [Epoch 1]:  88%|████████▊ | 28/32 [00:03<00:00, 10.86it/s]Training recommender - [Epoch 1]:  94%|█████████▍| 30/32 [00:03<00:00, 11.37it/s]Training recommender - [Epoch 1]: 100%|██████████| 32/32 [00:03<00:00, 11.64it/s]Training recommender - [Epoch 1]: 100%|██████████| 32/32 [00:03<00:00,  8.80it/s]
+[Epoch 1] recommender Train Loss: 4.236033; LR: 0.001 -> 0.00075; optimizer_updates=2, cumulative_updates=2
+[Epoch 1] train ocn_masked_views position diagnostics: SID0:nll=3.7754,acc=0.2646,mask=0.685, SID1:nll=4.0657,acc=0.2481,mask=0.643, SID2:nll=4.1677,acc=0.2193,mask=0.599, SID3:nll=4.1278,acc=0.2221,mask=0.573
+[Epoch 1] train ocn_noising_hard_to_easy mean rank: SID0=2.261, SID1=2.428, SID2=2.604, SID3=2.707
+[JOINT] components: recommendation=4.236033
+Eval - val:   0%|          | 0/8 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val:  25%|██▌       | 2/8 [00:00<00:00, 12.71it/s]Eval - val:  50%|█████     | 4/8 [00:00<00:00, 12.95it/s]Eval - val:  75%|███████▌  | 6/8 [00:00<00:00, 12.94it/s]Eval - val: 100%|██████████| 8/8 [00:00<00:00, 12.94it/s]Eval - val: 100%|██████████| 8/8 [00:00<00:00, 12.78it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.828
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.506
+[Epoch 1] val fully_masked position diagnostics: SID0:nll=6.5979,acc=0.0000,mask=1.000, SID1:nll=6.3776,acc=0.0156,mask=1.000, SID2:nll=6.9916,acc=0.0000,mask=1.000, SID3:nll=6.4235,acc=0.0000,mask=1.000
+[Epoch 1] val cpd_greedy_decode_easy_to_hard mean rank: SID0=2.797, SID1=2.844, SID2=2.109, SID3=2.250
+[Epoch 1] Val Results: OrderedDict([('legal_ratio', np.float64(1.0)), ('duplicate_ratio', np.float64(0.8281249925494194)), ('dup@10', np.float64(0.5062500071944669)), ('duplicate@10', np.float64(0.5062500071944669)), ('legal@10', np.float64(1.0)), ('ndcg@5', np.float64(0.0)), ('ndcg@10', np.float64(0.0)), ('recall@5', np.float64(0.0)), ('hit_rate@5', np.float64(0.0)), ('recall@10', np.float64(0.0)), ('hit_rate@10', np.float64(0.0)), ('weighted_score', np.float64(0.0))])
+[Epoch 1] Weighted Score Details: NDCG@10=0.0000*0.8 + RECALL@10=0.0000*0.2 = 0.0000
+[Epoch 1] Evaluation #2, Best score: 0.0250 (Epoch 0)
+[Epoch 1] No improvement in current evaluation
+Training tokenizer - [Epoch 2]:   0%|          | 0/32 [00:00<?, ?it/s]Training tokenizer - [Epoch 2]:   3%|▎         | 1/32 [00:00<00:08,  3.71it/s]Training tokenizer - [Epoch 2]:   9%|▉         | 3/32 [00:00<00:03,  7.42it/s]Training tokenizer - [Epoch 2]:  16%|█▌        | 5/32 [00:00<00:02,  9.19it/s]Training tokenizer - [Epoch 2]:  22%|██▏       | 7/32 [00:00<00:02, 10.36it/s]Training tokenizer - [Epoch 2]:  28%|██▊       | 9/32 [00:00<00:02, 11.12it/s]Training tokenizer - [Epoch 2]:  34%|███▍      | 11/32 [00:01<00:01, 11.58it/s]Training tokenizer - [Epoch 2]:  41%|████      | 13/32 [00:01<00:01, 11.88it/s]Training tokenizer - [Epoch 2]:  47%|████▋     | 15/32 [00:01<00:01, 12.13it/s]Training tokenizer - [Epoch 2]:  53%|█████▎    | 17/32 [00:01<00:01, 12.29it/s]Training tokenizer - [Epoch 2]:  59%|█████▉    | 19/32 [00:01<00:01, 12.51it/s]Training tokenizer - [Epoch 2]:  66%|██████▌   | 21/32 [00:01<00:00, 12.66it/s]Training tokenizer - [Epoch 2]:  72%|███████▏  | 23/32 [00:02<00:00, 12.76it/s]Training tokenizer - [Epoch 2]:  78%|███████▊  | 25/32 [00:02<00:00, 12.75it/s]Training tokenizer - [Epoch 2]:  84%|████████▍ | 27/32 [00:02<00:00, 12.77it/s]Training tokenizer - [Epoch 2]:  91%|█████████ | 29/32 [00:02<00:00, 12.81it/s]Training tokenizer - [Epoch 2]:  97%|█████████▋| 31/32 [00:02<00:00, 12.90it/s]Training tokenizer - [Epoch 2]: 100%|██████████| 32/32 [00:02<00:00, 11.56it/s]
+[Epoch 2] tokenizer Train Loss: 7.571078; LR: 0.00075 -> 0.00075; optimizer_updates=2, cumulative_updates=2
+[JOINT] tokenizer phase #1 SID refresh: digit_change=0.0083%, item_change=0.0331%, unique=10652, collision=17.9407%
+[JOINT] components: recommendation=6.972031, sia=0.000000, reconstruction=0.597642, balance=0.140566, anchor=0.000002, diger_direct_gradient_norm=0.332510, diger_assignment_entropy=4.042669, diger_max_probability=0.200488, diger_softmax_temperature=1.000000, diger_gumbel_noise_scale=0.800000
+Training recommender - [Epoch 3]:   0%|          | 0/32 [00:00<?, ?it/s]Training recommender - [Epoch 3]:   3%|▎         | 1/32 [00:00<00:04,  7.06it/s]Training recommender - [Epoch 3]:   6%|▋         | 2/32 [00:00<00:03,  8.36it/s]Training recommender - [Epoch 3]:  12%|█▎        | 4/32 [00:00<00:02, 10.12it/s]Training recommender - [Epoch 3]:  19%|█▉        | 6/32 [00:00<00:02, 10.53it/s]Training recommender - [Epoch 3]:  25%|██▌       | 8/32 [00:00<00:02, 10.71it/s]Training recommender - [Epoch 3]:  31%|███▏      | 10/32 [00:00<00:01, 11.10it/s]Training recommender - [Epoch 3]:  38%|███▊      | 12/32 [00:01<00:01, 11.36it/s]Training recommender - [Epoch 3]:  44%|████▍     | 14/32 [00:01<00:01, 11.62it/s]Training recommender - [Epoch 3]:  50%|█████     | 16/32 [00:01<00:01, 11.63it/s]Training recommender - [Epoch 3]:  56%|█████▋    | 18/32 [00:01<00:01, 11.80it/s]Training recommender - [Epoch 3]:  62%|██████▎   | 20/32 [00:01<00:01, 11.38it/s]Training recommender - [Epoch 3]:  69%|██████▉   | 22/32 [00:02<00:00, 10.65it/s]Training recommender - [Epoch 3]:  75%|███████▌  | 24/32 [00:02<00:00, 10.74it/s]Training recommender - [Epoch 3]:  81%|████████▏ | 26/32 [00:02<00:00, 10.91it/s]Training recommender - [Epoch 3]:  88%|████████▊ | 28/32 [00:02<00:00, 10.56it/s]Training recommender - [Epoch 3]:  94%|█████████▍| 30/32 [00:02<00:00, 10.14it/s]Training recommender - [Epoch 3]: 100%|██████████| 32/32 [00:02<00:00, 10.34it/s]Training recommender - [Epoch 3]: 100%|██████████| 32/32 [00:03<00:00, 10.54it/s]
+[Epoch 3] recommender Train Loss: 4.534057; LR: 0.00075 -> 0; optimizer_updates=2, cumulative_updates=4
+[Epoch 3] train ocn_masked_views position diagnostics: SID0:nll=4.1822,acc=0.2047,mask=0.681, SID1:nll=4.2123,acc=0.2147,mask=0.681, SID2:nll=4.5624,acc=0.1676,mask=0.607, SID3:nll=4.6066,acc=0.1699,mask=0.531
+[Epoch 3] train ocn_noising_hard_to_easy mean rank: SID0=2.275, SID1=2.278, SID2=2.571, SID3=2.876
+[JOINT] components: recommendation=4.534057
+Eval - val:   0%|          | 0/8 [00:00<?, ?it/s]>> Using evaluator = DIFF_GRMEvaluator (fixed duplicate scoring bug)
+>> Recall: uses any() to avoid duplicate scoring
+>> NDCG: uses first-hit-only to avoid duplicate DCG accumulation
+>> Fixed: index bounds checking to prevent out-of-bounds errors
+>> Added: illegal sequence filtering for more accurate evaluation
+Eval - val:  12%|█▎        | 1/8 [00:00<00:00,  8.87it/s]Eval - val:  38%|███▊      | 3/8 [00:00<00:00, 10.98it/s]Eval - val:  62%|██████▎   | 5/8 [00:00<00:00, 11.46it/s]Eval - val:  88%|████████▊ | 7/8 [00:00<00:00, 11.82it/s]Eval - val: 100%|██████████| 8/8 [00:00<00:00, 11.48it/s]
+[SID_STATS] 平均合法率: 1.000, 平均重复率: 0.594
+[SID_STATS] 用户内部 Top-10 平均重复率: 0.281
+[Epoch 3] val fully_masked position diagnostics: SID0:nll=6.3403,acc=0.0000,mask=1.000, SID1:nll=6.1764,acc=0.0000,mask=1.000, SID2:nll=6.6780,acc=0.0000,mask=1.000, SID3:nll=6.3103,acc=0.0000,mask=1.000
+[Epoch 3] val cpd_greedy_decode_easy_to_hard mean rank: SID0=2.516, SID1=2.359, SID2=2.766, SID3=2.359
+[Epoch 3] Val Results: OrderedDict([('legal_ratio', np.float64(1.0)), ('duplicate_ratio', np.float64(0.5937499925494194)), ('dup@10', np.float64(0.28125000558793545)), ('duplicate@10', np.float64(0.28125000558793545)), ('legal@10', np.float64(1.0)), ('ndcg@5', np.float64(0.0)), ('ndcg@10', np.float64(0.0)), ('recall@5', np.float64(0.0)), ('hit_rate@5', np.float64(0.0)), ('recall@10', np.float64(0.0)), ('hit_rate@10', np.float64(0.0)), ('weighted_score', np.float64(0.0))])
+[Epoch 3] Weighted Score Details: NDCG@10=0.0000*0.8 + RECALL@10=0.0000*0.2 = 0.0000
+[Epoch 3] Evaluation #3, Best score: 0.0250 (Epoch 0)
+[Epoch 3] No improvement in current evaluation
+Best epoch: 0, Best val score: 0.0250
+Training completed after 3 evaluations (eval every 1 epochs)
+DiffGRM fit elapsed: 0.00 hours
+Loading best checkpoint (/inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/training_state/best_model.bin) for final test
+[MODEL] ▶ GUIDED: steps=4, metric=msp, select=least, augment_factor=4
+[DIFF_GRM] Using shared embedding dot-product output layer
+[JOINT] Loaded pretrained Refined-PSE recommender from /inspire/hdd/global_user/<inspire-account>/nancy/experiment1_stage07/goal_20261021_multiseed_r1/seeds/seed2026/runs/stage07_item_local_joint_control_seed2026_20261021_r1/smoke/workspace/external/DiffGRM/saved/AmazonReviews2014_Aug-28-2026_14-15-28/pytorch_model.bin
+[JOINT] Refined-PSE DIGER-ST enabled: hard forward, soft backward, alternating parameter updates; assignment_temperature=0.1
+[DIFF_GRM] Using RPG_ED-style encoder: MLP compression + fixed 50-length sequence
+[DIFF_GRM] vocab_size: 1027, codebook_size: 256
+[DIFF_GRM] masking_strategy: guided
+{
+  "campaign_id": "stage07_item_local_alternating_joint_seed2026_20261021_r1",
+  "protocol_id": "stage07_item_local_alternating_joint_seed2026_20261021_r1",
+  "variant": "control",
+  "run_id": "stage07_item_local_joint_control_seed2026_20261021_r1_smoke",
+  "evaluation_level": "sid",
+  "checkpoint_sha256": "ca221838a456e926447e615c03da38759eb3873ad74fc2a08faa361b7070df44",
+  "selected_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+  "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+  "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+  "fit": {
+    "best_epoch": 0,
+    "best_val_score": 0.02500000037252903,
+    "completed_epochs": 3,
+    "training_stop_reason": "max_epochs",
+    "joint_progress": {
+      "boundary_phase": "recommender",
+      "last_committed_phase": "recommender",
+      "next_phase": "recommender",
+      "next_phase_index": 1,
+      "tokenizer_epochs_completed": 1,
+      "tokenizer_optimizer_updates": 2,
+      "sid_refresh_count": 1,
+      "last_refresh_stats": {
+        "digit_change_rate": 8.263780182460323e-05,
+        "item_change_rate": 0.0003305512072984129,
+        "unique_semantic_ids": 10652,
+        "collision_rate": 0.17940666060656144
+      },
+      "initial_validation_complete": true
+    },
+    "cumulative_recommender_optimizer_updates": 4,
+    "training_state_sha256": "6dc066b7aad068f678f84fa1b0bfa8172405d5efb5c733711fe8403087e81ab9"
+  },
+  "training_integrity": {
+    "status": "passed",
+    "phase_records_sha256": "c1822cd31d53898054a8555a8634a49cc2137e9327ad65e5d17cb4dce6729926",
+    "optimizer": {
+      "status": "passed",
+      "recommender_optimizer_updates": 4,
+      "tokenizer_optimizer_updates": 2,
+      "covered_parameter_names": [
+        "embedding.weight",
+        "item_mlp.0.weight",
+        "item_mlp.0.bias",
+        "item_mlp.2.weight",
+        "item_mlp.2.bias",
+        "mask_emb_table.weight",
+        "pos_emb_enc.weight",
+        "encoder_blocks.0.ln_1.weight",
+        "encoder_blocks.0.ln_1.bias",
+        "encoder_blocks.0.attn.qkv.weight",
+        "encoder_blocks.0.attn.proj.weight",
+        "encoder_blocks.0.attn.proj.bias",
+        "encoder_blocks.0.ln_2.weight",
+        "encoder_blocks.0.ln_2.bias",
+        "encoder_blocks.0.mlp.c_fc.weight",
+        "encoder_blocks.0.mlp.c_fc.bias",
+        "encoder_blocks.0.mlp.c_proj.weight",
+        "encoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.0.ln_1.weight",
+        "decoder_blocks.0.ln_1.bias",
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.ln_2.weight",
+        "decoder_blocks.0.ln_2.bias",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.ln_3.weight",
+        "decoder_blocks.0.ln_3.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.1.ln_1.weight",
+        "decoder_blocks.1.ln_1.bias",
+        "decoder_blocks.1.self_attn.qkv.weight",
+        "decoder_blocks.1.self_attn.proj.weight",
+        "decoder_blocks.1.self_attn.proj.bias",
+        "decoder_blocks.1.ln_2.weight",
+        "decoder_blocks.1.ln_2.bias",
+        "decoder_blocks.1.cross_attn.qkv.weight",
+        "decoder_blocks.1.cross_attn.proj.weight",
+        "decoder_blocks.1.cross_attn.proj.bias",
+        "decoder_blocks.1.ln_3.weight",
+        "decoder_blocks.1.ln_3.bias",
+        "decoder_blocks.1.mlp.c_fc.weight",
+        "decoder_blocks.1.mlp.c_fc.bias",
+        "decoder_blocks.1.mlp.c_proj.weight",
+        "decoder_blocks.1.mlp.c_proj.bias",
+        "decoder_blocks.2.ln_1.weight",
+        "decoder_blocks.2.ln_1.bias",
+        "decoder_blocks.2.self_attn.qkv.weight",
+        "decoder_blocks.2.self_attn.proj.weight",
+        "decoder_blocks.2.self_attn.proj.bias",
+        "decoder_blocks.2.ln_2.weight",
+        "decoder_blocks.2.ln_2.bias",
+        "decoder_blocks.2.cross_attn.qkv.weight",
+        "decoder_blocks.2.cross_attn.proj.weight",
+        "decoder_blocks.2.cross_attn.proj.bias",
+        "decoder_blocks.2.ln_3.weight",
+        "decoder_blocks.2.ln_3.bias",
+        "decoder_blocks.2.mlp.c_fc.weight",
+        "decoder_blocks.2.mlp.c_fc.bias",
+        "decoder_blocks.2.mlp.c_proj.weight",
+        "decoder_blocks.2.mlp.c_proj.bias",
+        "decoder_blocks.3.ln_1.weight",
+        "decoder_blocks.3.ln_1.bias",
+        "decoder_blocks.3.self_attn.qkv.weight",
+        "decoder_blocks.3.self_attn.proj.weight",
+        "decoder_blocks.3.self_attn.proj.bias",
+        "decoder_blocks.3.ln_2.weight",
+        "decoder_blocks.3.ln_2.bias",
+        "decoder_blocks.3.cross_attn.qkv.weight",
+        "decoder_blocks.3.cross_attn.proj.weight",
+        "decoder_blocks.3.cross_attn.proj.bias",
+        "decoder_blocks.3.ln_3.weight",
+        "decoder_blocks.3.ln_3.bias",
+        "decoder_blocks.3.mlp.c_fc.weight",
+        "decoder_blocks.3.mlp.c_fc.bias",
+        "decoder_blocks.3.mlp.c_proj.weight",
+        "decoder_blocks.3.mlp.c_proj.bias",
+        "ln_f.weight",
+        "ln_f.bias",
+        "joint_alignment.mixer.base_codebooks"
+      ],
+      "legitimate_inactive_SIA_parameters": [
+        "joint_sequence_adapter.0.weight",
+        "joint_sequence_adapter.0.bias",
+        "joint_sequence_adapter.2.weight",
+        "joint_sequence_adapter.2.bias"
+      ],
+      "optimizer_state_count": 85,
+      "all_active_optimizer_steps_match": true
+    },
+    "global_codebook_mixer_enabled": false,
+    "local_block_parameter_side": "recommender"
+  },
+  "primary_comparison": "Current joint control versus current joint item_local; campaign layer compares the two",
+  "historical_comparison_role": "Stage03/05 results are background only",
+  "limitations": "Single seed; SID-level evaluation; no significance claim; alternating updates, not simultaneous optimizer updates",
+  "status": "smoke_passed_not_formal",
+  "phase_integrity": [
+    {
+      "epoch": 1,
+      "phase": "recommender",
+      "optimizer_updates": 2,
+      "direct_recommendation_gradient_norm": null,
+      "active_parameter_tensors": 84,
+      "changed_parameter_tensors": 84,
+      "changed_parameters": [
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.ln_1.bias",
+        "decoder_blocks.0.ln_1.weight",
+        "decoder_blocks.0.ln_2.bias",
+        "decoder_blocks.0.ln_2.weight",
+        "decoder_blocks.0.ln_3.bias",
+        "decoder_blocks.0.ln_3.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.1.cross_attn.proj.bias",
+        "decoder_blocks.1.cross_attn.proj.weight",
+        "decoder_blocks.1.cross_attn.qkv.weight",
+        "decoder_blocks.1.ln_1.bias",
+        "decoder_blocks.1.ln_1.weight",
+        "decoder_blocks.1.ln_2.bias",
+        "decoder_blocks.1.ln_2.weight",
+        "decoder_blocks.1.ln_3.bias",
+        "decoder_blocks.1.ln_3.weight",
+        "decoder_blocks.1.mlp.c_fc.bias",
+        "decoder_blocks.1.mlp.c_fc.weight",
+        "decoder_blocks.1.mlp.c_proj.bias",
+        "decoder_blocks.1.mlp.c_proj.weight",
+        "decoder_blocks.1.self_attn.proj.bias",
+        "decoder_blocks.1.self_attn.proj.weight",
+        "decoder_blocks.1.self_attn.qkv.weight",
+        "decoder_blocks.2.cross_attn.proj.bias",
+        "decoder_blocks.2.cross_attn.proj.weight",
+        "decoder_blocks.2.cross_attn.qkv.weight",
+        "decoder_blocks.2.ln_1.bias",
+        "decoder_blocks.2.ln_1.weight",
+        "decoder_blocks.2.ln_2.bias",
+        "decoder_blocks.2.ln_2.weight",
+        "decoder_blocks.2.ln_3.bias",
+        "decoder_blocks.2.ln_3.weight",
+        "decoder_blocks.2.mlp.c_fc.bias",
+        "decoder_blocks.2.mlp.c_fc.weight",
+        "decoder_blocks.2.mlp.c_proj.bias",
+        "decoder_blocks.2.mlp.c_proj.weight",
+        "decoder_blocks.2.self_attn.proj.bias",
+        "decoder_blocks.2.self_attn.proj.weight",
+        "decoder_blocks.2.self_attn.qkv.weight",
+        "decoder_blocks.3.cross_attn.proj.bias",
+        "decoder_blocks.3.cross_attn.proj.weight",
+        "decoder_blocks.3.cross_attn.qkv.weight",
+        "decoder_blocks.3.ln_1.bias",
+        "decoder_blocks.3.ln_1.weight",
+        "decoder_blocks.3.ln_2.bias",
+        "decoder_blocks.3.ln_2.weight",
+        "decoder_blocks.3.ln_3.bias",
+        "decoder_blocks.3.ln_3.weight",
+        "decoder_blocks.3.mlp.c_fc.bias",
+        "decoder_blocks.3.mlp.c_fc.weight",
+        "decoder_blocks.3.mlp.c_proj.bias",
+        "decoder_blocks.3.mlp.c_proj.weight",
+        "decoder_blocks.3.self_attn.proj.bias",
+        "decoder_blocks.3.self_attn.proj.weight",
+        "decoder_blocks.3.self_attn.qkv.weight",
+        "embedding.weight",
+        "encoder_blocks.0.attn.proj.bias",
+        "encoder_blocks.0.attn.proj.weight",
+        "encoder_blocks.0.attn.qkv.weight",
+        "encoder_blocks.0.ln_1.bias",
+        "encoder_blocks.0.ln_1.weight",
+        "encoder_blocks.0.ln_2.bias",
+        "encoder_blocks.0.ln_2.weight",
+        "encoder_blocks.0.mlp.c_fc.bias",
+        "encoder_blocks.0.mlp.c_fc.weight",
+        "encoder_blocks.0.mlp.c_proj.bias",
+        "encoder_blocks.0.mlp.c_proj.weight",
+        "item_mlp.0.bias",
+        "item_mlp.0.weight",
+        "item_mlp.2.bias",
+        "item_mlp.2.weight",
+        "ln_f.bias",
+        "ln_f.weight",
+        "mask_emb_table.weight",
+        "pos_emb_enc.weight"
+      ],
+      "frozen_parameter_tensors": 13,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "active_gradient_hook_calls": {
+        "decoder_blocks.3.mlp.c_proj.weight": 32,
+        "decoder_blocks.3.mlp.c_proj.bias": 32,
+        "decoder_blocks.3.mlp.c_fc.weight": 32,
+        "decoder_blocks.3.mlp.c_fc.bias": 32,
+        "decoder_blocks.3.ln_3.weight": 32,
+        "decoder_blocks.3.ln_3.bias": 32,
+        "decoder_blocks.3.cross_attn.proj.weight": 32,
+        "decoder_blocks.3.cross_attn.proj.bias": 32,
+        "decoder_blocks.3.ln_2.weight": 32,
+        "decoder_blocks.3.ln_2.bias": 32,
+        "decoder_blocks.3.self_attn.proj.weight": 32,
+        "decoder_blocks.3.self_attn.proj.bias": 32,
+        "decoder_blocks.3.self_attn.qkv.weight": 32,
+        "decoder_blocks.3.ln_1.weight": 32,
+        "decoder_blocks.3.ln_1.bias": 32,
+        "decoder_blocks.2.mlp.c_proj.weight": 32,
+        "decoder_blocks.2.mlp.c_proj.bias": 32,
+        "decoder_blocks.2.mlp.c_fc.weight": 32,
+        "decoder_blocks.2.mlp.c_fc.bias": 32,
+        "decoder_blocks.2.ln_3.weight": 32,
+        "decoder_blocks.2.ln_3.bias": 32,
+        "decoder_blocks.2.cross_attn.proj.weight": 32,
+        "decoder_blocks.2.cross_attn.proj.bias": 32,
+        "decoder_blocks.2.ln_2.weight": 32,
+        "decoder_blocks.2.ln_2.bias": 32,
+        "decoder_blocks.2.self_attn.proj.weight": 32,
+        "decoder_blocks.2.self_attn.proj.bias": 32,
+        "decoder_blocks.2.self_attn.qkv.weight": 32,
+        "decoder_blocks.2.ln_1.weight": 32,
+        "decoder_blocks.2.ln_1.bias": 32,
+        "decoder_blocks.1.mlp.c_proj.weight": 32,
+        "decoder_blocks.1.mlp.c_proj.bias": 32,
+        "decoder_blocks.1.mlp.c_fc.weight": 32,
+        "decoder_blocks.1.mlp.c_fc.bias": 32,
+        "decoder_blocks.1.ln_3.weight": 32,
+        "decoder_blocks.1.ln_3.bias": 32,
+        "decoder_blocks.1.cross_attn.proj.weight": 32,
+        "decoder_blocks.1.cross_attn.proj.bias": 32,
+        "decoder_blocks.1.ln_2.weight": 32,
+        "decoder_blocks.1.ln_2.bias": 32,
+        "decoder_blocks.1.self_attn.proj.weight": 32,
+        "decoder_blocks.1.self_attn.proj.bias": 32,
+        "decoder_blocks.1.self_attn.qkv.weight": 32,
+        "decoder_blocks.1.ln_1.weight": 32,
+        "decoder_blocks.1.ln_1.bias": 32,
+        "decoder_blocks.0.mlp.c_proj.weight": 32,
+        "decoder_blocks.0.mlp.c_proj.bias": 32,
+        "decoder_blocks.0.mlp.c_fc.weight": 32,
+        "decoder_blocks.0.mlp.c_fc.bias": 32,
+        "decoder_blocks.0.ln_3.weight": 32,
+        "decoder_blocks.0.ln_3.bias": 32,
+        "decoder_blocks.0.cross_attn.proj.weight": 32,
+        "decoder_blocks.0.cross_attn.proj.bias": 32,
+        "decoder_blocks.0.ln_2.weight": 32,
+        "decoder_blocks.0.ln_2.bias": 32,
+        "decoder_blocks.0.self_attn.proj.weight": 32,
+        "decoder_blocks.0.self_attn.proj.bias": 32,
+        "decoder_blocks.0.self_attn.qkv.weight": 32,
+        "decoder_blocks.0.ln_1.weight": 32,
+        "decoder_blocks.0.ln_1.bias": 32,
+        "mask_emb_table.weight": 32,
+        "decoder_blocks.3.cross_attn.qkv.weight": 32,
+        "decoder_blocks.2.cross_attn.qkv.weight": 32,
+        "decoder_blocks.1.cross_attn.qkv.weight": 32,
+        "decoder_blocks.0.cross_attn.qkv.weight": 32,
+        "ln_f.weight": 32,
+        "ln_f.bias": 32,
+        "encoder_blocks.0.mlp.c_proj.weight": 32,
+        "encoder_blocks.0.mlp.c_proj.bias": 32,
+        "encoder_blocks.0.mlp.c_fc.weight": 32,
+        "encoder_blocks.0.mlp.c_fc.bias": 32,
+        "encoder_blocks.0.ln_2.weight": 32,
+        "encoder_blocks.0.ln_2.bias": 32,
+        "encoder_blocks.0.attn.proj.weight": 32,
+        "encoder_blocks.0.attn.proj.bias": 32,
+        "encoder_blocks.0.attn.qkv.weight": 32,
+        "encoder_blocks.0.ln_1.weight": 32,
+        "encoder_blocks.0.ln_1.bias": 32,
+        "pos_emb_enc.weight": 32,
+        "item_mlp.2.weight": 32,
+        "item_mlp.2.bias": 32,
+        "item_mlp.0.weight": 32,
+        "item_mlp.0.bias": 32,
+        "embedding.weight": 32
+      },
+      "sid_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+      "SID_integrity": {
+        "hard_codes_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": false,
+        "SID_change_required": false
+      },
+      "legal_inactive_parameters": [
+        "joint_sequence_adapter.0.bias",
+        "joint_sequence_adapter.0.weight",
+        "joint_sequence_adapter.2.bias",
+        "joint_sequence_adapter.2.weight"
+      ]
+    },
+    {
+      "epoch": 2,
+      "phase": "tokenizer",
+      "optimizer_updates": 2,
+      "direct_recommendation_gradient_norm": 0.3325102627277374,
+      "active_parameter_tensors": 1,
+      "changed_parameter_tensors": 1,
+      "changed_parameters": [
+        "joint_alignment.mixer.base_codebooks"
+      ],
+      "frozen_parameter_tensors": 96,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "active_gradient_hook_calls": {
+        "joint_alignment.mixer.base_codebooks": 34
+      },
+      "sid_sha256": "f2cdca107723534056344914e55e5fe2df27444dc5ee57efd1087c5e0247eeb0",
+      "SID_integrity": {
+        "hard_codes_sha256": "f2cdca107723534056344914e55e5fe2df27444dc5ee57efd1087c5e0247eeb0",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": true,
+        "SID_change_required": false
+      },
+      "legal_inactive_parameters": [
+        "joint_sequence_adapter.0.bias",
+        "joint_sequence_adapter.0.weight",
+        "joint_sequence_adapter.2.bias",
+        "joint_sequence_adapter.2.weight"
+      ]
+    },
+    {
+      "epoch": 3,
+      "phase": "recommender",
+      "optimizer_updates": 2,
+      "direct_recommendation_gradient_norm": null,
+      "active_parameter_tensors": 84,
+      "changed_parameter_tensors": 84,
+      "changed_parameters": [
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.ln_1.bias",
+        "decoder_blocks.0.ln_1.weight",
+        "decoder_blocks.0.ln_2.bias",
+        "decoder_blocks.0.ln_2.weight",
+        "decoder_blocks.0.ln_3.bias",
+        "decoder_blocks.0.ln_3.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.1.cross_attn.proj.bias",
+        "decoder_blocks.1.cross_attn.proj.weight",
+        "decoder_blocks.1.cross_attn.qkv.weight",
+        "decoder_blocks.1.ln_1.bias",
+        "decoder_blocks.1.ln_1.weight",
+        "decoder_blocks.1.ln_2.bias",
+        "decoder_blocks.1.ln_2.weight",
+        "decoder_blocks.1.ln_3.bias",
+        "decoder_blocks.1.ln_3.weight",
+        "decoder_blocks.1.mlp.c_fc.bias",
+        "decoder_blocks.1.mlp.c_fc.weight",
+        "decoder_blocks.1.mlp.c_proj.bias",
+        "decoder_blocks.1.mlp.c_proj.weight",
+        "decoder_blocks.1.self_attn.proj.bias",
+        "decoder_blocks.1.self_attn.proj.weight",
+        "decoder_blocks.1.self_attn.qkv.weight",
+        "decoder_blocks.2.cross_attn.proj.bias",
+        "decoder_blocks.2.cross_attn.proj.weight",
+        "decoder_blocks.2.cross_attn.qkv.weight",
+        "decoder_blocks.2.ln_1.bias",
+        "decoder_blocks.2.ln_1.weight",
+        "decoder_blocks.2.ln_2.bias",
+        "decoder_blocks.2.ln_2.weight",
+        "decoder_blocks.2.ln_3.bias",
+        "decoder_blocks.2.ln_3.weight",
+        "decoder_blocks.2.mlp.c_fc.bias",
+        "decoder_blocks.2.mlp.c_fc.weight",
+        "decoder_blocks.2.mlp.c_proj.bias",
+        "decoder_blocks.2.mlp.c_proj.weight",
+        "decoder_blocks.2.self_attn.proj.bias",
+        "decoder_blocks.2.self_attn.proj.weight",
+        "decoder_blocks.2.self_attn.qkv.weight",
+        "decoder_blocks.3.cross_attn.proj.bias",
+        "decoder_blocks.3.cross_attn.proj.weight",
+        "decoder_blocks.3.cross_attn.qkv.weight",
+        "decoder_blocks.3.ln_1.bias",
+        "decoder_blocks.3.ln_1.weight",
+        "decoder_blocks.3.ln_2.bias",
+        "decoder_blocks.3.ln_2.weight",
+        "decoder_blocks.3.ln_3.bias",
+        "decoder_blocks.3.ln_3.weight",
+        "decoder_blocks.3.mlp.c_fc.bias",
+        "decoder_blocks.3.mlp.c_fc.weight",
+        "decoder_blocks.3.mlp.c_proj.bias",
+        "decoder_blocks.3.mlp.c_proj.weight",
+        "decoder_blocks.3.self_attn.proj.bias",
+        "decoder_blocks.3.self_attn.proj.weight",
+        "decoder_blocks.3.self_attn.qkv.weight",
+        "embedding.weight",
+        "encoder_blocks.0.attn.proj.bias",
+        "encoder_blocks.0.attn.proj.weight",
+        "encoder_blocks.0.attn.qkv.weight",
+        "encoder_blocks.0.ln_1.bias",
+        "encoder_blocks.0.ln_1.weight",
+        "encoder_blocks.0.ln_2.bias",
+        "encoder_blocks.0.ln_2.weight",
+        "encoder_blocks.0.mlp.c_fc.bias",
+        "encoder_blocks.0.mlp.c_fc.weight",
+        "encoder_blocks.0.mlp.c_proj.bias",
+        "encoder_blocks.0.mlp.c_proj.weight",
+        "item_mlp.0.bias",
+        "item_mlp.0.weight",
+        "item_mlp.2.bias",
+        "item_mlp.2.weight",
+        "ln_f.bias",
+        "ln_f.weight",
+        "mask_emb_table.weight",
+        "pos_emb_enc.weight"
+      ],
+      "frozen_parameter_tensors": 13,
+      "frozen_parameters_unchanged": true,
+      "all_active_gradients_finite": true,
+      "active_gradient_hook_calls": {
+        "decoder_blocks.3.mlp.c_proj.weight": 32,
+        "decoder_blocks.3.mlp.c_proj.bias": 32,
+        "decoder_blocks.3.mlp.c_fc.weight": 32,
+        "decoder_blocks.3.mlp.c_fc.bias": 32,
+        "decoder_blocks.3.ln_3.weight": 32,
+        "decoder_blocks.3.ln_3.bias": 32,
+        "decoder_blocks.3.cross_attn.proj.weight": 32,
+        "decoder_blocks.3.cross_attn.proj.bias": 32,
+        "decoder_blocks.3.ln_2.weight": 32,
+        "decoder_blocks.3.ln_2.bias": 32,
+        "decoder_blocks.3.self_attn.proj.weight": 32,
+        "decoder_blocks.3.self_attn.proj.bias": 32,
+        "decoder_blocks.3.self_attn.qkv.weight": 32,
+        "decoder_blocks.3.ln_1.weight": 32,
+        "decoder_blocks.3.ln_1.bias": 32,
+        "decoder_blocks.2.mlp.c_proj.weight": 32,
+        "decoder_blocks.2.mlp.c_proj.bias": 32,
+        "decoder_blocks.2.mlp.c_fc.weight": 32,
+        "decoder_blocks.2.mlp.c_fc.bias": 32,
+        "decoder_blocks.2.ln_3.weight": 32,
+        "decoder_blocks.2.ln_3.bias": 32,
+        "decoder_blocks.2.cross_attn.proj.weight": 32,
+        "decoder_blocks.2.cross_attn.proj.bias": 32,
+        "decoder_blocks.2.ln_2.weight": 32,
+        "decoder_blocks.2.ln_2.bias": 32,
+        "decoder_blocks.2.self_attn.proj.weight": 32,
+        "decoder_blocks.2.self_attn.proj.bias": 32,
+        "decoder_blocks.2.self_attn.qkv.weight": 32,
+        "decoder_blocks.2.ln_1.weight": 32,
+        "decoder_blocks.2.ln_1.bias": 32,
+        "decoder_blocks.1.mlp.c_proj.weight": 32,
+        "decoder_blocks.1.mlp.c_proj.bias": 32,
+        "decoder_blocks.1.mlp.c_fc.weight": 32,
+        "decoder_blocks.1.mlp.c_fc.bias": 32,
+        "decoder_blocks.1.ln_3.weight": 32,
+        "decoder_blocks.1.ln_3.bias": 32,
+        "decoder_blocks.1.cross_attn.proj.weight": 32,
+        "decoder_blocks.1.cross_attn.proj.bias": 32,
+        "decoder_blocks.1.ln_2.weight": 32,
+        "decoder_blocks.1.ln_2.bias": 32,
+        "decoder_blocks.1.self_attn.proj.weight": 32,
+        "decoder_blocks.1.self_attn.proj.bias": 32,
+        "decoder_blocks.1.self_attn.qkv.weight": 32,
+        "decoder_blocks.1.ln_1.weight": 32,
+        "decoder_blocks.1.ln_1.bias": 32,
+        "decoder_blocks.0.mlp.c_proj.weight": 32,
+        "decoder_blocks.0.mlp.c_proj.bias": 32,
+        "decoder_blocks.0.mlp.c_fc.weight": 32,
+        "decoder_blocks.0.mlp.c_fc.bias": 32,
+        "decoder_blocks.0.ln_3.weight": 32,
+        "decoder_blocks.0.ln_3.bias": 32,
+        "decoder_blocks.0.cross_attn.proj.weight": 32,
+        "decoder_blocks.0.cross_attn.proj.bias": 32,
+        "decoder_blocks.0.ln_2.weight": 32,
+        "decoder_blocks.0.ln_2.bias": 32,
+        "decoder_blocks.0.self_attn.proj.weight": 32,
+        "decoder_blocks.0.self_attn.proj.bias": 32,
+        "decoder_blocks.0.self_attn.qkv.weight": 32,
+        "decoder_blocks.0.ln_1.weight": 32,
+        "decoder_blocks.0.ln_1.bias": 32,
+        "mask_emb_table.weight": 32,
+        "decoder_blocks.3.cross_attn.qkv.weight": 32,
+        "decoder_blocks.2.cross_attn.qkv.weight": 32,
+        "decoder_blocks.1.cross_attn.qkv.weight": 32,
+        "decoder_blocks.0.cross_attn.qkv.weight": 32,
+        "ln_f.weight": 32,
+        "ln_f.bias": 32,
+        "encoder_blocks.0.mlp.c_proj.weight": 32,
+        "encoder_blocks.0.mlp.c_proj.bias": 32,
+        "encoder_blocks.0.mlp.c_fc.weight": 32,
+        "encoder_blocks.0.mlp.c_fc.bias": 32,
+        "encoder_blocks.0.ln_2.weight": 32,
+        "encoder_blocks.0.ln_2.bias": 32,
+        "encoder_blocks.0.attn.proj.weight": 32,
+        "encoder_blocks.0.attn.proj.bias": 32,
+        "encoder_blocks.0.attn.qkv.weight": 32,
+        "encoder_blocks.0.ln_1.weight": 32,
+        "encoder_blocks.0.ln_1.bias": 32,
+        "pos_emb_enc.weight": 32,
+        "item_mlp.2.weight": 32,
+        "item_mlp.2.bias": 32,
+        "item_mlp.0.weight": 32,
+        "item_mlp.0.bias": 32,
+        "embedding.weight": 32
+      },
+      "sid_sha256": "f2cdca107723534056344914e55e5fe2df27444dc5ee57efd1087c5e0247eeb0",
+      "SID_integrity": {
+        "hard_codes_sha256": "f2cdca107723534056344914e55e5fe2df27444dc5ee57efd1087c5e0247eeb0",
+        "catalogue_mapping_matches": true,
+        "nearest_assignments_verified": false,
+        "SID_change_required": false
+      },
+      "legal_inactive_parameters": [
+        "joint_sequence_adapter.0.bias",
+        "joint_sequence_adapter.0.weight",
+        "joint_sequence_adapter.2.bias",
+        "joint_sequence_adapter.2.weight"
+      ]
+    }
+  ],
+  "recovery_check": {
+    "status": "passed",
+    "strict_model_optimizer_scheduler_RNG_joint_runtime_restore": true,
+    "source_last_sha256": "013813b24c841de34f91a7a78738294bc7511ce0669608d4dacd2d9e64c9ba1e",
+    "source_phase": "tokenizer",
+    "optimizer_updates_executed": 1,
+    "micro_batches": 16,
+    "actual_changed_recommender_parameters": [
+      "decoder_blocks.0.cross_attn.proj.bias",
+      "decoder_blocks.0.cross_attn.proj.weight",
+      "decoder_blocks.0.cross_attn.qkv.weight",
+      "decoder_blocks.0.ln_1.bias",
+      "decoder_blocks.0.ln_1.weight",
+      "decoder_blocks.0.ln_2.bias",
+      "decoder_blocks.0.ln_2.weight",
+      "decoder_blocks.0.ln_3.bias",
+      "decoder_blocks.0.ln_3.weight",
+      "decoder_blocks.0.mlp.c_fc.bias",
+      "decoder_blocks.0.mlp.c_fc.weight",
+      "decoder_blocks.0.mlp.c_proj.bias",
+      "decoder_blocks.0.mlp.c_proj.weight",
+      "decoder_blocks.0.self_attn.proj.bias",
+      "decoder_blocks.0.self_attn.proj.weight",
+      "decoder_blocks.0.self_attn.qkv.weight",
+      "decoder_blocks.1.cross_attn.proj.bias",
+      "decoder_blocks.1.cross_attn.proj.weight",
+      "decoder_blocks.1.cross_attn.qkv.weight",
+      "decoder_blocks.1.ln_1.bias",
+      "decoder_blocks.1.ln_1.weight",
+      "decoder_blocks.1.ln_2.bias",
+      "decoder_blocks.1.ln_2.weight",
+      "decoder_blocks.1.ln_3.bias",
+      "decoder_blocks.1.ln_3.weight",
+      "decoder_blocks.1.mlp.c_fc.bias",
+      "decoder_blocks.1.mlp.c_fc.weight",
+      "decoder_blocks.1.mlp.c_proj.bias",
+      "decoder_blocks.1.mlp.c_proj.weight",
+      "decoder_blocks.1.self_attn.proj.bias",
+      "decoder_blocks.1.self_attn.proj.weight",
+      "decoder_blocks.1.self_attn.qkv.weight",
+      "decoder_blocks.2.cross_attn.proj.bias",
+      "decoder_blocks.2.cross_attn.proj.weight",
+      "decoder_blocks.2.cross_attn.qkv.weight",
+      "decoder_blocks.2.ln_1.bias",
+      "decoder_blocks.2.ln_1.weight",
+      "decoder_blocks.2.ln_2.bias",
+      "decoder_blocks.2.ln_2.weight",
+      "decoder_blocks.2.ln_3.bias",
+      "decoder_blocks.2.ln_3.weight",
+      "decoder_blocks.2.mlp.c_fc.bias",
+      "decoder_blocks.2.mlp.c_fc.weight",
+      "decoder_blocks.2.mlp.c_proj.bias",
+      "decoder_blocks.2.mlp.c_proj.weight",
+      "decoder_blocks.2.self_attn.proj.bias",
+      "decoder_blocks.2.self_attn.proj.weight",
+      "decoder_blocks.2.self_attn.qkv.weight",
+      "decoder_blocks.3.cross_attn.proj.bias",
+      "decoder_blocks.3.cross_attn.proj.weight",
+      "decoder_blocks.3.cross_attn.qkv.weight",
+      "decoder_blocks.3.ln_1.bias",
+      "decoder_blocks.3.ln_1.weight",
+      "decoder_blocks.3.ln_2.bias",
+      "decoder_blocks.3.ln_2.weight",
+      "decoder_blocks.3.ln_3.bias",
+      "decoder_blocks.3.ln_3.weight",
+      "decoder_blocks.3.mlp.c_fc.bias",
+      "decoder_blocks.3.mlp.c_fc.weight",
+      "decoder_blocks.3.mlp.c_proj.bias",
+      "decoder_blocks.3.mlp.c_proj.weight",
+      "decoder_blocks.3.self_attn.proj.bias",
+      "decoder_blocks.3.self_attn.proj.weight",
+      "decoder_blocks.3.self_attn.qkv.weight",
+      "embedding.weight",
+      "encoder_blocks.0.attn.proj.bias",
+      "encoder_blocks.0.attn.proj.weight",
+      "encoder_blocks.0.attn.qkv.weight",
+      "encoder_blocks.0.ln_1.bias",
+      "encoder_blocks.0.ln_1.weight",
+      "encoder_blocks.0.ln_2.bias",
+      "encoder_blocks.0.ln_2.weight",
+      "encoder_blocks.0.mlp.c_fc.bias",
+      "encoder_blocks.0.mlp.c_fc.weight",
+      "encoder_blocks.0.mlp.c_proj.bias",
+      "encoder_blocks.0.mlp.c_proj.weight",
+      "item_mlp.0.bias",
+      "item_mlp.0.weight",
+      "item_mlp.2.bias",
+      "item_mlp.2.weight",
+      "ln_f.bias",
+      "ln_f.weight",
+      "mask_emb_table.weight",
+      "pos_emb_enc.weight"
+    ],
+    "tokenizer_parameters_and_SID_unchanged": true,
+    "optimizer_clock_check": {
+      "status": "passed",
+      "recommender_optimizer_updates": 3,
+      "tokenizer_optimizer_updates": 2,
+      "covered_parameter_names": [
+        "embedding.weight",
+        "item_mlp.0.weight",
+        "item_mlp.0.bias",
+        "item_mlp.2.weight",
+        "item_mlp.2.bias",
+        "mask_emb_table.weight",
+        "pos_emb_enc.weight",
+        "encoder_blocks.0.ln_1.weight",
+        "encoder_blocks.0.ln_1.bias",
+        "encoder_blocks.0.attn.qkv.weight",
+        "encoder_blocks.0.attn.proj.weight",
+        "encoder_blocks.0.attn.proj.bias",
+        "encoder_blocks.0.ln_2.weight",
+        "encoder_blocks.0.ln_2.bias",
+        "encoder_blocks.0.mlp.c_fc.weight",
+        "encoder_blocks.0.mlp.c_fc.bias",
+        "encoder_blocks.0.mlp.c_proj.weight",
+        "encoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.0.ln_1.weight",
+        "decoder_blocks.0.ln_1.bias",
+        "decoder_blocks.0.self_attn.qkv.weight",
+        "decoder_blocks.0.self_attn.proj.weight",
+        "decoder_blocks.0.self_attn.proj.bias",
+        "decoder_blocks.0.ln_2.weight",
+        "decoder_blocks.0.ln_2.bias",
+        "decoder_blocks.0.cross_attn.qkv.weight",
+        "decoder_blocks.0.cross_attn.proj.weight",
+        "decoder_blocks.0.cross_attn.proj.bias",
+        "decoder_blocks.0.ln_3.weight",
+        "decoder_blocks.0.ln_3.bias",
+        "decoder_blocks.0.mlp.c_fc.weight",
+        "decoder_blocks.0.mlp.c_fc.bias",
+        "decoder_blocks.0.mlp.c_proj.weight",
+        "decoder_blocks.0.mlp.c_proj.bias",
+        "decoder_blocks.1.ln_1.weight",
+        "decoder_blocks.1.ln_1.bias",
+        "decoder_blocks.1.self_attn.qkv.weight",
+        "decoder_blocks.1.self_attn.proj.weight",
+        "decoder_blocks.1.self_attn.proj.bias",
+        "decoder_blocks.1.ln_2.weight",
+        "decoder_blocks.1.ln_2.bias",
+        "decoder_blocks.1.cross_attn.qkv.weight",
+        "decoder_blocks.1.cross_attn.proj.weight",
+        "decoder_blocks.1.cross_attn.proj.bias",
+        "decoder_blocks.1.ln_3.weight",
+        "decoder_blocks.1.ln_3.bias",
+        "decoder_blocks.1.mlp.c_fc.weight",
+        "decoder_blocks.1.mlp.c_fc.bias",
+        "decoder_blocks.1.mlp.c_proj.weight",
+        "decoder_blocks.1.mlp.c_proj.bias",
+        "decoder_blocks.2.ln_1.weight",
+        "decoder_blocks.2.ln_1.bias",
+        "decoder_blocks.2.self_attn.qkv.weight",
+        "decoder_blocks.2.self_attn.proj.weight",
+        "decoder_blocks.2.self_attn.proj.bias",
+        "decoder_blocks.2.ln_2.weight",
+        "decoder_blocks.2.ln_2.bias",
+        "decoder_blocks.2.cross_attn.qkv.weight",
+        "decoder_blocks.2.cross_attn.proj.weight",
+        "decoder_blocks.2.cross_attn.proj.bias",
+        "decoder_blocks.2.ln_3.weight",
+        "decoder_blocks.2.ln_3.bias",
+        "decoder_blocks.2.mlp.c_fc.weight",
+        "decoder_blocks.2.mlp.c_fc.bias",
+        "decoder_blocks.2.mlp.c_proj.weight",
+        "decoder_blocks.2.mlp.c_proj.bias",
+        "decoder_blocks.3.ln_1.weight",
+        "decoder_blocks.3.ln_1.bias",
+        "decoder_blocks.3.self_attn.qkv.weight",
+        "decoder_blocks.3.self_attn.proj.weight",
+        "decoder_blocks.3.self_attn.proj.bias",
+        "decoder_blocks.3.ln_2.weight",
+        "decoder_blocks.3.ln_2.bias",
+        "decoder_blocks.3.cross_attn.qkv.weight",
+        "decoder_blocks.3.cross_attn.proj.weight",
+        "decoder_blocks.3.cross_attn.proj.bias",
+        "decoder_blocks.3.ln_3.weight",
+        "decoder_blocks.3.ln_3.bias",
+        "decoder_blocks.3.mlp.c_fc.weight",
+        "decoder_blocks.3.mlp.c_fc.bias",
+        "decoder_blocks.3.mlp.c_proj.weight",
+        "decoder_blocks.3.mlp.c_proj.bias",
+        "ln_f.weight",
+        "ln_f.bias",
+        "joint_alignment.mixer.base_codebooks"
+      ],
+      "legitimate_inactive_SIA_parameters": [
+        "joint_sequence_adapter.0.weight",
+        "joint_sequence_adapter.0.bias",
+        "joint_sequence_adapter.2.weight",
+        "joint_sequence_adapter.2.bias"
+      ],
+      "optimizer_state_count": 85,
+      "all_active_optimizer_steps_match": true
+    },
+    "original_checkpoint_hashes_unchanged": {
+      "last": "6dc066b7aad068f678f84fa1b0bfa8172405d5efb5c733711fe8403087e81ab9",
+      "best": "ca221838a456e926447e615c03da38759eb3873ad74fc2a08faa361b7070df44",
+      "source": "013813b24c841de34f91a7a78738294bc7511ce0669608d4dacd2d9e64c9ba1e"
+    },
+    "manual_one_update_probe": true,
+    "trainer_fit_resume_not_exercised": true,
+    "cuda_bitwise_claim": false
+  },
+  "test_data_evaluated": false,
+  "validation_max_batches_per_call": 8,
+  "process_wall_seconds": 23.64198017027229
+}

@@ -1,0 +1,355 @@
+[
+  {
+    "seed": 2025,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 23,
+    "last_phase": "recommender",
+    "recommender_updates": 1872,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3565230667591095,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "31032cc3f5718a2dec7d74ddecdfedbad215004be84cf33e2225b57e759640ec",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.354249507188797,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "3bb210c9c3dd987d1eb1ee79a9ba34e0383a6935fb4c98224a3f48bbbc642fce",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3845632076263428,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "f90358b0121524e62e72c1bd4d588d6600e4c2e3fe9ae9f6fb98378c2249f8fc",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.33007103204727173,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "0ae105a490e20c931b754d467c128ca1e6ede979f1cbf72d2c07ce3e9345049d",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 22,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3239707350730896,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "652f4aa6e49a16e3c39684545848b6654b98f401cbb91fbb8194cf1470d62a7c",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12,
+      19
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 24]:  55%|█████▍    | 905/1652 [00:59<00:49, 15.02it/s]",
+      "Training recommender - [Epoch 24]:  55%|█████▍    | 907/1652 [00:59<00:49, 14.97it/s]",
+      "Training recommender - [Epoch 24]:  55%|█████▌    | 909/1652 [00:59<00:49, 15.13it/s]"
+    ]
+  },
+  {
+    "seed": 2025,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 17,
+    "last_phase": "recommender",
+    "recommender_updates": 1456,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.32965925335884094,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "6f5652d360b6fd2d030bd2981a76c89c5241d24a27be485f6dddb766360f064f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.31836557388305664,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "27c809357317938da673da7448305e120fdbe32fce23c5fb3de36cc1f3b7a50b",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.34200990200042725,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "bba110dadf4df84d57edd05722cbb1cafbe933a4ac173e9e812b006bb71e3c4f",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12
+    ],
+    "initial": {
+      "initial_base_state_sha256": "26779829adecd20dbc11ee59a4a767cbd299173cdd5c2fdafa97d8a39391934d",
+      "initial_rng_sha256": "b01f6f25a27fe3dec82245f52bdc297be50688561cb35be9f2bfaa708bc30349",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training tokenizer - [Epoch 18]:  24%|██▍       | 23/96 [00:02<00:08,  8.99it/s]",
+      "Training tokenizer - [Epoch 18]:  26%|██▌       | 25/96 [00:02<00:07,  9.40it/s]",
+      "Training tokenizer - [Epoch 18]:  28%|██▊       | 27/96 [00:02<00:07,  9.78it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "control",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_control",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 18,
+    "last_phase": "tokenizer",
+    "recommender_updates": 1456,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3588983118534088,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a5723f91121a2d23aa174887f20af37cb92ddd1327b190e5273cf59bf987a965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.38175854086875916,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "15cce01964fa236b40fbba46759ea2746ccd6e40ad53081f6c6a98db1c49e965",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.37656691670417786,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "100476af5a28e4b101d74e88e24f70c28bb7ccdb81a411fd732a0e4e8c399d92",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.35427236557006836,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "d56957c8f09877bf9f72c459e9b458408b49be9630f654f1e7b6d653d72729d4",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Training recommender - [Epoch 19]:  86%|████████▌ | 1417/1652 [01:56<00:18, 12.52it/s]",
+      "Training recommender - [Epoch 19]:  86%|████████▌ | 1419/1652 [01:56<00:19, 12.00it/s]",
+      "Training recommender - [Epoch 19]:  86%|████████▌ | 1421/1652 [01:56<00:19, 12.09it/s]"
+    ]
+  },
+  {
+    "seed": 2026,
+    "arm": "item_local",
+    "job_status": "starting",
+    "children": [
+      {
+        "label": "train_item_local",
+        "status": "running",
+        "returncode": null
+      }
+    ],
+    "completed_phases": 19,
+    "last_phase": "recommender",
+    "recommender_updates": 1560,
+    "tokenizer_checks": [
+      {
+        "epoch": 6,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.36437803506851196,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "a74ff8d5843ee0afcf38cd5268ce08f875dc35fc33c6a9fa7ca9c5527baaf226",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 10,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3582686483860016,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "38d2736ca045202b8e3a0d1850efb40ee2b82ad68446e9770d52dd9259af58ca",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 14,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.35798266530036926,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "bf1f6c629d3d1355787188d82e74fefe2148fbe68249213bf9f13c10e83931a7",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      },
+      {
+        "epoch": 18,
+        "optimizer_updates": 6,
+        "direct_recommendation_gradient_norm": 0.3461560904979706,
+        "frozen_parameters_unchanged": true,
+        "all_active_gradients_finite": true,
+        "SID_integrity": {
+          "hard_codes_sha256": "0ea3a99911233cf9d9cf4f85eb5cc0e4e9f7d9fbe77d7e5f5bd786c219dfac1a",
+          "catalogue_mapping_matches": true,
+          "nearest_assignments_verified": true,
+          "SID_change_required": false
+        }
+      }
+    ],
+    "evaluation_epochs": [
+      0,
+      5,
+      12
+    ],
+    "initial": {
+      "initial_base_state_sha256": "e1fa927b788804d9fbfa8f5c564e65e225b032f68e55da522d7caf3a55855cfa",
+      "initial_rng_sha256": "bcea8e2a32a6e8f3d6afcc9a19c1f9d29dec025ff3b46e03f19559ee87c1614c",
+      "initial_SID_sha256": "c2737f003be8301da601c8aac45c06e33ea70be25d65c7904abd6b96122c0869"
+    },
+    "training_status": null,
+    "best_epoch": null,
+    "validation_complete": false,
+    "error": null,
+    "log_tail": [
+      "Eval - val:  72%|███████▏  | 2023/2796 [02:41<01:00, 12.71it/s]",
+      "Eval - val:  72%|███████▏  | 2025/2796 [02:41<01:01, 12.59it/s]",
+      "Eval - val:  72%|███████▏  | 2027/2796 [02:42<01:01, 12.55it/s]"
+    ]
+  }
+]

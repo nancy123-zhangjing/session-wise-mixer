@@ -1,0 +1,63 @@
+
+test_disabled_path_matches_prechange_model_and_enabled_preserves_base_rng (__main__.DiffGRMIntegrationTests.test_disabled_path_matches_prechange_model_and_enabled_preserves_base_rng) ... ok
+test_recommendation_loss_trains_new_module_and_checkpoint_reloads (__main__.DiffGRMIntegrationTests.test_recommendation_loss_trains_new_module_and_checkpoint_reloads) ... ERROR
+test_training_and_real_generation_use_module_before_item_mlp (__main__.DiffGRMIntegrationTests.test_training_and_real_generation_use_module_before_item_mlp) ... ok
+test_attention_stays_inside_each_item_but_mixes_its_slots (__main__.ItemLocalBlockTests.test_attention_stays_inside_each_item_but_mixes_its_slots) ... ok
+test_bfloat16_autocast_padding_forward_and_backward_are_finite (__main__.ItemLocalBlockTests.test_bfloat16_autocast_padding_forward_and_backward_are_finite) ... ok
+test_padding_is_finite_after_activation_and_does_not_leak (__main__.ItemLocalBlockTests.test_padding_is_finite_after_activation_and_does_not_leak) ... ok
+test_zero_initialization_is_exact_identity_and_correct_parameter_count (__main__.ItemLocalBlockTests.test_zero_initialization_is_exact_identity_and_correct_parameter_count) ... ok
+test_zero_output_projection_can_learn_then_routes_qkv_gradients (__main__.ItemLocalBlockTests.test_zero_output_projection_can_learn_then_routes_qkv_gradients) ... ok
+
+======================================================================
+ERROR: test_recommendation_loss_trains_new_module_and_checkpoint_reloads (__main__.DiffGRMIntegrationTests.test_recommendation_loss_trains_new_module_and_checkpoint_reloads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\nancy\Documents\experiment1\tests\test_item_local_attention.py", line 340, in test_recommendation_loss_trains_new_module_and_checkpoint_reloads
+    torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict()}, path)
+  File "C:\Users\nancy\Documents\experiment1\.runtime\continuous_env\Lib\site-packages\torch\serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nancy\Documents\experiment1\.runtime\continuous_env\Lib\site-packages\torch\serialization.py", line 810, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nancy\Documents\experiment1\.runtime\continuous_env\Lib\site-packages\torch\serialization.py", line 781, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name, _compute_crc32))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: File C:\Users\nancy\AppData\Local\Packages\sandbox.{2e95ea90-3271-4448-82a4-f4bae958a22c}\AC\Temp\tmprio7654f\best.pt cannot be opened.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py", line 637, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\nancy\\AppData\\Local\\Packages\\sandbox.{2e95ea90-3271-4448-82a4-f4bae958a22c}\\AC\\Temp\\tmprio7654f'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nancy\Documents\experiment1\tests\test_item_local_attention.py", line 338, in test_recommendation_loss_trains_new_module_and_checkpoint_reloads
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 950, in __exit__
+    self.cleanup()
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py", line 639, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 906, in onexc
+    _resetperms(path)
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\nancy\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\nancy\\AppData\\Local\\Packages\\sandbox.{2e95ea90-3271-4448-82a4-f4bae958a22c}\\AC\\Temp\\tmprio7654f'
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.048s
+
+FAILED (errors=1)
