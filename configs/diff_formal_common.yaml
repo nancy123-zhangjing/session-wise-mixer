@@ -1,0 +1,102 @@
+# Paper-aligned DiffGRM protocol on Amazon Reviews 2014 - Beauty.
+run_id: diff_formal_pse_4x256_schedfix_v2
+rand_seed: 2024
+reproducibility: true
+
+cache_dir: ../../data/cache/
+log_dir: ../../outputs/logs/
+tensorboard_log_dir: ../../outputs/tensorboard/
+ckpt_dir: ../../outputs/checkpoints/
+diffusion_diagnostics_log_dir: ../../outputs/diffusion_diagnostics/
+run_metadata_dir: ../../outputs/run_metadata/
+
+category: Beauty
+metadata: sentence
+split: leave_one_out
+train_sliding: true
+min_hist_len: 2
+max_hist_len: 50
+max_history_len: 50
+
+# DiffGRM paper: four independent PSE digits, 256 codes per digit.
+n_digit: 4
+codebook_size: 256
+sent_emb_model: sentence-transformers/sentence-t5-base
+sent_emb_dim: 768
+sent_emb_pca: 256
+sent_emb_batch_size: 128
+normalize_after_pca: true
+
+# Paper backbone for Beauty.
+encoder_n_layer: 1
+decoder_n_layer: 4
+n_head: 4
+n_embd: 256
+n_inner: 1024
+dropout: 0.1
+embd_pdrop: 0.1
+attn_pdrop: 0.1
+resid_pdrop: 0.1
+norm_type: layernorm
+norm_eps: 1e-5
+share_embeddings: true
+share_decoder_output_embedding: true
+
+# OCN: mask the least-confident/hard digits first; use one static probe order.
+masking_strategy: guided
+guided_steps: auto
+guided_select: least
+guided_conf_metric: msp
+guided_refresh_each_step: false
+mask_schedule:
+  enabled: false
+
+# 10 GB GPU-safe physical batch. Version-specific overlays select gradient
+# accumulation: v2/v3 used 4 (base batch 256), while repository-reproduction
+# v5/v6 use 16 to reproduce the official Beauty base batch of 1024. Each example creates
+# four OCN views inside the model.
+mixed_precision: fp16
+gradient_accumulation_steps: 4
+train_batch_size: 64
+eval_batch_size: 8
+lr: 0.01
+weight_decay: 0.0
+warmup_steps: 10000
+warmup_ratio: 0.0
+epochs: 100
+max_grad_norm: 1.0
+# Table 7 of the paper reports alpha=0.1 for Beauty.
+label_smoothing: 0.1
+# Match Eq. (3)/(7): equal weight per OCN view after within-view averaging.
+diffusion_loss_reduction: per_view
+
+eval_start_epoch: 20
+eval_interval: 1
+patience: 15
+min_delta: 0.0
+topk: [5, 10]
+metrics: [ndcg, recall]
+val_metric: weighted_score
+beam_search_modes: [confidence]
+
+# CPD. Paper B_act=256 on Beauty; validation uses a smaller beam for speed.
+vectorized_beam_search:
+  top_k_final: 10
+  neg_inf_fp32: -1000000000.0
+  neg_inf_fp16: -65504.0
+  dedup_strategy: simple
+  val: {beam_act: 32, beam_max: 32}
+  test: {beam_act: 256, beam_max: 256}
+  beam_act: 32
+  beam_max: 32
+dedup_strategy: simple
+
+# The reproduction baseline follows the paper's SID-level protocol.  Target
+# item IDs are nevertheless preserved in the tokenized data for the later
+# controlled strict-item experiment.
+evaluation_level: sid
+eval_expand_sid_to_items: false
+
+# Zero/null means no truncation. Smoke config overrides both.
+max_train_batches_per_epoch: null
+max_eval_batches: null

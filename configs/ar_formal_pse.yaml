@@ -1,0 +1,15 @@
+# PSE 3x256 internal AR control.
+# The raw 768-d sentence-T5-XL embedding is divisible into three PQ subspaces.
+run_id: ar_formal_pse_3x256
+sid_quantizer: opq_pq
+semantic_codebook_sizes: [256, 256, 256]
+
+# PSE/OPQ-PQ consumes the same frozen raw item embedding as the AR RQ-VAE
+# tokenizer.  Setting PCA to zero also avoids an invalid 32 / 3 split.
+sent_emb_pca: 0
+disable_opq: false
+opq_use_gpu: false
+faiss_omp_num_threads: 16
+
+force_regenerate_opq: false
+force_regenerate_codes: false

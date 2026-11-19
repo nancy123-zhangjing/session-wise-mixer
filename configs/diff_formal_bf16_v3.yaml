@@ -1,0 +1,14 @@
+# Numerical-stability overlay for the v3 formal DiffGRM run.
+#
+# The v2 FP16 run reached the intended 1e-2 peak learning rate near epoch 25,
+# then produced its first non-finite loss at epoch 31.  RTX 3080 BF16 support
+# was verified on the experiment server, so v3 keeps the paper-aligned
+# optimizer schedule while using BF16's wider exponent range.
+run_id: diff_formal_pse_4x256_schedfix_v3_bf16
+mixed_precision: bf16
+
+# Fail immediately on a non-finite loss/diagnostic/gradient instead of
+# continuing until patience-based early stopping.  A periodic parameter scan
+# adds a second guard without paying the cost on every optimizer update.
+numerical_guard: true
+numerical_guard_parameter_interval: 100

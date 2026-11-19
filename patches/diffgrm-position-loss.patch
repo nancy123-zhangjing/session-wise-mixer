@@ -1,0 +1,1424 @@
+diff --git a/genrec/models/AR_GRM/collate.py b/genrec/models/AR_GRM/collate.py
+index a369254..f72f02c 100644
+--- a/genrec/models/AR_GRM/collate.py
++++ b/genrec/models/AR_GRM/collate.py
+@@ -50,6 +50,7 @@ def collate_fn_val(batch: List[Dict[str, Any]]) -> Dict[str, torch.Tensor]:
+     return {
+         'history_sid': stack_to_tensor([b['history_sid'] for b in batch]),  # [B, seq_len, n_digit]
+         'labels': stack_to_tensor([b['labels'] for b in batch]),  # [B, n_digit]
++        'target_item_id': stack_to_tensor([b['target_item_id'] for b in batch]),  # [B]
+     }
+ 
+ 
+@@ -57,4 +58,4 @@ def collate_fn_test(batch: List[Dict[str, Any]]) -> Dict[str, torch.Tensor]:
+     """
+     测试时的collate函数（与验证相同）
+     """
+-    return collate_fn_val(batch) 
+\ No newline at end of file
++    return collate_fn_val(batch)
+diff --git a/genrec/models/AR_GRM/config.yaml b/genrec/models/AR_GRM/config.yaml
+index f9f800d..6fd3a1a 100644
+--- a/genrec/models/AR_GRM/config.yaml
++++ b/genrec/models/AR_GRM/config.yaml
+@@ -80,6 +80,7 @@ warmup_steps: 10000
+ epochs: 100
+ max_grad_norm: 1.0
+ label_smoothing: 0.1
++position_loss_log_dir: position_loss_logs
+ 
+ # Evaluation
+ eval_interval: 2
+@@ -87,4 +88,4 @@ eval_start_epoch: 20
+ patience: 5
+ topk: [5, 10]
+ metrics: [ndcg, recall]
+-val_metric: ndcg@10
+\ No newline at end of file
++val_metric: ndcg@10
+diff --git a/genrec/models/AR_GRM/evaluator.py b/genrec/models/AR_GRM/evaluator.py
+index 8cd88d1..7dfab7c 100644
+--- a/genrec/models/AR_GRM/evaluator.py
++++ b/genrec/models/AR_GRM/evaluator.py
+@@ -1,185 +1,97 @@
+-# Copyright (c) Meta Platforms, Inc. and affiliates.
+-# All rights reserved.
+-
+-# This source code is licensed under the license found in the
+-# LICENSE file in the root directory of this source tree.
++"""Strict item-level evaluator for autoregressive SID generation."""
+ 
+ import torch
+-import numpy as np
+ 
+ 
+ class AR_GRMEvaluator:
+-    """
+-    AR_GRM 模型的评估器（顺序自回归 beam-search 输出）
+-    """
++    """Decode generated SIDs to items before computing recommendation metrics."""
++
+     def __init__(self, config, tokenizer):
+         self.config = config
+         self.tokenizer = tokenizer
+-        self.metric2func = {
+-            'recall': self.recall_at_k,
+-            'ndcg': self.ndcg_at_k
+-        }
+-
+-        self.pad_token = self.tokenizer.pad_token
+         self.maxk = max(config['topk'])
+-        
+-        # 仅统计每个 batch 的 Top-10 合法率
+         self.batch_legal_at10 = []
+-        
+-        # 调试信息：确认使用了DIFF_GRMEvaluator
+-        print(f'>> Using evaluator = {self.__class__.__name__} (AR beam)')
+-        print(f'>> Recall: any() 按首次命中计分')
+-        print(f'>> NDCG: first-hit-only 计算')
+-
+-
+-
+-    def calculate_pos_index(self, preds, labels):
+-        """
+-        计算预测结果与真标签的匹配情况（beam search已保证合法性）
+-        
+-        Args:
+-            preds: (batch_size, maxk, n_digit) - 生成的SID序列（已过滤为合法）
+-            labels: (batch_size, n_digit) - 真标签序列
+-        
+-        Returns:
+-            pos_index: (batch_size, maxk) - 每个位置是否匹配真标签
+-        """
++        self.batch_duplicate_at10 = []
++
++        print('>> Using evaluator = AR_GRMEvaluator (strict item-level)')
++        print('>> A hit requires decoded_item_id == target_item_id')
++        print('>> Recall@K equals HitRate@K for the single-target protocol')
++
++    def decode_item_ids(self, preds):
++        """Decode [B, K, digits] codebook IDs; invalid sequences become -1."""
+         preds = preds.detach().cpu()
+-        labels = labels.detach().cpu()
+-        
+-        B, maxk, n_digit = preds.shape
+-        
+-        # 🚀 简化：beam search已保证返回的序列都是合法的
+-        # 直接计算匹配情况，无需再过滤
+-        pos_index = torch.zeros((B, maxk), dtype=torch.bool)
+-        
+-        for i in range(B):
+-            # 获取真标签
+-            cur_label = labels[i].tolist()  # [n_digit]
+-            
+-            for j in range(maxk):
+-                # 获取预测序列
+-                cur_pred = preds[i, j].tolist()  # [n_digit]
+-                
+-                # 比较codebook IDs（0-255范围）
+-                if cur_pred == cur_label:
+-                    pos_index[i, j] = True
+-                    break  # 找到第一个匹配就停止，避免重复计分
+-        
+-        return pos_index
+-
+-    def recall_at_k(self, pos_index, k):
+-        """计算Recall@k（修复：重复命中只计1分）"""
+-        # pos_index: (batch_size, maxk) - 已经过滤为合法序列
+-        # 修复：使用any()避免重复计分，只要top-k中有≥1个匹配就得1分
+-        return pos_index[:, :k].any(dim=1).cpu().float()
+-
+-    def ndcg_at_k(self, pos_index, k):
+-        """计算NDCG@k（修复：重复命中只计第一次的DCG）"""
+-        # pos_index: (batch_size, maxk) - 已经过滤为合法序列
++        batch_size, maxk, _ = preds.shape
++        decoded = torch.full((batch_size, maxk), -1, dtype=torch.long)
++        for batch_index in range(batch_size):
++            for rank in range(maxk):
++                item_id = self.tokenizer.codebooks_to_item_id(
++                    preds[batch_index, rank].tolist()
++                )
++                if item_id is not None:
++                    decoded[batch_index, rank] = int(item_id)
++        return decoded
++
++    @staticmethod
++    def calculate_pos_index(decoded_item_ids, target_item_ids):
++        target_item_ids = target_item_ids.detach().cpu().long().view(-1, 1)
++        return decoded_item_ids.eq(target_item_ids)
++
++    @staticmethod
++    def hit_rate_at_k(pos_index, k):
++        return pos_index[:, :k].any(dim=1).float()
++
++    recall_at_k = hit_rate_at_k
++
++    @staticmethod
++    def ndcg_at_k(pos_index, k):
+         batch_size, maxk = pos_index.shape
+-        device = pos_index.device
+-        
+-        # 创建rank权重：1/log2(rank+1)
+-        ranks = torch.arange(1, maxk + 1, device=device).float()
+-        dcg_weights = 1.0 / torch.log2(ranks + 1)
+-        
+-        # 修复：只计算第一个匹配位置的DCG，避免重复计分（向量化实现）
+-        # 创建位置索引矩阵
+-        position_matrix = torch.arange(maxk, device=device).expand(batch_size, -1)
+-        
+-        # 找到每个样本第一个匹配的位置（向量化）
+-        # 将非匹配位置设为一个很大的数，这样min操作会忽略它们
+-        masked_positions = torch.where(pos_index, position_matrix, torch.full_like(position_matrix, maxk))
+-        first_hit_positions = masked_positions.min(dim=1).values  # [batch_size]
+-        
+-        # 计算DCG：只有在top-k内且有匹配时才得分
+-        # 修复索引越界问题：确保only真正有匹配且在top-k内的样本才计分
+-        has_hit = first_hit_positions < maxk  # 是否有匹配
+-        in_topk = first_hit_positions < k  # 匹配是否在top-k内
+-        valid_mask = has_hit & in_topk  # 既有匹配又在top-k内
+-        
+-        # 安全的索引访问：先限制索引范围，再计算得分
+-        safe_positions = torch.clamp(first_hit_positions, 0, maxk - 1)
+-        dcg_scores = torch.where(valid_mask, dcg_weights[safe_positions], torch.tensor(0.0, device=device))
+-        
+-        # 对于单标签推荐任务，IDCG=1.0，所以DCG就是NDCG
+-        return dcg_scores.cpu().float()
+-
+-    def _dup_ratio_per_user(self, preds, k=10):
+-        """
+-        计算一个 batch 内"用户内部"的重复率。
+-        preds: [B, maxk, n_digit]（已保证 maxk ≥ k）
+-        返回:  [B] 每个用户自己的重复率
+-        """
+-        B, _, n_digit = preds.shape
+-        dup_ratios = []
+-
+-        for b in range(B):
+-            # 仅取前 k 条
+-            seqs = preds[b, :k]                       # [k, n_digit]
+-            k_seqs = [tuple(s.tolist()) for s in seqs]
+-            unique_cnt = len(set(k_seqs))
+-            dup_ratios.append(1 - unique_cnt / k)     # in [0,1]
+-
+-        return torch.tensor(dup_ratios, dtype=torch.float32)
+-
+-    def calculate_weighted_score(self, preds, labels):
+-        """
+-        计算加权综合分数：NDCG@10 * 0.8 + RECALL@10 * 0.2
+-        
+-        Args:
+-            preds: (batch_size, beam_size, n_digit) - 生成的SID序列
+-            labels: (batch_size, n_digit) - 真标签序列
+-        
+-        Returns:
+-            weighted_score: 加权综合分数
+-        """
+-        pos_index = self.calculate_pos_index(preds, labels)
+-        
+-        # 计算NDCG@10
+-        ndcg_10 = self.ndcg_at_k(pos_index, k=10)
+-        
+-        # 计算RECALL@10
+-        recall_10 = self.recall_at_k(pos_index, k=10)
+-        
+-        # 计算加权分数：NDCG@10 * 0.8 + RECALL@10 * 0.2
+-        weighted_score = 0.8 * ndcg_10 + 0.2 * recall_10
+-        
+-        return weighted_score
+-
+-    def calculate_metrics(self, preds, labels, suffix=""):
+-        """计算所有指标"""
++        positions = torch.arange(maxk).expand(batch_size, -1)
++        missing = torch.full_like(positions, maxk)
++        first_hit = torch.where(pos_index, positions, missing).min(dim=1).values
++        valid = first_hit < k
++        safe_position = first_hit.clamp(0, max(k - 1, 0))
++        discounts = 1.0 / torch.log2(safe_position.float() + 2.0)
++        return torch.where(valid, discounts, torch.zeros_like(discounts))
++
++    @staticmethod
++    def duplicate_rate_at_k(decoded_item_ids, k):
++        """Fraction of top-k slots occupied by repeated legal item IDs."""
++        rates = []
++        for row in decoded_item_ids[:, :k].tolist():
++            legal_items = [item_id for item_id in row if item_id >= 1]
++            repeated = len(legal_items) - len(set(legal_items))
++            rates.append(repeated / float(k))
++        return torch.tensor(rates, dtype=torch.float32)
++
++    def calculate_metrics(self, preds, target_item_ids):
++        decoded_item_ids = self.decode_item_ids(preds)
++        pos_index = self.calculate_pos_index(decoded_item_ids, target_item_ids)
++
+         results = {}
+-        pos_index = self.calculate_pos_index(preds, labels)
+-        
+-        # ---------- 仅统计 Top-10 合法率 ----------
+-        B, maxk, n_digit = preds.shape
+-        K = min(10, maxk)
+-        legal_mask = []
+-        for b in range(B):
+-            cnt = 0
+-            for j in range(K):
+-                if self.tokenizer.codebooks_to_item_id(preds[b, j].tolist()) is not None:
+-                    cnt += 1
+-            legal_mask.append(cnt / float(K))
+-        legal_at10 = torch.tensor(legal_mask, dtype=torch.float32)
++        diagnostic_k = min(10, decoded_item_ids.shape[1])
++        legal_at10 = decoded_item_ids[:, :diagnostic_k].ge(1).float().mean(dim=1)
++        duplicate_at10 = self.duplicate_rate_at_k(decoded_item_ids, diagnostic_k)
+         results['legal@10'] = legal_at10
++        results['duplicate@10'] = duplicate_at10
+         self.batch_legal_at10.append(legal_at10.mean().item())
+-        
+-        for metric in self.config['metrics']:
+-            for k in self.config['topk']:
+-                results[f"{metric}@{k}{suffix}"] = self.metric2func[metric](pos_index, k)
+-        
+-        # 添加加权综合分数（只在confidence模式下计算）
+-        if suffix == "":  # 仅confidence模式才算weighted_score
+-            weighted_score = self.calculate_weighted_score(preds, labels)
+-            results['weighted_score'] = weighted_score
+-        
++        self.batch_duplicate_at10.append(duplicate_at10.mean().item())
++
++        for k in self.config['topk']:
++            hit_rate = self.hit_rate_at_k(pos_index, k)
++            results[f'hit_rate@{k}'] = hit_rate
++            # Keep the upstream name for compatibility with existing reports.
++            results[f'recall@{k}'] = hit_rate
++            results[f'ndcg@{k}'] = self.ndcg_at_k(pos_index, k)
++
++        ndcg_10 = results.get('ndcg@10', self.ndcg_at_k(pos_index, 10))
++        hit_rate_10 = results.get('hit_rate@10', self.hit_rate_at_k(pos_index, 10))
++        results['weighted_score'] = 0.8 * ndcg_10 + 0.2 * hit_rate_10
+         return results
+-    
++
+     def print_final_stats(self):
+-        """打印最终统计结果（仅 Top-10 合法率）"""
+         if self.batch_legal_at10:
+-            avg_legal_at10 = sum(self.batch_legal_at10) / len(self.batch_legal_at10)
+-            print(f"[SID_STATS] Top-10 合法率: {avg_legal_at10:.3f}")
+\ No newline at end of file
++            average = sum(self.batch_legal_at10) / len(self.batch_legal_at10)
++            print(f'[ITEM_STATS] Top-10 legal item rate: {average:.3f}')
++        if self.batch_duplicate_at10:
++            average = sum(self.batch_duplicate_at10) / len(self.batch_duplicate_at10)
++            print(f'[ITEM_STATS] Top-10 duplicate item rate: {average:.3f}')
+diff --git a/genrec/models/AR_GRM/model.py b/genrec/models/AR_GRM/model.py
+index 2d867e7..3906240 100644
+--- a/genrec/models/AR_GRM/model.py
++++ b/genrec/models/AR_GRM/model.py
+@@ -208,6 +208,17 @@ class ModelOutput:
+         self.logits = None
+         self.hidden_states = None
+         self.past_key_values = None
++        # Sufficient statistics for unbiased per-SID-position aggregation.
++        # Trainers should sum these over batches/processes and divide once.
++        self.position_loss_sums = None
++        self.position_token_counts = None
++        # Evaluation statistics computed without label smoothing.  These make
++        # position difficulty comparable to code entropy and, after
++        # normalization, to experiments with a different codebook size.
++        self.position_nll_sums = None
++        self.position_correct_counts = None
++        self.prefix_correct_counts = None
++        self.full_sequence_correct_count = None
+ 
+ 
+ class AR_GRM(AbstractModel):
+@@ -442,20 +453,58 @@ class AR_GRM(AbstractModel):
+ 
+         x = self.ln_f(x)  # [B, n_digit+1, d]
+ 
+-        # Compute losses at positions 0..n_digit-1 predicting sid0..sid(n-1)
+-        total_loss = 0.0
++        # Compute losses at positions 0..n_digit-1 predicting sid0..sid(n-1).
++        # Keep reduction='none' so the trainer can report a token-weighted loss
++        # for each SID position instead of averaging batch means.
++        position_losses = []
++        position_loss_sums = []
++        position_nll_sums = []
++        position_token_counts = []
++        position_correct_counts = []
++        position_correct_masks = []
+         for d in range(self.n_digit):
+             logits_d = self._compute_digit_logits(x[:, d, :], digit=d)
+-            total_loss = total_loss + F.cross_entropy(
+-                logits_d, labels[:, d], reduction='mean',
++            token_losses_d = F.cross_entropy(
++                logits_d, labels[:, d], reduction='none',
+                 label_smoothing=self.config.get('label_smoothing', 0.0),
+                 ignore_index=-100  # 🚀 修复：忽略未知商品的-100标签
+             )
+-        total_loss = total_loss / self.n_digit
++            valid_d = labels[:, d].ne(-100)
++            loss_sum_d = token_losses_d.masked_select(valid_d).sum()
++            nll_d = F.cross_entropy(
++                logits_d,
++                labels[:, d],
++                reduction='none',
++                label_smoothing=0.0,
++                ignore_index=-100,
++            )
++            nll_sum_d = nll_d.masked_select(valid_d).sum()
++            correct_d = logits_d.argmax(dim=-1).eq(labels[:, d]) & valid_d
++            token_count_d = valid_d.sum()
++            loss_d = loss_sum_d / token_count_d.clamp_min(1)
++
++            position_losses.append(loss_d)
++            position_loss_sums.append(loss_sum_d)
++            position_nll_sums.append(nll_sum_d)
++            position_token_counts.append(token_count_d)
++            position_correct_counts.append(correct_d.sum())
++            # Invalid labels do not break a prefix; they are excluded by the
++            # valid-token denominator and occur only for unknown items.
++            position_correct_masks.append(correct_d | ~valid_d)
++
++        total_loss = torch.stack(position_losses).mean()
+ 
+         out = ModelOutput()
+         out.loss = total_loss
+         out.hidden_states = x
++        out.position_loss_sums = torch.stack(position_loss_sums)
++        out.position_nll_sums = torch.stack(position_nll_sums)
++        out.position_token_counts = torch.stack(position_token_counts)
++        out.position_correct_counts = torch.stack(position_correct_counts)
++        correct_matrix = torch.stack(position_correct_masks, dim=1)
++        prefix_correct = correct_matrix.to(torch.long).cumprod(dim=1).to(torch.bool)
++        out.prefix_correct_counts = prefix_correct.sum(dim=0)
++        out.full_sequence_correct_count = prefix_correct[:, -1].sum()
+         return out
+ 
+     def _precompute_cross_kv(self, encoder_hidden):
+@@ -570,22 +619,30 @@ class AR_GRM(AbstractModel):
+ 
+                     N = beams.size(0) // B
+                     idx = (torch.arange(B, device=device).unsqueeze(1)*N + parent).view(-1)
+-                    beams = torch.cat([beams[idx], tk_idx.view(B, -1, pre).gather(2, token.unsqueeze(-1)).view(-1,1)], dim=1)
++                    # Select the next token from the chosen parent beam.  The
++                    # previous implementation gathered token rank `token` from
++                    # row 0..keep-1 instead of from `parent`, which paired a
++                    # parent path with another path's token.
++                    batch_idx = torch.arange(B, device=device).unsqueeze(1).expand_as(parent)
++                    candidate_tokens = tk_idx.view(B, N, pre)
++                    selected_token = candidate_tokens[batch_idx, parent, token].reshape(-1, 1)
++                    beams = torch.cat([beams[idx], selected_token], dim=1)
+                     lp = best_lp.view(-1)
+ 
+                     new_self_kv = []
+                     for l in range(len(self.decoder_blocks)):
+-                        pk = beam_self_kv[l]
+                         npk = present[l][0] if present[l] is not None else None
+-                        if pk is None or npk is None:
++                        if npk is None:
+                             new_self_kv.append(None)
+                         else:
+-                            old_k, old_v = pk
+-                            add_k, add_v = npk
+-                            old_k = old_k[idx]; old_v = old_v[idx]
+-                            add_k = add_k[idx]; add_v = add_v[idx]
+-                            new_self_kv.append((torch.cat([old_k, add_k], dim=1), torch.cat([old_v, add_v], dim=1)))
++                            # `present` already contains past + current KV.
++                            # Concatenating the old cache again duplicated all
++                            # previous decoding states at every step.
++                            present_k, present_v = npk
++                            new_self_kv.append((present_k[idx], present_v[idx]))
+                     beam_self_kv = new_self_kv
++                    cross_kv_exp = [kv[idx] for kv in cross_kv_exp]
++                    enc_key_mask_exp = enc_key_mask_exp[idx]
+                     last_emb = emb_of_digit_token(d, beams[:, -1])
+ 
+                 beams = beams.view(B, -1, self.n_digit)   # [B, num_beams, n_digit]
+@@ -602,19 +659,21 @@ class AR_GRM(AbstractModel):
+                 num_beams = sorted_beams.size(1)
+                 for b in range(B):
+                     selected = []
++                    selected_item_ids = set()
+                     # iterate over sorted candidates; keep only legal sequences
+                     for j in range(num_beams):
+                         seq = sorted_beams[b, j].tolist()
+-                        if self.tokenizer.codebooks_to_item_id(seq) is not None:
++                        item_id = self.tokenizer.codebooks_to_item_id(seq)
++                        if item_id is not None and item_id not in selected_item_ids:
+                             selected.append(sorted_beams[b, j])
++                            selected_item_ids.add(item_id)
+                             if len(selected) >= K:
+                                 break
+-                    # Fallbacks: ensure we always return K sequences
+-                    if len(selected) == 0:
+-                        # if no legal sequence found, fall back to the best candidate
+-                        selected.append(sorted_beams[b, 0])
++                    # Keep the output rectangular without pretending repeated
++                    # or invalid candidates are additional recommendations.
++                    invalid = torch.full_like(sorted_beams[b, 0], -1)
+                     while len(selected) < K:
+-                        selected.append(selected[-1])
++                        selected.append(invalid)
+                     final_list.append(torch.stack(selected, dim=0))
+ 
+                 final = torch.stack(final_list, dim=0)  # [B, K, n_digit]
+@@ -634,4 +693,4 @@ class AR_GRM(AbstractModel):
+         elif isinstance(module, nn.LayerNorm):
+             torch.nn.init.zeros_(module.bias)
+             torch.nn.init.ones_(module.weight)
+-        # 注意：output_adapter如果是Identity()，不需要初始化 
+\ No newline at end of file
++        # 注意：output_adapter如果是Identity()，不需要初始化
+diff --git a/genrec/models/AR_GRM/tokenizer.py b/genrec/models/AR_GRM/tokenizer.py
+index 21cfd6f..de286e8 100644
+--- a/genrec/models/AR_GRM/tokenizer.py
++++ b/genrec/models/AR_GRM/tokenizer.py
+@@ -8,6 +8,7 @@ import os
+ import math
+ import json
+ import pickle
++from collections import Counter, defaultdict
+ import numpy as np
+ import torch
+ from tqdm import tqdm
+@@ -33,6 +34,15 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         config.setdefault('device', 'cuda' if torch.cuda.is_available() else 'cpu')
+         config.setdefault('num_proc', 1)
+ 
++        # Keep the semantic quantizer depth separate from the sequence length
++        # seen by the autoregressive model.  When collision disambiguation is
++        # enabled, the model predicts one additional suffix digit.
++        self.semantic_n_digit = int(config.get('semantic_n_digit', config['n_digit']))
++        self.use_collision_suffix = bool(config.get('use_collision_suffix', False))
++        self.total_n_digit = self.semantic_n_digit + int(self.use_collision_suffix)
++        config['semantic_n_digit'] = self.semantic_n_digit
++        config['n_digit'] = self.total_n_digit
++
+         self.n_codebook_bits = self._get_codebook_bits(config['codebook_size'])
+         
+         # 统一量化器：支持 sid_quantizer（兼容 quantizer）
+@@ -41,26 +51,34 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             q_old = config.get('quantizer', 'pq').lower()
+             sid_q = {'pq': 'opq_pq', 'rq': 'rq_kmeans'}.get(q_old, 'opq_pq')
+         self.sid_quantizer = sid_q
+-        assert self.sid_quantizer in ('opq_pq', 'rq_kmeans', 'none'), \
+-            f"sid_quantizer must be one of ['opq_pq','rq_kmeans','none'], got {self.sid_quantizer}"
++        assert self.sid_quantizer in ('opq_pq', 'rq_kmeans', 'rqvae', 'none'), \
++            f"sid_quantizer must be one of ['opq_pq','rq_kmeans','rqvae','none'], got {self.sid_quantizer}"
+         
+         # 与 DIFF_GRM 对齐的 index_factory
+         if self.sid_quantizer == 'opq_pq':
+             use_opq = not config.get('disable_opq', False)
+             if use_opq:
+-                self.index_factory = f'OPQ{config["n_digit"]},IVF1,PQ{config["n_digit"]}x{self.n_codebook_bits}'
++                self.index_factory = f'OPQ{self.semantic_n_digit},IVF1,PQ{self.semantic_n_digit}x{self.n_codebook_bits}'
+             else:
+-                self.index_factory = f'IVF1,PQ{config["n_digit"]}x{self.n_codebook_bits}'
++                self.index_factory = f'IVF1,PQ{self.semantic_n_digit}x{self.n_codebook_bits}'
+         elif self.sid_quantizer == 'rq_kmeans':
+-            self.index_factory = f'RQKMEANS{config["n_digit"]}x{self.n_codebook_bits}'
++            self.index_factory = f'RQKMEANS{self.semantic_n_digit}x{self.n_codebook_bits}'
++        elif self.sid_quantizer == 'rqvae':
++            # RQ-VAE is trained as a separate, resumable stage.  The AR
++            # tokenizer consumes its frozen semantic-ID mapping here.
++            self.index_factory = f'RQVAE{self.semantic_n_digit}x{self.n_codebook_bits}'
+         else:  # 'none'
+-            self.index_factory = f'RAND{config["n_digit"]}x{self.n_codebook_bits}'
++            self.index_factory = f'RAND{self.semantic_n_digit}x{self.n_codebook_bits}'
+ 
+         # 先初始化父类，保证 self.config / self.logger 等字段可用
+         super(AR_GRMTokenizer, self).__init__(config, dataset)
+         
+         # 现在再写日志
+         self.log(f'[TOKENIZER] Index factory: {self.index_factory}')
++        self.log(
++            f'[TOKENIZER] SID layout: {self.semantic_n_digit} semantic digits + '
++            f'{int(self.use_collision_suffix)} collision suffix = {self.total_n_digit} total digits'
++        )
+         self.dataset = dataset  # 添加dataset引用
+         self.item2id = dataset.item2id
+         self.id2item = dataset.id_mapping['id2item']
+@@ -95,6 +113,10 @@ class AR_GRMTokenizer(AbstractTokenizer):
+     def codebook_size(self):
+         return self.config['codebook_size']
+ 
++    @property
++    def collision_suffix_position(self):
++        return self.semantic_n_digit if self.use_collision_suffix else None
++
+     @property
+     def max_token_seq_len(self) -> int:
+         return 1 + self.n_digit  # [BOS] + n_digit SID tokens
+@@ -169,6 +191,107 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         self.log(f'[TOKENIZER] Mask shape: {mask.shape}, True count: {np.sum(mask)}')
+         return mask
+ 
++    def _get_quantizer_fit_mask(self, dataset: AbstractDataset) -> np.ndarray:
++        """Return the catalog rows used to fit either tokenizer.
++
++        Formal paired experiments use a deterministic catalog split so the
++        RQ-VAE and RQ-KMeans tokenizers see exactly the same items.  Existing
++        smoke configs keep the historical interaction-training-item mask.
++        """
++        scope = self.config.get('sid_fit_scope', 'interaction_train')
++        if scope == 'interaction_train':
++            return self._get_items_for_training(dataset)
++        if scope != 'catalog_split':
++            raise ValueError(
++                f"sid_fit_scope must be 'interaction_train' or 'catalog_split', got {scope!r}"
++            )
++
++        n_items = dataset.n_items - 1
++        val_fraction = float(self.config.get('sid_fit_val_fraction', 0.1))
++        if not 0.0 < val_fraction < 1.0:
++            raise ValueError('sid_fit_val_fraction must be between 0 and 1')
++        seed = int(self.config.get('sid_fit_seed', self.config.get('rand_seed', 2024)))
++        rng = np.random.default_rng(seed)
++        order = rng.permutation(n_items)
++        n_val = max(1, int(round(n_items * val_fraction)))
++        mask = np.ones(n_items, dtype=bool)
++        mask[order[:n_val]] = False
++        self.log(
++            f'[TOKENIZER] Catalog fit split: {int(mask.sum())} fit / '
++            f'{int((~mask).sum())} validation items (seed={seed})'
++        )
++        return mask
++
++    def _load_raw_embeddings(self, dataset: AbstractDataset, raw_path: str) -> np.ndarray:
++        explicit_path = self.config.get('sent_emb_path')
++        if explicit_path:
++            explicit_path = os.path.abspath(os.path.expanduser(explicit_path))
++            if not os.path.exists(explicit_path):
++                raise FileNotFoundError(
++                    f'Shared sentence embedding file not found: {explicit_path}. '
++                    'Run scripts/prepare_formal_embeddings.py first.'
++                )
++            self.log(f'[TOKENIZER] Loading shared sentence embeddings from {explicit_path}...')
++            if explicit_path.endswith('.npy'):
++                embeddings = np.load(explicit_path)
++            else:
++                embeddings = np.fromfile(explicit_path, dtype=np.float32).reshape(
++                    -1, self.config['sent_emb_dim']
++                )
++        elif os.path.exists(raw_path):
++            self.log(f'[TOKENIZER] Loading RAW sentence embeddings from {raw_path}...')
++            embeddings = np.fromfile(raw_path, dtype=np.float32).reshape(
++                -1, self.config['sent_emb_dim']
++            )
++        else:
++            self.log('[TOKENIZER] Encoding sentence embeddings...')
++            embeddings = self._encode_sent_emb(dataset, raw_path)
++
++        embeddings = np.asarray(embeddings, dtype=np.float32)
++        expected_shape = (dataset.n_items - 1, int(self.config['sent_emb_dim']))
++        if embeddings.shape != expected_shape:
++            raise ValueError(
++                f'Shared embeddings have shape {embeddings.shape}; expected {expected_shape}. '
++                'The item catalog/order or sent_emb_dim does not match.'
++            )
++        return embeddings
++
++    def _load_or_create_pca_embeddings(
++        self,
++        dataset: AbstractDataset,
++        raw_embs: np.ndarray,
++        pca_path: str,
++    ) -> np.ndarray:
++        pca_dim = int(self.config.get('sent_emb_pca', 0))
++        if pca_dim <= 0:
++            return raw_embs
++        if (
++            os.path.exists(pca_path)
++            and os.path.exists(pca_path + '.pkl')
++            and not self.config.get('force_regenerate_pca', False)
++        ):
++            self.log(f'[TOKENIZER] Loading PCA embeddings from {pca_path}...')
++            return np.fromfile(pca_path, dtype=np.float32).reshape(-1, pca_dim)
++
++        from sklearn.decomposition import PCA
++        self.log(f'[TOKENIZER] Fitting shared PCA: {raw_embs.shape[1]} -> {pca_dim}...')
++        fit_mask = self._get_quantizer_fit_mask(dataset)
++        pca = PCA(
++            n_components=pca_dim,
++            whiten=bool(self.config.get('pca_whiten', True)),
++            random_state=int(self.config.get('sid_fit_seed', self.config.get('rand_seed', 2024))),
++        )
++        pca.fit(raw_embs[fit_mask])
++        embeddings = pca.transform(raw_embs).astype(np.float32, copy=False)
++        if self.config.get('normalize_after_pca', True):
++            norms = np.linalg.norm(embeddings, axis=1, keepdims=True) + 1e-12
++            embeddings = embeddings / norms
++        os.makedirs(os.path.dirname(pca_path), exist_ok=True)
++        embeddings.tofile(pca_path)
++        with open(pca_path + '.pkl', 'wb') as handle:
++            pickle.dump(pca, handle)
++        return embeddings
++
+     def _generate_semantic_id_opq(self, sent_embs, sem_ids_path, train_mask):
+         """使用OPQ/PQ生成语义ID（兼容 disable_opq），并用 invlists 的 ids 对齐。"""
+         import faiss
+@@ -183,7 +306,7 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             res = faiss.StandardGpuResources()
+             res.setTempMemory(1024 * 1024 * 512)
+             co = faiss.GpuClonerOptions()
+-            co.useFloat16 = self.n_digit >= 56
++            co.useFloat16 = self.semantic_n_digit >= 56
+         faiss.omp_set_num_threads(self.config['faiss_omp_num_threads'])
+         index = faiss.index_factory(
+             sent_embs.shape[1],
+@@ -219,7 +342,7 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         for u8code in pq_codes_u8:
+             bs = faiss.BitstringReader(faiss.swig_ptr(u8code), n_bytes)
+             code = []
+-            for _ in range(self.n_digit):
++            for _ in range(self.semantic_n_digit):
+                 code.append(bs.read(self.n_codebook_bits))
+             faiss_sem_ids.append(code)
+ 
+@@ -243,10 +366,14 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         seed = int(self.config.get('rq_kmeans_seed', 1234))
+         
+         # 初始化残差为原始向量
+-        residuals = sent_embs.copy().astype(np.float32, copy=False)
+-        codes_all = np.zeros((sent_embs.shape[0], self.n_digit), dtype=np.int64)
++        input_vectors = sent_embs.copy().astype(np.float32, copy=False)
++        residuals = input_vectors.copy()
++        codes_all = np.zeros((sent_embs.shape[0], self.semantic_n_digit), dtype=np.int64)
++        centroids_all = []
++        residual_norms = []
+         
+-        for stage in range(self.n_digit):
++        for stage in range(self.semantic_n_digit):
++            residual_norms.append(float(np.linalg.norm(residuals, axis=1).mean()))
+             kmeans = faiss.Kmeans(d=d, k=K, niter=niter, verbose=False, seed=seed + stage)
+             kmeans.train(residuals[train_mask])
+             # In current Faiss Python, Kmeans.centroids is already a numpy array
+@@ -256,6 +383,7 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             elif centroids.shape == (d, K):
+                 centroids = centroids.T
+             assert centroids.shape == (K, d), f"centroids shape {centroids.shape} != {(K, d)}"
++            centroids_all.append(centroids.copy())
+             
+             # 为全部样本分配最近质心
+             index = faiss.IndexFlatL2(d)
+@@ -275,13 +403,48 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         with open(sem_ids_path, 'w') as f:
+             json.dump(item2sem_ids, f)
+ 
++        artifact_dir = self.config.get('tokenizer_artifact_dir')
++        if artifact_dir:
++            artifact_dir = os.path.abspath(os.path.expanduser(artifact_dir))
++            os.makedirs(artifact_dir, exist_ok=True)
++            quantized_vectors = input_vectors - residuals
++            reconstructed = quantized_vectors
++            if self.config.get('rq_kmeans_use_pca', False):
++                if not os.path.exists(self._pca_model_path):
++                    raise FileNotFoundError(f'PCA model missing: {self._pca_model_path}')
++                with open(self._pca_model_path, 'rb') as handle:
++                    pca = pickle.load(handle)
++                reconstructed = pca.inverse_transform(quantized_vectors).astype(
++                    np.float32, copy=False
++                )
++                norms = np.linalg.norm(reconstructed, axis=1, keepdims=True) + 1e-12
++                reconstructed = reconstructed / norms
++            np.save(os.path.join(artifact_dir, 'semantic_ids.npy'), codes_all)
++            np.save(os.path.join(artifact_dir, 'reconstructed_embeddings.npy'), reconstructed)
++            np.savez_compressed(
++                os.path.join(artifact_dir, 'quantizer_artifacts.npz'),
++                centroids=np.stack(centroids_all),
++                residual_norms=np.asarray(residual_norms, dtype=np.float64),
++                final_residual_norms=np.linalg.norm(residuals, axis=1),
++            )
++            with open(os.path.join(artifact_dir, 'semantic_ids.json'), 'w', encoding='utf-8') as handle:
++                json.dump(item2sem_ids, handle, ensure_ascii=False)
++                handle.write('\n')
++            self.log(f'[TOKENIZER] RQ-KMeans artifacts: {artifact_dir}')
++
+     def _generate_semantic_id_random(self, sem_ids_path, n_items, seed=12345):
+         """为每个商品随机生成 n_digit 个 codebook ID（均匀[0, K-1]）"""
+         rng = np.random.default_rng(seed)
+         item2sem_ids = {}
+         for i in range(1, n_items):
+             item = self.id2item[i]
+-            codes = rng.integers(low=0, high=self.codebook_size, size=self.n_digit, endpoint=False, dtype=np.int64)
++            codes = rng.integers(
++                low=0,
++                high=self.codebook_size,
++                size=self.semantic_n_digit,
++                endpoint=False,
++                dtype=np.int64,
++            )
+             item2sem_ids[item] = tuple(int(c) for c in codes.tolist())
+         os.makedirs(os.path.dirname(sem_ids_path), exist_ok=True)
+         with open(sem_ids_path, 'w') as f:
+@@ -298,6 +461,74 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             item2sem_ids[item] = tuple(tokens)
+         return item2sem_ids
+ 
++    def _semantic_ids_to_model_tokens(self, item2sem_ids: dict) -> dict:
++        """Convert semantic codes to model tokens and add a unique suffix."""
++        semantic_groups = defaultdict(list)
++        for item, semantic_id in item2sem_ids.items():
++            semantic_id = tuple(int(code) for code in semantic_id)
++            if len(semantic_id) != self.semantic_n_digit:
++                raise ValueError(
++                    f'Item {item!r} has {len(semantic_id)} semantic digits; '
++                    f'expected {self.semantic_n_digit}.'
++                )
++            if any(code < 0 or code >= self.codebook_size for code in semantic_id):
++                raise ValueError(
++                    f'Item {item!r} has out-of-range semantic code {semantic_id}; '
++                    f'expected every code in [0, {self.codebook_size - 1}].'
++                )
++            semantic_groups[semantic_id].append(item)
++
++        group_sizes = [len(items) for items in semantic_groups.values()]
++        collided_items = sum(size for size in group_sizes if size > 1)
++        colliding_groups = sum(size > 1 for size in group_sizes)
++        largest_group = max(group_sizes, default=0)
++        self.semantic_collision_stats = {
++            'items': len(item2sem_ids),
++            'unique_semantic_ids': len(semantic_groups),
++            'collided_items': collided_items,
++            'colliding_groups': colliding_groups,
++            'collision_rate': collided_items / max(len(item2sem_ids), 1),
++            'largest_collision_group': largest_group,
++        }
++        self.log(
++            '[SID_UNIQUENESS] Semantic SID: '
++            f'{len(semantic_groups)}/{len(item2sem_ids)} unique, '
++            f'{collided_items} collided items '
++            f'({self.semantic_collision_stats["collision_rate"]:.4%}), '
++            f'largest group={largest_group}'
++        )
++
++        if self.use_collision_suffix and largest_group > self.codebook_size:
++            raise ValueError(
++                f'Largest semantic-ID collision group has {largest_group} items, '
++                f'but collision suffix only supports {self.codebook_size} values.'
++            )
++
++        item_to_suffix = {}
++        for items in semantic_groups.values():
++            # JSON insertion order follows internal item order, making the
++            # assignment deterministic for a fixed dataset and quantizer seed.
++            for suffix, item in enumerate(items):
++                item_to_suffix[item] = suffix
++
++        item2tokens = {}
++        for item, semantic_id in item2sem_ids.items():
++            codes = [int(code) for code in semantic_id]
++            if self.use_collision_suffix:
++                codes.append(item_to_suffix[item])
++            item2tokens[item] = tuple(
++                code + self.sid_offset + digit * self.codebook_size
++                for digit, code in enumerate(codes)
++            )
++        return item2tokens
++
++    def _mapping_tag(self, model_basename: str, quant_tag: str) -> str:
++        suffix_tag = '_csuffix' if self.use_collision_suffix else ''
++        return (
++            f'{model_basename}_pca{self.config["sent_emb_pca"]}_'
++            f'{quant_tag}_{self.semantic_n_digit}sem{suffix_tag}_{self.n_digit}total'
++        )
++
+     def _init_tokenizer(self, dataset: AbstractDataset):
+         """初始化tokenizer"""
+         # 构建路径（与 DIFF 一致）
+@@ -313,23 +544,70 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         quant_tag = self.index_factory
+         if self.sid_quantizer == 'rq_kmeans':
+             quant_tag += f'_seed{self.config.get("rq_kmeans_seed",1234)}_it{self.config.get("rq_kmeans_niters",20)}'
++            input_tag = (
++                f'pca{self.config["sent_emb_pca"]}'
++                if self.config.get('rq_kmeans_use_pca', False)
++                else f'raw{self.config["sent_emb_dim"]}'
++            )
++            quant_tag += f'_input{input_tag}'
++        elif self.sid_quantizer == 'rqvae':
++            quant_tag += f'_seed{self.config.get("rqvae_seed", self.config.get("rand_seed", 2024))}'
++            quant_tag += f'_z{self.config.get("rqvae_embed_dim", 32)}'
++            quant_tag += f'_steps{self.config.get("rqvae_max_steps", "unknown")}'
+         elif self.sid_quantizer == 'none':
+             quant_tag += f'_seed{self.config.get("sid_random_seed",12345)}'
+ 
+-        sem_ids_path = os.path.join(
+-            cache_dir,
+-            f'{model_basename}_pca{self.config["sent_emb_pca"]}_{quant_tag}.sem_ids'
+-        )
++        if self.sid_quantizer == 'rqvae':
++            configured_path = self.config.get('precomputed_semantic_ids_path')
++            if not configured_path:
++                raise ValueError(
++                    'sid_quantizer=rqvae requires precomputed_semantic_ids_path. '
++                    'Run scripts/train_rqvae_tokenizer.py first.'
++                )
++            sem_ids_path = os.path.abspath(os.path.expanduser(configured_path))
++        else:
++            sem_ids_path = os.path.join(
++                cache_dir,
++                f'{model_basename}_pca{self.config["sent_emb_pca"]}_{quant_tag}.sem_ids'
++            )
+ 
+         # 两份嵌入文件：raw / pca
+         raw_path = os.path.join(cache_dir, f'{model_basename}_raw_d{self.config["sent_emb_dim"]}.sent_emb')
+-        pca_path = os.path.join(cache_dir, f'{model_basename}_pca{self.config["sent_emb_pca"]}.sent_emb')
++        pca_split_tag = ''
++        if self.config.get('sid_fit_scope') == 'catalog_split':
++            pca_split_tag = (
++                f'_fitseed{self.config.get("sid_fit_seed", self.config.get("rand_seed", 2024))}'
++            )
++        pca_path = os.path.join(
++            cache_dir,
++            f'{model_basename}_pca{self.config["sent_emb_pca"]}{pca_split_tag}.sent_emb'
++        )
++        self._pca_model_path = pca_path + '.pkl'
+ 
+         force_regenerate = self.config.get('force_regenerate_opq', False) or self.config.get('force_regenerate_codes', False)
++        artifact_dir = self.config.get('tokenizer_artifact_dir')
++        if self.sid_quantizer == 'rq_kmeans' and artifact_dir:
++            expected_artifact = os.path.join(
++                os.path.abspath(os.path.expanduser(artifact_dir)),
++                'reconstructed_embeddings.npy',
++            )
++            if not os.path.exists(expected_artifact):
++                force_regenerate = True
++                self.log('[TOKENIZER] RQ-KMeans geometry artifacts missing; regenerating codes.')
+ 
+         # 按量化器选择向量管线
+         sent_embs = None
+-        if self.sid_quantizer == 'opq_pq':
++        if self.sid_quantizer == 'rqvae':
++            if not os.path.exists(sem_ids_path):
++                raise FileNotFoundError(
++                    f'Precomputed RQ-VAE semantic IDs not found: {sem_ids_path}. '
++                    'Run scripts/train_rqvae_tokenizer.py first.'
++                )
++        elif self.sid_quantizer == 'rq_kmeans' and self.config.get('rq_kmeans_use_pca', False):
++            raw_embs = self._load_raw_embeddings(dataset, raw_path)
++            sent_embs = self._load_or_create_pca_embeddings(dataset, raw_embs, pca_path)
++            self.log(f'[TOKENIZER] RQ-KMeans input shape (PCA): {sent_embs.shape}')
++        elif self.sid_quantizer == 'opq_pq':
+             if self.config['sent_emb_pca'] > 0 and os.path.exists(pca_path):
+                 self.log(f'[TOKENIZER] Loading PCA-ed sentence embeddings from {pca_path}...')
+                 sent_embs = np.fromfile(pca_path, dtype=np.float32).reshape(-1, self.config['sent_emb_pca'])
+@@ -378,12 +656,12 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             self.log(f'[TOKENIZER] Sentence embeddings shape (RAW): {sent_embs.shape}')
+ 
+         # 生成或加载量化结果
+-        if force_regenerate or not os.path.exists(sem_ids_path):
++        if self.sid_quantizer != 'rqvae' and (force_regenerate or not os.path.exists(sem_ids_path)):
+             if force_regenerate:
+                 self.log(f'[TOKENIZER] Force regenerating quantization results ({self.sid_quantizer})...')
+             else:
+                 self.log(f'[TOKENIZER] Quantization results not found, generating ({self.sid_quantizer})...')
+-            training_item_mask = self._get_items_for_training(dataset)
++            training_item_mask = self._get_quantizer_fit_mask(dataset)
+             if self.sid_quantizer == 'opq_pq':
+                 self._generate_semantic_id_opq(sent_embs, sem_ids_path, training_item_mask)
+             elif self.sid_quantizer == 'rq_kmeans':
+@@ -399,10 +677,20 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         # 加载 sem_ids → tokens
+         self.log(f'[TOKENIZER] Loading semantic IDs from {sem_ids_path}...')
+         item2sem_ids = json.load(open(sem_ids_path, 'r'))
+-        item2tokens = self._sem_ids_to_tokens(item2sem_ids)
++        expected_items = set(self.id2item[1:])
++        actual_items = set(item2sem_ids)
++        if actual_items != expected_items:
++            missing = sorted(expected_items - actual_items)[:5]
++            extra = sorted(actual_items - expected_items)[:5]
++            raise ValueError(
++                'Semantic-ID mapping does not match the current item catalog: '
++                f'missing={len(expected_items - actual_items)} sample={missing}, '
++                f'extra={len(actual_items - expected_items)} sample={extra}'
++            )
++        item2tokens = self._semantic_ids_to_model_tokens(item2sem_ids)
+ 
+         # 同步映射文件名（含 seed/iters）
+-        map_tag = f'{model_basename}_pca{self.config["sent_emb_pca"]}_{quant_tag}_{self.n_digit}d'
++        map_tag = self._mapping_tag(model_basename, quant_tag)
+         fwd_path = os.path.join(cache_dir, f'item_id2tokens_{map_tag}.npy')
+         inv_path = os.path.join(cache_dir, f'tokens2item_{map_tag}.pkl')
+ 
+@@ -431,13 +719,40 @@ class AR_GRMTokenizer(AbstractTokenizer):
+ 
+         if not hasattr(self, 'item2tokens'):
+             self.item2tokens = item2tokens
++        self._validate_full_mapping()
+         return item2tokens
+ 
++    def _validate_full_mapping(self):
++        counts = Counter(tuple(tokens) for tokens in self.item2tokens.values())
++        collided_items = sum(count for count in counts.values() if count > 1)
++        largest_group = max(counts.values(), default=0)
++        self.full_collision_stats = {
++            'items': len(self.item2tokens),
++            'unique_full_ids': len(counts),
++            'collided_items': collided_items,
++            'collision_rate': collided_items / max(len(self.item2tokens), 1),
++            'largest_collision_group': largest_group,
++        }
++        self.log(
++            '[SID_UNIQUENESS] Full SID: '
++            f'{len(counts)}/{len(self.item2tokens)} unique, '
++            f'{collided_items} collided items '
++            f'({self.full_collision_stats["collision_rate"]:.4%}), '
++            f'largest group={largest_group}'
++        )
++        if self.config.get('require_unique_sid', False) and collided_items:
++            raise ValueError(
++                'Full SID mapping is not one-to-one while require_unique_sid=true. '
++                'Enable use_collision_suffix or change the SID configuration.'
++            )
++
+     def _create_reverse_mapping(self):
+         """创建反向映射用于推理"""
+         tokens2item = {}
+         for item, tokens in self.item2tokens.items():
+             item_id = self.dataset.item2id[item]
++            if tuple(tokens) in tokens2item and self.config.get('require_unique_sid', False):
++                raise ValueError(f'Duplicate full SID encountered for item {item!r}: {tuple(tokens)}')
+             tokens2item[tuple(tokens)] = item_id
+         return tokens2item
+ 
+@@ -458,7 +773,7 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             quant_tag += f'_seed{self.config.get("rq_kmeans_seed",1234)}_it{self.config.get("rq_kmeans_niters",20)}'
+         elif self.sid_quantizer == 'none':
+             quant_tag += f'_seed{self.config.get("sid_random_seed",12345)}'
+-        map_tag = f'{model_basename}_pca{self.config["sent_emb_pca"]}_{quant_tag}_{self.n_digit}d'
++        map_tag = self._mapping_tag(model_basename, quant_tag)
+         
+         # 保存正排索引：item_id → SID-tokens
+         item_id2tokens = np.zeros((self.dataset.n_items, self.n_digit), dtype=np.int64)
+@@ -568,7 +883,9 @@ class AR_GRMTokenizer(AbstractTokenizer):
+             _, decoder_labels = self.encode_decoder_input(target_item)
+             return {
+                 'history_sid': history_sid,  # 直接list
+-                'labels': decoder_labels  # 新增：真标签序列
++                'labels': decoder_labels,  # 新增：真标签序列
++                # Exact target used by strict item-level recommendation metrics.
++                'target_item_id': self.dataset.item2id[target_item],
+             }
+ 
+     def tokenize(self, datasets: dict) -> dict:
+@@ -586,4 +903,4 @@ class AR_GRMTokenizer(AbstractTokenizer):
+         for split in datasets:
+             tokenized_datasets[split].set_format(type='torch')
+ 
+-        return tokenized_datasets 
+\ No newline at end of file
++        return tokenized_datasets
+diff --git a/genrec/models/AR_GRM/trainer.py b/genrec/models/AR_GRM/trainer.py
+index 683b85a..0e6bbad 100644
+--- a/genrec/models/AR_GRM/trainer.py
++++ b/genrec/models/AR_GRM/trainer.py
+@@ -4,9 +4,12 @@
+ # This source code is licensed under the license found in the
+ # LICENSE file in the root directory of this source tree.
+ 
++import csv
++import json
++import math
+ import os
++import time
+ import torch
+-from torch.nn.utils import clip_grad_norm_
+ from torch.optim import AdamW
+ from transformers import get_scheduler
+ from accelerate import Accelerator
+@@ -38,6 +41,31 @@ class AR_GRMTrainer:
+         )
+         os.makedirs(os.path.dirname(self.saved_model_ckpt), exist_ok=True)
+ 
++        self.position_loss_csv = os.path.join(
++            self.config.get('position_loss_log_dir', 'position_loss_logs'),
++            self.config['dataset'],
++            self.config['model'],
++            get_file_name(config, suffix='_position_loss.csv'),
++        )
++        if self.accelerator.is_main_process:
++            os.makedirs(os.path.dirname(self.position_loss_csv), exist_ok=True)
++            with open(self.position_loss_csv, 'w', newline='', encoding='utf-8') as handle:
++                writer = csv.writer(handle)
++                writer.writerow([
++                    'epoch', 'split', 'position', 'role', 'loss', 'nll',
++                    'normalized_nll', 'accuracy', 'prefix_accuracy', 'valid_tokens'
++                ])
++
++        self.run_metadata_path = os.path.join(
++            self.config.get('run_metadata_dir', 'run_metadata'),
++            self.config['dataset'],
++            self.config['model'],
++            get_file_name(config, suffix='_run_metadata.json'),
++        )
++        self.fit_elapsed_seconds = None
++        self.best_epoch = None
++        self.best_val_score = None
++
+     def fit(self, train_dataloader, val_dataloader):
+         """标准训练流程（自回归损失在 model.forward 内实现）"""
+         optimizer = AdamW(
+@@ -55,7 +83,9 @@ class AR_GRMTrainer:
+         steps_per_epoch = len(train_dataloader)
+ 
+         # 正确的总步数（以"每个进程"视角）：epochs * steps_per_epoch
+-        num_training_steps = self.config['epochs'] * steps_per_epoch
++        accumulation_steps = int(self.config.get('gradient_accumulation_steps', 1))
++        updates_per_epoch = math.ceil(steps_per_epoch / accumulation_steps)
++        num_training_steps = int(self.config['epochs']) * updates_per_epoch
+ 
+         if num_training_steps == 0:
+             self.log('No training steps needed.')
+@@ -64,11 +94,19 @@ class AR_GRMTrainer:
+         scheduler = get_scheduler(
+             name="cosine",
+             optimizer=optimizer,
+-            num_warmup_steps=self.config['warmup_steps'],
++            num_warmup_steps=(
++                int(self.config.get('warmup_steps', 0) or 0)
++                or int(round(num_training_steps * float(self.config.get('warmup_ratio', 0.0))))
++            ),
+             num_training_steps=num_training_steps,
+         )
+ 
+-        scheduler = self.accelerator.prepare(scheduler)
++        self.log(
++            f'[TRAINING] physical_batch={self.config["train_batch_size"]}, '
++            f'accumulation={accumulation_steps}, '
++            f'effective_batch={self.config["train_batch_size"] * accumulation_steps}, '
++            f'updates/epoch={updates_per_epoch}'
++        )
+         
+         self.accelerator.init_trackers(
+             project_name=get_file_name(self.config, suffix=''),
+@@ -89,11 +127,24 @@ class AR_GRMTrainer:
+         eval_start_epoch = self.config.get('eval_start_epoch', 1)
+         eval_interval = self.config['eval_interval']
+         self.log(f'[TRAINING] Evaluation config: start from epoch {eval_start_epoch}, interval: {eval_interval}')
++        fit_started = time.perf_counter()
++        if torch.cuda.is_available():
++            torch.cuda.reset_peak_memory_stats()
++        optimizer.zero_grad(set_to_none=True)
+ 
+         for epoch in range(n_epochs):
+             # Training
+             self.model.train()
+             total_loss = 0.0
++            position_loss_sums = torch.zeros(
++                self.config['n_digit'], device=self.accelerator.device, dtype=torch.float64
++            )
++            position_nll_sums = torch.zeros_like(position_loss_sums)
++            position_token_counts = torch.zeros(
++                self.config['n_digit'], device=self.accelerator.device, dtype=torch.long
++            )
++            position_correct_counts = torch.zeros_like(position_token_counts)
++            prefix_correct_counts = torch.zeros_like(position_token_counts)
+             train_progress_bar = tqdm(
+                 train_dataloader,
+                 total=len(train_dataloader),
+@@ -101,26 +152,59 @@ class AR_GRMTrainer:
+             )
+             
+             for batch in train_progress_bar:
+-                optimizer.zero_grad()
+-                
+-                outputs = self.model(batch, return_loss=True)
+-                loss = outputs.loss
+-                
+-                self.accelerator.backward(loss)
+-                if self.config['max_grad_norm'] is not None:
+-                    clip_grad_norm_(self.model.parameters(), self.config['max_grad_norm'])
+-                optimizer.step()
+-                scheduler.step()
++                with self.accelerator.accumulate(self.model):
++                    outputs = self.model(batch, return_loss=True)
++                    loss = outputs.loss
++
++                    batch_loss_sums = self.accelerator.reduce(
++                        outputs.position_loss_sums.detach().to(torch.float64), reduction='sum'
++                    )
++                    batch_nll_sums = self.accelerator.reduce(
++                        outputs.position_nll_sums.detach().to(torch.float64), reduction='sum'
++                    )
++                    batch_token_counts = self.accelerator.reduce(
++                        outputs.position_token_counts.detach(), reduction='sum'
++                    )
++                    batch_correct_counts = self.accelerator.reduce(
++                        outputs.position_correct_counts.detach(), reduction='sum'
++                    )
++                    batch_prefix_counts = self.accelerator.reduce(
++                        outputs.prefix_correct_counts.detach(), reduction='sum'
++                    )
++                    position_loss_sums += batch_loss_sums
++                    position_nll_sums += batch_nll_sums
++                    position_token_counts += batch_token_counts
++                    position_correct_counts += batch_correct_counts
++                    prefix_correct_counts += batch_prefix_counts
++
++                    self.accelerator.backward(loss)
++                    if self.accelerator.sync_gradients and self.config['max_grad_norm'] is not None:
++                        self.accelerator.clip_grad_norm_(
++                            self.model.parameters(), self.config['max_grad_norm']
++                        )
++                    optimizer.step()
++                    if self.accelerator.sync_gradients:
++                        scheduler.step()
++                    optimizer.zero_grad(set_to_none=True)
+                 total_loss = total_loss + loss.item()
+ 
+             self.accelerator.log({"Loss/train_loss": total_loss / len(train_dataloader)}, step=epoch + 1)
+             self.log(f'[Epoch {epoch + 1}] Train Loss: {total_loss / len(train_dataloader):.6f}')
++            self._record_position_losses(
++                epoch=epoch + 1,
++                split='train',
++                loss_sums=position_loss_sums,
++                nll_sums=position_nll_sums,
++                token_counts=position_token_counts,
++                correct_counts=position_correct_counts,
++                prefix_correct_counts=prefix_correct_counts,
++            )
+ 
+             # Evaluation - 修改早停逻辑
+             eval_start_epoch = self.config.get('eval_start_epoch', 1)  # 默认从第1个epoch开始评估
+             if (epoch + 1) >= eval_start_epoch and (epoch + 1) % self.config['eval_interval'] == 0:
+                 eval_count += 1  # 增加评估次数
+-                all_results = self.evaluate(val_dataloader, split='val')
++                all_results = self.evaluate(val_dataloader, split='val', epoch=epoch + 1)
+                 if self.accelerator.is_main_process:
+                     for key in all_results:
+                         self.accelerator.log({f"Val_Metric/{key}": all_results[key]}, step=epoch + 1)
+@@ -161,6 +245,10 @@ class AR_GRMTrainer:
+                     
+         self.log(f'Best epoch: {best_epoch}, Best val score: {best_val_score:.4f}')
+         self.log(f'Training completed after {eval_count} evaluations (eval every {self.config["eval_interval"]} epochs)')
++        self.fit_elapsed_seconds = time.perf_counter() - fit_started
++        self.best_epoch = best_epoch
++        self.best_val_score = float(best_val_score)
++        self.log(f'AR fit elapsed: {self.fit_elapsed_seconds / 3600:.2f} hours')
+         
+         # 🚀 修复：在训练结束前加载最佳模型权重
+         if self.accelerator.is_main_process:
+@@ -171,11 +259,20 @@ class AR_GRMTrainer:
+         
+         return best_epoch, best_val_score
+ 
+-    def evaluate(self, dataloader, split='test'):
++    def evaluate(self, dataloader, split='test', epoch=None):
+         """评估模型：顺序自回归 beam search，返回指标字典"""
+         self.model.eval()
+ 
+         all_results = defaultdict(list)
++        position_loss_sums = torch.zeros(
++            self.config['n_digit'], device=self.accelerator.device, dtype=torch.float64
++        )
++        position_nll_sums = torch.zeros_like(position_loss_sums)
++        position_token_counts = torch.zeros(
++            self.config['n_digit'], device=self.accelerator.device, dtype=torch.long
++        )
++        position_correct_counts = torch.zeros_like(position_token_counts)
++        prefix_correct_counts = torch.zeros_like(position_token_counts)
+         val_progress_bar = tqdm(
+             dataloader,
+             total=len(dataloader),
+@@ -189,10 +286,43 @@ class AR_GRMTrainer:
+             with torch.no_grad():
+                 # 当前 split 信息（如需）
+                 self.config["current_split"] = split
++                # Validation/test examples expose `labels` rather than decoder
++                # fields. Reconstruct teacher-forcing inputs to measure the same
++                # per-position SFT objective without changing generation metrics.
++                labels = batch['labels']
++                loss_batch = {
++                    'history_sid': batch['history_sid'],
++                    'decoder_input_ids': labels.clamp_min(0),
++                    'decoder_labels': labels,
++                }
++                loss_outputs = self.model(loss_batch, return_loss=True)
++                batch_loss_sums = self.accelerator.reduce(
++                    loss_outputs.position_loss_sums.detach().to(torch.float64), reduction='sum'
++                )
++                batch_nll_sums = self.accelerator.reduce(
++                    loss_outputs.position_nll_sums.detach().to(torch.float64), reduction='sum'
++                )
++                batch_token_counts = self.accelerator.reduce(
++                    loss_outputs.position_token_counts.detach(), reduction='sum'
++                )
++                batch_correct_counts = self.accelerator.reduce(
++                    loss_outputs.position_correct_counts.detach(), reduction='sum'
++                )
++                batch_prefix_counts = self.accelerator.reduce(
++                    loss_outputs.prefix_correct_counts.detach(), reduction='sum'
++                )
++                position_loss_sums += batch_loss_sums
++                position_nll_sums += batch_nll_sums
++                position_token_counts += batch_token_counts
++                position_correct_counts += batch_correct_counts
++                prefix_correct_counts += batch_prefix_counts
++
+                 maxk = max(self.config['topk'])
+                 preds = self.model.generate(batch, n_return_sequences=maxk)  # [B, maxk, n_digit]
+-                labels = batch['labels']  # [B, n_digit]
+-                batch_results = evaluator.calculate_metrics(preds, labels)
++                batch_results = evaluator.calculate_metrics(
++                    preds,
++                    batch['target_item_id'],
++                )
+                 for key, values in batch_results.items():
+                     all_results[key].extend(values.tolist())
+ 
+@@ -204,9 +334,104 @@ class AR_GRMTrainer:
+         # 🚀 打印最终统计结果
+         evaluator.print_final_stats()
+ 
++        self._record_position_losses(
++            epoch=epoch if epoch is not None else 0,
++            split=split,
++            loss_sums=position_loss_sums,
++            nll_sums=position_nll_sums,
++            token_counts=position_token_counts,
++            correct_counts=position_correct_counts,
++            prefix_correct_counts=prefix_correct_counts,
++        )
++
++        if split == 'test' and self.accelerator.is_main_process:
++            self._write_run_metadata(final_results)
++
+         self.model.train()
+         return final_results
+ 
++    def _record_position_losses(
++        self,
++        epoch,
++        split,
++        loss_sums,
++        nll_sums,
++        token_counts,
++        correct_counts,
++        prefix_correct_counts,
++    ):
++        """Write smoothed CE plus unsmoothed position diagnostics."""
++        losses = loss_sums / token_counts.clamp_min(1)
++        nlls = nll_sums / token_counts.clamp_min(1)
++        normalized_nlls = nlls / math.log(self.config['codebook_size'])
++        accuracies = correct_counts.to(torch.float64) / token_counts.clamp_min(1)
++        prefix_accuracies = (
++            prefix_correct_counts.to(torch.float64) / token_counts.clamp_min(1)
++        )
++
++        if self.accelerator.is_main_process:
++            log_values = {}
++            for position in range(self.config['n_digit']):
++                pos = position + 1
++                log_values[f'Loss/{split}_position_{pos}'] = losses[position].item()
++                log_values[f'NLL/{split}_position_{pos}'] = nlls[position].item()
++                log_values[f'Normalized_NLL/{split}_position_{pos}'] = normalized_nlls[position].item()
++                log_values[f'Accuracy/{split}_position_{pos}'] = accuracies[position].item()
++                log_values[f'Prefix_Accuracy/{split}_position_{pos}'] = prefix_accuracies[position].item()
++            self.accelerator.log(log_values, step=epoch)
++
++            with open(self.position_loss_csv, 'a', newline='', encoding='utf-8') as handle:
++                writer = csv.writer(handle)
++                for position in range(self.config['n_digit']):
++                    is_suffix = (
++                        self.config.get('use_collision_suffix', False)
++                        and position == int(self.config.get('semantic_n_digit', self.config['n_digit']))
++                    )
++                    writer.writerow([
++                        epoch,
++                        split,
++                        position + 1,
++                        'collision_suffix' if is_suffix else 'semantic',
++                        losses[position].item(),
++                        nlls[position].item(),
++                        normalized_nlls[position].item(),
++                        accuracies[position].item(),
++                        prefix_accuracies[position].item(),
++                        int(token_counts[position].item()),
++                    ])
++
++            formatted = ', '.join(
++                f'pos{position + 1}:nll={nlls[position].item():.6f},'
++                f'acc={accuracies[position].item():.4f}'
++                for position in range(self.config['n_digit'])
++            )
++            self.log(f'[Epoch {epoch}] {split} position diagnostics: {formatted}')
++
++    def _write_run_metadata(self, test_results):
++        os.makedirs(os.path.dirname(self.run_metadata_path), exist_ok=True)
++        metadata = {
++            'run_id': self.config.get('run_id'),
++            'seed': int(self.config.get('rand_seed', 0)),
++            'sid_quantizer': self.config.get('sid_quantizer'),
++            'semantic_n_digit': int(self.config.get('semantic_n_digit', self.config['n_digit'])),
++            'total_n_digit': int(self.config['n_digit']),
++            'codebook_size': int(self.config['codebook_size']),
++            'best_epoch': self.best_epoch,
++            'best_val_score': self.best_val_score,
++            'fit_elapsed_seconds': self.fit_elapsed_seconds,
++            'peak_vram_mb': (
++                torch.cuda.max_memory_allocated() / 1024**2
++                if torch.cuda.is_available() else 0.0
++            ),
++            'test_results': {key: float(value) for key, value in test_results.items()},
++            'position_metrics_csv': self.position_loss_csv,
++            'checkpoint': self.saved_model_ckpt,
++        }
++        with open(self.run_metadata_path, 'w', encoding='utf-8') as handle:
++            json.dump(metadata, handle, indent=2, ensure_ascii=False)
++            handle.write('\n')
++        self.log(f'Run metadata: {self.run_metadata_path}')
++
+     def end(self):
+         """结束训练"""
+         self.accelerator.end_training()
+@@ -217,4 +442,4 @@ class AR_GRMTrainer:
+             if self.accelerator.is_main_process:
+                 print(message)
+         else:
+-            print(message) 
+\ No newline at end of file
++            print(message)
+diff --git a/genrec/pipeline.py b/genrec/pipeline.py
+index 586a253..87d171a 100644
+--- a/genrec/pipeline.py
++++ b/genrec/pipeline.py
+@@ -45,7 +45,14 @@ class Pipeline:
+             self.config["dataset"],
+             self.config["model"]
+         )
+-        self.accelerator = Accelerator(log_with='tensorboard', project_dir=self.project_dir)
++        self.accelerator = Accelerator(
++            log_with='tensorboard',
++            project_dir=self.project_dir,
++            mixed_precision=self.config.get('mixed_precision', 'no'),
++            gradient_accumulation_steps=int(
++                self.config.get('gradient_accumulation_steps', 1)
++            ),
++        )
+         self.config['accelerator'] = self.accelerator
+ 
+         # Seed and Logger
+diff --git a/main.py b/main.py
+index 5465b4b..9bd9408 100644
+--- a/main.py
++++ b/main.py
+@@ -15,6 +15,12 @@ def parse_args():
+     parser.add_argument('--model', type=str, default='RPG', help='Model name')
+     parser.add_argument('--dataset', type=str, default='AmazonReviews2014', help='Dataset name')
+     parser.add_argument('--checkpoint', type=str, default=None, help='Checkpoint path')
++    parser.add_argument(
++        '--config',
++        action='append',
++        default=None,
++        help='Optional YAML override file. May be supplied more than once.',
++    )
+     return parser.parse_known_args()
+ 
+ 
+@@ -26,6 +32,7 @@ if __name__ == '__main__':
+         model_name=args.model,
+         dataset_name=args.dataset,
+         checkpoint_path=args.checkpoint,
+-        config_dict=command_line_configs
++        config_dict=command_line_configs,
++        config_file=args.config,
+     )
+     pipeline.run()

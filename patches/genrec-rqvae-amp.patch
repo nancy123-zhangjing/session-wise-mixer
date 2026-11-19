@@ -1,0 +1,23 @@
+diff --git a/genrec/models/rqvae.py b/genrec/models/rqvae.py
+index ef4916e..c910eae 100644
+--- a/genrec/models/rqvae.py
++++ b/genrec/models/rqvae.py
+@@ -223,8 +223,16 @@ class Quantize(nn.Module):
+                 amp = max_d - mid + 1e-5
+                 dist_norm = ((dist - mid) / amp).double()
+ 
+-                row_marginals = torch.full((B, ), 1. / B, device=self.device)
+-                col_marginals = torch.full((K, ), 1. / K, device=self.device)
++                # Sinkhorn is intentionally evaluated in float64 for numerical
++                # stability.  Under CUDA autocast, torch.full otherwise creates
++                # half-precision marginals, which cannot be multiplied by the
++                # float64 transport kernel.
++                row_marginals = torch.full(
++                    (B, ), 1. / B, device=self.device, dtype=dist_norm.dtype
++                )
++                col_marginals = torch.full(
++                    (K, ), 1. / K, device=self.device, dtype=dist_norm.dtype
++                )
+ 
+                 P = _sinkhorn_knopp(
+                     cost=dist_norm,

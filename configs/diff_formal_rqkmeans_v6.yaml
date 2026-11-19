@@ -1,0 +1,15 @@
+# Controlled tokenizer swap against the PSE v6 DiffGRM baseline.
+# The downstream DiffGRM architecture, optimizer, schedule, evaluation, and
+# 4x256 SID layout are inherited unchanged from common + repo_v6.
+run_id: diff_formal_rqkmeans_4x256_v6_bf16
+reproduction_protocol: controlled_tokenizer_swap_rq_kmeans_v6
+protocol_note: v6 DiffGRM with only PSE replaced by residual KMeans; shared sentence-T5-base PCA256 inputs
+
+sid_quantizer: rq_kmeans
+rq_kmeans_seed: 2024
+rq_kmeans_niters: 20
+rq_kmeans_use_pca: true
+faiss_omp_num_threads: 16
+
+# Generate the fixed tokenizer once, then reuse its cache for decoder seeds.
+force_regenerate_opq: false

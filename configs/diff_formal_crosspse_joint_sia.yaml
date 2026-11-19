@@ -1,0 +1,64 @@
+# Alternating Cross-PSE + DiffGRM, adapted from ETEGRec's SIA protocol.
+# The existing offline Cross-PSE v3 catalog checkpoint is the initialization.
+run_id: diff_formal_crosspse_joint_sia_4x256_seed2024
+# Both the tokenizer and recommender start from their completed separate
+# training checkpoints. This run is an alternating fine-tuning pilot.
+epochs: 45
+reproduction_protocol: alternating_crosspse_diffgrm_sia_only_v1
+protocol_note: initialize the separately trained Cross-PSE v3 tokenizer and DiffGRM decoder, then alternate one Cross-PSE phase and three DiffGRM phases; only one side is trainable in each phase
+
+sid_quantizer: cross_pse
+semantic_n_digit: 4
+crosspse_seed: 2024
+precomputed_semantic_ids_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/semantic_ids.json
+crosspse_summary_path: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024/summary.json
+
+crosspse_heads: 4
+crosspse_dropout: 0.0
+crosspse_attention_scope: full
+crosspse_residual_scale_init: 1.0
+crosspse_learn_residual_scale: false
+crosspse_zero_init_attention_output: true
+
+joint_crosspse_enabled: true
+joint_recommender_source_run_id: diff_formal_crosspse_4x256_v3_catalog_bf16
+joint_crosspse_artifact_dir: ../../outputs/tokenizers/diff_crosspse/Beauty/v3_catalog_seed2024
+joint_crosspse_items_path: ../../data/diff_formal_embeddings/beauty_item_keys.json
+
+# First learn the new sequence-to-tokenizer adapter for five decoder epochs,
+# then run ten 1:3 tokenizer/recommender cycles.
+joint_recommender_warmup_epochs: 5
+joint_cycle_epochs: 4
+joint_tokenizer_epochs_per_cycle: 1
+joint_max_tokenizer_phases: 10
+# 96 physical batches = exactly 6 optimizer updates with accumulation=16;
+# avoiding a partial accumulation at a phase boundary keeps alternation clean.
+joint_tokenizer_batches_per_phase: 96
+joint_sid_refresh_batch_size: 2048
+joint_evaluate_initial_state: true
+
+# SIA is symmetric KL between the four soft code distributions predicted from
+# the sequence representation and from the target item's OPQ slots.
+joint_sia_temperature: 0.1
+joint_recommender_sia_weight: 0.1
+joint_tokenizer_sia_weight: 0.1
+
+# Preserve the controlled offline Cross-PSE learning-rate scale.
+joint_codebook_lr: 0.00001
+joint_mixer_lr: 0.0001
+joint_weight_decay: 0.0001
+joint_balance_weight: 0.01
+joint_balance_temperature: 0.1
+joint_anchor_weight: 0.01
+
+# Keep the same DiffGRM/evaluation protocol as the v6 baseline.
+mixed_precision: bf16
+lr: 0.001
+warmup_steps: 500
+warmup_ratio: 0.0
+eval_start_epoch: 5
+eval_interval: 5
+patience: 5
+early_stop_after_warmup: true
+evaluation_level: sid
+eval_expand_sid_to_items: false
